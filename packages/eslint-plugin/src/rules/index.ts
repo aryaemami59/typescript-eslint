@@ -128,7 +128,7 @@ import unboundMethod from './unbound-method';
 import unifiedSignatures from './unified-signatures';
 import useUnknownInCatchCallbackVariable from './use-unknown-in-catch-callback-variable';
 
-export default {
+export = {
   'adjacent-overload-signatures': adjacentOverloadSignatures,
   'array-type': arrayType,
   'await-thenable': awaitThenable,

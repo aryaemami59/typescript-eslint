@@ -7,7 +7,7 @@
  * - disables rules from eslint:recommended which are already handled by TypeScript.
  * - enables rules that make sense due to TS's typechecking / transpilation.
  */
-export default (
+export = (
   style: 'glob' | 'minimatch',
 ): {
   files: string[];

@@ -74,4 +74,4 @@ export type TypeScriptESLintRules = Record<
 >;
 
 declare const rules: TypeScriptESLintRules;
-export default rules;
+export = rules;
