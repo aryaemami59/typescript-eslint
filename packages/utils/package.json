@@ -33,6 +33,7 @@
     },
     "./package.json": "./package.json"
   },
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "engines": {
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
@@ -86,6 +87,20 @@
     "<4.7": {
       "*": [
         "_ts4.3/*"
+      ]
+    },
+    ">=4.7": {
+      "ast-utils": [
+        "dist/ast-utils/index.d.ts"
+      ],
+      "eslint-utils": [
+        "dist/eslint-utils/index.d.ts"
+      ],
+      "json-schema": [
+        "dist/json-schema.d.ts"
+      ],
+      "ts-eslint": [
+        "dist/ts-eslint/index.d.ts"
       ]
     }
   }
