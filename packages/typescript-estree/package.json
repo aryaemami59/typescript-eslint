@@ -83,8 +83,16 @@
   },
   "typesVersions": {
     "<4.7": {
+      "use-at-your-own-risk": [
+        "./_ts4.3/dist/use-at-your-own-risk.d.ts"
+      ],
       "*": [
         "_ts4.3/*"
+      ]
+    },
+    ">=4.7": {
+      "use-at-your-own-risk": [
+        "./dist/use-at-your-own-risk.d.ts"
       ]
     }
   }
