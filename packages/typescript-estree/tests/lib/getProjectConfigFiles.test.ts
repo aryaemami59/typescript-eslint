@@ -1,13 +1,13 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import path from 'node:path';
 
 import { ExpiringCache } from '../../src/parseSettings/ExpiringCache';
 import { getProjectConfigFiles } from '../../src/parseSettings/getProjectConfigFiles';
 
-const mockExistsSync = vi.fn<boolean, [string]>();
+const mockExistsSync = vi.fn<(filePath: string) => boolean>();
 
 vi.mock('node:fs', () => ({
-  ...vi.requireActual('fs'),
+  ...vi.importActual('fs'),
   existsSync: (filePath: string): boolean => mockExistsSync(filePath),
 }));
 

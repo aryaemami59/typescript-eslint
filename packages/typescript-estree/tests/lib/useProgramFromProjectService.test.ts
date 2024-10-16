@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type -- Fancy mocks */
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import path from 'node:path';
 import * as ts from 'typescript';

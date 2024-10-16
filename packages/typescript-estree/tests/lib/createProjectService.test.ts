@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import debug from 'debug';
 import * as ts from 'typescript';
 
@@ -10,10 +10,10 @@ vi.mock('../../src/create-program/getParsedConfigFile', () => ({
   getParsedConfigFile: mockGetParsedConfigFile,
 }));
 
-vi.mock('typescript/lib/tsserverlibrary', () => ({
-  ...vi.requireActual('typescript/lib/tsserverlibrary'),
+vi.mock('typescript/lib/tsserverlibrary', async () => ({
+  ...(await vi.importActual('typescript/lib/tsserverlibrary')),
   server: {
-    ...vi.requireActual('typescript/lib/tsserverlibrary').server,
+    ...(await vi.importActual('typescript/lib/tsserverlibrary')).server,
     ProjectService: class {
       eventHandler: ts.server.ProjectServiceEventHandler | undefined;
       host: ts.server.ServerHost;
@@ -337,7 +337,7 @@ describe('createProjectService', () => {
     );
 
     expect(service.host.require).toBe(
-      vi.requireActual('typescript/lib/tsserverlibrary').sys.require,
+      vi.importActual('typescript/lib/tsserverlibrary').sys.require,
     );
   });
 

@@ -1,4 +1,4 @@
-import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
+import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { TSESTree } from '@typescript-eslint/utils';
 import type { RuleModule } from '@typescript-eslint/utils/ts-eslint';
 
@@ -11,8 +11,8 @@ import { RuleTester } from '../src/RuleTester';
 import * as dependencyConstraintsModule from '../src/utils/dependencyConstraints';
 
 // we can't spy on the exports of an ES module - so we instead have to mock the entire module
-vi.mock('../src/utils/dependencyConstraints', () => {
-  const dependencyConstraints = vi.requireActual<
+vi.mock('../src/utils/dependencyConstraints', async () => {
+  const dependencyConstraints = await vi.importActual<
     typeof dependencyConstraintsModule
   >('../src/utils/dependencyConstraints');
 
@@ -50,7 +50,7 @@ vi.mock(
 );
 
 vi.mock('@typescript-eslint/parser', () => {
-  const actualParser = vi.requireActual<typeof parser>(
+  const actualParser = vi.importActual<typeof parser>(
     '@typescript-eslint/parser',
   );
   return {
@@ -109,10 +109,11 @@ describe('RuleTester', () => {
     RuleTester.prototype,
     // @ts-expect-error -- method is private
     'runRuleForItem',
-  ) as vi.SpiedFunction<RuleTester['runRuleForItem']>;
+  );
   beforeEach(() => {
     vi.clearAllMocks();
   });
+  // @ts-expect-error
   runRuleForItemSpy.mockImplementation((_1, _2, testCase) => {
     return {
       afterAST: EMPTY_PROGRAM,
