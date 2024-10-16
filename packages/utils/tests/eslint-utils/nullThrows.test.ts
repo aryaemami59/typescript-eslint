@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { nullThrows, NullThrowsReasons } from '../../src/eslint-utils';
 
 describe('nullThrows', () => {

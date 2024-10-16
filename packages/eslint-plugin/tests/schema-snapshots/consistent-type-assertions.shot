@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Rule schemas should be convertible to TS types for documentation purposes consistent-type-assertions 1`] = `
-"
+exports[`Rule schemas should be convertible to TS types for documentation purposes > consistent-type-assertions > consistent-type-assertions`]
+
 # SCHEMA:
 
 [
@@ -63,5 +63,4 @@ type Options = [
       'never';
     },
 ];
-"
-`;
+
