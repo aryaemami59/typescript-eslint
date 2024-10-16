@@ -33,29 +33,28 @@ vi.mock(
   () => ({
     version: '10.0.0',
   }),
-  {
-    // this is not a real module that will exist
-    virtual: true,
-  },
+  // {
+  //   // this is not a real module that will exist
+  //   virtual: true,
+  // },
 );
 vi.mock(
   'totally-real-dependency-prerelease/package.json',
   () => ({
     version: '10.0.0-rc.1',
   }),
-  {
-    // this is not a real module that will exist
-    virtual: true,
-  },
+  // {
+  //   // this is not a real module that will exist
+  //   virtual: true,
+  // },
 );
 
-vi.mock('@typescript-eslint/parser', () => {
-  const actualParser = vi.importActual<typeof parser>(
-    '@typescript-eslint/parser',
-  );
+vi.mock(import('@typescript-eslint/parser'), async importOriginal => {
+  const actualParser = await importOriginal();
   return {
     ...actualParser,
     __esModule: true,
+    // clearCaches: vi.spyOn(actualParser, 'clearCaches'),
     clearCaches: vi.fn(),
   };
 });
