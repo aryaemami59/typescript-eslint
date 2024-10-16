@@ -57,6 +57,7 @@
     "prettier": "^3.2.5",
     "pretty-format": "*",
     "rimraf": "*",
-    "typescript": "*"
+    "typescript": "*",
+    "vitest": "^2.1.8"
   }
 }
