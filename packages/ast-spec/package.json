@@ -36,7 +36,7 @@
     "clean-fixtures": "rimraf -g \"./src/**/fixtures/**/snapshots\"",
     "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
     "lint": "npx nx lint",
-    "test": "jest",
+    "test": "vitest --run",
     "typecheck": "tsc --noEmit"
   },
   "funding": {
@@ -57,6 +57,7 @@
     "prettier": "^3.2.5",
     "pretty-format": "*",
     "rimraf": "*",
-    "typescript": "*"
+    "typescript": "*",
+    "vitest": "^2.1.3"
   }
 }
