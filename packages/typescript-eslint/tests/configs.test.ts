@@ -4,6 +4,7 @@ import type {
 } from '@typescript-eslint/utils/ts-eslint';
 
 import rules from '@typescript-eslint/eslint-plugin/use-at-your-own-risk/rules';
+import { describe, expect, it } from 'vitest';
 
 import plugin from '../src/index';
 

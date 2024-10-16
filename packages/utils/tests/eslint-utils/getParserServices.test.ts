@@ -1,5 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any -- wild and wacky testing */
 import type * as ts from 'typescript';
+
+import { describe, expect, it } from 'vitest';
 
 import type { ParserServices, TSESLint, TSESTree } from '../../src';
 import type { FlatConfig } from '../../src/ts-eslint';
@@ -38,14 +39,14 @@ const unknownParserErrorRegex = (parser?: string): RegExp =>
 Note: detected a parser other than @typescript-eslint/parser. Make sure the parser is configured to forward "parserOptions.project" to @typescript-eslint/parser.`,
   );
 
-describe('getParserServices', () => {
+describe(ESLintUtils.getParserServices, () => {
   it('throws a standard error with the parser when parserOptions.esTreeNodeToTSNodeMap is missing and the parser is typescript-eslint', () => {
     const context = createMockRuleContext({
       sourceCode: {
         ...defaults.sourceCode,
         parserServices: {
           ...defaults.sourceCode.parserServices,
-          esTreeNodeToTSNodeMap: undefined as any,
+          esTreeNodeToTSNodeMap: undefined,
         },
       },
     });
@@ -69,7 +70,7 @@ describe('getParserServices', () => {
         ...defaults.sourceCode,
         parserServices: {
           ...defaults.sourceCode.parserServices,
-          esTreeNodeToTSNodeMap: undefined as any,
+          esTreeNodeToTSNodeMap: undefined,
         },
       },
     });
@@ -87,7 +88,7 @@ describe('getParserServices', () => {
         ...defaults.sourceCode,
         parserServices: {
           ...defaults.sourceCode.parserServices,
-          esTreeNodeToTSNodeMap: undefined as any,
+          esTreeNodeToTSNodeMap: undefined,
         },
       },
     });
@@ -107,7 +108,7 @@ describe('getParserServices', () => {
         ...defaults.sourceCode,
         parserServices: {
           ...defaults.sourceCode.parserServices,
-          esTreeNodeToTSNodeMap: undefined as any,
+          esTreeNodeToTSNodeMap: undefined,
         },
       },
     });
@@ -124,7 +125,7 @@ describe('getParserServices', () => {
         ...defaults.sourceCode,
         parserServices: {
           ...defaults.sourceCode.parserServices,
-          esTreeNodeToTSNodeMap: undefined as any,
+          esTreeNodeToTSNodeMap: undefined,
         },
       },
     });
@@ -139,7 +140,7 @@ describe('getParserServices', () => {
         ...defaults.sourceCode,
         parserServices: {
           ...defaults.sourceCode.parserServices,
-          tsNodeToESTreeNodeMap: undefined as any,
+          tsNodeToESTreeNodeMap: undefined,
         },
       },
     });
@@ -155,7 +156,7 @@ describe('getParserServices', () => {
         ...defaults.sourceCode,
         parserServices: {
           ...defaults.sourceCode.parserServices,
-          program: undefined as any,
+          program: undefined,
         },
       },
     });
@@ -171,7 +172,7 @@ describe('getParserServices', () => {
         ...defaults.sourceCode,
         parserServices: {
           ...defaults.sourceCode.parserServices,
-          program: undefined as any,
+          program: undefined,
         },
       },
     });

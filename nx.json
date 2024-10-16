@@ -31,10 +31,10 @@
       }
     },
     {
-      "plugin": "@nx/jest/plugin",
+      "plugin": "@nx/eslint/plugin",
       "include": ["packages/*"],
       "options": {
-        "targetName": "test"
+        "targetName": "lint"
       }
     }
   ],
@@ -62,7 +62,7 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"],
-      "outputs": ["{projectRoot}/dist"],
+      "outputs": ["{projectRoot}/dist", "{projectRoot}/_ts4.*"],
       "options": {
         "cwd": "{projectRoot}"
       },
@@ -72,27 +72,6 @@
       "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/coverage"],
       "cache": true
-    },
-    "@nx/jest:jest": {
-      "dependsOn": ["^build"],
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.config.js",
-        "{workspaceRoot}/jest.config.base.js"
-      ],
-      "outputs": ["{projectRoot}/coverage"],
-      "cache": true,
-      "options": {
-        "jestConfig": "{projectRoot}/jest.config.js",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
-      }
     },
     "@nx/vite:test": {
       "dependsOn": ["^build"],
@@ -111,16 +90,31 @@
         "reportsDirectory": "{projectRoot}/coverage"
       }
     },
+    "@nx/eslint:lint": {
+      "dependsOn": [
+        {
+          "projects": ["eslint-plugin-internal", "typescript-eslint"],
+          "target": "build"
+        }
+      ],
+      "options": {
+        "noEslintrc": true,
+        "cache": true,
+        "eslintConfig": "{workspaceRoot}/eslint.config.mjs"
+      },
+      "outputs": ["{options.outputFile}"],
+      "cache": true
+    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "dependsOn": [
-        "eslint-plugin:build",
-        "eslint-plugin-internal:build",
-        "typescript-eslint:build"
+        {
+          "projects": ["eslint-plugin-internal", "typescript-eslint"],
+          "target": "build"
+        }
       ],
       "inputs": [
         "default",
-        "{workspaceRoot}/eslint.config.js",
         "{workspaceRoot}/eslint.config.mjs",
         {
           "dependentTasksOutputFiles": "**/*.js",
@@ -132,7 +126,7 @@
     },
     "typecheck": {
       "dependsOn": ["types:copy-ast-spec"],
-      "outputs": ["{workspaceRoot}/dist/out-tsc/{projectRoot}"],
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "cache": true
     }
   },
@@ -153,10 +147,10 @@
     ],
     "production": [
       "default",
-      "!{projectRoot}/**/?(*.)+(test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/**/?(*.)+(test).?(m|c)[jt]s?(x)?(.snap|.shot)",
+      "!{projectRoot}/tests",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/vitest.config.m[jt]s",
+      "!{projectRoot}/vitest.config.mts",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
   }

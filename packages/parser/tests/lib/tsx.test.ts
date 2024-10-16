@@ -1,4 +1,4 @@
-import type { ParserOptions } from '@typescript-eslint/types';
+import { describe, expect, it } from 'vitest';
 
 import { parseForESLint } from '../../src/parser';
 import { serializer } from '../test-utils/ts-error-serializer';
@@ -9,20 +9,12 @@ import { serializer } from '../test-utils/ts-error-serializer';
 
 expect.addSnapshotSerializer(serializer);
 
-function parseWithError(code: string, options?: ParserOptions | null): unknown {
-  try {
-    return parseForESLint(code, options);
-  } catch (e) {
-    return e;
-  }
-}
-
 describe('TSX', () => {
   describe("if the filename ends with '.tsx', enable jsx option automatically.", () => {
     it('filePath was not provided', () => {
       const code = 'const element = <T/>';
 
-      expect(parseWithError(code)).toMatchInlineSnapshot(`
+      expect(() => parseForESLint(code)).toThrowErrorMatchingInlineSnapshot(`
         TSError {
           "column": 18,
           "index": 18,
@@ -45,11 +37,11 @@ describe('TSX', () => {
 
     it('test.ts', () => {
       const code = 'const element = <T/>';
-      expect(
-        parseWithError(code, {
+      expect(() =>
+        parseForESLint(code, {
           filePath: 'test.ts',
         }),
-      ).toMatchInlineSnapshot(`
+      ).toThrowErrorMatchingInlineSnapshot(`
         TSError {
           "column": 18,
           "index": 18,
@@ -62,14 +54,14 @@ describe('TSX', () => {
     it("test.ts with 'jsx:true' option", () => {
       const code = 'const element = <T/>';
 
-      expect(
-        parseWithError(code, {
+      expect(() =>
+        parseForESLint(code, {
           ecmaFeatures: {
             jsx: true,
           },
           filePath: 'test.ts',
         }),
-      ).toMatchInlineSnapshot(`
+      ).toThrowErrorMatchingInlineSnapshot(`
         TSError {
           "column": 18,
           "index": 18,
