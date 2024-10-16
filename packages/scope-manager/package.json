@@ -42,7 +42,7 @@
     "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
     "generate-lib": "npx nx generate-lib repo",
     "lint": "npx nx lint",
-    "test": "npx nx test --code-coverage",
+    "test": "vitest --run",
     "typecheck": "npx nx typecheck"
   },
   "dependencies": {
@@ -50,12 +50,10 @@
     "@typescript-eslint/visitor-keys": "8.18.0"
   },
   "devDependencies": {
-    "@jest/types": "29.6.3",
     "@types/glob": "*",
     "@typescript-eslint/typescript-estree": "8.18.0",
     "@vitest/coverage-v8": "^2.1.8",
     "glob": "*",
-    "jest-specific-snapshot": "*",
     "make-dir": "*",
     "prettier": "^3.2.5",
     "pretty-format": "*",

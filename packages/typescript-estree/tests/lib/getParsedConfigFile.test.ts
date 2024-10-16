@@ -1,9 +1,10 @@
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import path from 'node:path';
 import * as ts from 'typescript';
 
 import { getParsedConfigFile } from '../../src/create-program/getParsedConfigFile';
 
-const mockGetParsedCommandLineOfConfigFile = jest.fn();
+const mockGetParsedCommandLineOfConfigFile = vi.fn();
 
 const mockTsserver: typeof ts = {
   formatDiagnostics: ts.formatDiagnostics,
@@ -14,7 +15,7 @@ const mockTsserver: typeof ts = {
 
 describe('getParsedConfigFile', () => {
   afterEach(() => {
-    jest.resetAllMocks();
+    vi.resetAllMocks();
   });
 
   it('throws an error when tsserver.sys is undefined', () => {

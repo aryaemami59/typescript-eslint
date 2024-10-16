@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import type { TSESTree } from '@typescript-eslint/utils';
 import type * as ts from 'typescript';
 

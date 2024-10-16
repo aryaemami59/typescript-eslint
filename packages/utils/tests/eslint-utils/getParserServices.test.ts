@@ -1,5 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any -- wild and wacky testing */
 import type * as ts from 'typescript';
+
+/* eslint-disable @typescript-eslint/no-explicit-any -- wild and wacky testing */
+import { describe, expect, it } from 'vitest';
 
 import type { ParserServices, TSESLint, TSESTree } from '../../src';
 import type { FlatConfig } from '../../src/ts-eslint';
@@ -172,6 +174,7 @@ describe('getParserServices', () => {
         parserServices: {
           ...defaults.sourceCode.parserServices,
           program: undefined as any,
+          /*eslint-enable @typescript-eslint/no-explicit-any */
         },
       },
     });
