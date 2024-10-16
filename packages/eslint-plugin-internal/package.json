@@ -23,6 +23,7 @@
   "devDependencies": {
     "@jest/types": "29.6.3",
     "jest": "29.7.0",
-    "rimraf": "*"
+    "rimraf": "*",
+    "vitest": "^2.1.3"
   }
 }

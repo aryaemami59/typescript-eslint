@@ -94,7 +94,8 @@
     "title-case": "^3.0.3",
     "tsx": "*",
     "typescript": "*",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "vitest": "^2.1.3"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": "^8.0.0 || ^8.0.0-alpha.0",
