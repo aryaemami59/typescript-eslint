@@ -1,6 +1,6 @@
 import { FlatESLint, LegacyESLint } from 'eslint/use-at-your-own-risk';
 
-import * as ESLint from '../../src/ts-eslint/ESLint';
+import * as ESLint from '../../src/ts-eslint/ESLint.js';
 
 describe('ESLint', () => {
   describe('Constructs successfully and has the correct base type', () => {

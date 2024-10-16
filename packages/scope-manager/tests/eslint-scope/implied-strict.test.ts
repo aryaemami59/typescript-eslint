@@ -23,17 +23,16 @@ describe('impliedStrict option', () => {
     let scope = scopeManager.scopes[0];
 
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(true);
 
     scope = scopeManager.scopes[1];
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.FunctionDeclaration);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.FunctionDeclaration);
     expect(scope.isStrict).toBe(true);
 
     scope = scopeManager.scopes[2];
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.FunctionDeclaration);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.FunctionDeclaration);
     expect(scope.isStrict).toBe(true);
   });
 
@@ -53,17 +52,16 @@ describe('impliedStrict option', () => {
     let scope = scopeManager.scopes[0];
 
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
 
     scope = scopeManager.scopes[1];
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(true);
 
     scope = scopeManager.scopes[2];
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.FunctionDeclaration);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.FunctionDeclaration);
     expect(scope.isStrict).toBe(true);
   });
 
@@ -78,7 +76,6 @@ describe('impliedStrict option', () => {
     let scope = scopeManager.scopes[0];
 
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
 
     scope = scopeManager.scopes[1];
@@ -87,7 +84,7 @@ describe('impliedStrict option', () => {
 
     scope = scopeManager.scopes[2];
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.FunctionDeclaration);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.FunctionDeclaration);
     expect(scope.isStrict).toBe(true);
   });
 });

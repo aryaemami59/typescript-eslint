@@ -19,25 +19,50 @@ describe('typescript', () => {
 
       expect(scopeManager.scopes).toHaveLength(4);
 
-      let scope = scopeManager.scopes[0];
-      let variables = getRealVariables(scope.variables);
+      const scope = scopeManager.scopes[0];
+      const variables = getRealVariables(scope.variables);
+
       assert.isScopeOfType(scope, ScopeType.global);
+
       expect(scope.references).toHaveLength(0);
       expect(variables).toHaveLength(1);
       expect(variables[0].defs).toHaveLength(3);
 
-      for (let i = 1; i < 4; i += 1) {
-        scope = scopeManager.scopes[i];
-        variables = getRealVariables(scope.variables);
-        assert.isScopeOfType(scope, ScopeType.function);
-        expect(variables).toHaveLength(2);
-        expect(variables[0].name).toBe('arguments');
-        if (scope.block.type === AST_NODE_TYPES.TSDeclareFunction) {
-          expect(scope.references).toHaveLength(0);
-        } else {
-          expect(scope.references).toHaveLength(1);
-        }
-      }
+      const actual = scopeManager.scopes.slice(1, 4).map(scope => {
+        const variables = getRealVariables(scope.variables);
+
+        return [
+          scope.type,
+          variables.length,
+          variables[0].name,
+          scope.block.type,
+          scope.references.length,
+        ] as const;
+      });
+
+      const expected = [
+        ...actual
+          .slice(0, -1)
+          .map(
+            () =>
+              [
+                ScopeType.function,
+                2,
+                'arguments',
+                AST_NODE_TYPES.TSDeclareFunction,
+                0,
+              ] as const,
+          ),
+        [
+          ScopeType.function,
+          2,
+          'arguments',
+          AST_NODE_TYPES.FunctionDeclaration,
+          1,
+        ] as const,
+      ];
+
+      expect(actual).toStrictEqual(expected);
     });
   });
 });

@@ -2,18 +2,10 @@ import type { TSESTree } from '@typescript-eslint/utils';
 
 import { RuleTester } from '@typescript-eslint/rule-tester';
 
-import { createRule, getWrappingFixer } from '../../src/util';
-import { getFixturesRootDir } from '../RuleTester';
+import { createRule, getWrappingFixer } from '../../src/util/index.js';
+import { DEFAULT_TESTER_CONFIG } from '../test-utils/test-utils.js';
 
-const rootPath = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootPath,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 const voidEverythingRule = createRule({
   create(context) {

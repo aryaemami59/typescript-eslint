@@ -1,18 +1,10 @@
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
 import { AST_NODE_TYPES } from '@typescript-eslint/utils';
 
-import rule from '../../src/rules/prefer-promise-reject-errors';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/prefer-promise-reject-errors.js';
+import { DEFAULT_TESTER_CONFIG } from '../test-utils/test-utils.js';
 
-const rootDir = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootDir,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 ruleTester.run('prefer-promise-reject-errors', rule, {
   valid: [
