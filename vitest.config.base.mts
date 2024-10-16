@@ -8,7 +8,7 @@ const baseVitestConfig = defineConfig({
       enabled: true,
     },
     setupFiles: ['console-fail-test/setup.mjs'],
-    include: ['./tests/.+\\.test\\.ts$', './tests/.+\\.spec\\.ts$'],
+    // include: ['./tests/.+\\.test\\.ts$', './tests/.+\\.spec\\.ts$'],
     globals: true,
   },
 });
