@@ -3,16 +3,16 @@ import type {
   TypeScriptProjectService,
 } from '@typescript-eslint/project-service';
 
-import path from 'node:path';
+import * as path from 'node:path';
 import * as ts from 'typescript';
 
-import type { ParseSettings } from '../../src/parseSettings';
+import type { ParseSettings } from '../../src/parseSettings/index.js';
 
-import { useProgramFromProjectService } from '../../src/useProgramFromProjectService';
+import { useProgramFromProjectService } from '../../src/useProgramFromProjectService.js';
 
 const mockCreateNoProgram = vi.fn();
 
-vi.mock('../../src/create-program/createSourceFile', () => ({
+vi.mock('../../src/create-program/createSourceFile.js', () => ({
   get createNoProgram() {
     return mockCreateNoProgram;
   },
@@ -20,7 +20,7 @@ vi.mock('../../src/create-program/createSourceFile', () => ({
 
 const mockCreateProjectProgram = vi.fn();
 
-vi.mock('../../src/create-program/createProjectProgram', () => ({
+vi.mock('../../src/create-program/createProjectProgram.js', () => ({
   get createProjectProgram() {
     return mockCreateProjectProgram;
   },
@@ -60,7 +60,7 @@ const mockFileName = 'camelCaseFile.ts';
 
 const mockParseSettings = {
   extraFileExtensions: [] as readonly string[],
-  filePath: `path/PascalCaseDirectory/${mockFileName}`,
+  filePath: path.posix.join('path', 'PascalCaseDirectory', mockFileName),
   singleRun: false,
   tsconfigRootDir: currentDirectory,
 } as ParseSettings;
@@ -186,6 +186,7 @@ describe(useProgramFromProjectService, () => {
     ).toThrow(
       `${mockParseSettings.filePath} was not found by the project service. Consider either including it in the tsconfig.json or including it in allowDefaultProject.`,
     );
+
     expect(service.reloadProjects).toHaveBeenCalledOnce();
   });
 

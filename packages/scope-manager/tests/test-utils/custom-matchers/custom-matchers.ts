@@ -11,6 +11,7 @@ import type {
 } from '../../../src/index.js';
 
 import { analyze } from '../../../src/index.js';
+import { DEFAULT_PARSER_OPTIONS } from '../index.js';
 
 chai.use((chai, utils) => {
   //////////////////
@@ -174,11 +175,6 @@ chai.use((chai, utils) => {
     ).not.to.be.nodeOfType(expectedNodeType);
   };
 });
-
-const DEFAULT_PARSER_OPTIONS = {
-  // the analyser requires ranges to work
-  range: true,
-} as const satisfies TSESTreeOptions;
 
 expect.extend({
   toHaveDeclaredVariables(

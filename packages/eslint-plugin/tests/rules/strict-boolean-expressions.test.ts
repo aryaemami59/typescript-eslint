@@ -1,18 +1,12 @@
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
-import * as path from 'node:path';
 
-import rule from '../../src/rules/strict-boolean-expressions';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/strict-boolean-expressions.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  UNSTRICT_FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootPath = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootPath,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 ruleTester.run('strict-boolean-expressions', rule, {
   valid: [
@@ -385,7 +379,7 @@ if (x) {
       `,
       languageOptions: {
         parserOptions: {
-          tsconfigRootDir: path.join(rootPath, 'unstrict'),
+          tsconfigRootDir: UNSTRICT_FIXTURES_DIR,
         },
       },
       options: [
@@ -3270,7 +3264,7 @@ if (x) {
       ],
       languageOptions: {
         parserOptions: {
-          tsconfigRootDir: path.join(rootPath, 'unstrict'),
+          tsconfigRootDir: UNSTRICT_FIXTURES_DIR,
         },
       },
       output: null,

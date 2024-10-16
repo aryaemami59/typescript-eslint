@@ -1,8 +1,10 @@
 import 'vitest';
 
 import type {
+  AST_NODE_TYPES,
   ParserServices,
   ParserServicesWithTypeInformation,
+  TSESTree,
 } from '@typescript-eslint/typescript-estree';
 
 import type { ReadonlynessOptions } from '../../../src/isTypeReadonly.js';
@@ -10,6 +12,8 @@ import type { ReadonlynessOptions } from '../../../src/isTypeReadonly.js';
 declare global {
   namespace Chai {
     interface Assertion {
+      nodeOfType(expectedNodeType: AST_NODE_TYPES, errorMessage?: string): void;
+
       parserServices(errorMessage?: string): void;
     }
 
@@ -29,6 +33,21 @@ declare global {
         ActualType,
         ParserServicesWithTypeInformation
       >;
+
+      isNodeOfType<
+        ActualType extends TSESTree.Node | null | undefined,
+        ExpectedType extends AST_NODE_TYPES,
+      >(
+        node: ActualType,
+        expectedNodeType: ExpectedType,
+        errorMessage?: string,
+      ): asserts node is Extract<ActualType, { type: ExpectedType }>;
+
+      isNotNodeOfType<ActualType, ExpectedType extends AST_NODE_TYPES>(
+        node: ActualType,
+        expectedNodeType: ExpectedType,
+        errorMessage?: string,
+      ): asserts node is Exclude<ActualType, { type: ExpectedType }>;
     }
   }
 }

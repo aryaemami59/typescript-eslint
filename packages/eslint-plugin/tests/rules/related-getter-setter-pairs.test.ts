@@ -1,17 +1,9 @@
 import { RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/related-getter-setter-pairs';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/related-getter-setter-pairs.js';
+import { DEFAULT_TESTER_CONFIG } from '../test-utils/test-utils.js';
 
-const rootDir = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootDir,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 ruleTester.run('related-getter-setter-pairs', rule, {
   valid: [

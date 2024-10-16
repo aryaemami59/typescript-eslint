@@ -1,7 +1,7 @@
-import type { TSESTree } from '@typescript-eslint/types';
+import { AST_NODE_TYPES } from '@typescript-eslint/types';
 
-import { analyze } from '../../src/analyze';
-import { parse } from '../test-utils';
+import { analyze } from '../../src/index.js';
+import { parse } from '../test-utils/index.js';
 
 describe('childVisitorKeys option', () => {
   it('should not visit to properties which are not given.', () => {
@@ -9,7 +9,10 @@ describe('childVisitorKeys option', () => {
       let foo = bar;
     `);
 
-    const decl = ast.body[0] as TSESTree.VariableDeclaration;
+    const decl = ast.body[0];
+
+    assert.isNodeOfType(decl, AST_NODE_TYPES.VariableDeclaration);
+
     decl.declarations[0].init = {
       argument: decl.declarations[0].init,
       type: 'TestNode',
@@ -22,6 +25,7 @@ describe('childVisitorKeys option', () => {
     });
 
     expect(result.scopes).toHaveLength(1);
+
     const globalScope = result.scopes[0];
 
     // `bar` in TestNode has not been visited.
@@ -33,7 +37,10 @@ describe('childVisitorKeys option', () => {
       let foo = bar;
     `);
 
-    const decl = ast.body[0] as TSESTree.VariableDeclaration;
+    const decl = ast.body[0];
+
+    assert.isNodeOfType(decl, AST_NODE_TYPES.VariableDeclaration);
+
     decl.declarations[0].init = {
       argument: decl.declarations[0].init,
       type: 'TestNode',
@@ -46,10 +53,12 @@ describe('childVisitorKeys option', () => {
     });
 
     expect(result.scopes).toHaveLength(1);
+
     const globalScope = result.scopes[0];
 
     // `bar` in TestNode has been visited.
     expect(globalScope.through).toHaveLength(1);
+
     expect(globalScope.through[0].identifier.name).toBe('bar');
   });
 });

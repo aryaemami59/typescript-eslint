@@ -1,11 +1,8 @@
-import childProcess from 'node:child_process';
-import fs from 'node:fs';
-import path from 'node:path';
+import * as childProcess from 'node:child_process';
+import * as fs from 'node:fs/promises';
+import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { promisify } from 'node:util';
 
-const readFile = promisify(fs.readFile);
-const writeFile = promisify(fs.writeFile);
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 // the promisify util will eat the stderr logs
@@ -29,9 +26,6 @@ async function execAsync(
 
 const AST_SPEC_PATH = path.resolve(__dirname, '../../ast-spec');
 const OUTPUT_PATH = path.join(path.resolve(__dirname, '../src/generated'));
-if (!fs.existsSync(OUTPUT_PATH)) {
-  fs.mkdirSync(OUTPUT_PATH);
-}
 
 const HEADER = `\
 /**********************************************
@@ -51,7 +45,7 @@ async function copyFile(
   fileName: string,
   transformer: (code: string) => string = (s): string => s,
 ): Promise<void> {
-  const code = await readFile(
+  const code = await fs.readFile(
     path.join(AST_SPEC_PATH, folderName, fileName),
     'utf-8',
   );
@@ -59,7 +53,7 @@ async function copyFile(
   const transformedCode = transformer(code);
 
   const outpath = path.join(OUTPUT_PATH, fileName);
-  await writeFile(outpath, HEADER + transformedCode, {
+  await fs.writeFile(outpath, HEADER + transformedCode, {
     encoding: 'utf-8',
   });
 
@@ -71,6 +65,8 @@ async function copyFile(
 
   console.log('Copied', fileName);
 }
+
+await fs.mkdir(OUTPUT_PATH, { recursive: true });
 
 if (process.env.SKIP_AST_SPEC_REBUILD) {
   // ensure the package is built

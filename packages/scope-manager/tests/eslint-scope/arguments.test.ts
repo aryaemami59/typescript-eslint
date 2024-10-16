@@ -18,11 +18,17 @@ describe('arguments', () => {
     expect(scope.references).toHaveLength(0);
 
     scope = scopeManager.scopes[1];
+
     variables = getRealVariables(scope.variables);
+
     assert.isScopeOfType(scope, ScopeType.function);
+
     expect(variables).toHaveLength(1);
+
     expect(variables[0].name).toBe('arguments');
+
     expect(scope.references).toHaveLength(1);
+
     expect(scope.references[0].resolved).toBe(variables[0]);
   });
 });

@@ -17,15 +17,14 @@ import * as path from 'node:path';
 import { titleCase } from 'title-case';
 import * as unistUtilVisit from 'unist-util-visit';
 
-import rules from '../src/rules/index.js';
 import { areOptionsValid } from './areOptionsValid.js';
-import { getFixturesRootDir } from './RuleTester.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  ROOT_DIR,
+  rulesEntriesList,
+} from './test-utils/test-utils.js';
 
 const docsRoot = path.join(import.meta.dirname, '..', 'docs', 'rules');
-
-const FIXTURES_DIR = getFixturesRootDir();
-
-const rulesData = Object.entries(rules);
 
 interface ParsedMarkdownFile {
   fullText: string;
@@ -203,12 +202,14 @@ describe('Validating rule docs', () => {
       .filter(rule => !ignoredFiles.has(rule))
       .sort();
 
-    const ruleFiles = rulesData.map(([ruleName]) => `${ruleName}.mdx`).sort();
+    const ruleFiles = rulesEntriesList
+      .map(([ruleName]) => `${ruleName}.mdx`)
+      .sort();
 
     expect(files).toStrictEqual(ruleFiles);
   });
 
-  describe.for(rulesData)('%s.mdx', async ([ruleName, rule]) => {
+  describe.for(rulesEntriesList)('%s.mdx', async ([ruleName, rule]) => {
     assert.isDefined(rule.meta.docs);
 
     const { description } = rule.meta.docs;
@@ -250,7 +251,7 @@ describe('Validating rule docs', () => {
 
     const h2headingTexts = new Set(h2headings.map(token => token.text));
 
-    describe.runIf(h2headings.length > 0)(
+    describe.skipIf(h2headings.length === 0)(
       'headings must be title-cased',
       () => {
         const sanitizedHeadingTexts = [...new Set(h2headingTexts)].map(text =>
@@ -276,7 +277,7 @@ describe('Validating rule docs', () => {
       importantHeadings.has(heading.raw.replaceAll('#', '').trim()),
     );
 
-    describe.runIf(importantHeadingsList.length > 0)(
+    describe.skipIf(importantHeadingsList.length === 0)(
       'important headings must be h2s',
       () => {
         test.for(importantHeadingsList)('$text', (heading, { expect }) => {
@@ -285,21 +286,18 @@ describe('Validating rule docs', () => {
       },
     );
 
-    const doesNotExtendBaseRule = !rule.meta.docs.extendsBaseRule;
+    const { extendsBaseRule } = rule.meta.docs;
 
-    describe.runIf(doesNotExtendBaseRule)(
-      'must include required headings',
-      () => {
-        test.for(requiredHeadings)('%s', (requiredHeading, { expect }) => {
-          const omissionComment = `{/* Intentionally Omitted: ${requiredHeading} */}`;
+    describe.skipIf(extendsBaseRule)('must include required headings', () => {
+      test.for(requiredHeadings)('%s', (requiredHeading, { expect }) => {
+        const omissionComment = `{/* Intentionally Omitted: ${requiredHeading} */}`;
 
-          expect(
-            !h2headingTexts.has(requiredHeading) &&
-              !fullText.includes(omissionComment),
-          ).toBe(false);
-        });
-      },
-    );
+        expect(
+          !h2headingTexts.has(requiredHeading) &&
+            !fullText.includes(omissionComment),
+        ).toBe(false);
+      });
+    });
 
     const { schema } = rule.meta;
 
@@ -307,7 +305,7 @@ describe('Validating rule docs', () => {
       if (
         !rulesWithComplexOptions.has(ruleName) &&
         Array.isArray(schema) &&
-        doesNotExtendBaseRule &&
+        !extendsBaseRule &&
         !rulesWithComplexOptionHeadings.has(ruleName)
       ) {
         const objectSchemaPropertyKeys = schema
@@ -324,41 +322,44 @@ describe('Validating rule docs', () => {
 
     const objectSchemaPropertyKeys = getObjectSchemaPropertyKeys();
 
-    describe.runIf(objectSchemaPropertyKeys.length > 0)('rule options', () => {
-      const headingsAfterOptions = headings.slice(
-        headings.findIndex(header => header.text === 'Options'),
-      );
-
-      it.for(objectSchemaPropertyKeys)('%s', (property, { expect }) => {
-        const correspondingHeadingIndex = headingsAfterOptions.findIndex(
-          heading => heading.text.includes(`\`${property}\``),
+    describe.skipIf(objectSchemaPropertyKeys.length === 0)(
+      'rule options',
+      () => {
+        const headingsAfterOptions = headings.slice(
+          headings.findIndex(header => header.text === 'Options'),
         );
 
-        expect(correspondingHeadingIndex).not.toBe(-1);
+        it.for(objectSchemaPropertyKeys)('%s', (property, { expect }) => {
+          const correspondingHeadingIndex = headingsAfterOptions.findIndex(
+            heading => heading.text.includes(`\`${property}\``),
+          );
 
-        const relevantChildren = tokens.slice(
-          tokens.indexOf(headingsAfterOptions[correspondingHeadingIndex]),
-          tokens.indexOf(headingsAfterOptions[correspondingHeadingIndex + 1]),
-        );
+          expect(correspondingHeadingIndex).not.toBe(-1);
 
-        const htmlTokens = relevantChildren.filter(token =>
-          tokenIs(token, 'html'),
-        );
+          const relevantChildren = tokens.slice(
+            tokens.indexOf(headingsAfterOptions[correspondingHeadingIndex]),
+            tokens.indexOf(headingsAfterOptions[correspondingHeadingIndex + 1]),
+          );
 
-        const rawTabs = [
-          `<TabItem value="✅ Correct">`,
-          `<TabItem value="❌ Incorrect">`,
-        ] as const;
+          const htmlTokens = relevantChildren.filter(token =>
+            tokenIs(token, 'html'),
+          );
 
-        expect(htmlTokens).toContainEqual(
-          expect.objectContaining({
-            raw: expect.toSatisfy((raw: string) =>
-              rawTabs.some(rawTab => raw.includes(rawTab)),
-            ),
-          }),
-        );
-      });
-    });
+          const rawTabs = [
+            `<TabItem value="✅ Correct">`,
+            `<TabItem value="❌ Incorrect">`,
+          ] as const;
+
+          expect(htmlTokens).toContainEqual(
+            expect.objectContaining({
+              raw: expect.toSatisfy((raw: string) =>
+                rawTabs.some(rawTab => raw.includes(rawTab)),
+              ),
+            }),
+          );
+        });
+      },
+    );
 
     const codeTokens = tokens.filter((token): token is Tokens.Code =>
       tokenIs(token, 'code'),
@@ -370,7 +371,7 @@ describe('Validating rule docs', () => {
       return lang && /^tsx?\b/i.test(lang);
     });
 
-    describe.runIf(codeTokensWithTSLanguage.length > 0)(
+    describe.skipIf(codeTokensWithTSLanguage.length === 0)(
       'must include only valid code samples',
       () => {
         test.for(codeTokensWithTSLanguage)('$text', (token, { expect }) => {
@@ -426,9 +427,9 @@ describe('Validating rule docs', () => {
         {
           parser: '@typescript-eslint/parser',
           parserOptions: {
+            ...DEFAULT_TESTER_CONFIG.languageOptions.parserOptions,
+
             disallowAutomaticSingleRunInference: true,
-            project: './tsconfig.json',
-            tsconfigRootDir: FIXTURES_DIR,
           },
           rules: Object.fromEntries(ruleEntries),
         },
@@ -545,7 +546,7 @@ ${token.value}`,
 
     const snapshotContents = getSnapshotContents();
 
-    test.runIf(snapshotContents.length > 0)(
+    test.skipIf(snapshotContents.length === 0)(
       'code examples ESLint output',
       async ({ expect }) => {
         await expect(snapshotContents.join('\n')).toMatchFileSnapshot(
@@ -562,7 +563,7 @@ describe('There should be no obsolete ESLint output snapshots', async () => {
   });
 
   const ruleSnapshotFileNames = new Set(
-    rulesData.map(([ruleName]) => `${ruleName}.shot`),
+    rulesEntriesList.map(([ruleName]) => `${ruleName}.shot`),
   );
 
   test.for(files)('%s', (file, { expect }) => {
@@ -579,7 +580,7 @@ describe('Validating rule metadata', () => {
     return /getParserServices(\(\s*[^,\s)]+)\s*(,\s*false\s*)?\)/.test(content);
   }
 
-  describe.for(rulesData)('%s', ([ruleName, rule]) => {
+  describe.for(rulesEntriesList)('%s', ([ruleName, rule]) => {
     it('`name` field in rule must match the filename', () => {
       // validate if rule name is same as url
       // there is no way to access this field but it's used only in generation of docs url
@@ -591,26 +592,20 @@ describe('Validating rule metadata', () => {
     const isTypeInfoDifficultToDetect =
       rulesThatRequireTypeInformationInAWayThatsHardToDetect.has(ruleName);
 
-    it.runIf(isTypeInfoDifficultToDetect)(
+    it.skipIf(!isTypeInfoDifficultToDetect)(
       '`requiresTypeChecking` should be set if the rule uses type information (in a way that is hard to detect)',
       () => {
-        expect(true).toBe(rule.meta.docs?.requiresTypeChecking ?? false);
+        expect(rule.meta.docs?.requiresTypeChecking).toBe(true);
       },
     );
 
-    it.runIf(!isTypeInfoDifficultToDetect)(
+    it.skipIf(isTypeInfoDifficultToDetect)(
       '`requiresTypeChecking` should be set if the rule uses type information',
       async () => {
         // quick-and-dirty check to see if it uses parserServices
         // not perfect but should be good enough
         const ruleFileContents = await fs.readFile(
-          path.join(
-            import.meta.dirname,
-            '..',
-            'src',
-            'rules',
-            `${ruleName}.ts`,
-          ),
+          path.join(ROOT_DIR, 'src', 'rules', `${ruleName}.ts`),
           { encoding: 'utf-8' },
         );
 

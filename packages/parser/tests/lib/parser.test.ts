@@ -30,22 +30,29 @@ describe('parser', () => {
 
   it('parseAndGenerateServices() should be called with options', () => {
     const code = 'const valid = true;';
-    const spy = vi.spyOn(typescriptESTree, 'parseAndGenerateServices');
-    const config: ParserOptions = {
+
+    const parseAndGenerateServicesSpy = vi.spyOn(
+      typescriptESTree,
+      'parseAndGenerateServices',
+    );
+
+    const config = {
       ecmaFeatures: {
         globalReturn: false,
         jsx: false,
       },
-      sourceType: 'module' as const,
+      sourceType: 'module',
       // ts-estree specific
       errorOnTypeScriptSyntacticAndSemanticIssues: false,
       extraFileExtensions: ['.foo'],
       filePath: './isolated-file.src.ts',
       project: 'tsconfig.json',
       tsconfigRootDir: FIXTURES_DIR,
-    };
+    } as const satisfies ParserOptions;
+
     parseForESLint(code, config);
-    expect(spy).toHaveBeenCalledExactlyOnceWith(code, {
+
+    expect(parseAndGenerateServicesSpy).toHaveBeenCalledExactlyOnceWith(code, {
       comment: true,
       jsx: false,
       loc: true,
@@ -53,13 +60,21 @@ describe('parser', () => {
       tokens: true,
       ...config,
     });
+
+    parseAndGenerateServicesSpy.mockRestore();
   });
 
   it('overrides `errorOnTypeScriptSyntacticAndSemanticIssues: false` when provided `errorOnTypeScriptSyntacticAndSemanticIssues: false`', () => {
     const code = 'const valid = true;';
-    const spy = vi.spyOn(typescriptESTree, 'parseAndGenerateServices');
+
+    const parseAndGenerateServicesSpy = vi.spyOn(
+      typescriptESTree,
+      'parseAndGenerateServices',
+    );
+
     parseForESLint(code, { errorOnTypeScriptSyntacticAndSemanticIssues: true });
-    expect(spy).toHaveBeenCalledExactlyOnceWith(code, {
+
+    expect(parseAndGenerateServicesSpy).toHaveBeenCalledExactlyOnceWith(code, {
       comment: true,
       ecmaFeatures: {},
       errorOnTypeScriptSyntacticAndSemanticIssues: false,
@@ -69,13 +84,21 @@ describe('parser', () => {
       sourceType: 'script',
       tokens: true,
     });
+
+    parseAndGenerateServicesSpy.mockRestore();
   });
 
   it('sets `loggerFn: false` on typescript-estree when provided `warnOnUnsupportedTypeScriptVersion: false`', () => {
     const code = 'const valid = true;';
-    const spy = vi.spyOn(typescriptESTree, 'parseAndGenerateServices');
+
+    const parseAndGenerateServicesSpy = vi.spyOn(
+      typescriptESTree,
+      'parseAndGenerateServices',
+    );
+
     parseForESLint(code, { warnOnUnsupportedTypeScriptVersion: false });
-    expect(spy).toHaveBeenCalledExactlyOnceWith(code, {
+
+    expect(parseAndGenerateServicesSpy).toHaveBeenCalledExactlyOnceWith(code, {
       comment: true,
       ecmaFeatures: {},
       errorOnTypeScriptSyntacticAndSemanticIssues: false,
@@ -87,13 +110,21 @@ describe('parser', () => {
       tokens: true,
       warnOnUnsupportedTypeScriptVersion: false,
     });
+
+    parseAndGenerateServicesSpy.mockRestore();
   });
 
   it('sets `loggerFn: false` on typescript-estree when provided `warnOnUnsupportedTypeScriptVersion: true`', () => {
     const code = 'const valid = true;';
-    const spy = vi.spyOn(typescriptESTree, 'parseAndGenerateServices');
+
+    const parseAndGenerateServicesSpy = vi.spyOn(
+      typescriptESTree,
+      'parseAndGenerateServices',
+    );
+
     parseForESLint(code, { warnOnUnsupportedTypeScriptVersion: true });
-    expect(spy).toHaveBeenCalledExactlyOnceWith(code, {
+
+    expect(parseAndGenerateServicesSpy).toHaveBeenCalledExactlyOnceWith(code, {
       comment: true,
       ecmaFeatures: {},
       errorOnTypeScriptSyntacticAndSemanticIssues: false,
@@ -104,11 +135,15 @@ describe('parser', () => {
       tokens: true,
       warnOnUnsupportedTypeScriptVersion: true,
     });
+
+    parseAndGenerateServicesSpy.mockRestore();
   });
 
   it('should call analyze() with inferred analyze options when no analyze options are provided', () => {
     const code = 'const valid = true;';
-    const spy = vi.spyOn(scopeManager, 'analyze');
+
+    const analyzeSpy = vi.spyOn(scopeManager, 'analyze');
+
     const config: ParserOptions = {
       errorOnTypeScriptSyntacticAndSemanticIssues: false,
       filePath: 'isolated-file.src.ts',
@@ -118,13 +153,15 @@ describe('parser', () => {
 
     parseForESLint(code, config);
 
-    expect(spy).toHaveBeenCalledExactlyOnceWith(expect.anything(), {
+    expect(analyzeSpy).toHaveBeenCalledExactlyOnceWith(expect.anything(), {
       globalReturn: undefined,
       jsxFragmentName: undefined,
       jsxPragma: undefined,
       lib: ['lib'],
       sourceType: 'script',
     });
+
+    analyzeSpy.mockRestore();
   });
 
   it.for([
@@ -143,45 +180,52 @@ describe('parser', () => {
     'calls analyze() with `lib: [%s]` when the compiler options target is %s',
     ([lib, target], { expect }) => {
       const code = 'const valid = true;';
-      const spy = vi.spyOn(scopeManager, 'analyze');
-      const config: ParserOptions = {
+
+      const analyzeSpy = vi.spyOn(scopeManager, 'analyze');
+
+      const config = {
         filePath: 'isolated-file.src.ts',
         project: 'tsconfig.json',
         tsconfigRootDir: FIXTURES_DIR,
-      };
+      } as const satisfies ParserOptions;
 
-      vi.spyOn(
-        typescriptESTree,
-        'parseAndGenerateServices',
-      ).mockReturnValueOnce({
-        ast: {},
-        services: {
-          program: {
-            getCompilerOptions: () => ({ target }),
+      const parseAndGenerateServicesSpy = vi
+        .spyOn(typescriptESTree, 'parseAndGenerateServices')
+        .mockReturnValueOnce({
+          ast: {},
+          services: {
+            program: {
+              getCompilerOptions: () => ({ target }),
+            },
           },
-        },
-      } as typescriptESTree.ParseAndGenerateServicesResult<typescriptESTree.TSESTreeOptions>);
+        } as typescriptESTree.ParseAndGenerateServicesResult<typescriptESTree.TSESTreeOptions>);
 
       parseForESLint(code, config);
 
-      expect(spy).toHaveBeenCalledExactlyOnceWith(
+      expect(analyzeSpy).toHaveBeenCalledExactlyOnceWith(
         expect.anything(),
         expect.objectContaining({
           lib: [lib],
         }),
       );
+
+      parseAndGenerateServicesSpy.mockRestore();
+
+      analyzeSpy.mockRestore();
     },
   );
 
   it('calls analyze() with the provided analyze options when analyze options are provided', () => {
     const code = 'const valid = true;';
-    const spy = vi.spyOn(scopeManager, 'analyze');
-    const config: ParserOptions = {
+
+    const analyzeSpy = vi.spyOn(scopeManager, 'analyze');
+
+    const config = {
       ecmaFeatures: {
         globalReturn: false,
         jsx: false,
       },
-      sourceType: 'module' as const,
+      sourceType: 'module',
       // scope-manager specific
       jsxFragmentName: 'Bar',
       jsxPragma: 'Foo',
@@ -192,16 +236,18 @@ describe('parser', () => {
       filePath: 'isolated-file.src.ts',
       project: 'tsconfig.json',
       tsconfigRootDir: FIXTURES_DIR,
-    };
+    } as const satisfies ParserOptions;
 
     parseForESLint(code, config);
 
-    expect(spy).toHaveBeenCalledExactlyOnceWith(expect.anything(), {
+    expect(analyzeSpy).toHaveBeenCalledExactlyOnceWith(expect.anything(), {
       globalReturn: false,
       jsxFragmentName: 'Bar',
       jsxPragma: 'Foo',
       lib: ['dom.iterable'],
       sourceType: 'module',
     });
+
+    analyzeSpy.mockRestore();
   });
 });

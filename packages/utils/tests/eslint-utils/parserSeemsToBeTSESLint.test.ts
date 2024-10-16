@@ -1,4 +1,4 @@
-import { parserSeemsToBeTSESLint } from '../../src/eslint-utils/parserSeemsToBeTSESLint';
+import { parserSeemsToBeTSESLint } from '../../src/eslint-utils/parserSeemsToBeTSESLint.js';
 
 describe(parserSeemsToBeTSESLint, () => {
   test.for([

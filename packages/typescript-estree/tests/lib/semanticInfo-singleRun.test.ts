@@ -1,12 +1,14 @@
-import * as glob from 'glob';
+import { glob } from 'glob';
 import * as path from 'node:path';
 
-import { createProgramFromConfigFile as createProgramFromConfigFileOriginal } from '../../src/create-program/useProvidedPrograms';
+import type { TSESTreeOptions } from '../../src/index.js';
+
+import { createProgramFromConfigFile as createProgramFromConfigFileOriginal } from '../../src/create-program/useProvidedPrograms.js';
 import {
-  clearParseAndGenerateServicesCalls,
   clearProgramCache,
   parseAndGenerateServices,
-} from '../../src/parser';
+} from '../../src/index.js';
+import { clearParseAndGenerateServicesCalls } from '../../src/parser.js';
 
 const mockProgram = {
   getCompilerOptions(): unknown {
@@ -89,24 +91,27 @@ const createProgramFromConfigFile = vi.mocked(
 );
 
 const FIXTURES_DIR = path.join(__dirname, '..', 'fixtures', 'semanticInfo');
-const testFiles = glob.sync(`**/*.src.ts`, {
-  cwd: FIXTURES_DIR,
-});
 
 const code = 'const foo = 5;';
 // File will not be found in the first Program, but will be in the second
 const tsconfigs = ['./non-matching-tsconfig.json', './tsconfig.json'];
-const options = {
-  allowAutomaticSingleRunInference: true,
-  filePath: testFiles[0],
-  loggerFn: false,
-  project: tsconfigs,
-  tsconfigRootDir: FIXTURES_DIR,
-} as const;
 
-const resolvedProject = (p: string): string => path.resolve(FIXTURES_DIR, p);
+const resolvedProject = (p: string): string => path.join(FIXTURES_DIR, p);
 
-describe('semanticInfo - singleRun', () => {
+describe('semanticInfo - singleRun', async () => {
+  const testFiles = await glob('**/*.src.ts', {
+    absolute: true,
+    cwd: FIXTURES_DIR,
+  });
+
+  const options = {
+    disallowAutomaticSingleRunInference: false,
+    filePath: testFiles[0],
+    loggerFn: false,
+    project: tsconfigs,
+    tsconfigRootDir: FIXTURES_DIR,
+  } as const satisfies TSESTreeOptions;
+
   beforeEach(() => {
     // ensure caches are clean for each test
     clearProgramCache();
@@ -138,7 +143,7 @@ describe('semanticInfo - singleRun', () => {
     expect(createProgramFromConfigFile).not.toHaveBeenCalled();
   });
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'should lazily create the required program out of the provided "parserOptions.project" one time when TSESTREE_SINGLE_RUN=true',
     () => {
       /**
@@ -148,6 +153,7 @@ describe('semanticInfo - singleRun', () => {
 
       const resultProgram = parseAndGenerateServices(code, options).services
         .program;
+
       expect(resultProgram).toStrictEqual(mockProgram);
 
       // Call parseAndGenerateServices() again to ensure caching of Programs is working correctly...
@@ -168,7 +174,7 @@ describe('semanticInfo - singleRun', () => {
     },
   );
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'should lazily create the required program out of the provided "parserOptions.project" one time when singleRun is inferred from CI=true',
     () => {
       /**
@@ -179,6 +185,7 @@ describe('semanticInfo - singleRun', () => {
 
       const resultProgram = parseAndGenerateServices(code, options).services
         .program;
+
       expect(resultProgram).toStrictEqual(mockProgram);
 
       // Call parseAndGenerateServices() again to ensure caching of Programs is working correctly...
@@ -199,7 +206,7 @@ describe('semanticInfo - singleRun', () => {
     },
   );
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'should lazily create the required program out of the provided "parserOptions.project" one time when singleRun is inferred from process.argv',
     () => {
       /**
@@ -212,6 +219,7 @@ describe('semanticInfo - singleRun', () => {
 
       const resultProgram = parseAndGenerateServices(code, options).services
         .program;
+
       expect(resultProgram).toStrictEqual(mockProgram);
 
       // Call parseAndGenerateServices() again to ensure caching of Programs is working correctly...
@@ -232,7 +240,7 @@ describe('semanticInfo - singleRun', () => {
     },
   );
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'should stop iterating through and lazily creating programs for the given "parserOptions.project" once a matching one has been found',
     () => {
       /**
@@ -250,6 +258,7 @@ describe('semanticInfo - singleRun', () => {
         code,
         optionsWithReversedTsconfigs,
       ).services.program;
+
       expect(resultProgram).toStrictEqual(mockProgram);
 
       // Call parseAndGenerateServices() again to ensure caching of Programs is working correctly...

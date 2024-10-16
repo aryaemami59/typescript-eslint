@@ -1,6 +1,6 @@
-import path from 'node:path';
+import * as path from 'node:path';
 
-import { inferSingleRun } from '../../src/parseSettings/inferSingleRun';
+import { inferSingleRun } from '../../src/parseSettings/inferSingleRun.js';
 
 describe(inferSingleRun, () => {
   beforeEach(() => {

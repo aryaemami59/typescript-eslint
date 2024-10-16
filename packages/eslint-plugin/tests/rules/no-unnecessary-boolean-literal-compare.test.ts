@@ -1,18 +1,12 @@
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
-import * as path from 'node:path';
 
-import rule from '../../src/rules/no-unnecessary-boolean-literal-compare';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/no-unnecessary-boolean-literal-compare.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  UNSTRICT_FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootDir = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootDir,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 ruleTester.run('no-unnecessary-boolean-literal-compare', rule, {
   valid: [
@@ -133,7 +127,7 @@ function test(a?: boolean): boolean {
       `,
       languageOptions: {
         parserOptions: {
-          tsconfigRootDir: path.join(rootDir, 'unstrict'),
+          tsconfigRootDir: UNSTRICT_FIXTURES_DIR,
         },
       },
       options: [
@@ -616,7 +610,7 @@ function foo(): boolean {}
       ],
       languageOptions: {
         parserOptions: {
-          tsconfigRootDir: path.join(rootDir, 'unstrict'),
+          tsconfigRootDir: UNSTRICT_FIXTURES_DIR,
         },
       },
       options: [

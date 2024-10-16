@@ -3,12 +3,6 @@ import type {
   ValidTestCase,
 } from '@typescript-eslint/rule-tester';
 
-import * as path from 'node:path';
-
-export function getFixturesRootDir(): string {
-  return path.join(__dirname, 'fixtures');
-}
-
 /**
  * Converts a batch of single line tests into a number of separate test cases.
  * This makes it easier to write tests which use the same options.

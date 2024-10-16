@@ -1,19 +1,20 @@
 import * as tseslint from '@typescript-eslint/typescript-estree';
 
-import type { AnalyzeOptions } from '../../src/analyze';
+import type { AnalyzeOptions } from '../../src/analyze.js';
 
-import { analyze } from '../../src/analyze';
+import { analyze } from '../../src/analyze.js';
 
 export type SourceType = AnalyzeOptions['sourceType'];
 
-const DEFAULT_PARSER_OPTIONS = {
+export const DEFAULT_PARSER_OPTIONS = {
   // the analyser requires ranges to work
   range: true,
-};
+} as const satisfies tseslint.TSESTreeOptions;
+
 const DEFAULT_ANALYZE_OPTIONS = {
   // include no libs so we don't pollute tests
   lib: [],
-};
+} as const satisfies AnalyzeOptions;
 
 export function parse(
   code: string,
@@ -64,4 +65,4 @@ export function parseAndAnalyze(
   return { ast, scopeManager };
 }
 
-export type { AnalyzeOptions } from '../../src/analyze';
+export type { AnalyzeOptions } from '../../src/analyze.js';

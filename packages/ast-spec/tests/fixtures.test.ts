@@ -217,7 +217,7 @@ describe('AST Fixtures', async () => {
           vitestSnapshotHeader,
         } = fixture;
 
-        it.runIf(isError)('TSESTree - Error', async () => {
+        it.skipIf(!isError)('TSESTree - Error', async () => {
           await expect(
             [
               `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
@@ -227,7 +227,7 @@ describe('AST Fixtures', async () => {
           ).toMatchFileSnapshot(snapshotFiles.error.tsestree(1));
         });
 
-        it.runIf(isError)('Babel - Error', async () => {
+        it.skipIf(!isError)('Babel - Error', async () => {
           await expect(
             [
               `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
@@ -237,7 +237,7 @@ describe('AST Fixtures', async () => {
           ).toMatchFileSnapshot(snapshotFiles.error.babel(2));
         });
 
-        it.runIf(isError)('Error Alignment', async () => {
+        it.skipIf(!isError)('Error Alignment', async () => {
           await expect(
             [
               `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
@@ -247,7 +247,7 @@ describe('AST Fixtures', async () => {
           ).toMatchFileSnapshot(snapshotFiles.error.alignment(3));
         });
 
-        it.runIf(isError)('Should parse with errors', () => {
+        it.skipIf(!isError)('Should parse with errors', () => {
           // if this fails and you WEREN'T expecting a parser error, then your fixture should not be in the `_error_` subfolder
           // if this fails and you WERE expecting a parser error - then something is broken.
           expect(errorLabel).not.toBe(ErrorLabel.None);

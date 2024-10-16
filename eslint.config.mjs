@@ -360,13 +360,18 @@ export default tseslint.config(
   // test file linting
   //
 
+  // define the vitest globals for all test files
+  // {
+  //   files: vitestFiles,
+  //   ...vitestPlugin.configs.env,
+  // },
   // test file specific configuration
   {
+    extends: [vitestPlugin.configs.recommended],
     files: [
       'packages/*/tests/**/*.?(m|c)ts?(x)',
       'packages/integration-tests/tools/**/*.ts',
     ],
-    ...vitestPlugin.configs.env,
     rules: {
       '@typescript-eslint/no-empty-function': [
         'error',
@@ -377,10 +382,10 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-call': 'off',
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-return': 'off',
+      'vitest/expect-expect': 'off',
       'vitest/no-alias-methods': 'error',
       'vitest/no-disabled-tests': 'error',
       'vitest/no-focused-tests': 'error',
-      'vitest/no-identical-title': 'error',
       'vitest/no-test-prefixes': 'error',
       'vitest/no-test-return-statement': 'error',
       'vitest/prefer-describe-function-title': 'error',
@@ -389,7 +394,6 @@ export default tseslint.config(
       'vitest/prefer-to-be': 'error',
       'vitest/prefer-to-contain': 'error',
       'vitest/prefer-to-have-length': 'error',
-      'vitest/valid-expect': 'error',
     },
     settings: { vitest: { typecheck: true } },
   },

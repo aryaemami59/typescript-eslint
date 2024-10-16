@@ -1,19 +1,13 @@
 import { RuleTester } from '@typescript-eslint/rule-tester';
 import * as path from 'node:path';
 
-import rule from '../../src/rules/no-floating-promises';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/no-floating-promises.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootDir = getFixturesRootDir();
-
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootDir,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 ruleTester.run('no-floating-promises', rule, {
   valid: [
@@ -712,7 +706,9 @@ myTag\`abc\`;
               path: process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE
                 ? 'file.ts'
                 : path.posix.join(
-                    ...path.relative(process.cwd(), rootDir).split(path.sep),
+                    ...path
+                      .relative(process.cwd(), FIXTURES_DIR)
+                      .split(path.sep),
                     'file.ts',
                   ),
             },

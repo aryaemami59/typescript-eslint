@@ -4,7 +4,7 @@ import type {
   SyntaxKind,
 } from 'typescript';
 
-import type { BinaryOperatorToText } from '../src';
+import type { BinaryOperatorToText } from '../src/index.js';
 
 type BinaryOperatorWithoutInvalidTypes = Exclude<
   BinaryOperator,

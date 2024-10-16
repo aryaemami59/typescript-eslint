@@ -4,26 +4,19 @@ import type {
 } from '@typescript-eslint/rule-tester';
 
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
-import * as path from 'node:path';
 
 import type {
   MessageIds,
   Options,
-} from '../../src/rules/prefer-nullish-coalescing';
+} from '../../src/rules/prefer-nullish-coalescing.js';
 
-import rule from '../../src/rules/prefer-nullish-coalescing';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/prefer-nullish-coalescing.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  UNSTRICT_FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootPath = getFixturesRootDir();
-
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootPath,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 const types = ['string', 'number', 'boolean', 'object'];
 const nullishTypes = ['null', 'undefined', 'null | undefined'];
@@ -2521,7 +2514,7 @@ if (x) {
       ],
       languageOptions: {
         parserOptions: {
-          tsconfigRootDir: path.join(rootPath, 'unstrict'),
+          tsconfigRootDir: UNSTRICT_FIXTURES_DIR,
         },
       },
       output: null,

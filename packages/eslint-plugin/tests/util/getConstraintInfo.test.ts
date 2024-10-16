@@ -1,20 +1,21 @@
 import type { ParserOptions } from '@typescript-eslint/parser';
-import type { TSESTree } from '@typescript-eslint/utils';
 
 import { parseForESLint } from '@typescript-eslint/parser';
+import { AST_NODE_TYPES } from '@typescript-eslint/utils';
 import * as path from 'node:path';
 import * as tsutils from 'ts-api-utils';
 
 import { getConstraintInfo } from '../../src/util/getConstraintInfo.js';
-import { getFixturesRootDir } from '../RuleTester.js';
-
-const FIXTURES_DIR = getFixturesRootDir();
+import {
+  DEFAULT_TESTER_CONFIG,
+  FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
 const DEFAULT_PARSER_OPTIONS = {
+  ...DEFAULT_TESTER_CONFIG.languageOptions.parserOptions,
+
   disallowAutomaticSingleRunInference: true,
   filePath: path.join(FIXTURES_DIR, 'file.ts'),
-  project: './tsconfig.json',
-  tsconfigRootDir: FIXTURES_DIR,
 } as const satisfies ParserOptions;
 
 describe(getConstraintInfo, () => {
@@ -32,8 +33,12 @@ function foo<T>(x: T);
 
     const checker = services.program.getTypeChecker();
 
-    const functionNode = ast.body[0] as TSESTree.FunctionDeclaration;
+    const functionNode = ast.body[0];
+
+    assert.isNodeOfType(functionNode, AST_NODE_TYPES.TSDeclareFunction);
+
     const parameterNode = functionNode.params[0];
+
     const parameterType = services.getTypeAtLocation(parameterNode);
 
     const { constraintType, isTypeParameter } = getConstraintInfo(
@@ -61,8 +66,12 @@ function foo<T extends unknown>(x: T);
 
     const checker = services.program.getTypeChecker();
 
-    const functionNode = ast.body[0] as TSESTree.FunctionDeclaration;
+    const functionNode = ast.body[0];
+
+    assert.isNodeOfType(functionNode, AST_NODE_TYPES.TSDeclareFunction);
+
     const parameterNode = functionNode.params[0];
+
     const parameterType = services.getTypeAtLocation(parameterNode);
 
     const { constraintType, isTypeParameter } = getConstraintInfo(
@@ -75,6 +84,7 @@ function foo<T extends unknown>(x: T);
     assert.isDefined(constraintType);
 
     expect(tsutils.isTypeParameter(constraintType)).toBe(false);
+
     expect(tsutils.isIntrinsicUnknownType(constraintType)).toBe(true);
   });
 
@@ -92,8 +102,12 @@ function foo<T extends any>(x: T);
 
     const checker = services.program.getTypeChecker();
 
-    const functionNode = ast.body[0] as TSESTree.FunctionDeclaration;
+    const functionNode = ast.body[0];
+
+    assert.isNodeOfType(functionNode, AST_NODE_TYPES.TSDeclareFunction);
+
     const parameterNode = functionNode.params[0];
+
     const parameterType = services.getTypeAtLocation(parameterNode);
 
     const { constraintType, isTypeParameter } = getConstraintInfo(
@@ -106,6 +120,7 @@ function foo<T extends any>(x: T);
     assert.isDefined(constraintType);
 
     expect(tsutils.isTypeParameter(constraintType)).toBe(false);
+
     expect(tsutils.isIntrinsicUnknownType(constraintType)).toBe(true);
   });
 
@@ -123,8 +138,12 @@ function foo<T extends string>(x: T);
 
     const checker = services.program.getTypeChecker();
 
-    const functionNode = ast.body[0] as TSESTree.FunctionDeclaration;
+    const functionNode = ast.body[0];
+
+    assert.isNodeOfType(functionNode, AST_NODE_TYPES.TSDeclareFunction);
+
     const parameterNode = functionNode.params[0];
+
     const parameterType = services.getTypeAtLocation(parameterNode);
 
     const { constraintType, isTypeParameter } = getConstraintInfo(
@@ -137,6 +156,7 @@ function foo<T extends string>(x: T);
     assert.isDefined(constraintType);
 
     expect(tsutils.isTypeParameter(constraintType)).toBe(false);
+
     expect(tsutils.isIntrinsicStringType(constraintType)).toBe(true);
   });
 
@@ -154,8 +174,12 @@ function foo(x: string);
 
     const checker = services.program.getTypeChecker();
 
-    const functionNode = ast.body[0] as TSESTree.FunctionDeclaration;
+    const functionNode = ast.body[0];
+
+    assert.isNodeOfType(functionNode, AST_NODE_TYPES.TSDeclareFunction);
+
     const parameterNode = functionNode.params[0];
+
     const parameterType = services.getTypeAtLocation(parameterNode);
 
     const { constraintType, isTypeParameter } = getConstraintInfo(
@@ -168,7 +192,9 @@ function foo(x: string);
     assert.isDefined(constraintType);
 
     expect(tsutils.isTypeParameter(constraintType)).toBe(false);
+
     expect(tsutils.isIntrinsicStringType(constraintType)).toBe(true);
+
     expect(constraintType).toBe(parameterType);
   });
 
@@ -189,10 +215,16 @@ function foo<T extends string>() {
 
     const checker = services.program.getTypeChecker();
 
-    const outerFunctionNode = ast.body[0] as TSESTree.FunctionDeclaration;
-    const innerFunctionNode = outerFunctionNode.body
-      .body[0] as TSESTree.FunctionDeclaration;
+    const outerFunctionNode = ast.body[0];
+
+    assert.isNodeOfType(outerFunctionNode, AST_NODE_TYPES.FunctionDeclaration);
+
+    const innerFunctionNode = outerFunctionNode.body.body[0];
+
+    assert.isNodeOfType(innerFunctionNode, AST_NODE_TYPES.FunctionDeclaration);
+
     const parameterNode = innerFunctionNode.params[0];
+
     const parameterType = services.getTypeAtLocation(parameterNode);
 
     const { constraintType, isTypeParameter } = getConstraintInfo(
@@ -203,7 +235,9 @@ function foo<T extends string>() {
     assert.isDefined(constraintType);
 
     expect(tsutils.isTypeParameter(constraintType)).toBe(false);
+
     expect(tsutils.isIntrinsicStringType(constraintType)).toBe(true);
+
     expect(isTypeParameter).toBe(true);
   });
 
@@ -224,10 +258,16 @@ function foo<T>() {
 
     const checker = services.program.getTypeChecker();
 
-    const outerFunctionNode = ast.body[0] as TSESTree.FunctionDeclaration;
-    const innerFunctionNode = outerFunctionNode.body
-      .body[0] as TSESTree.FunctionDeclaration;
+    const outerFunctionNode = ast.body[0];
+
+    assert.isNodeOfType(outerFunctionNode, AST_NODE_TYPES.FunctionDeclaration);
+
+    const innerFunctionNode = outerFunctionNode.body.body[0];
+
+    assert.isNodeOfType(innerFunctionNode, AST_NODE_TYPES.FunctionDeclaration);
+
     const parameterNode = innerFunctionNode.params[0];
+
     const parameterType = services.getTypeAtLocation(parameterNode);
 
     const { constraintType, isTypeParameter } = getConstraintInfo(

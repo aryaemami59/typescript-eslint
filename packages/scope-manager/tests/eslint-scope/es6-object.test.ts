@@ -17,13 +17,12 @@ describe('ES6 object', () => {
     let scope = scopeManager.scopes[0];
     let variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
 
     scope = scopeManager.scopes[1];
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.FunctionExpression);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.FunctionExpression);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(1);
     expect(variables[0].name).toBe('arguments');
@@ -49,13 +48,12 @@ describe('ES6 object', () => {
     let scope = scopeManager.scopes[0];
     let variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
 
     scope = scopeManager.scopes[1];
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.FunctionExpression);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.FunctionExpression);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(2);
     expect(variables[0].name).toBe('arguments');

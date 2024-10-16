@@ -22,11 +22,12 @@ describe('implicit global reference', () => {
     ).toStrictEqual([[[DefinitionType.Variable]]]);
 
     assert.isScopeOfType(scopes[0], ScopeType.global);
+
     expect(
       scopes[0]['implicit'].variables.map(
         (variable: Variable) => variable.name,
       ),
-    ).toStrictEqual([]);
+    ).toHaveLength(0);
   });
 
   it('assignments global scope without definition', () => {
@@ -121,11 +122,12 @@ describe('implicit global reference', () => {
     ).toStrictEqual([['outer'], ['arguments', 'inner', 'x'], ['arguments']]);
 
     assert.isScopeOfType(scopes[0], ScopeType.global);
+
     expect(
       scopes[0]['implicit'].variables.map(
         (variable: Variable) => variable.name,
       ),
-    ).toStrictEqual([]);
+    ).toHaveLength(0);
   });
 
   it('for-in-statement leaks', () => {
@@ -175,10 +177,11 @@ describe('implicit global reference', () => {
     ]);
 
     assert.isScopeOfType(scopes[0], ScopeType.global);
+
     expect(
       scopes[0]['implicit'].variables.map(
         (variable: Variable) => variable.name,
       ),
-    ).toStrictEqual([]);
+    ).toHaveLength(0);
   });
 });

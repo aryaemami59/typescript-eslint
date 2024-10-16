@@ -1,6 +1,6 @@
 import type * as ts from 'typescript';
 
-import { getValueOfLiteralType } from '../../src/util/getValueOfLiteralType';
+import { getValueOfLiteralType } from '../../src/util/getValueOfLiteralType.js';
 
 describe(getValueOfLiteralType, () => {
   it('returns a string for a string literal type', () => {

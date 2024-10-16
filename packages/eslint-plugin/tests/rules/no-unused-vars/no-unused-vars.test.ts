@@ -1,8 +1,10 @@
+import type { ParserOptions } from '@typescript-eslint/parser';
+
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../../src/rules/no-unused-vars';
-import { collectVariables } from '../../../src/util';
-import { getFixturesRootDir } from '../../RuleTester';
+import rule from '../../../src/rules/no-unused-vars.js';
+import { collectVariables } from '../../../src/util/index.js';
+import { FIXTURES_DIR } from '../../test-utils/test-utils.js';
 
 const ruleTester = new RuleTester({
   languageOptions: {
@@ -17,8 +19,8 @@ const ruleTester = new RuleTester({
 const withMetaParserOptions = {
   project: './tsconfig-withmeta.json',
   projectService: false,
-  tsconfigRootDir: getFixturesRootDir(),
-};
+  tsconfigRootDir: FIXTURES_DIR,
+} as const satisfies ParserOptions;
 
 // this is used to ensure that the caching the utility does does not impact the results done by no-unused-vars
 ruleTester.defineRule('collect-unused-vars', {

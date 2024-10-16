@@ -1,18 +1,9 @@
 import { RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/no-unsafe-type-assertion';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/no-unsafe-type-assertion.js';
+import { DEFAULT_TESTER_CONFIG } from '../test-utils/test-utils.js';
 
-const rootPath = getFixturesRootDir();
-
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootPath,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 describe('basic assertions', () => {
   ruleTester.run('no-unsafe-type-assertion', rule, {

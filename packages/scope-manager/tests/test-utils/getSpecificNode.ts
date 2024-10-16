@@ -35,7 +35,7 @@ export function getSpecificNode(
           const res = cb ? cb(n) : n;
           if (res) {
             // the callback shouldn't match multiple nodes or else tests may behave weirdly
-            assert.notExists(node);
+            assert.isUndefined(node);
             node = typeof res === 'boolean' ? n : res;
           }
         },

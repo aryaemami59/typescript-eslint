@@ -1,6 +1,11 @@
+import * as fs from 'node:fs/promises';
 import * as ts from 'typescript';
 
-import type { ParserServices } from '../../../src/index.js';
+import type {
+  AST_NODE_TYPES,
+  ParserServices,
+  TSESTree,
+} from '../../../src/index.js';
 
 chai.use((chai, utils) => {
   function parserServices(this: Chai.AssertionStatic, errorMessage?: string) {
@@ -155,4 +160,74 @@ chai.use((chai, utils) => {
       true,
     ).not.to.be.TSNodeOfNumberArrayType();
   };
+
+  function nodeOfType(
+    this: Chai.AssertionStatic,
+    expectedNodeType: AST_NODE_TYPES,
+    errorMessage?: string,
+  ) {
+    if (errorMessage) {
+      utils.flag(this, 'message', errorMessage);
+    }
+
+    const node: TSESTree.Node | null | undefined = utils.flag(this, 'object');
+
+    const negate: boolean = utils.flag(this, 'negate') ?? false;
+
+    const ssfi: (...args: unknown[]) => unknown = utils.flag(this, 'ssfi');
+
+    const assertion = new chai.Assertion(node, errorMessage, ssfi, true);
+
+    if (negate) {
+      (utils.hasProperty(node, 'type') ? assertion : assertion.not).to.have
+        .property('type')
+        .that.does.not.equal(expectedNodeType);
+    } else {
+      assertion.to.have.property('type').that.equals(expectedNodeType);
+    }
+  }
+
+  chai.Assertion.addMethod(nodeOfType.name, nodeOfType);
+
+  chai.assert.isNodeOfType = (node, expectedNodeType, errorMessage) => {
+    new chai.Assertion(
+      node,
+      errorMessage,
+      chai.assert.isNodeOfType,
+      true,
+    ).to.be.nodeOfType(expectedNodeType);
+  };
+
+  chai.assert.isNotNodeOfType = (node, expectedNodeType, errorMessage) => {
+    new chai.Assertion(
+      node,
+      errorMessage,
+      chai.assert.isNotNodeOfType,
+      true,
+    ).not.to.be.nodeOfType(expectedNodeType);
+  };
+});
+
+expect.extend({
+  async toBeValidFile(received: string) {
+    const { isNot } = this;
+
+    try {
+      const stats = await fs.lstat(received);
+
+      const pass = stats.isFile();
+
+      return {
+        message: () =>
+          `expected ${received} to${isNot ? ' not' : ''} be a file`,
+        pass,
+      };
+    } catch {
+      return {
+        message: () =>
+          `expected ${received} to${isNot ? ' not' : ''} be a file`,
+        pass: false,
+      };
+    }
+  },
 });

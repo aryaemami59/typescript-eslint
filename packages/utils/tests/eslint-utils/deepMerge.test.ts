@@ -1,4 +1,4 @@
-import { ESLintUtils } from '../../src';
+import { ESLintUtils } from '../../src/index.js';
 
 describe(ESLintUtils.deepMerge, () => {
   it('creates a brand new object', () => {

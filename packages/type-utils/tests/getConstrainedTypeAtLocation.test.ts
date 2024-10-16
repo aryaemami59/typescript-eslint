@@ -1,5 +1,4 @@
-import type { TSESTree } from '@typescript-eslint/types';
-
+import { AST_NODE_TYPES } from '@typescript-eslint/types';
 import * as tsutils from 'ts-api-utils';
 
 import {
@@ -18,15 +17,20 @@ function foo<T>(x: T);
 
     const { ast, services } = parseCodeForEslint(sourceCode);
 
-    const functionNode = ast.body[0] as TSESTree.FunctionDeclaration;
+    const functionNode = ast.body[0];
+
+    assert.isNodeOfType(functionNode, AST_NODE_TYPES.FunctionDeclaration);
+
     const parameterNode = functionNode.params[0];
 
     const constraintAtLocation = getConstrainedTypeAtLocation(
       services,
+
       parameterNode,
     );
 
     expect(tsutils.isTypeParameter(constraintAtLocation)).toBe(false);
+
     // Requires https://github.com/microsoft/TypeScript/issues/60475 to solve.
     expect(isTypeUnknownType(constraintAtLocation)).toBe(true);
   });
@@ -38,7 +42,10 @@ function foo<T extends unknown>(x: T);
 
     const { ast, services } = parseCodeForEslint(sourceCode);
 
-    const functionNode = ast.body[0] as TSESTree.FunctionDeclaration;
+    const functionNode = ast.body[0];
+
+    assert.isNodeOfType(functionNode, AST_NODE_TYPES.TSDeclareFunction);
+
     const parameterNode = functionNode.params[0];
 
     const constraintAtLocation = getConstrainedTypeAtLocation(
@@ -47,6 +54,7 @@ function foo<T extends unknown>(x: T);
     );
 
     expect(tsutils.isTypeParameter(constraintAtLocation)).toBe(false);
+
     expect(tsutils.isIntrinsicUnknownType(constraintAtLocation)).toBe(true);
   });
 
@@ -57,7 +65,10 @@ function foo<T extends any>(x: T);
 
     const { ast, services } = parseCodeForEslint(sourceCode);
 
-    const functionNode = ast.body[0] as TSESTree.FunctionDeclaration;
+    const functionNode = ast.body[0];
+
+    assert.isNodeOfType(functionNode, AST_NODE_TYPES.TSDeclareFunction);
+
     const parameterNode = functionNode.params[0];
 
     const constraintAtLocation = getConstrainedTypeAtLocation(
@@ -66,6 +77,7 @@ function foo<T extends any>(x: T);
     );
 
     expect(tsutils.isTypeParameter(constraintAtLocation)).toBe(false);
+
     expect(tsutils.isIntrinsicUnknownType(constraintAtLocation)).toBe(true);
   });
 
@@ -76,7 +88,10 @@ function foo<T extends string>(x: T);
 
     const { ast, services } = parseCodeForEslint(sourceCode);
 
-    const functionNode = ast.body[0] as TSESTree.FunctionDeclaration;
+    const functionNode = ast.body[0];
+
+    assert.isNodeOfType(functionNode, AST_NODE_TYPES.TSDeclareFunction);
+
     const parameterNode = functionNode.params[0];
 
     const constraintAtLocation = getConstrainedTypeAtLocation(
@@ -85,6 +100,7 @@ function foo<T extends string>(x: T);
     );
 
     expect(tsutils.isTypeParameter(constraintAtLocation)).toBe(false);
+
     expect(tsutils.isIntrinsicStringType(constraintAtLocation)).toBe(true);
   });
 
@@ -95,7 +111,10 @@ function foo(x: string);
 
     const { ast, services } = parseCodeForEslint(sourceCode);
 
-    const functionNode = ast.body[0] as TSESTree.FunctionDeclaration;
+    const functionNode = ast.body[0];
+
+    assert.isNodeOfType(functionNode, AST_NODE_TYPES.TSDeclareFunction);
+
     const parameterNode = functionNode.params[0];
 
     const constraintAtLocation = getConstrainedTypeAtLocation(
@@ -104,6 +123,7 @@ function foo(x: string);
     );
 
     expect(tsutils.isTypeParameter(constraintAtLocation)).toBe(false);
+
     expect(tsutils.isIntrinsicStringType(constraintAtLocation)).toBe(true);
   });
 
@@ -117,9 +137,14 @@ function foo<T extends string>() {
 
     const { ast, services } = parseCodeForEslint(sourceCode);
 
-    const outerFunctionNode = ast.body[0] as TSESTree.FunctionDeclaration;
-    const innerFunctionNode = outerFunctionNode.body
-      .body[0] as TSESTree.FunctionDeclaration;
+    const outerFunctionNode = ast.body[0];
+
+    assert.isNodeOfType(outerFunctionNode, AST_NODE_TYPES.FunctionDeclaration);
+
+    const innerFunctionNode = outerFunctionNode.body.body[0];
+
+    assert.isNodeOfType(innerFunctionNode, AST_NODE_TYPES.FunctionDeclaration);
+
     const parameterNode = innerFunctionNode.params[0];
 
     const constraintAtLocation = getConstrainedTypeAtLocation(
@@ -128,6 +153,7 @@ function foo<T extends string>() {
     );
 
     expect(tsutils.isTypeParameter(constraintAtLocation)).toBe(false);
+
     expect(tsutils.isIntrinsicStringType(constraintAtLocation)).toBe(true);
   });
 });

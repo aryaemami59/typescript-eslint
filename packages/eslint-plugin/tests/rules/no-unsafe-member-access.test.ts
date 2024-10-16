@@ -1,14 +1,14 @@
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/no-unsafe-member-access';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/no-unsafe-member-access.js';
+import { FIXTURES_DIR } from '../test-utils/test-utils.js';
 
 const ruleTester = new RuleTester({
   languageOptions: {
     parserOptions: {
       project: './tsconfig.noImplicitThis.json',
       projectService: false,
-      tsconfigRootDir: getFixturesRootDir(),
+      tsconfigRootDir: FIXTURES_DIR,
     },
   },
 });

@@ -5,11 +5,15 @@ import type { MockInstance } from 'vitest';
 import * as parser from '@typescript-eslint/parser';
 import { AST_NODE_TYPES } from '@typescript-eslint/typescript-estree';
 
-import type { InvalidTestCase, RuleTesterConfig, ValidTestCase } from '../src';
-import type { RuleTesterTestFrameworkFunctionBase } from '../src/TestFramework';
+import type {
+  InvalidTestCase,
+  RuleTesterConfig,
+  ValidTestCase,
+} from '../src/index.js';
+import type { RuleTesterTestFrameworkFunctionBase } from '../src/TestFramework.js';
 
-import { RuleTester } from '../src/RuleTester';
-import * as dependencyConstraintsModule from '../src/utils/dependencyConstraints';
+import { RuleTester } from '../src/index.js';
+import * as dependencyConstraintsModule from '../src/utils/dependencyConstraints.js';
 
 // we can't spy on the exports of an ES module - so we instead have to mock the entire module
 vi.mock(
@@ -45,7 +49,7 @@ vi.mock(import('@typescript-eslint/parser'), async importOriginal => {
   return {
     ...actualParser,
     __esModule: true,
-    clearCaches: vi.fn(),
+    clearCaches: vi.fn(actualParser.clearCaches),
     default: actualParser.default,
     length: 1,
   };
@@ -54,13 +58,21 @@ vi.mock(import('@typescript-eslint/parser'), async importOriginal => {
 /* eslint-disable vitest/prefer-spy-on --
      we need to specifically assign to the properties or else it will use the
      global value and register actual tests! */
-const IMMEDIATE_CALLBACK: RuleTesterTestFrameworkFunctionBase = (_, cb) => cb();
-RuleTester.afterAll = vi.fn(/* intentionally don't immediate callback here */);
-RuleTester.describe = vi.fn(IMMEDIATE_CALLBACK);
-RuleTester.describeSkip = vi.fn(IMMEDIATE_CALLBACK);
-RuleTester.it = vi.fn(IMMEDIATE_CALLBACK);
-RuleTester.itOnly = vi.fn(IMMEDIATE_CALLBACK);
-RuleTester.itSkip = vi.fn(IMMEDIATE_CALLBACK);
+const IMMEDIATE_CALLBACK: RuleTesterTestFrameworkFunctionBase = (_, cb) => {
+  cb();
+};
+RuleTester.afterAll = vi
+  .fn(/* intentionally don't immediate callback here */)
+  .mockName(RuleTester.afterAll.name);
+RuleTester.describe = vi
+  .fn(IMMEDIATE_CALLBACK)
+  .mockName(RuleTester.describe.name);
+RuleTester.describeSkip = vi
+  .fn(IMMEDIATE_CALLBACK)
+  .mockName(RuleTester.describeSkip.name);
+RuleTester.it = vi.fn(IMMEDIATE_CALLBACK).mockName(RuleTester.it.name);
+RuleTester.itOnly = vi.fn(IMMEDIATE_CALLBACK).mockName(RuleTester.itOnly.name);
+RuleTester.itSkip = vi.fn(IMMEDIATE_CALLBACK).mockName(RuleTester.itSkip.name);
 /* eslint-enable vitest/prefer-spy-on */
 
 const mockedAfterAll = vi.mocked(RuleTester.afterAll);
@@ -114,9 +126,15 @@ describe(RuleTester, () => {
     // @ts-expect-error -- method is private
     'runRuleForItem',
   );
+
   beforeEach(() => {
     vi.clearAllMocks();
   });
+
+  afterAll(() => {
+    vi.restoreAllMocks();
+  });
+
   runRuleForItemSpy.mockImplementation((_1, _2, testCase) => {
     return {
       afterAST: EMPTY_PROGRAM,
@@ -380,7 +398,7 @@ describe(RuleTester, () => {
       },
     });
 
-    expect(() =>
+    expect(() => {
       ruleTester.run('my-rule', NOOP_RULE, {
         invalid: [],
 
@@ -390,8 +408,8 @@ describe(RuleTester, () => {
             languageOptions: { parser },
           },
         ],
-      }),
-    ).toThrowErrorMatchingInlineSnapshot(
+      });
+    }).toThrowErrorMatchingInlineSnapshot(
       `[Error: Do not set the parser at the test level unless you want to use a parser other than "@typescript-eslint/parser"]`,
     );
   });
@@ -940,13 +958,14 @@ describe(RuleTester, () => {
 
     describe('constructor constraints', () => {
       it('skips all tests if a constructor constraint is not satisifed', () => {
-        satisfiesAllDependencyConstraintsMock.mockReturnValueOnce(false);
         const ruleTester = new RuleTester({
           dependencyConstraints: {
             'totally-real-dependency': '999',
           },
           languageOptions: { parser },
         });
+
+        satisfiesAllDependencyConstraintsMock.mockReturnValueOnce(false);
 
         ruleTester.run('my-rule', NOOP_RULE, {
           invalid: [
@@ -973,13 +992,14 @@ describe(RuleTester, () => {
       });
 
       it('does not skip all tests if a constructor constraint is satisifed', () => {
-        satisfiesAllDependencyConstraintsMock.mockReturnValueOnce(true);
         const ruleTester = new RuleTester({
           dependencyConstraints: {
             'totally-real-dependency': '10',
           },
           languageOptions: { parser },
         });
+
+        satisfiesAllDependencyConstraintsMock.mockReturnValueOnce(true);
 
         ruleTester.run('my-rule', NOOP_RULE, {
           invalid: [
@@ -996,9 +1016,9 @@ describe(RuleTester, () => {
         });
 
         // trigger the describe block
-        expect(mockedDescribe.mock.calls).toHaveLength(3);
-        expect(mockedDescribeSkip.mock.calls).toHaveLength(0);
-        // expect(mockedIt.mock.lastCall).toMatchInlineSnapshot(`undefined`);
+        expect(mockedDescribe).toHaveBeenCalledTimes(3);
+
+        expect(mockedDescribeSkip).not.toHaveBeenCalled();
       });
 
       it('does not call describe with valid if no valid tests are provided', () => {
@@ -1062,6 +1082,10 @@ describe('RuleTester - hooks', () => {
     vi.restoreAllMocks();
   });
 
+  afterAll(() => {
+    vi.restoreAllMocks();
+  });
+
   const noFooRule: RuleModule<'error'> = {
     create(context) {
       return {
@@ -1085,7 +1109,9 @@ describe('RuleTester - hooks', () => {
 
   const ruleTester = new RuleTester();
 
-  it.for(['before', 'after'] as const)(
+  const beforeAndAfter = ['before', 'after'] as const;
+
+  it.for(beforeAndAfter)(
     '%s should be called when assigned',
     (hookName, { expect }) => {
       const hookForValid = vi.fn();
@@ -1110,13 +1136,14 @@ describe('RuleTester - hooks', () => {
     },
   );
 
-  it.for(['before', 'after'] as const)(
+  it.for(beforeAndAfter)(
     '%s should cause test to fail when it throws error',
     (hookName, { expect }) => {
       const hook = vi.fn(() => {
         throw new Error('Something happened');
       });
-      expect(() =>
+
+      expect(() => {
         ruleTester.run('no-foo', noFooRule, {
           invalid: [
             {
@@ -1126,9 +1153,10 @@ describe('RuleTester - hooks', () => {
             },
           ],
           valid: [],
-        }),
-      ).toThrow('Something happened');
-      expect(() =>
+        });
+      }).toThrow('Something happened');
+
+      expect(() => {
         ruleTester.run('no-foo', noFooRule, {
           invalid: [],
           valid: [
@@ -1137,15 +1165,15 @@ describe('RuleTester - hooks', () => {
               [hookName]: hook,
             },
           ],
-        }),
-      ).toThrow('Something happened');
+        });
+      }).toThrow('Something happened');
     },
   );
 
-  it.for(['before', 'after'] as const)(
+  it.for(beforeAndAfter)(
     '%s should throw when not a function is assigned',
     (hookName, { expect }) => {
-      expect(() =>
+      expect(() => {
         ruleTester.run('no-foo', noFooRule, {
           invalid: [],
           valid: [
@@ -1154,9 +1182,12 @@ describe('RuleTester - hooks', () => {
               [hookName]: 42,
             },
           ],
-        }),
-      ).toThrow(`Optional test case property '${hookName}' must be a function`);
-      expect(() =>
+        });
+      }).toThrow(
+        `Optional test case property '${hookName}' must be a function`,
+      );
+
+      expect(() => {
         ruleTester.run('no-foo', noFooRule, {
           invalid: [
             {
@@ -1166,15 +1197,18 @@ describe('RuleTester - hooks', () => {
             },
           ],
           valid: [],
-        }),
-      ).toThrow(`Optional test case property '${hookName}' must be a function`);
+        });
+      }).toThrow(
+        `Optional test case property '${hookName}' must be a function`,
+      );
     },
   );
 
   it('should call both before() and after() hooks even when the case failed', () => {
     const hookBefore = vi.fn();
     const hookAfter = vi.fn();
-    expect(() =>
+
+    expect(() => {
       ruleTester.run('no-foo', noFooRule, {
         invalid: [],
         valid: [
@@ -1184,11 +1218,13 @@ describe('RuleTester - hooks', () => {
             code: 'foo',
           },
         ],
-      }),
-    ).toThrow();
+      });
+    }).toThrow();
+
     expect(hookBefore).toHaveBeenCalledOnce();
     expect(hookAfter).toHaveBeenCalledOnce();
-    expect(() =>
+
+    expect(() => {
       ruleTester.run('no-foo', noFooRule, {
         invalid: [
           {
@@ -1199,8 +1235,9 @@ describe('RuleTester - hooks', () => {
           },
         ],
         valid: [],
-      }),
-    ).toThrow();
+      });
+    }).toThrow();
+
     expect(hookBefore).toHaveBeenCalledTimes(2);
     expect(hookAfter).toHaveBeenCalledTimes(2);
   });
@@ -1209,7 +1246,7 @@ describe('RuleTester - hooks', () => {
     const hookBefore = vi.fn();
     const hookAfter = vi.fn();
 
-    expect(() =>
+    expect(() => {
       ruleTester.run('no-foo', noFooRule, {
         invalid: [],
         valid: [
@@ -1219,11 +1256,13 @@ describe('RuleTester - hooks', () => {
             code: 'invalid javascript code',
           },
         ],
-      }),
-    ).toThrow(/parsing error/);
+      });
+    }).toThrow(/parsing error/);
+
     expect(hookBefore).toHaveBeenCalledOnce();
     expect(hookAfter).toHaveBeenCalledOnce();
-    expect(() =>
+
+    expect(() => {
       ruleTester.run('no-foo', noFooRule, {
         invalid: [
           {
@@ -1234,8 +1273,9 @@ describe('RuleTester - hooks', () => {
           },
         ],
         valid: [],
-      }),
-    ).toThrow(/parsing error/);
+      });
+    }).toThrow(/parsing error/);
+
     expect(hookBefore).toHaveBeenCalledTimes(2);
     expect(hookAfter).toHaveBeenCalledTimes(2);
   });
@@ -1246,7 +1286,7 @@ describe('RuleTester - hooks', () => {
     });
     const hookAfter = vi.fn();
 
-    expect(() =>
+    expect(() => {
       ruleTester.run('no-foo', noFooRule, {
         invalid: [],
         valid: [
@@ -1256,11 +1296,13 @@ describe('RuleTester - hooks', () => {
             code: 'bar',
           },
         ],
-      }),
-    ).toThrow('Something happened in before()');
+      });
+    }).toThrow('Something happened in before()');
+
     expect(hookBefore).toHaveBeenCalledOnce();
     expect(hookAfter).toHaveBeenCalledOnce();
-    expect(() =>
+
+    expect(() => {
       ruleTester.run('no-foo', noFooRule, {
         invalid: [
           {
@@ -1271,8 +1313,9 @@ describe('RuleTester - hooks', () => {
           },
         ],
         valid: [],
-      }),
-    ).toThrow('Something happened in before()');
+      });
+    }).toThrow('Something happened in before()');
+
     expect(hookBefore).toHaveBeenCalledTimes(2);
     expect(hookAfter).toHaveBeenCalledTimes(2);
   });
@@ -1280,6 +1323,10 @@ describe('RuleTester - hooks', () => {
 
 describe('RuleTester - multipass fixer', () => {
   beforeAll(() => {
+    vi.restoreAllMocks();
+  });
+
+  afterAll(() => {
     vi.restoreAllMocks();
   });
 
@@ -1582,6 +1629,10 @@ describe('RuleTester - run types', () => {
     vi.restoreAllMocks();
   });
 
+  afterAll(() => {
+    vi.restoreAllMocks();
+  });
+
   const ruleTester = new RuleTester();
   const ruleModule: RuleModule<
     'customErrorBar' | 'customErrorFoo',
@@ -1621,14 +1672,14 @@ describe('RuleTester - run types', () => {
 
   describe('infer from `rule` parameter', () => {
     it('should correctly infer `options` or `messageIds` types from the `rule` paramter', () => {
-      expect(() =>
+      expect(() => {
         ruleTester.run('my-rule', ruleModule, {
           invalid: [],
           valid: [{ code: 'test', options: [{ flag: 'bar' }] }],
-        }),
-      ).not.toThrow();
+        });
+      }).not.toThrow();
 
-      expect(() =>
+      expect(() => {
         ruleTester.run('my-rule', ruleModule, {
           invalid: [
             {
@@ -1643,12 +1694,12 @@ describe('RuleTester - run types', () => {
             },
           ],
           valid: [],
-        }),
-      ).not.toThrow();
+        });
+      }).not.toThrow();
     });
 
     it('should throw both runtime and type error when `options` or `messageId` are not assignable to rule inferred types', () => {
-      expect(() =>
+      expect(() => {
         ruleTester.run('my-rule', ruleModule, {
           invalid: [
             {
@@ -1668,8 +1719,8 @@ describe('RuleTester - run types', () => {
             // @ts-expect-error - `bar2` is not assignable to `foo` | `bar`
             { code: 'test', options: [{ flag: 'bar2' }] },
           ],
-        }),
-      ).toThrow();
+        });
+      }).toThrow();
     });
   });
 
@@ -1702,7 +1753,7 @@ describe('RuleTester - run types', () => {
       };
     }
 
-    expect(() =>
+    expect(() => {
       ruleTester.run('my-rule', ruleModule, {
         invalid: [
           generateInvalidTestCase(),
@@ -1718,7 +1769,7 @@ describe('RuleTester - run types', () => {
           // is not assignable to the one of the rule
           generateIncompatibleValidTestCase(),
         ],
-      }),
-    ).not.toThrow();
+      });
+    }).not.toThrow();
   });
 });

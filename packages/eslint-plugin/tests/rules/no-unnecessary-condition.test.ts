@@ -1,36 +1,30 @@
 import type { InvalidTestCase } from '@typescript-eslint/rule-tester';
 
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
-import * as path from 'node:path';
 
 import type {
   MessageId,
   Options,
-} from '../../src/rules/no-unnecessary-condition';
+} from '../../src/rules/no-unnecessary-condition.js';
 
-import rule from '../../src/rules/no-unnecessary-condition';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/no-unnecessary-condition.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  FIXTURES_DIR,
+  UNSTRICT_FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootPath = getFixturesRootDir();
-
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootPath,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 const optionsWithExactOptionalPropertyTypes = {
   project: './tsconfig.exactOptionalPropertyTypes.json',
-  tsconfigRootDir: rootPath,
+  tsconfigRootDir: FIXTURES_DIR,
 };
 
 const optionsWithNoUncheckedIndexedAccess = {
   project: './tsconfig.noUncheckedIndexedAccess.json',
   projectService: false,
-  tsconfigRootDir: getFixturesRootDir(),
+  tsconfigRootDir: FIXTURES_DIR,
 };
 
 const necessaryConditionTest = (condition: string): string => `
@@ -410,7 +404,7 @@ arr[41]?.();
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
           projectService: false,
-          tsconfigRootDir: getFixturesRootDir(),
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -445,7 +439,7 @@ foo[index]?.toString();
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
           projectService: false,
-          tsconfigRootDir: getFixturesRootDir(),
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -731,7 +725,7 @@ foo?.[key].trim();
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
           projectService: false,
-          tsconfigRootDir: getFixturesRootDir(),
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -751,7 +745,7 @@ function Foo(outer: Outer, key: BrandedKey): number | undefined {
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
           projectService: false,
-          tsconfigRootDir: getFixturesRootDir(),
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -883,7 +877,7 @@ if (x) {
       `,
       languageOptions: {
         parserOptions: {
-          tsconfigRootDir: path.join(rootPath, 'unstrict'),
+          tsconfigRootDir: UNSTRICT_FIXTURES_DIR,
         },
       },
       options: [
@@ -995,7 +989,7 @@ function getElem(dict: Record<string, { foo: string }>, key: string) {
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
           projectService: false,
-          tsconfigRootDir: getFixturesRootDir(),
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -3059,7 +3053,7 @@ if (x) {
       ],
       languageOptions: {
         parserOptions: {
-          tsconfigRootDir: path.join(rootPath, 'unstrict'),
+          tsconfigRootDir: UNSTRICT_FIXTURES_DIR,
         },
       },
     },
@@ -3753,7 +3747,7 @@ if (test[0]?.a) {
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
           projectService: false,
-          tsconfigRootDir: getFixturesRootDir(),
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -3800,7 +3794,7 @@ arr2[42]?.x?.y.z;
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
           projectService: false,
-          tsconfigRootDir: getFixturesRootDir(),
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -3825,7 +3819,7 @@ if (arr[0]) {
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
           projectService: false,
-          tsconfigRootDir: getFixturesRootDir(),
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -3849,7 +3843,7 @@ if (arr[42] && arr[42]) {
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
           projectService: false,
-          tsconfigRootDir: getFixturesRootDir(),
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },

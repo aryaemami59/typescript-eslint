@@ -1,8 +1,8 @@
-import { isDefinitionFile, upperCaseFirst } from '../src/util';
+import { isDefinitionFile, upperCaseFirst } from '../src/util/index.js';
 
 describe(isDefinitionFile, () => {
   describe('returns false for non-definition files', () => {
-    const invalid = [
+    const INVALID_FILE_NAMES = [
       'test.js',
       'test.jsx',
       'README.md',
@@ -20,16 +20,16 @@ describe(isDefinitionFile, () => {
       'test.D.TSX',
     ] as const;
 
-    it.for(invalid)('%s', (f, { expect }) => {
-      expect(isDefinitionFile(f)).toBe(false);
+    it.for(INVALID_FILE_NAMES)('%s', (fileName, { expect }) => {
+      expect(isDefinitionFile(fileName)).toBe(false);
     });
   });
 
   describe('returns true for definition files', () => {
-    const valid = ['test.d.ts', 'test.D.TS'] as const;
+    const VALID_FILE_NAMES = ['test.d.ts', 'test.D.TS'] as const;
 
-    it.for(valid)('%s', (f, { expect }) => {
-      expect(isDefinitionFile(f)).toBe(true);
+    it.for(VALID_FILE_NAMES)('%s', (fileName, { expect }) => {
+      expect(isDefinitionFile(fileName)).toBe(true);
     });
   });
 });

@@ -1,4 +1,4 @@
-import { unescapeStringLiteralText } from '../../src/node-utils';
+import { unescapeStringLiteralText } from '../../src/node-utils.js';
 
 describe(unescapeStringLiteralText, () => {
   it('should not modify content', () => {

@@ -49,7 +49,7 @@ describe('References:', () => {
         getRealVariables(scopeManager.scopes[0].variables)[0],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -78,7 +78,7 @@ describe('References:', () => {
         getRealVariables(scopeManager.scopes[0].variables)[0],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -133,7 +133,7 @@ describe('References:', () => {
         getRealVariables(scopeManager.scopes[0].variables)[0],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -188,7 +188,7 @@ describe('References:', () => {
 
       assert.isNull(reference.resolved);
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -216,7 +216,7 @@ describe('References:', () => {
       expect(reference.identifier.name).toBe('A');
       expect(reference.resolved).toBe(variables[0]);
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -246,7 +246,7 @@ describe('References:', () => {
         getRealVariables(scopeManager.scopes[0].variables)[0],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -307,7 +307,7 @@ describe('References:', () => {
         getRealVariables(scopeManager.scopes[1].variables)[1],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -368,7 +368,7 @@ describe('References:', () => {
         getRealVariables(scopeManager.scopes[1].variables)[1],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -494,11 +494,18 @@ describe('References:', () => {
         expect(variables.length).toBeGreaterThanOrEqual(1);
         expect(scope.references.length).toBeGreaterThanOrEqual(1);
 
-        scope.references.forEach(reference => {
-          expect(reference.identifier.name).toBe('a');
-          expect(reference.isWrite()).toBe(true);
-          expect(reference.init).toBe(true);
-        });
+        const actual = scope.references.map(
+          reference =>
+            [
+              reference.identifier.name,
+              reference.isWrite(),
+              reference.init,
+            ] as const,
+        );
+
+        const expected = scope.references.map(() => ['a', true, true] as const);
+
+        expect(actual).toStrictEqual(expected);
       },
     );
 
@@ -529,11 +536,20 @@ describe('References:', () => {
         expect(variables).toHaveLength(1);
         expect(scope.references.length).toBeGreaterThanOrEqual(1);
 
-        scope.references.forEach(reference => {
-          expect(reference.identifier.name).toBe('a');
-          expect(reference.isWrite()).toBe(true);
-          expect(reference.init).toBe(false);
-        });
+        const actual = scope.references.map(
+          reference =>
+            [
+              reference.identifier.name,
+              reference.isWrite(),
+              reference.init,
+            ] as const,
+        );
+
+        const expected = scope.references.map(
+          () => ['a', true, false] as const,
+        );
+
+        expect(actual).toStrictEqual(expected);
       },
     );
 
@@ -569,11 +585,13 @@ describe('References:', () => {
 
         expect(references.length).toBeGreaterThanOrEqual(1);
 
-        references.forEach(reference => {
-          expect(reference.isRead()).toBe(true);
+        const actual = references.map(
+          reference => [reference.isRead(), reference.init] as const,
+        );
 
-          assert.notExists(reference.init);
-        });
+        const expected = references.map(() => [true, undefined] as const);
+
+        expect(actual).toStrictEqual(expected);
       },
     );
   });

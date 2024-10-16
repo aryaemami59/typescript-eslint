@@ -3,20 +3,21 @@ import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import prettier from 'prettier';
 
-import rules from '../src/rules/index.js';
 import { areOptionsValid } from './areOptionsValid.js';
+import { ROOT_DIR, rulesEntriesList } from './test-utils/test-utils.js';
 
-const snapshotFolder = path.resolve(__dirname, 'schema-snapshots');
+const SCHEMA_SNAPSHOTS_FOLDER = path.join(__dirname, 'schema-snapshots');
 
-const PRETTIER_CONFIG_PATH = path.resolve(
-  __dirname,
-  '..',
+const PRETTIER_CONFIG_PATH = path.join(
+  ROOT_DIR,
   '..',
   '..',
   '.prettierrc.json',
 );
+
 const SCHEMA_FILEPATH = path.join(__dirname, 'schema.json');
 const TS_TYPE_FILEPATH = path.join(__dirname, 'schema.ts');
+
 const getPrettierConfig = async (
   filepath: string,
 ): Promise<prettier.Options> => {
@@ -36,8 +37,6 @@ const SKIPPED_RULES_FOR_TYPE_GENERATION = new Set(['indent']);
 // Set this to a rule name to only run that rule
 const ONLY = '';
 
-const ruleEntries = Object.entries(rules);
-
 describe('Rule schemas should be convertible to TS types for documentation purposes', async () => {
   const PRETTIER_CONFIG = {
     schema: await getPrettierConfig(SCHEMA_FILEPATH),
@@ -45,10 +44,10 @@ describe('Rule schemas should be convertible to TS types for documentation purpo
   };
 
   beforeAll(async () => {
-    await fs.mkdir(snapshotFolder, { recursive: true });
+    await fs.mkdir(SCHEMA_SNAPSHOTS_FOLDER, { recursive: true });
   });
 
-  describe.for(ruleEntries)('%s', ([ruleName, ruleDef]) => {
+  describe.for(rulesEntriesList)('%s', ([ruleName, rule]) => {
     // skip for documentation purposes
     it.skipIf(SKIPPED_RULES_FOR_TYPE_GENERATION.has(ruleName))(ruleName, () => {
       expect(SKIPPED_RULES_FOR_TYPE_GENERATION).not.toContain(ruleName);
@@ -57,7 +56,7 @@ describe('Rule schemas should be convertible to TS types for documentation purpo
     it(ruleName, { only: ruleName === ONLY }, async ({ expect }) => {
       const schemaString = await prettier.format(
         JSON.stringify(
-          ruleDef.meta.schema,
+          rule.meta.schema,
           (k, v: unknown) => {
             if (k === 'enum' && Array.isArray(v)) {
               // sort enum arrays for consistency regardless of source order
@@ -83,12 +82,16 @@ describe('Rule schemas should be convertible to TS types for documentation purpo
         ),
         PRETTIER_CONFIG.schema,
       );
+
       const compilationResult = await compile(
-        ruleDef.meta.schema,
+        rule.meta.schema,
         PRETTIER_CONFIG.tsType,
       );
 
-      const snapshotPath = path.join(snapshotFolder, `${ruleName}.shot`);
+      const snapshotPath = path.join(
+        SCHEMA_SNAPSHOTS_FOLDER,
+        `${ruleName}.shot`,
+      );
 
       const snapshotContent = [
         '',
@@ -107,16 +110,22 @@ describe('Rule schemas should be convertible to TS types for documentation purpo
 });
 
 describe('There should be no old snapshots for rules that have been deleted', async () => {
-  const files = await fs.readdir(snapshotFolder, { encoding: 'utf-8' });
+  const schemaSnapshotFileNames = await fs.readdir(SCHEMA_SNAPSHOTS_FOLDER, {
+    encoding: 'utf-8',
+  });
+
   const names = new Set(
-    ruleEntries
-      .filter(([k]) => !SKIPPED_RULES_FOR_TYPE_GENERATION.has(k))
-      .map(([k]) => `${k}.shot`),
+    rulesEntriesList
+      .filter(([ruleName]) => !SKIPPED_RULES_FOR_TYPE_GENERATION.has(ruleName))
+      .map(([ruleName]) => `${ruleName}.shot`),
   );
 
-  test.for(files)('%s', (file, { expect }) => {
-    expect(names).toContain(file);
-  });
+  test.for(schemaSnapshotFileNames)(
+    '%s',
+    (schemaSnapshotFileName, { expect }) => {
+      expect(names).toContain(schemaSnapshotFileName);
+    },
+  );
 });
 
 const VALID_SCHEMA_PROPS = new Set([
@@ -159,9 +168,9 @@ const VALID_SCHEMA_PROPS = new Set([
 ] as const);
 
 describe('Rules should only define valid keys on schemas', () => {
-  describe.for(ruleEntries)('%s', ([ruleName, ruleDef]) => {
+  describe.for(rulesEntriesList)('%s', ([ruleName, rule]) => {
     it(ruleName, { only: ruleName === ONLY }, () => {
-      JSON.stringify(ruleDef.meta.schema, (key, value: unknown) => {
+      JSON.stringify(rule.meta.schema, (key, value: unknown) => {
         if (key === '') {
           // the root object will have key ""
           return value;
@@ -193,7 +202,7 @@ describe('Rule schemas should validate options correctly', () => {
     semi: ['never'],
   };
 
-  test.for(ruleEntries)(
+  test.for(rulesEntriesList)(
     '%s must accept valid options',
     ([ruleName, rule], { expect }) => {
       expect(
@@ -205,7 +214,7 @@ describe('Rule schemas should validate options correctly', () => {
     },
   );
 
-  test.for(ruleEntries)(
+  test.for(rulesEntriesList)(
     '%s rejects arbitrary options',
     ([, rule], { expect }) => {
       expect(

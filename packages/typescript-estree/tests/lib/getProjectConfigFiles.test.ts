@@ -1,8 +1,10 @@
 import { existsSync } from 'node:fs';
-import path from 'node:path';
+import * as path from 'node:path';
 
-import { ExpiringCache } from '../../src/parseSettings/ExpiringCache';
-import { getProjectConfigFiles } from '../../src/parseSettings/getProjectConfigFiles';
+import type { ParseSettings } from '../../src/parseSettings/index.js';
+
+import { ExpiringCache } from '../../src/parseSettings/ExpiringCache.js';
+import { getProjectConfigFiles } from '../../src/parseSettings/getProjectConfigFiles.js';
 
 const mockExistsSync = vi.mocked(existsSync);
 
@@ -20,11 +22,15 @@ const parseSettings = {
   filePath: './repos/repo/packages/package/file.ts',
   tsconfigMatchCache: new ExpiringCache<string, string>(1),
   tsconfigRootDir: './repos/repo',
-};
+} satisfies Pick<
+  ParseSettings,
+  'filePath' | 'tsconfigMatchCache' | 'tsconfigRootDir'
+>;
 
 describe(getProjectConfigFiles, () => {
-  beforeEach(() => {
+  afterEach(() => {
     parseSettings.tsconfigMatchCache.clear();
+
     vi.clearAllMocks();
   });
 
@@ -68,6 +74,7 @@ describe(getProjectConfigFiles, () => {
       expect(actual).toStrictEqual([
         path.normalize('repos/repo/packages/package/tsconfig.json'),
       ]);
+
       expect(mockExistsSync).toHaveBeenCalledOnce();
     });
 
@@ -162,9 +169,9 @@ describe(getProjectConfigFiles, () => {
     it('throws when searching hits .', () => {
       mockExistsSync.mockReturnValue(false);
 
-      expect(() =>
-        getProjectConfigFiles(parseSettings, true),
-      ).toThrowErrorMatchingInlineSnapshot(
+      expect(() => {
+        getProjectConfigFiles(parseSettings, true);
+      }).toThrowErrorMatchingInlineSnapshot(
         `[Error: project was set to \`true\` but couldn't find any tsconfig.json relative to './repos/repo/packages/package/file.ts' within './repos/repo'.]`,
       );
     });
@@ -172,9 +179,9 @@ describe(getProjectConfigFiles, () => {
     it('throws when searching passes the tsconfigRootDir', () => {
       mockExistsSync.mockReturnValue(false);
 
-      expect(() =>
-        getProjectConfigFiles({ ...parseSettings, tsconfigRootDir: '/' }, true),
-      ).toThrowErrorMatchingInlineSnapshot(
+      expect(() => {
+        getProjectConfigFiles({ ...parseSettings, tsconfigRootDir: '/' }, true);
+      }).toThrowErrorMatchingInlineSnapshot(
         `[Error: project was set to \`true\` but couldn't find any tsconfig.json relative to './repos/repo/packages/package/file.ts' within '/'.]`,
       );
     });

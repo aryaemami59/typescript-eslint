@@ -1,6 +1,6 @@
 import type { TSESTree } from '@typescript-eslint/types';
 
-import type { RuleListener } from '../../src/ts-eslint';
+import type { RuleListener } from '../../src/ts-eslint/index.js';
 
 type RuleListenerKeysWithoutIndexSignature = {
   [K in keyof RuleListener as string extends K ? never : K]: K;
