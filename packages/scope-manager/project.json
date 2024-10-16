@@ -57,7 +57,7 @@
     "test": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "packages/scope-manager/jest.config.js"
+        "vitestConfig": "packages/scope-manager/vitest.config.mts"
       }
     }
   }
