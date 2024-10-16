@@ -47,7 +47,7 @@
       "outputs": ["{projectRoot}/coverage"],
       "cache": true,
       "options": {
-        "jestConfig": "{projectRoot}/vitest.config.mts",
+        "vitestConfig": "{projectRoot}/vitest.config.mts",
         "passWithNoTests": true
       },
       "configurations": {
