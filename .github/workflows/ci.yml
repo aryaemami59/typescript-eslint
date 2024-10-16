@@ -141,7 +141,10 @@ jobs:
   integration_tests:
     name: Run integration tests on primary Node.js version
     needs: [build]
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     env:
       NX_CI_EXECUTION_ENV: 'ubuntu-latest'
     steps:
@@ -164,6 +167,7 @@ jobs:
     needs: [build]
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         exclude:
           - os: windows-latest
