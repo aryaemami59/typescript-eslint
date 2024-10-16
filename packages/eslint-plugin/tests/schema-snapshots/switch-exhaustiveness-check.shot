@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Rule schemas should be convertible to TS types for documentation purposes > switch-exhaustiveness-check 1`] = `
+"
+# SCHEMA:
+
+[
+  {
+    \\"additionalProperties\\": false,
+    \\"properties\\": {
+      \\"allowDefaultCaseForExhaustiveSwitch\\": {
+        \\"description\\": \\"If 'true', allow 'default' cases on switch statements with exhaustive cases.\\",
+        \\"type\\": \\"boolean\\"
+      },
+      \\"requireDefaultForNonUnion\\": {
+        \\"description\\": \\"If 'true', require a 'default' clause for switches on non-union types.\\",
+        \\"type\\": \\"boolean\\"
+      }
+    },
+    \\"type\\": \\"object\\"
+  }
+]
+
+
+# TYPES:
+
+type Options = [
+  {
+    /** If 'true', allow 'default' cases on switch statements with exhaustive cases. */
+    allowDefaultCaseForExhaustiveSwitch?: boolean;
+    /** If 'true', require a 'default' clause for switches on non-union types. */
+    requireDefaultForNonUnion?: boolean;
+  },
+];
+"
+`;
+
 exports[`Rule schemas should be convertible to TS types for documentation purposes switch-exhaustiveness-check 1`] = `
 "
 # SCHEMA:
