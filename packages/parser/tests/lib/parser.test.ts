@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { ParserOptions } from '@typescript-eslint/types';
 
 import * as scopeManager from '@typescript-eslint/scope-manager';

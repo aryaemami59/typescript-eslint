@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import type { DirOptions } from 'tmp';
 
 import ncp from 'ncp';
@@ -37,7 +38,7 @@ const KEEP_INTEGRATION_TEST_DIR =
   process.env.KEEP_INTEGRATION_TEST_DIR === 'true';
 
 // make sure that vi doesn't timeout the test
-vi.setTimeout(60000);
+vi.setConfig({ testTimeout: 60_000 });
 
 function integrationTest(
   testName: string,

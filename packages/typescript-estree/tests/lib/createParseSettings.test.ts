@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { createParseSettings } from '../../src/parseSettings/createParseSettings';
 
 const projectService = { service: true };

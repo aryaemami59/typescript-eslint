@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import * as path from 'node:path';
 
 import * as glob from 'glob';
@@ -36,7 +36,7 @@ interface MockProgramWithConfigFile {
 
 vi.mock('../../src/create-program/shared.ts', () => {
   return {
-    ...vi.requireActual('../../src/create-program/shared.ts'),
+    ...vi.importActual('../../src/create-program/shared.ts'),
     getAstFromProgram(program: MockProgramWithConfigFile): unknown {
       if (
         program.__FROM_CONFIG_FILE__?.endsWith('non-matching-tsconfig.json')
@@ -52,7 +52,7 @@ vi.mock('../../src/create-program/shared.ts', () => {
 
 vi.mock('../../src/create-program/useProvidedPrograms.ts', () => {
   return {
-    ...vi.requireActual('../../src/create-program/useProvidedPrograms.ts'),
+    ...vi.importActual('../../src/create-program/useProvidedPrograms.ts'),
     createProgramFromConfigFile: vi
       .fn()
       .mockImplementation((configFile): MockProgramWithConfigFile => {
@@ -67,7 +67,7 @@ vi.mock('../../src/create-program/useProvidedPrograms.ts', () => {
 
 vi.mock('../../src/create-program/getWatchProgramsForProjects', () => {
   return {
-    ...vi.requireActual('../../src/create-program/getWatchProgramsForProjects'),
+    ...vi.importActual('../../src/create-program/getWatchProgramsForProjects'),
     getWatchProgramsForProjects: vi.fn(() => [mockProgram]),
   };
 });

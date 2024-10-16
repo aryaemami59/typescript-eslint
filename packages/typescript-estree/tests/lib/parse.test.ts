@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { join, resolve } from 'node:path';
 
 import type { CacheDurationSeconds } from '@typescript-eslint/types';
@@ -13,8 +13,8 @@ import { clearGlobResolutionCache } from '../../src/parseSettings/resolveProject
 
 const FIXTURES_DIR = join(__dirname, '../fixtures/simpleProject');
 
-vi.mock('../../src/create-program/shared', () => {
-  const sharedActual = vi.requireActual<typeof sharedParserUtilsModule>(
+vi.mock('../../src/create-program/shared', async () => {
+  const sharedActual = await vi.importActual<typeof sharedParserUtilsModule>(
     '../../src/create-program/shared',
   );
 
@@ -29,8 +29,8 @@ vi.mock('../../src/create-program/shared', () => {
 
 // Tests in CI by default run with lowercase program file names,
 // resulting in path.relative results starting with many "../"s
-vi.mock('typescript', () => {
-  const ts = vi.requireActual<typeof typescriptModule>('typescript');
+vi.mock('typescript', async () => {
+  const ts = await vi.importActual<typeof typescriptModule>('typescript');
   return {
     ...ts,
     sys: {
@@ -40,8 +40,8 @@ vi.mock('typescript', () => {
   };
 });
 
-vi.mock('fast-glob', () => {
-  const fastGlob = vi.requireActual<typeof fastGlobModule>('fast-glob');
+vi.mock('fast-glob', async () => {
+  const fastGlob = await vi.importActual<typeof fastGlobModule>('fast-glob');
   return {
     ...fastGlob,
     sync: vi.fn(fastGlob.sync),
