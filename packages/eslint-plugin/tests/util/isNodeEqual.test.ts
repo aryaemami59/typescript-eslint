@@ -2,8 +2,8 @@ import type { TSESLint, TSESTree } from '@typescript-eslint/utils';
 
 import { RuleTester } from '@typescript-eslint/rule-tester';
 
-import { createRule, isNodeEqual } from '../../src/util';
-import { getFixturesRootDir } from '../RuleTester';
+import { createRule, isNodeEqual } from '../../src/util/index.js';
+import { DEFAULT_TESTER_CONFIG } from '../test-utils/test-utils.js';
 
 const rule = createRule({
   create(context) {
@@ -43,15 +43,7 @@ const rule = createRule({
   name: 'no-useless-expression',
 });
 
-const rootPath = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootPath,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 ruleTester.run('isNodeEqual', rule, {
   invalid: [

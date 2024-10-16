@@ -1,6 +1,6 @@
 import semver from 'semver';
 
-import type * as Parser from '../../src/parser';
+import type * as Parser from '../../src/parser.js';
 
 vi.mock('semver');
 
@@ -12,6 +12,7 @@ describe('Warn on unsupported TypeScript version', () => {
   beforeEach(async () => {
     parser = await import('../../src/parser.js');
   });
+
   afterEach(() => {
     vi.resetModules();
     vi.clearAllMocks();

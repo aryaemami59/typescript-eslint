@@ -1,5 +1,7 @@
 import type { TSESTree } from '@typescript-eslint/typescript-estree';
 
+import { AST_NODE_TYPES } from '@typescript-eslint/typescript-estree';
+
 import { AnyType, discriminateAnyType } from '../src/index.js';
 import { parseCodeForEslint } from './test-utils/custom-matchers/custom-matchers.js';
 
@@ -36,7 +38,9 @@ describe(discriminateAnyType, () => {
           code,
           getDeclarationId,
         );
+
         const result = discriminateAnyType(type, checker, program, tsNode);
+
         expect(result).toBe(expected);
       },
     );
@@ -54,18 +58,25 @@ class Foo {
         `;
 
       const { checker, program, tsNode, type } = getTypes(code, ast => {
-        const classDeclration = ast.body[0] as TSESTree.ClassDeclaration;
-        const method = classDeclration.body
-          .body[0] as TSESTree.MethodDefinition;
-        const returnStatement = method.value.body?.body.at(
-          -1,
-        ) as TSESTree.ReturnStatement;
+        const classDeclration = ast.body[0];
+
+        assert.isNodeOfType(classDeclration, AST_NODE_TYPES.ClassDeclaration);
+
+        const method = classDeclration.body.body[0];
+
+        assert.isNodeOfType(method, AST_NODE_TYPES.MethodDefinition);
+
+        const returnStatement = method.value.body?.body.at(-1);
+
+        assert.isNodeOfType(returnStatement, AST_NODE_TYPES.ReturnStatement);
 
         assert.isNotNull(returnStatement.argument);
 
         return returnStatement.argument;
       });
+
       const result = discriminateAnyType(type, checker, program, tsNode);
+
       expect(result).toBe(AnyType.Safe);
     });
   });
@@ -81,7 +92,9 @@ class Foo {
           code,
           getDeclarationId,
         );
+
         const result = discriminateAnyType(type, checker, program, tsNode);
+
         expect(result).toBe(expected);
       },
     );
@@ -101,7 +114,9 @@ class Foo {
           code,
           getDeclarationId,
         );
+
         const result = discriminateAnyType(type, checker, program, tsNode);
+
         expect(result).toBe(expected);
       },
     );
@@ -118,7 +133,9 @@ class Foo {
           code,
           getDeclarationId,
         );
+
         const result = discriminateAnyType(type, checker, program, tsNode);
+
         expect(result).toBe(expected);
       },
     );

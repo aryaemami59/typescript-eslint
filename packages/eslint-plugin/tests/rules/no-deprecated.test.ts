@@ -1,17 +1,19 @@
 import { RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/no-deprecated';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/no-deprecated.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootDir = getFixturesRootDir();
 const ruleTester = new RuleTester({
   languageOptions: {
     parserOptions: {
+      ...DEFAULT_TESTER_CONFIG.languageOptions.parserOptions,
+
       ecmaFeatures: {
         jsx: true,
       },
-      project: './tsconfig.json',
-      tsconfigRootDir: rootDir,
     },
   },
 });
@@ -267,7 +269,7 @@ ruleTester.run('no-deprecated', rule, {
         parserOptions: {
           project: './tsconfig.moduleResolution-node16.json',
           projectService: false,
-          tsconfigRootDir: rootDir,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -2746,7 +2748,7 @@ exists('/foo');
         parserOptions: {
           project: './tsconfig.moduleResolution-node16.json',
           projectService: false,
-          tsconfigRootDir: rootDir,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },

@@ -1,4 +1,4 @@
-import { ESLintUtils } from '../../src';
+import { ESLintUtils } from '../../src/index.js';
 
 describe(ESLintUtils.RuleCreator, () => {
   interface TestDocs {
@@ -30,7 +30,8 @@ describe(ESLintUtils.RuleCreator, () => {
       },
       name: 'test',
     });
-    expect(rule.meta).toEqual({
+
+    expect(rule.meta).toStrictEqual({
       docs: {
         description: 'some description',
         recommended: 'yes',

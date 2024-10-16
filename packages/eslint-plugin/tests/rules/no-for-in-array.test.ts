@@ -1,17 +1,12 @@
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/no-for-in-array';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/no-for-in-array.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootDir = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootDir,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 ruleTester.run('no-for-in-array', rule, {
   valid: [
@@ -341,7 +336,7 @@ for (const x in arrayLike) {
         parserOptions: {
           project: './tsconfig.lib-dom.json',
           projectService: false,
-          tsconfigRootDir: rootDir,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -366,7 +361,7 @@ for (const x in arrayLike) {
         parserOptions: {
           project: './tsconfig.lib-dom.json',
           projectService: false,
-          tsconfigRootDir: rootDir,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
