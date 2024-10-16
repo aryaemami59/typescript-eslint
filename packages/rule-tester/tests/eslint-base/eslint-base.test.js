@@ -71,7 +71,7 @@ const ruleTesterTestEmitter = new EventEmitter();
 describe("RuleTester", () => {
 
     // Stub `describe()` and `it()` while this test suite.
-    before(() => {
+    beforeAll(() => {
         RuleTester.describe = function(text, method) {
             ruleTesterTestEmitter.emit("describe", text, method);
             return method.call(this);
@@ -81,7 +81,7 @@ describe("RuleTester", () => {
             return method.call(this);
         };
     });
-    after(() => {
+    afterAll(() => {
         RuleTester.describe = null;
         RuleTester.it = null;
     });
@@ -113,10 +113,10 @@ describe("RuleTester", () => {
     describe("only", () => {
         describe("`itOnly` accessor", () => {
             describe("when `itOnly` is set", () => {
-                before(() => {
+                beforeAll(() => {
                     RuleTester.itOnly = sinon.spy();
                 });
-                after(() => {
+                afterAll(() => {
                     RuleTester.itOnly = void 0;
                 });
                 beforeEach(() => {
@@ -138,15 +138,15 @@ describe("RuleTester", () => {
             });
 
             describe("when `it` is set and has an `only()` method", () => {
-                before(() => {
+                beforeAll(() => {
                     RuleTester.it.only = () => {};
                     sinon.spy(RuleTester.it, "only");
                 });
-                after(() => {
+                afterAll(() => {
                     RuleTester.it.only = void 0;
                 });
                 beforeEach(() => {
-                    RuleTester.it.only.resetHistory();
+                    RuleTester.it.only?.resetHistory?.();
                     ruleTester = new RuleTester();
                 });
 
