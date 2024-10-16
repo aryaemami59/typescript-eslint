@@ -1,7 +1,7 @@
 import * as glob from 'glob';
-import makeDir from 'make-dir';
-import fs from 'node:fs';
+import * as fs from 'node:fs';
 import path from 'node:path';
+import { describe, expect, it } from 'vitest';
 
 import type { AnalyzeOptions } from './test-utils';
 
@@ -59,7 +59,7 @@ function nestDescribe(
       nestDescribe(fixture, segments.slice(1));
     });
   } else {
-    const test = (): void => {
+    const test = async (): Promise<void> => {
       const contents = fs.readFileSync(fixture.absolute, 'utf8');
 
       const lines = contents.split('\n');
@@ -141,7 +141,7 @@ function nestDescribe(
       }
 
       try {
-        makeDir.sync(fixture.snapshotPath);
+        fs.mkdirSync(fixture.snapshotPath, { recursive: true });
       } catch (
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         e: any
@@ -157,14 +157,14 @@ function nestDescribe(
         const { scopeManager } = parseAndAnalyze(contents, options, {
           jsx: fixture.ext.endsWith('x'),
         });
-        expect(scopeManager).toMatchSpecificSnapshot(fixture.snapshotFile);
+        await expect(scopeManager).toMatchFileSnapshot(fixture.snapshotFile);
       } catch (e) {
-        expect(e).toMatchSpecificSnapshot(fixture.snapshotFile);
+        await expect(e).toMatchFileSnapshot(fixture.snapshotFile);
       }
     };
 
     if ([...fixture.segments, fixture.name].join(path.sep) === ONLY) {
-      // eslint-disable-next-line jest/no-focused-tests
+      // eslint-disable-next-line vitest/no-focused-tests
       it.only(fixture.name, test);
     } else {
       it(fixture.name, test);
@@ -186,10 +186,8 @@ if (ONLY === '') {
   });
 
   describe('ast snapshots should have an associated test', () => {
-    for (const snap of snapshots) {
-      it(snap.relative, () => {
-        expect(fs.existsSync(snap.fixturePath)).toBeTruthy();
-      });
-    }
+    it.for(snapshots)('$relative', ({ fixturePath }, { expect }) => {
+      expect(fs.existsSync(fixturePath)).toBeTruthy();
+    });
   });
 }

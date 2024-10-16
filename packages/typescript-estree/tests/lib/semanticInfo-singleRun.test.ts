@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import * as glob from 'glob';
 import * as path from 'node:path';
 
@@ -20,7 +21,7 @@ const mockProgram = {
   },
 };
 
-jest.mock('../../src/ast-converter', () => {
+vi.mock('../../src/ast-converter', () => {
   return {
     astConverter(): unknown {
       return { astMaps: {}, estree: {} };
@@ -32,9 +33,9 @@ interface MockProgramWithConfigFile {
   __FROM_CONFIG_FILE__?: string;
 }
 
-jest.mock('../../src/create-program/shared.ts', () => {
+vi.mock('../../src/create-program/shared.ts', () => {
   return {
-    ...jest.requireActual('../../src/create-program/shared.ts'),
+    ...vi.importActual('../../src/create-program/shared.ts'),
     getAstFromProgram(program: MockProgramWithConfigFile): unknown {
       if (
         program.__FROM_CONFIG_FILE__?.endsWith('non-matching-tsconfig.json')
@@ -48,10 +49,10 @@ jest.mock('../../src/create-program/shared.ts', () => {
   };
 });
 
-jest.mock('../../src/create-program/useProvidedPrograms.ts', () => {
+vi.mock('../../src/create-program/useProvidedPrograms.ts', () => {
   return {
-    ...jest.requireActual('../../src/create-program/useProvidedPrograms.ts'),
-    createProgramFromConfigFile: jest
+    ...vi.importActual('../../src/create-program/useProvidedPrograms.ts'),
+    createProgramFromConfigFile: vi
       .fn()
       .mockImplementation((configFile): MockProgramWithConfigFile => {
         return {
@@ -63,16 +64,14 @@ jest.mock('../../src/create-program/useProvidedPrograms.ts', () => {
   };
 });
 
-jest.mock('../../src/create-program/getWatchProgramsForProjects', () => {
+vi.mock('../../src/create-program/getWatchProgramsForProjects', () => {
   return {
-    ...jest.requireActual(
-      '../../src/create-program/getWatchProgramsForProjects',
-    ),
-    getWatchProgramsForProjects: jest.fn(() => [mockProgram]),
+    ...vi.importActual('../../src/create-program/getWatchProgramsForProjects'),
+    getWatchProgramsForProjects: vi.fn(() => [mockProgram]),
   };
 });
 
-const createProgramFromConfigFile = jest.mocked(
+const createProgramFromConfigFile = vi.mocked(
   createProgramFromConfigFileOriginal,
 );
 

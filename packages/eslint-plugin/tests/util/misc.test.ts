@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import * as misc from '../../src/util/misc';
 
 describe('formatWordList', () => {

@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import type { TSESTree } from '@typescript-eslint/types';
 import type { ParserServicesWithTypeInformation } from '@typescript-eslint/typescript-estree';
 import type * as ts from 'typescript';
