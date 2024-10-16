@@ -1,5 +1,5 @@
-import type { AST_NODE_TYPES } from '../src/ast-node-types';
-import type { Node } from '../src/unions/Node';
+import type { AST_NODE_TYPES } from '../src/ast-node-types.js';
+import type { Node } from '../src/unions/Node.js';
 
 type GetKeys<T extends AST_NODE_TYPES> = keyof Extract<Node, { type: T }>;
 

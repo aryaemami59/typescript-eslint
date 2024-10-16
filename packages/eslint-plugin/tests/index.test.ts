@@ -3,9 +3,10 @@ import * as path from 'node:path';
 
 import eslintPlugin from '../src/index.js';
 import rules from '../src/rules/index.js';
+import { ROOT_DIR } from './test-utils/test-utils.js';
 
 describe('eslint-plugin ("./src/index.ts")', async () => {
-  const CONFIGS_DIR = path.join(__dirname, '..', 'src', 'configs');
+  const CONFIGS_DIR = path.join(ROOT_DIR, 'src', 'configs');
 
   const ruleKeys = Object.keys(rules);
   const eslintPluginRuleKeys = Object.keys(eslintPlugin.rules);
@@ -27,20 +28,20 @@ describe('eslint-plugin ("./src/index.ts")', async () => {
     .map(file => path.basename(file, path.extname(file)))
     .map(file => `flat/${file}`);
 
-  const eslintPluginConfigKeys = Object.keys(eslintPlugin.configs);
+  const eslintPluginConfigKeys = Object.keys(eslintPlugin.configs).sort();
 
   it('exports all available rules', () => {
-    expect(ruleKeys).toStrictEqual(
-      expect.arrayContaining(eslintPluginRuleKeys),
-    );
+    expect(ruleKeys).toStrictEqual(eslintPluginRuleKeys);
   });
 
   it('exports all available configs', () => {
-    expect([
-      ...eslintrcConfigs,
-      // This config is deprecated and eventually will be removed
-      'recommended-requiring-type-checking',
-      ...flatConfigs,
-    ]).toStrictEqual(expect.arrayContaining(eslintPluginConfigKeys));
+    expect(
+      [
+        ...flatConfigs,
+        ...eslintrcConfigs,
+        // This config is deprecated and eventually will be removed
+        'recommended-requiring-type-checking',
+      ].sort(),
+    ).toStrictEqual(eslintPluginConfigKeys);
   });
 });

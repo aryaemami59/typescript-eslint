@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 // Forked from: https://github.com/eslint/eslint/blob/f182114144ae0bb7187de34a1661f31fb70f1357/tests/lib/config/flat-config-schema.js
 
-import type { ObjectLike } from '../src/utils/flat-config-schema';
+import type { ObjectLike } from '../src/utils/flat-config-schema.js';
 
-import { flatConfigSchema } from '../src/utils/flat-config-schema';
+import { flatConfigSchema } from '../src/utils/flat-config-schema.js';
 
 const { merge } = flatConfigSchema.settings;
 
@@ -13,20 +13,20 @@ describe(merge, () => {
     const second = { bar: 'baz' };
     const result = merge(first, second);
 
-    expect(result).toEqual({ ...first, ...second });
+    expect(result).toStrictEqual({ ...first, ...second });
   });
 
   it('returns an empty object if both values are undefined', () => {
     const result = merge(undefined, undefined);
 
-    expect(result).toEqual({});
+    expect(result).toStrictEqual({});
   });
 
   it('returns an object equal to the first one if the second one is undefined', () => {
     const first = { bar: 'baz', foo: 42 };
     const result = merge(first, undefined);
 
-    expect(result).toEqual(first);
+    expect(result).toStrictEqual(first);
     expect(result).not.toBe(first);
   });
 
@@ -34,7 +34,7 @@ describe(merge, () => {
     const second = { bar: 'baz', foo: 42 };
     const result = merge(undefined, second);
 
-    expect(result).toEqual(second);
+    expect(result).toStrictEqual(second);
     expect(result).not.toBe(second);
   });
 
@@ -46,7 +46,7 @@ describe(merge, () => {
       second as unknown as ObjectLike,
     );
 
-    expect(result).toEqual({});
+    expect(result).toStrictEqual({});
   });
 
   it('merges two objects in a property', () => {
@@ -54,7 +54,7 @@ describe(merge, () => {
     const second = { foo: { qux: 42 } };
     const result = merge(first, second);
 
-    expect(result).toEqual({ foo: { bar: 'baz', qux: 42 } });
+    expect(result).toStrictEqual({ foo: { bar: 'baz', qux: 42 } });
   });
 
   it('overwrites an object in a property with an array', () => {
@@ -62,8 +62,8 @@ describe(merge, () => {
     const second = { someProperty: ['qux'] };
     const result = merge(first, second);
 
-    expect(result).toEqual(second);
-    expect(result.someProperty).toEqual(second.someProperty);
+    expect(result).toStrictEqual(second);
+    expect(result.someProperty).toStrictEqual(second.someProperty);
   });
 
   it('overwrites an array in a property with another array', () => {
@@ -71,8 +71,8 @@ describe(merge, () => {
     const second = { someProperty: ['qux', undefined, 42] };
     const result = merge(first, second);
 
-    expect(result).toEqual(second);
-    expect(result.someProperty).toEqual(second.someProperty);
+    expect(result).toStrictEqual(second);
+    expect(result.someProperty).toStrictEqual(second.someProperty);
   });
 
   it('overwrites an array in a property with an object', () => {
@@ -80,8 +80,8 @@ describe(merge, () => {
     const second = { foo: { 1: 'qux', bar: 'baz' } };
     const result = merge(first, second);
 
-    expect(result).toEqual(second);
-    expect(result.foo).toEqual(second.foo);
+    expect(result).toStrictEqual(second);
+    expect(result.foo).toStrictEqual(second.foo);
   });
 
   it('does not override a value in a property with undefined', () => {
@@ -89,7 +89,7 @@ describe(merge, () => {
     const second: ObjectLike = { foo: undefined };
     const result = merge(first, second);
 
-    expect(result).toEqual(first);
+    expect(result).toStrictEqual(first);
     expect(result).not.toBe(first);
   });
 
@@ -106,7 +106,7 @@ describe(merge, () => {
     const second = { ['__proto__']: { bar: 'baz' } };
     const result = merge(first, second);
 
-    expect(result).toEqual({});
+    expect(result).toStrictEqual({});
   });
 
   it('overrides a value in a property with null', () => {
@@ -114,7 +114,7 @@ describe(merge, () => {
     const second = { foo: null };
     const result = merge(first, second);
 
-    expect(result).toEqual(second);
+    expect(result).toStrictEqual(second);
     expect(result).not.toBe(second);
   });
 
@@ -123,7 +123,7 @@ describe(merge, () => {
     const second = { foo: 42 };
     const result = merge(first, second);
 
-    expect(result).toEqual(second);
+    expect(result).toStrictEqual(second);
     expect(result).not.toBe(second);
   });
 
@@ -132,8 +132,8 @@ describe(merge, () => {
     const second = { foo: 'qux' };
     const result = merge(first, second);
 
-    expect(result).toEqual(second);
-    expect(result).not.toEqual(first);
+    expect(result).toStrictEqual(second);
+    expect(result).not.toStrictEqual(first);
   });
 
   it('overrides a value in a property with a function', () => {
@@ -141,7 +141,7 @@ describe(merge, () => {
     const second = { someProperty(): void {} };
     const result = merge(first, second);
 
-    expect(result).toEqual(second);
+    expect(result).toStrictEqual(second);
     expect(result.someProperty).not.toHaveProperty('foo');
   });
 
@@ -150,7 +150,7 @@ describe(merge, () => {
     const second = { someProperty: { baz: 'qux' } };
     const result = merge(first, second);
 
-    expect(result).toEqual(second);
+    expect(result).toStrictEqual(second);
     expect(result.someProperty).not.toHaveProperty('foo');
   });
 
@@ -159,7 +159,11 @@ describe(merge, () => {
     const second = { baz: undefined, foo: undefined };
     const result = merge(first, second);
 
-    expect(result).toEqual({ bar: undefined, baz: undefined, foo: undefined });
+    expect(result).toStrictEqual({
+      bar: undefined,
+      baz: undefined,
+      foo: undefined,
+    });
   });
 
   it('considers only own enumerable properties', () => {
@@ -186,7 +190,7 @@ describe(merge, () => {
 
     const result = merge(first, second);
 
-    expect(result).toEqual({
+    expect(result).toStrictEqual({
       included1: 'B',
       included2: 'D',
       notMerged1: { first: true },
@@ -203,14 +207,14 @@ describe(merge, () => {
     second.second = second;
     const result = merge(first, second);
 
-    expect(result.first).toEqual(first);
-    expect(result.second).toEqual(second);
+    expect(result.first).toStrictEqual(first);
+    expect(result.second).toStrictEqual(second);
 
     const expected: ObjectLike = { bar: 'baz', foo: 42 };
 
     expected.first = first;
     expected.second = second;
-    expect(result).toEqual(expected);
+    expect(result).toStrictEqual(expected);
   });
 
   it('merges objects with overlapping self-references', () => {
@@ -223,12 +227,12 @@ describe(merge, () => {
 
     const result = merge(first, second);
 
-    expect(result.reference).toEqual(result);
+    expect(result.reference).toStrictEqual(result);
 
     const expected: ObjectLike = { bar: 'baz', foo: 42 };
 
     expected.reference = expected;
-    expect(result).toEqual(expected);
+    expect(result).toStrictEqual(expected);
   });
 
   it('merges objects with cross-references', () => {
@@ -240,14 +244,14 @@ describe(merge, () => {
 
     const result = merge(first, second);
 
-    expect(result.first).toEqual(first);
-    expect(result.second).toEqual(second);
+    expect(result.first).toStrictEqual(first);
+    expect(result.second).toStrictEqual(second);
 
     const expected: ObjectLike = { bar: 'baz', foo: 42 };
 
     expected.first = first;
     expected.second = second;
-    expect(result).toEqual(expected);
+    expect(result).toStrictEqual(expected);
   });
 
   it('merges objects with overlapping cross-references', () => {
@@ -259,7 +263,7 @@ describe(merge, () => {
 
     const result = merge(first, second);
 
-    expect(result).toEqual((result.reference as ObjectLike).reference);
+    expect(result).toStrictEqual((result.reference as ObjectLike).reference);
 
     const expected = {
       bar: 'baz',
@@ -268,7 +272,7 @@ describe(merge, () => {
     };
 
     (expected.reference as ObjectLike).reference = expected;
-    expect(result).toEqual(expected);
+    expect(result).toStrictEqual(expected);
   });
 
   it('produces the same results for the same combinations of property values', () => {
@@ -288,7 +292,7 @@ describe(merge, () => {
     };
     const result = merge(first, second);
 
-    expect(result.a).toEqual(result.d);
+    expect(result.a).toStrictEqual(result.d);
 
     const expected = {
       a: { bar: 'baz', foo: 42 },
@@ -297,6 +301,6 @@ describe(merge, () => {
       d: { bar: 'baz', foo: 42 },
     };
 
-    expect(result).toEqual(expected);
+    expect(result).toStrictEqual(expected);
   });
 });

@@ -4,28 +4,16 @@ import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
 import * as path from 'node:path';
 
 import type {
-  InferMessageIdsTypeFromRule,
-  InferOptionsTypeFromRule,
-} from '../../src/util';
+  MessageIds,
+  Options,
+} from '../../src/rules/prefer-readonly-parameter-types.js';
 
-import rule from '../../src/rules/prefer-readonly-parameter-types';
-import { readonlynessOptionsDefaults } from '../../src/util';
-import { dedupeTestCases } from '../dedupeTestCases';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/prefer-readonly-parameter-types.js';
+import { readonlynessOptionsDefaults } from '../../src/util/index.js';
+import { dedupeTestCases } from '../dedupeTestCases.js';
+import { DEFAULT_TESTER_CONFIG, ROOT_DIR } from '../test-utils/test-utils.js';
 
-type MessageIds = InferMessageIdsTypeFromRule<typeof rule>;
-type Options = InferOptionsTypeFromRule<typeof rule>;
-
-const rootPath = getFixturesRootDir();
-
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootPath,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 const primitives = [
   'boolean',
@@ -1059,9 +1047,7 @@ ruleTester.run('prefer-readonly-parameter-types', rule, {
               from: 'file',
               name: 'RegExp',
               path: path.posix.join(
-                ...path
-                  .relative(process.cwd(), path.join(__dirname, '..', '..'))
-                  .split(path.sep),
+                ...path.relative(process.cwd(), ROOT_DIR).split(path.sep),
               ),
             },
           ],

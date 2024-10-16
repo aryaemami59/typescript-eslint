@@ -1,25 +1,20 @@
 /* eslint-disable @typescript-eslint/no-deprecated -- TODO - migrate this test away from `batchedSingleLineTests` */
 
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
-import * as path from 'node:path';
 
 import type {
   MessageId,
   Options,
-} from '../../src/rules/strict-boolean-expressions';
+} from '../../src/rules/strict-boolean-expressions.js';
 
-import rule from '../../src/rules/strict-boolean-expressions';
-import { batchedSingleLineTests, getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/strict-boolean-expressions.js';
+import { batchedSingleLineTests } from '../RuleTester.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  UNSTRICT_FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootPath = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootPath,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 ruleTester.run('strict-boolean-expressions', rule, {
   valid: [
@@ -392,7 +387,7 @@ if (x) {
       `,
       languageOptions: {
         parserOptions: {
-          tsconfigRootDir: path.join(rootPath, 'unstrict'),
+          tsconfigRootDir: UNSTRICT_FIXTURES_DIR,
         },
       },
       options: [
@@ -2856,7 +2851,7 @@ if (x) {
       ],
       languageOptions: {
         parserOptions: {
-          tsconfigRootDir: path.join(rootPath, 'unstrict'),
+          tsconfigRootDir: UNSTRICT_FIXTURES_DIR,
         },
       },
       output: null,
