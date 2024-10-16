@@ -4,6 +4,7 @@ import type { ParserServicesWithTypeInformation } from '@typescript-eslint/types
 import { parseForESLint } from '@typescript-eslint/parser';
 import path from 'node:path';
 import * as tsutils from 'ts-api-utils';
+import { describe, expect, it } from 'vitest';
 
 import { getConstrainedTypeAtLocation, isTypeUnknownType } from '../src';
 
@@ -21,9 +22,9 @@ function parseCodeForEslint(code: string): ReturnType<typeof parseForESLint> & {
   });
 }
 
-describe('getConstrainedTypeAtLocation', () => {
+describe(getConstrainedTypeAtLocation, () => {
   // See https://github.com/typescript-eslint/typescript-eslint/issues/10438
-  // eslint-disable-next-line jest/no-disabled-tests -- known issue.
+  // eslint-disable-next-line vitest/no-disabled-tests -- known issue.
   it.skip('returns unknown for unconstrained generic', () => {
     const sourceCode = `
 function foo<T>(x: T);

@@ -1,12 +1,15 @@
 {
   "name": "eslint-plugin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "type": "library",
-  "implicitDependencies": [],
+  "projectType": "library",
+  "root": "packages/eslint-plugin",
+  "sourceRoot": "packages/eslint-plugin/src",
   "targets": {
+    "test": {
+      "executor": "@nx/vite:test"
+    },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
+      "executor": "@nx/eslint:lint"
     },
     "generate-breaking-changes": {
       "executor": "nx:run-script",

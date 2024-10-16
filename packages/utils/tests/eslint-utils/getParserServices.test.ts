@@ -1,5 +1,7 @@
 import type * as ts from 'typescript';
 
+import { describe, expect, it } from 'vitest';
+
 import type { ParserServices, TSESLint, TSESTree } from '../../src';
 import type { FlatConfig } from '../../src/ts-eslint';
 

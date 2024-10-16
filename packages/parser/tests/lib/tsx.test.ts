@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { parseForESLint } from '../../src/parser';
 import { serializer } from '../test-utils/ts-error-serializer';
 

@@ -1,17 +1,27 @@
-'use strict';
+import * as os from 'node:os';
+import * as path from 'node:path';
+import { defineConfig, mergeConfig } from 'vitest/config';
 
-// pack the packages ahead of time and create a mapping for use in the tests
-require('tsx/cjs');
-const { setup } = require('./tools/pack-packages');
+import { vitestBaseConfig } from '../../vitest.config.base.mjs';
+import packageJson from './package.json' with { type: 'json' };
 
-// @ts-check
-/** @type {() => Promise<import('@jest/types').Config.InitialOptions>} */
-module.exports = async () => ({
-  ...require('../../jest.config.base.js'),
-  globals: {
-    tseslintPackages: await setup(),
-  },
-  globalTeardown: './tools/pack-packages.ts',
-  testRegex: ['/tests/[^/]+.test.ts$'],
-  rootDir: __dirname,
-});
+const vitestConfig = mergeConfig(
+  vitestBaseConfig,
+
+  defineConfig({
+    test: {
+      coverage: { enabled: false },
+      dir: path.join(import.meta.dirname, 'tests'),
+
+      fileParallelism: os.platform() !== 'win32',
+
+      globalSetup: ['./tools/pack-packages.ts'],
+
+      name: packageJson.name,
+
+      root: import.meta.dirname,
+    },
+  }),
+);
+
+export default vitestConfig;
