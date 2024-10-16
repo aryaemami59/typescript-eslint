@@ -12,7 +12,6 @@
     "tools/**/*.mts",
     "eslint.config.js",
     "eslint.config.mjs",
-    "jest.preset.js",
     "knip.ts",
     ".github/**/*.js"
   ]
