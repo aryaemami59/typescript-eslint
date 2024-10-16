@@ -1,4 +1,4 @@
-import { ESLintUtils } from '../../src';
+import { ESLintUtils } from '../../src/index.js';
 
 describe(ESLintUtils.applyDefault, () => {
   it('returns a clone of the default if no options given', () => {
@@ -6,7 +6,7 @@ describe(ESLintUtils.applyDefault, () => {
     const user = null;
     const result = ESLintUtils.applyDefault(defaults, user);
 
-    expect(result).toEqual(defaults);
+    expect(result).toStrictEqual(defaults);
     expect(result).not.toBe(defaults);
   });
 
@@ -28,7 +28,7 @@ describe(ESLintUtils.applyDefault, () => {
     ];
     const result = ESLintUtils.applyDefault(defaults, user);
 
-    expect(result).toEqual([
+    expect(result).toStrictEqual([
       {
         other: 'something',
         prop: 'new',
@@ -55,7 +55,7 @@ describe(ESLintUtils.applyDefault, () => {
     const user: unknown[] = ['2tbs'];
     const result = ESLintUtils.applyDefault(defaults, user);
 
-    expect(result).toEqual(['2tbs']);
+    expect(result).toStrictEqual(['2tbs']);
     expect(result).not.toBe(defaults);
     expect(result).not.toBe(user);
   });
@@ -69,7 +69,7 @@ describe(ESLintUtils.applyDefault, () => {
       },
     ];
     const result = ESLintUtils.applyDefault(defaults, user);
-    expect(result).toEqual(user);
+    expect(result).toStrictEqual(user);
     expect(result).not.toBe(defaults);
     expect(result).not.toBe(user);
   });

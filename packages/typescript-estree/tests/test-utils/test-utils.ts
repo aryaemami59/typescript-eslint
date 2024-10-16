@@ -1,35 +1,15 @@
 import type {
   ParseAndGenerateServicesResult,
   TSESTreeOptions,
-} from '../../src';
+} from '../../src/index.js';
 
-import { parseAndGenerateServices } from '../../src';
+import { parseAndGenerateServices } from '../../src/index.js';
 
 export function parseCodeAndGenerateServices(
   code: string,
   config: TSESTreeOptions,
 ): ParseAndGenerateServicesResult<TSESTreeOptions> {
   return parseAndGenerateServices(code, config);
-}
-
-export function formatSnapshotName(
-  filename: string,
-  fixturesDir: string,
-  fileExtension = '.js',
-): string {
-  return `fixtures/${filename
-    .replace(`${fixturesDir}/`, '')
-    .replace(fileExtension, '')}`;
-}
-
-/**
- * Check if file extension is one used for jsx
- */
-export function isJSXFileType(fileType: string): boolean {
-  if (fileType.startsWith('.')) {
-    fileType = fileType.slice(1);
-  }
-  return fileType === 'js' || fileType === 'jsx' || fileType === 'tsx';
 }
 
 /**

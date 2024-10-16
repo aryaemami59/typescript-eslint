@@ -5,10 +5,10 @@ import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
 import type {
   InferMessageIdsTypeFromRule,
   InferOptionsTypeFromRule,
-} from '../../src/util';
+} from '../../src/util/index.js';
 
-import rule from '../../src/rules/no-unsafe-assignment';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/no-unsafe-assignment.js';
+import { FIXTURES_DIR } from '../test-utils/test-utils.js';
 
 type Options = InferOptionsTypeFromRule<typeof rule>;
 type MessageIds = InferMessageIdsTypeFromRule<typeof rule>;
@@ -65,7 +65,7 @@ const ruleTester = new RuleTester({
     parserOptions: {
       project: './tsconfig.noImplicitThis.json',
       projectService: false,
-      tsconfigRootDir: getFixturesRootDir(),
+      tsconfigRootDir: FIXTURES_DIR,
     },
   },
 });

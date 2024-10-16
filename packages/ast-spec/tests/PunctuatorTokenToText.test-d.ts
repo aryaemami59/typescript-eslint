@@ -1,6 +1,6 @@
 import type { PunctuationSyntaxKind } from 'typescript';
 
-import type { PunctuatorTokenToText } from '../src';
+import type { PunctuatorTokenToText } from '../src/index.js';
 
 test('type tests', () => {
   expectTypeOf<PunctuatorTokenToText>()

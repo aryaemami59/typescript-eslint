@@ -16,7 +16,6 @@ describe('ES6 rest arguments', () => {
     let scope = scopeManager.scopes[0];
     let variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(1);
 

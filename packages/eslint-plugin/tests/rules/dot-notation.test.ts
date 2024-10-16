@@ -1,18 +1,12 @@
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/dot-notation';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/dot-notation.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootPath = getFixturesRootDir();
-
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootPath,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 /**
  * Quote a string in "double quotes" because it’s painful
@@ -163,7 +157,7 @@ foo['key_baz'];
         parserOptions: {
           project: './tsconfig.noPropertyAccessFromIndexSignature.json',
           projectService: false,
-          tsconfigRootDir: rootPath,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -181,7 +175,7 @@ foo['bar'];
         parserOptions: {
           project: './tsconfig.noPropertyAccessFromIndexSignature.json',
           projectService: false,
-          tsconfigRootDir: rootPath,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -202,7 +196,7 @@ function f<T extends Foo>(x: T) {
         parserOptions: {
           project: './tsconfig.noPropertyAccessFromIndexSignature.json',
           projectService: false,
-          tsconfigRootDir: rootPath,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },

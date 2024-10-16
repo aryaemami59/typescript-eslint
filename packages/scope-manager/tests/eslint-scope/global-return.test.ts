@@ -19,14 +19,13 @@ describe('gloablReturn option', () => {
     let variables = getRealVariables(scope.variables);
 
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(0);
 
     scope = scopeManager.scopes[1];
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(true);
     expect(variables).toHaveLength(2);
     expect(variables[0].name).toBe('arguments');
@@ -45,14 +44,13 @@ describe('gloablReturn option', () => {
     let variables = getRealVariables(scope.variables);
 
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(0);
 
     scope = scopeManager.scopes[1];
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(1);
     expect(variables[0].name).toBe('arguments');
