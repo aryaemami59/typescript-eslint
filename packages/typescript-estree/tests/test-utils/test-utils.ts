@@ -1,3 +1,5 @@
+import { expect } from 'vitest';
+
 import type {
   ParseAndGenerateServicesResult,
   TSESTree,
@@ -25,7 +27,7 @@ export function createSnapshotTestBlock(
   code: string,
   config: TSESTreeOptions,
   generateServices?: true,
-): jest.ProvidesCallback {
+): () => void {
   /**
    * @returns the AST object
    */

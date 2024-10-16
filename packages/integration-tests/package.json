@@ -12,16 +12,13 @@
   "homepage": "https://typescript-eslint.io",
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
-    "lint": "npx nx lint",
-    "test": "jest --no-coverage",
-    "check-types": "npx nx typecheck"
+    "format": "prettier --write . --ignore-path=$PROJECT_CWD/.prettierignore",
+    "lint": "yarn run -T lint",
+    "test": "vitest --run",
+    "check-types": "yarn run --top-level nx typecheck"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^3.0.8",
-    "ncp": "*",
-    "tmp": "*",
-    "tsx": "*",
     "vitest": "^3.0.8"
   }
 }
