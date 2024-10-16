@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures declaration ExportNamedDeclaration braced-identifier-many-with-source AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -16,7 +13,7 @@ exports[`AST Fixtures declaration ExportNamedDeclaration braced-identifier-many-
         exportKind: 'value',
         source: Literal {
           type: 'Literal',
-          raw: '\\'mod\\'',
+          raw: '\'mod\'',
           value: 'mod',
 
           range: [21, 26],
@@ -110,5 +107,4 @@ exports[`AST Fixtures declaration ExportNamedDeclaration braced-identifier-many-
       start: { column: 0, line: 1 },
       end: { column: 0, line: 2 },
     },
-  }"
-`;
+  }

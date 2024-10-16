@@ -1,3 +1,1 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures declaration VariableDeclaration _error_ const-id-definite-init Error Alignment 1`] = `"TSESTree errored but Babel didn't"`;
+TSESTree errored but Babel didn't

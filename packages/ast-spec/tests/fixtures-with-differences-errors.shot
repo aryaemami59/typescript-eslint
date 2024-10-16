@@ -1,6 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures List fixtures with Error differences 1`] = `
 {
   "Babel errored but TSESTree didn't": [
     "declaration/ClassDeclaration/fixtures/_error_/implements-non-identifier/fixture.ts",
@@ -79,4 +76,3 @@ exports[`AST Fixtures List fixtures with Error differences 1`] = `
     "statement/ForOfStatement/fixtures/_error_/decl-type/fixture.ts",
   ],
 }
-`;

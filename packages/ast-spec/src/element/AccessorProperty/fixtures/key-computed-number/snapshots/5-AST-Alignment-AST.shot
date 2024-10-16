@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures element AccessorProperty key-computed-number AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -94,5 +91,4 @@ exports[`AST Fixtures element AccessorProperty key-computed-number AST Alignment
       start: { column: 0, line: 1 },
       end: { column: 0, line: 4 },
     },
-  }"
-`;
+  }

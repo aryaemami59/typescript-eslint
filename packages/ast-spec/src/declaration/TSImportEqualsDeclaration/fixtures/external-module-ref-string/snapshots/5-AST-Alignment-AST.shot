@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures declaration TSImportEqualsDeclaration external-module-ref-string AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -28,7 +25,7 @@ exports[`AST Fixtures declaration TSImportEqualsDeclaration external-module-ref-
           type: 'TSExternalModuleReference',
           expression: Literal {
             type: 'Literal',
-            raw: '\\'mod\\'',
+            raw: '\'mod\'',
             value: 'mod',
 
             range: [19, 24],
@@ -59,5 +56,4 @@ exports[`AST Fixtures declaration TSImportEqualsDeclaration external-module-ref-
       start: { column: 0, line: 1 },
       end: { column: 0, line: 2 },
     },
-  }"
-`;
+  }

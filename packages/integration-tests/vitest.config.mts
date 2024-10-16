@@ -1,22 +1,19 @@
-'use strict';
+import { defineConfig, mergeConfig } from 'vitest/config';
+import vitestBaseConfig from '../../vitest.config.base.mjs';
+import packageJson from './package.json' with { type: 'json' };
 
-// pack the packages ahead of time and create a mapping for use in the tests
-require('tsx/cjs');
-const { tseslintPackages } = require('./tools/pack-packages');
+const vitestConfig = mergeConfig(
+  vitestBaseConfig,
 
-// @ts-check
-/** @type {import('@jest/types').Config.InitialOptions} */
-module.exports = {
-  ...require('../../jest.config.base.js'),
-  collectCoverage: false,
-  globals: {
-    tseslintPackages,
-  },
-  testRegex: ['/tests/[^/]+.test.ts$'],
-  rootDir: __dirname,
+  defineConfig({
+    test: {
+      name: packageJson.name,
+      root: import.meta.dirname,
+      coverage: { enabled: false },
 
-  // TODO(Brad Zacher) - for some reason if we run more than 1 test at a time
-  //                     yarn will error saying the tarballs are corrupt on just
-  //                     the first test.
-  maxWorkers: 1,
-};
+      globalSetup: ['./tools/pack-packages.ts'],
+    },
+  }),
+);
+
+export default vitestConfig;

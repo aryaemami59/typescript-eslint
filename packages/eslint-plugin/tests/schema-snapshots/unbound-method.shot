@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Rule schemas should be convertible to TS types for documentation purposes unbound-method 1`] = `
-"
+exports[`Rule schemas should be convertible to TS types for documentation purposes > unbound-method > unbound-method`]
+
 # SCHEMA:
 
 [
@@ -9,7 +9,7 @@ exports[`Rule schemas should be convertible to TS types for documentation purpos
     "additionalProperties": false,
     "properties": {
       "ignoreStatic": {
-        "description": "Whether to skip checking whether \`static\` methods are correctly bound.",
+        "description": "Whether to skip checking whether `static` methods are correctly bound.",
         "type": "boolean"
       }
     },
@@ -22,9 +22,8 @@ exports[`Rule schemas should be convertible to TS types for documentation purpos
 
 type Options = [
   {
-    /** Whether to skip checking whether \`static\` methods are correctly bound. */
+    /** Whether to skip checking whether `static` methods are correctly bound. */
     ignoreStatic?: boolean;
   },
 ];
-"
-`;
+

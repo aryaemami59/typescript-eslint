@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures special TSTypeParameter interface-const-modifier AST Alignment - Token 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -88,5 +85,4 @@ exports[`AST Fixtures special TSTypeParameter interface-const-modifier AST Align
         end: { column: 23, line: 1 },
       },
     },
-  ]"
-`;
+  ]

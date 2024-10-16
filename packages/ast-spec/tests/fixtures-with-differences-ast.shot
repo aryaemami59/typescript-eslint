@@ -1,6 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures List fixtures with AST differences 1`] = `
 [
   "declaration/ClassDeclaration/fixtures/abstract/fixture.ts",
   "declaration/ClassDeclaration/fixtures/declare/fixture.ts",
@@ -522,4 +519,3 @@ exports[`AST Fixtures List fixtures with AST differences 1`] = `
   "statement/ForOfStatement/fixtures/expr-init/fixture.ts",
   "statement/ForOfStatement/fixtures/using-declaration/fixture.ts",
 ]
-`;
