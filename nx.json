@@ -31,7 +31,7 @@
       "inputs": [
         "default",
         "^production",
-        "{workspaceRoot}/jest.config.js",
+        "{workspaceRoot}/vitest.config.mts",
         "{workspaceRoot}/jest.config.base.js"
       ],
       "outputs": ["{projectRoot}/coverage"],
@@ -41,13 +41,13 @@
       "inputs": [
         "default",
         "^production",
-        "{workspaceRoot}/jest.config.js",
+        "{workspaceRoot}/vitest.config.mts",
         "{workspaceRoot}/jest.config.base.js"
       ],
       "outputs": ["{projectRoot}/coverage"],
       "cache": true,
       "options": {
-        "jestConfig": "{projectRoot}/jest.config.js",
+        "jestConfig": "{projectRoot}/vitest.config.mts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -94,7 +94,7 @@
       "default",
       "!{projectRoot}/**/?(*.)+(test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/vitest.config.m[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
   }
