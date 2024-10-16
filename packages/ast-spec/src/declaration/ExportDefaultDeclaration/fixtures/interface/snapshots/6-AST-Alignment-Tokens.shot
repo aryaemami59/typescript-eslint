@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures declaration ExportDefaultDeclaration interface AST Alignment - Token 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -68,5 +65,4 @@ exports[`AST Fixtures declaration ExportDefaultDeclaration interface AST Alignme
         end: { column: 31, line: 1 },
       },
     },
-  ]"
-`;
+  ]

@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures legacy-fixtures basics private-fields-in-in AST Alignment - Token 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -182,5 +179,4 @@ exports[`AST Fixtures legacy-fixtures basics private-fields-in-in AST Alignment 
         end: { column: 1, line: 8 },
       },
     },
-  ]"
-`;
+  ]

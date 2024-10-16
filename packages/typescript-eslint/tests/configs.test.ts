@@ -2,6 +2,7 @@ import type {
   FlatConfig,
   RuleRecommendation,
 } from '@typescript-eslint/utils/ts-eslint';
+import { describe, expect, it } from 'vitest';
 
 import rules from '@typescript-eslint/eslint-plugin/use-at-your-own-risk/rules';
 

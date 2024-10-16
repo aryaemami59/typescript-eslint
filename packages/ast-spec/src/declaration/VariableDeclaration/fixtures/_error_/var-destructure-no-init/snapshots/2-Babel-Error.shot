@@ -1,3 +1,1 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures declaration VariableDeclaration _error_ var-destructure-no-init Babel - Error 1`] = `[SyntaxError: Missing initializer in destructuring declaration. (1:11)]`;
+[SyntaxError: Missing initializer in destructuring declaration. (1:11)]

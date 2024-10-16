@@ -1,4 +1,5 @@
 import type { AST_NODE_TYPES, TSESTree } from '@typescript-eslint/types';
+import { expect } from 'vitest';
 
 import { simpleTraverse } from '@typescript-eslint/typescript-estree';
 

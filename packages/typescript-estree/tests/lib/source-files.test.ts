@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import * as ts from 'typescript';
 
 import { getCodeText, isSourceFile } from '../../src/source-files';

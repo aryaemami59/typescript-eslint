@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures legacy-fixtures types template-literal-type-4 AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -612,7 +609,7 @@ exports[`AST Fixtures legacy-fixtures types template-literal-type-4 AST Alignmen
                 type: 'TSLiteralType',
                 literal: Literal {
                   type: 'Literal',
-                  raw: '\\'heLLo\\'',
+                  raw: '\'heLLo\'',
                   value: 'heLLo',
 
                   range: [232, 239],
@@ -670,5 +667,4 @@ exports[`AST Fixtures legacy-fixtures types template-literal-type-4 AST Alignmen
       start: { column: 0, line: 3 },
       end: { column: 0, line: 6 },
     },
-  }"
-`;
+  }

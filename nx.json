@@ -31,30 +31,37 @@
       "inputs": [
         "default",
         "^production",
-        "{workspaceRoot}/jest.config.js",
-        "{workspaceRoot}/jest.config.base.js"
+        "{workspaceRoot}/vitest.config.mts",
+        "{workspaceRoot}/vitest.config.base.mts"
       ],
       "outputs": ["{projectRoot}/coverage"],
       "cache": true
     },
-    "@nx/jest:jest": {
+    "@nx/vite:test": {
       "inputs": [
         "default",
         "^production",
-        "{workspaceRoot}/jest.config.js",
-        "{workspaceRoot}/jest.config.base.js"
+        "{workspaceRoot}/vitest.config.mts",
+        "{workspaceRoot}/vitest.config.base.mts"
       ],
       "outputs": ["{projectRoot}/coverage"],
       "cache": true,
       "options": {
-        "jestConfig": "{projectRoot}/jest.config.js",
-        "passWithNoTests": true
+        "config": "{projectRoot}/vitest.config.mts",
+        "passWithNoTests": true,
+        "watch": false,
+        "reportsDirectory": "{projectRoot}/coverage"
       },
       "configurations": {
         "ci": {
           "ci": true,
           "codeCoverage": true
         }
+      }
+    },
+    "@nx/eslint:lint": {
+      "options": {
+        "noEslintrc": true
       }
     },
     "lint": {
@@ -94,7 +101,7 @@
       "default",
       "!{projectRoot}/**/?(*.)+(test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/vitest.config.m[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
   }
