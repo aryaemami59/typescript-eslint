@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import {
   expectToBeClassFieldInitializerScope,
   expectToBeClassScope,
@@ -39,7 +41,7 @@ describe('Class fields', () => {
     expect(classFieldInitializerScope.variables).toHaveLength(0);
   });
 
-  describe('class C { f }', () => {
+  it('class C { f }', () => {
     const { scopeManager } = parseAndAnalyze('class C { f }');
 
     const globalScope = scopeManager.scopes[0];
@@ -57,7 +59,7 @@ describe('Class fields', () => {
     expect(classScope.variables[0].name).toBe('C');
   });
 
-  describe('class C { [fname] }', () => {
+  it('class C { [fname] }', () => {
     const { scopeManager } = parseAndAnalyze('class C { [fname] }');
 
     const globalScope = scopeManager.scopes[0];
@@ -72,7 +74,7 @@ describe('Class fields', () => {
     expect(classScope.childScopes).toHaveLength(0);
   });
 
-  describe('class C { [fname] = value }', () => {
+  it('class C { [fname] = value }', () => {
     const { scopeManager } = parseAndAnalyze('class C { [fname] = value }');
 
     const globalScope = scopeManager.scopes[0];

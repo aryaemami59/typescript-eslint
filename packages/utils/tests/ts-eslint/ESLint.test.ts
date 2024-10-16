@@ -1,4 +1,5 @@
 import { FlatESLint, LegacyESLint } from 'eslint/use-at-your-own-risk';
+import { describe, expect, it } from 'vitest';
 
 import * as ESLint from '../../src/ts-eslint/ESLint';
 

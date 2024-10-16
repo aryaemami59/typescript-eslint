@@ -3,11 +3,12 @@ import type * as ts from 'typescript';
 
 import { parseForESLint } from '@typescript-eslint/parser';
 import path from 'node:path';
+import { describe, expect, it } from 'vitest';
 
 import { isUnsafeAssignment } from '../src/isUnsafeAssignment';
 import { expectToHaveParserServices } from './test-utils/expectToHaveParserServices';
 
-describe('isUnsafeAssignment', () => {
+describe(isUnsafeAssignment, () => {
   const rootDir = path.join(__dirname, 'fixtures');
 
   function getTypes(
@@ -54,7 +55,7 @@ describe('isUnsafeAssignment', () => {
       expect(checker.typeToString(receiver)).toBe(receiverStr);
     }
 
-    it('any to a non-any', () => {
+    it('any to a non-any', { timeout: 10_000 }, () => {
       const { checker, receiver, sender } = getTypes(
         'const test: string = (1 as any);',
       );
