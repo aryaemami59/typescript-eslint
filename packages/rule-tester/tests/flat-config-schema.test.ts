@@ -1,13 +1,15 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 // Forked from: https://github.com/eslint/eslint/blob/f182114144ae0bb7187de34a1661f31fb70f1357/tests/lib/config/flat-config-schema.js
 
+import { describe, expect, it } from 'vitest';
+
 import type { ObjectLike } from '../src/utils/flat-config-schema';
 
 import { flatConfigSchema } from '../src/utils/flat-config-schema';
 
-describe('merge', () => {
-  const { merge } = flatConfigSchema.settings;
+const { merge } = flatConfigSchema.settings;
 
+describe(merge, () => {
   it('merges two objects', () => {
     const first = { foo: 42 };
     const second = { bar: 'baz' };

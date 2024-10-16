@@ -1,6 +1,8 @@
+import { describe, expect, it } from 'vitest';
+
 import { ESLintUtils } from '../../src';
 
-describe('RuleCreator', () => {
+describe(ESLintUtils.RuleCreator, () => {
   interface TestDocs {
     recommended?: 'yes';
   }
@@ -8,7 +10,7 @@ describe('RuleCreator', () => {
   const createRule = ESLintUtils.RuleCreator<TestDocs>(name => `test/${name}`);
 
   it('createRule should be a function', () => {
-    expect(typeof createRule).toBe('function');
+    expect(createRule).toBeTypeOf('function');
   });
 
   it('should create rule correctly', () => {
