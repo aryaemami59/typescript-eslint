@@ -32,7 +32,7 @@
         "default",
         "^production",
         "{workspaceRoot}/vitest.config.mts",
-        "{workspaceRoot}/jest.config.base.js"
+        "{workspaceRoot}/vitest.config.base.mts"
       ],
       "outputs": ["{projectRoot}/coverage"],
       "cache": true
@@ -42,7 +42,7 @@
         "default",
         "^production",
         "{workspaceRoot}/vitest.config.mts",
-        "{workspaceRoot}/jest.config.base.js"
+        "{workspaceRoot}/vitest.config.base.mts"
       ],
       "outputs": ["{projectRoot}/coverage"],
       "cache": true,

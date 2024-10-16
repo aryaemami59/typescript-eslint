@@ -1,8 +1,12 @@
-'use strict';
+import { defineConfig } from 'vitest/config';
+import vitestBaseConfig from '../../vitest.config.base.mjs';
 
-// @ts-check
-/** @type {import('@jest/types').Config.InitialOptions} */
-module.exports = {
-  ...require('../../jest.config.base.js'),
-  passWithNoTests: true,
-};
+const vitestConfig = defineConfig({
+  ...vitestBaseConfig,
+
+  test: {
+    passWithNoTests: true,
+  },
+});
+
+export default vitestConfig;
