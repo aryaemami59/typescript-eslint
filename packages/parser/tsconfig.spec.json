@@ -1,10 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/packages/parser",
-    "module": "NodeNext",
-    "resolveJsonModule": true,
-    "types": ["node", "vitest/globals", "vitest/importMeta"]
+    "outDir": "../../dist/out-tsc/packages/parser"
   },
   "include": [
     "vitest.config.mts",

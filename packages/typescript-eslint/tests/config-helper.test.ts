@@ -328,9 +328,9 @@ describe('config helper', () => {
     );
   });
 
-  it.each([undefined, null, 'not a config object', 42])(
+  it.for([[undefined], [null], ['not a config object'], [42]] as const)(
     'passes invalid arguments through unchanged',
-    config => {
+    ([config], { expect }) => {
       expect(
         tseslint.config(
           // @ts-expect-error purposely testing invalid values

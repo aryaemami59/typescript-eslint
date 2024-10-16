@@ -14,15 +14,16 @@
   "scripts": {
     "build": "docusaurus build",
     "clear": "docusaurus clear",
-    "format": "prettier --write \"./**/*.{md,mdx,ts,js,tsx,jsx}\" --ignore-path ../../.prettierignore",
+    "clean": "rimraf dist/ build/ .docusaurus/ && yarn run clear",
+    "format": "yarn run -T format",
     "generate-website-dts": "tsx ./tools/generate-website-dts.mts",
     "stylelint": "stylelint \"src/**/*.css\"",
     "stylelint:fix": "stylelint \"src/**/*.css\" --fix",
-    "lint": "npx nx lint",
+    "lint": "yarn run -BT nx lint",
     "serve": "docusaurus serve",
-    "start": "npx nx start",
+    "start": "yarn run -BT nx start",
     "swizzle": "docusaurus swizzle",
-    "check-types": "npx nx typecheck"
+    "check-types": "yarn run -BT nx typecheck"
   },
   "dependencies": {
     "@babel/runtime": "^7.24.4",
@@ -52,9 +53,6 @@
     "typedoc-plugin-markdown": "^4.6.3",
     "typescript": "*"
   },
-  "resolutions": {
-    "react": "^18.2.0"
-  },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.2.1",
     "@types/mdast": "^4.0.3",
@@ -69,7 +67,6 @@
     "copy-webpack-plugin": "^13.0.0",
     "cross-fetch": "*",
     "history": "^4.9.0",
-    "make-dir": "*",
     "mdast-util-from-markdown": "^2.0.1",
     "mdast-util-mdx": "^3.0.0",
     "monaco-editor": "~0.52.0",

@@ -28,6 +28,15 @@ const restrictNamedDeclarations = {
   selector: 'ExportNamedDeclaration[declaration=null][source=null]',
 };
 
+const vitestFiles = [
+  'packages/*/tests/**/*.test?(-d).?(m|c)ts?(x)',
+  'packages/parser/tests/**/*.?(m|c)ts?(x)',
+  'packages/ast-spec/tests/util/setupVitest.mts',
+  'packages/integration-tests/tools/integration-test-base.ts',
+  'packages/integration-tests/tools/pack-packages.ts',
+  'packages/scope-manager/tests/test-utils/serializers/index.ts',
+];
+
 export default tseslint.config(
   // register all of the plugins up-front
   {
@@ -358,13 +367,15 @@ export default tseslint.config(
   // test file linting
   //
 
+  // define the vitest globals for all test files
+  {
+    files: vitestFiles,
+    ...vitestPlugin.configs.env,
+  },
   // test file specific configuration
   {
-    files: [
-      'packages/*/tests/**/*.{ts,tsx,cts,mts}',
-      'packages/integration-tests/tools/**/*.ts',
-    ],
-    ...vitestPlugin.configs.env,
+    extends: [vitestPlugin.configs.recommended],
+    files: vitestFiles,
     rules: {
       '@typescript-eslint/no-empty-function': [
         'error',
@@ -375,10 +386,10 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-call': 'off',
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-return': 'off',
+      'vitest/expect-expect': 'off',
       'vitest/no-alias-methods': 'error',
       'vitest/no-disabled-tests': 'error',
       'vitest/no-focused-tests': 'error',
-      'vitest/no-identical-title': 'error',
       'vitest/no-test-prefixes': 'error',
       'vitest/no-test-return-statement': 'error',
       'vitest/prefer-describe-function-title': 'error',
@@ -387,7 +398,6 @@ export default tseslint.config(
       'vitest/prefer-to-be': 'error',
       'vitest/prefer-to-contain': 'error',
       'vitest/prefer-to-have-length': 'error',
-      'vitest/valid-expect': 'error',
     },
     settings: { vitest: { typecheck: true } },
   },
@@ -407,7 +417,6 @@ export default tseslint.config(
   {
     files: [
       'packages/eslint-plugin-internal/tests/rules/**/*.test.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin-tslint/tests/rules/**/*.test.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/tests/rules/**/*.test.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/tests/eslint-rules/**/*.test.{ts,tsx,cts,mts}',
     ],
@@ -432,7 +441,7 @@ export default tseslint.config(
   },
   {
     files: [
-      'eslint.config.{js,cjs,mjs}',
+      'eslint.config.mjs',
       'knip.ts',
       'packages/*/src/index.ts',
       'vitest.config.mts',
@@ -452,7 +461,6 @@ export default tseslint.config(
     extends: [eslintPluginPlugin.configs['flat/recommended']],
     files: [
       'packages/eslint-plugin-internal/**/*.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin-tslint/**/*.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/**/*.{ts,tsx,cts,mts}',
     ],
 
@@ -463,10 +471,8 @@ export default tseslint.config(
   {
     files: [
       'packages/eslint-plugin-internal/src/rules/**/*.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin-tslint/src/rules/**/*.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/src/configs/**/*.{ts,tsx,cts,mts}',
       'packages/typescript-eslint/src/configs/**/*.{ts,tsx,cts,mts}',
-      'packages/core/src/configs/**/*.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/src/rules/**/*.{ts,tsx,cts,mts}',
     ],
     rules: {
@@ -515,7 +521,6 @@ export default tseslint.config(
     files: [
       'packages/scope-manager/src/lib/*.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/src/configs/*.{ts,tsx,cts,mts}',
-      'packages/core/src/configs/*.{ts,tsx,cts,mts}',
     ],
     rules: {
       '@typescript-eslint/internal/no-poorly-typed-ts-props': 'off',

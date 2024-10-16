@@ -6,9 +6,16 @@
   "sourceRoot": "packages/types/src",
   "implicitDependencies": ["ast-spec"],
   "targets": {
+    "copy-ast-spec": {
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/src/generated"],
+      "cache": true
+    },
+    "build": {
+      "dependsOn": ["copy-ast-spec"]
+    },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
+      "executor": "@nx/eslint:lint"
     }
   }
 }

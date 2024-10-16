@@ -30,9 +30,7 @@ if (process.env.SKIP_POSTINSTALL) {
 
 void (async function (): Promise<void> {
   // make sure we're running from the workspace root
-  const {
-    default: { workspaceRoot },
-  } = await import('@nx/devkit');
+  const { workspaceRoot } = await import('@nx/devkit');
   process.chdir(workspaceRoot);
 
   // Install git hooks

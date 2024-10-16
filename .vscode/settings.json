@@ -21,7 +21,6 @@
   "typescript.preferences.quoteStyle": "single",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-  // make the .shot files from jest-specific-snapshot act like normal snapshots
   "files.associations": {
     "*.shot": "jest-snapshot"
   },
