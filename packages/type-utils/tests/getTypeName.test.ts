@@ -3,6 +3,7 @@ import type * as ts from 'typescript';
 
 import { parseForESLint } from '@typescript-eslint/parser';
 import path from 'node:path';
+import { describe, expect, it } from 'vitest';
 
 import { getTypeName } from '../src';
 import { expectToHaveParserServices } from './test-utils/expectToHaveParserServices';

@@ -1,8 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures declaration TSDeclareFunction _error_ async TSESTree - Error 1`] = `
-"TSError
+TSError
 > 1 | declare async function foo();
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 'async' modifier cannot be used in an ambient context.
-  2 |"
-`;
+  2 |

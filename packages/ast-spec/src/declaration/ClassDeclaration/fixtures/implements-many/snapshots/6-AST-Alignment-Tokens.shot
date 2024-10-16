@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures declaration ClassDeclaration implements-many AST Alignment - Token 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -108,5 +105,4 @@ exports[`AST Fixtures declaration ClassDeclaration implements-many AST Alignment
         end: { column: 48, line: 1 },
       },
     },
-  ]"
-`;
+  ]

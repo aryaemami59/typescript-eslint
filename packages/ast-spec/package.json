@@ -36,7 +36,7 @@
     "clean-fixtures": "rimraf -g \"./src/**/fixtures/**/snapshots\"",
     "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
     "lint": "npx nx lint",
-    "test": "jest",
+    "test": "vitest --run",
     "typecheck": "tsc --noEmit"
   },
   "funding": {
@@ -50,7 +50,6 @@
     "@microsoft/api-extractor": "^7.47.11",
     "glob": "*",
     "jest-diff": "^29.7.0",
-    "jest-specific-snapshot": "^8.0.0",
     "make-dir": "*",
     "prettier": "^3.2.5",
     "pretty-format": "*",

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import tmp from 'tmp';
+import { afterEach, describe, expect, it } from 'vitest';
 
 import { clearCaches } from '../../src/clear-caches';
 import { clearWatchCaches } from '../../src/create-program/getWatchProgramsForProjects';

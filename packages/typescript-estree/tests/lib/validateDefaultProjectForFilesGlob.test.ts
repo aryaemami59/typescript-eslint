@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { validateDefaultProjectForFilesGlob } from '../../src/create-program/validateDefaultProjectForFilesGlob';
 
 describe('validateDefaultProjectForFilesGlob', () => {

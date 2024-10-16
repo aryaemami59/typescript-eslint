@@ -2,6 +2,8 @@ import type { TSESTree } from '@typescript-eslint/types';
 import type { ParserServicesWithTypeInformation } from '@typescript-eslint/typescript-estree';
 import type * as ts from 'typescript';
 
+import { describe, expect, it } from 'vitest';
+
 import { getDeclaration } from '../src';
 
 const node = {} as TSESTree.Node;

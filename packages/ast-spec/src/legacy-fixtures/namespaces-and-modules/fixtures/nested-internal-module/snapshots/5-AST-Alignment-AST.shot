@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures legacy-fixtures namespaces-and-modules nested-internal-module AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -37,7 +34,7 @@ exports[`AST Fixtures legacy-fixtures namespaces-and-modules nested-internal-mod
                     },
                     init: Literal {
                       type: 'Literal',
-                      raw: '\\'hello world\\'',
+                      raw: '\'hello world\'',
                       value: 'hello world',
 
                       range: [101, 114],
@@ -444,5 +441,4 @@ exports[`AST Fixtures legacy-fixtures namespaces-and-modules nested-internal-mod
       start: { column: 0, line: 3 },
       end: { column: 0, line: 17 },
     },
-  }"
-`;
+  }

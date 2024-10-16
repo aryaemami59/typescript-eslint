@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures legacy-fixtures basics type-parameters-comments-heritage AST Alignment - Token 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -540,5 +537,4 @@ exports[`AST Fixtures legacy-fixtures basics type-parameters-comments-heritage A
         end: { column: 39, line: 9 },
       },
     },
-  ]"
-`;
+  ]

@@ -1,9 +1,9 @@
 import type { CacheDurationSeconds } from '@typescript-eslint/types';
-import type * as typescriptModule from 'typescript';
 
 import debug from 'debug';
 import * as fastGlobModule from 'fast-glob';
 import { join, resolve } from 'node:path';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { TSESTreeOptions } from '../../src/parser-options';
 
@@ -13,15 +13,13 @@ import { clearGlobResolutionCache } from '../../src/parseSettings/resolveProject
 
 const FIXTURES_DIR = join(__dirname, '../fixtures/simpleProject');
 
-jest.mock('../../src/create-program/shared', () => {
-  const sharedActual = jest.requireActual<typeof sharedParserUtilsModule>(
-    '../../src/create-program/shared',
-  );
+vi.mock(import('../../src/create-program/shared.js'), async importOriginal => {
+  const sharedActual = await importOriginal();
 
   return {
     ...sharedActual,
     __esModule: true,
-    createDefaultCompilerOptionsFromExtra: jest.fn(
+    createDefaultCompilerOptionsFromExtra: vi.fn(
       sharedActual.createDefaultCompilerOptionsFromExtra,
     ),
   };
@@ -29,8 +27,8 @@ jest.mock('../../src/create-program/shared', () => {
 
 // Tests in CI by default run with lowercase program file names,
 // resulting in path.relative results starting with many "../"s
-jest.mock('typescript', () => {
-  const ts = jest.requireActual<typeof typescriptModule>('typescript');
+vi.mock(import('typescript'), async importOriginal => {
+  const ts = await importOriginal();
   return {
     ...ts,
     sys: {
@@ -40,20 +38,20 @@ jest.mock('typescript', () => {
   };
 });
 
-jest.mock('fast-glob', () => {
-  const fastGlob = jest.requireActual<typeof fastGlobModule>('fast-glob');
+vi.mock('fast-glob', async importOriginal => {
+  const fastGlob = await importOriginal<typeof fastGlobModule>();
   return {
     ...fastGlob,
-    sync: jest.fn(fastGlob.sync),
+    sync: vi.fn(fastGlob.sync),
   };
 });
 
-const hrtimeSpy = jest.spyOn(process, 'hrtime');
+const hrtimeSpy = vi.spyOn(process, 'hrtime');
 
-const createDefaultCompilerOptionsFromExtra = jest.mocked(
+const createDefaultCompilerOptionsFromExtra = vi.mocked(
   sharedParserUtilsModule.createDefaultCompilerOptionsFromExtra,
 );
-const fastGlobSyncMock = jest.mocked(fastGlobModule.sync);
+const fastGlobSyncMock = vi.mocked(fastGlobModule.sync);
 
 /**
  * Aligns paths between environments, node for windows uses `\`, for linux and mac uses `/`
@@ -64,7 +62,7 @@ function alignErrorPath(error: Error): never {
 }
 
 beforeEach(() => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
   clearGlobResolutionCache();
 });
 
@@ -198,7 +196,7 @@ describe('parseAndGenerateServices', () => {
         let result:
           | parser.ParseAndGenerateServicesResult<typeof config>
           | undefined;
-        // eslint-disable-next-line jest/valid-expect
+        // eslint-disable-next-line vitest/valid-expect
         const exp = expect(() => {
           result = parser.parseAndGenerateServices(code, {
             ...config,
@@ -518,40 +516,40 @@ describe('parseAndGenerateServices', () => {
         it('errors for not included files', () => {
           expect(testParse('ts/notIncluded0j1.ts'))
             .toThrowErrorMatchingInlineSnapshot(`
-            "ESLint was configured to run on \`<tsconfigRootDir>/ts/notIncluded0j1.ts\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
-            However, that TSConfig does not include this file. Either:
-            - Change ESLint's list of included files to not include this file
-            - Change that TSConfig to include this file
-            - Create a new TSConfig that includes this file and include it in your parserOptions.project
-            See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file"
-          `);
+              [Error: ESLint was configured to run on \`<tsconfigRootDir>/ts/notIncluded0j1.ts\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
+              However, that TSConfig does not include this file. Either:
+              - Change ESLint's list of included files to not include this file
+              - Change that TSConfig to include this file
+              - Create a new TSConfig that includes this file and include it in your parserOptions.project
+              See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file]
+            `);
           expect(testParse('ts/notIncluded02.tsx'))
             .toThrowErrorMatchingInlineSnapshot(`
-            "ESLint was configured to run on \`<tsconfigRootDir>/ts/notIncluded02.tsx\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
-            However, that TSConfig does not include this file. Either:
-            - Change ESLint's list of included files to not include this file
-            - Change that TSConfig to include this file
-            - Create a new TSConfig that includes this file and include it in your parserOptions.project
-            See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file"
-          `);
+              [Error: ESLint was configured to run on \`<tsconfigRootDir>/ts/notIncluded02.tsx\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
+              However, that TSConfig does not include this file. Either:
+              - Change ESLint's list of included files to not include this file
+              - Change that TSConfig to include this file
+              - Create a new TSConfig that includes this file and include it in your parserOptions.project
+              See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file]
+            `);
           expect(testParse('js/notIncluded01.js'))
             .toThrowErrorMatchingInlineSnapshot(`
-            "ESLint was configured to run on \`<tsconfigRootDir>/js/notIncluded01.js\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
-            However, that TSConfig does not include this file. Either:
-            - Change ESLint's list of included files to not include this file
-            - Change that TSConfig to include this file
-            - Create a new TSConfig that includes this file and include it in your parserOptions.project
-            See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file"
-          `);
+              [Error: ESLint was configured to run on \`<tsconfigRootDir>/js/notIncluded01.js\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
+              However, that TSConfig does not include this file. Either:
+              - Change ESLint's list of included files to not include this file
+              - Change that TSConfig to include this file
+              - Create a new TSConfig that includes this file and include it in your parserOptions.project
+              See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file]
+            `);
           expect(testParse('js/notIncluded02.jsx'))
             .toThrowErrorMatchingInlineSnapshot(`
-            "ESLint was configured to run on \`<tsconfigRootDir>/js/notIncluded02.jsx\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
-            However, that TSConfig does not include this file. Either:
-            - Change ESLint's list of included files to not include this file
-            - Change that TSConfig to include this file
-            - Create a new TSConfig that includes this file and include it in your parserOptions.project
-            See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file"
-          `);
+              [Error: ESLint was configured to run on \`<tsconfigRootDir>/js/notIncluded02.jsx\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
+              However, that TSConfig does not include this file. Either:
+              - Change ESLint's list of included files to not include this file
+              - Change that TSConfig to include this file
+              - Create a new TSConfig that includes this file and include it in your parserOptions.project
+              See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file]
+            `);
         });
       });
 
@@ -563,9 +561,9 @@ describe('parseAndGenerateServices', () => {
         it('the extension does not match', () => {
           expect(testParse('other/unknownFileType.unknown', []))
             .toThrowErrorMatchingInlineSnapshot(`
-            "ESLint was configured to run on \`<tsconfigRootDir>/other/unknownFileType.unknown\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
-            The extension for the file (\`.unknown\`) is non-standard. You should add \`parserOptions.extraFileExtensions\` to your config."
-          `);
+              [Error: ESLint was configured to run on \`<tsconfigRootDir>/other/unknownFileType.unknown\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
+              The extension for the file (\`.unknown\`) is non-standard. You should add \`parserOptions.extraFileExtensions\` to your config.]
+            `);
         });
       });
 
@@ -578,44 +576,44 @@ describe('parseAndGenerateServices', () => {
           it("the file isn't included", () => {
             expect(testParse('other/notIncluded.vue'))
               .toThrowErrorMatchingInlineSnapshot(`
-              "ESLint was configured to run on \`<tsconfigRootDir>/other/notIncluded.vue\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
-              However, that TSConfig does not include this file. Either:
-              - Change ESLint's list of included files to not include this file
-              - Change that TSConfig to include this file
-              - Create a new TSConfig that includes this file and include it in your parserOptions.project
-              See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file"
-            `);
+                [Error: ESLint was configured to run on \`<tsconfigRootDir>/other/notIncluded.vue\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
+                However, that TSConfig does not include this file. Either:
+                - Change ESLint's list of included files to not include this file
+                - Change that TSConfig to include this file
+                - Create a new TSConfig that includes this file and include it in your parserOptions.project
+                See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file]
+              `);
           });
 
           it('duplicate extension', () => {
             expect(testParse('ts/notIncluded.ts', ['.ts']))
               .toThrowErrorMatchingInlineSnapshot(`
-              "ESLint was configured to run on \`<tsconfigRootDir>/ts/notIncluded.ts\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
-              You unnecessarily included the extension \`.ts\` with the \`parserOptions.extraFileExtensions\` option. This extension is already handled by the parser by default.
-              However, that TSConfig does not include this file. Either:
-              - Change ESLint's list of included files to not include this file
-              - Change that TSConfig to include this file
-              - Create a new TSConfig that includes this file and include it in your parserOptions.project
-              See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file"
-            `);
+                [Error: ESLint was configured to run on \`<tsconfigRootDir>/ts/notIncluded.ts\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
+                You unnecessarily included the extension \`.ts\` with the \`parserOptions.extraFileExtensions\` option. This extension is already handled by the parser by default.
+                However, that TSConfig does not include this file. Either:
+                - Change ESLint's list of included files to not include this file
+                - Change that TSConfig to include this file
+                - Create a new TSConfig that includes this file and include it in your parserOptions.project
+                See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file]
+              `);
           });
         });
 
         it('invalid extension', () => {
           expect(testParse('other/unknownFileType.unknown', ['unknown']))
             .toThrowErrorMatchingInlineSnapshot(`
-            "ESLint was configured to run on \`<tsconfigRootDir>/other/unknownFileType.unknown\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
-            Found unexpected extension \`unknown\` specified with the \`parserOptions.extraFileExtensions\` option. Did you mean \`.unknown\`?
-            The extension for the file (\`.unknown\`) is non-standard. It should be added to your existing \`parserOptions.extraFileExtensions\`."
-          `);
+              [Error: ESLint was configured to run on \`<tsconfigRootDir>/other/unknownFileType.unknown\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
+              Found unexpected extension \`unknown\` specified with the \`parserOptions.extraFileExtensions\` option. Did you mean \`.unknown\`?
+              The extension for the file (\`.unknown\`) is non-standard. It should be added to your existing \`parserOptions.extraFileExtensions\`.]
+            `);
         });
 
         it('the extension does not match', () => {
           expect(testParse('other/unknownFileType.unknown'))
             .toThrowErrorMatchingInlineSnapshot(`
-            "ESLint was configured to run on \`<tsconfigRootDir>/other/unknownFileType.unknown\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
-            The extension for the file (\`.unknown\`) is non-standard. It should be added to your existing \`parserOptions.extraFileExtensions\`."
-          `);
+              [Error: ESLint was configured to run on \`<tsconfigRootDir>/other/unknownFileType.unknown\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
+              The extension for the file (\`.unknown\`) is non-standard. It should be added to your existing \`parserOptions.extraFileExtensions\`.]
+            `);
         });
       });
 
@@ -687,26 +685,26 @@ describe('parseAndGenerateServices', () => {
 
           expect(testParse('ts/notIncluded0j1.ts'))
             .toThrowErrorMatchingInlineSnapshot(`
-            "ESLint was configured to run on \`<tsconfigRootDir>/ts/notIncluded0j1.ts\` using \`parserOptions.project\`:
-            - <tsconfigRootDir>/tsconfig.json
-            - <tsconfigRootDir>/tsconfig.extra.json
-            However, none of those TSConfigs include this file. Either:
-            - Change ESLint's list of included files to not include this file
-            - Change one of those TSConfigs to include this file
-            - Create a new TSConfig that includes this file and include it in your parserOptions.project
-            See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file"
-          `);
+              [Error: ESLint was configured to run on \`<tsconfigRootDir>/ts/notIncluded0j1.ts\` using \`parserOptions.project\`:
+              - <tsconfigRootDir>/tsconfig.json
+              - <tsconfigRootDir>/tsconfig.extra.json
+              However, none of those TSConfigs include this file. Either:
+              - Change ESLint's list of included files to not include this file
+              - Change one of those TSConfigs to include this file
+              - Create a new TSConfig that includes this file and include it in your parserOptions.project
+              See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file]
+            `);
         });
       }
     });
   }
 
   describe('debug options', () => {
-    const debugEnable = jest.fn();
+    const debugEnable = vi.fn();
     beforeEach(() => {
       debugEnable.mockReset();
       debug.enable = debugEnable;
-      jest.spyOn(debug, 'enabled').mockImplementation(() => false);
+      vi.spyOn(debug, 'enabled').mockImplementation(() => false);
     });
 
     it("shouldn't turn on debugger if no options were provided", () => {
@@ -901,12 +899,12 @@ describe('parseAndGenerateServices', () => {
 
       it('throws a special-case error when project references are enabled in the only TSConfig and the file is not found', () => {
         expect(testParse()).toThrowErrorMatchingInlineSnapshot(`
-        "ESLint was configured to run on \`<tsconfigRootDir>/file.ts\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
-        That TSConfig uses project "references" and doesn't include \`<tsconfigRootDir>/file.ts\` directly, which is not supported by \`parserOptions.project\`.
-        Either:
-        - Switch to \`parserOptions.projectService\`
-        - Use an ESLint-specific TSConfig
-        See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#are-typescript-project-references-supported"
+          [Error: ESLint was configured to run on \`<tsconfigRootDir>/file.ts\` using \`parserOptions.project\`: <tsconfigRootDir>/tsconfig.json
+          That TSConfig uses project "references" and doesn't include \`<tsconfigRootDir>/file.ts\` directly, which is not supported by \`parserOptions.project\`.
+          Either:
+          - Switch to \`parserOptions.projectService\`
+          - Use an ESLint-specific TSConfig
+          See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#are-typescript-project-references-supported]
         `);
       });
     });

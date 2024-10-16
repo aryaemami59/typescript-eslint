@@ -2,6 +2,7 @@ import * as glob from 'glob';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as ts from 'typescript';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 import type { ParseAndGenerateServicesResult } from '../../src/parser';
 import type { TSESTreeOptions } from '../../src/parser-options';
@@ -39,7 +40,9 @@ function createOptions(fileName: string): { cwd?: string } & TSESTreeOptions {
 }
 
 // ensure tsconfig-parser watch caches are clean for each test
-beforeEach(() => clearCaches());
+beforeEach(() => {
+  clearCaches();
+});
 
 describe('semanticInfo', () => {
   beforeEach(() => {
@@ -302,7 +305,7 @@ describe('semanticInfo', () => {
           badConfig,
         ),
       ).toThrowErrorMatchingInlineSnapshot(
-        `"Compiler option 'compileOnSave' requires a value of type boolean."`,
+        `[Error: Compiler option 'compileOnSave' requires a value of type boolean.]`,
       );
     });
   }

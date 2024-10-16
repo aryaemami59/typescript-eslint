@@ -1,3 +1,5 @@
+import { describe, expect, test } from 'vitest';
+
 import { describeFilePath } from '../../src/create-program/describeFilePath';
 
 describe('describeFilePath', () => {

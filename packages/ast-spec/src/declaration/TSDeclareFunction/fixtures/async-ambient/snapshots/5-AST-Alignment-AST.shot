@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures declaration TSDeclareFunction async-ambient AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -69,7 +66,7 @@ exports[`AST Fixtures declaration TSDeclareFunction async-ambient AST Alignment 
 -       global: false,
         id: Literal {
           type: 'Literal',
-          raw: '\\'x\\'',
+          raw: '\'x\'',
           value: 'x',
 
           range: [15, 18],
@@ -94,5 +91,4 @@ exports[`AST Fixtures declaration TSDeclareFunction async-ambient AST Alignment 
       start: { column: 0, line: 1 },
       end: { column: 0, line: 4 },
     },
-  }"
-`;
+  }

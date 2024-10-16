@@ -1,8 +1,11 @@
+import type { Mock } from 'vitest';
+
 import semver from 'semver';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type * as Parser from '../../src/parser';
 
-jest.mock('semver');
+vi.mock('semver');
 
 const resetIsTTY = process.stdout.isTTY;
 
@@ -14,14 +17,14 @@ describe('Warn on unsupported TypeScript version', () => {
     parser = await import('../../src/parser');
   });
   afterEach(() => {
-    jest.resetModules();
-    jest.resetAllMocks();
+    vi.resetModules();
+    vi.resetAllMocks();
     process.stdout.isTTY = resetIsTTY;
   });
 
   it('should warn the user if they are using an unsupported TypeScript version', () => {
-    (semver.satisfies as jest.Mock).mockReturnValue(false);
-    jest.spyOn(console, 'log').mockImplementation();
+    (semver.satisfies as Mock).mockReturnValue(false);
+    vi.spyOn(console, 'log').mockImplementation(() => {});
     process.stdout.isTTY = true;
 
     parser.parse('');
@@ -33,8 +36,8 @@ describe('Warn on unsupported TypeScript version', () => {
   });
 
   it('should warn the user if they are running on a non TTY process and a custom loggerFn was passed', () => {
-    (semver.satisfies as jest.Mock).mockReturnValue(false);
-    const loggerFn = jest.fn();
+    (semver.satisfies as Mock).mockReturnValue(false);
+    const loggerFn = vi.fn();
     process.stdout.isTTY = false;
 
     parser.parse('', {
@@ -44,8 +47,8 @@ describe('Warn on unsupported TypeScript version', () => {
   });
 
   it('should not warn the user if they are running on a non TTY process and a custom loggerFn was not passed', () => {
-    (semver.satisfies as jest.Mock).mockReturnValue(false);
-    jest.spyOn(console, 'log').mockImplementation();
+    (semver.satisfies as Mock).mockReturnValue(false);
+    vi.spyOn(console, 'log').mockImplementation(() => {});
     process.stdout.isTTY = false;
 
     parser.parse('');
