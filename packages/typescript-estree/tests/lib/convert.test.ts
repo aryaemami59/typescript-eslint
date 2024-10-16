@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { TSESTree } from '@typescript-eslint/types';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
 import * as ts from 'typescript';
@@ -318,7 +318,9 @@ describe('convert', () => {
     );
 
     it('warns on a deprecated aliased property access when suppressDeprecatedPropertyWarnings is false', () => {
-      const emitWarning = vi.spyOn(process, 'emitWarning').mockImplementation();
+      const emitWarning = vi
+        .spyOn(process, 'emitWarning')
+        .mockImplementation(() => {});
       const esTsEnumDeclaration = getEsTsEnumDeclaration({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -333,7 +335,9 @@ describe('convert', () => {
     });
 
     it('does not warn on a subsequent deprecated aliased property access when suppressDeprecatedPropertyWarnings is false', () => {
-      const emitWarning = vi.spyOn(process, 'emitWarning').mockImplementation();
+      const emitWarning = vi
+        .spyOn(process, 'emitWarning')
+        .mockImplementation(() => {});
       const esTsEnumDeclaration = getEsTsEnumDeclaration({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -347,7 +351,9 @@ describe('convert', () => {
     });
 
     it('does not warn on a deprecated aliased property access when suppressDeprecatedPropertyWarnings is true', () => {
-      const emitWarning = vi.spyOn(process, 'emitWarning').mockImplementation();
+      const emitWarning = vi
+        .spyOn(process, 'emitWarning')
+        .mockImplementation(() => {});
       const esTsEnumDeclaration = getEsTsEnumDeclaration({
         suppressDeprecatedPropertyWarnings: true,
       });
@@ -376,7 +382,9 @@ describe('convert', () => {
     });
 
     it('warns on a deprecated getter property access when suppressDeprecatedPropertyWarnings is false', () => {
-      const emitWarning = vi.spyOn(process, 'emitWarning').mockImplementation();
+      const emitWarning = vi
+        .spyOn(process, 'emitWarning')
+        .mockImplementation(() => {});
       const tsMappedType = getEsTsMappedType({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -391,7 +399,9 @@ describe('convert', () => {
     });
 
     it('does not warn on a subsequent deprecated getter property access when suppressDeprecatedPropertyWarnings is false', () => {
-      const emitWarning = vi.spyOn(process, 'emitWarning').mockImplementation();
+      const emitWarning = vi
+        .spyOn(process, 'emitWarning')
+        .mockImplementation(() => {});
       const tsMappedType = getEsTsMappedType({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -405,7 +415,9 @@ describe('convert', () => {
     });
 
     it('does not warn on a deprecated getter property access when suppressDeprecatedPropertyWarnings is true', () => {
-      const emitWarning = vi.spyOn(process, 'emitWarning').mockImplementation();
+      const emitWarning = vi
+        .spyOn(process, 'emitWarning')
+        .mockImplementation(() => {});
       const tsMappedType = getEsTsMappedType({
         suppressDeprecatedPropertyWarnings: true,
       });
