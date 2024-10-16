@@ -2,19 +2,10 @@ import type { InvalidTestCase } from '@typescript-eslint/rule-tester';
 
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/return-await';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/return-await.js';
+import { DEFAULT_TESTER_CONFIG } from '../test-utils/test-utils.js';
 
-const rootDir = getFixturesRootDir();
-
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootDir,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 // default rule is in-try-catch
 ruleTester.run('return-await', rule, {

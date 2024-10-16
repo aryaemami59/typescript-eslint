@@ -3,10 +3,10 @@ import type { TSESTree } from '@typescript-eslint/types';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
 import * as ts from 'typescript';
 
-import type { TSNode } from '../../src';
-import type { ConverterOptions } from '../../src/convert';
+import type { ConverterOptions } from '../../src/convert.js';
+import type { TSESTreeToTSNode, TSNode } from '../../src/index.js';
 
-import { Converter } from '../../src/convert';
+import { Converter } from '../../src/convert.js';
 
 describe('convert', () => {
   afterEach(() => {
@@ -91,9 +91,9 @@ describe('convert', () => {
         errorOnUnknownASTType: true,
       });
 
-      expect(() => instance['deeplyCopy'](ast)).toThrow(
-        'Unknown AST_NODE_TYPE: "TSSourceFile"',
-      );
+      expect(() => {
+        instance['deeplyCopy'](ast);
+      }).toThrow('Unknown AST_NODE_TYPE: "TSSourceFile"');
     });
   });
   /* eslint-enable @typescript-eslint/dot-notation */
@@ -109,22 +109,31 @@ describe('convert', () => {
     const instance = new Converter(ast, {
       shouldPreserveNodeMaps: true,
     });
+
     instance.convertProgram();
+
     const maps = instance.getASTMaps();
+
+    const expectedArray: TSESTreeToTSNode[] = [];
+
+    const actualArray: TSNode[] = [];
 
     function checkMaps(child: ts.Node | ts.SourceFile): void {
       child.forEachChild(node => {
         if (
           node.kind !== ts.SyntaxKind.EndOfFileToken &&
-          node.kind !== ts.SyntaxKind.JsxAttributes &&
-          node.kind !== ts.SyntaxKind.VariableDeclaration
+          !ts.isJsxAttribute(node) &&
+          !ts.isVariableDeclaration(node)
         ) {
-          expect(node).toBe(
+          actualArray.push(node as TSNode);
+
+          expectedArray.push(
             maps.esTreeNodeToTSNodeMap.get(
               maps.tsNodeToESTreeNodeMap.get(node as TSNode),
             ),
           );
         }
+
         checkMaps(node);
       });
     }
@@ -132,7 +141,10 @@ describe('convert', () => {
     expect(ast).toBe(
       maps.esTreeNodeToTSNodeMap.get(maps.tsNodeToESTreeNodeMap.get(ast)),
     );
+
     checkMaps(ast);
+
+    expect(actualArray).toStrictEqual(expectedArray);
   });
 
   it('nodeMaps should contain jsx nodes', () => {
@@ -141,21 +153,30 @@ describe('convert', () => {
     const instance = new Converter(ast, {
       shouldPreserveNodeMaps: true,
     });
+
     instance.convertProgram();
+
     const maps = instance.getASTMaps();
+
+    const expectedArray: TSESTreeToTSNode[] = [];
+
+    const actualArray: TSNode[] = [];
 
     function checkMaps(child: ts.Node | ts.SourceFile): void {
       child.forEachChild(node => {
         if (
           node.kind !== ts.SyntaxKind.EndOfFileToken &&
-          node.kind !== ts.SyntaxKind.JsxAttributes
+          !ts.isJsxAttributes(node)
         ) {
-          expect(node).toBe(
+          actualArray.push(node as TSNode);
+
+          expectedArray.push(
             maps.esTreeNodeToTSNodeMap.get(
               maps.tsNodeToESTreeNodeMap.get(node as TSNode),
             ),
           );
         }
+
         checkMaps(node);
       });
     }
@@ -163,7 +184,10 @@ describe('convert', () => {
     expect(ast).toBe(
       maps.esTreeNodeToTSNodeMap.get(maps.tsNodeToESTreeNodeMap.get(ast)),
     );
+
     checkMaps(ast);
+
+    expect(actualArray).toStrictEqual(expectedArray);
   });
 
   it('nodeMaps should contain export node', () => {
@@ -172,16 +196,25 @@ describe('convert', () => {
     const instance = new Converter(ast, {
       shouldPreserveNodeMaps: true,
     });
+
     const program = instance.convertProgram();
+
     const maps = instance.getASTMaps();
+
+    const expectedArray: TSESTreeToTSNode[] = [];
+
+    const actualArray: TSNode[] = [];
 
     function checkMaps(child: ts.Node | ts.SourceFile): void {
       child.forEachChild(node => {
         if (node.kind !== ts.SyntaxKind.EndOfFileToken) {
-          expect(ast).toBe(
+          actualArray.push(ast);
+
+          expectedArray.push(
             maps.esTreeNodeToTSNodeMap.get(maps.tsNodeToESTreeNodeMap.get(ast)),
           );
         }
+
         checkMaps(node);
       });
     }
@@ -193,7 +226,10 @@ describe('convert', () => {
     expect(program.body[0]).not.toBe(
       maps.tsNodeToESTreeNodeMap.get(ast.statements[0] as TSNode),
     );
+
     checkMaps(ast);
+
+    expect(actualArray).toStrictEqual(expectedArray);
   });
 
   /* eslint-disable @typescript-eslint/dot-notation */
@@ -223,6 +259,7 @@ describe('convert', () => {
         range: [0, 20],
         type: AST_NODE_TYPES.TSAbstractKeyword,
       });
+
       expect(convertedNode).toStrictEqual({
         loc: {
           end: {
@@ -252,9 +289,9 @@ describe('convert', () => {
       const ast = convertCode(code);
 
       const instance = new Converter(ast);
-      expect(() => instance.convertProgram()).toThrow(
-        'JSDoc types can only be used inside documentation comments.',
-      );
+      expect(() => {
+        instance.convertProgram();
+      }).toThrow('JSDoc types can only be used inside documentation comments.');
     });
   });
 
@@ -266,7 +303,9 @@ describe('convert', () => {
 
       const instance = new Converter(ast);
 
-      expect(() => instance.convertProgram()).toThrow(
+      expect(() => {
+        instance.convertProgram();
+      }).toThrow(
         'A variable declaration list must have at least one variable declarator.',
       );
     });
@@ -278,7 +317,9 @@ describe('convert', () => {
         allowInvalidAST: true,
       });
 
-      expect(() => instance.convertProgram()).not.toThrow();
+      expect(() => {
+        instance.convertProgram();
+      }).not.toThrow();
     });
   });
 
@@ -325,6 +366,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const esTsEnumDeclaration = getEsTsEnumDeclaration({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -342,6 +384,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const esTsEnumDeclaration = getEsTsEnumDeclaration({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -358,6 +401,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const esTsEnumDeclaration = getEsTsEnumDeclaration({
         suppressDeprecatedPropertyWarnings: true,
       });
@@ -381,7 +425,7 @@ describe('convert', () => {
       esTsEnumDeclaration.members = [];
 
       // eslint-disable-next-line @typescript-eslint/no-deprecated
-      expect(esTsEnumDeclaration.members).toStrictEqual([]);
+      expect(esTsEnumDeclaration.members).toHaveLength(0);
       expect(Object.keys(esTsEnumDeclaration)).toContain('members');
     });
 
@@ -389,6 +433,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const tsMappedType = getEsTsMappedType({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -406,6 +451,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const tsMappedType = getEsTsMappedType({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -422,6 +468,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const tsMappedType = getEsTsMappedType({
         suppressDeprecatedPropertyWarnings: true,
       });

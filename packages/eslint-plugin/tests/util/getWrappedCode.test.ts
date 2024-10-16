@@ -3,23 +3,15 @@ import type { TSESTree } from '@typescript-eslint/utils';
 import { RuleTester } from '@typescript-eslint/rule-tester';
 import * as ts from 'typescript';
 
+import { getWrappedCode } from '../../src/util/getWrappedCode.js';
 import {
   createRule,
   getOperatorPrecedence,
   getParserServices,
-} from '../../src/util';
-import { getWrappedCode } from '../../src/util/getWrappedCode';
-import { getFixturesRootDir } from '../RuleTester';
+} from '../../src/util/index.js';
+import { DEFAULT_TESTER_CONFIG } from '../test-utils/test-utils.js';
 
-const rootPath = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootPath,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 const removeFunctionRule = createRule({
   create(context) {

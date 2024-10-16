@@ -1,4 +1,4 @@
-import { describeFilePath } from '../../src/create-program/describeFilePath';
+import { describeFilePath } from '../../src/create-program/describeFilePath.js';
 
 describe(describeFilePath, () => {
   describe.for(['./repos/repo', '/repos/repo', '~/repos/repo'] as const)(

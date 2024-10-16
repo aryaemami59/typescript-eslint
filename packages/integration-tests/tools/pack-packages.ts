@@ -26,7 +26,7 @@ interface PackageJSON {
   private?: boolean;
 }
 
-const PACKAGES_DIR = path.resolve(__dirname, '..', '..');
+const PACKAGES_DIR = path.join(__dirname, '..', '..');
 
 const INTEGRATION_TEST_DIR = path.join(
   os.tmpdir() || os.homedir(),

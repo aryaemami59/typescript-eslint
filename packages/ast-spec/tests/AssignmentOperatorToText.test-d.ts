@@ -1,6 +1,6 @@
 import type { AssignmentOperator } from 'typescript';
 
-import type { AssignmentOperatorToText } from '../src';
+import type { AssignmentOperatorToText } from '../src/index.js';
 
 test('type tests', () => {
   expectTypeOf<AssignmentOperatorToText>()

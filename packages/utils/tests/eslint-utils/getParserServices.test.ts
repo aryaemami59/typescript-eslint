@@ -1,9 +1,9 @@
 import type * as ts from 'typescript';
 
-import type { ParserServices, TSESLint, TSESTree } from '../../src';
-import type { FlatConfig } from '../../src/ts-eslint';
+import type { ParserServices, TSESLint, TSESTree } from '../../src/index.js';
+import type { FlatConfig } from '../../src/ts-eslint/index.js';
 
-import { ESLintUtils } from '../../src';
+import { ESLintUtils } from '../../src/index.js';
 
 type UnknownRuleContext = Readonly<TSESLint.RuleContext<string, unknown[]>>;
 
@@ -49,7 +49,9 @@ describe(ESLintUtils.getParserServices, () => {
       },
     });
 
-    expect(() => ESLintUtils.getParserServices(context)).toThrow(
+    expect(() => {
+      ESLintUtils.getParserServices(context);
+    }).toThrow(
       baseErrorRegex('@typescript-eslint[\\/]parser[\\/]dist[\\/]index\\.js'),
     );
   });
@@ -73,9 +75,9 @@ describe(ESLintUtils.getParserServices, () => {
       },
     });
 
-    expect(() => ESLintUtils.getParserServices(context)).toThrow(
-      baseErrorRegex('custom-parser'),
-    );
+    expect(() => {
+      ESLintUtils.getParserServices(context);
+    }).toThrow(baseErrorRegex('custom-parser'));
   });
 
   it('throws a standard error with an unknown parser when parserOptions.esTreeNodeToTSNodeMap is missing and the parser is missing', () => {
@@ -91,9 +93,9 @@ describe(ESLintUtils.getParserServices, () => {
       },
     });
 
-    expect(() => ESLintUtils.getParserServices(context)).toThrow(
-      baseErrorRegex('\\(unknown\\)'),
-    );
+    expect(() => {
+      ESLintUtils.getParserServices(context);
+    }).toThrow(baseErrorRegex('\\(unknown\\)'));
   });
 
   it('throws a standard error with an unknown parser when parserOptions.esTreeNodeToTSNodeMap is missing and the parser is unknown', () => {
@@ -111,9 +113,9 @@ describe(ESLintUtils.getParserServices, () => {
       },
     });
 
-    expect(() => ESLintUtils.getParserServices(context)).toThrow(
-      baseErrorRegex('\\(unknown\\)'),
-    );
+    expect(() => {
+      ESLintUtils.getParserServices(context);
+    }).toThrow(baseErrorRegex('\\(unknown\\)'));
   });
 
   it('throws an augment error when parserOptions.esTreeNodeToTSNodeMap is missing and the parser is unknown', () => {
@@ -127,9 +129,9 @@ describe(ESLintUtils.getParserServices, () => {
         },
       },
     });
-    expect(() => ESLintUtils.getParserServices(context)).toThrow(
-      unknownParserErrorRegex(),
-    );
+    expect(() => {
+      ESLintUtils.getParserServices(context);
+    }).toThrow(unknownParserErrorRegex());
   });
 
   it('throws an error when parserOptions.tsNodeToESTreeNodeMap is missing', () => {
@@ -143,9 +145,9 @@ describe(ESLintUtils.getParserServices, () => {
       },
     });
 
-    expect(() => ESLintUtils.getParserServices(context)).toThrow(
-      baseErrorRegex(),
-    );
+    expect(() => {
+      ESLintUtils.getParserServices(context);
+    }).toThrow(baseErrorRegex());
   });
 
   it('throws an error when parserServices.program is missing and allowWithoutFullTypeInformation is false', () => {
@@ -159,9 +161,9 @@ describe(ESLintUtils.getParserServices, () => {
       },
     });
 
-    expect(() => ESLintUtils.getParserServices(context)).toThrow(
-      baseErrorRegex(),
-    );
+    expect(() => {
+      ESLintUtils.getParserServices(context);
+    }).toThrow(baseErrorRegex());
   });
 
   it('returns when parserServices.program is missing and allowWithoutFullTypeInformation is true', () => {
