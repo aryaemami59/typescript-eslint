@@ -1,53 +1,54 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+[
+  "// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`export default4 1`] = `
-ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-    Variable$2 {
-      defs: [],
-      name: "arguments",
-      references: [],
-      isValueVariable: true,
-      isTypeVariable: true,
-    },
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$1,
-      isStrict: false,
-      references: [],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
+exports[`export > default4`]",
+  ScopeManager {
+    variables: [
+      ImplicitGlobalConstTypeVariable,
+      Variable$2 {
+        defs: [],
+        name: "arguments",
+        references: [],
+        isValueVariable: true,
+        isTypeVariable: true,
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
-      ],
-    },
-    ModuleScope$2 {
-      block: Program$1,
-      isStrict: true,
-      references: [],
-      set: Map {},
-      type: "module",
-      upper: GlobalScope$1,
-      variables: [],
-    },
-    FunctionScope$3 {
-      block: FunctionDeclaration$2,
-      isStrict: true,
-      references: [],
-      set: Map {
-        "arguments" => Variable$2,
+    ],
+    scopes: [
+      GlobalScope$1 {
+        block: Program$1,
+        isStrict: false,
+        references: [],
+        set: Map {
+          "const" => ImplicitGlobalConstTypeVariable,
+        },
+        type: "global",
+        upper: null,
+        variables: [
+          ImplicitGlobalConstTypeVariable,
+        ],
       },
-      type: "function",
-      upper: ModuleScope$2,
-      variables: [
-        Variable$2,
-      ],
-    },
-  ],
-}
-`;
+      ModuleScope$2 {
+        block: Program$1,
+        isStrict: true,
+        references: [],
+        set: Map {},
+        type: "module",
+        upper: GlobalScope$1,
+        variables: [],
+      },
+      FunctionScope$3 {
+        block: FunctionDeclaration$2,
+        isStrict: true,
+        references: [],
+        set: Map {
+          "arguments" => Variable$2,
+        },
+        type: "function",
+        upper: ModuleScope$2,
+        variables: [
+          Variable$2,
+        ],
+      },
+    ],
+  },
+]

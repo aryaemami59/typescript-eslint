@@ -54,14 +54,14 @@
     "estree"
   ],
   "scripts": {
-    "build": "tsc -b tsconfig.build.json",
+    "build": "tsc -b tsconfig.build.json && yarn run postbuild",
     "postbuild": "downlevel-dts dist _ts4.3/dist --to=4.3",
-    "clean": "tsc -b tsconfig.build.json --clean",
-    "postclean": "rimraf dist && rimraf _ts3.4 && rimraf _ts4.3 && rimraf coverage",
-    "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
-    "lint": "npx nx lint",
-    "test": "jest",
-    "check-types": "npx nx typecheck"
+    "clean": "tsc -b tsconfig.build.json --clean & yarn run postclean",
+    "postclean": "rimraf dist/ _ts4.3/ coverage/",
+    "format": "prettier --write . --ignore-path=$PROJECT_CWD/.prettierignore",
+    "lint": "eslint .",
+    "test": "vitest --run",
+    "check-types": "yarn run --top-level nx typecheck"
   },
   "dependencies": {
     "@eslint-community/eslint-utils": "^4.4.0",
@@ -76,7 +76,8 @@
   "devDependencies": {
     "@vitest/coverage-v8": "^3.0.7",
     "downlevel-dts": "*",
-    "prettier": "^3.2.5",
+    "eslint": "*",
+    "prettier": "^3.5.2",
     "rimraf": "*",
     "typescript": "*",
     "vitest": "^3.0.7"

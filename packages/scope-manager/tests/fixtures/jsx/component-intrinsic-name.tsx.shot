@@ -1,58 +1,59 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+[
+  "// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`jsx component-intrinsic-name 1`] = `
-ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-    Variable$2 {
-      defs: [
-        FunctionNameDefinition$1 {
-          name: Identifier<"div">,
-          node: FunctionDeclaration$1,
+exports[`jsx > component-intrinsic-name`]",
+  ScopeManager {
+    variables: [
+      ImplicitGlobalConstTypeVariable,
+      Variable$2 {
+        defs: [
+          FunctionNameDefinition$1 {
+            name: Identifier<"div">,
+            node: FunctionDeclaration$1,
+          },
+        ],
+        name: "div",
+        references: [],
+        isValueVariable: true,
+        isTypeVariable: false,
+      },
+      Variable$3 {
+        defs: [],
+        name: "arguments",
+        references: [],
+        isValueVariable: true,
+        isTypeVariable: true,
+      },
+    ],
+    scopes: [
+      GlobalScope$1 {
+        block: Program$2,
+        isStrict: false,
+        references: [],
+        set: Map {
+          "const" => ImplicitGlobalConstTypeVariable,
+          "div" => Variable$2,
         },
-      ],
-      name: "div",
-      references: [],
-      isValueVariable: true,
-      isTypeVariable: false,
-    },
-    Variable$3 {
-      defs: [],
-      name: "arguments",
-      references: [],
-      isValueVariable: true,
-      isTypeVariable: true,
-    },
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$2,
-      isStrict: false,
-      references: [],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
-        "div" => Variable$2,
+        type: "global",
+        upper: null,
+        variables: [
+          ImplicitGlobalConstTypeVariable,
+          Variable$2,
+        ],
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
-        Variable$2,
-      ],
-    },
-    FunctionScope$2 {
-      block: FunctionDeclaration$1,
-      isStrict: false,
-      references: [],
-      set: Map {
-        "arguments" => Variable$3,
+      FunctionScope$2 {
+        block: FunctionDeclaration$1,
+        isStrict: false,
+        references: [],
+        set: Map {
+          "arguments" => Variable$3,
+        },
+        type: "function",
+        upper: GlobalScope$1,
+        variables: [
+          Variable$3,
+        ],
       },
-      type: "function",
-      upper: GlobalScope$1,
-      variables: [
-        Variable$3,
-      ],
-    },
-  ],
-}
-`;
+    ],
+  },
+]

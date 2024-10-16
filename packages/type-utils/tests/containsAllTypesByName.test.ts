@@ -3,11 +3,12 @@ import type * as ts from 'typescript';
 
 import { parseForESLint } from '@typescript-eslint/parser';
 import path from 'node:path';
+import { describe, expect, it } from 'vitest';
 
 import { containsAllTypesByName } from '../src';
 import { expectToHaveParserServices } from './test-utils/expectToHaveParserServices';
 
-describe('containsAllTypesByName', () => {
+describe(containsAllTypesByName, () => {
   const rootDir = path.join(__dirname, 'fixtures');
 
   function getType(code: string): ts.Type {
