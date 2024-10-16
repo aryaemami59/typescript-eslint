@@ -40,8 +40,9 @@
     "prettier": "^3.2.5"
   },
   "devDependencies": {
-    "@jest/types": "29.6.3",
-    "typescript": "*"
+    "@vitest/coverage-v8": "^2.1.8",
+    "typescript": "*",
+    "vitest": "^2.1.8"
   },
   "funding": {
     "type": "opencollective",
