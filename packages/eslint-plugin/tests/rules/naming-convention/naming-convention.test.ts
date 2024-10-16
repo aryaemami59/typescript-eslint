@@ -2,17 +2,12 @@
 /* eslint-disable @typescript-eslint/internal/prefer-ast-types-enum */
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../../src/rules/naming-convention';
-import { getFixturesRootDir } from '../../RuleTester';
+import rule from '../../../src/rules/naming-convention.js';
+import { DEFAULT_TESTER_CONFIG } from '../../test-utils/test-utils.js';
 
 const ruleTester = new RuleTester();
 
-// only need parserOptions for the `type` option tests
-const rootDir = getFixturesRootDir();
-const parserOptions = {
-  project: './tsconfig.json',
-  tsconfigRootDir: rootDir,
-};
+const { languageOptions } = DEFAULT_TESTER_CONFIG;
 
 ruleTester.run('naming-convention', rule, {
   invalid: [
@@ -32,7 +27,7 @@ ruleTester.run('naming-convention', rule, {
         const child_process = require('child_process');
       `,
       errors: [{ messageId: 'doesNotMatchFormat' }],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           filter: {
@@ -67,7 +62,7 @@ ruleTester.run('naming-convention', rule, {
         declare const boolean_camelCase16: true | false | null | undefined;
       `,
       errors: Array(19).fill({ messageId: 'doesNotMatchFormatTrimmed' }),
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['UPPER_CASE'],
@@ -107,7 +102,7 @@ ruleTester.run('naming-convention', rule, {
           | undefined;
       `,
       errors: Array(4).fill({ messageId: 'doesNotMatchFormatTrimmed' }),
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['snake_case'],
@@ -138,7 +133,7 @@ ruleTester.run('naming-convention', rule, {
           | undefined;
       `,
       errors: Array(8).fill({ messageId: 'doesNotMatchFormatTrimmed' }),
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['snake_case'],
@@ -348,7 +343,7 @@ ruleTester.run('naming-convention', rule, {
         }
       `,
       errors: Array(3).fill({ messageId: 'doesNotMatchFormatTrimmed' }),
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['PascalCase'],
@@ -378,7 +373,7 @@ ruleTester.run('naming-convention', rule, {
         function my_foo_bar() {}
       `,
       errors: [{ messageId: 'doesNotMatchFormatTrimmed' }],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['PascalCase'],
@@ -402,7 +397,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         { format: ['PascalCase'], selector: 'property' },
         { format: ['camelCase'], selector: 'variable' },
@@ -420,7 +415,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [{ format: ['camelCase'], selector: 'parameter' }],
     },
     {
@@ -838,7 +833,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -904,7 +899,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -953,7 +948,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -998,7 +993,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -1030,7 +1025,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -1065,7 +1060,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -1109,7 +1104,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -1151,7 +1146,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -1193,7 +1188,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -1218,7 +1213,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -1243,7 +1238,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -1268,7 +1263,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -1293,7 +1288,7 @@ ruleTester.run('naming-convention', rule, {
           messageId: 'doesNotMatchFormat',
         },
       ],
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['PascalCase'],
@@ -1307,7 +1302,7 @@ ruleTester.run('naming-convention', rule, {
       code: `
         const child_process = require('child_process');
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           filter: {
@@ -1344,7 +1339,7 @@ ruleTester.run('naming-convention', rule, {
         declare const boolean_camelCase: false | null | undefined;
         declare const boolean_camelCase: true | false | null | undefined;
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['UPPER_CASE'],
@@ -1524,7 +1519,7 @@ ruleTester.run('naming-convention', rule, {
           shouldBoo: number;
         }
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['PascalCase'],
@@ -1540,7 +1535,7 @@ ruleTester.run('naming-convention', rule, {
           private readonly FooBoo: boolean;
         }
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['PascalCase'],
@@ -1572,7 +1567,7 @@ ruleTester.run('naming-convention', rule, {
           private VanFooBar: number;
         }
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['StrictPascalCase'],
@@ -1632,7 +1627,7 @@ ruleTester.run('naming-convention', rule, {
           readonly FOO: string;
         };
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['UPPER_CASE'],
@@ -2083,7 +2078,7 @@ ruleTester.run('naming-convention', rule, {
           },
         };
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -2126,7 +2121,7 @@ ruleTester.run('naming-convention', rule, {
           }
         }
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -2149,7 +2144,7 @@ ruleTester.run('naming-convention', rule, {
         async function async_bar2() {}
         const async_bar3 = async function async_bar4() {};
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -2185,7 +2180,7 @@ ruleTester.run('naming-convention', rule, {
           public abstract override some_method_override2(): string;
         }
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -2208,7 +2203,7 @@ ruleTester.run('naming-convention', rule, {
           #some_method() {}
         }
       `,
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['camelCase'],
@@ -2223,7 +2218,7 @@ ruleTester.run('naming-convention', rule, {
     },
     {
       code: "import * as FooBar from 'foo_bar';",
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['PascalCase'],
@@ -2238,7 +2233,7 @@ ruleTester.run('naming-convention', rule, {
     },
     {
       code: "import fooBar from 'foo_bar';",
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['PascalCase'],
@@ -2253,7 +2248,7 @@ ruleTester.run('naming-convention', rule, {
     },
     {
       code: "import { default as fooBar } from 'foo_bar';",
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['PascalCase'],
@@ -2268,7 +2263,7 @@ ruleTester.run('naming-convention', rule, {
     },
     {
       code: "import { foo_bar } from 'foo_bar';",
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['PascalCase'],
@@ -2283,7 +2278,7 @@ ruleTester.run('naming-convention', rule, {
     },
     {
       code: 'import { "🍎" as Foo } from \'foo_bar\';',
-      languageOptions: { parserOptions },
+      languageOptions,
       options: [
         {
           format: ['PascalCase'],

@@ -1,17 +1,9 @@
 import { RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/prefer-readonly';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/prefer-readonly.js';
+import { DEFAULT_TESTER_CONFIG } from '../test-utils/test-utils.js';
 
-const rootDir = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootDir,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 ruleTester.run('prefer-readonly', rule, {
   valid: [

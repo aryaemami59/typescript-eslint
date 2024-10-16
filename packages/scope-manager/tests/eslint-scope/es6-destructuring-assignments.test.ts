@@ -606,21 +606,29 @@ describe('ES6 destructuring assignments', () => {
     assert.isScopeOfType(scope, ScopeType.function);
 
     expect(variables).toHaveLength(6);
+
     const expectedVariableNames = ['arguments', 'a', 'b', 'c', 'd', 'rest'];
 
-    for (let index = 0; index < expectedVariableNames.length; index++) {
-      expect(variables[index].name).toBe(expectedVariableNames[index]);
-    }
+    const actualVariableNames = variables.map(({ name }) => name);
+
+    expect(actualVariableNames).toStrictEqual(expectedVariableNames);
 
     expect(scope.references).toHaveLength(6);
+
     const expectedReferenceNames = ['a', 'b', 'c', 'd', 'rest'];
 
-    for (let index = 0; index < expectedReferenceNames.length; index++) {
-      expect(scope.references[index].identifier.name).toBe(
-        expectedReferenceNames[index],
-      );
-      expect(scope.references[index].isWrite()).toBe(true);
-    }
+    const actual = scope.references
+      .map(
+        reference => [reference.identifier.name, reference.isWrite()] as const,
+      )
+      .slice(0, expectedReferenceNames.length);
+
+    const expected = expectedReferenceNames.map(
+      referenceName => [referenceName, true] as const,
+    );
+
+    expect(actual).toStrictEqual(expected);
+
     expect(scope.references[5].identifier.name).toBe('array');
     expect(scope.references[5].isWrite()).toBe(false);
   });
@@ -703,6 +711,7 @@ describe('ES6 destructuring assignments', () => {
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
     expect(variables).toHaveLength(8);
+
     const expectedVariableNames = [
       'arguments',
       'shorthand',
@@ -714,10 +723,12 @@ describe('ES6 destructuring assignments', () => {
       'world',
     ];
 
-    for (let index = 0; index < expectedVariableNames.length; index++) {
-      expect(variables[index].name).toBe(expectedVariableNames[index]);
-    }
+    const actualVariableNames = variables.map(({ name }) => name);
+
+    expect(actualVariableNames).toStrictEqual(expectedVariableNames);
+
     expect(scope.references).toHaveLength(8);
+
     const expectedReferenceNames = [
       'shorthand',
       'a',
@@ -728,12 +739,18 @@ describe('ES6 destructuring assignments', () => {
       'world',
     ];
 
-    for (let index = 0; index < expectedReferenceNames.length; index++) {
-      expect(scope.references[index].identifier.name).toBe(
-        expectedReferenceNames[index],
-      );
-      expect(scope.references[index].isWrite()).toBe(true);
-    }
+    const actual = scope.references
+      .map(
+        reference => [reference.identifier.name, reference.isWrite()] as const,
+      )
+      .slice(0, expectedReferenceNames.length);
+
+    const expected = expectedReferenceNames.map(
+      referenceName => [referenceName, true] as const,
+    );
+
+    expect(actual).toStrictEqual(expected);
+
     expect(scope.references[7].identifier.name).toBe('object');
     expect(scope.references[7].isWrite()).toBe(false);
   });
@@ -902,16 +919,26 @@ describe('ES6 destructuring assignments', () => {
     expect(variables[0].name).toBe('arguments');
 
     expect(scope.references).toHaveLength(6);
+
     const expectedReferenceNames = ['a', 'b', 'c', 'd', 'rest'];
 
-    for (let index = 0; index < expectedReferenceNames.length; index++) {
-      expect(scope.references[index].identifier.name).toBe(
-        expectedReferenceNames[index],
-      );
-      expect(scope.references[index].isWrite()).toBe(true);
+    const expected = expectedReferenceNames.map(
+      expectedReferenceName => [expectedReferenceName, true, null] as const,
+    );
 
-      assert.isNull(scope.references[index].resolved);
-    }
+    const actual = scope.references
+      .map(
+        reference =>
+          [
+            reference.identifier.name,
+            reference.isWrite(),
+            reference.resolved,
+          ] as const,
+      )
+      .slice(0, expectedReferenceNames.length);
+
+    expect(actual).toStrictEqual(expected);
+
     expect(scope.references[5].identifier.name).toBe('array');
     expect(scope.references[5].isWrite()).toBe(false);
   });
@@ -1047,6 +1074,7 @@ describe('ES6 destructuring assignments', () => {
     expect(variables).toHaveLength(1);
     expect(variables[0].name).toBe('arguments');
     expect(scope.references).toHaveLength(8);
+
     const expectedReferenceNames = [
       'shorthand',
       'a',
@@ -1057,12 +1085,16 @@ describe('ES6 destructuring assignments', () => {
       'world',
     ];
 
-    for (let index = 0; index < expectedReferenceNames.length; index++) {
-      expect(scope.references[index].identifier.name).toBe(
-        expectedReferenceNames[index],
-      );
-      expect(scope.references[index].isWrite()).toBe(true);
-    }
+    const expected = expectedReferenceNames.map(
+      expectedReferenceName => [expectedReferenceName, true] as const,
+    );
+
+    const actual = scope.references
+      .map(reference => [reference.identifier.name, true] as const)
+      .slice(0, expectedReferenceNames.length);
+
+    expect(actual).toStrictEqual(expected);
+
     expect(scope.references[7].identifier.name).toBe('object');
     expect(scope.references[7].isWrite()).toBe(false);
   });
@@ -1195,6 +1227,7 @@ describe('ES6 destructuring assignments', () => {
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
     expect(variables).toHaveLength(8);
+
     const expectedVariableNames = [
       'arguments',
       'shorthand',
@@ -1206,9 +1239,10 @@ describe('ES6 destructuring assignments', () => {
       'world',
     ];
 
-    for (let index = 0; index < expectedVariableNames.length; index++) {
-      expect(variables[index].name).toBe(expectedVariableNames[index]);
-    }
+    const actualVariableNames = variables.map(({ name }) => name);
+
+    expect(actualVariableNames).toStrictEqual(expectedVariableNames);
+
     expect(scope.references).toHaveLength(0);
   });
 
@@ -1232,12 +1266,15 @@ describe('ES6 destructuring assignments', () => {
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
     expect(variables).toHaveLength(5);
+
     const expectedVariableNames = ['arguments', 'a', 'b', 'c', 'd'];
 
-    for (let index = 0; index < expectedVariableNames.length; index++) {
-      expect(variables[index].name).toBe(expectedVariableNames[index]);
-    }
+    const actualVariableNames = variables.map(({ name }) => name);
+
+    expect(actualVariableNames).toStrictEqual(expectedVariableNames);
+
     expect(scope.references).toHaveLength(6);
+
     const expectedReferenceNames = [
       'a',
       'b',
@@ -1247,11 +1284,11 @@ describe('ES6 destructuring assignments', () => {
       'array',
     ];
 
-    for (let index = 0; index < expectedReferenceNames.length; index++) {
-      expect(scope.references[index].identifier.name).toBe(
-        expectedReferenceNames[index],
-      );
-    }
+    const actualReferenceNames = scope.references.map(
+      reference => reference.identifier.name,
+    );
+
+    expect(actualReferenceNames).toStrictEqual(expectedReferenceNames);
   });
 
   it('default values containing references and patterns in var', () => {
@@ -1274,12 +1311,15 @@ describe('ES6 destructuring assignments', () => {
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
     expect(variables).toHaveLength(5);
+
     const expectedVariableNames = ['arguments', 'a', 'b', 'c', 'd'];
 
-    for (let index = 0; index < expectedVariableNames.length; index++) {
-      expect(variables[index].name).toBe(expectedVariableNames[index]);
-    }
+    const actualVariableNames = variables.map(({ name }) => name);
+
+    expect(actualVariableNames).toStrictEqual(expectedVariableNames);
+
     expect(scope.references).toHaveLength(7);
+
     const expectedReferenceNames = [
       'a', // assign array
       'b', // assign array
@@ -1290,11 +1330,11 @@ describe('ES6 destructuring assignments', () => {
       'array',
     ];
 
-    for (let index = 0; index < expectedReferenceNames.length; index++) {
-      expect(scope.references[index].identifier.name).toBe(
-        expectedReferenceNames[index],
-      );
-    }
+    const actualReferenceNames = scope.references.map(
+      reference => reference.identifier.name,
+    );
+
+    expect(actualReferenceNames).toStrictEqual(expectedReferenceNames);
   });
 
   it('nested default values containing references and patterns in var', () => {
@@ -1317,12 +1357,15 @@ describe('ES6 destructuring assignments', () => {
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
     expect(variables).toHaveLength(5);
+
     const expectedVariableNames = ['arguments', 'a', 'b', 'c', 'd'];
 
-    for (let index = 0; index < expectedVariableNames.length; index++) {
-      expect(variables[index].name).toBe(expectedVariableNames[index]);
-    }
+    const actualVariableNames = variables.map(({ name }) => name);
+
+    expect(actualVariableNames).toStrictEqual(expectedVariableNames);
+
     expect(scope.references).toHaveLength(10);
+
     const expectedReferenceNames = [
       'a', // assign array
       'b', // assign array
@@ -1336,10 +1379,10 @@ describe('ES6 destructuring assignments', () => {
       'array',
     ];
 
-    for (let index = 0; index < expectedReferenceNames.length; index++) {
-      expect(scope.references[index].identifier.name).toBe(
-        expectedReferenceNames[index],
-      );
-    }
+    const actualReferenceNames = scope.references.map(
+      reference => reference.identifier.name,
+    );
+
+    expect(actualReferenceNames).toStrictEqual(expectedReferenceNames);
   });
 });

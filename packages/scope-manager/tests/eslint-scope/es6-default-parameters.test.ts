@@ -5,13 +5,20 @@ import { getRealVariables, parseAndAnalyze } from '../test-utils/index.js';
 describe('ES6 default parameters:', () => {
   describe('a default parameter creates a writable reference for its initialization:', () => {
     const patterns = [
-      [AST_NODE_TYPES.ArrowFunctionExpression, 'let foo = (a, b = 0) => {};'],
-      [AST_NODE_TYPES.FunctionDeclaration, 'function foo(a, b = 0) {}'],
-      [AST_NODE_TYPES.FunctionExpression, 'let foo = function(a, b = 0) {};'],
+      [
+        AST_NODE_TYPES.ArrowFunctionExpression,
+        'let foo = (a, b = 0) => {};',
+        2,
+      ],
+      [AST_NODE_TYPES.FunctionDeclaration, 'function foo(a, b = 0) {}', 3],
+      [
+        AST_NODE_TYPES.FunctionExpression,
+        'let foo = function(a, b = 0) {};',
+        3,
+      ],
     ] as const;
 
-    it.for(patterns)('%s', ([name, code], { expect }) => {
-      const numVars = name === AST_NODE_TYPES.ArrowFunctionExpression ? 2 : 3;
+    it.for(patterns)('%s\n\t%s', ([, code, numberOfVariables], { expect }) => {
       const { scopeManager } = parseAndAnalyze(code);
 
       expect(scopeManager.scopes).toHaveLength(2); // [global, foo]
@@ -19,14 +26,14 @@ describe('ES6 default parameters:', () => {
       const scope = scopeManager.scopes[1];
       const variables = getRealVariables(scope.variables);
 
-      expect(variables).toHaveLength(numVars); // [arguments?, a, b]
+      expect(variables).toHaveLength(numberOfVariables); // [arguments?, a, b]
       expect(scope.references).toHaveLength(1);
 
       const reference = scope.references[0];
 
       expect(reference.from).toBe(scope);
       expect(reference.identifier.name).toBe('b');
-      expect(reference.resolved).toBe(variables[numVars - 1]);
+      expect(reference.resolved).toBe(variables[numberOfVariables - 1]);
 
       assert.exists(reference.writeExpr);
 
@@ -39,29 +46,28 @@ describe('ES6 default parameters:', () => {
     const patterns = [
       [
         AST_NODE_TYPES.ArrowFunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = (b = a) => {};
       `,
+        1,
       ],
       [
         AST_NODE_TYPES.FunctionDeclaration,
-        `
-        let a;
+        `let a;
         function foo(b = a) {}
       `,
+        2,
       ],
       [
         AST_NODE_TYPES.FunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = function(b = a) {}
       `,
+        2,
       ],
     ] as const;
 
-    it.for(patterns)('%s', ([name, code], { expect }) => {
-      const numVars = name === AST_NODE_TYPES.ArrowFunctionExpression ? 1 : 2;
+    it.for(patterns)('%s\n\t%s', ([, code, numberOfVariables], { expect }) => {
       const { scopeManager } = parseAndAnalyze(code);
 
       expect(scopeManager.scopes).toHaveLength(2); // [global, foo]
@@ -69,7 +75,7 @@ describe('ES6 default parameters:', () => {
       const scope = scopeManager.scopes[1];
       const variables = getRealVariables(scope.variables);
 
-      expect(variables).toHaveLength(numVars); // [arguments?, b]
+      expect(variables).toHaveLength(numberOfVariables); // [arguments?, b]
       expect(scope.references).toHaveLength(2); // [b, a]
 
       const reference = scope.references[1];
@@ -80,7 +86,7 @@ describe('ES6 default parameters:', () => {
         getRealVariables(scopeManager.scopes[0].variables)[0],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -91,29 +97,28 @@ describe('ES6 default parameters:', () => {
     const patterns = [
       [
         AST_NODE_TYPES.ArrowFunctionExpression,
-        `
-        const a = 0;
+        `const a = 0;
         let foo = (b = a) => {};
       `,
+        1,
       ],
       [
         AST_NODE_TYPES.FunctionDeclaration,
-        `
-        const a = 0;
+        `const a = 0;
         function foo(b = a) {}
       `,
+        2,
       ],
       [
         AST_NODE_TYPES.FunctionExpression,
-        `
-        const a = 0;
+        `const a = 0;
         let foo = function(b = a) {}
       `,
+        2,
       ],
     ] as const;
 
-    it.for(patterns)('%s', ([name, code], { expect }) => {
-      const numVars = name === AST_NODE_TYPES.ArrowFunctionExpression ? 1 : 2;
+    it.for(patterns)('%s\n\t%s', ([, code, numberOfVariables], { expect }) => {
       const { scopeManager } = parseAndAnalyze(code);
 
       expect(scopeManager.scopes).toHaveLength(2); // [global, foo]
@@ -121,7 +126,7 @@ describe('ES6 default parameters:', () => {
       const scope = scopeManager.scopes[1];
       const variables = getRealVariables(scope.variables);
 
-      expect(variables).toHaveLength(numVars); // [arguments?, b]
+      expect(variables).toHaveLength(numberOfVariables); // [arguments?, b]
       expect(scope.references).toHaveLength(2); // [b, a]
 
       const reference = scope.references[1];
@@ -132,7 +137,7 @@ describe('ES6 default parameters:', () => {
         getRealVariables(scopeManager.scopes[0].variables)[0],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -143,29 +148,28 @@ describe('ES6 default parameters:', () => {
     const patterns = [
       [
         AST_NODE_TYPES.ArrowFunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = (b = a.c) => {};
       `,
+        1,
       ],
       [
         AST_NODE_TYPES.FunctionDeclaration,
-        `
-        let a;
+        `let a;
         function foo(b = a.c) {}
       `,
+        2,
       ],
       [
         AST_NODE_TYPES.FunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = function(b = a.c) {}
       `,
+        2,
       ],
     ] as const;
 
-    it.for(patterns)('%s', ([name, code], { expect }) => {
-      const numVars = name === AST_NODE_TYPES.ArrowFunctionExpression ? 1 : 2;
+    it.for(patterns)('%s\n\t%s', ([, code, numberOfVariables], { expect }) => {
       const { scopeManager } = parseAndAnalyze(code);
 
       expect(scopeManager.scopes).toHaveLength(2); // [global, foo]
@@ -173,7 +177,7 @@ describe('ES6 default parameters:', () => {
       const scope = scopeManager.scopes[1];
       const variables = getRealVariables(scope.variables);
 
-      expect(variables).toHaveLength(numVars); // [arguments?, b]
+      expect(variables).toHaveLength(numberOfVariables); // [arguments?, b]
       expect(scope.references).toHaveLength(2); // [b, a]
 
       const reference = scope.references[1];
@@ -184,7 +188,7 @@ describe('ES6 default parameters:', () => {
         getRealVariables(scopeManager.scopes[0].variables)[0],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -195,28 +199,25 @@ describe('ES6 default parameters:', () => {
     const patterns = [
       [
         AST_NODE_TYPES.ArrowFunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = (b = function() { return a; }) => {};
       `,
       ],
       [
         AST_NODE_TYPES.FunctionDeclaration,
-        `
-        let a;
+        `let a;
         function foo(b = function() { return a; }) {}
       `,
       ],
       [
         AST_NODE_TYPES.FunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = function(b = function() { return a; }) {}
       `,
       ],
     ] as const;
 
-    it.for(patterns)('%s', ([, code], { expect }) => {
+    it.for(patterns)('%s\n\t%s', ([, code], { expect }) => {
       const { scopeManager } = parseAndAnalyze(code);
 
       expect(scopeManager.scopes).toHaveLength(3); // [global, foo, anonymous]
@@ -235,7 +236,7 @@ describe('ES6 default parameters:', () => {
         getRealVariables(scopeManager.scopes[0].variables)[0],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -246,29 +247,28 @@ describe('ES6 default parameters:', () => {
     const patterns = [
       [
         AST_NODE_TYPES.ArrowFunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = (b = a) => { let a; };
       `,
+        2,
       ],
       [
         AST_NODE_TYPES.FunctionDeclaration,
-        `
-        let a;
+        `let a;
         function foo(b = a) { let a; }
       `,
+        3,
       ],
       [
         AST_NODE_TYPES.FunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = function(b = a) { let a; }
       `,
+        3,
       ],
     ] as const;
 
-    it.for(patterns)('%s', ([name, code], { expect }) => {
-      const numVars = name === AST_NODE_TYPES.ArrowFunctionExpression ? 2 : 3;
+    it.for(patterns)('%s\n\t%s', ([, code, numberOfVariables], { expect }) => {
       const { scopeManager } = parseAndAnalyze(code);
 
       expect(scopeManager.scopes).toHaveLength(2); // [global, foo]
@@ -276,7 +276,7 @@ describe('ES6 default parameters:', () => {
       const scope = scopeManager.scopes[1];
       const variables = getRealVariables(scope.variables);
 
-      expect(variables).toHaveLength(numVars); // [arguments?, b, a]
+      expect(variables).toHaveLength(numberOfVariables); // [arguments?, b, a]
       expect(scope.references).toHaveLength(2); // [b, a]
 
       const reference = scope.references[1];
@@ -287,7 +287,7 @@ describe('ES6 default parameters:', () => {
         getRealVariables(scopeManager.scopes[0].variables)[0],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -298,29 +298,28 @@ describe('ES6 default parameters:', () => {
     const patterns = [
       [
         AST_NODE_TYPES.ArrowFunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = (b = a, a) => { };
       `,
+        2,
       ],
       [
         AST_NODE_TYPES.FunctionDeclaration,
-        `
-        let a;
+        `let a;
         function foo(b = a, a) { }
       `,
+        3,
       ],
       [
         AST_NODE_TYPES.FunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = function(b = a, a) { }
       `,
+        3,
       ],
     ] as const;
 
-    it.for(patterns)('%s', ([name, code], { expect }) => {
-      const numVars = name === AST_NODE_TYPES.ArrowFunctionExpression ? 2 : 3;
+    it.for(patterns)('%s\n\t%s', ([, code, numberOfVariables], { expect }) => {
       const { scopeManager } = parseAndAnalyze(code);
 
       expect(scopeManager.scopes).toHaveLength(2); // [global, foo]
@@ -328,7 +327,7 @@ describe('ES6 default parameters:', () => {
       const scope = scopeManager.scopes[1];
       const variables = getRealVariables(scope.variables);
 
-      expect(variables).toHaveLength(numVars); // [arguments?, b, a]
+      expect(variables).toHaveLength(numberOfVariables); // [arguments?, b, a]
       expect(scope.references).toHaveLength(2); // [b, a]
 
       const reference = scope.references[1];
@@ -337,7 +336,7 @@ describe('ES6 default parameters:', () => {
       expect(reference.identifier.name).toBe('a');
       expect(reference.resolved).toBe(variables[variables.length - 1]);
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);
@@ -348,28 +347,25 @@ describe('ES6 default parameters:', () => {
     const patterns = [
       [
         AST_NODE_TYPES.ArrowFunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = (b = function(){ a }) => { let a; };
       `,
       ],
       [
         AST_NODE_TYPES.FunctionDeclaration,
-        `
-        let a;
+        `let a;
         function foo(b = function(){ a }) { let a; }
       `,
       ],
       [
         AST_NODE_TYPES.FunctionExpression,
-        `
-        let a;
+        `let a;
         let foo = function(b = function(){ a }) { let a; }
       `,
       ],
     ] as const;
 
-    it.for(patterns)('%s', ([, code], { expect }) => {
+    it.for(patterns)('%s\n\t%s', ([, code], { expect }) => {
       const { scopeManager } = parseAndAnalyze(code);
 
       expect(scopeManager.scopes).toHaveLength(3); // [global, foo, anonymous function]
@@ -386,7 +382,7 @@ describe('ES6 default parameters:', () => {
         getRealVariables(scopeManager.scopes[0].variables)[0],
       );
 
-      assert.notExists(reference.writeExpr);
+      assert.isUndefined(reference.writeExpr);
 
       expect(reference.isWrite()).toBe(false);
       expect(reference.isRead()).toBe(true);

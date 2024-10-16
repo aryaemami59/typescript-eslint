@@ -1,17 +1,12 @@
 import { RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/no-base-to-string';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/no-base-to-string.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootDir = getFixturesRootDir();
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootDir,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 /**
  * ref: https://github.com/typescript-eslint/typescript-eslint/issues/11043
@@ -1132,7 +1127,7 @@ declare const foo: Bar & Foo;
       languageOptions: {
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
-          tsconfigRootDir: rootDir,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -1382,7 +1377,7 @@ declare const foo: Bar & Foo;
       languageOptions: {
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
-          tsconfigRootDir: rootDir,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -1632,7 +1627,7 @@ declare const foo: Bar & Foo;
       languageOptions: {
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
-          tsconfigRootDir: rootDir,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
@@ -1882,7 +1877,7 @@ declare const foo: Bar & Foo;
       languageOptions: {
         parserOptions: {
           project: './tsconfig.noUncheckedIndexedAccess.json',
-          tsconfigRootDir: rootDir,
+          tsconfigRootDir: FIXTURES_DIR,
         },
       },
     },
