@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import { ImplicitLibVariable } from '../src';
 import { parseAndAnalyze } from './test-utils';
 

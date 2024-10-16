@@ -1,6 +1,7 @@
 import type { AST_NODE_TYPES, TSESTree } from '@typescript-eslint/types';
 
 import { simpleTraverse } from '@typescript-eslint/typescript-estree';
+import { expect } from 'vitest';
 
 export function getSpecificNode<
   Selector extends AST_NODE_TYPES,

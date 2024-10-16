@@ -14,13 +14,10 @@
   "scripts": {
     "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
     "lint": "npx nx lint",
-    "test": "jest --no-coverage",
+    "test": "vitest --run",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "ncp": "*",
-    "tmp": "*",
-    "tsx": "*",
     "vitest": "^3.0.5"
   }
 }

@@ -1,12 +1,13 @@
 import path from 'node:path';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { inferSingleRun } from '../../src/parseSettings/inferSingleRun';
 
-describe('inferSingleRun', () => {
+describe(inferSingleRun, () => {
   beforeEach(() => {
-    process.argv = ['node', 'eslint'];
-    process.env.CI = undefined;
-    process.env.TSESTREE_SINGLE_RUN = undefined;
+    vi.stubGlobal('process', { ...process, argv: ['node', 'eslint'] });
+    vi.stubEnv('CI', undefined);
+    vi.stubEnv('TSESTREE_SINGLE_RUN', undefined);
   });
 
   it('returns false when options is undefined', () => {
@@ -21,14 +22,14 @@ describe('inferSingleRun', () => {
     expect(actual).toBe(false);
   });
 
-  it('returns false when options.program is defined', () => {
+  it('returns false when options.programs is defined', () => {
     const actual = inferSingleRun({ programs: [], project: true });
 
     expect(actual).toBe(false);
   });
 
   it("returns false when TSESTREE_SINGLE_RUN is 'false'", () => {
-    process.env.TSESTREE_SINGLE_RUN = 'false';
+    vi.stubEnv('TSESTREE_SINGLE_RUN', 'false');
 
     const actual = inferSingleRun({ project: true });
 
@@ -36,7 +37,7 @@ describe('inferSingleRun', () => {
   });
 
   it("returns true when TSESTREE_SINGLE_RUN is 'true'", () => {
-    process.env.TSESTREE_SINGLE_RUN = 'true';
+    vi.stubEnv('TSESTREE_SINGLE_RUN', 'true');
 
     const actual = inferSingleRun({ project: true });
 
@@ -44,7 +45,7 @@ describe('inferSingleRun', () => {
   });
 
   it("returns true when CI is 'true'", () => {
-    process.env.CI = 'true';
+    vi.stubEnv('CI', 'true');
 
     const actual = inferSingleRun({ project: true });
 
@@ -52,7 +53,7 @@ describe('inferSingleRun', () => {
   });
 
   it.each(['project', 'programs'])(
-    'returns false when given %j is null',
+    'returns false when given %s is null',
     key => {
       const actual = inferSingleRun({ [key]: null });
 
@@ -64,7 +65,7 @@ describe('inferSingleRun', () => {
     ['true', true],
     ['false', false],
   ])('return %s when given TSESTREE_SINGLE_RUN is "%s"', (run, expected) => {
-    process.env.TSESTREE_SINGLE_RUN = run;
+    vi.stubEnv('TSESTREE_SINGLE_RUN', run);
 
     const actual = inferSingleRun({
       programs: null,
@@ -79,7 +80,10 @@ describe('inferSingleRun', () => {
     'node_modules/eslint/bin/eslint.js',
   ])('%s', pathName => {
     it('returns false when singleRun is inferred from process.argv with --fix', () => {
-      process.argv = ['', path.normalize(pathName), '', '--fix'];
+      vi.stubGlobal('process', {
+        ...process,
+        argv: ['', path.normalize(pathName), '', '--fix'],
+      });
 
       const actual = inferSingleRun({
         programs: null,
@@ -90,7 +94,10 @@ describe('inferSingleRun', () => {
     });
 
     it('returns true when singleRun is inferred from process.argv without --fix', () => {
-      process.argv = ['', path.normalize(pathName), ''];
+      vi.stubGlobal('process', {
+        ...process,
+        argv: ['', path.normalize(pathName), ''],
+      });
 
       const actual = inferSingleRun({
         programs: null,
@@ -102,7 +109,7 @@ describe('inferSingleRun', () => {
   });
 
   it('returns true when singleRun is inferred from CI=true', () => {
-    process.env.CI = 'true';
+    vi.stubEnv('CI', 'true');
 
     const actual = inferSingleRun({
       programs: null,
@@ -113,7 +120,7 @@ describe('inferSingleRun', () => {
   });
 
   it('returns true when singleRun can be inferred and options.extraFileExtensions is an empty array', () => {
-    process.env.CI = 'true';
+    vi.stubEnv('CI', 'true');
 
     const actual = inferSingleRun({
       extraFileExtensions: [],
@@ -124,7 +131,7 @@ describe('inferSingleRun', () => {
   });
 
   it('returns false when singleRun can be inferred options.extraFileExtensions contains entries', () => {
-    process.env.CI = 'true';
+    vi.stubEnv('CI', 'true');
 
     const actual = inferSingleRun({
       extraFileExtensions: ['.vue'],

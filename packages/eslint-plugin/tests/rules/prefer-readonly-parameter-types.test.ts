@@ -1053,7 +1053,7 @@ ruleTester.run('prefer-readonly-parameter-types', rule, {
       ],
       options: [
         {
-          allow: [{ from: 'file', name: 'RegExp' }],
+          allow: [{ from: 'file', name: 'RegExp', path: __dirname }],
         },
       ],
     },

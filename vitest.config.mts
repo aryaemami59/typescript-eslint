@@ -1,9 +1,20 @@
-'use strict';
+import { defaultExclude, defineConfig, mergeConfig } from 'vitest/config';
+import { vitestBaseConfig } from './vitest.config.base.mjs';
 
-// @ts-check
-const { getJestProjectsAsync } = require('@nx/jest');
+const vitestConfig = mergeConfig(
+  vitestBaseConfig,
 
-/** @type {import('@jest/types').Config.InitialOptions} */
-module.exports = async () => ({
-  projects: await getJestProjectsAsync(),
-});
+  defineConfig({
+    test: {
+      name: 'root',
+      root: import.meta.dirname,
+
+      exclude: [
+        ...defaultExclude,
+        'packages/rule-tester/tests/eslint-base/eslint-base.test.js',
+      ],
+    },
+  }),
+);
+
+export default vitestConfig;

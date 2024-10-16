@@ -42,23 +42,9 @@
         ]
       }
     },
-    "clean-fixtures": {
-      "executor": "nx:run-commands",
-      "options": {
-        "parallel": false,
-        "cwd": "packages/scope-manager",
-        "commands": ["rimraf -g \"./src/**/fixtures/**/snapshots\""]
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "options": {
-        "jestConfig": "packages/scope-manager/jest.config.js"
-      }
     }
   }
 }

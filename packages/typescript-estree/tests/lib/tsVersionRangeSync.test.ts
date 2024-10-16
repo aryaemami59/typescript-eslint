@@ -1,3 +1,4 @@
+import { expect, it } from 'vitest';
 // eslint-disable-next-line @typescript-eslint/internal/no-relative-paths-to-internal-packages
 import packageJson from '../../../../package.json';
 import { SUPPORTED_TYPESCRIPT_VERSIONS } from '../../src/parseSettings/warnAboutTSVersion';
