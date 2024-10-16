@@ -32,10 +32,6 @@ export default {
         '@nx/js',
         '@nx/workspace',
         'glob',
-        'jest-specific-snapshot',
-        'make-dir',
-        'ncp',
-        'tmp',
         // imported for type purposes only
         'website',
       ],
@@ -43,12 +39,17 @@ export default {
     'packages/ast-spec': {
       ignore: [
         'src/**/fixtures/**',
-        'tests/*.type-test.ts',
         // @typescript-eslint/typescript-estree is not listed in dependencies to avoid circular dependency errors
         // You can check a more detailed explanation in this file
         'tests/util/parsers/typescript-estree-import.ts',
         'typings/global.d.ts',
       ],
+      vitest: {
+        entry: [
+          '**/*.{bench,test,test-d}.?(c|m)ts?(x)',
+          'tests/util/setupVitest.mts',
+        ],
+      },
     },
     'packages/eslint-plugin': {
       ignore: [
@@ -62,6 +63,12 @@ export default {
     },
     'packages/integration-tests': {
       ignore: ['fixtures/**', 'typings/global.d.ts'],
+      vitest: {
+        entry: [
+          '**/*.{bench,test,test-d}.?(c|m)ts?(x)',
+          'tools/pack-packages.ts',
+        ],
+      },
     },
     'packages/parser': {
       ignore: ['tests/fixtures/**'],
@@ -76,6 +83,12 @@ export default {
     },
     'packages/scope-manager': {
       ignore: ['tests/fixtures/**'],
+      vitest: {
+        entry: [
+          '**/*.{bench,test,test-d}.?(c|m)ts?(x)',
+          'tests/test-utils/serializers/index.ts',
+        ],
+      },
     },
     'packages/type-utils': {
       ignore: ['tests/fixtures/**', 'typings/typescript.d.ts'],
@@ -86,7 +99,6 @@ export default {
     },
     'packages/utils': {
       ignore: [
-        'tests/**/*.type-test.ts',
         'typings/eslint.d.ts',
         'typings/eslint-community-eslint-utils.d.ts',
       ],

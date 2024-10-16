@@ -2,6 +2,7 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 
 import { AST_NODE_TYPES, ESLintUtils } from '@typescript-eslint/utils';
+import { describe } from 'vitest';
 
 import { RuleTester } from '../src/RuleTester';
 
