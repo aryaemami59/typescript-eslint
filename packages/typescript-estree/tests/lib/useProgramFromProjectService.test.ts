@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type -- Fancy mocks */
+import { describe, expect, it } from 'vitest';
+
 import path from 'node:path';
 import * as ts from 'typescript';
 
@@ -10,30 +12,30 @@ import type { ParseSettings } from '../../src/parseSettings';
 
 import { useProgramFromProjectService } from '../../src/useProgramFromProjectService';
 
-const mockCreateNoProgram = jest.fn();
+const mockCreateNoProgram = vi.fn();
 
-jest.mock('../../src/create-program/createSourceFile', () => ({
+vi.mock('../../src/create-program/createSourceFile', () => ({
   get createNoProgram() {
     return mockCreateNoProgram;
   },
 }));
 
-const mockCreateProjectProgram = jest.fn();
+const mockCreateProjectProgram = vi.fn();
 
-jest.mock('../../src/create-program/createProjectProgram', () => ({
+vi.mock('../../src/create-program/createProjectProgram', () => ({
   get createProjectProgram() {
     return mockCreateProjectProgram;
   },
 }));
 
-const mockGetProgram = jest.fn();
+const mockGetProgram = vi.fn();
 
 const currentDirectory = '/repos/repo';
 
 function createMockProjectService() {
-  const openClientFile = jest.fn();
-  const setHostConfiguration = jest.fn();
-  const reloadProjects = jest.fn();
+  const openClientFile = vi.fn();
+  const setHostConfiguration = vi.fn();
+  const reloadProjects = vi.fn();
   const service = {
     getDefaultProjectForFile: () => ({
       getLanguageService: () => ({
@@ -191,7 +193,7 @@ describe('useProgramFromProjectService', () => {
 
   it('returns a created program after reloading projects when hasFullTypeInformation is enabled, the file is only in the project service after reload, and the last reload was recent', () => {
     const { service } = createMockProjectService();
-    const program = { getSourceFile: jest.fn() };
+    const program = { getSourceFile: vi.fn() };
 
     service.openClientFile.mockReturnValueOnce({}).mockReturnValueOnce({
       configFileName: 'tsconfig.json',
@@ -217,7 +219,7 @@ describe('useProgramFromProjectService', () => {
 
   it('throws an error when more than the maximum allowed file count is matched to the default project', () => {
     const { service } = createMockProjectService();
-    const program = { getSourceFile: jest.fn() };
+    const program = { getSourceFile: vi.fn() };
 
     mockGetProgram.mockReturnValueOnce(program);
 
@@ -251,7 +253,7 @@ If you absolutely need more files included, set parserOptions.projectService.max
 
   it('truncates the files printed by the maximum allowed files error when they exceed the print limit', () => {
     const { service } = createMockProjectService();
-    const program = { getSourceFile: jest.fn() };
+    const program = { getSourceFile: vi.fn() };
 
     mockGetProgram.mockReturnValueOnce(program);
 
@@ -325,7 +327,7 @@ If you absolutely need more files included, set parserOptions.projectService.max
 
   it('returns a created program when hasFullTypeInformation is disabled, the file is both in the project service and allowDefaultProject, and the service has a matching program', () => {
     const { service } = createMockProjectService();
-    const program = { getSourceFile: jest.fn() };
+    const program = { getSourceFile: vi.fn() };
 
     mockGetProgram.mockReturnValueOnce(program);
 
@@ -349,7 +351,7 @@ If you absolutely need more files included, set parserOptions.projectService.max
 
   it('returns undefined when hasFullTypeInformation is disabled, the file is neither in the project service nor allowDefaultProject, and the service has a matching program', () => {
     const { service } = createMockProjectService();
-    const program = { getSourceFile: jest.fn() };
+    const program = { getSourceFile: vi.fn() };
 
     mockGetProgram.mockReturnValueOnce(program);
 
@@ -371,7 +373,7 @@ If you absolutely need more files included, set parserOptions.projectService.max
 
   it('returns undefined when hasFullTypeInformation is disabled, the file is in the project service, the service has a matching program, and no out', () => {
     const { service } = createMockProjectService();
-    const program = { getSourceFile: jest.fn() };
+    const program = { getSourceFile: vi.fn() };
 
     mockGetProgram.mockReturnValueOnce(program);
 

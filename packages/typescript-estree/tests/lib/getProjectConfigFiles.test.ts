@@ -1,12 +1,13 @@
+import { beforeEach, describe, expect, it } from 'vitest';
 import path from 'node:path';
 
 import { ExpiringCache } from '../../src/parseSettings/ExpiringCache';
 import { getProjectConfigFiles } from '../../src/parseSettings/getProjectConfigFiles';
 
-const mockExistsSync = jest.fn<boolean, [string]>();
+const mockExistsSync = vi.fn<boolean, [string]>();
 
-jest.mock('node:fs', () => ({
-  ...jest.requireActual('fs'),
+vi.mock('node:fs', () => ({
+  ...vi.requireActual('fs'),
   existsSync: (filePath: string): boolean => mockExistsSync(filePath),
 }));
 
@@ -18,7 +19,7 @@ const parseSettings = {
 
 beforeEach(() => {
   parseSettings.tsconfigMatchCache.clear();
-  jest.clearAllMocks();
+  vi.clearAllMocks();
 });
 
 describe('getProjectConfigFiles', () => {

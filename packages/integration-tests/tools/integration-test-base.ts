@@ -27,7 +27,7 @@ const writeFile = promisify(fs.writeFile);
 const BASE_DEPENDENCIES: PackageJSON['devDependencies'] = {
   ...global.tseslintPackages,
   eslint: rootPackageJson.devDependencies.eslint,
-  jest: rootPackageJson.devDependencies.jest,
+  vitest: rootPackageJson.devDependencies.vitest,
   typescript: rootPackageJson.devDependencies.typescript,
 };
 
@@ -36,8 +36,8 @@ const FIXTURES_DIR = path.join(__dirname, '..', 'fixtures');
 const KEEP_INTEGRATION_TEST_DIR =
   process.env.KEEP_INTEGRATION_TEST_DIR === 'true';
 
-// make sure that jest doesn't timeout the test
-jest.setTimeout(60000);
+// make sure that vi doesn't timeout the test
+vi.setTimeout(60000);
 
 function integrationTest(
   testName: string,

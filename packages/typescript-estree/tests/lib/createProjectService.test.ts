@@ -1,18 +1,19 @@
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import debug from 'debug';
 import * as ts from 'typescript';
 
-const mockGetParsedConfigFile = jest.fn();
-const mockSetCompilerOptionsForInferredProjects = jest.fn();
-const mockSetHostConfiguration = jest.fn();
+const mockGetParsedConfigFile = vi.fn();
+const mockSetCompilerOptionsForInferredProjects = vi.fn();
+const mockSetHostConfiguration = vi.fn();
 
-jest.mock('../../src/create-program/getParsedConfigFile', () => ({
+vi.mock('../../src/create-program/getParsedConfigFile', () => ({
   getParsedConfigFile: mockGetParsedConfigFile,
 }));
 
-jest.mock('typescript/lib/tsserverlibrary', () => ({
-  ...jest.requireActual('typescript/lib/tsserverlibrary'),
+vi.mock('typescript/lib/tsserverlibrary', () => ({
+  ...vi.requireActual('typescript/lib/tsserverlibrary'),
   server: {
-    ...jest.requireActual('typescript/lib/tsserverlibrary').server,
+    ...vi.requireActual('typescript/lib/tsserverlibrary').server,
     ProjectService: class {
       eventHandler: ts.server.ProjectServiceEventHandler | undefined;
       host: ts.server.ServerHost;
@@ -47,7 +48,7 @@ describe('createProjectService', () => {
   });
 
   afterEach(() => {
-    jest.resetAllMocks();
+    vi.resetAllMocks();
   });
 
   it('sets allowDefaultProject when options.allowDefaultProject is defined', () => {
@@ -192,7 +193,7 @@ describe('createProjectService', () => {
   });
 
   it('uses the default projects error debugger for error messages when enabled', () => {
-    jest.spyOn(process.stderr, 'write').mockImplementation();
+    vi.spyOn(process.stderr, 'write').mockImplementation();
 
     const { service } = createProjectService(undefined, undefined, undefined);
     debug.enable('typescript-eslint:typescript-estree:tsserver:err');
@@ -209,7 +210,7 @@ describe('createProjectService', () => {
   });
 
   it('does not use the default projects error debugger for error messages when disabled', () => {
-    jest.spyOn(process.stderr, 'write').mockImplementation();
+    vi.spyOn(process.stderr, 'write').mockImplementation();
 
     const { service } = createProjectService(undefined, undefined, undefined);
     const enabled = service.logger.loggingEnabled();
@@ -220,7 +221,7 @@ describe('createProjectService', () => {
   });
 
   it('uses the default projects info debugger for info messages when enabled', () => {
-    jest.spyOn(process.stderr, 'write').mockImplementation();
+    vi.spyOn(process.stderr, 'write').mockImplementation();
 
     const { service } = createProjectService(undefined, undefined, undefined);
     debug.enable('typescript-eslint:typescript-estree:tsserver:info');
@@ -237,7 +238,7 @@ describe('createProjectService', () => {
   });
 
   it('does not use the default projects info debugger for info messages when disabled', () => {
-    jest.spyOn(process.stderr, 'write').mockImplementation();
+    vi.spyOn(process.stderr, 'write').mockImplementation();
 
     const { service } = createProjectService(undefined, undefined, undefined);
     const enabled = service.logger.loggingEnabled();
@@ -248,7 +249,7 @@ describe('createProjectService', () => {
   });
 
   it('uses the default projects perf debugger for perf messages when enabled', () => {
-    jest.spyOn(process.stderr, 'write').mockImplementation();
+    vi.spyOn(process.stderr, 'write').mockImplementation();
 
     const { service } = createProjectService(undefined, undefined, undefined);
     debug.enable('typescript-eslint:typescript-estree:tsserver:perf');
@@ -265,7 +266,7 @@ describe('createProjectService', () => {
   });
 
   it('does not use the default projects perf debugger for perf messages when disabled', () => {
-    jest.spyOn(process.stderr, 'write').mockImplementation();
+    vi.spyOn(process.stderr, 'write').mockImplementation();
 
     const { service } = createProjectService(undefined, undefined, undefined);
     const enabled = service.logger.loggingEnabled();
@@ -291,7 +292,7 @@ describe('createProjectService', () => {
   });
 
   it('uses the default projects event debugger for event handling when enabled', () => {
-    jest.spyOn(process.stderr, 'write').mockImplementation();
+    vi.spyOn(process.stderr, 'write').mockImplementation();
 
     debug.enable('typescript-eslint:typescript-estree:tsserver:event');
     createProjectService(undefined, undefined, undefined);
@@ -305,7 +306,7 @@ describe('createProjectService', () => {
   });
 
   it('does not use the default projects event debugger for event handling when disabled', () => {
-    jest.spyOn(process.stderr, 'write').mockImplementation();
+    vi.spyOn(process.stderr, 'write').mockImplementation();
 
     createProjectService(undefined, undefined, undefined);
 
@@ -336,7 +337,7 @@ describe('createProjectService', () => {
     );
 
     expect(service.host.require).toBe(
-      jest.requireActual('typescript/lib/tsserverlibrary').sys.require,
+      vi.requireActual('typescript/lib/tsserverlibrary').sys.require,
     );
   });
 

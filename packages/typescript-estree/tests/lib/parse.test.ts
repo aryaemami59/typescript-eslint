@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it } from 'vitest';
 import type { CacheDurationSeconds } from '@typescript-eslint/types';
 import type * as typescriptModule from 'typescript';
 
@@ -13,15 +14,15 @@ import { clearGlobResolutionCache } from '../../src/parseSettings/resolveProject
 
 const FIXTURES_DIR = join(__dirname, '../fixtures/simpleProject');
 
-jest.mock('../../src/create-program/shared', () => {
-  const sharedActual = jest.requireActual<typeof sharedParserUtilsModule>(
+vi.mock('../../src/create-program/shared', () => {
+  const sharedActual = vi.requireActual<typeof sharedParserUtilsModule>(
     '../../src/create-program/shared',
   );
 
   return {
     ...sharedActual,
     __esModule: true,
-    createDefaultCompilerOptionsFromExtra: jest.fn(
+    createDefaultCompilerOptionsFromExtra: vi.fn(
       sharedActual.createDefaultCompilerOptionsFromExtra,
     ),
   };
@@ -29,8 +30,8 @@ jest.mock('../../src/create-program/shared', () => {
 
 // Tests in CI by default run with lowercase program file names,
 // resulting in path.relative results starting with many "../"s
-jest.mock('typescript', () => {
-  const ts = jest.requireActual<typeof typescriptModule>('typescript');
+vi.mock('typescript', () => {
+  const ts = vi.requireActual<typeof typescriptModule>('typescript');
   return {
     ...ts,
     sys: {
@@ -40,20 +41,20 @@ jest.mock('typescript', () => {
   };
 });
 
-jest.mock('fast-glob', () => {
-  const fastGlob = jest.requireActual<typeof fastGlobModule>('fast-glob');
+vi.mock('fast-glob', () => {
+  const fastGlob = vi.requireActual<typeof fastGlobModule>('fast-glob');
   return {
     ...fastGlob,
-    sync: jest.fn(fastGlob.sync),
+    sync: vi.fn(fastGlob.sync),
   };
 });
 
-const hrtimeSpy = jest.spyOn(process, 'hrtime');
+const hrtimeSpy = vi.spyOn(process, 'hrtime');
 
-const createDefaultCompilerOptionsFromExtra = jest.mocked(
+const createDefaultCompilerOptionsFromExtra = vi.mocked(
   sharedParserUtilsModule.createDefaultCompilerOptionsFromExtra,
 );
-const fastGlobSyncMock = jest.mocked(fastGlobModule.sync);
+const fastGlobSyncMock = vi.mocked(fastGlobModule.sync);
 
 /**
  * Aligns paths between environments, node for windows uses `\`, for linux and mac uses `/`
@@ -64,7 +65,7 @@ function alignErrorPath(error: Error): never {
 }
 
 beforeEach(() => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
   clearGlobResolutionCache();
 });
 
@@ -198,7 +199,7 @@ describe('parseAndGenerateServices', () => {
         let result:
           | parser.ParseAndGenerateServicesResult<typeof config>
           | undefined;
-        // eslint-disable-next-line jest/valid-expect
+        // eslint-disable-next-line vi/valid-expect
         const exp = expect(() => {
           result = parser.parseAndGenerateServices(code, {
             ...config,
@@ -702,11 +703,11 @@ describe('parseAndGenerateServices', () => {
   }
 
   describe('debug options', () => {
-    const debugEnable = jest.fn();
+    const debugEnable = vi.fn();
     beforeEach(() => {
       debugEnable.mockReset();
       debug.enable = debugEnable;
-      jest.spyOn(debug, 'enabled').mockImplementation(() => false);
+      vi.spyOn(debug, 'enabled').mockImplementation(() => false);
     });
 
     it("shouldn't turn on debugger if no options were provided", () => {
