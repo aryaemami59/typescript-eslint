@@ -1,5 +1,7 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 
+import { describe, expect, it } from 'vitest';
+
 import plugin from '../src/index';
 
 describe('config helper', () => {

@@ -1,6 +1,8 @@
+import { describe, expect, it } from 'vitest';
+
 import { validateDefaultProjectForFilesGlob } from '../../src/create-program/validateDefaultProjectForFilesGlob';
 
-describe('validateDefaultProjectForFilesGlob', () => {
+describe(validateDefaultProjectForFilesGlob, () => {
   it('does not throw when options.allowDefaultProject is an empty array', () => {
     expect(() => validateDefaultProjectForFilesGlob([])).not.toThrow();
   });

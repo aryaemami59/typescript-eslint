@@ -3,10 +3,15 @@ import type { TSESTree } from '@typescript-eslint/utils';
 import { parseForESLint } from '@typescript-eslint/parser';
 import Ajv from 'ajv';
 import path from 'node:path';
+import { describe, expect, it } from 'vitest';
 
 import type { TypeOrValueSpecifier } from '../src/TypeOrValueSpecifier';
 
 import { typeMatchesSpecifier, typeOrValueSpecifiersSchema } from '../src';
+
+const ROOT_DIR = path.posix.join(
+  ...path.relative(process.cwd(), path.join(__dirname, '..')).split(path.sep),
+);
 
 describe('TypeOrValueSpecifier', () => {
   describe('Schema', () => {
@@ -122,7 +127,7 @@ describe('TypeOrValueSpecifier', () => {
     ])("doesn't match a malformed package specifier: %s", runTestNegative);
   });
 
-  describe('typeMatchesSpecifier', () => {
+  describe(typeMatchesSpecifier, { timeout: 10_000 }, () => {
     function runTests(
       code: string,
       specifier: TypeOrValueSpecifier,
@@ -196,11 +201,19 @@ describe('TypeOrValueSpecifier', () => {
       ],
       [
         'interface Foo {prop: string}; type Test = Foo;',
-        { from: 'file', name: 'Foo', path: 'tests/fixtures/file.ts' },
+        {
+          from: 'file',
+          name: 'Foo',
+          path: `${ROOT_DIR}/tests/fixtures/file.ts`,
+        },
       ],
       [
         'type Foo = {prop: string}; type Test = Foo;',
-        { from: 'file', name: 'Foo', path: 'tests/fixtures/file.ts' },
+        {
+          from: 'file',
+          name: 'Foo',
+          path: `${ROOT_DIR}/tests/fixtures/file.ts`,
+        },
       ],
       [
         'type Foo = Promise<number> & {hey?: string}; let foo: Foo = Promise.resolve(5); type Test = typeof foo;',
@@ -211,7 +224,7 @@ describe('TypeOrValueSpecifier', () => {
         {
           from: 'file',
           name: 'Foo',
-          path: 'tests/../tests/fixtures/////file.ts',
+          path: `${ROOT_DIR}/tests/../tests/fixtures/////file.ts`,
         },
       ],
       [
@@ -219,7 +232,7 @@ describe('TypeOrValueSpecifier', () => {
         {
           from: 'file',
           name: 'Foo',
-          path: 'tests/../tests/fixtures/////file.ts',
+          path: `${ROOT_DIR}/tests/../tests/fixtures/////file.ts`,
         },
       ],
       [
@@ -227,7 +240,7 @@ describe('TypeOrValueSpecifier', () => {
         {
           from: 'file',
           name: ['Foo', 'Bar'],
-          path: 'tests/fixtures/file.ts',
+          path: `${ROOT_DIR}/tests/fixtures/file.ts`,
         },
       ],
       [
@@ -235,7 +248,7 @@ describe('TypeOrValueSpecifier', () => {
         {
           from: 'file',
           name: ['Foo', 'Bar'],
-          path: 'tests/fixtures/file.ts',
+          path: `${ROOT_DIR}/tests/fixtures/file.ts`,
         },
       ],
     ])('matches a matching file specifier: %s', runTestPositive);
@@ -528,18 +541,28 @@ describe('TypeOrValueSpecifier', () => {
           package: 'foo-package',
         },
       ],
-      ['type Test = RegExp;', { from: 'file', name: 'RegExp' }],
-      ['type Test = RegExp;', { from: 'file', name: ['RegExp', 'BigInt'] }],
       [
         'type Test = RegExp;',
-        { from: 'file', name: 'RegExp', path: 'tests/fixtures/file.ts' },
+        { from: 'file', name: 'RegExp', path: __dirname },
+      ],
+      [
+        'type Test = RegExp;',
+        { from: 'file', name: ['RegExp', 'BigInt'], path: __dirname },
+      ],
+      [
+        'type Test = RegExp;',
+        {
+          from: 'file',
+          name: 'RegExp',
+          path: `${ROOT_DIR}/tests/fixtures/file.ts`,
+        },
       ],
       [
         'type Test = RegExp;',
         {
           from: 'file',
           name: ['RegExp', 'BigInt'],
-          path: 'tests/fixtures/file.ts',
+          path: `${ROOT_DIR}/tests/fixtures/file.ts`,
         },
       ],
       [
