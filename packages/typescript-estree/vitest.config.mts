@@ -1,11 +1,15 @@
-'use strict';
-// @ts-check
+import { defineConfig } from 'vitest/config';
+import vitestBaseConfig from '../../vitest.config.base.mjs';
 
-/** @type {import('@jest/types').Config.InitialOptions} */
-module.exports = {
-  ...require('../../jest.config.base.js'),
-  testRegex: ['./tests/lib/.*\\.test\\.ts$'],
-  testPathIgnorePatterns: process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE
-    ? ['/node_modules/', 'project-true']
-    : [],
-};
+const vitestConfig = defineConfig({
+  ...vitestBaseConfig,
+
+  test: {
+    include: ['./tests/lib/.*\\.test\\.ts$'],
+    exclude: process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE
+      ? ['/node_modules/', 'project-true']
+      : [],
+  },
+});
+
+export default vitestConfig;

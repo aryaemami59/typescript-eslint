@@ -56,7 +56,6 @@ export default tseslint.config(
     ignores: [
       '.nx/',
       '.yarn/',
-      '**/jest.config.js',
       '**/node_modules/**',
       '**/dist/**',
       '**/fixtures/**',
