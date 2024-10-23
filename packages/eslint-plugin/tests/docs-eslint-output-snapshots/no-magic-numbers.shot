@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-magic-numbers.mdx code examples ESLint output 1`] = `
-"Options: { "ignoreEnums": false }
+exports[`Validating rule docs > no-meaningless-void-operator.mdx > no-meaningless-void-operator.mdx must next have a blockquote directing to website 1`] = `
+"Options: { \\"ignoreEnums\\": false }
 
 enum foo {
   SECOND = 1000,
@@ -10,8 +10,8 @@ enum foo {
 "
 `;
 
-exports[`Validating rule docs no-magic-numbers.mdx code examples ESLint output 2`] = `
-"Options: { "ignoreEnums": true }
+exports[`Validating rule docs > no-meaningless-void-operator.mdx > no-meaningless-void-operator.mdx must next have a blockquote directing to website 2`] = `
+"Options: { \\"ignoreEnums\\": true }
 
 enum foo {
   SECOND = 1000,
@@ -19,8 +19,8 @@ enum foo {
 "
 `;
 
-exports[`Validating rule docs no-magic-numbers.mdx code examples ESLint output 3`] = `
-"Options: { "ignoreNumericLiteralTypes": false }
+exports[`Validating rule docs > no-meaningless-void-operator.mdx > no-meaningless-void-operator.mdx must next have a blockquote directing to website 3`] = `
+"Options: { \\"ignoreNumericLiteralTypes\\": false }
 
 type SmallPrimes = 2 | 3 | 5 | 7 | 11;
                    ~ No magic number: 2.
@@ -31,15 +31,15 @@ type SmallPrimes = 2 | 3 | 5 | 7 | 11;
 "
 `;
 
-exports[`Validating rule docs no-magic-numbers.mdx code examples ESLint output 4`] = `
-"Options: { "ignoreNumericLiteralTypes": true }
+exports[`Validating rule docs > no-meaningless-void-operator.mdx > no-meaningless-void-operator.mdx must next have a blockquote directing to website 4`] = `
+"Options: { \\"ignoreNumericLiteralTypes\\": true }
 
 type SmallPrimes = 2 | 3 | 5 | 7 | 11;
 "
 `;
 
-exports[`Validating rule docs no-magic-numbers.mdx code examples ESLint output 5`] = `
-"Options: { "ignoreReadonlyClassProperties": false }
+exports[`Validating rule docs > no-meaningless-void-operator.mdx > no-meaningless-void-operator.mdx must next have a blockquote directing to website 5`] = `
+"Options: { \\"ignoreReadonlyClassProperties\\": false }
 
 class Foo {
   readonly A = 1;
@@ -54,8 +54,8 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs no-magic-numbers.mdx code examples ESLint output 6`] = `
-"Options: { "ignoreReadonlyClassProperties": true }
+exports[`Validating rule docs > no-meaningless-void-operator.mdx > no-meaningless-void-operator.mdx must next have a blockquote directing to website 6`] = `
+"Options: { \\"ignoreReadonlyClassProperties\\": true }
 
 class Foo {
   readonly A = 1;
@@ -66,8 +66,8 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs no-magic-numbers.mdx code examples ESLint output 7`] = `
-"Options: { "ignoreTypeIndexes": false }
+exports[`Validating rule docs > no-meaningless-void-operator.mdx > no-meaningless-void-operator.mdx must next have a blockquote directing to website 7`] = `
+"Options: { \\"ignoreTypeIndexes\\": false }
 
 type Foo = Bar[0];
                ~ No magic number: 0.
@@ -76,8 +76,8 @@ type Baz = Parameters<Foo>[2];
 "
 `;
 
-exports[`Validating rule docs no-magic-numbers.mdx code examples ESLint output 8`] = `
-"Options: { "ignoreTypeIndexes": true }
+exports[`Validating rule docs > no-meaningless-void-operator.mdx > no-meaningless-void-operator.mdx must next have a blockquote directing to website 8`] = `
+"Options: { \\"ignoreTypeIndexes\\": true }
 
 type Foo = Bar[0];
 type Baz = Parameters<Foo>[2];

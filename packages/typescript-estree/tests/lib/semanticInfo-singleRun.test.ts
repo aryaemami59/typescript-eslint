@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 import * as glob from 'glob';
 import * as path from 'node:path';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { createProgramFromConfigFile as createProgramFromConfigFileOriginal } from '../../src/create-program/useProvidedPrograms';
 import {
@@ -21,7 +21,7 @@ const mockProgram = {
   },
 };
 
-vi.mock('../../src/ast-converter', () => {
+vi.mock('../../src/ast-converter.js', () => {
   return {
     astConverter(): unknown {
       return { astMaps: {}, estree: {} };
@@ -33,9 +33,9 @@ interface MockProgramWithConfigFile {
   __FROM_CONFIG_FILE__?: string;
 }
 
-vi.mock('../../src/create-program/shared.ts', () => {
+vi.mock(import('../../src/create-program/shared.js'), async importOriginal => {
   return {
-    ...vi.importActual('../../src/create-program/shared.ts'),
+    ...(await importOriginal()),
     getAstFromProgram(program: MockProgramWithConfigFile): unknown {
       if (
         program.__FROM_CONFIG_FILE__?.endsWith('non-matching-tsconfig.json')
@@ -46,30 +46,40 @@ vi.mock('../../src/create-program/shared.ts', () => {
       delete program.__FROM_CONFIG_FILE__;
       return { ast: {}, program };
     },
-  };
+  } as Awaited<ReturnType<typeof importOriginal>>;
 });
 
-vi.mock('../../src/create-program/useProvidedPrograms.ts', () => {
-  return {
-    ...vi.importActual('../../src/create-program/useProvidedPrograms.ts'),
-    createProgramFromConfigFile: vi
-      .fn()
-      .mockImplementation((configFile): MockProgramWithConfigFile => {
-        return {
-          // So we can differentiate our mock return values based on which tsconfig this is
-          __FROM_CONFIG_FILE__: configFile,
-          ...mockProgram,
-        };
-      }),
-  };
-});
+vi.mock(
+  import('../../src/create-program/useProvidedPrograms.js'),
+  async importOriginal => {
+    return {
+      ...(await importOriginal()),
+      createProgramFromConfigFile: vi.fn(
+        (configFile): MockProgramWithConfigFile => {
+          return {
+            // So we can differentiate our mock return values based on which tsconfig this is
+            __FROM_CONFIG_FILE__: configFile,
+            ...mockProgram,
+          };
+        },
+      ),
+    } as unknown as Awaited<ReturnType<typeof importOriginal>>;
+  },
+);
 
-vi.mock('../../src/create-program/getWatchProgramsForProjects', () => {
-  return {
-    ...vi.importActual('../../src/create-program/getWatchProgramsForProjects'),
-    getWatchProgramsForProjects: vi.fn(() => [mockProgram]),
-  };
-});
+vi.mock(
+  import('../../src/create-program/getWatchProgramsForProjects.js'),
+  async importOriginal => {
+    return {
+      ...(await importOriginal()),
+      getWatchProgramsForProjects: vi.fn(() => [
+        mockProgram,
+      ]) as unknown as Awaited<
+        ReturnType<typeof importOriginal>
+      >['getWatchProgramsForProjects'],
+    };
+  },
+);
 
 const createProgramFromConfigFile = vi.mocked(
   createProgramFromConfigFileOriginal,
@@ -106,8 +116,7 @@ describe('semanticInfo - singleRun', () => {
 
   it('should not create any programs ahead of time by default when there is no way to infer singleRun=true', () => {
     // For when these tests themselves are running in CI, we need to ignore that for this particular spec
-    const originalEnvCI = process.env.CI;
-    process.env.CI = 'false';
+    vi.stubEnv('CI', 'false');
 
     /**
      * At this point there is nothing to indicate it is a single run, so createProgramFromConfigFile should
@@ -117,23 +126,20 @@ describe('semanticInfo - singleRun', () => {
     expect(createProgramFromConfigFile).not.toHaveBeenCalled();
 
     // Restore process data
-    process.env.CI = originalEnvCI;
+    vi.unstubAllEnvs();
   });
 
   it('should not create any programs ahead of time when when TSESTREE_SINGLE_RUN=false, even if other inferrence criteria apply', () => {
-    const originalTSESTreeSingleRun = process.env.TSESTREE_SINGLE_RUN;
-    process.env.TSESTREE_SINGLE_RUN = 'false';
+    vi.stubEnv('TSESTREE_SINGLE_RUN', 'false');
 
     // Normally CI=true would be used to infer singleRun=true, but TSESTREE_SINGLE_RUN is explicitly set to false
-    const originalEnvCI = process.env.CI;
-    process.env.CI = 'true';
+    vi.stubEnv('CI', 'true');
 
     parseAndGenerateServices(code, options);
     expect(createProgramFromConfigFile).not.toHaveBeenCalled();
 
     // Restore process data
-    process.env.TSESTREE_SINGLE_RUN = originalTSESTreeSingleRun;
-    process.env.CI = originalEnvCI;
+    vi.unstubAllEnvs();
   });
 
   if (process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true') {
@@ -141,8 +147,7 @@ describe('semanticInfo - singleRun', () => {
       /**
        * Single run because of explicit environment variable TSESTREE_SINGLE_RUN
        */
-      const originalTSESTreeSingleRun = process.env.TSESTREE_SINGLE_RUN;
-      process.env.TSESTREE_SINGLE_RUN = 'true';
+      vi.stubEnv('TSESTREE_SINGLE_RUN', 'true');
 
       const resultProgram = parseAndGenerateServices(code, options).services
         .program;
@@ -165,7 +170,7 @@ describe('semanticInfo - singleRun', () => {
       );
 
       // Restore process data
-      process.env.TSESTREE_SINGLE_RUN = originalTSESTreeSingleRun;
+      vi.unstubAllEnvs();
     });
 
     it('should lazily create the required program out of the provided "parserOptions.project" one time when singleRun is inferred from CI=true', () => {
@@ -173,8 +178,7 @@ describe('semanticInfo - singleRun', () => {
        * Single run because of CI=true (we need to make sure we respect the original value
        * so that we won't interfere with our own usage of the variable)
        */
-      const originalEnvCI = process.env.CI;
-      process.env.CI = 'true';
+      vi.stubEnv('CI', 'true');
 
       const resultProgram = parseAndGenerateServices(code, options).services
         .program;
@@ -197,7 +201,7 @@ describe('semanticInfo - singleRun', () => {
       );
 
       // Restore process data
-      process.env.CI = originalEnvCI;
+      vi.unstubAllEnvs();
     });
 
     it('should lazily create the required program out of the provided "parserOptions.project" one time when singleRun is inferred from process.argv', () => {
@@ -235,8 +239,7 @@ describe('semanticInfo - singleRun', () => {
       /**
        * Single run because of explicit environment variable TSESTREE_SINGLE_RUN
        */
-      const originalTSESTreeSingleRun = process.env.TSESTREE_SINGLE_RUN;
-      process.env.TSESTREE_SINGLE_RUN = 'true';
+      vi.stubEnv('TSESTREE_SINGLE_RUN', 'true');
 
       const optionsWithReversedTsconfigs = {
         ...options,
@@ -261,7 +264,7 @@ describe('semanticInfo - singleRun', () => {
       );
 
       // Restore process data
-      process.env.TSESTREE_SINGLE_RUN = originalTSESTreeSingleRun;
+      vi.unstubAllEnvs();
     });
   }
 });
