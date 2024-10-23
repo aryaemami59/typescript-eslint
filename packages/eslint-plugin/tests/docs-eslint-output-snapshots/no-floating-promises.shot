@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-floating-promises.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-floating-promises.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 const promise = new Promise((resolve, reject) => resolve('value'));
@@ -24,7 +24,7 @@ Promise.reject('value').finally();
 "
 `;
 
-exports[`Validating rule docs no-floating-promises.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-floating-promises.mdx > code examples ESLint output 2`] = `
 "Correct
 
 const promise = new Promise((resolve, reject) => resolve('value'));
@@ -49,9 +49,9 @@ await Promise.all([1, 2, 3].map(async x => x + 1));
 "
 `;
 
-exports[`Validating rule docs no-floating-promises.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > no-floating-promises.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: {"checkThenables": true}
+Options: {\\"checkThenables\\": true}
 
 declare function createPromiseLike(): PromiseLike<string>;
 
@@ -69,9 +69,9 @@ createMyThenable();
 "
 `;
 
-exports[`Validating rule docs no-floating-promises.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > no-floating-promises.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: {"checkThenables": true}
+Options: {\\"checkThenables\\": true}
 
 declare function createPromiseLike(): PromiseLike<string>;
 
@@ -87,8 +87,8 @@ await createMyThenable();
 "
 `;
 
-exports[`Validating rule docs no-floating-promises.mdx code examples ESLint output 5`] = `
-"Options: { "ignoreVoid": true }
+exports[`Validating rule docs > no-floating-promises.mdx > code examples ESLint output 5`] = `
+"Options: { \\"ignoreVoid\\": true }
 
 async function returnsPromise() {
   return 'value';
@@ -99,8 +99,8 @@ void Promise.reject('value');
 "
 `;
 
-exports[`Validating rule docs no-floating-promises.mdx code examples ESLint output 6`] = `
-"Options: { "ignoreIIFE": true }
+exports[`Validating rule docs > no-floating-promises.mdx > code examples ESLint output 6`] = `
+"Options: { \\"ignoreIIFE\\": true }
 
 await (async function () {
   await res(1);
@@ -112,9 +112,9 @@ await (async function () {
 "
 `;
 
-exports[`Validating rule docs no-floating-promises.mdx code examples ESLint output 7`] = `
+exports[`Validating rule docs > no-floating-promises.mdx > code examples ESLint output 7`] = `
 "Incorrect
-Options: {"allowForKnownSafePromises":[{"from":"file","name":"SafePromise"},{"from":"lib","name":"PromiseLike"},{"from":"package","name":"Bar","package":"bar-lib"}]}
+Options: {\\"allowForKnownSafePromises\\":[{\\"from\\":\\"file\\",\\"name\\":\\"SafePromise\\"},{\\"from\\":\\"lib\\",\\"name\\":\\"PromiseLike\\"},{\\"from\\":\\"package\\",\\"name\\":\\"Bar\\",\\"package\\":\\"bar-lib\\"}]}
 
 let promise: Promise<number> = Promise.resolve(2);
 promise;
@@ -129,9 +129,9 @@ returnsPromise();
 "
 `;
 
-exports[`Validating rule docs no-floating-promises.mdx code examples ESLint output 8`] = `
+exports[`Validating rule docs > no-floating-promises.mdx > code examples ESLint output 8`] = `
 "Correct
-Options: {"allowForKnownSafePromises":[{"from":"file","name":"SafePromise"},{"from":"lib","name":"PromiseLike"},{"from":"package","name":"Bar","package":"bar-lib"}]}
+Options: {\\"allowForKnownSafePromises\\":[{\\"from\\":\\"file\\",\\"name\\":\\"SafePromise\\"},{\\"from\\":\\"lib\\",\\"name\\":\\"PromiseLike\\"},{\\"from\\":\\"package\\",\\"name\\":\\"Bar\\",\\"package\\":\\"bar-lib\\"}]}
 
 // promises can be marked as safe by using branded types
 type SafePromise = Promise<number> & { __linterBrands?: string };
@@ -147,9 +147,9 @@ returnsSafePromise();
 "
 `;
 
-exports[`Validating rule docs no-floating-promises.mdx code examples ESLint output 9`] = `
+exports[`Validating rule docs > no-floating-promises.mdx > code examples ESLint output 9`] = `
 "Incorrect
-Options: {"allowForKnownSafeCalls":[{"from":"file","name":"safe","path":"input.ts"}]}
+Options: {\\"allowForKnownSafeCalls\\":[{\\"from\\":\\"file\\",\\"name\\":\\"safe\\",\\"path\\":\\"input.ts\\"}]}
 
 declare function unsafe(...args: unknown[]): Promise<void>;
 
@@ -158,9 +158,9 @@ unsafe('...', () => {});
 "
 `;
 
-exports[`Validating rule docs no-floating-promises.mdx code examples ESLint output 10`] = `
+exports[`Validating rule docs > no-floating-promises.mdx > code examples ESLint output 10`] = `
 "Correct
-Options: {"allowForKnownSafeCalls":[{"from":"file","name":"safe","path":"input.ts"}]}
+Options: {\\"allowForKnownSafeCalls\\":[{\\"from\\":\\"file\\",\\"name\\":\\"safe\\",\\"path\\":\\"input.ts\\"}]}
 
 declare function safe(...args: unknown[]): Promise<void>;
 

@@ -2,7 +2,7 @@ import * as glob from 'glob';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as ts from 'typescript';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { ParseAndGenerateServicesResult } from '../../src/parser';
 import type { TSESTreeOptions } from '../../src/parser-options';
@@ -46,7 +46,7 @@ beforeEach(() => {
 
 describe('semanticInfo', () => {
   beforeEach(() => {
-    process.env.TSESTREE_SINGLE_RUN = '';
+    vi.stubEnv('TSESTREE_SINGLE_RUN', '');
   });
 
   // test all AST snapshots
@@ -336,7 +336,7 @@ describe('semanticInfo', () => {
     });
 
     it('file not in single provided project instance in single-run mode should throw', () => {
-      process.env.TSESTREE_SINGLE_RUN = 'true';
+      vi.stubEnv('TSESTREE_SINGLE_RUN', 'true');
       const filename = 'non-existent-file.ts';
       const options = createOptions(filename);
       const optionsWithProjectTrue = {
@@ -351,6 +351,8 @@ describe('semanticInfo', () => {
           ? `${filename} was not found by the project service. Consider either including it in the tsconfig.json or including it in allowDefaultProject.`
           : `The file was not found in any of the provided project(s): ${filename}`,
       );
+
+      vi.unstubAllEnvs();
     });
   }
 

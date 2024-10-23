@@ -6,10 +6,14 @@ import { getProjectConfigFiles } from '../../src/parseSettings/getProjectConfigF
 
 const mockExistsSync = vi.fn<(filePath: string) => boolean>();
 
-vi.mock('node:fs', async () => ({
-  ...(await vi.importActual('fs')),
-  existsSync: (filePath: string): boolean => mockExistsSync(filePath),
-}));
+vi.mock(
+  import('node:fs'),
+  async importOriginal =>
+    ({
+      ...(await importOriginal()),
+      existsSync: (filePath: string): boolean => mockExistsSync(filePath),
+    }) as unknown as ReturnType<typeof importOriginal>,
+);
 
 const parseSettings = {
   filePath: './repos/repo/packages/package/file.ts',
@@ -40,13 +44,13 @@ describe('getProjectConfigFiles', () => {
   });
 
   describe('it does not enable type-aware linting when given as', () => {
-    for (const project of [undefined, null, false]) {
-      it(`${project}`, () => {
-        const actual = getProjectConfigFiles(parseSettings, project);
+    const testCases = [[undefined], [null], [false]] as const;
 
-        expect(actual).toBeNull();
-      });
-    }
+    it.for(testCases)('%o', ([project], { expect }) => {
+      const actual = getProjectConfigFiles(parseSettings, project);
+
+      expect(actual).toBeNull();
+    });
   });
 
   describe('when caching hits', () => {
