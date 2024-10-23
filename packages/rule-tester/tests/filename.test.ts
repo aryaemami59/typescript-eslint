@@ -1,3 +1,5 @@
+import { describe } from 'vitest';
+
 /* eslint-disable perfectionist/sort-objects */
 import { RuleTester } from '@typescript-eslint/rule-tester';
 import { ESLintUtils } from '@typescript-eslint/utils';

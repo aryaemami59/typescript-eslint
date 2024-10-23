@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
 
 import {

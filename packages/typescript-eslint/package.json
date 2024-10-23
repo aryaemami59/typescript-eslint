@@ -59,7 +59,6 @@
   "devDependencies": {
     "@jest/types": "29.6.3",
     "downlevel-dts": "*",
-    "jest": "29.7.0",
     "prettier": "^3.2.5",
     "rimraf": "*",
     "typescript": "*",

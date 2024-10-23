@@ -56,7 +56,6 @@
     "@typescript-eslint/parser": "8.11.0",
     "ajv": "^6.12.6",
     "downlevel-dts": "*",
-    "jest": "29.7.0",
     "prettier": "^3.2.5",
     "rimraf": "*",
     "typescript": "*",

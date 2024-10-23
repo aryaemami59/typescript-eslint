@@ -19,6 +19,9 @@
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
+
+const { afterAll, afterEach, beforeAll, beforeEach, describe, it } = require("vitest");
+
 const sinon = require("sinon"),
     EventEmitter = require("events"),
     { RuleTester } = require("../../dist/RuleTester"),
@@ -166,7 +169,7 @@ describe("RuleTester", () => {
             describe("when global `it` is a function that has an `only()` method", () => {
                 let originalGlobalItOnly;
 
-                before(() => {
+                beforeAll(() => {
 
                     /*
                      * We run tests with `--forbid-only`, so we have to override
@@ -176,7 +179,7 @@ describe("RuleTester", () => {
                     it.only = () => {};
                     sinon.spy(it, "only");
                 });
-                after(() => {
+                afterAll(() => {
                     it.only = originalGlobalItOnly;
                 });
                 beforeEach(() => {
@@ -200,7 +203,7 @@ describe("RuleTester", () => {
             describe("when `describe` and `it` are overridden without `itOnly`", () => {
                 let originalGlobalItOnly;
 
-                before(() => {
+                beforeAll(() => {
 
                     /*
                      * These tests override `describe` and `it` already, so we
@@ -211,7 +214,7 @@ describe("RuleTester", () => {
                     originalGlobalItOnly = it.only;
                     it.only = void 0;
                 });
-                after(() => {
+                afterAll(() => {
                     it.only = originalGlobalItOnly;
                 });
                 beforeEach(() => {
@@ -236,7 +239,7 @@ describe("RuleTester", () => {
                 let originalRuleTesterDescribe;
                 let originalRuleTesterIt;
 
-                before(() => {
+                beforeAll(() => {
                     originalGlobalIt = global.it;
 
                     // eslint-disable-next-line no-global-assign -- Temporarily override Mocha global
@@ -251,7 +254,7 @@ describe("RuleTester", () => {
                     originalRuleTesterIt = RuleTester.it;
                     RuleTester.it = void 0;
                 });
-                after(() => {
+                afterAll(() => {
 
                     // eslint-disable-next-line no-global-assign -- Restore Mocha global
                     it = originalGlobalIt;
@@ -285,7 +288,7 @@ describe("RuleTester", () => {
             let originalRuleTesterItOnly;
             let spyRuleTesterItOnly;
 
-            before(() => {
+            beforeAll(() => {
                 originalRuleTesterIt = RuleTester.it;
                 spyRuleTesterIt = sinon.spy();
                 RuleTester.it = spyRuleTesterIt;
@@ -293,7 +296,7 @@ describe("RuleTester", () => {
                 spyRuleTesterItOnly = sinon.spy();
                 RuleTester.itOnly = spyRuleTesterItOnly;
             });
-            after(() => {
+            afterAll(() => {
                 RuleTester.it = originalRuleTesterIt;
                 RuleTester.itOnly = originalRuleTesterItOnly;
             });
@@ -3101,12 +3104,12 @@ describe("RuleTester", () => {
         let originalRuleTesterIt;
         let spyRuleTesterIt;
 
-        before(() => {
+        beforeAll(() => {
             originalRuleTesterIt = RuleTester.it;
             spyRuleTesterIt = sinon.spy();
             RuleTester.it = spyRuleTesterIt;
         });
-        after(() => {
+        afterAll(() => {
             RuleTester.it = originalRuleTesterIt;
         });
         beforeEach(() => {

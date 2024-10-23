@@ -1,4 +1,5 @@
 import { addSerializer } from 'jest-specific-snapshot';
+import { expect } from 'vitest';
 
 import { serializers } from './serializers';
 
