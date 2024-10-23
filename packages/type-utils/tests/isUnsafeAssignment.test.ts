@@ -1,9 +1,9 @@
-import { describe, expect, it } from 'vitest';
 import type { TSESTree } from '@typescript-eslint/utils';
 import type * as ts from 'typescript';
 
 import { parseForESLint } from '@typescript-eslint/parser';
 import path from 'node:path';
+import { describe, expect, it } from 'vitest';
 
 import { isUnsafeAssignment } from '../src/isUnsafeAssignment';
 import { expectToHaveParserServices } from './test-utils/expectToHaveParserServices';
