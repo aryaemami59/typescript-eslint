@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-unnecessary-boolean-literal-compare.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-unnecessary-condition.mdx > no-unnecessary-condition.mdx must start with frontmatter description 1`] = `
 "Incorrect
 
 declare const someCondition: boolean;
@@ -10,7 +10,7 @@ if (someCondition === true) {
 "
 `;
 
-exports[`Validating rule docs no-unnecessary-boolean-literal-compare.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-unnecessary-condition.mdx > no-unnecessary-condition.mdx must start with frontmatter description 2`] = `
 "Correct
 
 declare const someCondition: boolean;
@@ -27,9 +27,9 @@ if (someStringBoolean === true) {
 "
 `;
 
-exports[`Validating rule docs no-unnecessary-boolean-literal-compare.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > no-unnecessary-condition.mdx > no-unnecessary-condition.mdx must start with frontmatter description 3`] = `
 "Incorrect
-Options: { "allowComparingNullableBooleansToTrue": false }
+Options: { \\"allowComparingNullableBooleansToTrue\\": false }
 
 declare const someUndefinedCondition: boolean | undefined;
 if (someUndefinedCondition === true) {
@@ -43,9 +43,9 @@ if (someNullCondition !== true) {
 "
 `;
 
-exports[`Validating rule docs no-unnecessary-boolean-literal-compare.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > no-unnecessary-condition.mdx > no-unnecessary-condition.mdx must start with frontmatter description 4`] = `
 "Correct
-Options: { "allowComparingNullableBooleansToTrue": false }
+Options: { \\"allowComparingNullableBooleansToTrue\\": false }
 
 declare const someUndefinedCondition: boolean | undefined;
 if (someUndefinedCondition) {
@@ -57,9 +57,9 @@ if (!someNullCondition) {
 "
 `;
 
-exports[`Validating rule docs no-unnecessary-boolean-literal-compare.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > no-unnecessary-condition.mdx > no-unnecessary-condition.mdx must start with frontmatter description 5`] = `
 "Incorrect
-Options: { "allowComparingNullableBooleansToFalse": false }
+Options: { \\"allowComparingNullableBooleansToFalse\\": false }
 
 declare const someUndefinedCondition: boolean | undefined;
 if (someUndefinedCondition === false) {
@@ -73,9 +73,9 @@ if (someNullCondition !== false) {
 "
 `;
 
-exports[`Validating rule docs no-unnecessary-boolean-literal-compare.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > no-unnecessary-condition.mdx > no-unnecessary-condition.mdx must start with frontmatter description 6`] = `
 "Correct
-Options: { "allowComparingNullableBooleansToFalse": false }
+Options: { \\"allowComparingNullableBooleansToFalse\\": false }
 
 declare const someUndefinedCondition: boolean | undefined;
 if (!(someUndefinedCondition ?? true)) {

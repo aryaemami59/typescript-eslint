@@ -1,44 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-empty-object-type.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-empty-object-type.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 let anyObject: {};
-               ~~ The \`{}\` ("empty object") type allows any non-nullish value, including literals like \`0\` and \`""\`.
+               ~~ The \`{}\` (\\"empty object\\") type allows any non-nullish value, including literals like \`0\` and \`\\"\\"\`.
                   - If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
-                  - If you want a type meaning "any object", you probably want \`object\` instead.
-                  - If you want a type meaning "any value", you probably want \`unknown\` instead.
+                  - If you want a type meaning \\"any object\\", you probably want \`object\` instead.
+                  - If you want a type meaning \\"any value\\", you probably want \`unknown\` instead.
 let anyValue: {};
-              ~~ The \`{}\` ("empty object") type allows any non-nullish value, including literals like \`0\` and \`""\`.
+              ~~ The \`{}\` (\\"empty object\\") type allows any non-nullish value, including literals like \`0\` and \`\\"\\"\`.
                  - If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
-                 - If you want a type meaning "any object", you probably want \`object\` instead.
-                 - If you want a type meaning "any value", you probably want \`unknown\` instead.
+                 - If you want a type meaning \\"any object\\", you probably want \`object\` instead.
+                 - If you want a type meaning \\"any value\\", you probably want \`unknown\` instead.
 
 interface AnyObjectA {}
-          ~~~~~~~~~~ An empty interface declaration allows any non-nullish value, including literals like \`0\` and \`""\`.
+          ~~~~~~~~~~ An empty interface declaration allows any non-nullish value, including literals like \`0\` and \`\\"\\"\`.
                      - If that's what you want, disable this lint rule with an inline comment or configure the 'allowInterfaces' rule option.
-                     - If you want a type meaning "any object", you probably want \`object\` instead.
-                     - If you want a type meaning "any value", you probably want \`unknown\` instead.
+                     - If you want a type meaning \\"any object\\", you probably want \`object\` instead.
+                     - If you want a type meaning \\"any value\\", you probably want \`unknown\` instead.
 interface AnyValueA {}
-          ~~~~~~~~~ An empty interface declaration allows any non-nullish value, including literals like \`0\` and \`""\`.
+          ~~~~~~~~~ An empty interface declaration allows any non-nullish value, including literals like \`0\` and \`\\"\\"\`.
                     - If that's what you want, disable this lint rule with an inline comment or configure the 'allowInterfaces' rule option.
-                    - If you want a type meaning "any object", you probably want \`object\` instead.
-                    - If you want a type meaning "any value", you probably want \`unknown\` instead.
+                    - If you want a type meaning \\"any object\\", you probably want \`object\` instead.
+                    - If you want a type meaning \\"any value\\", you probably want \`unknown\` instead.
 
 type AnyObjectB = {};
-                  ~~ The \`{}\` ("empty object") type allows any non-nullish value, including literals like \`0\` and \`""\`.
+                  ~~ The \`{}\` (\\"empty object\\") type allows any non-nullish value, including literals like \`0\` and \`\\"\\"\`.
                      - If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
-                     - If you want a type meaning "any object", you probably want \`object\` instead.
-                     - If you want a type meaning "any value", you probably want \`unknown\` instead.
+                     - If you want a type meaning \\"any object\\", you probably want \`object\` instead.
+                     - If you want a type meaning \\"any value\\", you probably want \`unknown\` instead.
 type AnyValueB = {};
-                 ~~ The \`{}\` ("empty object") type allows any non-nullish value, including literals like \`0\` and \`""\`.
+                 ~~ The \`{}\` (\\"empty object\\") type allows any non-nullish value, including literals like \`0\` and \`\\"\\"\`.
                     - If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
-                    - If you want a type meaning "any object", you probably want \`object\` instead.
-                    - If you want a type meaning "any value", you probably want \`unknown\` instead.
+                    - If you want a type meaning \\"any object\\", you probably want \`object\` instead.
+                    - If you want a type meaning \\"any value\\", you probably want \`unknown\` instead.
 "
 `;
 
-exports[`Validating rule docs no-empty-object-type.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-empty-object-type.mdx > code examples ESLint output 2`] = `
 "Correct
 
 let anyObject: object;
@@ -60,8 +60,8 @@ type TypeWith = { property: boolean };
 "
 `;
 
-exports[`Validating rule docs no-empty-object-type.mdx code examples ESLint output 3`] = `
-"Options: { "allowInterfaces": "with-single-extends" }
+exports[`Validating rule docs > no-empty-object-type.mdx > code examples ESLint output 3`] = `
+"Options: { \\"allowInterfaces\\": \\"with-single-extends\\" }
 
 interface Base {
   value: boolean;
@@ -71,27 +71,27 @@ interface Derived extends Base {}
 "
 `;
 
-exports[`Validating rule docs no-empty-object-type.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > no-empty-object-type.mdx > code examples ESLint output 4`] = `
 "Incorrect
-Options: { "allowWithName": "Props$" }
+Options: { \\"allowWithName\\": \\"Props$\\" }
 
 interface InterfaceValue {}
-          ~~~~~~~~~~~~~~ An empty interface declaration allows any non-nullish value, including literals like \`0\` and \`""\`.
+          ~~~~~~~~~~~~~~ An empty interface declaration allows any non-nullish value, including literals like \`0\` and \`\\"\\"\`.
                          - If that's what you want, disable this lint rule with an inline comment or configure the 'allowInterfaces' rule option.
-                         - If you want a type meaning "any object", you probably want \`object\` instead.
-                         - If you want a type meaning "any value", you probably want \`unknown\` instead.
+                         - If you want a type meaning \\"any object\\", you probably want \`object\` instead.
+                         - If you want a type meaning \\"any value\\", you probably want \`unknown\` instead.
 
 type TypeValue = {};
-                 ~~ The \`{}\` ("empty object") type allows any non-nullish value, including literals like \`0\` and \`""\`.
+                 ~~ The \`{}\` (\\"empty object\\") type allows any non-nullish value, including literals like \`0\` and \`\\"\\"\`.
                     - If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
-                    - If you want a type meaning "any object", you probably want \`object\` instead.
-                    - If you want a type meaning "any value", you probably want \`unknown\` instead.
+                    - If you want a type meaning \\"any object\\", you probably want \`object\` instead.
+                    - If you want a type meaning \\"any value\\", you probably want \`unknown\` instead.
 "
 `;
 
-exports[`Validating rule docs no-empty-object-type.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > no-empty-object-type.mdx > code examples ESLint output 5`] = `
 "Correct
-Options: { "allowWithName": "Props$" }
+Options: { \\"allowWithName\\": \\"Props$\\" }
 
 interface InterfaceProps {}
 

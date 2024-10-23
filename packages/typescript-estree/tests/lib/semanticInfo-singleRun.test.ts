@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 import * as glob from 'glob';
 import * as path from 'node:path';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { createProgramFromConfigFile as createProgramFromConfigFileOriginal } from '../../src/create-program/useProvidedPrograms';
 import {
