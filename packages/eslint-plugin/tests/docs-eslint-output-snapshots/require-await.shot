@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs require-await.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > require-await.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 async function returnNumber() {
@@ -18,7 +18,7 @@ const callAsyncGenerator = () => asyncGenerator();
 "
 `;
 
-exports[`Validating rule docs require-await.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > require-await.mdx > code examples ESLint output 2`] = `
 "Correct
 
 function returnNumber() {

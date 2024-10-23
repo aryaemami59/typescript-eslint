@@ -17,21 +17,3 @@ exports[`Rule schemas should be convertible to TS types for documentation purpos
 type Options = ['method' | 'property'];
 "
 `;
-
-exports[`Rule schemas should be convertible to TS types for documentation purposes method-signature-style 1`] = `
-"
-# SCHEMA:
-
-[
-  {
-    "enum": ["method", "property"],
-    "type": "string"
-  }
-]
-
-
-# TYPES:
-
-type Options = ['method' | 'property'];
-"
-`;

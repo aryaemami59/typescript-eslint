@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs consistent-type-imports.mdx code examples ESLint output 1`] = `
-"Options: { "prefer": "type-imports" }
+exports[`Validating rule docs > consistent-type-imports.mdx > code examples ESLint output 1`] = `
+"Options: { \\"prefer\\": \\"type-imports\\" }
 
 import type { Foo } from 'Foo';
 import type Bar from 'Bar';
@@ -10,8 +10,8 @@ const x: Bar = 1;
 "
 `;
 
-exports[`Validating rule docs consistent-type-imports.mdx code examples ESLint output 2`] = `
-"Options: { "prefer": "type-imports" }
+exports[`Validating rule docs > consistent-type-imports.mdx > code examples ESLint output 2`] = `
+"Options: { \\"prefer\\": \\"type-imports\\" }
 
 import { Foo } from 'Foo';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~ All imports in the declaration are only used as types. Use \`import type\`.
@@ -22,7 +22,7 @@ const x: Bar = 1;
 "
 `;
 
-exports[`Validating rule docs consistent-type-imports.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > consistent-type-imports.mdx > code examples ESLint output 3`] = `
 "Incorrect
 
 import { Foo } from 'Foo';
@@ -34,8 +34,8 @@ const x: Bar = 1;
 "
 `;
 
-exports[`Validating rule docs consistent-type-imports.mdx code examples ESLint output 4`] = `
-"Options: { "fixStyle": "separate-type-imports" }
+exports[`Validating rule docs > consistent-type-imports.mdx > code examples ESLint output 4`] = `
+"Options: { \\"fixStyle\\": \\"separate-type-imports\\" }
 
 import type { Foo } from 'Foo';
 import type Bar from 'Bar';
@@ -44,8 +44,8 @@ const x: Bar = 1;
 "
 `;
 
-exports[`Validating rule docs consistent-type-imports.mdx code examples ESLint output 5`] = `
-"Options: { "fixStyle": "inline-type-imports" }
+exports[`Validating rule docs > consistent-type-imports.mdx > code examples ESLint output 5`] = `
+"Options: { \\"fixStyle\\": \\"inline-type-imports\\" }
 
 import { type Foo } from 'Foo';
 import type Bar from 'Bar';
@@ -54,8 +54,8 @@ const x: Bar = 1;
 "
 `;
 
-exports[`Validating rule docs consistent-type-imports.mdx code examples ESLint output 6`] = `
-"Options: { "disallowTypeAnnotations": true }
+exports[`Validating rule docs > consistent-type-imports.mdx > code examples ESLint output 6`] = `
+"Options: { \\"disallowTypeAnnotations\\": true }
 
 type T = import('Foo').Foo;
          ~~~~~~~~~~~~~~~~~ \`import()\` type annotations are forbidden.

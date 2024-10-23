@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-unsafe-call.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-unsafe-call.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 declare const anyVar: any;
@@ -28,7 +28,7 @@ nestedAny.prop\`foo\`;
 "
 `;
 
-exports[`Validating rule docs no-unsafe-call.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-unsafe-call.mdx > code examples ESLint output 2`] = `
 "Correct
 
 declare const typedVar: () => void;
@@ -45,7 +45,7 @@ String.raw\`foo\`;
 "
 `;
 
-exports[`Validating rule docs no-unsafe-call.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > no-unsafe-call.mdx > code examples ESLint output 3`] = `
 "Incorrect
 
 const f: Function = () => {};

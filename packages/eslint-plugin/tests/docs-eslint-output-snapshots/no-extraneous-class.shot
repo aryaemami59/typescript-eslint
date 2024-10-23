@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 class StaticConstants {
@@ -24,7 +24,7 @@ abstract class Foo {}
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 2`] = `
 "Correct
 
 export const version = 42;
@@ -43,7 +43,7 @@ abstract class Foo {
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 3`] = `
 "Incorrect
 
 export class Utilities {
@@ -63,7 +63,7 @@ export class Utilities {
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 4`] = `
 "Correct
 
 export function util1() {
@@ -80,7 +80,7 @@ export function util3() {
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 5`] = `
 "Incorrect
 
 // utilities.ts
@@ -98,7 +98,7 @@ Utilities.sayHello();
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 6`] = `
 "
 
 // utilities.ts
@@ -113,7 +113,7 @@ utilities.sayHello();
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 7`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 7`] = `
 "
 
 // utilities.ts
@@ -128,7 +128,7 @@ sayHello();
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 8`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 8`] = `
 "Incorrect
 
 export class Utilities {
@@ -142,7 +142,7 @@ export class Utilities {
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 9`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 9`] = `
 "Correct
 
 let mutableCount = 1;
@@ -157,18 +157,18 @@ export function incrementCount() {
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 10`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 10`] = `
 "Incorrect
-Options: { "allowConstructorOnly": true }
+Options: { \\"allowConstructorOnly\\": true }
 
 class NoFields {}
       ~~~~~~~~ Unexpected empty class.
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 11`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 11`] = `
 "Correct
-Options: { "allowConstructorOnly": true }
+Options: { \\"allowConstructorOnly\\": true }
 
 class NoFields {
   constructor() {
@@ -178,9 +178,9 @@ class NoFields {
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 12`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 12`] = `
 "Incorrect
-Options: { "allowEmpty": true }
+Options: { \\"allowEmpty\\": true }
 
 class NoFields {
       ~~~~~~~~ Unexpected class with only a constructor.
@@ -191,26 +191,26 @@ class NoFields {
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 13`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 13`] = `
 "Correct
-Options: { "allowEmpty": true }
+Options: { \\"allowEmpty\\": true }
 
 class NoFields {}
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 14`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 14`] = `
 "Incorrect
-Options: { "allowStaticOnly": true }
+Options: { \\"allowStaticOnly\\": true }
 
 class EmptyClass {}
       ~~~~~~~~~~ Unexpected empty class.
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 15`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 15`] = `
 "Correct
-Options: { "allowStaticOnly": true }
+Options: { \\"allowStaticOnly\\": true }
 
 class NotEmptyClass {
   static version = 42;
@@ -218,9 +218,9 @@ class NotEmptyClass {
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 16`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 16`] = `
 "Incorrect
-Options: { "allowWithDecorator": true }
+Options: { \\"allowWithDecorator\\": true }
 
 class Constants {
       ~~~~~~~~~ Unexpected class with only static properties.
@@ -229,9 +229,9 @@ class Constants {
 "
 `;
 
-exports[`Validating rule docs no-extraneous-class.mdx code examples ESLint output 17`] = `
+exports[`Validating rule docs > no-extraneous-class.mdx > code examples ESLint output 17`] = `
 "Correct
-Options: { "allowWithDecorator": true }
+Options: { \\"allowWithDecorator\\": true }
 
 @logOnRead()
 class Constants {

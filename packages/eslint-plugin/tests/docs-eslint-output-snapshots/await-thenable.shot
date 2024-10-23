@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs await-thenable.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > await-thenable.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 await 'value';
-~~~~~~~~~~~~~ Unexpected \`await\` of a non-Promise (non-"Thenable") value.
+~~~~~~~~~~~~~ Unexpected \`await\` of a non-Promise (non-\\"Thenable\\") value.
 
 const createValue = () => 'value';
 await createValue();
-~~~~~~~~~~~~~~~~~~~ Unexpected \`await\` of a non-Promise (non-"Thenable") value.
+~~~~~~~~~~~~~~~~~~~ Unexpected \`await\` of a non-Promise (non-\\"Thenable\\") value.
 "
 `;
 
-exports[`Validating rule docs await-thenable.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > await-thenable.mdx > code examples ESLint output 2`] = `
 "Correct
 
 await Promise.resolve('value');
@@ -22,7 +22,7 @@ await createValue();
 "
 `;
 
-exports[`Validating rule docs await-thenable.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > await-thenable.mdx > code examples ESLint output 3`] = `
 "Incorrect
 
 async function syncIterable() {
@@ -47,7 +47,7 @@ async function syncIterableOfPromises() {
 "
 `;
 
-exports[`Validating rule docs await-thenable.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > await-thenable.mdx > code examples ESLint output 4`] = `
 "Correct
 
 async function syncIterable() {

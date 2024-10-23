@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-deprecated.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-deprecated.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 /** @deprecated Use apiV2 instead. */
@@ -13,7 +13,7 @@ await apiV1();
 "
 `;
 
-exports[`Validating rule docs no-deprecated.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-deprecated.mdx > code examples ESLint output 2`] = `
 "Incorrect
 
 import { parse } from 'node:url';
@@ -24,7 +24,7 @@ const url = parse('/foo');
 "
 `;
 
-exports[`Validating rule docs no-deprecated.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > no-deprecated.mdx > code examples ESLint output 3`] = `
 "Correct
 
 /** @deprecated Use apiV2 instead. */
@@ -36,7 +36,7 @@ await apiV2();
 "
 `;
 
-exports[`Validating rule docs no-deprecated.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > no-deprecated.mdx > code examples ESLint output 4`] = `
 "Correct
 
 // Modern Node.js API, uses \`new URL()\`

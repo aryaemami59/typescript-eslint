@@ -28,32 +28,3 @@ type Options = [
 ];
 "
 `;
-
-exports[`Rule schemas should be convertible to TS types for documentation purposes prefer-promise-reject-errors 1`] = `
-"
-# SCHEMA:
-
-[
-  {
-    "additionalProperties": false,
-    "properties": {
-      "allowEmptyReject": {
-        "description": "Whether to allow calls to \`Promise.reject()\` with no arguments.",
-        "type": "boolean"
-      }
-    },
-    "type": "object"
-  }
-]
-
-
-# TYPES:
-
-type Options = [
-  {
-    /** Whether to allow calls to \`Promise.reject()\` with no arguments. */
-    allowEmptyReject?: boolean;
-  },
-];
-"
-`;

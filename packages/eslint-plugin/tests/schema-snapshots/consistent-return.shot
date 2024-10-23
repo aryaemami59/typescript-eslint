@@ -27,31 +27,3 @@ type Options = [
 ];
 "
 `;
-
-exports[`Rule schemas should be convertible to TS types for documentation purposes consistent-return 1`] = `
-"
-# SCHEMA:
-
-[
-  {
-    "additionalProperties": false,
-    "properties": {
-      "treatUndefinedAsUnspecified": {
-        "default": false,
-        "type": "boolean"
-      }
-    },
-    "type": "object"
-  }
-]
-
-
-# TYPES:
-
-type Options = [
-  {
-    treatUndefinedAsUnspecified?: boolean;
-  },
-];
-"
-`;

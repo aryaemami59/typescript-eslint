@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs promise-function-async.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > promise-function-async.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 const arrowFunctionReturnsPromise = () => Promise.resolve('value');
@@ -18,7 +18,7 @@ function functionReturnsUnionWithPromiseImplicitly(p: boolean) {
 "
 `;
 
-exports[`Validating rule docs promise-function-async.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > promise-function-async.mdx > code examples ESLint output 2`] = `
 "Correct
 
 const arrowFunctionReturnsPromise = async () => Promise.resolve('value');
@@ -40,26 +40,26 @@ async function functionReturnsUnionWithPromiseImplicitly(p: boolean) {
 "
 `;
 
-exports[`Validating rule docs promise-function-async.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > promise-function-async.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: { "allowAny": false }
+Options: { \\"allowAny\\": false }
 
 const returnsAny = () => ({}) as any;
                       ~~ Functions that return promises must be async.
 "
 `;
 
-exports[`Validating rule docs promise-function-async.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > promise-function-async.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: { "allowAny": false }
+Options: { \\"allowAny\\": false }
 
 const returnsAny = async () => ({}) as any;
 "
 `;
 
-exports[`Validating rule docs promise-function-async.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > promise-function-async.mdx > code examples ESLint output 5`] = `
 "Incorrect
-Options: { "allowedPromiseNames": ["Bluebird"] }
+Options: { \\"allowedPromiseNames\\": [\\"Bluebird\\"] }
 
 class Bluebird {}
 
@@ -68,9 +68,9 @@ const returnsBluebird = () => new Bluebird(() => {});
 "
 `;
 
-exports[`Validating rule docs promise-function-async.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > promise-function-async.mdx > code examples ESLint output 6`] = `
 "Correct
-Options: { "allowedPromiseNames": ["Bluebird"] }
+Options: { \\"allowedPromiseNames\\": [\\"Bluebird\\"] }
 
 class Bluebird {}
 

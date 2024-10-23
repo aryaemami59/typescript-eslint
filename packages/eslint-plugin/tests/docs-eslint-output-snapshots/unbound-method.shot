@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs unbound-method.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > unbound-method.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 class MyClass {
@@ -34,7 +34,7 @@ const { double } = arith;
 "
 `;
 
-exports[`Validating rule docs unbound-method.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > unbound-method.mdx > code examples ESLint output 2`] = `
 "Correct
 
 class MyClass {
@@ -65,8 +65,8 @@ const { double } = arith;
 "
 `;
 
-exports[`Validating rule docs unbound-method.mdx code examples ESLint output 3`] = `
-"Options: { "ignoreStatic": true }
+exports[`Validating rule docs > unbound-method.mdx > code examples ESLint output 3`] = `
+"Options: { \\"ignoreStatic\\": true }
 
 class OtherClass {
   static log() {

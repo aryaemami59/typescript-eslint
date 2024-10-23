@@ -28,32 +28,3 @@ type Options = [
 ];
 "
 `;
-
-exports[`Rule schemas should be convertible to TS types for documentation purposes require-array-sort-compare 1`] = `
-"
-# SCHEMA:
-
-[
-  {
-    "additionalProperties": false,
-    "properties": {
-      "ignoreStringArrays": {
-        "description": "Whether to ignore arrays in which all elements are strings.",
-        "type": "boolean"
-      }
-    },
-    "type": "object"
-  }
-]
-
-
-# TYPES:
-
-type Options = [
-  {
-    /** Whether to ignore arrays in which all elements are strings. */
-    ignoreStringArrays?: boolean;
-  },
-];
-"
-`;

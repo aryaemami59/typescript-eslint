@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-misused-promises.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-misused-promises.mdx > code examples ESLint output 1`] = `
 "Incorrect
-Options: { "checksConditionals": true }
+Options: { \\"checksConditionals\\": true }
 
 const promise = Promise.resolve('value');
 
@@ -24,9 +24,9 @@ while (promise) {
 "
 `;
 
-exports[`Validating rule docs no-misused-promises.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-misused-promises.mdx > code examples ESLint output 2`] = `
 "Correct
-Options: { "checksConditionals": true }
+Options: { \\"checksConditionals\\": true }
 
 const promise = Promise.resolve('value');
 
@@ -46,9 +46,9 @@ while (await promise) {
 "
 `;
 
-exports[`Validating rule docs no-misused-promises.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > no-misused-promises.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: { "checksVoidReturn": true }
+Options: { \\"checksVoidReturn\\": true }
 
 [1, 2, 3].forEach(async value => {
                   ~~~~~~~~~~~~~~~~ Promise returned in function argument where a void return was expected.
@@ -86,9 +86,9 @@ class MyClass implements MySyncInterface {
 "
 `;
 
-exports[`Validating rule docs no-misused-promises.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > no-misused-promises.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: { "checksVoidReturn": true }
+Options: { \\"checksVoidReturn\\": true }
 
 // for-of puts \`await\` in outer context
 for (const value of [1, 2, 3]) {
@@ -138,9 +138,9 @@ class MyClass implements MyAsyncInterface {
 "
 `;
 
-exports[`Validating rule docs no-misused-promises.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > no-misused-promises.mdx > code examples ESLint output 5`] = `
 "Incorrect
-Options: { "checksSpreads": true }
+Options: { \\"checksSpreads\\": true }
 
 const getData = () => fetch('/');
 
@@ -156,9 +156,9 @@ console.log({ foo: 42, ...awaitData() });
 "
 `;
 
-exports[`Validating rule docs no-misused-promises.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > no-misused-promises.mdx > code examples ESLint output 6`] = `
 "Correct
-Options: { "checksSpreads": true }
+Options: { \\"checksSpreads\\": true }
 
 const getData = () => fetch('/');
 

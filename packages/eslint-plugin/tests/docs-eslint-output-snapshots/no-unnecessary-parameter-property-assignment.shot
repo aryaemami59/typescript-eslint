@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-unnecessary-parameter-property-assignment.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-unnecessary-parameter-property-assignment.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 class Foo {
@@ -12,7 +12,7 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs no-unnecessary-parameter-property-assignment.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-unnecessary-parameter-property-assignment.mdx > code examples ESLint output 2`] = `
 "Correct
 
 class Foo {

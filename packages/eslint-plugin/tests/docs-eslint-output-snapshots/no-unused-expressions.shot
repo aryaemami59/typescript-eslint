@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-unused-expressions.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-unused-expressions.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 Set<number>;
@@ -12,7 +12,7 @@ window!;
 "
 `;
 
-exports[`Validating rule docs no-unused-expressions.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-unused-expressions.mdx > code examples ESLint output 2`] = `
 "Correct
 
 function getSet() {

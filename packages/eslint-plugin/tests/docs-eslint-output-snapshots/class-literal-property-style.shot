@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs class-literal-property-style.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > class-literal-property-style.mdx > code examples ESLint output 1`] = `
 "Incorrect
-Options: "fields"
+Options: \\"fields\\"
 
 class Mx {
   public static get myField1() {
@@ -18,9 +18,9 @@ class Mx {
 "
 `;
 
-exports[`Validating rule docs class-literal-property-style.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > class-literal-property-style.mdx > code examples ESLint output 2`] = `
 "Correct
-Options: "fields"
+Options: \\"fields\\"
 
 class Mx {
   public readonly myField1 = 1;
@@ -37,9 +37,9 @@ class Mx {
 "
 `;
 
-exports[`Validating rule docs class-literal-property-style.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > class-literal-property-style.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: "getters"
+Options: \\"getters\\"
 
 class Mx {
   readonly myField1 = 1;
@@ -52,9 +52,9 @@ class Mx {
 "
 `;
 
-exports[`Validating rule docs class-literal-property-style.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > class-literal-property-style.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: "getters"
+Options: \\"getters\\"
 
 class Mx {
   // no readonly modifier

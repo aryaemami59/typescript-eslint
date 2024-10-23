@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-use-before-define.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-use-before-define.mdx > code examples ESLint output 1`] = `
 "Incorrect
-Options: { "enums": true }
+Options: { \\"enums\\": true }
 
 const x = Foo.FOO;
           ~~~ 'Foo' was used before it was defined.
@@ -13,9 +13,9 @@ enum Foo {
 "
 `;
 
-exports[`Validating rule docs no-use-before-define.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-use-before-define.mdx > code examples ESLint output 2`] = `
 "Correct
-Options: { "enums": false }
+Options: { \\"enums\\": false }
 
 function foo() {
   return Foo.FOO;
@@ -27,16 +27,16 @@ enum Foo {
 "
 `;
 
-exports[`Validating rule docs no-use-before-define.mdx code examples ESLint output 3`] = `
-"Options: { "typedefs": false }
+exports[`Validating rule docs > no-use-before-define.mdx > code examples ESLint output 3`] = `
+"Options: { \\"typedefs\\": false }
 
 let myVar: StringOrNumber;
 type StringOrNumber = string | number;
 "
 `;
 
-exports[`Validating rule docs no-use-before-define.mdx code examples ESLint output 4`] = `
-"Options: { "ignoreTypeReferences": true }
+exports[`Validating rule docs > no-use-before-define.mdx > code examples ESLint output 4`] = `
+"Options: { \\"ignoreTypeReferences\\": true }
 
 let var1: StringOrNumber;
 type StringOrNumber = string | number;

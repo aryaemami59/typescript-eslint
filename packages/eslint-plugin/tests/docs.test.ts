@@ -1,9 +1,9 @@
-import { beforeAll, describe, expect, it, test } from 'vitest';
 import type * as mdast from 'mdast';
 import type { fromMarkdown as FromMarkdown } from 'mdast-util-from-markdown' with { 'resolution-mode': 'import' };
 import type { mdxFromMarkdown as MdxFromMarkdown } from 'mdast-util-mdx' with { 'resolution-mode': 'import' };
 import type { mdxjs as Mdxjs } from 'micromark-extension-mdxjs' with { 'resolution-mode': 'import' };
 import type * as UnistUtilVisit from 'unist-util-visit' with { 'resolution-mode': 'import' };
+import { describe, expect, it, test } from 'vitest';
 
 import { parseForESLint } from '@typescript-eslint/parser';
 import * as tseslintParser from '@typescript-eslint/parser';
@@ -109,21 +109,28 @@ const eslintOutputSnapshotFolder = path.resolve(
 );
 fs.mkdirSync(eslintOutputSnapshotFolder, { recursive: true });
 
-describe('Validating rule docs', () => {
-  let fromMarkdown: typeof FromMarkdown;
-  let mdxjs: typeof Mdxjs;
-  let mdxFromMarkdown: typeof MdxFromMarkdown;
-  let unistUtilVisit: typeof UnistUtilVisit;
-  beforeAll(async () => {
-    // dynamic import('...') is transpiled to the require('...') call,
-    // but all modules imported below are ESM only, so we cannot require() them
-    // eslint-disable-next-line @typescript-eslint/no-implied-eval
-    const dynamicImport = new Function('module', 'return import(module)');
-    ({ fromMarkdown } = await import('mdast-util-from-markdown'));
-    ({ mdxjs } = await import('micromark-extension-mdxjs'));
-    ({ mdxFromMarkdown } = await import('mdast-util-mdx'));
-    unistUtilVisit = await import('unist-util-visit');
-  });
+describe('Validating rule docs', async () => {
+  const { fromMarkdown }: { fromMarkdown: typeof FromMarkdown } = await import(
+    'mdast-util-from-markdown'
+  );
+  const { mdxjs }: { mdxjs: typeof Mdxjs } = await import(
+    'micromark-extension-mdxjs'
+  );
+  const { mdxFromMarkdown }: { mdxFromMarkdown: typeof MdxFromMarkdown } =
+    await import('mdast-util-mdx');
+  const unistUtilVisit: typeof UnistUtilVisit = await import(
+    'unist-util-visit'
+  );
+  // beforeAll(async () => {
+  //   // dynamic import('...') is transpiled to the require('...') call,
+  //   // but all modules imported below are ESM only, so we cannot require() them
+  //   // eslint-disable-next-line @typescript-eslint/no-implied-eval
+  //   const dynamicImport = new Function('module', 'return import(module)');
+  //   // ({ fromMarkdown } = await import('mdast-util-from-markdown'));
+  //   // ({ mdxjs } = await import('micromark-extension-mdxjs'));
+  //   // ({ mdxFromMarkdown } = await import('mdast-util-mdx'));
+  //   // unistUtilVisit = await import('unist-util-visit');
+  // });
 
   const oldStylisticRules = [
     'block-spacing.md',

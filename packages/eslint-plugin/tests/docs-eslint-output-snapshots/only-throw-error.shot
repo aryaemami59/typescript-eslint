@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs only-throw-error.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > only-throw-error.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 throw 'error';
@@ -40,7 +40,7 @@ throw foo.bar;
 "
 `;
 
-exports[`Validating rule docs only-throw-error.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > only-throw-error.mdx > code examples ESLint output 2`] = `
 "Correct
 
 throw new Error();

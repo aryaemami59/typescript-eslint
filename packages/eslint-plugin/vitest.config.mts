@@ -6,6 +6,7 @@ const vitestConfig = mergeConfig(
 
   defineConfig({
     test: {
+      passWithNoTests: true,
       testTransformMode: { ssr: [] },
     },
   }),

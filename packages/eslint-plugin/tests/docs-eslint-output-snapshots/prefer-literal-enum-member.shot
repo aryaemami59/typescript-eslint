@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs prefer-literal-enum-member.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > prefer-literal-enum-member.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 const str = 'Test';
@@ -20,7 +20,7 @@ enum Invalid {
 "
 `;
 
-exports[`Validating rule docs prefer-literal-enum-member.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > prefer-literal-enum-member.mdx > code examples ESLint output 2`] = `
 "Correct
 
 enum Valid {
@@ -32,9 +32,9 @@ enum Valid {
 "
 `;
 
-exports[`Validating rule docs prefer-literal-enum-member.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > prefer-literal-enum-member.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: { "allowBitwiseExpressions": true }
+Options: { \\"allowBitwiseExpressions\\": true }
 
 const x = 1;
 enum Foo {
@@ -56,9 +56,9 @@ enum Foo {
 "
 `;
 
-exports[`Validating rule docs prefer-literal-enum-member.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > prefer-literal-enum-member.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: { "allowBitwiseExpressions": true }
+Options: { \\"allowBitwiseExpressions\\": true }
 
 enum Foo {
   A = 1 << 0,

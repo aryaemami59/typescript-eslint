@@ -12,16 +12,3 @@ exports[`Rule schemas should be convertible to TS types for documentation purpos
 /** No options declared */
 type Options = [];"
 `;
-
-exports[`Rule schemas should be convertible to TS types for documentation purposes no-array-constructor 1`] = `
-"
-# SCHEMA:
-
-[]
-
-
-# TYPES:
-
-/** No options declared */
-type Options = [];"
-`;

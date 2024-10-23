@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs return-await.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > return-await.mdx > code examples ESLint output 1`] = `
 "Incorrect
-Options: "in-try-catch"
+Options: \\"in-try-catch\\"
 
 async function invalidInTryCatch1() {
   try {
@@ -72,9 +72,9 @@ async function invalidInTryCatch7() {
 "
 `;
 
-exports[`Validating rule docs return-await.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > return-await.mdx > code examples ESLint output 2`] = `
 "Correct
-Options: "in-try-catch"
+Options: \\"in-try-catch\\"
 
 async function validInTryCatch1() {
   try {
@@ -134,9 +134,9 @@ async function validInTryCatch7() {
 "
 `;
 
-exports[`Validating rule docs return-await.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > return-await.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: "always"
+Options: \\"always\\"
 
 async function invalidAlways1() {
   try {
@@ -157,9 +157,9 @@ async function invalidAlways3() {
 "
 `;
 
-exports[`Validating rule docs return-await.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > return-await.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: "always"
+Options: \\"always\\"
 
 async function validAlways1() {
   try {
@@ -177,9 +177,9 @@ async function validAlways3() {
 "
 `;
 
-exports[`Validating rule docs return-await.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > return-await.mdx > code examples ESLint output 5`] = `
 "Correct
-Options: "error-handling-correctness-only"
+Options: \\"error-handling-correctness-only\\"
 
 async function asyncFunction(): Promise<void> {
   if (Math.random() < 0.5) {
@@ -191,9 +191,9 @@ async function asyncFunction(): Promise<void> {
 "
 `;
 
-exports[`Validating rule docs return-await.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > return-await.mdx > code examples ESLint output 6`] = `
 "Incorrect
-Options: "never"
+Options: \\"never\\"
 
 async function invalidNever1() {
   try {
@@ -214,9 +214,9 @@ async function invalidNever3() {
 "
 `;
 
-exports[`Validating rule docs return-await.mdx code examples ESLint output 7`] = `
+exports[`Validating rule docs > return-await.mdx > code examples ESLint output 7`] = `
 "Correct
-Options: "never"
+Options: \\"never\\"
 
 async function validNever1() {
   try {

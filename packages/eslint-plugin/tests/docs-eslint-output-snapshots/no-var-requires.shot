@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-var-requires.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-var-requires.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 var foo = require('foo');
@@ -12,7 +12,7 @@ let foo = require('foo');
 "
 `;
 
-exports[`Validating rule docs no-var-requires.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-var-requires.mdx > code examples ESLint output 2`] = `
 "Correct
 
 import foo = require('foo');
@@ -21,18 +21,18 @@ import foo from 'foo';
 "
 `;
 
-exports[`Validating rule docs no-var-requires.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > no-var-requires.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: { "allow": ["/package.json$"] }
+Options: { \\"allow\\": [\\"/package.json$\\"] }
 
 const foo = require('../data.json');
             ~~~~~~~~~~~~~~~~~~~~~~~ Require statement not part of import statement.
 "
 `;
 
-exports[`Validating rule docs no-var-requires.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > no-var-requires.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: { "allow": ["/package.json$"] }
+Options: { \\"allow\\": [\\"/package.json$\\"] }
 
 const foo = require('../package.json');
 "
