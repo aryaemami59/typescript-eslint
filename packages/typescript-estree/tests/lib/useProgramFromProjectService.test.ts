@@ -1,6 +1,6 @@
-import { describe, expect, it, vi } from 'vitest';
 import path from 'node:path';
 import * as ts from 'typescript';
+import { describe, expect, it, vi } from 'vitest';
 
 import type {
   ProjectServiceSettings,

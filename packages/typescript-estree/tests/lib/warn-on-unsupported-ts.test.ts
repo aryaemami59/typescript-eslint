@@ -1,6 +1,5 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Mock } from 'vitest';
 import semver from 'semver';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type * as Parser from '../../src/parser';
 
@@ -12,8 +11,7 @@ describe('Warn on unsupported TypeScript version', () => {
   let parser: typeof Parser;
 
   beforeEach(async () => {
-    // @ts-expect-error -- We don't support ESM imports of local code yet.
-    parser = await import('../../src/parser');
+    parser = await import('../../src/parser.js');
   });
   afterEach(() => {
     vi.resetModules();
@@ -22,7 +20,7 @@ describe('Warn on unsupported TypeScript version', () => {
   });
 
   it('should warn the user if they are using an unsupported TypeScript version', () => {
-    (semver.satisfies as Mock).mockReturnValue(false);
+    vi.mocked(semver.satisfies).mockReturnValue(false);
     vi.spyOn(console, 'log').mockImplementation(() => {});
     process.stdout.isTTY = true;
 
@@ -35,7 +33,7 @@ describe('Warn on unsupported TypeScript version', () => {
   });
 
   it('should warn the user if they are running on a non TTY process and a custom loggerFn was passed', () => {
-    (semver.satisfies as Mock).mockReturnValue(false);
+    vi.mocked(semver.satisfies).mockReturnValue(false);
     const loggerFn = vi.fn();
     process.stdout.isTTY = false;
 
@@ -46,7 +44,7 @@ describe('Warn on unsupported TypeScript version', () => {
   });
 
   it('should not warn the user if they are running on a non TTY process and a custom loggerFn was not passed', () => {
-    (semver.satisfies as Mock).mockReturnValue(false);
+    vi.mocked(semver.satisfies).mockReturnValue(false);
     vi.spyOn(console, 'log').mockImplementation(() => {});
     process.stdout.isTTY = false;
 
