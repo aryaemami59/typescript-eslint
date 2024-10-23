@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs related-getter-setter-pairs.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > related-getter-setter-pairs.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 interface Box {
@@ -11,7 +11,7 @@ interface Box {
 "
 `;
 
-exports[`Validating rule docs related-getter-setter-pairs.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > related-getter-setter-pairs.mdx > code examples ESLint output 2`] = `
 "Correct
 
 interface Box {

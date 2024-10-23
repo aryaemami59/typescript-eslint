@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-inferrable-types.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-inferrable-types.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 const a: bigint = 10n;
@@ -49,7 +49,7 @@ function fn(a: number = 5, b: boolean = true) {}
 "
 `;
 
-exports[`Validating rule docs no-inferrable-types.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-inferrable-types.mdx > code examples ESLint output 2`] = `
 "Correct
 
 const a = 10n;
@@ -78,8 +78,8 @@ function fn(a = 5, b = true) {}
 "
 `;
 
-exports[`Validating rule docs no-inferrable-types.mdx code examples ESLint output 3`] = `
-"Options: { "ignoreParameters": true }
+exports[`Validating rule docs > no-inferrable-types.mdx > code examples ESLint output 3`] = `
+"Options: { \\"ignoreParameters\\": true }
 
 function foo(a: number = 5, b: boolean = true) {
   // ...
@@ -87,8 +87,8 @@ function foo(a: number = 5, b: boolean = true) {
 "
 `;
 
-exports[`Validating rule docs no-inferrable-types.mdx code examples ESLint output 4`] = `
-"Options: { "ignoreProperties": true }
+exports[`Validating rule docs > no-inferrable-types.mdx > code examples ESLint output 4`] = `
+"Options: { \\"ignoreProperties\\": true }
 
 class Foo {
   prop: number = 5;

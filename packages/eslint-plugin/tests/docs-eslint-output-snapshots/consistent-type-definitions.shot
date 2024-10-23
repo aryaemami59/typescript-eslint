@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs consistent-type-definitions.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > consistent-type-exports.mdx > consistent-type-exports.mdx must start with frontmatter description 1`] = `
 "Incorrect
-Options: "interface"
+Options: \\"interface\\"
 
 type T = { x: number };
      ~ Use an \`interface\` instead of a \`type\`.
 "
 `;
 
-exports[`Validating rule docs consistent-type-definitions.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > consistent-type-exports.mdx > consistent-type-exports.mdx must start with frontmatter description 2`] = `
 "Correct
-Options: "interface"
+Options: \\"interface\\"
 
 type T = string;
 type Foo = string | {};
@@ -22,9 +22,9 @@ interface T {
 "
 `;
 
-exports[`Validating rule docs consistent-type-definitions.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > consistent-type-exports.mdx > consistent-type-exports.mdx must start with frontmatter description 3`] = `
 "Incorrect
-Options: "type"
+Options: \\"type\\"
 
 interface T {
           ~ Use a \`type\` instead of an \`interface\`.
@@ -33,9 +33,9 @@ interface T {
 "
 `;
 
-exports[`Validating rule docs consistent-type-definitions.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > consistent-type-exports.mdx > consistent-type-exports.mdx must start with frontmatter description 4`] = `
 "Correct
-Options: "type"
+Options: \\"type\\"
 
 type T = { x: number };
 "

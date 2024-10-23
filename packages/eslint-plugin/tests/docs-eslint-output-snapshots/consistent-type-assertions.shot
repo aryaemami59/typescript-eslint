@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs consistent-type-assertions.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > consistent-type-assertions.mdx > code examples ESLint output 1`] = `
 "Incorrect
-Options: { "assertionStyle": "as", "objectLiteralTypeAssertions": "never" }
+Options: { \\"assertionStyle\\": \\"as\\", \\"objectLiteralTypeAssertions\\": \\"never\\" }
 
 const x = { foo: 1 } as T;
           ~~~~~~~~~~~~~~~ Always prefer const x: T = { ... }.
@@ -14,9 +14,9 @@ function bar() {
 "
 `;
 
-exports[`Validating rule docs consistent-type-assertions.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > consistent-type-assertions.mdx > code examples ESLint output 2`] = `
 "Correct
-Options: { "assertionStyle": "as", "objectLiteralTypeAssertions": "never" }
+Options: { \\"assertionStyle\\": \\"as\\", \\"objectLiteralTypeAssertions\\": \\"never\\" }
 
 const x: T = { foo: 1 };
 const y = { foo: 1 } as any;
@@ -28,9 +28,9 @@ function bar(): T {
 "
 `;
 
-exports[`Validating rule docs consistent-type-assertions.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > consistent-type-assertions.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: { "assertionStyle": "as", "objectLiteralTypeAssertions": "allow-as-parameter" }
+Options: { \\"assertionStyle\\": \\"as\\", \\"objectLiteralTypeAssertions\\": \\"allow-as-parameter\\" }
 
 const x = { foo: 1 } as T;
           ~~~~~~~~~~~~~~~ Always prefer const x: T = { ... }.
@@ -42,9 +42,9 @@ function bar() {
 "
 `;
 
-exports[`Validating rule docs consistent-type-assertions.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > consistent-type-assertions.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: { "assertionStyle": "as", "objectLiteralTypeAssertions": "allow-as-parameter" }
+Options: { \\"assertionStyle\\": \\"as\\", \\"objectLiteralTypeAssertions\\": \\"allow-as-parameter\\" }
 
 const x: T = { foo: 1 };
 const y = { foo: 1 } as any;

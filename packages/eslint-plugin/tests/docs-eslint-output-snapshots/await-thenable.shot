@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs await-thenable.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 1`] = `
 "Incorrect
 
 await 'value';
-~~~~~~~~~~~~~ Unexpected \`await\` of a non-Promise (non-"Thenable") value.
+~~~~~~~~~~~~~ Unexpected \`await\` of a non-Promise (non-\\"Thenable\\") value.
 
 const createValue = () => 'value';
 await createValue();
-~~~~~~~~~~~~~~~~~~~ Unexpected \`await\` of a non-Promise (non-"Thenable") value.
+~~~~~~~~~~~~~~~~~~~ Unexpected \`await\` of a non-Promise (non-\\"Thenable\\") value.
 "
 `;
 
-exports[`Validating rule docs await-thenable.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 2`] = `
 "Correct
 
 await Promise.resolve('value');
@@ -22,7 +22,7 @@ await createValue();
 "
 `;
 
-exports[`Validating rule docs await-thenable.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 3`] = `
 "Incorrect
 
 async function syncIterable() {
@@ -47,7 +47,7 @@ async function syncIterableOfPromises() {
 "
 `;
 
-exports[`Validating rule docs await-thenable.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 4`] = `
 "Correct
 
 async function syncIterable() {
@@ -82,7 +82,7 @@ async function validUseOfForAwaitOnAsyncIterable() {
 "
 `;
 
-exports[`Validating rule docs await-thenable.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 5`] = `
 "Incorrect
 
 function makeSyncDisposable(): Disposable {
@@ -100,7 +100,7 @@ async function shouldNotAwait() {
 "
 `;
 
-exports[`Validating rule docs await-thenable.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 6`] = `
 "Correct
 
 function makeSyncDisposable(): Disposable {

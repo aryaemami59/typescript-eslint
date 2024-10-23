@@ -1,10 +1,9 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { CacheDurationSeconds } from '@typescript-eslint/types';
-import type * as typescriptModule from 'typescript';
 
 import debug from 'debug';
 import * as fastGlobModule from 'fast-glob';
 import { join, resolve } from 'node:path';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { TSESTreeOptions } from '../../src/parser-options';
 
@@ -14,10 +13,8 @@ import { clearGlobResolutionCache } from '../../src/parseSettings/resolveProject
 
 const FIXTURES_DIR = join(__dirname, '../fixtures/simpleProject');
 
-vi.mock('../../src/create-program/shared', async () => {
-  const sharedActual = await vi.importActual<typeof sharedParserUtilsModule>(
-    '../../src/create-program/shared',
-  );
+vi.mock(import('../../src/create-program/shared.js'), async importOriginal => {
+  const sharedActual = await importOriginal();
 
   return {
     ...sharedActual,
@@ -30,8 +27,8 @@ vi.mock('../../src/create-program/shared', async () => {
 
 // Tests in CI by default run with lowercase program file names,
 // resulting in path.relative results starting with many "../"s
-vi.mock('typescript', async () => {
-  const ts = await vi.importActual<typeof typescriptModule>('typescript');
+vi.mock(import('typescript'), async importOriginal => {
+  const ts = await importOriginal();
   return {
     ...ts,
     sys: {
@@ -41,8 +38,9 @@ vi.mock('typescript', async () => {
   };
 });
 
-vi.mock('fast-glob', async () => {
-  const fastGlob = await vi.importActual<typeof fastGlobModule>('fast-glob');
+vi.mock('fast-glob', async importOriginal => {
+  const fastGlob = await importOriginal<typeof fastGlobModule>();
+
   return {
     ...fastGlob,
     sync: vi.fn(fastGlob.sync),
@@ -199,7 +197,7 @@ describe('parseAndGenerateServices', () => {
         let result:
           | parser.ParseAndGenerateServicesResult<typeof config>
           | undefined;
-        // eslint-disable-next-line vi/valid-expect
+        // eslint-disable-next-line vitest/valid-expect
         const exp = expect(() => {
           result = parser.parseAndGenerateServices(code, {
             ...config,
