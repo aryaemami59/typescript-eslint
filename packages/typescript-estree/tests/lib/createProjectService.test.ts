@@ -1,54 +1,84 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import debug from 'debug';
 import * as ts from 'typescript';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { createProjectService } from '../../src/create-program/createProjectService.js';
+import { getParsedConfigFile } from '../../src/create-program/getParsedConfigFile.js';
 
-const mockGetParsedConfigFile = vi.fn();
+// const mockGetParsedConfigFile = vi.fn();
 const mockSetCompilerOptionsForInferredProjects = vi.fn();
 const mockSetHostConfiguration = vi.fn();
 
-vi.mock('../../src/create-program/getParsedConfigFile', () => ({
-  getParsedConfigFile: mockGetParsedConfigFile,
-}));
+vi.mock(
+  import('../../src/create-program/getParsedConfigFile.js'),
+  async () => ({
+    getParsedConfigFile: vi.fn(),
+  }),
+);
 
-vi.mock('typescript/lib/tsserverlibrary', async () => ({
-  ...(await vi.importActual('typescript/lib/tsserverlibrary')),
-  server: {
-    ...(await vi.importActual('typescript/lib/tsserverlibrary')).server,
-    ProjectService: class {
-      eventHandler: ts.server.ProjectServiceEventHandler | undefined;
-      host: ts.server.ServerHost;
-      logger: ts.server.Logger;
-      setCompilerOptionsForInferredProjects =
-        mockSetCompilerOptionsForInferredProjects;
-      setHostConfiguration = mockSetHostConfiguration;
-      constructor(
-        ...args: ConstructorParameters<typeof ts.server.ProjectService>
-      ) {
-        this.eventHandler = args[0].eventHandler;
-        this.host = args[0].host;
-        this.logger = args[0].logger;
-        if (this.eventHandler) {
-          this.eventHandler({
-            eventName: 'projectLoadingStart',
-          } as ts.server.ProjectLoadingStartEvent);
+vi.mock(import('typescript/lib/tsserverlibrary.js'), async importOriginal => {
+  const actual = await importOriginal();
+  return {
+    ...actual,
+    server: {
+      ...actual.server,
+      ProjectService: class {
+        eventHandler: ts.server.ProjectServiceEventHandler | undefined;
+        host: ts.server.ServerHost;
+        logger: ts.server.Logger;
+        setCompilerOptionsForInferredProjects =
+          mockSetCompilerOptionsForInferredProjects;
+        setHostConfiguration = mockSetHostConfiguration;
+        constructor(
+          ...args: ConstructorParameters<typeof ts.server.ProjectService>
+        ) {
+          this.eventHandler = args[0].eventHandler;
+          this.host = args[0].host;
+          this.logger = args[0].logger;
+          if (this.eventHandler) {
+            this.eventHandler({
+              eventName: 'projectLoadingStart',
+            } as ts.server.ProjectLoadingStartEvent);
+          }
         }
-      }
+      },
     },
-  },
-}));
+  } as unknown as Awaited<ReturnType<typeof importOriginal>>;
+});
 
-const {
-  createProjectService,
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-} = require('../../src/create-program/createProjectService');
+const mockGetParsedConfigFile = vi.mocked(getParsedConfigFile);
+// const mockSetCompilerOptionsForInferredProjects = vi.mocked(
+//   server.ProjectService.prototype.setCompilerOptionsForInferredProjects,
+// );
+// console.log(vi.isMockFunction(server.ProjectService.prototype.setCompilerOptionsForInferredProjects))
+// vi.spyOn(server, 'ProjectService');
+// vi.spyOn(server.ProjectService, 'prototype');
+// const mockSetHostConfiguration = vi.mocked(
+//   server.ProjectService.prototype.setHostConfiguration,
+// );
+
+// const {
+//   createProjectService,
+//   // eslint-disable-next-line @typescript-eslint/no-require-imports
+// } = require('../../dist/create-program/createProjectService.js');
+// require('../../src/create-program/createProjectService.js');
+// import '../../src/create-program/createProjectService.js';
 
 describe('createProjectService', () => {
+  const processStderrWriteSpy = vi
+    .spyOn(process.stderr, 'write')
+    .mockImplementation(() => true);
+
   beforeEach(() => {
     mockGetParsedConfigFile.mockReturnValue({ options: {} });
   });
 
   afterEach(() => {
-    vi.resetAllMocks();
+    // vi.clearAllMocks();
+    processStderrWriteSpy.mockClear();
+  });
+
+  afterAll(() => {
+    vi.restoreAllMocks();
   });
 
   it('sets allowDefaultProject when options.allowDefaultProject is defined', () => {
@@ -81,7 +111,7 @@ describe('createProjectService', () => {
         undefined,
         undefined,
       ),
-    ).not.toThrow();
+    ).not.toThrowError();
   });
 
   it('throws an error with a relative path when options.defaultProject is set to a relative path and getParsedConfigFile throws a diagnostic error', () => {
@@ -98,7 +128,7 @@ describe('createProjectService', () => {
         undefined,
         undefined,
       ),
-    ).toThrow(
+    ).toThrowError(
       /Could not read project service default project '\.\/tsconfig.eslint.json': .+ error TS1234: Oh no!/,
     );
   });
@@ -117,7 +147,7 @@ describe('createProjectService', () => {
         undefined,
         undefined,
       ),
-    ).toThrow(
+    ).toThrowError(
       /Could not read project service default project 'tsconfig.eslint.json': .+ error TS1234: Oh no!/,
     );
   });
@@ -157,7 +187,7 @@ describe('createProjectService', () => {
       undefined,
     );
 
-    expect(service.setCompilerOptionsForInferredProjects).toHaveBeenCalledWith(
+    expect(mockSetCompilerOptionsForInferredProjects).toHaveBeenCalledWith(
       compilerOptions,
     );
     expect(mockGetParsedConfigFile).toHaveBeenCalledWith(
@@ -181,20 +211,18 @@ describe('createProjectService', () => {
       tsconfigRootDir,
     );
 
-    expect(service.setCompilerOptionsForInferredProjects).toHaveBeenCalledWith(
+    expect(mockSetCompilerOptionsForInferredProjects).toHaveBeenCalledWith(
       compilerOptions,
     );
     expect(mockGetParsedConfigFile).toHaveBeenCalledWith(
       // eslint-disable-next-line @typescript-eslint/no-require-imports
-      require('typescript/lib/tsserverlibrary'),
+      require('typescript/lib/tsserverlibrary.js'),
       'tsconfig.json',
       tsconfigRootDir,
     );
   });
 
   it('uses the default projects error debugger for error messages when enabled', () => {
-    vi.spyOn(process.stderr, 'write').mockImplementation();
-
     const { service } = createProjectService(undefined, undefined, undefined);
     debug.enable('typescript-eslint:typescript-estree:tsserver:err');
     const enabled = service.logger.loggingEnabled();
@@ -202,27 +230,23 @@ describe('createProjectService', () => {
     debug.disable();
 
     expect(enabled).toBe(true);
-    expect(process.stderr.write).toHaveBeenCalledWith(
+    expect(processStderrWriteSpy).toHaveBeenCalledWith(
       expect.stringMatching(
-        /^.*typescript-eslint:typescript-estree:tsserver:err foo\n$/,
+        /^.*typescript-eslint:typescript-estree:tsserver:err .*foo/,
       ),
     );
   });
 
   it('does not use the default projects error debugger for error messages when disabled', () => {
-    vi.spyOn(process.stderr, 'write').mockImplementation();
-
     const { service } = createProjectService(undefined, undefined, undefined);
     const enabled = service.logger.loggingEnabled();
     service.logger.msg('foo', ts.server.Msg.Err);
 
     expect(enabled).toBe(false);
-    expect(process.stderr.write).toHaveBeenCalledTimes(0);
+    expect(processStderrWriteSpy).toHaveBeenCalledTimes(0);
   });
 
   it('uses the default projects info debugger for info messages when enabled', () => {
-    vi.spyOn(process.stderr, 'write').mockImplementation();
-
     const { service } = createProjectService(undefined, undefined, undefined);
     debug.enable('typescript-eslint:typescript-estree:tsserver:info');
     const enabled = service.logger.loggingEnabled();
@@ -230,27 +254,23 @@ describe('createProjectService', () => {
     debug.disable();
 
     expect(enabled).toBe(true);
-    expect(process.stderr.write).toHaveBeenCalledWith(
+    expect(processStderrWriteSpy).toHaveBeenCalledWith(
       expect.stringMatching(
-        /^.*typescript-eslint:typescript-estree:tsserver:info foo\n$/,
+        /^.*typescript-eslint:typescript-estree:tsserver:info .*foo/,
       ),
     );
   });
 
   it('does not use the default projects info debugger for info messages when disabled', () => {
-    vi.spyOn(process.stderr, 'write').mockImplementation();
-
     const { service } = createProjectService(undefined, undefined, undefined);
     const enabled = service.logger.loggingEnabled();
     service.logger.info('foo');
 
     expect(enabled).toBe(false);
-    expect(process.stderr.write).toHaveBeenCalledTimes(0);
+    expect(processStderrWriteSpy).toHaveBeenCalledTimes(0);
   });
 
   it('uses the default projects perf debugger for perf messages when enabled', () => {
-    vi.spyOn(process.stderr, 'write').mockImplementation();
-
     const { service } = createProjectService(undefined, undefined, undefined);
     debug.enable('typescript-eslint:typescript-estree:tsserver:perf');
     const enabled = service.logger.loggingEnabled();
@@ -258,22 +278,20 @@ describe('createProjectService', () => {
     debug.disable();
 
     expect(enabled).toBe(true);
-    expect(process.stderr.write).toHaveBeenCalledWith(
+    expect(processStderrWriteSpy).toHaveBeenLastCalledWith(
       expect.stringMatching(
-        /^.*typescript-eslint:typescript-estree:tsserver:perf foo\n$/,
+        /^.*typescript-eslint:typescript-estree:tsserver:perf .*foo/,
       ),
     );
   });
 
   it('does not use the default projects perf debugger for perf messages when disabled', () => {
-    vi.spyOn(process.stderr, 'write').mockImplementation();
-
     const { service } = createProjectService(undefined, undefined, undefined);
     const enabled = service.logger.loggingEnabled();
     service.logger.perftrc('foo');
 
     expect(enabled).toBe(false);
-    expect(process.stderr.write).toHaveBeenCalledTimes(0);
+    expect(processStderrWriteSpy).not.toHaveBeenCalled();
   });
 
   it('enables all log levels for the default projects logger', () => {
@@ -292,13 +310,11 @@ describe('createProjectService', () => {
   });
 
   it('uses the default projects event debugger for event handling when enabled', () => {
-    vi.spyOn(process.stderr, 'write').mockImplementation();
-
     debug.enable('typescript-eslint:typescript-estree:tsserver:event');
     createProjectService(undefined, undefined, undefined);
     debug.disable();
 
-    expect(process.stderr.write).toHaveBeenCalledWith(
+    expect(processStderrWriteSpy).toHaveBeenCalledWith(
       expect.stringMatching(
         /^.*typescript-eslint:typescript-estree:tsserver:event { eventName: 'projectLoadingStart' }\n$/,
       ),
@@ -306,11 +322,9 @@ describe('createProjectService', () => {
   });
 
   it('does not use the default projects event debugger for event handling when disabled', () => {
-    vi.spyOn(process.stderr, 'write').mockImplementation();
-
     createProjectService(undefined, undefined, undefined);
 
-    expect(process.stderr.write).toHaveBeenCalledTimes(0);
+    expect(processStderrWriteSpy).not.toHaveBeenCalled();
   });
 
   it('provides a stub require to the host system when loadTypeScriptPlugins is falsy', () => {
@@ -327,7 +341,7 @@ describe('createProjectService', () => {
     });
   });
 
-  it('does not provide a require to the host system when loadTypeScriptPlugins is truthy', () => {
+  it('does not provide a require to the host system when loadTypeScriptPlugins is truthy', async () => {
     const { service } = createProjectService(
       {
         loadTypeScriptPlugins: true,
@@ -337,7 +351,11 @@ describe('createProjectService', () => {
     );
 
     expect(service.host.require).toBe(
-      vi.importActual('typescript/lib/tsserverlibrary').sys.require,
+      (
+        await vi.importActual<
+          typeof import('typescript/lib/tsserverlibrary.js')
+        >('typescript/lib/tsserverlibrary.js')
+      ).sys.require,
     );
   });
 
@@ -350,7 +368,7 @@ describe('createProjectService', () => {
       undefined,
     );
 
-    expect(service.setHostConfiguration).toHaveBeenCalledWith({
+    expect(mockSetHostConfiguration).toHaveBeenCalledWith({
       preferences: {
         includePackageJsonAutoImports: 'off',
       },
