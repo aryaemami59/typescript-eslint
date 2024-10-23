@@ -1,5 +1,12 @@
-import { defineConfig } from 'vitest/config';
+import { defineConfig, mergeConfig } from 'vitest/config';
+import vitestBaseConfig from '../../vitest.config.base.mjs';
 
-const vitestConfig = defineConfig({});
+const vitestConfig = mergeConfig(
+  vitestBaseConfig,
+
+  defineConfig({
+    test: {},
+  }),
+);
 
 export default vitestConfig;

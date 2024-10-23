@@ -1,21 +1,23 @@
-import { defineConfig } from 'vitest/config';
+import { defineConfig, mergeConfig } from 'vitest/config';
 import vitestBaseConfig from '../../vitest.config.base.mjs';
 
-const vitestConfig = defineConfig({
-  ...vitestBaseConfig,
+const vitestConfig = mergeConfig(
+  vitestBaseConfig,
 
-  plugins: [
-    {
-      name: 'virtual-dependency',
-      resolveId(id) {
-        if (id === 'totally-real-dependency/package.json') {
-          return JSON.stringify({
-            version: '10.0.0',
-          });
-        }
+  defineConfig({
+    plugins: [
+      {
+        name: 'virtual-dependency',
+        resolveId(id) {
+          if (id === 'totally-real-dependency/package.json') {
+            return JSON.stringify({
+              version: '10.0.0',
+            });
+          }
+        },
       },
-    },
-  ],
-});
+    ],
+  }),
+);
 
 export default vitestConfig;

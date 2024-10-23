@@ -6,7 +6,6 @@ const vitestConfig = mergeConfig(
 
   defineConfig({
     test: {
-      globals: true,
       coverage: { enabled: false },
       setupFiles: ['./tests/util/setupVitest.ts'],
     },
