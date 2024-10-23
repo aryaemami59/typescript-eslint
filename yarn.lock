@@ -5579,15 +5579,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ncp@npm:^2.0.8":
-  version: 2.0.8
-  resolution: "@types/ncp@npm:2.0.8"
-  dependencies:
-    "@types/node": "*"
-  checksum: 33ab7fb6f6777b9b77114acb159acb565c24fed7d78ab19553b9621f1da38c8bf5976b8cb8d0c66864b5c1d08db6ca155978ba07b93bbc2e661fc3e535e2677f
-  languageName: node
-  linkType: hard
-
 "@types/node-forge@npm:^1.3.0":
   version: 1.3.11
   resolution: "@types/node-forge@npm:1.3.11"
@@ -5598,11 +5589,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:^20.0.0":
-  version: 20.17.5
-  resolution: "@types/node@npm:20.17.5"
+  version: 20.17.8
+  resolution: "@types/node@npm:20.17.8"
   dependencies:
     undici-types: ~6.19.2
-  checksum: ca78990c16762f644ee802a93765e78e0c3c695c58b685196fb0ba37356b1380ab9591e60fd03c1bd0e3f4ec92305c9302f518f830f0e63f29dc32e5e7666802
+  checksum: c963c363bda5ade3d60b66eaeb1cf809e6a333fdd08cc40120bb86d112b58a667893d23b02cb9876ba69619214384c08e60b7dd0718ca404e954cf2ce6b24840
   languageName: node
   linkType: hard
 
@@ -5884,8 +5875,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/integration-tests@workspace:packages/integration-tests"
   dependencies:
-    ncp: "*"
-    tmp: "*"
     vitest: ^2.1.8
   languageName: unknown
   linkType: soft
@@ -6033,7 +6022,6 @@ __metadata:
     "@types/debug": ^4.1.12
     "@types/is-glob": ^4.0.4
     "@types/natural-compare": ^1.4.3
-    "@types/ncp": ^2.0.8
     "@types/node": ^20.12.5
     "@types/semver": ^7.5.8
     "@types/tmp": ^0.2.6
@@ -6068,7 +6056,6 @@ __metadata:
     lint-staged: ^15.2.2
     make-dir: ^4.0.0
     markdownlint-cli: ^0.43.0
-    ncp: ^2.0.0
     nx: 20.3.0
     prettier: 3.4.2
     pretty-format: ^29.7.0
@@ -14899,15 +14886,6 @@ __metadata:
   version: 1.4.0
   resolution: "natural-compare@npm:1.4.0"
   checksum: 23ad088b08f898fc9b53011d7bb78ec48e79de7627e01ab5518e806033861bef68d5b0cd0e2205c2f36690ac9571ff6bcb05eb777ced2eeda8d4ac5b44592c3d
-  languageName: node
-  linkType: hard
-
-"ncp@npm:*, ncp@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "ncp@npm:2.0.0"
-  bin:
-    ncp: ./bin/ncp
-  checksum: ea9b19221da1d1c5529bdb9f8e85c9d191d156bcaae408cce5e415b7fbfd8744c288e792bd7faf1fe3b70fd44c74e22f0d43c39b209bc7ac1fb8016f70793a16
   languageName: node
   linkType: hard
 
