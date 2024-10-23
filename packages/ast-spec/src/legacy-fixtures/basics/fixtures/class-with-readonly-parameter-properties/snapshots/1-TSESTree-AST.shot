@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-readonly-parameter-properties TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-readonly-parameter-properties > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
-            decorators: [],
+            decorators: Array [],
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "constructor",
               optional: false,
 
@@ -35,7 +35,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [177, 179],
                 loc: {
@@ -47,14 +47,14 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [
+              params: Array [
                 TSParameterProperty {
                   type: "TSParameterProperty",
-                  decorators: [],
+                  decorators: Array [],
                   override: false,
                   parameter: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "firstName",
                     optional: false,
                     typeAnnotation: TSTypeAnnotation {
@@ -93,14 +93,14 @@ Program {
                 },
                 TSParameterProperty {
                   type: "TSParameterProperty",
-                  decorators: [],
+                  decorators: Array [],
                   override: false,
                   parameter: AssignmentPattern {
                     type: "AssignmentPattern",
-                    decorators: [],
+                    decorators: Array [],
                     left: Identifier {
                       type: "Identifier",
-                      decorators: [],
+                      decorators: Array [],
                       name: "lastName",
                       optional: false,
                       typeAnnotation: TSTypeAnnotation {
@@ -180,10 +180,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Foo",
         optional: false,
 
@@ -193,7 +193,7 @@ Program {
           end: { column: 9, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [73, 181],

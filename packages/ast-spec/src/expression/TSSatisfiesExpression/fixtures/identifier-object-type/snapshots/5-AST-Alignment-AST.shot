@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures expression TSSatisfiesExpression identifier-object-type AST Alignment - AST 1`] = `
+exports[`AST Fixtures > expression > TSSatisfiesExpression > identifier-object-type > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -51,7 +51,7 @@ exports[`AST Fixtures expression TSSatisfiesExpression identifier-object-type AS
                     type: 'TSLiteralType',
                     literal: Literal {
                       type: 'Literal',
-                      raw: '\\'value\\'',
+                      raw: '\\\\'value\\\\'',
                       value: 'value',
 
                       range: [22, 29],

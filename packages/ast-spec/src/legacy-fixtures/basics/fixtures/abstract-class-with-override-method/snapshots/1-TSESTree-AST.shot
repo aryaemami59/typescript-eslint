@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics abstract-class-with-override-method TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > abstract-class-with-override-method > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: true,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           TSAbstractMethodDefinition {
             type: "TSAbstractMethodDefinition",
             computed: false,
-            decorators: [],
+            decorators: Array [],
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "show",
               optional: false,
 
@@ -38,7 +38,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [157, 160],
               loc: {
@@ -62,10 +62,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "SpecializedComponent",
         optional: false,
 
@@ -75,10 +75,10 @@ Program {
           end: { column: 35, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "SomeComponent",
         optional: false,
 

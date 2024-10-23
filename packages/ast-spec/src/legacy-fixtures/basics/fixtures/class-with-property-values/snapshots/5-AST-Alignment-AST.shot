@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-property-values AST Alignment - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-property-values > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -156,7 +156,7 @@ exports[`AST Fixtures legacy-fixtures basics class-with-property-values AST Alig
               static: false,
               value: Literal {
                 type: 'Literal',
-                raw: '\\'\\'',
+                raw: '\\\\'\\\\'',
                 value: '',
 
                 range: [120, 122],

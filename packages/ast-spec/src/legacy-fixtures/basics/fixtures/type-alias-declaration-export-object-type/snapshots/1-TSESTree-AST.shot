@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics type-alias-declaration-export-object-type TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > type-alias-declaration-export-object-type > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: [],
+      attributes: Array [],
       declaration: TSTypeAliasDeclaration {
         type: "TSTypeAliasDeclaration",
         declare: false,
         id: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "TestClassProps",
           optional: false,
 
@@ -24,13 +24,13 @@ Program {
         },
         typeAnnotation: TSTypeLiteral {
           type: "TSTypeLiteral",
-          members: [
+          members: Array [
             TSPropertySignature {
               type: "TSPropertySignature",
               computed: false,
               key: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "count",
                 optional: false,
 
@@ -85,7 +85,7 @@ Program {
       },
       exportKind: "type",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [73, 123],
       loc: {

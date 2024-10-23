@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics non-null-assertion-operator TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > non-null-assertion-operator > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [
+        body: Array [
           ExpressionStatement {
             type: "ExpressionStatement",
             expression: CallExpression {
               type: "CallExpression",
-              arguments: [
+              arguments: Array [
                 Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "e",
                   optional: false,
 
@@ -30,7 +30,7 @@ Program {
               ],
               callee: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "validateEntity",
                 optional: false,
 
@@ -57,13 +57,13 @@ Program {
           },
           VariableDeclaration {
             type: "VariableDeclaration",
-            declarations: [
+            declarations: Array [
               VariableDeclarator {
                 type: "VariableDeclarator",
                 definite: false,
                 id: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "s",
                   optional: false,
 
@@ -80,7 +80,7 @@ Program {
                     type: "TSNonNullExpression",
                     expression: Identifier {
                       type: "Identifier",
-                      decorators: [],
+                      decorators: Array [],
                       name: "e",
                       optional: false,
 
@@ -100,7 +100,7 @@ Program {
                   optional: false,
                   property: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "name",
                     optional: false,
 
@@ -147,7 +147,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "processEntity",
         optional: false,
 
@@ -157,10 +157,10 @@ Program {
           end: { column: 22, line: 3 },
         },
       },
-      params: [
+      params: Array [
         Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "e",
           optional: true,
           typeAnnotation: TSTypeAnnotation {
@@ -169,7 +169,7 @@ Program {
               type: "TSTypeReference",
               typeName: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "Entity",
                 optional: false,
 

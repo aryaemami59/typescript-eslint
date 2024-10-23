@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics arrow-function-with-optional-parameter TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > arrow-function-with-optional-parameter > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: CallExpression {
         type: "CallExpression",
-        arguments: [],
+        arguments: Array [],
         callee: ArrowFunctionExpression {
           type: "ArrowFunctionExpression",
           async: false,
@@ -16,7 +16,7 @@ Program {
             type: "BinaryExpression",
             left: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "k",
               optional: false,
 
@@ -48,10 +48,10 @@ Program {
           expression: true,
           generator: false,
           id: null,
-          params: [
+          params: Array [
             Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "k",
               optional: true,
 

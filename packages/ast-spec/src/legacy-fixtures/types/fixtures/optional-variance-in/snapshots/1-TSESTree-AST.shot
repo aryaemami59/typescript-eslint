@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types optional-variance-in TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > optional-variance-in > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Consumer",
         optional: false,
 
@@ -21,10 +21,10 @@ Program {
       },
       typeAnnotation: TSFunctionType {
         type: "TSFunctionType",
-        params: [
+        params: Array [
           Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "x",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
@@ -33,7 +33,7 @@ Program {
                 type: "TSTypeReference",
                 typeName: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "T",
                   optional: false,
 
@@ -92,14 +92,14 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
             in: true,
             name: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "T",
               optional: false,
 

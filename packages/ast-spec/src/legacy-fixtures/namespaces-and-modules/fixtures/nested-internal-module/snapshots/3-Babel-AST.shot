@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures namespaces-and-modules nested-internal-module Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > nested-internal-module > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: [
+        body: Array [
           ExportNamedDeclaration {
             type: "ExportNamedDeclaration",
-            assertions: [],
+            assertions: Array [],
             declaration: VariableDeclaration {
               type: "VariableDeclaration",
-              declarations: [
+              declarations: Array [
                 VariableDeclarator {
                   type: "VariableDeclarator",
                   id: Identifier {
@@ -56,7 +56,7 @@ Program {
             },
             exportKind: "value",
             source: null,
-            specifiers: [],
+            specifiers: Array [],
 
             range: [86, 115],
             loc: {
@@ -66,12 +66,12 @@ Program {
           },
           ExportNamedDeclaration {
             type: "ExportNamedDeclaration",
-            assertions: [],
+            assertions: Array [],
             declaration: ClassDeclaration {
               type: "ClassDeclaration",
               body: ClassBody {
                 type: "ClassBody",
-                body: [
+                body: Array [
                   MethodDefinition {
                     type: "MethodDefinition",
                     computed: false,
@@ -92,7 +92,7 @@ Program {
                       async: false,
                       body: BlockStatement {
                         type: "BlockStatement",
-                        body: [],
+                        body: Array [],
 
                         range: [210, 212],
                         loc: {
@@ -103,7 +103,7 @@ Program {
                       expression: false,
                       generator: false,
                       id: null,
-                      params: [
+                      params: Array [
                         TSParameterProperty {
                           type: "TSParameterProperty",
                           accessibility: "public",
@@ -223,7 +223,7 @@ Program {
             },
             exportKind: "value",
             source: null,
-            specifiers: [],
+            specifiers: Array [],
 
             range: [118, 216],
             loc: {
@@ -233,20 +233,20 @@ Program {
           },
           ExportNamedDeclaration {
             type: "ExportNamedDeclaration",
-            assertions: [],
+            assertions: Array [],
             declaration: TSModuleDeclaration {
               type: "TSModuleDeclaration",
               body: TSModuleBlock {
                 type: "TSModuleBlock",
-                body: [
+                body: Array [
                   ExportNamedDeclaration {
                     type: "ExportNamedDeclaration",
-                    assertions: [],
+                    assertions: Array [],
                     declaration: TSInterfaceDeclaration {
                       type: "TSInterfaceDeclaration",
                       body: TSInterfaceBody {
                         type: "TSInterfaceBody",
-                        body: [
+                        body: Array [
                           TSPropertySignature {
                             type: "TSPropertySignature",
                             computed: false,
@@ -312,7 +312,7 @@ Program {
                     },
                     exportKind: "type",
                     source: null,
-                    specifiers: [],
+                    specifiers: Array [],
 
                     range: [241, 288],
                     loc: {
@@ -348,7 +348,7 @@ Program {
             },
             exportKind: "value",
             source: null,
-            specifiers: [],
+            specifiers: Array [],
 
             range: [219, 292],
             loc: {

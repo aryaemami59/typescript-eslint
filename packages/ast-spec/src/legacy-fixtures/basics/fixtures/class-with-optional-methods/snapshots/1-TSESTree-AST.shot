@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-optional-methods TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-optional-methods > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
-            decorators: [],
+            decorators: Array [],
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "foo",
               optional: false,
 
@@ -38,7 +38,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [91, 94],
               loc: {
@@ -56,10 +56,10 @@ Program {
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
-            decorators: [],
+            decorators: Array [],
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "bar",
               optional: false,
 
@@ -81,7 +81,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
               returnType: TSTypeAnnotation {
                 type: "TSTypeAnnotation",
                 typeAnnotation: TSStringKeyword {
@@ -118,10 +118,10 @@ Program {
             type: "MethodDefinition",
             accessibility: "private",
             computed: false,
-            decorators: [],
+            decorators: Array [],
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "baz",
               optional: false,
 
@@ -143,7 +143,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
               returnType: TSTypeAnnotation {
                 type: "TSTypeAnnotation",
                 typeAnnotation: TSStringKeyword {
@@ -185,10 +185,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Foo",
         optional: false,
 
@@ -198,7 +198,7 @@ Program {
           end: { column: 9, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [73, 140],

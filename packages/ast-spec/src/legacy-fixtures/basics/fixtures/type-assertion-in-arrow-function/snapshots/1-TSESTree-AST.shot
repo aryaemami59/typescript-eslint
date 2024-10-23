@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics type-assertion-in-arrow-function TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > type-assertion-in-arrow-function > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "assertString",
             optional: false,
 
@@ -27,7 +27,7 @@ Program {
             async: false,
             body: BlockStatement {
               type: "BlockStatement",
-              body: [
+              body: Array [
                 ReturnStatement {
                   type: "ReturnStatement",
                   argument: null,
@@ -49,10 +49,10 @@ Program {
             expression: false,
             generator: false,
             id: null,
-            params: [
+            params: Array [
               Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "x",
                 optional: false,
                 typeAnnotation: TSTypeAnnotation {
@@ -88,7 +88,7 @@ Program {
                 asserts: true,
                 parameterName: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "x",
                   optional: false,
 

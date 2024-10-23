@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-optional-computed-property TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-optional-computed-property > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           PropertyDefinition {
             type: "PropertyDefinition",
             accessibility: "private",
             computed: true,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Literal {
               type: "Literal",
@@ -34,7 +34,7 @@ Program {
             static: false,
             value: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "undefined",
               optional: false,
 
@@ -60,10 +60,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "X",
         optional: false,
 
@@ -73,7 +73,7 @@ Program {
           end: { column: 7, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [73, 116],

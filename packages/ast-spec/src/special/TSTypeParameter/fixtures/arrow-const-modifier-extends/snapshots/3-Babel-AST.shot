@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures special TSTypeParameter arrow-const-modifier-extends Babel - AST 1`] = `
+exports[`AST Fixtures > special > TSTypeParameter > arrow-const-modifier-extends > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: ArrowFunctionExpression {
@@ -11,7 +11,7 @@ Program {
         async: false,
         body: BlockStatement {
           type: "BlockStatement",
-          body: [],
+          body: Array [],
 
           range: [25, 27],
           loc: {
@@ -22,10 +22,10 @@ Program {
         expression: false,
         generator: false,
         id: null,
-        params: [],
+        params: Array [],
         typeParameters: TSTypeParameterDeclaration {
           type: "TSTypeParameterDeclaration",
-          params: [
+          params: Array [
             TSTypeParameter {
               type: "TSTypeParameter",
               const: true,

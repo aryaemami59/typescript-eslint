@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSModuleDeclaration namespace-id-identifier TSESTree - AST 1`] = `
+exports[`AST Fixtures > declaration > TSModuleDeclaration > namespace-id-identifier > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: [],
+        body: Array [],
 
         range: [12, 14],
         loc: {
@@ -20,7 +20,7 @@ Program {
       global: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "F",
         optional: false,
 

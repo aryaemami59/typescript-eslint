@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics abstract-class-with-declare-properties TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > abstract-class-with-declare-properties > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: true,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
             declare: true,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "prop1",
               optional: false,
 
@@ -62,11 +62,11 @@ Program {
             type: "TSAbstractPropertyDefinition",
             computed: false,
             declare: true,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "prop2",
               optional: false,
 
@@ -111,11 +111,11 @@ Program {
             accessibility: "public",
             computed: false,
             declare: true,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "prop3",
               optional: false,
 
@@ -159,11 +159,11 @@ Program {
             type: "TSAbstractPropertyDefinition",
             computed: false,
             declare: true,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "prop4",
               optional: false,
 
@@ -208,11 +208,11 @@ Program {
             accessibility: "public",
             computed: false,
             declare: true,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "prop5",
               optional: false,
 
@@ -261,10 +261,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "AbstractDeclProps",
         optional: false,
 
@@ -274,7 +274,7 @@ Program {
           end: { column: 32, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [73, 302],

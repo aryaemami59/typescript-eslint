@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics nullish-coalescing TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > nullish-coalescing > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [
+        body: Array [
           VariableDeclaration {
             type: "VariableDeclaration",
-            declarations: [
+            declarations: Array [
               VariableDeclarator {
                 type: "VariableDeclarator",
                 definite: false,
                 id: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "len",
                   optional: false,
 
@@ -32,7 +32,7 @@ Program {
                   type: "LogicalExpression",
                   left: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "s",
                     optional: false,
 
@@ -91,7 +91,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "processNullishCoalesce",
         optional: false,
 
@@ -101,10 +101,10 @@ Program {
           end: { column: 31, line: 3 },
         },
       },
-      params: [
+      params: Array [
         Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "s",
           optional: true,
           typeAnnotation: TSTypeAnnotation {

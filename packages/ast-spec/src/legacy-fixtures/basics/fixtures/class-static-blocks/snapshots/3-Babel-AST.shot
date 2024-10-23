@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-static-blocks Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-static-blocks > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
@@ -43,13 +43,13 @@ Program {
           },
           StaticBlock {
             type: "StaticBlock",
-            body: [
+            body: Array [
               IfStatement {
                 type: "IfStatement",
                 alternate: null,
                 consequent: BlockStatement {
                   type: "BlockStatement",
-                  body: [
+                  body: Array [
                     ExpressionStatement {
                       type: "ExpressionStatement",
                       expression: UpdateExpression {
@@ -90,7 +90,7 @@ Program {
                 },
                 test: CallExpression {
                   type: "CallExpression",
-                  arguments: [],
+                  arguments: Array [],
                   callee: Identifier {
                     type: "Identifier",
                     name: "someCondition",

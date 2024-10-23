@@ -1,33 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures accessor-decorators accessor-decorator-factory-static-member TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > accessor-decorators > accessor-decorator-factory-static-member > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
-            decorators: [
+            decorators: Array [
               Decorator {
                 type: "Decorator",
                 expression: CallExpression {
                   type: "CallExpression",
-                  arguments: [
+                  arguments: Array [
                     ObjectExpression {
                       type: "ObjectExpression",
-                      properties: [
+                      properties: Array [
                         Property {
                           type: "Property",
                           computed: false,
                           key: Identifier {
                             type: "Identifier",
-                            decorators: [],
+                            decorators: Array [],
                             name: "baz",
                             optional: false,
 
@@ -70,7 +70,7 @@ Program {
                   ],
                   callee: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "foo",
                     optional: false,
 
@@ -98,7 +98,7 @@ Program {
             ],
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "bar",
               optional: false,
 
@@ -117,7 +117,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [
+                body: Array [
                   ReturnStatement {
                     type: "ReturnStatement",
                     argument: MemberExpression {
@@ -135,7 +135,7 @@ Program {
                       optional: false,
                       property: Identifier {
                         type: "Identifier",
-                        decorators: [],
+                        decorators: Array [],
                         name: "_bar",
                         optional: false,
 
@@ -171,7 +171,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [125, 155],
               loc: {
@@ -195,10 +195,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Other",
         optional: false,
 
@@ -208,7 +208,7 @@ Program {
           end: { column: 11, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [73, 157],

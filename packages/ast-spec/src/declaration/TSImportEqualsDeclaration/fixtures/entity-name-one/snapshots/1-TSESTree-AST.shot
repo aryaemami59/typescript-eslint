@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSImportEqualsDeclaration entity-name-one TSESTree - AST 1`] = `
+exports[`AST Fixtures > declaration > TSImportEqualsDeclaration > entity-name-one > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSImportEqualsDeclaration {
       type: "TSImportEqualsDeclaration",
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "F",
         optional: false,
 
@@ -21,7 +21,7 @@ Program {
       importKind: "value",
       moduleReference: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "A",
         optional: false,
 

@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics interface-without-type-annotation TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > interface-without-type-annotation > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: [
+        body: Array [
           TSPropertySignature {
             type: "TSPropertySignature",
             computed: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "foo",
               optional: false,
 
@@ -43,10 +43,10 @@ Program {
         },
       },
       declare: false,
-      extends: [],
+      extends: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "test",
         optional: false,
 

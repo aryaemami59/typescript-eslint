@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration ImportDeclaration side-effect TSESTree - AST 1`] = `
+exports[`AST Fixtures > declaration > ImportDeclaration > side-effect > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ImportDeclaration {
       type: "ImportDeclaration",
-      attributes: [],
+      attributes: Array [],
       importKind: "value",
       source: Literal {
         type: "Literal",
@@ -19,7 +19,7 @@ Program {
           end: { column: 12, line: 1 },
         },
       },
-      specifiers: [],
+      specifiers: Array [],
 
       range: [0, 13],
       loc: {

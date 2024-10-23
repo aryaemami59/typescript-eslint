@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures jsx JSXNamespacedName component-dashed AST Alignment - Token 1`] = `
+exports[`AST Fixtures > jsx > JSXNamespacedName > component-dashed > AST Alignment - Token 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -120,7 +120,7 @@ exports[`AST Fixtures jsx JSXNamespacedName component-dashed AST Alignment - Tok
     },
     String {
       type: 'String',
-      value: '\\'foo-bar:baz-bam\\'',
+      value: '\\\\'foo-bar:baz-bam\\\\'',
 
       range: [74, 91],
       loc: {

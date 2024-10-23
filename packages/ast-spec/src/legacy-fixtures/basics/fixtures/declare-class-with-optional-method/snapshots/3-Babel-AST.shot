@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics declare-class-with-optional-method Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > declare-class-with-optional-method > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
@@ -31,7 +31,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
               returnType: TSTypeAnnotation {
                 type: "TSTypeAnnotation",
                 typeAnnotation: TSAnyKeyword {

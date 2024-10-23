@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics export-all-with-import-assertions AST Alignment - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > export-all-with-import-assertions > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -28,7 +28,7 @@ exports[`AST Fixtures legacy-fixtures basics export-all-with-import-assertions A
             },
             value: Literal {
               type: 'Literal',
-              raw: '\\'json\\'',
+              raw: '\\\\'json\\\\'',
               value: 'json',
 
               range: [108, 114],
@@ -49,7 +49,7 @@ exports[`AST Fixtures legacy-fixtures basics export-all-with-import-assertions A
         exportKind: 'value',
         source: Literal {
           type: 'Literal',
-          raw: '\\'mod\\'',
+          raw: '\\\\'mod\\\\'',
           value: 'mod',
 
           range: [87, 92],

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSModuleDeclaration module-id-literal TSESTree - AST 1`] = `
+exports[`AST Fixtures > declaration > TSModuleDeclaration > module-id-literal > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: [],
+        body: Array [],
 
         range: [11, 13],
         loc: {

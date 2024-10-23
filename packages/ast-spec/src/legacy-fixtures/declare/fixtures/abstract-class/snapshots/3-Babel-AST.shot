@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures declare abstract-class Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > declare > abstract-class > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: true,
       body: ClassBody {
         type: "ClassBody",
-        body: [],
+        body: Array [],
 
         range: [100, 102],
         loc: {

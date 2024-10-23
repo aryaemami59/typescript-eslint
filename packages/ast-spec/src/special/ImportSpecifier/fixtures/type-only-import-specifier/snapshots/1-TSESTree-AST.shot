@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures special ImportSpecifier type-only-import-specifier TSESTree - AST 1`] = `
+exports[`AST Fixtures > special > ImportSpecifier > type-only-import-specifier > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ImportDeclaration {
       type: "ImportDeclaration",
-      attributes: [],
+      attributes: Array [],
       importKind: "value",
       source: Literal {
         type: "Literal",
@@ -19,12 +19,12 @@ Program {
           end: { column: 28, line: 1 },
         },
       },
-      specifiers: [
+      specifiers: Array [
         ImportSpecifier {
           type: "ImportSpecifier",
           imported: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "A",
             optional: false,
 
@@ -37,7 +37,7 @@ Program {
           importKind: "type",
           local: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "A",
             optional: false,
 

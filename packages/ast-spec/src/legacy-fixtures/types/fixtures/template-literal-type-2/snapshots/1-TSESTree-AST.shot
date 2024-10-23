@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types template-literal-type-2 TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > template-literal-type-2 > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "T",
         optional: false,
 
@@ -21,11 +21,11 @@ Program {
       },
       typeAnnotation: TSTemplateLiteralType {
         type: "TSTemplateLiteralType",
-        quasis: [
+        quasis: Array [
           TemplateElement {
             type: "TemplateElement",
             tail: false,
-            value: {
+            value: Object {
               "cooked": "foo",
               "raw": "foo",
             },
@@ -39,7 +39,7 @@ Program {
           TemplateElement {
             type: "TemplateElement",
             tail: true,
-            value: {
+            value: Object {
               "cooked": "",
               "raw": "",
             },
@@ -51,7 +51,7 @@ Program {
             },
           },
         ],
-        types: [
+        types: Array [
           TSLiteralType {
             type: "TSLiteralType",
             literal: Literal {

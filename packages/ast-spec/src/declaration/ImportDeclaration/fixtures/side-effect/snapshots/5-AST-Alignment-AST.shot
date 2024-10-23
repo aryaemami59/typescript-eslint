@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration ImportDeclaration side-effect AST Alignment - AST 1`] = `
+exports[`AST Fixtures > declaration > ImportDeclaration > side-effect > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -15,7 +15,7 @@ exports[`AST Fixtures declaration ImportDeclaration side-effect AST Alignment - 
         importKind: 'value',
         source: Literal {
           type: 'Literal',
-          raw: '\\'mod\\'',
+          raw: '\\\\'mod\\\\'',
           value: 'mod',
 
           range: [7, 12],

@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics never-type-param TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > never-type-param > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "x",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
@@ -21,7 +21,7 @@ Program {
                 type: "TSTypeReference",
                 typeArguments: TSTypeParameterInstantiation {
                   type: "TSTypeParameterInstantiation",
-                  params: [
+                  params: Array [
                     TSNeverKeyword {
                       type: "TSNeverKeyword",
 
@@ -41,7 +41,7 @@ Program {
                 },
                 typeName: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "X",
                   optional: false,
 
@@ -94,13 +94,13 @@ Program {
       type: "ExpressionStatement",
       expression: CallExpression {
         type: "CallExpression",
-        arguments: [],
+        arguments: Array [],
         callee: MemberExpression {
           type: "MemberExpression",
           computed: false,
           object: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "Observable",
             optional: false,
 
@@ -113,7 +113,7 @@ Program {
           optional: false,
           property: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "empty",
             optional: false,
 
@@ -133,7 +133,7 @@ Program {
         optional: false,
         typeArguments: TSTypeParameterInstantiation {
           type: "TSTypeParameterInstantiation",
-          params: [
+          params: Array [
             TSNeverKeyword {
               type: "TSNeverKeyword",
 

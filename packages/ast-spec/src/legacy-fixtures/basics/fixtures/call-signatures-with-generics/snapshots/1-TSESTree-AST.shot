@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics call-signatures-with-generics TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > call-signatures-with-generics > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "foo",
         optional: false,
 
@@ -21,13 +21,13 @@ Program {
       },
       typeAnnotation: TSTypeLiteral {
         type: "TSTypeLiteral",
-        members: [
+        members: Array [
           TSCallSignatureDeclaration {
             type: "TSCallSignatureDeclaration",
-            params: [
+            params: Array [
               Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "a",
                 optional: false,
                 typeAnnotation: TSTypeAnnotation {
@@ -76,14 +76,14 @@ Program {
             },
             typeParameters: TSTypeParameterDeclaration {
               type: "TSTypeParameterDeclaration",
-              params: [
+              params: Array [
                 TSTypeParameter {
                   type: "TSTypeParameter",
                   const: false,
                   in: false,
                   name: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "T",
                     optional: false,
 
@@ -118,10 +118,10 @@ Program {
           },
           TSConstructSignatureDeclaration {
             type: "TSConstructSignatureDeclaration",
-            params: [
+            params: Array [
               Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "a",
                 optional: false,
                 typeAnnotation: TSTypeAnnotation {
@@ -170,14 +170,14 @@ Program {
             },
             typeParameters: TSTypeParameterDeclaration {
               type: "TSTypeParameterDeclaration",
-              params: [
+              params: Array [
                 TSTypeParameter {
                   type: "TSTypeParameter",
                   const: false,
                   in: false,
                   name: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "T",
                     optional: false,
 

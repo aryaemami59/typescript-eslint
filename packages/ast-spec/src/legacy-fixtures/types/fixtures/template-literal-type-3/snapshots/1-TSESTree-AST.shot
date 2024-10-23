@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types template-literal-type-3 TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > template-literal-type-3 > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Color",
         optional: false,
 
@@ -21,7 +21,7 @@ Program {
       },
       typeAnnotation: TSUnionType {
         type: "TSUnionType",
-        types: [
+        types: Array [
           TSLiteralType {
             type: "TSLiteralType",
             literal: Literal {
@@ -82,7 +82,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Quantity",
         optional: false,
 
@@ -94,7 +94,7 @@ Program {
       },
       typeAnnotation: TSUnionType {
         type: "TSUnionType",
-        types: [
+        types: Array [
           TSLiteralType {
             type: "TSLiteralType",
             literal: Literal {
@@ -155,7 +155,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "SeussFish",
         optional: false,
 
@@ -167,11 +167,11 @@ Program {
       },
       typeAnnotation: TSTemplateLiteralType {
         type: "TSTemplateLiteralType",
-        quasis: [
+        quasis: Array [
           TemplateElement {
             type: "TemplateElement",
             tail: false,
-            value: {
+            value: Object {
               "cooked": "",
               "raw": "",
             },
@@ -185,7 +185,7 @@ Program {
           TemplateElement {
             type: "TemplateElement",
             tail: true,
-            value: {
+            value: Object {
               "cooked": " fish",
               "raw": " fish",
             },
@@ -197,15 +197,15 @@ Program {
             },
           },
         ],
-        types: [
+        types: Array [
           TSUnionType {
             type: "TSUnionType",
-            types: [
+            types: Array [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "Quantity",
                   optional: false,
 
@@ -226,7 +226,7 @@ Program {
                 type: "TSTypeReference",
                 typeName: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "Color",
                   optional: false,
 

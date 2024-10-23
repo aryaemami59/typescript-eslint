@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration ClassDeclaration type-parameters-extends-type-param Babel - AST 1`] = `
+exports[`AST Fixtures > declaration > ClassDeclaration > type-parameters-extends-type-param > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: [],
+        body: Array [],
 
         range: [28, 30],
         loc: {
@@ -38,7 +38,7 @@ Program {
       },
       superTypeParameters: TSTypeParameterInstantiation {
         type: "TSTypeParameterInstantiation",
-        params: [
+        params: Array [
           TSTypeReference {
             type: "TSTypeReference",
             typeName: Identifier {
@@ -68,7 +68,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             name: "T",

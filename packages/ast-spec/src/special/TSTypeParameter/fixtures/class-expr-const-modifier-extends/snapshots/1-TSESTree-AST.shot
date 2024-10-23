@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures special TSTypeParameter class-expr-const-modifier-extends TSESTree - AST 1`] = `
+exports[`AST Fixtures > special > TSTypeParameter > class-expr-const-modifier-extends > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: ClassExpression {
@@ -11,7 +11,7 @@ Program {
         abstract: false,
         body: ClassBody {
           type: "ClassBody",
-          body: [],
+          body: Array [],
 
           range: [26, 28],
           loc: {
@@ -20,13 +20,13 @@ Program {
           },
         },
         declare: false,
-        decorators: [],
+        decorators: Array [],
         id: null,
-        implements: [],
+        implements: Array [],
         superClass: null,
         typeParameters: TSTypeParameterDeclaration {
           type: "TSTypeParameterDeclaration",
-          params: [
+          params: Array [
             TSTypeParameter {
               type: "TSTypeParameter",
               const: true,
@@ -34,7 +34,7 @@ Program {
                 type: "TSTypeReference",
                 typeName: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "U",
                   optional: false,
 
@@ -54,7 +54,7 @@ Program {
               in: false,
               name: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "T",
                 optional: false,
 

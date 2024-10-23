@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures parameter-decorators parameter-decorator-static-member AST Alignment - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > parameter-decorators > parameter-decorator-static-member > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -48,7 +48,7 @@ exports[`AST Fixtures legacy-fixtures parameter-decorators parameter-decorator-s
                           type: 'BinaryExpression',
                           left: Literal {
                             type: 'Literal',
-                            raw: '\\'Hello \\'',
+                            raw: '\\\\'Hello \\\\'',
                             value: 'Hello ',
 
                             range: [147, 155],
@@ -80,7 +80,7 @@ exports[`AST Fixtures legacy-fixtures parameter-decorators parameter-decorator-s
                         operator: '+',
                         right: Literal {
                           type: 'Literal',
-                          raw: '\\'!\\'',
+                          raw: '\\\\'!\\\\'',
                           value: '!',
 
                           range: [165, 168],

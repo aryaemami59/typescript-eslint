@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics destructuring-assignment-object Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > destructuring-assignment-object > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: AssignmentExpression {
         type: "AssignmentExpression",
         left: ObjectPattern {
           type: "ObjectPattern",
-          properties: [
+          properties: Array [
             Property {
               type: "Property",
               computed: false,
@@ -41,7 +41,7 @@ Program {
                 },
                 right: ObjectExpression {
                   type: "ObjectExpression",
-                  properties: [],
+                  properties: Array [],
 
                   range: [82, 84],
                   loc: {

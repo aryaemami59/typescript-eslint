@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics short-circuiting-assignment-question-question Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > short-circuiting-assignment-question-question > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: AssignmentExpression {

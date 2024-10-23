@@ -1,28 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types function-with-this TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > function-with-this > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "f",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSFunctionType {
                 type: "TSFunctionType",
-                params: [
+                params: Array [
                   Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "this",
                     optional: false,
                     typeAnnotation: TSTypeAnnotation {

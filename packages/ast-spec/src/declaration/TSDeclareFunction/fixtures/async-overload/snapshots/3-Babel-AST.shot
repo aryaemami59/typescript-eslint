@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSDeclareFunction async-overload Babel - AST 1`] = `
+exports[`AST Fixtures > declaration > TSDeclareFunction > async-overload > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSDeclareFunction {
       type: "TSDeclareFunction",
       async: true,
@@ -19,7 +19,7 @@ Program {
           end: { column: 18, line: 1 },
         },
       },
-      params: [],
+      params: Array [],
       returnType: TSTypeAnnotation {
         type: "TSTypeAnnotation",
         typeAnnotation: TSAnyKeyword {
@@ -50,7 +50,7 @@ Program {
       async: true,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [],
+        body: Array [],
 
         range: [53, 55],
         loc: {
@@ -70,7 +70,7 @@ Program {
           end: { column: 18, line: 2 },
         },
       },
-      params: [],
+      params: Array [],
       returnType: TSTypeAnnotation {
         type: "TSTypeAnnotation",
         typeAnnotation: TSAnyKeyword {

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types interface-with-accessors Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > interface-with-accessors > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: [
+        body: Array [
           TSMethodSignature {
             type: "TSMethodSignature",
             computed: false,
@@ -23,7 +23,7 @@ Program {
               },
             },
             kind: "get",
-            parameters: [],
+            parameters: Array [],
             typeAnnotation: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSNumberKeyword {
@@ -63,7 +63,7 @@ Program {
               },
             },
             kind: "set",
-            parameters: [
+            parameters: Array [
               Identifier {
                 type: "Identifier",
                 name: "value",
@@ -71,7 +71,7 @@ Program {
                   type: "TSTypeAnnotation",
                   typeAnnotation: TSUnionType {
                     type: "TSUnionType",
-                    types: [
+                    types: Array [
                       TSNumberKeyword {
                         type: "TSNumberKeyword",
 

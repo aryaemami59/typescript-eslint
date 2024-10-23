@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics typed-method-signature Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > typed-method-signature > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       id: Identifier {
@@ -18,7 +18,7 @@ Program {
       },
       typeAnnotation: TSTypeLiteral {
         type: "TSTypeLiteral",
-        members: [
+        members: Array [
           TSMethodSignature {
             type: "TSMethodSignature",
             computed: false,
@@ -33,7 +33,7 @@ Program {
               },
             },
             kind: "method",
-            parameters: [
+            parameters: Array [
               Identifier {
                 type: "Identifier",
                 name: "bar",
@@ -102,7 +102,7 @@ Program {
               },
             },
             kind: "method",
-            parameters: [
+            parameters: Array [
               Identifier {
                 type: "Identifier",
                 name: "bar",
@@ -172,7 +172,7 @@ Program {
             },
             typeParameters: TSTypeParameterDeclaration {
               type: "TSTypeParameterDeclaration",
-              params: [
+              params: Array [
                 TSTypeParameter {
                   type: "TSTypeParameter",
                   name: "T",

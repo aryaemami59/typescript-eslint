@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration FunctionDeclaration param-many Babel - AST 1`] = `
+exports[`AST Fixtures > declaration > FunctionDeclaration > param-many > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [],
+        body: Array [],
 
         range: [22, 24],
         loc: {
@@ -29,7 +29,7 @@ Program {
           end: { column: 12, line: 1 },
         },
       },
-      params: [
+      params: Array [
         Identifier {
           type: "Identifier",
           name: "a",

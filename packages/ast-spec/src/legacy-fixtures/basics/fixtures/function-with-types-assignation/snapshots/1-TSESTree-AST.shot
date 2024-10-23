@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics function-with-types-assignation TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > function-with-types-assignation > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [
+        body: Array [
           ReturnStatement {
             type: "ReturnStatement",
             argument: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "name",
               optional: false,
 
@@ -44,7 +44,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "message",
         optional: false,
 
@@ -54,10 +54,10 @@ Program {
           end: { column: 16, line: 3 },
         },
       },
-      params: [
+      params: Array [
         Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "name",
           optional: false,
           typeAnnotation: TSTypeAnnotation {
@@ -87,10 +87,10 @@ Program {
         },
         AssignmentPattern {
           type: "AssignmentPattern",
-          decorators: [],
+          decorators: Array [],
           left: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "age",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
@@ -141,7 +141,7 @@ Program {
           type: "RestElement",
           argument: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "args",
             optional: false,
 
@@ -151,7 +151,7 @@ Program {
               end: { column: 9, line: 6 },
             },
           },
-          decorators: [],
+          decorators: Array [],
           optional: false,
           typeAnnotation: TSTypeAnnotation {
             type: "TSTypeAnnotation",
@@ -159,7 +159,7 @@ Program {
               type: "TSTypeReference",
               typeArguments: TSTypeParameterInstantiation {
                 type: "TSTypeParameterInstantiation",
-                params: [
+                params: Array [
                   TSStringKeyword {
                     type: "TSStringKeyword",
 
@@ -179,7 +179,7 @@ Program {
               },
               typeName: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "Array",
                 optional: false,
 
