@@ -6,7 +6,6 @@ const vitestConfig = mergeConfig(
 
   defineConfig({
     test: {
-      include: ['./tests/lib/.*\\.test\\.ts$'],
       exclude: process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE
         ? ['/node_modules/', 'project-true']
         : [],

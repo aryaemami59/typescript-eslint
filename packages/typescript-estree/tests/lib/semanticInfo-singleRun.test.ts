@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 import * as glob from 'glob';
 import * as path from 'node:path';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { createProgramFromConfigFile as createProgramFromConfigFileOriginal } from '../../src/create-program/useProvidedPrograms';
 import {
@@ -21,7 +21,7 @@ const mockProgram = {
   },
 };
 
-vi.mock('../../src/ast-converter', () => {
+vi.mock('../../src/ast-converter.js', () => {
   return {
     astConverter(): unknown {
       return { astMaps: {}, estree: {} };
@@ -33,9 +33,9 @@ interface MockProgramWithConfigFile {
   __FROM_CONFIG_FILE__?: string;
 }
 
-vi.mock('../../src/create-program/shared.ts', () => {
+vi.mock(import('../../src/create-program/shared.js'), async importOriginal => {
   return {
-    ...vi.importActual('../../src/create-program/shared.ts'),
+    ...(await importOriginal()),
     getAstFromProgram(program: MockProgramWithConfigFile): unknown {
       if (
         program.__FROM_CONFIG_FILE__?.endsWith('non-matching-tsconfig.json')
@@ -46,30 +46,40 @@ vi.mock('../../src/create-program/shared.ts', () => {
       delete program.__FROM_CONFIG_FILE__;
       return { ast: {}, program };
     },
-  };
+  } as Awaited<ReturnType<typeof importOriginal>>;
 });
 
-vi.mock('../../src/create-program/useProvidedPrograms.ts', () => {
-  return {
-    ...vi.importActual('../../src/create-program/useProvidedPrograms.ts'),
-    createProgramFromConfigFile: vi
-      .fn()
-      .mockImplementation((configFile): MockProgramWithConfigFile => {
-        return {
-          // So we can differentiate our mock return values based on which tsconfig this is
-          __FROM_CONFIG_FILE__: configFile,
-          ...mockProgram,
-        };
-      }),
-  };
-});
+vi.mock(
+  import('../../src/create-program/useProvidedPrograms.js'),
+  async importOriginal => {
+    return {
+      ...(await importOriginal()),
+      createProgramFromConfigFile: vi.fn(
+        (configFile): MockProgramWithConfigFile => {
+          return {
+            // So we can differentiate our mock return values based on which tsconfig this is
+            __FROM_CONFIG_FILE__: configFile,
+            ...mockProgram,
+          };
+        },
+      ),
+    } as unknown as Awaited<ReturnType<typeof importOriginal>>;
+  },
+);
 
-vi.mock('../../src/create-program/getWatchProgramsForProjects', () => {
-  return {
-    ...vi.importActual('../../src/create-program/getWatchProgramsForProjects'),
-    getWatchProgramsForProjects: vi.fn(() => [mockProgram]),
-  };
-});
+vi.mock(
+  import('../../src/create-program/getWatchProgramsForProjects.js'),
+  async importOriginal => {
+    return {
+      ...(await importOriginal()),
+      getWatchProgramsForProjects: vi.fn(() => [
+        mockProgram,
+      ]) as unknown as Awaited<
+        ReturnType<typeof importOriginal>
+      >['getWatchProgramsForProjects'],
+    };
+  },
+);
 
 const createProgramFromConfigFile = vi.mocked(
   createProgramFromConfigFileOriginal,

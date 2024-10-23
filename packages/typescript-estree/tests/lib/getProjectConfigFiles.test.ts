@@ -154,7 +154,7 @@ describe('getProjectConfigFiles', () => {
       expect(() =>
         getProjectConfigFiles(parseSettings, true),
       ).toThrowErrorMatchingInlineSnapshot(
-        `"project was set to \`true\` but couldn't find any tsconfig.json relative to './repos/repo/packages/package/file.ts' within './repos/repo'."`,
+        `[Error: project was set to \`true\` but couldn't find any tsconfig.json relative to './repos/repo/packages/package/file.ts' within './repos/repo'.]`,
       );
     });
 
@@ -164,7 +164,7 @@ describe('getProjectConfigFiles', () => {
       expect(() =>
         getProjectConfigFiles({ ...parseSettings, tsconfigRootDir: '/' }, true),
       ).toThrowErrorMatchingInlineSnapshot(
-        `"project was set to \`true\` but couldn't find any tsconfig.json relative to './repos/repo/packages/package/file.ts' within '/'."`,
+        `[Error: project was set to \`true\` but couldn't find any tsconfig.json relative to './repos/repo/packages/package/file.ts' within '/'.]`,
       );
     });
   });

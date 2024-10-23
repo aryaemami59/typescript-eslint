@@ -5,9 +5,7 @@ const vitestConfig = mergeConfig(
   vitestBaseConfig,
 
   defineConfig({
-    test: {
-      include: ['./tests/.+\\.ts$'],
-    },
+    test: {},
   }),
 );
 

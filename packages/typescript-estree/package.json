@@ -50,7 +50,7 @@
     "postclean": "rimraf dist && rimraf _ts4.3 && rimraf coverage",
     "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
     "lint": "npx nx lint",
-    "test": "vitest --run --coverage --verbose",
+    "test": "vitest --run --coverage",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
