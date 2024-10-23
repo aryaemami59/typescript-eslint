@@ -9,10 +9,10 @@ const BASE_SATISFIES_OPTIONS: semver.RangeOptions = {
   includePrerelease: true,
 };
 
-function satisfiesDependencyConstraint(
+async function satisfiesDependencyConstraint(
   packageName: string,
   constraintIn: DependencyConstraint[string],
-): boolean {
+): Promise<boolean> {
   const constraint: SemverVersionConstraint =
     typeof constraintIn === 'string'
       ? {
@@ -22,7 +22,12 @@ function satisfiesDependencyConstraint(
 
   return semver.satisfies(
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-    (require(`${packageName}/package.json`) as { version: string }).version,
+    (
+      (await import(`${packageName}/package.json`, {
+        with: { type: 'json' },
+      })) as { version: string }
+    ).version,
+    // (require(`${packageName}/package.json`) as { version: string }).version,
     constraint.range,
     typeof constraint.options === 'object'
       ? { ...BASE_SATISFIES_OPTIONS, ...constraint.options }

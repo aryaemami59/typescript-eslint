@@ -1,6 +1,6 @@
-import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { TSESTree } from '@typescript-eslint/utils';
 import type { RuleModule } from '@typescript-eslint/utils/ts-eslint';
+import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import * as parser from '@typescript-eslint/parser';
 import { AST_NODE_TYPES } from '@typescript-eslint/typescript-estree';
@@ -8,56 +8,24 @@ import { AST_NODE_TYPES } from '@typescript-eslint/typescript-estree';
 import type { RuleTesterTestFrameworkFunctionBase } from '../src/TestFramework';
 
 import { RuleTester } from '../src/RuleTester';
-import * as dependencyConstraintsModule from '../src/utils/dependencyConstraints';
+import * as dependencyConstraintsModule from '../src/utils/dependencyConstraints.js';
 
 // we can't spy on the exports of an ES module - so we instead have to mock the entire module
-vi.mock('../src/utils/dependencyConstraints', async () => {
-  const dependencyConstraints = await vi.importActual<
-    typeof dependencyConstraintsModule
-  >('../src/utils/dependencyConstraints');
+vi.mock(import('../src/utils/dependencyConstraints.js'), { spy: true });
 
-  return {
-    ...dependencyConstraints,
-    __esModule: true,
-    satisfiesAllDependencyConstraints: vi.fn(
-      dependencyConstraints.satisfiesAllDependencyConstraints,
-    ),
-  };
-});
 const satisfiesAllDependencyConstraintsMock = vi.mocked(
   dependencyConstraintsModule.satisfiesAllDependencyConstraints,
 );
 
-vi.mock(
-  'totally-real-dependency/package.json',
-  () => ({
-    version: '10.0.0',
-  }),
-  // {
-  //   // this is not a real module that will exist
-  //   virtual: true,
-  // },
-);
-vi.mock(
-  'totally-real-dependency-prerelease/package.json',
-  () => ({
-    version: '10.0.0-rc.1',
-  }),
-  // {
-  //   // this is not a real module that will exist
-  //   virtual: true,
-  // },
-);
+vi.mock('totally-real-dependency/package.json', () => ({
+  version: '10.0.0',
+}));
 
-vi.mock(import('@typescript-eslint/parser'), async importOriginal => {
-  const actualParser = await importOriginal();
-  return {
-    ...actualParser,
-    __esModule: true,
-    // clearCaches: vi.spyOn(actualParser, 'clearCaches'),
-    clearCaches: vi.fn(),
-  };
-});
+vi.mock('totally-real-dependency-prerelease/package.json', () => ({
+  version: '10.0.0-rc.1',
+}));
+
+vi.mock(import('@typescript-eslint/parser'), { spy: true });
 
 /* eslint-disable vi/prefer-spy-on --
      we need to specifically assign to the properties or else it will use the
@@ -385,7 +353,7 @@ describe('RuleTester', () => {
         ],
       }),
     ).toThrowErrorMatchingInlineSnapshot(
-      `"Do not set the parser at the test level unless you want to use a parser other than "@typescript-eslint/parser""`,
+      `[Error: Do not set the parser at the test level unless you want to use a parser other than "@typescript-eslint/parser"]`,
     );
   });
 

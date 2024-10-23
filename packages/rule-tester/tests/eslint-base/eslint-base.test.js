@@ -20,14 +20,21 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const { afterAll, afterEach, beforeAll, beforeEach, describe, it } = require("vitest");
+// import { assert, afterAll, afterEach, beforeAll, beforeEach, describe, it } from "vitest";
 
 const sinon = require("sinon"),
-    EventEmitter = require("events"),
+    EventEmitter = require("node:events"),
     { RuleTester } = require("../../dist/RuleTester"),
     assert = require("chai").assert,
-    nodeAssert = require("assert"),
+    nodeAssert = require("node:assert"),
     espree = require("espree");
+
+// import sinon from "sinon";
+// import EventEmitter from "node:events";
+// import { RuleTester } from "../../dist/RuleTester";
+// import { assert } from "chai";
+// import nodeAssert from "node:assert";
+// import * as espree from "espree";
 
 const NODE_ASSERT_STRICT_EQUAL_OPERATOR = (() => {
     try {
