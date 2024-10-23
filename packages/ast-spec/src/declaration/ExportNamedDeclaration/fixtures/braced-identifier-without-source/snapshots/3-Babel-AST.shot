@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration ExportNamedDeclaration braced-identifier-without-source Babel - AST 1`] = `
+exports[`AST Fixtures > declaration > ExportNamedDeclaration > braced-identifier-without-source > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: [],
+      assertions: Array [],
       declaration: null,
       exportKind: "value",
       source: null,
-      specifiers: [
+      specifiers: Array [
         ExportSpecifier {
           type: "ExportSpecifier",
           exported: Identifier {

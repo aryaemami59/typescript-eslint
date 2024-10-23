@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types template-literal-type-3 Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > template-literal-type-3 > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       id: Identifier {
@@ -18,7 +18,7 @@ Program {
       },
       typeAnnotation: TSUnionType {
         type: "TSUnionType",
-        types: [
+        types: Array [
           TSLiteralType {
             type: "TSLiteralType",
             literal: Literal {
@@ -88,7 +88,7 @@ Program {
       },
       typeAnnotation: TSUnionType {
         type: "TSUnionType",
-        types: [
+        types: Array [
           TSLiteralType {
             type: "TSLiteralType",
             literal: Literal {
@@ -160,10 +160,10 @@ Program {
         type: "TSLiteralType",
         literal: TemplateLiteral {
           type: "TemplateLiteral",
-          expressions: [
+          expressions: Array [
             TSUnionType {
               type: "TSUnionType",
-              types: [
+              types: Array [
                 TSTypeReference {
                   type: "TSTypeReference",
                   typeName: Identifier {
@@ -211,11 +211,11 @@ Program {
               },
             },
           ],
-          quasis: [
+          quasis: Array [
             TemplateElement {
               type: "TemplateElement",
               tail: false,
-              value: {
+              value: Object {
                 "cooked": "",
                 "raw": "",
               },
@@ -229,7 +229,7 @@ Program {
             TemplateElement {
               type: "TemplateElement",
               tail: true,
-              value: {
+              value: Object {
                 "cooked": " fish",
                 "raw": " fish",
               },

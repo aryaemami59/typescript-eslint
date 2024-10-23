@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics object-with-escaped-properties Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > object-with-escaped-properties > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: ObjectExpression {
         type: "ObjectExpression",
-        properties: [
+        properties: Array [
           Property {
             type: "Property",
             computed: false,
@@ -62,7 +62,7 @@ Program {
       type: "ExpressionStatement",
       expression: ObjectExpression {
         type: "ObjectExpression",
-        properties: [
+        properties: Array [
           Property {
             type: "Property",
             computed: false,
@@ -84,7 +84,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [98, 100],
                 loc: {
@@ -95,7 +95,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [95, 100],
               loc: {
@@ -129,7 +129,7 @@ Program {
       type: "ExpressionStatement",
       expression: ObjectExpression {
         type: "ObjectExpression",
-        properties: [
+        properties: Array [
           Property {
             type: "Property",
             computed: true,
@@ -184,7 +184,7 @@ Program {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,

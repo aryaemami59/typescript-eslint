@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures namespaces-and-modules declare-namespace-with-exported-function TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > declare-namespace-with-exported-function > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: [
+        body: Array [
           ExportNamedDeclaration {
             type: "ExportNamedDeclaration",
-            attributes: [],
+            attributes: Array [],
             declaration: TSDeclareFunction {
               type: "TSDeclareFunction",
               async: false,
@@ -20,7 +20,7 @@ Program {
               generator: false,
               id: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "select",
                 optional: false,
 
@@ -30,10 +30,10 @@ Program {
                   end: { column: 24, line: 4 },
                 },
               },
-              params: [
+              params: Array [
                 Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "selector",
                   optional: false,
                   typeAnnotation: TSTypeAnnotation {
@@ -68,7 +68,7 @@ Program {
                   type: "TSTypeReference",
                   typeArguments: TSTypeParameterInstantiation {
                     type: "TSTypeParameterInstantiation",
-                    params: [
+                    params: Array [
                       TSAnyKeyword {
                         type: "TSAnyKeyword",
 
@@ -88,7 +88,7 @@ Program {
                   },
                   typeName: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "Selection",
                     optional: false,
 
@@ -121,7 +121,7 @@ Program {
             },
             exportKind: "value",
             source: null,
-            specifiers: [],
+            specifiers: Array [],
 
             range: [98, 155],
             loc: {
@@ -141,7 +141,7 @@ Program {
       global: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "d3",
         optional: false,
 

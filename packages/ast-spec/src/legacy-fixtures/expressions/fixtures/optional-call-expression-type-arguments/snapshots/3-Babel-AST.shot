@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures expressions optional-call-expression-type-arguments Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > expressions > optional-call-expression-type-arguments > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: ChainExpression {
         type: "ChainExpression",
         expression: CallExpression {
           type: "CallExpression",
-          arguments: [],
+          arguments: Array [],
           callee: MemberExpression {
             type: "MemberExpression",
             computed: false,
@@ -45,7 +45,7 @@ Program {
           optional: false,
           typeParameters: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: [
+            params: Array [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
@@ -100,7 +100,7 @@ Program {
         type: "ChainExpression",
         expression: CallExpression {
           type: "CallExpression",
-          arguments: [],
+          arguments: Array [],
           callee: MemberExpression {
             type: "MemberExpression",
             computed: false,
@@ -135,7 +135,7 @@ Program {
           optional: false,
           typeParameters: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: [
+            params: Array [
               TSNumberKeyword {
                 type: "TSNumberKeyword",
 

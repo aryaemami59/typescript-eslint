@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSEnumDeclaration declare TSESTree - AST 1`] = `
+exports[`AST Fixtures > declaration > TSEnumDeclaration > declare > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSEnumDeclaration {
       type: "TSEnumDeclaration",
       body: TSEnumBody {
         type: "TSEnumBody",
-        members: [],
+        members: Array [],
 
         range: [17, 19],
         loc: {
@@ -20,7 +20,7 @@ Program {
       declare: true,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Foo",
         optional: false,
 

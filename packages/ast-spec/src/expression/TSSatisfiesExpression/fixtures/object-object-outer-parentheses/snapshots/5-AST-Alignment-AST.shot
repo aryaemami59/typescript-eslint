@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures expression TSSatisfiesExpression object-object-outer-parentheses AST Alignment - AST 1`] = `
+exports[`AST Fixtures > expression > TSSatisfiesExpression > object-object-outer-parentheses > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -36,7 +36,7 @@ exports[`AST Fixtures expression TSSatisfiesExpression object-object-outer-paren
                 shorthand: false,
                 value: Literal {
                   type: 'Literal',
-                  raw: '\\'string\\'',
+                  raw: '\\\\'string\\\\'',
                   value: 'string',
 
                   range: [9, 17],

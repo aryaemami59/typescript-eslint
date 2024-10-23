@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures namespaces-and-modules shorthand-ambient-module-declaration TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > shorthand-ambient-module-declaration > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       declare: true,

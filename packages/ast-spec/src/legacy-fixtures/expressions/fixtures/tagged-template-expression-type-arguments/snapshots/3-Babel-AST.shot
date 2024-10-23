@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures expressions tagged-template-expression-type-arguments Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > expressions > tagged-template-expression-type-arguments > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TaggedTemplateExpression {
         type: "TaggedTemplateExpression",
         quasi: TemplateLiteral {
           type: "TemplateLiteral",
-          expressions: [],
-          quasis: [
+          expressions: Array [],
+          quasis: Array [
             TemplateElement {
               type: "TemplateElement",
               tail: true,
-              value: {
+              value: Object {
                 "cooked": "baz",
                 "raw": "baz",
               },
@@ -46,7 +46,7 @@ Program {
         },
         typeParameters: TSTypeParameterInstantiation {
           type: "TSTypeParameterInstantiation",
-          params: [
+          params: Array [
             TSTypeReference {
               type: "TSTypeReference",
               typeName: Identifier {

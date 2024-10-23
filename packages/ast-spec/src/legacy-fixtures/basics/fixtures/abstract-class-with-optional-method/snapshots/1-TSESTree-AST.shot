@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics abstract-class-with-optional-method TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > abstract-class-with-optional-method > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: [],
+      attributes: Array [],
       declaration: ClassDeclaration {
         type: "ClassDeclaration",
         abstract: true,
         body: ClassBody {
           type: "ClassBody",
-          body: [
+          body: Array [
             MethodDefinition {
               type: "MethodDefinition",
               computed: false,
-              decorators: [],
+              decorators: Array [],
               key: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "createSocket",
                 optional: false,
 
@@ -41,14 +41,14 @@ Program {
                 expression: false,
                 generator: false,
                 id: null,
-                params: [],
+                params: Array [],
                 returnType: TSTypeAnnotation {
                   type: "TSTypeAnnotation",
                   typeAnnotation: TSTypeReference {
                     type: "TSTypeReference",
                     typeArguments: TSTypeParameterInstantiation {
                       type: "TSTypeParameterInstantiation",
-                      params: [
+                      params: Array [
                         TSStringKeyword {
                           type: "TSStringKeyword",
 
@@ -68,7 +68,7 @@ Program {
                     },
                     typeName: Identifier {
                       type: "Identifier",
-                      decorators: [],
+                      decorators: Array [],
                       name: "Promise",
                       optional: false,
 
@@ -115,10 +115,10 @@ Program {
           },
         },
         declare: false,
-        decorators: [],
+        decorators: Array [],
         id: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "AbstractSocket",
           optional: false,
 
@@ -128,7 +128,7 @@ Program {
             end: { column: 36, line: 3 },
           },
         },
-        implements: [],
+        implements: Array [],
         superClass: null,
 
         range: [80, 149],
@@ -139,7 +139,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [73, 149],
       loc: {

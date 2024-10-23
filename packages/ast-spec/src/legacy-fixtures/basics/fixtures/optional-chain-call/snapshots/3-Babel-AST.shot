@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics optional-chain-call Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > optional-chain-call > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [
+        body: Array [
           ExpressionStatement {
             type: "ExpressionStatement",
             expression: ChainExpression {
               type: "ChainExpression",
               expression: CallExpression {
                 type: "CallExpression",
-                arguments: [],
+                arguments: Array [],
                 callee: MemberExpression {
                   type: "MemberExpression",
                   computed: false,
@@ -76,7 +76,7 @@ Program {
               type: "ChainExpression",
               expression: CallExpression {
                 type: "CallExpression",
-                arguments: [],
+                arguments: Array [],
                 callee: MemberExpression {
                   type: "MemberExpression",
                   computed: false,
@@ -157,7 +157,7 @@ Program {
               type: "ChainExpression",
               expression: CallExpression {
                 type: "CallExpression",
-                arguments: [],
+                arguments: Array [],
                 callee: MemberExpression {
                   type: "MemberExpression",
                   computed: false,
@@ -238,7 +238,7 @@ Program {
               type: "ChainExpression",
               expression: CallExpression {
                 type: "CallExpression",
-                arguments: [],
+                arguments: Array [],
                 callee: MemberExpression {
                   type: "MemberExpression",
                   computed: false,
@@ -340,7 +340,7 @@ Program {
               type: "ChainExpression",
               expression: CallExpression {
                 type: "CallExpression",
-                arguments: [],
+                arguments: Array [],
                 callee: MemberExpression {
                   type: "MemberExpression",
                   computed: false,
@@ -442,7 +442,7 @@ Program {
               type: "ChainExpression",
               expression: CallExpression {
                 type: "CallExpression",
-                arguments: [],
+                arguments: Array [],
                 callee: Identifier {
                   type: "Identifier",
                   name: "one",
@@ -481,10 +481,10 @@ Program {
               type: "ChainExpression",
               expression: CallExpression {
                 type: "CallExpression",
-                arguments: [],
+                arguments: Array [],
                 callee: CallExpression {
                   type: "CallExpression",
-                  arguments: [],
+                  arguments: Array [],
                   callee: Identifier {
                     type: "Identifier",
                     name: "one",
@@ -531,10 +531,10 @@ Program {
               type: "ChainExpression",
               expression: CallExpression {
                 type: "CallExpression",
-                arguments: [],
+                arguments: Array [],
                 callee: CallExpression {
                   type: "CallExpression",
-                  arguments: [],
+                  arguments: Array [],
                   callee: Identifier {
                     type: "Identifier",
                     name: "one",
@@ -584,7 +584,7 @@ Program {
                 computed: false,
                 object: CallExpression {
                   type: "CallExpression",
-                  arguments: [],
+                  arguments: Array [],
                   callee: Identifier {
                     type: "Identifier",
                     name: "one",
@@ -655,7 +655,7 @@ Program {
           end: { column: 28, line: 3 },
         },
       },
-      params: [
+      params: Array [
         Identifier {
           type: "Identifier",
           name: "one",

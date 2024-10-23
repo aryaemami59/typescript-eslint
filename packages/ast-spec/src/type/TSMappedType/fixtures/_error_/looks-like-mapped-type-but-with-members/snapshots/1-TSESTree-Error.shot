@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures type TSMappedType _error_ looks-like-mapped-type-but-with-members TSESTree - Error 1`] = `
+exports[`AST Fixtures > type > TSMappedType > _error_ > looks-like-mapped-type-but-with-members > TSESTree - Error 1`] = `
 "TSError
   1 | type Mapped = {
   2 |   member: member;

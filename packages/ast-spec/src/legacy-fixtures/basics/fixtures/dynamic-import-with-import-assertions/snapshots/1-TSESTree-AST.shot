@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics dynamic-import-with-import-assertions TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > dynamic-import-with-import-assertions > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: ImportExpression {
         type: "ImportExpression",
         options: ObjectExpression {
           type: "ObjectExpression",
-          properties: [
+          properties: Array [
             Property {
               type: "Property",
               computed: false,
               key: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "assert",
                 optional: false,
 
@@ -32,13 +32,13 @@ Program {
               shorthand: false,
               value: ObjectExpression {
                 type: "ObjectExpression",
-                properties: [
+                properties: Array [
                   Property {
                     type: "Property",
                     computed: false,
                     key: Identifier {
                       type: "Identifier",
-                      decorators: [],
+                      decorators: Array [],
                       name: "type",
                       optional: false,
 

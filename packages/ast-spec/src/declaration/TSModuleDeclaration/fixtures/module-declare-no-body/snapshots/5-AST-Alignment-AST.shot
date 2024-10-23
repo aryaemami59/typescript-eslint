@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSModuleDeclaration module-declare-no-body AST Alignment - AST 1`] = `
+exports[`AST Fixtures > declaration > TSModuleDeclaration > module-declare-no-body > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -14,7 +14,7 @@ exports[`AST Fixtures declaration TSModuleDeclaration module-declare-no-body AST
 -       global: false,
         id: Literal {
           type: 'Literal',
-          raw: '\\'a\\'',
+          raw: '\\\\'a\\\\'',
           value: 'a',
 
           range: [15, 18],

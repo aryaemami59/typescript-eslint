@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures jsx JSXNamespacedName component-dashed Babel - AST 1`] = `
+exports[`AST Fixtures > jsx > JSXNamespacedName > component-dashed > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: [
+        body: Array [
           TSInterfaceDeclaration {
             type: "TSInterfaceDeclaration",
             body: TSInterfaceBody {
               type: "TSInterfaceBody",
-              body: [
+              body: Array [
                 TSPropertySignature {
                   type: "TSPropertySignature",
                   computed: false,
@@ -145,7 +145,7 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -160,11 +160,11 @@ Program {
           },
           init: JSXElement {
             type: "JSXElement",
-            children: [],
+            children: Array [],
             closingElement: null,
             openingElement: JSXOpeningElement {
               type: "JSXOpeningElement",
-              attributes: [],
+              attributes: Array [],
               name: JSXIdentifier {
                 type: "JSXIdentifier",
                 name: "foo",
@@ -208,7 +208,7 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -223,11 +223,11 @@ Program {
           },
           init: JSXElement {
             type: "JSXElement",
-            children: [],
+            children: Array [],
             closingElement: null,
             openingElement: JSXOpeningElement {
               type: "JSXOpeningElement",
-              attributes: [],
+              attributes: Array [],
               name: JSXNamespacedName {
                 type: "JSXNamespacedName",
                 name: JSXIdentifier {

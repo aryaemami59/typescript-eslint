@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration ExportAllDeclaration unnamed AST Alignment - AST 1`] = `
+exports[`AST Fixtures > declaration > ExportAllDeclaration > unnamed > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -16,7 +16,7 @@ exports[`AST Fixtures declaration ExportAllDeclaration unnamed AST Alignment - A
         exportKind: 'value',
         source: Literal {
           type: 'Literal',
-          raw: '\\'my-module\\'',
+          raw: '\\\\'my-module\\\\'',
           value: 'my-module',
 
           range: [14, 25],

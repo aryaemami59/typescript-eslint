@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics typed-this Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > typed-this > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: [
+        body: Array [
           TSMethodSignature {
             type: "TSMethodSignature",
             computed: false,
@@ -23,7 +23,7 @@ Program {
               },
             },
             kind: "method",
-            parameters: [
+            parameters: Array [
               Identifier {
                 type: "Identifier",
                 name: "onclick",
@@ -31,7 +31,7 @@ Program {
                   type: "TSTypeAnnotation",
                   typeAnnotation: TSFunctionType {
                     type: "TSFunctionType",
-                    parameters: [
+                    parameters: Array [
                       Identifier {
                         type: "Identifier",
                         name: "this",

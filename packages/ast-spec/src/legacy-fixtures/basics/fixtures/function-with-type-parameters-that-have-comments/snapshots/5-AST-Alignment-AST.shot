@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics function-with-type-parameters-that-have-comments AST Alignment - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > function-with-type-parameters-that-have-comments > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel

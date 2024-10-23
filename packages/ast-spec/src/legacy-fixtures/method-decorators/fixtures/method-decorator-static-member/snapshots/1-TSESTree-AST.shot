@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures method-decorators method-decorator-static-member TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > method-decorators > method-decorator-static-member > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
-            decorators: [
+            decorators: Array [
               Decorator {
                 type: "Decorator",
                 expression: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "Foo",
                   optional: false,
 
@@ -38,7 +38,7 @@ Program {
             ],
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "staticMethod",
               optional: false,
 
@@ -57,7 +57,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [114, 116],
                 loc: {
@@ -69,7 +69,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [111, 116],
               loc: {
@@ -93,10 +93,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "D",
         optional: false,
 
@@ -106,7 +106,7 @@ Program {
           end: { column: 7, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [73, 118],
