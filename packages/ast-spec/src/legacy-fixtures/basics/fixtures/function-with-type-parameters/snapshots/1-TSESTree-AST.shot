@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics function-with-type-parameters TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > function-with-type-parameters > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [
+        body: Array [
           ReturnStatement {
             type: "ReturnStatement",
             argument: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "b",
               optional: false,
 
@@ -44,7 +44,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "a",
         optional: false,
 
@@ -54,10 +54,10 @@ Program {
           end: { column: 10, line: 3 },
         },
       },
-      params: [
+      params: Array [
         Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "b",
           optional: false,
           typeAnnotation: TSTypeAnnotation {
@@ -66,7 +66,7 @@ Program {
               type: "TSTypeReference",
               typeName: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "X",
                 optional: false,
 
@@ -104,7 +104,7 @@ Program {
           type: "TSTypeReference",
           typeName: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "X",
             optional: false,
 
@@ -130,14 +130,14 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "X",
               optional: false,
 

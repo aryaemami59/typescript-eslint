@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures jsx JSXNamespacedName component AST Alignment - AST 1`] = `
+exports[`AST Fixtures > jsx > JSXNamespacedName > component > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -66,7 +66,7 @@ exports[`AST Fixtures jsx JSXNamespacedName component AST Alignment - AST 1`] = 
                     },
                     value: Literal {
                       type: 'Literal',
-                      raw: '"tight spacing"',
+                      raw: '\\"tight spacing\\"',
                       value: 'tight spacing',
 
                       range: [38, 53],
@@ -183,7 +183,7 @@ exports[`AST Fixtures jsx JSXNamespacedName component AST Alignment - AST 1`] = 
                     },
                     value: Literal {
                       type: 'Literal',
-                      raw: '"loose spacing"',
+                      raw: '\\"loose spacing\\"',
                       value: 'loose spacing',
 
                       range: [96, 111],
@@ -252,7 +252,7 @@ exports[`AST Fixtures jsx JSXNamespacedName component AST Alignment - AST 1`] = 
               computed: false,
               key: Literal {
                 type: 'Literal',
-                raw: '\\'a:b\\'',
+                raw: '\\\\'a:b\\\\'',
                 value: 'a:b',
 
                 range: [159, 164],
@@ -349,7 +349,7 @@ exports[`AST Fixtures jsx JSXNamespacedName component AST Alignment - AST 1`] = 
                       optional: false,
                       property: Literal {
                         type: 'Literal',
-                        raw: '\\'a:b\\'',
+                        raw: '\\\\'a:b\\\\'',
                         value: 'a:b',
 
                         range: [268, 273],

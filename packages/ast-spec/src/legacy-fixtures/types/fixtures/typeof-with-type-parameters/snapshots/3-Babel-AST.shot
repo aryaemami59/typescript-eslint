@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types typeof-with-type-parameters Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > typeof-with-type-parameters > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -47,7 +47,7 @@ Program {
                 },
                 typeParameters: TSTypeParameterInstantiation {
                   type: "TSTypeParameterInstantiation",
-                  params: [
+                  params: Array [
                     TSTypeReference {
                       type: "TSTypeReference",
                       typeName: Identifier {

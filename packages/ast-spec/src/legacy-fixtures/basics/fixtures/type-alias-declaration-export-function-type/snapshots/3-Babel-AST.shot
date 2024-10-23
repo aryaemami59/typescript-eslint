@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics type-alias-declaration-export-function-type Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > type-alias-declaration-export-function-type > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: [],
+      assertions: Array [],
       declaration: TSTypeAliasDeclaration {
         type: "TSTypeAliasDeclaration",
         id: Identifier {
@@ -21,7 +21,7 @@ Program {
         },
         typeAnnotation: TSFunctionType {
           type: "TSFunctionType",
-          parameters: [
+          parameters: Array [
             Identifier {
               type: "Identifier",
               name: "a",
@@ -85,7 +85,7 @@ Program {
       },
       exportKind: "type",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [73, 120],
       loc: {

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics catch-clause-with-invalid-annotation Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > catch-clause-with-invalid-annotation > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TryStatement {
       type: "TryStatement",
       block: BlockStatement {
         type: "BlockStatement",
-        body: [],
+        body: Array [],
 
         range: [77, 80],
         loc: {
@@ -21,7 +21,7 @@ Program {
         type: "CatchClause",
         body: BlockStatement {
           type: "BlockStatement",
-          body: [],
+          body: Array [],
 
           range: [99, 101],
           loc: {

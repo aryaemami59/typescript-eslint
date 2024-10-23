@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types tuple-named Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > tuple-named > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -16,7 +16,7 @@ Program {
               type: "TSTypeAnnotation",
               typeAnnotation: TSTupleType {
                 type: "TSTupleType",
-                elementTypes: [
+                elementTypes: Array [
                   TSNamedTupleMember {
                     type: "TSNamedTupleMember",
                     elementType: TSNumberKeyword {

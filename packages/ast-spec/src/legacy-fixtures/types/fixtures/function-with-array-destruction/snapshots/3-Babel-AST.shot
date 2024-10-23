@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types function-with-array-destruction Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > function-with-array-destruction > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       id: Identifier {
@@ -18,10 +18,10 @@ Program {
       },
       typeAnnotation: TSFunctionType {
         type: "TSFunctionType",
-        parameters: [
+        parameters: Array [
           ArrayPattern {
             type: "ArrayPattern",
-            elements: [
+            elements: Array [
               Identifier {
                 type: "Identifier",
                 name: "a",

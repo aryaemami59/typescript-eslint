@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics export-default-interface Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > export-default-interface > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportDefaultDeclaration {
       type: "ExportDefaultDeclaration",
       declaration: TSInterfaceDeclaration {
         type: "TSInterfaceDeclaration",
         body: TSInterfaceBody {
           type: "TSInterfaceBody",
-          body: [
+          body: Array [
             TSMethodSignature {
               type: "TSMethodSignature",
               computed: false,
@@ -25,7 +25,7 @@ Program {
                 },
               },
               kind: "method",
-              parameters: [],
+              parameters: Array [],
               typeAnnotation: TSTypeAnnotation {
                 type: "TSTypeAnnotation",
                 typeAnnotation: TSVoidKeyword {

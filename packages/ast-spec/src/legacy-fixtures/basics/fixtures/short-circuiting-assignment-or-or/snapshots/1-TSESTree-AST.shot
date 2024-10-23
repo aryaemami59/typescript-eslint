@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics short-circuiting-assignment-or-or TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > short-circuiting-assignment-or-or > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: AssignmentExpression {
         type: "AssignmentExpression",
         left: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "a",
           optional: false,
 
@@ -23,7 +23,7 @@ Program {
         operator: "&&=",
         right: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "b",
           optional: false,
 

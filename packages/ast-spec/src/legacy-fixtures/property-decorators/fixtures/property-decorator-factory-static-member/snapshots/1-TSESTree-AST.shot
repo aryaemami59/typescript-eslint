@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures property-decorators property-decorator-factory-static-member TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > property-decorators > property-decorator-factory-static-member > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
             declare: false,
-            decorators: [
+            decorators: Array [
               Decorator {
                 type: "Decorator",
                 expression: CallExpression {
                   type: "CallExpression",
-                  arguments: [
+                  arguments: Array [
                     Literal {
                       type: "Literal",
                       raw: "true",
@@ -34,7 +34,7 @@ Program {
                   ],
                   callee: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "configurable",
                     optional: false,
 
@@ -63,7 +63,7 @@ Program {
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "prop1",
               optional: false,
 
@@ -89,12 +89,12 @@ Program {
             type: "PropertyDefinition",
             computed: false,
             declare: false,
-            decorators: [
+            decorators: Array [
               Decorator {
                 type: "Decorator",
                 expression: CallExpression {
                   type: "CallExpression",
-                  arguments: [
+                  arguments: Array [
                     Literal {
                       type: "Literal",
                       raw: "false",
@@ -109,7 +109,7 @@ Program {
                   ],
                   callee: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "configurable",
                     optional: false,
 
@@ -138,7 +138,7 @@ Program {
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "prop2",
               optional: false,
 
@@ -169,10 +169,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "A",
         optional: false,
 
@@ -182,7 +182,7 @@ Program {
           end: { column: 7, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [73, 160],

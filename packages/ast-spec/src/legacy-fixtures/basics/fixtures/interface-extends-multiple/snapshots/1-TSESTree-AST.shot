@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics interface-extends-multiple TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > interface-extends-multiple > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: [],
+        body: Array [],
 
         range: [104, 106],
         loc: {
@@ -17,12 +17,12 @@ Program {
         },
       },
       declare: false,
-      extends: [
+      extends: Array [
         TSInterfaceHeritage {
           type: "TSInterfaceHeritage",
           expression: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "Bar",
             optional: false,
 
@@ -43,7 +43,7 @@ Program {
           type: "TSInterfaceHeritage",
           expression: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "Baz",
             optional: false,
 
@@ -63,7 +63,7 @@ Program {
       ],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Foo",
         optional: false,
 

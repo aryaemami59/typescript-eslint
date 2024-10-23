@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics export-type-from TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > export-type-from > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: [],
+      attributes: Array [],
       declaration: null,
       exportKind: "type",
       source: Literal {
@@ -20,12 +20,12 @@ Program {
           end: { column: 30, line: 3 },
         },
       },
-      specifiers: [
+      specifiers: Array [
         ExportSpecifier {
           type: "ExportSpecifier",
           exported: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "foo",
             optional: false,
 
@@ -38,7 +38,7 @@ Program {
           exportKind: "value",
           local: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "foo",
             optional: false,
 

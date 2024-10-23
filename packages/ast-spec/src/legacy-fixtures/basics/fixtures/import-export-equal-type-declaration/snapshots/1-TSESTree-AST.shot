@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics import-export-equal-type-declaration TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > import-export-equal-type-declaration > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: [],
+      attributes: Array [],
       declaration: TSImportEqualsDeclaration {
         type: "TSImportEqualsDeclaration",
         id: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "foo",
           optional: false,
 
@@ -51,7 +51,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [73, 113],
       loc: {

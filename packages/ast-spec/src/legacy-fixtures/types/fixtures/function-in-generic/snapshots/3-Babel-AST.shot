@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types function-in-generic Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > function-in-generic > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -28,10 +28,10 @@ Program {
                 },
                 typeParameters: TSTypeParameterInstantiation {
                   type: "TSTypeParameterInstantiation",
-                  params: [
+                  params: Array [
                     TSFunctionType {
                       type: "TSFunctionType",
-                      parameters: [],
+                      parameters: Array [],
                       typeAnnotation: TSTypeAnnotation {
                         type: "TSTypeAnnotation",
                         typeAnnotation: TSVoidKeyword {

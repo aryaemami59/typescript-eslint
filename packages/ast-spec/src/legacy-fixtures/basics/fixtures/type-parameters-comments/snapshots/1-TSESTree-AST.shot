@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics type-parameters-comments TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > type-parameters-comments > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: CallExpression {
         type: "CallExpression",
-        arguments: [],
+        arguments: Array [],
         callee: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "foo",
           optional: false,
 
@@ -24,12 +24,12 @@ Program {
         optional: false,
         typeArguments: TSTypeParameterInstantiation {
           type: "TSTypeParameterInstantiation",
-          params: [
+          params: Array [
             TSTypeReference {
               type: "TSTypeReference",
               typeName: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "A",
                 optional: false,
 
@@ -73,7 +73,7 @@ Program {
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [],
+        body: Array [],
 
         range: [153, 155],
         loc: {
@@ -86,7 +86,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "bar",
         optional: false,
 
@@ -96,17 +96,17 @@ Program {
           end: { column: 12, line: 4 },
         },
       },
-      params: [],
+      params: Array [],
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "A",
               optional: false,
 
@@ -144,7 +144,7 @@ Program {
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [],
+        body: Array [],
 
         range: [200, 202],
         loc: {
@@ -157,7 +157,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "baz",
         optional: false,
 
@@ -167,10 +167,10 @@ Program {
           end: { column: 12, line: 5 },
         },
       },
-      params: [],
+      params: Array [],
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
@@ -178,7 +178,7 @@ Program {
               type: "TSTypeReference",
               typeName: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "Foo",
                 optional: false,
 
@@ -198,7 +198,7 @@ Program {
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "A",
               optional: false,
 

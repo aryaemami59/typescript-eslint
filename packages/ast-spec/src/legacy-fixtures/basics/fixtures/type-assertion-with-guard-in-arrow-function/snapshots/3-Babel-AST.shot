@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics type-assertion-with-guard-in-arrow-function Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > type-assertion-with-guard-in-arrow-function > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -24,7 +24,7 @@ Program {
             async: false,
             body: BlockStatement {
               type: "BlockStatement",
-              body: [
+              body: Array [
                 ReturnStatement {
                   type: "ReturnStatement",
                   argument: null,
@@ -46,7 +46,7 @@ Program {
             expression: false,
             generator: false,
             id: null,
-            params: [
+            params: Array [
               Identifier {
                 type: "Identifier",
                 name: "x",

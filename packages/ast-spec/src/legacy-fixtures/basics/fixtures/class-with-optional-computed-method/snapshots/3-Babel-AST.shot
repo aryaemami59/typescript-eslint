@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-optional-computed-method Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-optional-computed-method > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -48,7 +48,7 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -90,7 +90,7 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -105,7 +105,7 @@ Program {
           },
           init: ObjectExpression {
             type: "ObjectExpression",
-            properties: [
+            properties: Array [
               Property {
                 type: "Property",
                 computed: false,
@@ -202,7 +202,7 @@ Program {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           MethodDefinition {
             type: "MethodDefinition",
             computed: true,
@@ -225,7 +225,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [208, 211],
               loc: {
@@ -261,7 +261,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [229, 231],
                 loc: {
@@ -272,7 +272,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [226, 231],
               loc: {
@@ -310,7 +310,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [238, 241],
               loc: {
@@ -347,7 +347,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [251, 253],
                 loc: {
@@ -358,7 +358,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [248, 253],
               loc: {
@@ -396,7 +396,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [269, 272],
               loc: {
@@ -433,7 +433,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [291, 293],
                 loc: {
@@ -444,7 +444,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [288, 293],
               loc: {
@@ -501,7 +501,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [312, 314],
                 loc: {
@@ -512,7 +512,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [309, 314],
               loc: {
@@ -570,7 +570,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [331, 334],
               loc: {
@@ -590,7 +590,7 @@ Program {
             computed: true,
             key: CallExpression {
               type: "CallExpression",
-              arguments: [],
+              arguments: Array [],
               callee: Identifier {
                 type: "Identifier",
                 name: "f",
@@ -617,7 +617,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [346, 348],
                 loc: {
@@ -628,7 +628,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [343, 348],
               loc: {

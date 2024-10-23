@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics nullish-coalescing AST Alignment - Token 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > nullish-coalescing > AST Alignment - Token 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -150,7 +150,7 @@ exports[`AST Fixtures legacy-fixtures basics nullish-coalescing AST Alignment - 
     },
     String {
       type: 'String',
-      value: '\\'\\'',
+      value: '\\\\'\\\\'',
 
       range: [136, 138],
       loc: {

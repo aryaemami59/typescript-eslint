@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics type-import-type-with-type-parameters-in-type-reference Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > type-import-type-with-type-parameters-in-type-reference > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       id: Identifier {
@@ -30,7 +30,7 @@ Program {
         },
         typeParameters: TSTypeParameterInstantiation {
           type: "TSTypeParameterInstantiation",
-          params: [
+          params: Array [
             TSImportType {
               type: "TSImportType",
               argument: Literal {
@@ -57,7 +57,7 @@ Program {
               },
               typeParameters: TSTypeParameterInstantiation {
                 type: "TSTypeParameterInstantiation",
-                params: [
+                params: Array [
                   TSAnyKeyword {
                     type: "TSAnyKeyword",
 

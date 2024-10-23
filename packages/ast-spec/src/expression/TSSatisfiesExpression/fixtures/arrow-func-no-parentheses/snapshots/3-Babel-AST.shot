@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures expression TSSatisfiesExpression arrow-func-no-parentheses Babel - AST 1`] = `
+exports[`AST Fixtures > expression > TSSatisfiesExpression > arrow-func-no-parentheses > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: ArrowFunctionExpression {
@@ -41,7 +41,7 @@ Program {
         expression: true,
         generator: false,
         id: null,
-        params: [],
+        params: Array [],
 
         range: [0, 24],
         loc: {

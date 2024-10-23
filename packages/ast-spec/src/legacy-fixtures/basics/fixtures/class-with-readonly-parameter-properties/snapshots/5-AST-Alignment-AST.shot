@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-readonly-parameter-properties AST Alignment - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-readonly-parameter-properties > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -135,7 +135,7 @@ exports[`AST Fixtures legacy-fixtures basics class-with-readonly-parameter-prope
 -                     optional: false,
                       right: Literal {
                         type: 'Literal',
-                        raw: '\\'Smith\\'',
+                        raw: '\\\\'Smith\\\\'',
                         value: 'Smith',
 
                         range: [164, 171],

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSInterfaceDeclaration with-member-one Babel - AST 1`] = `
+exports[`AST Fixtures > declaration > TSInterfaceDeclaration > with-member-one > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: [
+        body: Array [
           TSPropertySignature {
             type: "TSPropertySignature",
             computed: false,

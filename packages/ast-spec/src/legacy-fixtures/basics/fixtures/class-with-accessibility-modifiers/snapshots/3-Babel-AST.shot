@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-accessibility-modifiers Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-accessibility-modifiers > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           PropertyDefinition {
             type: "PropertyDefinition",
             accessibility: "private",
@@ -112,7 +112,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [
+                body: Array [
                   ReturnStatement {
                     type: "ReturnStatement",
                     argument: MemberExpression {
@@ -163,7 +163,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
 
               range: [152, 181],
               loc: {
@@ -199,7 +199,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [
+                body: Array [
                   ExpressionStatement {
                     type: "ExpressionStatement",
                     expression: AssignmentExpression {
@@ -270,7 +270,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [
+              params: Array [
                 Identifier {
                   type: "Identifier",
                   name: "bar",

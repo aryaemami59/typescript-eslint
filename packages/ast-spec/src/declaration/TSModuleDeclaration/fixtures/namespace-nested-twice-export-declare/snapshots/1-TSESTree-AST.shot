@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSModuleDeclaration namespace-nested-twice-export-declare TSESTree - AST 1`] = `
+exports[`AST Fixtures > declaration > TSModuleDeclaration > namespace-nested-twice-export-declare > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: [],
+      attributes: Array [],
       declaration: TSModuleDeclaration {
         type: "TSModuleDeclaration",
         body: TSModuleBlock {
           type: "TSModuleBlock",
-          body: [],
+          body: Array [],
 
           range: [37, 39],
           loc: {
@@ -27,7 +27,7 @@ Program {
             type: "TSQualifiedName",
             left: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "abc",
               optional: false,
 
@@ -39,7 +39,7 @@ Program {
             },
             right: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "def",
               optional: false,
 
@@ -58,7 +58,7 @@ Program {
           },
           right: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "ghi",
             optional: false,
 
@@ -85,7 +85,7 @@ Program {
       },
       exportKind: "type",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [0, 39],
       loc: {

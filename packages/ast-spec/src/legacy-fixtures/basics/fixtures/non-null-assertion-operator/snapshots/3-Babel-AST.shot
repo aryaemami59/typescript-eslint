@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics non-null-assertion-operator Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > non-null-assertion-operator > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [
+        body: Array [
           ExpressionStatement {
             type: "ExpressionStatement",
             expression: CallExpression {
               type: "CallExpression",
-              arguments: [
+              arguments: Array [
                 Identifier {
                   type: "Identifier",
                   name: "e",
@@ -53,7 +53,7 @@ Program {
           },
           VariableDeclaration {
             type: "VariableDeclaration",
-            declarations: [
+            declarations: Array [
               VariableDeclarator {
                 type: "VariableDeclarator",
                 id: Identifier {
@@ -142,7 +142,7 @@ Program {
           end: { column: 22, line: 3 },
         },
       },
-      params: [
+      params: Array [
         Identifier {
           type: "Identifier",
           name: "e",

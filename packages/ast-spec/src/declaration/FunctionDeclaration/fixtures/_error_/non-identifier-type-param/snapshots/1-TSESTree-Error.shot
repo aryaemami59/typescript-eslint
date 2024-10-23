@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration FunctionDeclaration _error_ non-identifier-type-param TSESTree - Error 1`] = `
+exports[`AST Fixtures > declaration > FunctionDeclaration > _error_ > non-identifier-type-param > TSESTree - Error 1`] = `
 "TSError
 > 1 | function foo<1>() {}
     |              ^ Type parameter declaration expected.

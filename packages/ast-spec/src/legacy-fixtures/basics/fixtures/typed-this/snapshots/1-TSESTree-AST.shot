@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics typed-this TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > typed-this > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: [
+        body: Array [
           TSMethodSignature {
             type: "TSMethodSignature",
             computed: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "addClickListener",
               optional: false,
 
@@ -26,20 +26,20 @@ Program {
             },
             kind: "method",
             optional: false,
-            params: [
+            params: Array [
               Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "onclick",
                 optional: false,
                 typeAnnotation: TSTypeAnnotation {
                   type: "TSTypeAnnotation",
                   typeAnnotation: TSFunctionType {
                     type: "TSFunctionType",
-                    params: [
+                    params: Array [
                       Identifier {
                         type: "Identifier",
-                        decorators: [],
+                        decorators: Array [],
                         name: "this",
                         optional: false,
                         typeAnnotation: TSTypeAnnotation {
@@ -69,7 +69,7 @@ Program {
                       },
                       Identifier {
                         type: "Identifier",
-                        decorators: [],
+                        decorators: Array [],
                         name: "e",
                         optional: false,
                         typeAnnotation: TSTypeAnnotation {
@@ -78,7 +78,7 @@ Program {
                             type: "TSTypeReference",
                             typeName: Identifier {
                               type: "Identifier",
-                              decorators: [],
+                              decorators: Array [],
                               name: "Event",
                               optional: false,
 
@@ -186,10 +186,10 @@ Program {
         },
       },
       declare: false,
-      extends: [],
+      extends: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "UIElement",
         optional: false,
 

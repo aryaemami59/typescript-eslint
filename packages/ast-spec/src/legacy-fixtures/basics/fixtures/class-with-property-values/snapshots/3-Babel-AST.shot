@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-property-values Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-property-values > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
@@ -57,7 +57,7 @@ Program {
             static: false,
             value: ObjectExpression {
               type: "ObjectExpression",
-              properties: [],
+              properties: Array [],
 
               range: [100, 102],
               loc: {
@@ -88,7 +88,7 @@ Program {
             static: false,
             value: ArrayExpression {
               type: "ArrayExpression",
-              elements: [],
+              elements: Array [],
 
               range: [110, 112],
               loc: {
@@ -151,13 +151,13 @@ Program {
             static: false,
             value: NewExpression {
               type: "NewExpression",
-              arguments: [
+              arguments: Array [
                 ArrayExpression {
                   type: "ArrayExpression",
-                  elements: [
+                  elements: Array [
                     ObjectExpression {
                       type: "ObjectExpression",
-                      properties: [],
+                      properties: Array [],
 
                       range: [141, 143],
                       loc: {
@@ -167,7 +167,7 @@ Program {
                     },
                     ArrayExpression {
                       type: "ArrayExpression",
-                      elements: [],
+                      elements: Array [],
 
                       range: [145, 147],
                       loc: {

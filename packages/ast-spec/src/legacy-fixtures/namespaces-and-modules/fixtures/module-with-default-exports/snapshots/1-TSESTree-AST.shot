@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures namespaces-and-modules module-with-default-exports TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > module-with-default-exports > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: [
+        body: Array [
           ExportDefaultDeclaration {
             type: "ExportDefaultDeclaration",
             declaration: ClassDeclaration {
@@ -16,14 +16,14 @@ Program {
               abstract: false,
               body: ClassBody {
                 type: "ClassBody",
-                body: [
+                body: Array [
                   MethodDefinition {
                     type: "MethodDefinition",
                     computed: false,
-                    decorators: [],
+                    decorators: Array [],
                     key: Identifier {
                       type: "Identifier",
-                      decorators: [],
+                      decorators: Array [],
                       name: "method",
                       optional: false,
 
@@ -42,7 +42,7 @@ Program {
                       async: false,
                       body: BlockStatement {
                         type: "BlockStatement",
-                        body: [],
+                        body: Array [],
 
                         range: [131, 133],
                         loc: {
@@ -54,14 +54,14 @@ Program {
                       expression: false,
                       generator: false,
                       id: null,
-                      params: [],
+                      params: Array [],
                       returnType: TSTypeAnnotation {
                         type: "TSTypeAnnotation",
                         typeAnnotation: TSTypeReference {
                           type: "TSTypeReference",
                           typeName: Identifier {
                             type: "Identifier",
-                            decorators: [],
+                            decorators: Array [],
                             name: "C",
                             optional: false,
 
@@ -108,10 +108,10 @@ Program {
                 },
               },
               declare: false,
-              decorators: [],
+              decorators: Array [],
               id: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "C",
                 optional: false,
 
@@ -121,7 +121,7 @@ Program {
                   end: { column: 24, line: 4 },
                 },
               },
-              implements: [],
+              implements: Array [],
               superClass: null,
 
               range: [105, 137],
@@ -145,7 +145,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [170, 172],
                 loc: {
@@ -158,7 +158,7 @@ Program {
               generator: false,
               id: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "bar",
                 optional: false,
 
@@ -168,7 +168,7 @@ Program {
                   end: { column: 29, line: 7 },
                 },
               },
-              params: [],
+              params: Array [],
 
               range: [155, 172],
               loc: {

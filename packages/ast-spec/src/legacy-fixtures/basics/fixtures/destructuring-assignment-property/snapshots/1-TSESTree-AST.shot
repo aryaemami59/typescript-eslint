@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics destructuring-assignment-property TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > destructuring-assignment-property > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [],
+        body: Array [],
 
         range: [106, 108],
         loc: {
@@ -22,7 +22,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Foo",
         optional: false,
 
@@ -32,21 +32,21 @@ Program {
           end: { column: 12, line: 3 },
         },
       },
-      params: [
+      params: Array [
         AssignmentPattern {
           type: "AssignmentPattern",
-          decorators: [],
+          decorators: Array [],
           left: ObjectPattern {
             type: "ObjectPattern",
-            decorators: [],
+            decorators: Array [],
             optional: false,
-            properties: [
+            properties: Array [
               Property {
                 type: "Property",
                 computed: false,
                 key: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "foo",
                   optional: false,
 
@@ -62,10 +62,10 @@ Program {
                 shorthand: true,
                 value: AssignmentPattern {
                   type: "AssignmentPattern",
-                  decorators: [],
+                  decorators: Array [],
                   left: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "foo",
                     optional: false,
 
@@ -78,7 +78,7 @@ Program {
                   optional: false,
                   right: ArrayExpression {
                     type: "ArrayExpression",
-                    elements: [],
+                    elements: Array [],
 
                     range: [94, 96],
                     loc: {
@@ -111,7 +111,7 @@ Program {
           optional: false,
           right: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "bar",
             optional: false,
 

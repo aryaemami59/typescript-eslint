@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics async-function-expression TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > async-function-expression > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: CallExpression {
         type: "CallExpression",
-        arguments: [],
+        arguments: Array [],
         callee: FunctionExpression {
           type: "FunctionExpression",
           async: true,
           body: BlockStatement {
             type: "BlockStatement",
-            body: [],
+            body: Array [],
 
             range: [96, 98],
             loc: {
@@ -27,7 +27,7 @@ Program {
           generator: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "test",
             optional: false,
 
@@ -37,7 +37,7 @@ Program {
               end: { column: 20, line: 3 },
             },
           },
-          params: [],
+          params: Array [],
 
           range: [74, 98],
           loc: {

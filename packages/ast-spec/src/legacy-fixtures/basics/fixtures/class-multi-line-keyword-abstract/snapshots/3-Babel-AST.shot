@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-multi-line-keyword-abstract Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-multi-line-keyword-abstract > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: Identifier {
@@ -27,7 +27,7 @@ Program {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: [],
+        body: Array [],
 
         range: [91, 93],
         loc: {

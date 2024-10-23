@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics export-type-as Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > export-type-as > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: [],
+      assertions: Array [],
       declaration: null,
       exportKind: "type",
       source: null,
-      specifiers: [
+      specifiers: Array [
         ExportSpecifier {
           type: "ExportSpecifier",
           exported: Identifier {

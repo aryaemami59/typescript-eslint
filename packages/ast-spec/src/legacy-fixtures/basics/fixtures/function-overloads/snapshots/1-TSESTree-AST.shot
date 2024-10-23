@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics function-overloads TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > function-overloads > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: [],
+      attributes: Array [],
       declaration: TSDeclareFunction {
         type: "TSDeclareFunction",
         async: false,
@@ -15,7 +15,7 @@ Program {
         generator: false,
         id: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "f",
           optional: false,
 
@@ -25,10 +25,10 @@ Program {
             end: { column: 17, line: 3 },
           },
         },
-        params: [
+        params: Array [
           Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "x",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
@@ -84,7 +84,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [73, 110],
       loc: {
@@ -94,7 +94,7 @@ Program {
     },
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: [],
+      attributes: Array [],
       declaration: TSDeclareFunction {
         type: "TSDeclareFunction",
         async: false,
@@ -103,7 +103,7 @@ Program {
         generator: false,
         id: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "f",
           optional: false,
 
@@ -113,10 +113,10 @@ Program {
             end: { column: 17, line: 4 },
           },
         },
-        params: [
+        params: Array [
           Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "x",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
@@ -172,7 +172,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [111, 148],
       loc: {
@@ -182,18 +182,18 @@ Program {
     },
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: [],
+      attributes: Array [],
       declaration: FunctionDeclaration {
         type: "FunctionDeclaration",
         async: false,
         body: BlockStatement {
           type: "BlockStatement",
-          body: [
+          body: Array [
             ReturnStatement {
               type: "ReturnStatement",
               argument: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "x",
                 optional: false,
 
@@ -223,7 +223,7 @@ Program {
         generator: false,
         id: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "f",
           optional: false,
 
@@ -233,17 +233,17 @@ Program {
             end: { column: 17, line: 5 },
           },
         },
-        params: [
+        params: Array [
           Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "x",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSUnionType {
                 type: "TSUnionType",
-                types: [
+                types: Array [
                   TSStringKeyword {
                     type: "TSStringKeyword",
 
@@ -289,7 +289,7 @@ Program {
           type: "TSTypeAnnotation",
           typeAnnotation: TSUnionType {
             type: "TSUnionType",
-            types: [
+            types: Array [
               TSStringKeyword {
                 type: "TSStringKeyword",
 
@@ -332,7 +332,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [149, 219],
       loc: {

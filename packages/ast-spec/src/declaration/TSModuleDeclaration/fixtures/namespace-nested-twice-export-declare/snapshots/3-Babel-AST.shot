@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSModuleDeclaration namespace-nested-twice-export-declare Babel - AST 1`] = `
+exports[`AST Fixtures > declaration > TSModuleDeclaration > namespace-nested-twice-export-declare > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: [],
+      assertions: Array [],
       declaration: TSModuleDeclaration {
         type: "TSModuleDeclaration",
         body: TSModuleDeclaration {
@@ -15,7 +15,7 @@ Program {
             type: "TSModuleDeclaration",
             body: TSModuleBlock {
               type: "TSModuleBlock",
-              body: [],
+              body: Array [],
 
               range: [37, 39],
               loc: {
@@ -78,7 +78,7 @@ Program {
       },
       exportKind: "type",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [0, 39],
       loc: {

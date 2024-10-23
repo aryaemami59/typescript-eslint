@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures expression TSSatisfiesExpression chained-satisfies Babel - AST 1`] = `
+exports[`AST Fixtures > expression > TSSatisfiesExpression > chained-satisfies > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TSSatisfiesExpression {

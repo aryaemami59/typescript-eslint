@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures special CatchClause _error_ with-initializer TSESTree - Error 1`] = `
+exports[`AST Fixtures > special > CatchClause > _error_ > with-initializer > TSESTree - Error 1`] = `
 "TSError
   1 | try {
   2 | }

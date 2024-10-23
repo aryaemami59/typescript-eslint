@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures jsx JSXNamespacedName component Babel - Tokens 1`] = `
-[
+exports[`AST Fixtures > jsx > JSXNamespacedName > component > Babel - Tokens 1`] = `
+Array [
   Keyword {
     type: "Keyword",
     value: "const",
@@ -94,7 +94,7 @@ exports[`AST Fixtures jsx JSXNamespacedName component Babel - Tokens 1`] = `
   },
   String {
     type: "String",
-    value: ""tight spacing"",
+    value: "\\"tight spacing\\"",
 
     range: [38, 53],
     loc: {
@@ -224,7 +224,7 @@ exports[`AST Fixtures jsx JSXNamespacedName component Babel - Tokens 1`] = `
   },
   String {
     type: "String",
-    value: ""loose spacing"",
+    value: "\\"loose spacing\\"",
 
     range: [96, 111],
     loc: {

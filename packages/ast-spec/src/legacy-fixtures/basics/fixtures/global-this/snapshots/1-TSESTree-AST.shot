@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics global-this TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > global-this > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "abc",
             optional: false,
 
@@ -59,7 +59,7 @@ Program {
           computed: false,
           object: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "globalThis",
             optional: false,
 
@@ -72,7 +72,7 @@ Program {
           optional: false,
           property: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "abc",
             optional: false,
 
@@ -117,13 +117,13 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "answer",
             optional: false,
 
@@ -170,7 +170,7 @@ Program {
           computed: false,
           object: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "globalThis",
             optional: false,
 
@@ -183,7 +183,7 @@ Program {
           optional: false,
           property: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "answer",
             optional: false,
 

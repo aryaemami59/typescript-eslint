@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures namespaces-and-modules ambient-module-declaration-with-import AST Alignment - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > ambient-module-declaration-with-import > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -20,7 +20,7 @@ exports[`AST Fixtures legacy-fixtures namespaces-and-modules ambient-module-decl
               importKind: 'value',
               source: Literal {
                 type: 'Literal',
-                raw: '\\'fs\\'',
+                raw: '\\\\'fs\\\\'',
                 value: 'fs',
 
                 range: [122, 126],
@@ -71,7 +71,7 @@ exports[`AST Fixtures legacy-fixtures namespaces-and-modules ambient-module-decl
 -       global: false,
         id: Literal {
           type: 'Literal',
-          raw: '\\'i-use-things\\'',
+          raw: '\\\\'i-use-things\\\\'',
           value: 'i-use-things',
 
           range: [88, 102],

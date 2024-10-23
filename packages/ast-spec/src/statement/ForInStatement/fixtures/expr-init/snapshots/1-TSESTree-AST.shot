@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures statement ForInStatement expr-init TSESTree - AST 1`] = `
+exports[`AST Fixtures > statement > ForInStatement > expr-init > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ForInStatement {
       type: "ForInStatement",
       body: BlockStatement {
         type: "BlockStatement",
-        body: [],
+        body: Array [],
 
         range: [150, 153],
         loc: {
@@ -18,15 +18,15 @@ Program {
       },
       left: ObjectPattern {
         type: "ObjectPattern",
-        decorators: [],
+        decorators: Array [],
         optional: false,
-        properties: [
+        properties: Array [
           Property {
             type: "Property",
             computed: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "x",
               optional: false,
 
@@ -42,7 +42,7 @@ Program {
             shorthand: true,
             value: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "x",
               optional: false,
 
@@ -64,7 +64,7 @@ Program {
             computed: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "y",
               optional: false,
 
@@ -80,7 +80,7 @@ Program {
             shorthand: true,
             value: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "y",
               optional: false,
 
@@ -107,7 +107,7 @@ Program {
       },
       right: ArrayExpression {
         type: "ArrayExpression",
-        elements: [],
+        elements: Array [],
 
         range: [146, 148],
         loc: {
@@ -126,7 +126,7 @@ Program {
       type: "ForInStatement",
       body: BlockStatement {
         type: "BlockStatement",
-        body: [],
+        body: Array [],
 
         range: [173, 176],
         loc: {
@@ -136,11 +136,11 @@ Program {
       },
       left: ArrayPattern {
         type: "ArrayPattern",
-        decorators: [],
-        elements: [
+        decorators: Array [],
+        elements: Array [
           Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "x",
             optional: false,
 
@@ -152,7 +152,7 @@ Program {
           },
           Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "y",
             optional: false,
 
@@ -173,7 +173,7 @@ Program {
       },
       right: ArrayExpression {
         type: "ArrayExpression",
-        elements: [],
+        elements: Array [],
 
         range: [169, 171],
         loc: {
@@ -192,7 +192,7 @@ Program {
       type: "ForInStatement",
       body: BlockStatement {
         type: "BlockStatement",
-        body: [],
+        body: Array [],
 
         range: [193, 196],
         loc: {
@@ -205,7 +205,7 @@ Program {
         computed: false,
         object: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "x",
           optional: false,
 
@@ -218,7 +218,7 @@ Program {
         optional: false,
         property: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "y",
           optional: false,
 
@@ -237,7 +237,7 @@ Program {
       },
       right: ArrayExpression {
         type: "ArrayExpression",
-        elements: [],
+        elements: Array [],
 
         range: [189, 191],
         loc: {
@@ -256,7 +256,7 @@ Program {
       type: "ForInStatement",
       body: BlockStatement {
         type: "BlockStatement",
-        body: [],
+        body: Array [],
 
         range: [216, 219],
         loc: {
@@ -268,7 +268,7 @@ Program {
         type: "TSAsExpression",
         expression: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "x",
           optional: false,
 
@@ -282,7 +282,7 @@ Program {
           type: "TSTypeReference",
           typeName: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "T",
             optional: false,
 
@@ -308,7 +308,7 @@ Program {
       },
       right: ArrayExpression {
         type: "ArrayExpression",
-        elements: [],
+        elements: Array [],
 
         range: [212, 214],
         loc: {

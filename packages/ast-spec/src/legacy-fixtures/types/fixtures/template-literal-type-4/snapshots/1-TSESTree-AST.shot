@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types template-literal-type-4 TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > template-literal-type-4 > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "EnthusiasticGreeting",
         optional: false,
 
@@ -21,11 +21,11 @@ Program {
       },
       typeAnnotation: TSTemplateLiteralType {
         type: "TSTemplateLiteralType",
-        quasis: [
+        quasis: Array [
           TemplateElement {
             type: "TemplateElement",
             tail: false,
-            value: {
+            value: Object {
               "cooked": "",
               "raw": "",
             },
@@ -39,7 +39,7 @@ Program {
           TemplateElement {
             type: "TemplateElement",
             tail: false,
-            value: {
+            value: Object {
               "cooked": " - ",
               "raw": " - ",
             },
@@ -53,7 +53,7 @@ Program {
           TemplateElement {
             type: "TemplateElement",
             tail: false,
-            value: {
+            value: Object {
               "cooked": " - ",
               "raw": " - ",
             },
@@ -67,7 +67,7 @@ Program {
           TemplateElement {
             type: "TemplateElement",
             tail: false,
-            value: {
+            value: Object {
               "cooked": " - ",
               "raw": " - ",
             },
@@ -81,7 +81,7 @@ Program {
           TemplateElement {
             type: "TemplateElement",
             tail: true,
-            value: {
+            value: Object {
               "cooked": "",
               "raw": "",
             },
@@ -93,17 +93,17 @@ Program {
             },
           },
         ],
-        types: [
+        types: Array [
           TSTypeReference {
             type: "TSTypeReference",
             typeArguments: TSTypeParameterInstantiation {
               type: "TSTypeParameterInstantiation",
-              params: [
+              params: Array [
                 TSTypeReference {
                   type: "TSTypeReference",
                   typeName: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "T",
                     optional: false,
 
@@ -130,7 +130,7 @@ Program {
             },
             typeName: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "Uppercase",
               optional: false,
 
@@ -151,12 +151,12 @@ Program {
             type: "TSTypeReference",
             typeArguments: TSTypeParameterInstantiation {
               type: "TSTypeParameterInstantiation",
-              params: [
+              params: Array [
                 TSTypeReference {
                   type: "TSTypeReference",
                   typeName: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "T",
                     optional: false,
 
@@ -183,7 +183,7 @@ Program {
             },
             typeName: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "Lowercase",
               optional: false,
 
@@ -204,12 +204,12 @@ Program {
             type: "TSTypeReference",
             typeArguments: TSTypeParameterInstantiation {
               type: "TSTypeParameterInstantiation",
-              params: [
+              params: Array [
                 TSTypeReference {
                   type: "TSTypeReference",
                   typeName: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "T",
                     optional: false,
 
@@ -236,7 +236,7 @@ Program {
             },
             typeName: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "Capitalize",
               optional: false,
 
@@ -257,12 +257,12 @@ Program {
             type: "TSTypeReference",
             typeArguments: TSTypeParameterInstantiation {
               type: "TSTypeParameterInstantiation",
-              params: [
+              params: Array [
                 TSTypeReference {
                   type: "TSTypeReference",
                   typeName: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "T",
                     optional: false,
 
@@ -289,7 +289,7 @@ Program {
             },
             typeName: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "Uncapitalize",
               optional: false,
 
@@ -316,7 +316,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
@@ -332,7 +332,7 @@ Program {
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "T",
               optional: false,
 
@@ -370,7 +370,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "HELLO",
         optional: false,
 
@@ -384,7 +384,7 @@ Program {
         type: "TSTypeReference",
         typeArguments: TSTypeParameterInstantiation {
           type: "TSTypeParameterInstantiation",
-          params: [
+          params: Array [
             TSLiteralType {
               type: "TSLiteralType",
               literal: Literal {
@@ -415,7 +415,7 @@ Program {
         },
         typeName: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "EnthusiasticGreeting",
           optional: false,
 

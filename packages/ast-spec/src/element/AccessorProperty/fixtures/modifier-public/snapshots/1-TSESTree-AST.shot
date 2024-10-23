@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures element AccessorProperty modifier-public TSESTree - AST 1`] = `
+exports[`AST Fixtures > element > AccessorProperty > modifier-public > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           AccessorProperty {
             type: "AccessorProperty",
             accessibility: "public",
             computed: false,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "foo",
               optional: false,
 
@@ -60,10 +60,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Foo",
         optional: false,
 
@@ -73,7 +73,7 @@ Program {
           end: { column: 9, line: 1 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [0, 40],

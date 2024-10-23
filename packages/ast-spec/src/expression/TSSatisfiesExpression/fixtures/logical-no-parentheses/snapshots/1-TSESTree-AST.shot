@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures expression TSSatisfiesExpression logical-no-parentheses TSESTree - AST 1`] = `
+exports[`AST Fixtures > expression > TSSatisfiesExpression > logical-no-parentheses > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: BinaryExpression {
         type: "BinaryExpression",
         left: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "foo",
           optional: false,
 
