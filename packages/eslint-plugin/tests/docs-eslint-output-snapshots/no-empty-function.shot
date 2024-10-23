@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-empty-function.mdx code examples ESLint output 1`] = `
-"Options: { "allow": ["private-constructors"] }
+exports[`Validating rule docs > no-empty-interface.mdx > no-empty-interface.mdx must next have a blockquote directing to website 1`] = `
+"Options: { \\"allow\\": [\\"private-constructors\\"] }
 
 class Foo {
   private constructor() {}
@@ -9,8 +9,8 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs no-empty-function.mdx code examples ESLint output 2`] = `
-"Options: { "allow": ["protected-constructors"] }
+exports[`Validating rule docs > no-empty-interface.mdx > no-empty-interface.mdx must next have a blockquote directing to website 2`] = `
+"Options: { \\"allow\\": [\\"protected-constructors\\"] }
 
 class Foo {
   protected constructor() {}
@@ -18,8 +18,8 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs no-empty-function.mdx code examples ESLint output 3`] = `
-"Options: { "allow": ["decoratedFunctions"] }
+exports[`Validating rule docs > no-empty-interface.mdx > no-empty-interface.mdx must next have a blockquote directing to website 3`] = `
+"Options: { \\"allow\\": [\\"decoratedFunctions\\"] }
 
 class Foo {
   @decorator()
@@ -28,8 +28,8 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs no-empty-function.mdx code examples ESLint output 4`] = `
-"Options: { "allow": ["overrideMethods"] }
+exports[`Validating rule docs > no-empty-interface.mdx > no-empty-interface.mdx must next have a blockquote directing to website 4`] = `
+"Options: { \\"allow\\": [\\"overrideMethods\\"] }
 
 abstract class Base {
   protected greet(): void {

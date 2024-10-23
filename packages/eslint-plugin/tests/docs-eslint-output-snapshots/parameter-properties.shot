@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 class Foo {
@@ -40,7 +40,7 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 2`] = `
 "Correct
 
 class Foo {
@@ -49,9 +49,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: { "allow": ["readonly"] }
+Options: { \\"allow\\": [\\"readonly\\"] }
 
 class Foo {
   constructor(private name: string) {}
@@ -85,9 +85,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: { "allow": ["readonly"] }
+Options: { \\"allow\\": [\\"readonly\\"] }
 
 class Foo {
   constructor(name: string) {}
@@ -99,9 +99,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 5`] = `
 "Incorrect
-Options: { "allow": ["private"] }
+Options: { \\"allow\\": [\\"private\\"] }
 
 class Foo {
   constructor(readonly name: string) {}
@@ -135,9 +135,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 6`] = `
 "Correct
-Options: { "allow": ["private"] }
+Options: { \\"allow\\": [\\"private\\"] }
 
 class Foo {
   constructor(name: string) {}
@@ -149,9 +149,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 7`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 7`] = `
 "Incorrect
-Options: { "allow": ["protected"] }
+Options: { \\"allow\\": [\\"protected\\"] }
 
 class Foo {
   constructor(readonly name: string) {}
@@ -185,9 +185,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 8`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 8`] = `
 "Correct
-Options: { "allow": ["protected"] }
+Options: { \\"allow\\": [\\"protected\\"] }
 
 class Foo {
   constructor(name: string) {}
@@ -199,9 +199,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 9`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 9`] = `
 "Incorrect
-Options: { "allow": ["public"] }
+Options: { \\"allow\\": [\\"public\\"] }
 
 class Foo {
   constructor(readonly name: string) {}
@@ -235,9 +235,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 10`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 10`] = `
 "Correct
-Options: { "allow": ["public"] }
+Options: { \\"allow\\": [\\"public\\"] }
 
 class Foo {
   constructor(name: string) {}
@@ -249,9 +249,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 11`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 11`] = `
 "Incorrect
-Options: { "allow": ["private readonly"] }
+Options: { \\"allow\\": [\\"private readonly\\"] }
 
 class Foo {
   constructor(readonly name: string) {}
@@ -285,9 +285,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 12`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 12`] = `
 "Correct
-Options: { "allow": ["private readonly"] }
+Options: { \\"allow\\": [\\"private readonly\\"] }
 
 class Foo {
   constructor(name: string) {}
@@ -299,9 +299,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 13`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 13`] = `
 "Incorrect
-Options: { "allow": ["protected readonly"] }
+Options: { \\"allow\\": [\\"protected readonly\\"] }
 
 class Foo {
   constructor(readonly name: string) {}
@@ -335,9 +335,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 14`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 14`] = `
 "Correct
-Options: { "allow": ["protected readonly"] }
+Options: { \\"allow\\": [\\"protected readonly\\"] }
 
 class Foo {
   constructor(name: string) {}
@@ -349,9 +349,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 15`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 15`] = `
 "Incorrect
-Options: { "allow": ["public readonly"] }
+Options: { \\"allow\\": [\\"public readonly\\"] }
 
 class Foo {
   constructor(readonly name: string) {}
@@ -385,9 +385,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 16`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 16`] = `
 "Correct
-Options: { "allow": ["public readonly"] }
+Options: { \\"allow\\": [\\"public readonly\\"] }
 
 class Foo {
   constructor(name: string) {}
@@ -399,9 +399,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 17`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 17`] = `
 "Incorrect
-Options: { "prefer": "parameter-property" }
+Options: { \\"prefer\\": \\"parameter-property\\" }
 
 class Foo {
   private name: string;
@@ -429,9 +429,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs parameter-properties.mdx code examples ESLint output 18`] = `
+exports[`Validating rule docs > parameter-properties.mdx > code examples ESLint output 18`] = `
 "Correct
-Options: { "prefer": "parameter-property" }
+Options: { \\"prefer\\": \\"parameter-property\\" }
 
 class Foo {
   private differentName: string;
