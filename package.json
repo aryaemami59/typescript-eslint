@@ -73,7 +73,6 @@
     "@types/natural-compare": "^1.4.3",
     "@types/node": "^20.12.5",
     "@types/semver": "^7.5.8",
-    "@types/tmp": "^0.2.6",
     "@types/yargs": "^17.0.32",
     "@typescript-eslint/eslint-plugin": "workspace:^",
     "@typescript-eslint/eslint-plugin-internal": "workspace:^",
@@ -110,7 +109,6 @@
     "pretty-format": "^29.7.0",
     "rimraf": "^5.0.5",
     "semver": "7.6.2",
-    "tmp": "^0.2.1",
     "tsx": "*",
     "typescript": ">=4.8.4 <5.8.0",
     "typescript-eslint": "workspace:^",
@@ -130,7 +128,6 @@
     "prettier": "3.3.2",
     "pretty-format": "^29",
     "react-split-pane@^0.1.92": "patch:react-split-pane@npm%3A0.1.92#./.yarn/patches/react-split-pane-npm-0.1.92-93dbf51dff.patch",
-    "tmp": "0.2.1",
     "tsx": "^4.7.2",
     "typescript": "5.7.2"
   },

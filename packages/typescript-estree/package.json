@@ -68,7 +68,6 @@
     "glob": "*",
     "prettier": "^3.2.5",
     "rimraf": "*",
-    "tmp": "*",
     "typescript": "*",
     "vitest": "^2.1.8"
   },
