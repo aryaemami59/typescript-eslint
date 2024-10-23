@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-optional-properties TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-optional-properties > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "computed",
             optional: false,
 
@@ -52,13 +52,13 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "computed2",
             optional: false,
 
@@ -101,16 +101,16 @@ Program {
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "foo",
               optional: false,
 
@@ -136,11 +136,11 @@ Program {
             type: "PropertyDefinition",
             computed: false,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "bar",
               optional: false,
 
@@ -185,11 +185,11 @@ Program {
             accessibility: "private",
             computed: false,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "baz",
               optional: false,
 
@@ -233,11 +233,11 @@ Program {
             type: "PropertyDefinition",
             computed: true,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "computed",
               optional: false,
 
@@ -263,7 +263,7 @@ Program {
             type: "PropertyDefinition",
             computed: true,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Literal {
               type: "Literal",
@@ -292,7 +292,7 @@ Program {
             type: "PropertyDefinition",
             computed: true,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Literal {
               type: "Literal",
@@ -321,11 +321,11 @@ Program {
             type: "PropertyDefinition",
             computed: true,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "computed2",
               optional: false,
 
@@ -369,7 +369,7 @@ Program {
             type: "PropertyDefinition",
             computed: true,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Literal {
               type: "Literal",
@@ -416,7 +416,7 @@ Program {
             type: "PropertyDefinition",
             computed: true,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Literal {
               type: "Literal",
@@ -468,10 +468,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Foo",
         optional: false,
 
@@ -481,7 +481,7 @@ Program {
           end: { column: 9, line: 5 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [124, 289],

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSNamespaceExportDeclaration valid Babel - AST 1`] = `
+exports[`AST Fixtures > declaration > TSNamespaceExportDeclaration > valid > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSNamespaceExportDeclaration {
       type: "TSNamespaceExportDeclaration",
       id: Identifier {

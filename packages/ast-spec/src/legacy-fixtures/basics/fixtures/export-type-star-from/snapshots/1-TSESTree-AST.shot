@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics export-type-star-from TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > export-type-star-from > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportAllDeclaration {
       type: "ExportAllDeclaration",
-      attributes: [],
+      attributes: Array [],
       exported: null,
       exportKind: "type",
       source: Literal {

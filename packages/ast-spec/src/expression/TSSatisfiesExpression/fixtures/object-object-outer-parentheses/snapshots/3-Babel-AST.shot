@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures expression TSSatisfiesExpression object-object-outer-parentheses Babel - AST 1`] = `
+exports[`AST Fixtures > expression > TSSatisfiesExpression > object-object-outer-parentheses > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TSSatisfiesExpression {
         type: "TSSatisfiesExpression",
         expression: ObjectExpression {
           type: "ObjectExpression",
-          properties: [
+          properties: Array [
             Property {
               type: "Property",
               computed: false,
@@ -55,7 +55,7 @@ Program {
         },
         typeAnnotation: TSTypeLiteral {
           type: "TSTypeLiteral",
-          members: [
+          members: Array [
             TSPropertySignature {
               type: "TSPropertySignature",
               computed: false,

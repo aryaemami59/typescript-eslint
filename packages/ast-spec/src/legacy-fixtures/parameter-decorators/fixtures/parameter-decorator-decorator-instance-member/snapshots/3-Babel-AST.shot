@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures parameter-decorators parameter-decorator-decorator-instance-member Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > parameter-decorators > parameter-decorator-decorator-instance-member > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
@@ -29,7 +29,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [119, 121],
                 loc: {
@@ -40,15 +40,15 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [
+              params: Array [
                 Identifier {
                   type: "Identifier",
-                  decorators: [
+                  decorators: Array [
                     Decorator {
                       type: "Decorator",
                       expression: CallExpression {
                         type: "CallExpression",
-                        arguments: [
+                        arguments: Array [
                           Literal {
                             type: "Literal",
                             raw: "true",

@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures expression TSSatisfiesExpression identifier-keyword TSESTree - AST 1`] = `
+exports[`AST Fixtures > expression > TSSatisfiesExpression > identifier-keyword > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TSSatisfiesExpression {
         type: "TSSatisfiesExpression",
         expression: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "foo",
           optional: false,
 

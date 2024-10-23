@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types nested-types TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > nested-types > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Foo",
         optional: false,
 
@@ -21,10 +21,10 @@ Program {
       },
       typeAnnotation: TSUnionType {
         type: "TSUnionType",
-        types: [
+        types: Array [
           TSTupleType {
             type: "TSTupleType",
-            elementTypes: [
+            elementTypes: Array [
               TSNumberKeyword {
                 type: "TSNumberKeyword",
 
@@ -80,13 +80,13 @@ Program {
           },
           TSIntersectionType {
             type: "TSIntersectionType",
-            types: [
+            types: Array [
               TSTupleType {
                 type: "TSTupleType",
-                elementTypes: [
+                elementTypes: Array [
                   TSTypeLiteral {
                     type: "TSTypeLiteral",
-                    members: [],
+                    members: Array [],
 
                     range: [122, 124],
                     loc: {
@@ -96,10 +96,10 @@ Program {
                   },
                   TSUnionType {
                     type: "TSUnionType",
-                    types: [
+                    types: Array [
                       TSTupleType {
                         type: "TSTupleType",
-                        elementTypes: [
+                        elementTypes: Array [
                           TSOptionalType {
                             type: "TSOptionalType",
                             typeAnnotation: TSNumberKeyword {
@@ -128,7 +128,7 @@ Program {
                       },
                       TSIntersectionType {
                         type: "TSIntersectionType",
-                        types: [
+                        types: Array [
                           TSNullKeyword {
                             type: "TSNullKeyword",
 
@@ -182,7 +182,7 @@ Program {
               },
               TSTypeLiteral {
                 type: "TSTypeLiteral",
-                members: [],
+                members: Array [],
 
                 range: [160, 162],
                 loc: {

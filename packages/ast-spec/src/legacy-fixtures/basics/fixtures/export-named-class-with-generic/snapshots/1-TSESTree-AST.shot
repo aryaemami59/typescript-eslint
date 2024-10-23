@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics export-named-class-with-generic TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > export-named-class-with-generic > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: [],
+      attributes: Array [],
       declaration: ClassDeclaration {
         type: "ClassDeclaration",
         abstract: false,
         body: ClassBody {
           type: "ClassBody",
-          body: [],
+          body: Array [],
 
           range: [93, 95],
           loc: {
@@ -21,10 +21,10 @@ Program {
           },
         },
         declare: false,
-        decorators: [],
+        decorators: Array [],
         id: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "Foo",
           optional: false,
 
@@ -34,18 +34,18 @@ Program {
             end: { column: 16, line: 3 },
           },
         },
-        implements: [],
+        implements: Array [],
         superClass: null,
         typeParameters: TSTypeParameterDeclaration {
           type: "TSTypeParameterDeclaration",
-          params: [
+          params: Array [
             TSTypeParameter {
               type: "TSTypeParameter",
               const: false,
               in: false,
               name: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "T",
                 optional: false,
 
@@ -80,7 +80,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [73, 95],
       loc: {

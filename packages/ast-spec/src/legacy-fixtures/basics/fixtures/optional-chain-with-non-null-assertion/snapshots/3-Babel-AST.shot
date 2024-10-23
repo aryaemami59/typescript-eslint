@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics optional-chain-with-non-null-assertion Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > optional-chain-with-non-null-assertion > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [
+        body: Array [
           ExpressionStatement {
             type: "ExpressionStatement",
             expression: ChainExpression {
@@ -267,7 +267,7 @@ Program {
           end: { column: 24, line: 3 },
         },
       },
-      params: [
+      params: Array [
         Identifier {
           type: "Identifier",
           name: "one",

@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics type-reference-comments TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > type-reference-comments > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "mBuffers",
               optional: false,
 
@@ -38,7 +38,7 @@ Program {
                 type: "TSTypeReference",
                 typeArguments: TSTypeParameterInstantiation {
                   type: "TSTypeParameterInstantiation",
-                  params: [
+                  params: Array [
                     TSAnyKeyword {
                       type: "TSAnyKeyword",
 
@@ -60,7 +60,7 @@ Program {
                   type: "TSQualifiedName",
                   left: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "interop",
                     optional: false,
 
@@ -72,7 +72,7 @@ Program {
                   },
                   right: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "Reference",
                     optional: false,
 
@@ -120,10 +120,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "AudioBufferList",
         optional: false,
 
@@ -133,7 +133,7 @@ Program {
           end: { column: 21, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [73, 150],

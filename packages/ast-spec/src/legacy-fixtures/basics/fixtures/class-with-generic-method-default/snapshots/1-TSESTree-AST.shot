@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-generic-method-default TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-generic-method-default > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
-            decorators: [],
+            decorators: Array [],
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "getBar",
               optional: false,
 
@@ -35,7 +35,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [],
+                body: Array [],
 
                 range: [105, 107],
                 loc: {
@@ -47,10 +47,10 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [],
+              params: Array [],
               typeParameters: TSTypeParameterDeclaration {
                 type: "TSTypeParameterDeclaration",
-                params: [
+                params: Array [
                   TSTypeParameter {
                     type: "TSTypeParameter",
                     const: false,
@@ -58,7 +58,7 @@ Program {
                       type: "TSTypeReference",
                       typeName: Identifier {
                         type: "Identifier",
-                        decorators: [],
+                        decorators: Array [],
                         name: "Bar",
                         optional: false,
 
@@ -78,7 +78,7 @@ Program {
                     in: false,
                     name: Identifier {
                       type: "Identifier",
-                      decorators: [],
+                      decorators: Array [],
                       name: "T",
                       optional: false,
 
@@ -127,10 +127,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Foo",
         optional: false,
 
@@ -140,7 +140,7 @@ Program {
           end: { column: 9, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [73, 109],

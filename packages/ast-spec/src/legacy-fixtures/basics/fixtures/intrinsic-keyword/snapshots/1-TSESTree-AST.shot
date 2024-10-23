@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics intrinsic-keyword TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > intrinsic-keyword > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Uppercase",
         optional: false,
 
@@ -30,7 +30,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
@@ -46,7 +46,7 @@ Program {
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "S",
               optional: false,
 
@@ -84,7 +84,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Lowercase",
         optional: false,
 
@@ -105,7 +105,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
@@ -121,7 +121,7 @@ Program {
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "S",
               optional: false,
 
@@ -159,7 +159,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Capitalize",
         optional: false,
 
@@ -180,7 +180,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
@@ -196,7 +196,7 @@ Program {
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "S",
               optional: false,
 
@@ -234,7 +234,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "Uncapitalize",
         optional: false,
 
@@ -255,7 +255,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
@@ -271,7 +271,7 @@ Program {
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "S",
               optional: false,
 

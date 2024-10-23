@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration ExportAllDeclaration type-kind Babel - AST 1`] = `
+exports[`AST Fixtures > declaration > ExportAllDeclaration > type-kind > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportAllDeclaration {
       type: "ExportAllDeclaration",
-      assertions: [],
+      assertions: Array [],
       exported: null,
       exportKind: "type",
       source: Literal {

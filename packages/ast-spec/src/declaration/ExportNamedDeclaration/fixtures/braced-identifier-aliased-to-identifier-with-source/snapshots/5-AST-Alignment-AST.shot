@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration ExportNamedDeclaration braced-identifier-aliased-to-identifier-with-source AST Alignment - AST 1`] = `
+exports[`AST Fixtures > declaration > ExportNamedDeclaration > braced-identifier-aliased-to-identifier-with-source > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -16,7 +16,7 @@ exports[`AST Fixtures declaration ExportNamedDeclaration braced-identifier-alias
         exportKind: 'value',
         source: Literal {
           type: 'Literal',
-          raw: '\\'mod\\'',
+          raw: '\\\\'mod\\\\'',
           value: 'mod',
 
           range: [23, 28],

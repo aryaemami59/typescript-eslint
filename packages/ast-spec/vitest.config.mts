@@ -1,7 +1,16 @@
-import { defineConfig } from 'vitest/config';
+import { defineConfig, mergeConfig } from 'vitest/config';
+import vitestBaseConfig from '../../vitest.config.base.mjs';
 
-const vitestConfig = defineConfig({
-  test: { setupFiles: ['./tests/util/setupVitest.ts'] },
-});
+const vitestConfig = mergeConfig(
+  vitestBaseConfig,
+
+  defineConfig({
+    test: {
+      globals: true,
+      coverage: { enabled: false },
+      setupFiles: ['./tests/util/setupVitest.ts'],
+    },
+  }),
+);
 
 export default vitestConfig;

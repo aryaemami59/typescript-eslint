@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures namespaces-and-modules ambient-module-declaration-with-import Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > ambient-module-declaration-with-import > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: [
+        body: Array [
           ImportDeclaration {
             type: "ImportDeclaration",
-            assertions: [],
+            assertions: Array [],
             importKind: "value",
             source: Literal {
               type: "Literal",
@@ -24,7 +24,7 @@ Program {
                 end: { column: 21, line: 4 },
               },
             },
-            specifiers: [
+            specifiers: Array [
               ImportDefaultSpecifier {
                 type: "ImportDefaultSpecifier",
                 local: Identifier {

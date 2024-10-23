@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures expression TSSatisfiesExpression identifier-tuple-type Babel - AST 1`] = `
+exports[`AST Fixtures > expression > TSSatisfiesExpression > identifier-tuple-type > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TSSatisfiesExpression {
@@ -20,7 +20,7 @@ Program {
         },
         typeAnnotation: TSTupleType {
           type: "TSTupleType",
-          elementTypes: [
+          elementTypes: Array [
             TSLiteralType {
               type: "TSLiteralType",
               literal: Literal {

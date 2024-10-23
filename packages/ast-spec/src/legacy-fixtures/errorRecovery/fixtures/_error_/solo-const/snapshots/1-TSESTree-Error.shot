@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures errorRecovery _error_ solo-const TSESTree - Error 1`] = `
+exports[`AST Fixtures > legacy-fixtures > errorRecovery > _error_ > solo-const > TSESTree - Error 1`] = `
 "TSError
   1 | // TODO: This fixture might be too large, and if so should be split up.
   2 |

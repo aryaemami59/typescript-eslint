@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration ExportDefaultDeclaration anonymous-class Babel - AST 1`] = `
+exports[`AST Fixtures > declaration > ExportDefaultDeclaration > anonymous-class > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportDefaultDeclaration {
       type: "ExportDefaultDeclaration",
       declaration: ClassDeclaration {
         type: "ClassDeclaration",
         body: ClassBody {
           type: "ClassBody",
-          body: [],
+          body: Array [],
 
           range: [21, 23],
           loc: {

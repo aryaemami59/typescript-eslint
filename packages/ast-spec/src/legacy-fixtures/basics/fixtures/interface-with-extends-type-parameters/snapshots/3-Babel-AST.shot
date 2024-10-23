@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics interface-with-extends-type-parameters Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > interface-with-extends-type-parameters > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: [],
+        body: Array [],
 
         range: [105, 107],
         loc: {
@@ -16,7 +16,7 @@ Program {
           end: { column: 34, line: 3 },
         },
       },
-      extends: [
+      extends: Array [
         TSExpressionWithTypeArguments {
           type: "TSExpressionWithTypeArguments",
           expression: Identifier {
@@ -31,7 +31,7 @@ Program {
           },
           typeParameters: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: [
+            params: Array [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
@@ -79,7 +79,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             name: "T",

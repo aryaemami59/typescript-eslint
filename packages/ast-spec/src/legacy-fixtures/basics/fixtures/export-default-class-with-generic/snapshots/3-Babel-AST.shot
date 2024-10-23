@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics export-default-class-with-generic Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > export-default-class-with-generic > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportDefaultDeclaration {
       type: "ExportDefaultDeclaration",
       declaration: ClassDeclaration {
         type: "ClassDeclaration",
         body: ClassBody {
           type: "ClassBody",
-          body: [],
+          body: Array [],
 
           range: [97, 99],
           loc: {
@@ -22,7 +22,7 @@ Program {
         superClass: null,
         typeParameters: TSTypeParameterDeclaration {
           type: "TSTypeParameterDeclaration",
-          params: [
+          params: Array [
             TSTypeParameter {
               type: "TSTypeParameter",
               name: "T",

@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics abstract-class-with-abstract-method Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > abstract-class-with-abstract-method > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: [],
+      assertions: Array [],
       declaration: ClassDeclaration {
         type: "ClassDeclaration",
         abstract: true,
         body: ClassBody {
           type: "ClassBody",
-          body: [
+          body: Array [
             MethodDefinition {
               type: "MethodDefinition",
               abstract: true,
@@ -35,7 +35,7 @@ Program {
                 expression: false,
                 generator: false,
                 id: null,
-                params: [],
+                params: Array [],
                 returnType: TSTypeAnnotation {
                   type: "TSTypeAnnotation",
                   typeAnnotation: TSTypeReference {
@@ -52,7 +52,7 @@ Program {
                     },
                     typeParameters: TSTypeParameterInstantiation {
                       type: "TSTypeParameterInstantiation",
-                      params: [
+                      params: Array [
                         TSStringKeyword {
                           type: "TSStringKeyword",
 
@@ -126,7 +126,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: [],
+      specifiers: Array [],
 
       range: [73, 157],
       loc: {

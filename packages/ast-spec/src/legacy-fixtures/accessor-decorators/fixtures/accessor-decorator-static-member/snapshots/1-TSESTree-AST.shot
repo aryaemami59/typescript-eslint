@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures accessor-decorators accessor-decorator-static-member TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > accessor-decorators > accessor-decorator-static-member > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
-            decorators: [
+            decorators: Array [
               Decorator {
                 type: "Decorator",
                 expression: Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "adminonly",
                   optional: false,
 
@@ -38,7 +38,7 @@ Program {
             ],
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "y",
               optional: false,
 
@@ -57,7 +57,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: [
+                body: Array [
                   ExpressionStatement {
                     type: "ExpressionStatement",
                     expression: AssignmentExpression {
@@ -77,7 +77,7 @@ Program {
                         optional: false,
                         property: Identifier {
                           type: "Identifier",
-                          decorators: [],
+                          decorators: Array [],
                           name: "_y",
                           optional: false,
 
@@ -97,7 +97,7 @@ Program {
                       operator: "=",
                       right: Identifier {
                         type: "Identifier",
-                        decorators: [],
+                        decorators: Array [],
                         name: "a",
                         optional: false,
 
@@ -133,10 +133,10 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: [
+              params: Array [
                 Identifier {
                   type: "Identifier",
-                  decorators: [],
+                  decorators: Array [],
                   name: "a",
                   optional: false,
 
@@ -170,10 +170,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "User",
         optional: false,
 
@@ -183,7 +183,7 @@ Program {
           end: { column: 10, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: null,
 
       range: [73, 141],

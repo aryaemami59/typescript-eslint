@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures jsx JSXAttribute element-non-self-closing TSESTree - AST 1`] = `
+exports[`AST Fixtures > jsx > JSXAttribute > element-non-self-closing > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: JSXElement {
         type: "JSXElement",
-        children: [],
+        children: Array [],
         closingElement: null,
         openingElement: JSXOpeningElement {
           type: "JSXOpeningElement",
-          attributes: [
+          attributes: Array [
             JSXAttribute {
               type: "JSXAttribute",
               name: JSXIdentifier {
@@ -27,7 +27,7 @@ Program {
               },
               value: JSXElement {
                 type: "JSXElement",
-                children: [
+                children: Array [
                   JSXText {
                     type: "JSXText",
                     raw: "bar",
@@ -61,7 +61,7 @@ Program {
                 },
                 openingElement: JSXOpeningElement {
                   type: "JSXOpeningElement",
-                  attributes: [],
+                  attributes: Array [],
                   name: JSXIdentifier {
                     type: "JSXIdentifier",
                     name: "div",

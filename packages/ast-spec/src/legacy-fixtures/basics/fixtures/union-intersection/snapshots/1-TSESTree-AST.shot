@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics union-intersection TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > union-intersection > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "union",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSUnionType {
                 type: "TSUnionType",
-                types: [
+                types: Array [
                   TSNumberKeyword {
                     type: "TSNumberKeyword",
 
@@ -89,20 +89,20 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "intersection",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSIntersectionType {
                 type: "TSIntersectionType",
-                types: [
+                types: Array [
                   TSNumberKeyword {
                     type: "TSNumberKeyword",
 
@@ -163,20 +163,20 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "precedence1",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSUnionType {
                 type: "TSUnionType",
-                types: [
+                types: Array [
                   TSNumberKeyword {
                     type: "TSNumberKeyword",
 
@@ -188,7 +188,7 @@ Program {
                   },
                   TSIntersectionType {
                     type: "TSIntersectionType",
-                    types: [
+                    types: Array [
                       TSStringKeyword {
                         type: "TSStringKeyword",
 
@@ -257,23 +257,23 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "precedence2",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSUnionType {
                 type: "TSUnionType",
-                types: [
+                types: Array [
                   TSIntersectionType {
                     type: "TSIntersectionType",
-                    types: [
+                    types: Array [
                       TSNumberKeyword {
                         type: "TSNumberKeyword",
 
@@ -354,7 +354,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "unionLeading",
         optional: false,
 
@@ -366,7 +366,7 @@ Program {
       },
       typeAnnotation: TSUnionType {
         type: "TSUnionType",
-        types: [
+        types: Array [
           TSNumberKeyword {
             type: "TSNumberKeyword",
 
@@ -405,7 +405,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "intersectionLeading",
         optional: false,
 
@@ -417,7 +417,7 @@ Program {
       },
       typeAnnotation: TSIntersectionType {
         type: "TSIntersectionType",
-        types: [
+        types: Array [
           TSNumberKeyword {
             type: "TSNumberKeyword",
 
@@ -456,7 +456,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "unionLeadingSingle",
         optional: false,
 
@@ -487,7 +487,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "intersectionLeadingSingle",
         optional: false,
 

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSImportEqualsDeclaration external-module-ref-string TSESTree - AST 1`] = `
+exports[`AST Fixtures > declaration > TSImportEqualsDeclaration > external-module-ref-string > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSImportEqualsDeclaration {
       type: "TSImportEqualsDeclaration",
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "F",
         optional: false,
 

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types intersection-type Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > intersection-type > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       id: Identifier {
@@ -18,7 +18,7 @@ Program {
       },
       typeAnnotation: TSIntersectionType {
         type: "TSIntersectionType",
-        types: [
+        types: Array [
           TSTypeReference {
             type: "TSTypeReference",
             typeName: Identifier {
@@ -40,7 +40,7 @@ Program {
           },
           TSTypeLiteral {
             type: "TSTypeLiteral",
-            members: [
+            members: Array [
               TSPropertySignature {
                 type: "TSPropertySignature",
                 computed: false,
@@ -70,7 +70,7 @@ Program {
                     },
                     typeParameters: TSTypeParameterInstantiation {
                       type: "TSTypeParameterInstantiation",
-                      params: [
+                      params: Array [
                         TSTypeReference {
                           type: "TSTypeReference",
                           typeName: Identifier {
@@ -137,7 +137,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: [
+        params: Array [
           TSTypeParameter {
             type: "TSTypeParameter",
             name: "T",

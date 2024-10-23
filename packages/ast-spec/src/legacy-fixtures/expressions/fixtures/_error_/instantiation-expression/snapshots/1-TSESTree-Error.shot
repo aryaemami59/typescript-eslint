@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures expressions _error_ instantiation-expression TSESTree - Error 1`] = `
+exports[`AST Fixtures > legacy-fixtures > expressions > _error_ > instantiation-expression > TSESTree - Error 1`] = `
 "TSError
   3 | a<b>;
   4 |

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics export-as-namespace TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > export-as-namespace > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSNamespaceExportDeclaration {
       type: "TSNamespaceExportDeclaration",
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "a",
         optional: false,
 

@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics cast-as-operator TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > cast-as-operator > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: BinaryExpression {
         type: "BinaryExpression",
         left: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "x",
           optional: false,
 

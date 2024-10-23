@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration ExportDefaultDeclaration arrow-function-expression TSESTree - AST 1`] = `
+exports[`AST Fixtures > declaration > ExportDefaultDeclaration > arrow-function-expression > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExportDefaultDeclaration {
       type: "ExportDefaultDeclaration",
       declaration: ArrowFunctionExpression {
@@ -11,7 +11,7 @@ Program {
         async: false,
         body: BlockStatement {
           type: "BlockStatement",
-          body: [],
+          body: Array [],
 
           range: [21, 23],
           loc: {
@@ -22,7 +22,7 @@ Program {
         expression: false,
         generator: false,
         id: null,
-        params: [],
+        params: Array [],
 
         range: [15, 23],
         loc: {

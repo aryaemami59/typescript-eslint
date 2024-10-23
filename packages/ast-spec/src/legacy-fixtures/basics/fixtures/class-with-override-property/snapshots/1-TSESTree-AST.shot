@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics class-with-override-property TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > class-with-override-property > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: [
+        body: Array [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
             declare: false,
-            decorators: [],
+            decorators: Array [],
             definite: false,
             key: Identifier {
               type: "Identifier",
-              decorators: [],
+              decorators: Array [],
               name: "foo",
               optional: false,
 
@@ -59,10 +59,10 @@ Program {
         },
       },
       declare: false,
-      decorators: [],
+      decorators: Array [],
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "SpecializedComponent",
         optional: false,
 
@@ -72,10 +72,10 @@ Program {
           end: { column: 26, line: 3 },
         },
       },
-      implements: [],
+      implements: Array [],
       superClass: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "SomeComponent",
         optional: false,
 

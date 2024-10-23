@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures expression TSSatisfiesExpression identifier-object-type TSESTree - AST 1`] = `
+exports[`AST Fixtures > expression > TSSatisfiesExpression > identifier-object-type > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TSSatisfiesExpression {
         type: "TSSatisfiesExpression",
         expression: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "foo",
           optional: false,
 
@@ -22,13 +22,13 @@ Program {
         },
         typeAnnotation: TSTypeLiteral {
           type: "TSTypeLiteral",
-          members: [
+          members: Array [
             TSPropertySignature {
               type: "TSPropertySignature",
               computed: false,
               key: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "prop",
                 optional: false,
 

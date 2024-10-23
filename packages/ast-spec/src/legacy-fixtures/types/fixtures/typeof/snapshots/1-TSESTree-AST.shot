@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures types typeof TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > types > typeof > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "x",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
@@ -23,7 +23,7 @@ Program {
                   type: "TSQualifiedName",
                   left: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "y",
                     optional: false,
 
@@ -35,7 +35,7 @@ Program {
                   },
                   right: Identifier {
                     type: "Identifier",
-                    decorators: [],
+                    decorators: Array [],
                     name: "z",
                     optional: false,
 

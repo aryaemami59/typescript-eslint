@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures jsx JSXNamespacedName component Babel - AST 1`] = `
+exports[`AST Fixtures > jsx > JSXNamespacedName > component > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -21,11 +21,11 @@ Program {
           },
           init: JSXElement {
             type: "JSXElement",
-            children: [],
+            children: Array [],
             closingElement: null,
             openingElement: JSXOpeningElement {
               type: "JSXOpeningElement",
-              attributes: [
+              attributes: Array [
                 JSXAttribute {
                   type: "JSXAttribute",
                   name: JSXNamespacedName {
@@ -59,7 +59,7 @@ Program {
                   },
                   value: Literal {
                     type: "Literal",
-                    raw: ""tight spacing"",
+                    raw: "\\"tight spacing\\"",
                     value: "tight spacing",
 
                     range: [38, 53],
@@ -119,7 +119,7 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -134,11 +134,11 @@ Program {
           },
           init: JSXElement {
             type: "JSXElement",
-            children: [],
+            children: Array [],
             closingElement: null,
             openingElement: JSXOpeningElement {
               type: "JSXOpeningElement",
-              attributes: [
+              attributes: Array [
                 JSXAttribute {
                   type: "JSXAttribute",
                   name: JSXNamespacedName {
@@ -172,7 +172,7 @@ Program {
                   },
                   value: Literal {
                     type: "Literal",
-                    raw: ""loose spacing"",
+                    raw: "\\"loose spacing\\"",
                     value: "loose spacing",
 
                     range: [96, 111],
@@ -234,7 +234,7 @@ Program {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: [
+        body: Array [
           TSPropertySignature {
             type: "TSPropertySignature",
             computed: false,
@@ -304,12 +304,12 @@ Program {
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: [
+        body: Array [
           ReturnStatement {
             type: "ReturnStatement",
             argument: JSXElement {
               type: "JSXElement",
-              children: [
+              children: Array [
                 JSXExpressionContainer {
                   type: "JSXExpressionContainer",
                   expression: MemberExpression {
@@ -373,7 +373,7 @@ Program {
               },
               openingElement: JSXOpeningElement {
                 type: "JSXOpeningElement",
-                attributes: [],
+                attributes: Array [],
                 name: JSXIdentifier {
                   type: "JSXIdentifier",
                   name: "div",
@@ -426,7 +426,7 @@ Program {
           end: { column: 31, line: 8 },
         },
       },
-      params: [
+      params: Array [
         Identifier {
           type: "Identifier",
           name: "props",

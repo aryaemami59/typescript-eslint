@@ -2,6 +2,7 @@ import * as glob from 'glob';
 import makeDir from 'make-dir';
 import fs from 'node:fs';
 import path from 'node:path';
+import { describe, expect, it } from 'vitest';
 
 import type {
   Fixture,

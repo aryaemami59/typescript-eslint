@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSEnumDeclaration empty Babel - AST 1`] = `
+exports[`AST Fixtures > declaration > TSEnumDeclaration > empty > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSEnumDeclaration {
       type: "TSEnumDeclaration",
       id: Identifier {
@@ -16,7 +16,7 @@ Program {
           end: { column: 8, line: 1 },
         },
       },
-      members: [],
+      members: Array [],
 
       range: [0, 11],
       loc: {

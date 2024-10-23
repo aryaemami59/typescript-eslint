@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures class-decorators class-decorator-factory AST Alignment - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > class-decorators > class-decorator-factory > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -52,7 +52,7 @@ exports[`AST Fixtures legacy-fixtures class-decorators class-decorator-factory A
                       shorthand: false,
                       value: Literal {
                         type: 'Literal',
-                        raw: '\\'foo\\'',
+                        raw: '\\\\'foo\\\\'',
                         value: 'foo',
 
                         range: [98, 103],

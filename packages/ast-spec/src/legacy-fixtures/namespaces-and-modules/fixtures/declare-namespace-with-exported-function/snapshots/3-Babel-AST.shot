@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures namespaces-and-modules declare-namespace-with-exported-function Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > declare-namespace-with-exported-function > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: [
+        body: Array [
           ExportNamedDeclaration {
             type: "ExportNamedDeclaration",
-            assertions: [],
+            assertions: Array [],
             declaration: TSDeclareFunction {
               type: "TSDeclareFunction",
               async: false,
@@ -27,7 +27,7 @@ Program {
                   end: { column: 24, line: 4 },
                 },
               },
-              params: [
+              params: Array [
                 Identifier {
                   type: "Identifier",
                   name: "selector",
@@ -73,7 +73,7 @@ Program {
                   },
                   typeParameters: TSTypeParameterInstantiation {
                     type: "TSTypeParameterInstantiation",
-                    params: [
+                    params: Array [
                       TSAnyKeyword {
                         type: "TSAnyKeyword",
 
@@ -114,7 +114,7 @@ Program {
             },
             exportKind: "value",
             source: null,
-            specifiers: [],
+            specifiers: Array [],
 
             range: [98, 155],
             loc: {

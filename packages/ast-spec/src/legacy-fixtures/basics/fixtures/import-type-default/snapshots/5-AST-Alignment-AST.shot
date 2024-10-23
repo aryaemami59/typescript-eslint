@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics import-type-default AST Alignment - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > import-type-default > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -15,7 +15,7 @@ exports[`AST Fixtures legacy-fixtures basics import-type-default AST Alignment -
         importKind: 'type',
         source: Literal {
           type: 'Literal',
-          raw: '\\'bar\\'',
+          raw: '\\\\'bar\\\\'',
           value: 'bar',
 
           range: [94, 99],

@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics union-intersection Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > union-intersection > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -16,7 +16,7 @@ Program {
               type: "TSTypeAnnotation",
               typeAnnotation: TSUnionType {
                 type: "TSUnionType",
-                types: [
+                types: Array [
                   TSNumberKeyword {
                     type: "TSNumberKeyword",
 
@@ -85,7 +85,7 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -95,7 +95,7 @@ Program {
               type: "TSTypeAnnotation",
               typeAnnotation: TSIntersectionType {
                 type: "TSIntersectionType",
-                types: [
+                types: Array [
                   TSNumberKeyword {
                     type: "TSNumberKeyword",
 
@@ -155,7 +155,7 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -165,7 +165,7 @@ Program {
               type: "TSTypeAnnotation",
               typeAnnotation: TSUnionType {
                 type: "TSUnionType",
-                types: [
+                types: Array [
                   TSNumberKeyword {
                     type: "TSNumberKeyword",
 
@@ -179,7 +179,7 @@ Program {
                     type: "TSParenthesizedType",
                     typeAnnotation: TSIntersectionType {
                       type: "TSIntersectionType",
-                      types: [
+                      types: Array [
                         TSStringKeyword {
                           type: "TSStringKeyword",
 
@@ -254,7 +254,7 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: [
+      declarations: Array [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -264,12 +264,12 @@ Program {
               type: "TSTypeAnnotation",
               typeAnnotation: TSUnionType {
                 type: "TSUnionType",
-                types: [
+                types: Array [
                   TSParenthesizedType {
                     type: "TSParenthesizedType",
                     typeAnnotation: TSIntersectionType {
                       type: "TSIntersectionType",
-                      types: [
+                      types: Array [
                         TSNumberKeyword {
                           type: "TSNumberKeyword",
 
@@ -365,7 +365,7 @@ Program {
       },
       typeAnnotation: TSUnionType {
         type: "TSUnionType",
-        types: [
+        types: Array [
           TSNumberKeyword {
             type: "TSNumberKeyword",
 
@@ -413,7 +413,7 @@ Program {
       },
       typeAnnotation: TSIntersectionType {
         type: "TSIntersectionType",
-        types: [
+        types: Array [
           TSNumberKeyword {
             type: "TSNumberKeyword",
 

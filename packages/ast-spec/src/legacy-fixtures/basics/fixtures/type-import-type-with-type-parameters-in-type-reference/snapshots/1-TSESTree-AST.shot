@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics type-import-type-with-type-parameters-in-type-reference TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > type-import-type-with-type-parameters-in-type-reference > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "X",
         optional: false,
 
@@ -23,7 +23,7 @@ Program {
         type: "TSTypeReference",
         typeArguments: TSTypeParameterInstantiation {
           type: "TSTypeParameterInstantiation",
-          params: [
+          params: Array [
             TSImportType {
               type: "TSImportType",
               argument: TSLiteralType {
@@ -48,7 +48,7 @@ Program {
               },
               qualifier: Identifier {
                 type: "Identifier",
-                decorators: [],
+                decorators: Array [],
                 name: "B",
                 optional: false,
 
@@ -60,7 +60,7 @@ Program {
               },
               typeArguments: TSTypeParameterInstantiation {
                 type: "TSTypeParameterInstantiation",
-                params: [
+                params: Array [
                   TSAnyKeyword {
                     type: "TSAnyKeyword",
 
@@ -95,7 +95,7 @@ Program {
         },
         typeName: Identifier {
           type: "Identifier",
-          decorators: [],
+          decorators: Array [],
           name: "A",
           optional: false,
 

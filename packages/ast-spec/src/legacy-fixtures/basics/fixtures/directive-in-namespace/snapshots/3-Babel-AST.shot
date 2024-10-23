@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics directive-in-namespace Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > directive-in-namespace > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: [
+        body: Array [
           ExpressionStatement {
             type: "ExpressionStatement",
             expression: Literal {
@@ -31,7 +31,7 @@ Program {
           },
           VariableDeclaration {
             type: "VariableDeclaration",
-            declarations: [
+            declarations: Array [
               VariableDeclarator {
                 type: "VariableDeclarator",
                 id: Identifier {

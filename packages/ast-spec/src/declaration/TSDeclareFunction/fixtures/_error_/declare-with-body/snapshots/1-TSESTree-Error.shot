@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSDeclareFunction _error_ declare-with-body TSESTree - Error 1`] = `
+exports[`AST Fixtures > declaration > TSDeclareFunction > _error_ > declare-with-body > TSESTree - Error 1`] = `
 "TSError
 > 1 | declare function foo(): void {};
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ An implementation cannot be declared in ambient contexts.

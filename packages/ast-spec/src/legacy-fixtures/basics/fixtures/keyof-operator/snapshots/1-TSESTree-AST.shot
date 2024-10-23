@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics keyof-operator TSESTree - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > keyof-operator > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: [],
+        decorators: Array [],
         name: "x",
         optional: false,
 
@@ -26,7 +26,7 @@ Program {
           type: "TSTypeReference",
           typeName: Identifier {
             type: "Identifier",
-            decorators: [],
+            decorators: Array [],
             name: "foo",
             optional: false,
 

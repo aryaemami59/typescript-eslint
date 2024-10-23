@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures declaration TSModuleDeclaration module-id-literal AST Alignment - AST 1`] = `
+exports[`AST Fixtures > declaration > TSModuleDeclaration > module-id-literal > AST Alignment - AST 1`] = `
 "Snapshot Diff:
 - TSESTree
 + Babel
@@ -24,7 +24,7 @@ exports[`AST Fixtures declaration TSModuleDeclaration module-id-literal AST Alig
 -       global: false,
         id: Literal {
           type: 'Literal',
-          raw: '\\'a\\'',
+          raw: '\\\\'a\\\\'',
           value: 'a',
 
           range: [7, 10],

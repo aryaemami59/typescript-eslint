@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AST Fixtures legacy-fixtures basics type-alias-object-without-annotation Babel - AST 1`] = `
+exports[`AST Fixtures > legacy-fixtures > basics > type-alias-object-without-annotation > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: [
+  body: Array [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       id: Identifier {
@@ -18,7 +18,7 @@ Program {
       },
       typeAnnotation: TSTypeLiteral {
         type: "TSTypeLiteral",
-        members: [
+        members: Array [
           TSPropertySignature {
             type: "TSPropertySignature",
             computed: false,
