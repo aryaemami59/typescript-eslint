@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs switch-exhaustiveness-check.mdx code examples ESLint output 1`] = `
-"Options: { "requireDefaultForNonUnion": true }
+exports[`Validating rule docs > triple-slash-reference.mdx > triple-slash-reference.mdx must start with frontmatter description 1`] = `
+"Options: { \\"requireDefaultForNonUnion\\": true }
 
 const value: number = Math.floor(Math.random() * 3);
 
@@ -15,8 +15,8 @@ switch (value) {
 "
 `;
 
-exports[`Validating rule docs switch-exhaustiveness-check.mdx code examples ESLint output 2`] = `
-"Options: { "considerDefaultExhaustiveForUnions": true }
+exports[`Validating rule docs > triple-slash-reference.mdx > triple-slash-reference.mdx must start with frontmatter description 2`] = `
+"Options: { \\"considerDefaultExhaustiveForUnions\\": true }
 
 declare const literal: 'a' | 'b';
 
@@ -29,7 +29,7 @@ switch (literal) {
 "
 `;
 
-exports[`Validating rule docs switch-exhaustiveness-check.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > triple-slash-reference.mdx > triple-slash-reference.mdx must start with frontmatter description 3`] = `
 "Options: { "defaultCaseCommentPattern": "^skip default" }
 
 declare const value: 'a' | 'b';
@@ -59,7 +59,7 @@ declare const day: Day;
 let result = 0;
 
 switch (day) {
-        ~~~ Switch is not exhaustive. Cases not matched: "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday" | "Sunday"
+        ~~~ Switch is not exhaustive. Cases not matched: \\"Tuesday\\" | \\"Wednesday\\" | \\"Thursday\\" | \\"Friday\\" | \\"Saturday\\" | \\"Sunday\\"
   case 'Monday':
     result = 1;
     break;
@@ -67,7 +67,7 @@ switch (day) {
 "
 `;
 
-exports[`Validating rule docs switch-exhaustiveness-check.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > triple-slash-reference.mdx > triple-slash-reference.mdx must start with frontmatter description 5`] = `
 "Correct
 
 type Day =
@@ -108,9 +108,9 @@ switch (day) {
 "
 `;
 
-exports[`Validating rule docs switch-exhaustiveness-check.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > triple-slash-reference.mdx > triple-slash-reference.mdx must start with frontmatter description 6`] = `
 "Correct
-Options: { "considerDefaultExhaustiveForUnions": true }
+Options: { \\"considerDefaultExhaustiveForUnions\\": true }
 
 // requires \`considerDefaultExhaustiveForUnions\` to be set to true
 
@@ -136,7 +136,7 @@ switch (day) {
 "
 `;
 
-exports[`Validating rule docs switch-exhaustiveness-check.mdx code examples ESLint output 7`] = `
+exports[`Validating rule docs > triple-slash-reference.mdx > triple-slash-reference.mdx must start with frontmatter description 7`] = `
 "Incorrect
 
 enum Fruit {
@@ -156,7 +156,7 @@ switch (fruit) {
 "
 `;
 
-exports[`Validating rule docs switch-exhaustiveness-check.mdx code examples ESLint output 8`] = `
+exports[`Validating rule docs > triple-slash-reference.mdx > triple-slash-reference.mdx must start with frontmatter description 8`] = `
 "Correct
 
 enum Fruit {
@@ -183,9 +183,9 @@ switch (fruit) {
 "
 `;
 
-exports[`Validating rule docs switch-exhaustiveness-check.mdx code examples ESLint output 9`] = `
+exports[`Validating rule docs > triple-slash-reference.mdx > triple-slash-reference.mdx must start with frontmatter description 9`] = `
 "Correct
-Options: { "considerDefaultExhaustiveForUnions": true }
+Options: { \\"considerDefaultExhaustiveForUnions\\": true }
 
 // requires \`considerDefaultExhaustiveForUnions\` to be set to true
 

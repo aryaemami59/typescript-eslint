@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 let foo = 1n + 1;
@@ -10,7 +10,7 @@ let fn = (a: string, b: never) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 2`] = `
 "Correct
 
 let foo = 1n + 1n;
@@ -18,9 +18,9 @@ let fn = (a: string, b: string) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: { "allowAny": true }
+Options: { \\"allowAny\\": true }
 
 let fn = (a: number, b: []) => a + b;
                                    ~ Invalid operand for a '+' operation. Operands must each be a number or string, allowing a string + any of: \`any\`, \`boolean\`, \`null\`, \`RegExp\`, \`undefined\`. Got \`[]\`.
@@ -29,18 +29,18 @@ let fn = (a: string, b: []) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: { "allowAny": true }
+Options: { \\"allowAny\\": true }
 
 let fn = (a: number, b: any) => a + b;
 let fn = (a: string, b: any) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 5`] = `
 "Incorrect
-Options: { "allowBoolean": true }
+Options: { \\"allowBoolean\\": true }
 
 let fn = (a: number, b: unknown) => a + b;
                                         ~ Invalid operand for a '+' operation. Operands must each be a number or string, allowing a string + any of: \`any\`, \`boolean\`, \`null\`, \`RegExp\`, \`undefined\`. Got \`unknown\`.
@@ -49,18 +49,18 @@ let fn = (a: string, b: unknown) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 6`] = `
 "Correct
-Options: { "allowBoolean": true }
+Options: { \\"allowBoolean\\": true }
 
 let fn = (a: number, b: boolean) => a + b;
 let fn = (a: string, b: boolean) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 7`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 7`] = `
 "Incorrect
-Options: { "allowNullish": true }
+Options: { \\"allowNullish\\": true }
 
 let fn = (a: number, b: unknown) => a + b;
                                         ~ Invalid operand for a '+' operation. Operands must each be a number or string, allowing a string + any of: \`any\`, \`boolean\`, \`null\`, \`RegExp\`, \`undefined\`. Got \`unknown\`.
@@ -73,9 +73,9 @@ let fn = (a: string, b: never) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 8`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 8`] = `
 "Correct
-Options: { "allowNullish": true }
+Options: { \\"allowNullish\\": true }
 
 let fn = (a: number, b: undefined) => a + b;
 let fn = (a: number, b: null) => a + b;
@@ -84,9 +84,9 @@ let fn = (a: string, b: null) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 9`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 9`] = `
 "Incorrect
-Options: { "allowNumberAndString": true }
+Options: { \\"allowNumberAndString\\": true }
 
 let fn = (a: number, b: unknown) => a + b;
                                         ~ Invalid operand for a '+' operation. Operands must each be a number or string, allowing a string + any of: \`any\`, \`boolean\`, \`null\`, \`RegExp\`, \`undefined\`. Got \`unknown\`.
@@ -95,35 +95,35 @@ let fn = (a: number, b: never) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 10`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 10`] = `
 "Correct
-Options: { "allowNumberAndString": true }
+Options: { \\"allowNumberAndString\\": true }
 
 let fn = (a: number, b: string) => a + b;
 let fn = (a: number, b: number | string) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 11`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 11`] = `
 "Incorrect
-Options: { "allowRegExp": true }
+Options: { \\"allowRegExp\\": true }
 
 let fn = (a: number, b: RegExp) => a + b;
                                        ~ Invalid operand for a '+' operation. Operands must each be a number or string, allowing a string + any of: \`any\`, \`boolean\`, \`null\`, \`RegExp\`, \`undefined\`. Got \`RegExp\`.
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 12`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 12`] = `
 "Correct
-Options: { "allowRegExp": true }
+Options: { \\"allowRegExp\\": true }
 
 let fn = (a: string, b: RegExp) => a + b;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 13`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 13`] = `
 "Incorrect
-Options: { "skipCompoundAssignments": false }
+Options: { \\"skipCompoundAssignments\\": false }
 
 let foo: bigint = 0n;
 foo += 1;
@@ -135,9 +135,9 @@ bar += 1;
 "
 `;
 
-exports[`Validating rule docs restrict-plus-operands.mdx code examples ESLint output 14`] = `
+exports[`Validating rule docs > restrict-plus-operands.mdx > code examples ESLint output 14`] = `
 "Correct
-Options: { "skipCompoundAssignments": false }
+Options: { \\"skipCompoundAssignments\\": false }
 
 let foo: bigint = 0n;
 foo += 1n;

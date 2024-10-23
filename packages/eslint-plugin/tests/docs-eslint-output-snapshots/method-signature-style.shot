@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs method-signature-style.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > method-signature-style.mdx > code examples ESLint output 1`] = `
 "Incorrect
-Options: "property"
+Options: \\"property\\"
 
 interface T1 {
   func(arg: string): number;
@@ -23,9 +23,9 @@ interface T3 {
 "
 `;
 
-exports[`Validating rule docs method-signature-style.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > method-signature-style.mdx > code examples ESLint output 2`] = `
 "Correct
-Options: "property"
+Options: \\"property\\"
 
 interface T1 {
   func: (arg: string) => number;
@@ -42,9 +42,9 @@ interface T3 {
 "
 `;
 
-exports[`Validating rule docs method-signature-style.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > method-signature-style.mdx > code examples ESLint output 3`] = `
 "Incorrect
-Options: "method"
+Options: \\"method\\"
 
 interface T1 {
   func: (arg: string) => number;
@@ -57,9 +57,9 @@ type T2 = {
 "
 `;
 
-exports[`Validating rule docs method-signature-style.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > method-signature-style.mdx > code examples ESLint output 4`] = `
 "Correct
-Options: "method"
+Options: \\"method\\"
 
 interface T1 {
   func(arg: string): number;

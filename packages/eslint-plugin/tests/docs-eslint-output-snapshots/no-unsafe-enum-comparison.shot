@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-unsafe-enum-comparison.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-unsafe-enum-comparison.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 enum Fruit {
@@ -31,7 +31,7 @@ anyString === Vegetable.Asparagus;
 "
 `;
 
-exports[`Validating rule docs no-unsafe-enum-comparison.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-unsafe-enum-comparison.mdx > code examples ESLint output 2`] = `
 "Correct
 
 enum Fruit {

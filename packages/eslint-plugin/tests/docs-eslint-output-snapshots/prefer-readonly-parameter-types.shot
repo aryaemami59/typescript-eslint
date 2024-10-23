@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 1`] = `
 "Incorrect
 
 function array1(arg: string[]) {} // array is not readonly
@@ -59,7 +59,7 @@ interface Foo {
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 2`] = `
 "Correct
 
 function array1(arg: readonly string[]) {}
@@ -125,9 +125,9 @@ interface Foo {
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 3`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 3`] = `
 "Incorrect
-Options: {"allow":[{"from":"file","name":"Foo"},{"from":"lib","name":"HTMLElement"},{"from":"package","name":"Bar","package":"bar-lib"}]}
+Options: {\\"allow\\":[{\\"from\\":\\"file\\",\\"name\\":\\"Foo\\"},{\\"from\\":\\"lib\\",\\"name\\":\\"HTMLElement\\"},{\\"from\\":\\"package\\",\\"name\\":\\"Bar\\",\\"package\\":\\"bar-lib\\"}]}
 
 interface ThisIsMutable {
   prop: string;
@@ -156,9 +156,9 @@ function fn3(arg: WrapperWithOther) {}
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 4`] = `
 "Incorrect
-Options: {"allow":[{"from":"file","name":"Foo"},{"from":"lib","name":"HTMLElement"},{"from":"package","name":"Bar","package":"bar-lib"}]}
+Options: {\\"allow\\":[{\\"from\\":\\"file\\",\\"name\\":\\"Foo\\"},{\\"from\\":\\"lib\\",\\"name\\":\\"HTMLElement\\"},{\\"from\\":\\"package\\",\\"name\\":\\"Bar\\",\\"package\\":\\"bar-lib\\"}]}
 
 import { Foo } from 'some-lib';
 import { Bar } from 'incorrect-lib';
@@ -174,14 +174,14 @@ function fn1(arg: Foo) {}
 function fn2(arg: HTMLElement) {}
              ~~~~~~~~~~~~~~~~ Parameter should be a read only type.
 
-// Incorrect because Bar is not from "bar-lib"
+// Incorrect because Bar is not from \\"bar-lib\\"
 function fn3(arg: Bar) {}
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 5`] = `
 "Correct
-Options: {"allow":[{"from":"file","name":"Foo"},{"from":"lib","name":"HTMLElement"},{"from":"package","name":"Bar","package":"bar-lib"}]}
+Options: {\\"allow\\":[{\\"from\\":\\"file\\",\\"name\\":\\"Foo\\"},{\\"from\\":\\"lib\\",\\"name\\":\\"HTMLElement\\"},{\\"from\\":\\"package\\",\\"name\\":\\"Bar\\",\\"package\\":\\"bar-lib\\"}]}
 
 interface Foo {
   prop: string;
@@ -200,9 +200,9 @@ function fn2(arg: Wrapper) {}
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 6`] = `
 "Correct
-Options: {"allow":[{"from":"file","name":"Foo"},{"from":"lib","name":"HTMLElement"},{"from":"package","name":"Bar","package":"bar-lib"}]}
+Options: {\\"allow\\":[{\\"from\\":\\"file\\",\\"name\\":\\"Foo\\"},{\\"from\\":\\"lib\\",\\"name\\":\\"HTMLElement\\"},{\\"from\\":\\"package\\",\\"name\\":\\"Bar\\",\\"package\\":\\"bar-lib\\"}]}
 
 import { Bar } from 'bar-lib';
 
@@ -216,14 +216,14 @@ function fn1(arg: Foo) {}
 // Works because HTMLElement is from the default library
 function fn2(arg: HTMLElement) {}
 
-// Works because Bar is from "bar-lib"
+// Works because Bar is from \\"bar-lib\\"
 function fn3(arg: Bar) {}
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 7`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 7`] = `
 "Correct
-Options: {"allow":[{"from":"file","name":"Foo"},{"from":"lib","name":"HTMLElement"},{"from":"package","name":"Bar","package":"bar-lib"}]}
+Options: {\\"allow\\":[{\\"from\\":\\"file\\",\\"name\\":\\"Foo\\"},{\\"from\\":\\"lib\\",\\"name\\":\\"HTMLElement\\"},{\\"from\\":\\"package\\",\\"name\\":\\"Bar\\",\\"package\\":\\"bar-lib\\"}]}
 
 import { Foo } from './foo';
 
@@ -232,9 +232,9 @@ function fn(arg: Foo) {}
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 8`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 8`] = `
 "Incorrect
-Options: { "checkParameterProperties": true }
+Options: { \\"checkParameterProperties\\": true }
 
 class Foo {
   constructor(private paramProp: string[]) {}
@@ -243,9 +243,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 9`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 9`] = `
 "Correct
-Options: { "checkParameterProperties": true }
+Options: { \\"checkParameterProperties\\": true }
 
 class Foo {
   constructor(private paramProp: readonly string[]) {}
@@ -253,8 +253,8 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 10`] = `
-"Options: { "checkParameterProperties": false }
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 10`] = `
+"Options: { \\"checkParameterProperties\\": false }
 
 class Foo {
   constructor(
@@ -265,9 +265,9 @@ class Foo {
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 11`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 11`] = `
 "Incorrect
-Options: { "ignoreInferredTypes": true }
+Options: { \\"ignoreInferredTypes\\": true }
 
 import { acceptsCallback, CallbackOptions } from 'external-dependency';
 
@@ -275,9 +275,9 @@ acceptsCallback((options: CallbackOptions) => {});
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 12`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 12`] = `
 "Incorrect
-Options: { "ignoreInferredTypes": true }
+Options: { \\"ignoreInferredTypes\\": true }
 
 export interface CallbackOptions {
   prop: string;
@@ -290,9 +290,9 @@ export const acceptsCallback: AcceptsCallback;
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 13`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 13`] = `
 "Correct
-Options: { "ignoreInferredTypes": true }
+Options: { \\"ignoreInferredTypes\\": true }
 
 import { acceptsCallback } from 'external-dependency';
 
@@ -300,9 +300,9 @@ acceptsCallback(options => {});
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 14`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 14`] = `
 "Correct
-Options: { "ignoreInferredTypes": true }
+Options: { \\"ignoreInferredTypes\\": true }
 
 export interface CallbackOptions {
   prop: string;
@@ -315,9 +315,9 @@ export const acceptsCallback: AcceptsCallback;
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 15`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 15`] = `
 "Incorrect
-Options: { "treatMethodsAsReadonly": false }
+Options: { \\"treatMethodsAsReadonly\\": false }
 
 type MyType = {
   readonly prop: string;
@@ -328,9 +328,9 @@ function foo(arg: MyType) {}
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 16`] = `
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 16`] = `
 "Correct
-Options: { "treatMethodsAsReadonly": false }
+Options: { \\"treatMethodsAsReadonly\\": false }
 
 type MyType = Readonly<{
   prop: string;
@@ -346,8 +346,8 @@ function bar(arg: MyOtherType) {}
 "
 `;
 
-exports[`Validating rule docs prefer-readonly-parameter-types.mdx code examples ESLint output 17`] = `
-"Options: { "treatMethodsAsReadonly": true }
+exports[`Validating rule docs > prefer-reduce-type-parameter.mdx > prefer-reduce-type-parameter.mdx must start with frontmatter description 17`] = `
+"Options: { \\"treatMethodsAsReadonly\\": true }
 
 type MyType = {
   readonly prop: string;

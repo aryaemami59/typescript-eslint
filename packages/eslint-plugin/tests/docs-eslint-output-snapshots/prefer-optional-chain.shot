@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 1`] = `
 "Incorrect
 
 foo && foo.a && foo.a.b && foo.a.b.c;
@@ -40,7 +40,7 @@ foo &&
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 2`] = `
 "Correct
 
 foo?.a?.b?.c;
@@ -55,8 +55,8 @@ foo?.a?.b?.c?.d?.e;
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 3`] = `
-"Options: { "allowPotentiallyUnsafeFixesThatModifyTheReturnTypeIKnowWhatImDoing": true }
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 3`] = `
+"Options: { \\"allowPotentiallyUnsafeFixesThatModifyTheReturnTypeIKnowWhatImDoing\\": true }
 
 declare const foo: { bar: boolean } | null | undefined;
 declare function acceptsBoolean(arg: boolean): void;
@@ -70,9 +70,9 @@ acceptsBoolean(foo?.bar);
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 4`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 4`] = `
 "Incorrect
-Options: { "checkAny": true }
+Options: { \\"checkAny\\": true }
 
 declare const thing: any;
 
@@ -81,9 +81,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 5`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 5`] = `
 "Correct
-Options: { "checkAny": false }
+Options: { \\"checkAny\\": false }
 
 declare const thing: any;
 
@@ -91,9 +91,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 6`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 6`] = `
 "Incorrect
-Options: { "checkUnknown": true }
+Options: { \\"checkUnknown\\": true }
 
 declare const thing: unknown;
 
@@ -102,9 +102,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 7`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 7`] = `
 "Correct
-Options: { "checkUnknown": false }
+Options: { \\"checkUnknown\\": false }
 
 declare const thing: unknown;
 
@@ -112,9 +112,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 8`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 8`] = `
 "Incorrect
-Options: { "checkString": true }
+Options: { \\"checkString\\": true }
 
 declare const thing: string;
 
@@ -123,9 +123,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 9`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 9`] = `
 "Correct
-Options: { "checkString": false }
+Options: { \\"checkString\\": false }
 
 declare const thing: string;
 
@@ -133,9 +133,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 10`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 10`] = `
 "Incorrect
-Options: { "checkNumber": true }
+Options: { \\"checkNumber\\": true }
 
 declare const thing: number;
 
@@ -144,9 +144,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 11`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 11`] = `
 "Correct
-Options: { "checkNumber": false }
+Options: { \\"checkNumber\\": false }
 
 declare const thing: number;
 
@@ -154,9 +154,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 12`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 12`] = `
 "Incorrect
-Options: { "checkBoolean": true }
+Options: { \\"checkBoolean\\": true }
 
 declare const thing: true;
 
@@ -165,9 +165,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 13`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 13`] = `
 "Correct
-Options: { "checkBoolean": false }
+Options: { \\"checkBoolean\\": false }
 
 declare const thing: true;
 
@@ -175,9 +175,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 14`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 14`] = `
 "Incorrect
-Options: { "checkBigInt": true }
+Options: { \\"checkBigInt\\": true }
 
 declare const thing: bigint;
 
@@ -186,9 +186,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 15`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 15`] = `
 "Correct
-Options: { "checkBigInt": false }
+Options: { \\"checkBigInt\\": false }
 
 declare const thing: bigint;
 
@@ -196,9 +196,9 @@ thing && thing.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 16`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 16`] = `
 "Incorrect
-Options: { "requireNullish": true }
+Options: { \\"requireNullish\\": true }
 
 declare const thing1: string | null;
 thing1 && thing1.toString();
@@ -206,9 +206,9 @@ thing1 && thing1.toString();
 "
 `;
 
-exports[`Validating rule docs prefer-optional-chain.mdx code examples ESLint output 17`] = `
+exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 17`] = `
 "Correct
-Options: { "requireNullish": true }
+Options: { \\"requireNullish\\": true }
 
 declare const thing1: string | null;
 thing1?.toString();

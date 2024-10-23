@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Validating rule docs no-unnecessary-type-parameters.mdx code examples ESLint output 1`] = `
+exports[`Validating rule docs > no-unnecessary-type-parameters.mdx > code examples ESLint output 1`] = `
 "Incorrect
 
 function second<A, B>(a: A, b: B): B {
@@ -20,7 +20,7 @@ function printProperty<T, K extends keyof T>(obj: T, key: K) {
 "
 `;
 
-exports[`Validating rule docs no-unnecessary-type-parameters.mdx code examples ESLint output 2`] = `
+exports[`Validating rule docs > no-unnecessary-type-parameters.mdx > code examples ESLint output 2`] = `
 "Correct
 
 function second<B>(a: unknown, b: B): B {
@@ -40,8 +40,8 @@ function identity<T>(arg: T): T {
   return arg;
 }
 
-// T appears twice: "keyof T" and in the inferred return type (T[K]).
-// K appears twice: "key: K" and in the inferred return type (T[K]).
+// T appears twice: \\"keyof T\\" and in the inferred return type (T[K]).
+// K appears twice: \\"key: K\\" and in the inferred return type (T[K]).
 function getProperty<T, K extends keyof T>(obj: T, key: K) {
   return obj[key];
 }
