@@ -1,9 +1,9 @@
-import { describe, expect, it } from 'vitest';
 import type { TSESTree } from '@typescript-eslint/typescript-estree';
 import type * as ts from 'typescript';
 
 import { parseForESLint } from '@typescript-eslint/parser';
 import path from 'node:path';
+import { describe, expect, it } from 'vitest';
 
 import { getTypeName } from '../src';
 import { expectToHaveParserServices } from './test-utils/expectToHaveParserServices';
