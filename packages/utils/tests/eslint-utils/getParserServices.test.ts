@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- wild and wacky testing */
+import { describe, expect, it } from 'vitest';
+
 import type * as ts from 'typescript';
 
 import type { ParserServices, TSESLint, TSESTree } from '../../src';

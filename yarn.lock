@@ -3937,7 +3937,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/types@npm:29.6.3, @jest/types@npm:^29.6.3":
+"@jest/types@npm:^29.6.3":
   version: 29.6.3
   resolution: "@jest/types@npm:29.6.3"
   dependencies:
@@ -5880,7 +5880,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/eslint-plugin-internal@workspace:packages/eslint-plugin-internal"
   dependencies:
-    "@jest/types": 29.6.3
     "@prettier/sync": ^0.5.1
     "@typescript-eslint/rule-tester": "workspace:*"
     "@typescript-eslint/scope-manager": "workspace:*"
@@ -5897,7 +5896,6 @@ __metadata:
   resolution: "@typescript-eslint/eslint-plugin@workspace:packages/eslint-plugin"
   dependencies:
     "@eslint-community/regexpp": ^4.10.0
-    "@jest/types": 29.6.3
     "@types/marked": ^5.0.2
     "@types/mdast": ^4.0.3
     "@types/natural-compare": "*"
@@ -5942,7 +5940,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/integration-tests@workspace:packages/integration-tests"
   dependencies:
-    "@jest/types": 29.6.3
     ncp: "*"
     tmp: "*"
     tsx: "*"
@@ -5954,7 +5951,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/parser@workspace:packages/parser"
   dependencies:
-    "@jest/types": 29.6.3
     "@types/glob": "*"
     "@typescript-eslint/scope-manager": 8.11.0
     "@typescript-eslint/types": 8.11.0
@@ -5979,7 +5975,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/rule-schema-to-typescript-types@workspace:packages/rule-schema-to-typescript-types"
   dependencies:
-    "@jest/types": 29.6.3
     "@typescript-eslint/type-utils": 8.11.0
     "@typescript-eslint/utils": 8.11.0
     natural-compare: ^1.4.0
@@ -5992,7 +5987,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/rule-tester@workspace:packages/rule-tester"
   dependencies:
-    "@jest/types": 29.6.3
     "@types/json-stable-stringify-without-jsonify": ^1.0.2
     "@types/lodash.merge": 4.6.9
     "@typescript-eslint/parser": 8.11.0
@@ -6021,7 +6015,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/scope-manager@workspace:packages/scope-manager"
   dependencies:
-    "@jest/types": 29.6.3
     "@types/glob": "*"
     "@typescript-eslint/types": 8.11.0
     "@typescript-eslint/typescript-estree": 8.11.0
@@ -6049,7 +6042,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/type-utils@workspace:packages/type-utils"
   dependencies:
-    "@jest/types": 29.6.3
     "@typescript-eslint/parser": 8.11.0
     "@typescript-eslint/typescript-estree": 8.11.0
     "@typescript-eslint/utils": 8.11.0
@@ -6071,7 +6063,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/types@workspace:packages/types"
   dependencies:
-    "@jest/types": 29.6.3
     downlevel-dts: "*"
     prettier: ^3.2.5
     rimraf: "*"
@@ -6102,7 +6093,6 @@ __metadata:
     "@eslint/compat": ^1.0.1
     "@eslint/eslintrc": ^2.1.4
     "@eslint/js": ^8.57.0
-    "@jest/types": 29.6.3
     "@nx/devkit": 20.0.0
     "@nx/eslint": 20.0.0
     "@nx/jest": 20.0.0
@@ -6172,7 +6162,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/typescript-estree@workspace:packages/typescript-estree"
   dependencies:
-    "@jest/types": 29.6.3
     "@typescript-eslint/types": 8.11.0
     "@typescript-eslint/visitor-keys": 8.11.0
     debug: ^4.3.4
@@ -6251,7 +6240,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/visitor-keys@workspace:packages/visitor-keys"
   dependencies:
-    "@jest/types": 29.6.3
     "@types/eslint-visitor-keys": "*"
     "@typescript-eslint/types": 8.11.0
     downlevel-dts: "*"
@@ -20204,7 +20192,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "typescript-eslint@workspace:packages/typescript-eslint"
   dependencies:
-    "@jest/types": 29.6.3
     "@typescript-eslint/eslint-plugin": 8.11.0
     "@typescript-eslint/parser": 8.11.0
     "@typescript-eslint/utils": 8.11.0

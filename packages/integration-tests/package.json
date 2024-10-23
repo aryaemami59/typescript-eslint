@@ -8,7 +8,6 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@jest/types": "29.6.3",
     "ncp": "*",
     "tmp": "*",
     "tsx": "*",

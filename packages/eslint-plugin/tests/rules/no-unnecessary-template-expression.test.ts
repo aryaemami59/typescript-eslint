@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import type { InvalidTestCase } from '@typescript-eslint/rule-tester';
 
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';

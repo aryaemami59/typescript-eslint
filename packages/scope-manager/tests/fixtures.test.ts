@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import * as glob from 'glob';
 import makeDir from 'make-dir';
 import fs from 'node:fs';

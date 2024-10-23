@@ -1,4 +1,4 @@
-import { vi } from 'vitest';
+import { afterAll, describe, expect, it, vi } from 'vitest';
 import type { DirOptions } from 'tmp';
 
 import ncp from 'ncp';

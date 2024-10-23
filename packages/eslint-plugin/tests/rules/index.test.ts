@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 
 import rules from '../../src/rules';

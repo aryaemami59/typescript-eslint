@@ -1,3 +1,4 @@
+import { describe, expect, it, test } from 'vitest';
 import { compile } from '@typescript-eslint/rule-schema-to-typescript-types';
 import 'jest-specific-snapshot';
 import fs from 'node:fs';

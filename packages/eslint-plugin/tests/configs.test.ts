@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import type { RuleRecommendation } from '@typescript-eslint/utils/ts-eslint';
 
 import plugin from '../src/index';

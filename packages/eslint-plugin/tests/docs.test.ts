@@ -1,3 +1,4 @@
+import { beforeAll, describe, expect, it, test } from 'vitest';
 import type * as mdast from 'mdast';
 import type { fromMarkdown as FromMarkdown } from 'mdast-util-from-markdown' with { 'resolution-mode': 'import' };
 import type { mdxFromMarkdown as MdxFromMarkdown } from 'mdast-util-mdx' with { 'resolution-mode': 'import' };
@@ -118,10 +119,10 @@ describe('Validating rule docs', () => {
     // but all modules imported below are ESM only, so we cannot require() them
     // eslint-disable-next-line @typescript-eslint/no-implied-eval
     const dynamicImport = new Function('module', 'return import(module)');
-    ({ fromMarkdown } = await dynamicImport('mdast-util-from-markdown'));
-    ({ mdxjs } = await dynamicImport('micromark-extension-mdxjs'));
-    ({ mdxFromMarkdown } = await dynamicImport('mdast-util-mdx'));
-    unistUtilVisit = await dynamicImport('unist-util-visit');
+    ({ fromMarkdown } = await import('mdast-util-from-markdown'));
+    ({ mdxjs } = await import('micromark-extension-mdxjs'));
+    ({ mdxFromMarkdown } = await import('mdast-util-mdx'));
+    unistUtilVisit = await import('unist-util-visit');
   });
 
   const oldStylisticRules = [

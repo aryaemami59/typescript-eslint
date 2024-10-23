@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import type { TSESTree } from '@typescript-eslint/types';
+import { describe, expect, it } from 'vitest';
 
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
 import { simpleTraverse } from '@typescript-eslint/typescript-estree';
