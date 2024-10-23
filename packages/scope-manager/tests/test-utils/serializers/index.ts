@@ -1,4 +1,5 @@
 import { addSerializer } from 'jest-specific-snapshot';
+import { beforeEach } from 'vitest';
 
 import { resetIds } from '../../../src/ID';
 import * as DefinitionBase from './DefinitionBase';

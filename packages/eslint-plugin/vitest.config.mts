@@ -5,7 +5,9 @@ const vitestConfig = mergeConfig(
   vitestBaseConfig,
 
   defineConfig({
-    test: {},
+    test: {
+      testTransformMode: { ssr: [] },
+    },
   }),
 );
 

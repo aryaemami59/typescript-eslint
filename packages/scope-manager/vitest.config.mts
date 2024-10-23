@@ -6,10 +6,7 @@ const vitestConfig = mergeConfig(
 
   defineConfig({
     test: {
-      setupFiles: [
-        ...vitestBaseConfig.test?.setupFiles!,
-        './tests/test-utils/serializers/index.ts',
-      ],
+      setupFiles: ['./tests/test-utils/serializers/index.ts'],
     },
   }),
 );
