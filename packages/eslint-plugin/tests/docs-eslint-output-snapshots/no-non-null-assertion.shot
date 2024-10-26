@@ -1,20 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > no-redeclare.mdx > no-redeclare.mdx must start with frontmatter description 1`] = `
-"Incorrect
-
-interface Example {
-  property?: string;
-}
-
-declare const example: Example;
-const includesBaz = example.property!.includes('baz');
-                    ~~~~~~~~~~~~~~~~~ Forbidden non-null assertion.
-"
-`;
-
-exports[`Validating rule docs > no-redeclare.mdx > no-redeclare.mdx must start with frontmatter description 2`] = `
-"Correct
+Correct
 
 interface Example {
   property?: string;
@@ -22,5 +6,4 @@ interface Example {
 
 declare const example: Example;
 const includesBaz = example.property?.includes('baz') ?? false;
-"
-`;
+             ~~~~~~~~~~~~~~~~~ Forbidden non-null assertion.

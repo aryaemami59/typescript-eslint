@@ -1,33 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > no-var-requires.mdx > no-var-requires.mdx must start with frontmatter description 1`] = `
-"Incorrect
-
-export const value = 'Hello, world!';
-export {};
-~~~~~~~~~~ Empty export does nothing and can be removed.
-"
-`;
-
-exports[`Validating rule docs > no-var-requires.mdx > no-var-requires.mdx must start with frontmatter description 2`] = `
-"Incorrect
+Incorrect
 
 import 'some-other-module';
 export {};
 ~~~~~~~~~~ Empty export does nothing and can be removed.
-"
-`;
-
-exports[`Validating rule docs > no-var-requires.mdx > no-var-requires.mdx must start with frontmatter description 3`] = `
-"Correct
-
-export const value = 'Hello, world!';
-"
-`;
-
-exports[`Validating rule docs > no-var-requires.mdx > no-var-requires.mdx must start with frontmatter description 4`] = `
-"Correct
-
-import 'some-other-module';
-"
-`;
+ removed.

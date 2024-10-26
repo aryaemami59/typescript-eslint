@@ -1,89 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-
-await 'value';
-~~~~~~~~~~~~~ Unexpected \`await\` of a non-Promise (non-\\"Thenable\\") value.
-
-const createValue = () => 'value';
-await createValue();
-~~~~~~~~~~~~~~~~~~~ Unexpected \`await\` of a non-Promise (non-\\"Thenable\\") value.
-"
-`;
-
-exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 2`] = `
-"Correct
-
-await Promise.resolve('value');
-
-const createValue = async () => 'value';
-await createValue();
-"
-`;
-
-exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 3`] = `
-"Incorrect
-
-async function syncIterable() {
-  const arrayOfValues = [1, 2, 3];
-  for await (const value of arrayOfValues) {
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Unexpected \`for await...of\` of a value that is not async iterable.
-    console.log(value);
-  }
-}
-
-async function syncIterableOfPromises() {
-  const arrayOfPromises = [
-    Promise.resolve(1),
-    Promise.resolve(2),
-    Promise.resolve(3),
-  ];
-  for await (const promisedValue of arrayOfPromises) {
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Unexpected \`for await...of\` of a value that is not async iterable.
-    console.log(promisedValue);
-  }
-}
-"
-`;
-
-exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 4`] = `
-"Correct
-
-async function syncIterable() {
-  const arrayOfValues = [1, 2, 3];
-  for (const value of arrayOfValues) {
-    console.log(value);
-  }
-}
-
-async function syncIterableOfPromises() {
-  const arrayOfPromises = [
-    Promise.resolve(1),
-    Promise.resolve(2),
-    Promise.resolve(3),
-  ];
-  for (const promisedValue of await Promise.all(arrayOfPromises)) {
-    console.log(promisedValue);
-  }
-}
-
-async function validUseOfForAwaitOnAsyncIterable() {
-  async function* yieldThingsAsynchronously() {
-    yield 1;
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    yield 2;
-  }
-
-  for await (const promisedValue of yieldThingsAsynchronously()) {
-    console.log(promisedValue);
-  }
-}
-"
-`;
-
-exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 5`] = `
-"Incorrect
+Incorrect
 
 function makeSyncDisposable(): Disposable {
   return {
@@ -95,30 +10,9 @@ function makeSyncDisposable(): Disposable {
 
 async function shouldNotAwait() {
   await using resource = makeSyncDisposable();
-                         ~~~~~~~~~~~~~~~~~~~~ Unexpected \`await using\` of a value that is not async disposable.
+                         ~~~~~~~~~~~~~~~~~~~~ Unexpected `await using` of a value that is not async disposable.
 }
-"
-`;
-
-exports[`Validating rule docs > ban-ts-comment.mdx > ban-ts-comment.mdx must next have a blockquote directing to website 6`] = `
-"Correct
-
-function makeSyncDisposable(): Disposable {
-  return {
-    [Symbol.dispose](): void {
-      // Dispose of the resource
-    },
-  };
-}
-
-async function shouldNotAwait() {
-  using resource = makeSyncDisposable();
-}
-
-function makeAsyncDisposable(): AsyncDisposable {
-  return {
-    async [Symbol.asyncDispose](): Promise<void> {
-      // Dispose of the resource asynchronously
+/ Dispose of the resource asynchronously
     },
   };
 }
@@ -126,5 +20,13 @@ function makeAsyncDisposable(): AsyncDisposable {
 async function shouldAwait() {
   await using resource = makeAsyncDisposable();
 }
-"
-`;
+hingsAsynchronously() {
+    yield 1;
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    yield 2;
+  }
+
+  for await (const promisedValue of yieldThingsAsynchronously()) {
+    console.log(promisedValue);
+  }
+}
