@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > parameter-properties.mdx > parameter-properties.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
+Incorrect
 
 throw 'error';
       ~~~~~~~ Expected an error object to be thrown.
@@ -20,7 +17,7 @@ throw 'an ' + err;
       ~~~~~~~~~~~ Expected an error object to be thrown.
 
 const err = new Error();
-throw \`\${err}\`;
+throw `${err}`;
       ~~~~~~~~ Expected an error object to be thrown.
 
 const err = '';
@@ -37,41 +34,3 @@ const foo = {
 };
 throw foo.bar;
       ~~~~~~~ Expected an error object to be thrown.
-"
-`;
-
-exports[`Validating rule docs > parameter-properties.mdx > parameter-properties.mdx must next have a blockquote directing to website 2`] = `
-"Correct
-
-throw new Error();
-
-throw new Error('error');
-
-const e = new Error('error');
-throw e;
-
-try {
-  throw new Error('error');
-} catch (e) {
-  throw e;
-}
-
-const err = new Error();
-throw err;
-
-function getError() {
-  return new Error();
-}
-throw getError();
-
-const foo = {
-  bar: new Error(),
-};
-throw foo.bar;
-
-class CustomError extends Error {
-  // ...
-}
-throw new CustomError();
-"
-`;

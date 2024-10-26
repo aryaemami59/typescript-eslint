@@ -1,39 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > no-wrapper-object-types.mdx > no-wrapper-object-types.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-
-var foo = require('foo');
-          ~~~~~~~~~~~~~~ Require statement not part of import statement.
-const foo = require('foo');
-            ~~~~~~~~~~~~~~ Require statement not part of import statement.
-let foo = require('foo');
-          ~~~~~~~~~~~~~~ Require statement not part of import statement.
-"
-`;
-
-exports[`Validating rule docs > no-wrapper-object-types.mdx > no-wrapper-object-types.mdx must next have a blockquote directing to website 2`] = `
-"Correct
-
-import foo = require('foo');
-require('foo');
-import foo from 'foo';
-"
-`;
-
-exports[`Validating rule docs > no-wrapper-object-types.mdx > no-wrapper-object-types.mdx must next have a blockquote directing to website 3`] = `
-"Incorrect
-Options: { \\"allow\\": [\\"/package.json$\\"] }
+Incorrect
+Options: { "allow": ["/package.json$"] }
 
 const foo = require('../data.json');
             ~~~~~~~~~~~~~~~~~~~~~~~ Require statement not part of import statement.
-"
-`;
-
-exports[`Validating rule docs > no-wrapper-object-types.mdx > no-wrapper-object-types.mdx must next have a blockquote directing to website 4`] = `
-"Correct
-Options: { \\"allow\\": [\\"/package.json$\\"] }
-
-const foo = require('../package.json');
-"
-`;
+statement not part of import statement.
+let foo = require('foo');
+          ~~~~~~~~~~~~~~ Require statement not part of import statement.

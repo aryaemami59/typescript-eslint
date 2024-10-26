@@ -1,33 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+Correct
+Options: { "allowAny": false }
 
-exports[`Validating rule docs > related-getter-setter-pairs.mdx > related-getter-setter-pairs.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-
-const arrowFunctionReturnsPromise = () => Promise.resolve('value');
-                                       ~~ Functions that return promises must be async.
-
-function functionReturnsPromise() {
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Functions that return promises must be async.
-  return Promise.resolve('value');
-}
-
-function functionReturnsUnionWithPromiseImplicitly(p: boolean) {
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Functions that return promises must be async.
-  return p ? 'value' : Promise.resolve('value');
-}
-"
-`;
-
-exports[`Validating rule docs > related-getter-setter-pairs.mdx > related-getter-setter-pairs.mdx must next have a blockquote directing to website 2`] = `
-"Correct
-
-const arrowFunctionReturnsPromise = async () => Promise.resolve('value');
-
-async function functionReturnsPromise() {
-  return Promise.resolve('value');
-}
-
-// An explicit return type that is not Promise means this function cannot be made async, so it is ignored by the rule
+const returnsAny = async () => ({}) as any;
+eturnsBluebird = async () => new Bluebird(() => {});
+                       ~~ Functions that return promises must be async.
+e means this function cannot be made async, so it is ignored by the rule
 function functionReturnsUnionWithPromiseExplicitly(
   p: boolean,
 ): string | Promise<string> {
@@ -37,43 +14,3 @@ function functionReturnsUnionWithPromiseExplicitly(
 async function functionReturnsUnionWithPromiseImplicitly(p: boolean) {
   return p ? 'value' : Promise.resolve('value');
 }
-"
-`;
-
-exports[`Validating rule docs > related-getter-setter-pairs.mdx > related-getter-setter-pairs.mdx must next have a blockquote directing to website 3`] = `
-"Incorrect
-Options: { \\"allowAny\\": false }
-
-const returnsAny = () => ({}) as any;
-                      ~~ Functions that return promises must be async.
-"
-`;
-
-exports[`Validating rule docs > related-getter-setter-pairs.mdx > related-getter-setter-pairs.mdx must next have a blockquote directing to website 4`] = `
-"Correct
-Options: { \\"allowAny\\": false }
-
-const returnsAny = async () => ({}) as any;
-"
-`;
-
-exports[`Validating rule docs > related-getter-setter-pairs.mdx > related-getter-setter-pairs.mdx must next have a blockquote directing to website 5`] = `
-"Incorrect
-Options: { \\"allowedPromiseNames\\": [\\"Bluebird\\"] }
-
-class Bluebird {}
-
-const returnsBluebird = () => new Bluebird(() => {});
-                           ~~ Functions that return promises must be async.
-"
-`;
-
-exports[`Validating rule docs > related-getter-setter-pairs.mdx > related-getter-setter-pairs.mdx must next have a blockquote directing to website 6`] = `
-"Correct
-Options: { \\"allowedPromiseNames\\": [\\"Bluebird\\"] }
-
-class Bluebird {}
-
-const returnsBluebird = async () => new Bluebird(() => {});
-"
-`;

@@ -1,43 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > no-duplicate-type-constituents.mdx > no-duplicate-type-constituents.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-
-enum E {
-  A = 0,
-  B = 0,
-  ~~~~~ Duplicate enum member value 0.
-}
-"
-`;
-
-exports[`Validating rule docs > no-duplicate-type-constituents.mdx > no-duplicate-type-constituents.mdx must next have a blockquote directing to website 2`] = `
-"Incorrect
-
-enum E {
-  A = 'A',
-  B = 'A',
-  ~~~~~~~ Duplicate enum member value A.
-}
-"
-`;
-
-exports[`Validating rule docs > no-duplicate-type-constituents.mdx > no-duplicate-type-constituents.mdx must next have a blockquote directing to website 3`] = `
-"Correct
+Correct
 
 enum E {
   A = 0,
   B = 1,
 }
-"
-`;
-
-exports[`Validating rule docs > no-duplicate-type-constituents.mdx > no-duplicate-type-constituents.mdx must next have a blockquote directing to website 4`] = `
-"Correct
-
-enum E {
-  A = 'A',
-  B = 'B',
+,
 }
-"
-`;
+  ~~~~~~~ Duplicate enum member value A.
+}

@@ -1,54 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > consistent-return.mdx > consistent-return.mdx must start with frontmatter description 1`] = `
-"Incorrect
-Options: \\"record\\"
-
-interface IndexSignatureInterface {
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A record is preferred over an index signature.
-  [key: string]: unknown;
-~~~~~~~~~~~~~~~~~~~~~~~~~
-}
-~
-
-type IndexSignatureType = {
-                          ~ A record is preferred over an index signature.
-  [key: string]: unknown;
-~~~~~~~~~~~~~~~~~~~~~~~~~
-};
-~
-
-type MappedType = {
-                  ~ A record is preferred over an index signature.
-  [key in string]: unknown;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-};
-~
-"
-`;
-
-exports[`Validating rule docs > consistent-return.mdx > consistent-return.mdx must start with frontmatter description 2`] = `
-"Correct
-Options: \\"record\\"
+Correct
+Options: "record"
 
 type RecordType = Record<string, unknown>;
-"
-`;
-
-exports[`Validating rule docs > consistent-return.mdx > consistent-return.mdx must start with frontmatter description 3`] = `
-"Incorrect
-Options: \\"index-signature\\"
-
-type RecordType = Record<string, unknown>;
-                  ~~~~~~~~~~~~~~~~~~~~~~~ An index signature is preferred over a record.
-"
-`;
-
-exports[`Validating rule docs > consistent-return.mdx > consistent-return.mdx must start with frontmatter description 4`] = `
-"Correct
-Options: \\"index-signature\\"
-
-interface IndexSignatureInterface {
+{
   [key: string]: unknown;
 }
 
@@ -59,5 +13,3 @@ type IndexSignatureType = {
 type MappedType = {
   [key in string]: unknown;
 };
-"
-`;
