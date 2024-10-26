@@ -1,43 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > no-import-type-side-effects.mdx > no-import-type-side-effects.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-
-setTimeout('alert(\`Hi!\`);', 100);
-           ~~~~~~~~~~~~~~~ Implied eval. Consider passing a function.
-
-setInterval('alert(\`Hi!\`);', 100);
-            ~~~~~~~~~~~~~~~ Implied eval. Consider passing a function.
-
-setImmediate('alert(\`Hi!\`)');
-             ~~~~~~~~~~~~~~ Implied eval. Consider passing a function.
-
-execScript('alert(\`Hi!\`)');
-           ~~~~~~~~~~~~~~ Implied eval. Consider passing a function.
-
-window.setTimeout('count = 5', 10);
-                  ~~~~~~~~~~~ Implied eval. Consider passing a function.
-
-window.setInterval('foo = bar', 10);
-                   ~~~~~~~~~~~ Implied eval. Consider passing a function.
-
-const fn = '() = {}';
-setTimeout(fn, 100);
-           ~~ Implied eval. Consider passing a function.
-
-const fn = () => {
-  return 'x = 10';
-};
-setTimeout(fn(), 100);
-           ~~~~ Implied eval. Consider passing a function.
-
-const fn = new Function('a', 'b', 'return a + b');
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Implied eval. Do not use the Function constructor to create functions.
-"
-`;
-
-exports[`Validating rule docs > no-import-type-side-effects.mdx > no-import-type-side-effects.mdx must next have a blockquote directing to website 2`] = `
-"Correct
+Correct
 
 setTimeout(function () {
   alert('Hi!');
@@ -69,5 +30,3 @@ class Foo {
 }
 
 setTimeout(Foo.fn, 100);
-"
-`;

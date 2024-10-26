@@ -1,22 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > no-unnecessary-qualifier.mdx > no-unnecessary-qualifier.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-
-class Foo {
-  constructor(public bar: string) {
-    this.bar = bar;
-    ~~~~~~~~~~~~~~ This assignment is unnecessary since it is already assigned by a parameter property.
-  }
-}
-"
-`;
-
-exports[`Validating rule docs > no-unnecessary-qualifier.mdx > no-unnecessary-qualifier.mdx must next have a blockquote directing to website 2`] = `
-"Correct
+Correct
 
 class Foo {
   constructor(public bar: string) {}
 }
-"
-`;
+   this.bar = bar;
+    ~~~~~~~~~~~~~~ This assignment is unnecessary since it is already assigned by a parameter property.
+  }
+}

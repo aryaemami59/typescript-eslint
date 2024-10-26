@@ -1,22 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > member-ordering.mdx > member-ordering.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-Options: { \\"countVoidThis\\": false, \\"max\\": 1 }
-
-function hasNoThis(this: void, first: string, second: string) {
-~~~~~~~~~~~~~~~~~~ Function 'hasNoThis' has too many parameters (2). Maximum allowed is 1.
-  // ...
-}
-"
-`;
-
-exports[`Validating rule docs > member-ordering.mdx > member-ordering.mdx must next have a blockquote directing to website 2`] = `
-"Correct
-Options: { \\"countVoidThis\\": false, \\"max\\": 1 }
+Correct
+Options: { "countVoidThis": false, "max": 1 }
 
 function hasNoThis(this: void, first: string) {
   // ...
 }
-"
-`;
+ing) {
+~~~~~~~~~~~~~~~~~~ Function 'hasNoThis' has too many parameters (2). Maximum allowed is 1.
+  // ...
+}

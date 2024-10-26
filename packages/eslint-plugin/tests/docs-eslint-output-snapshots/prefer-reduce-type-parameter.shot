@@ -4,7 +4,7 @@ exports[`Validating rule docs > prefer-regexp-exec.mdx > prefer-regexp-exec.mdx 
 "Incorrect
 
 [1, 2, 3].reduce((arr, num) => arr.concat(num * 2), [] as number[]);
-                                                    ~~~~~~~~~~~~~~ Unnecessary assertion: Array#reduce accepts a type parameter for the default value.
+                                                    ~~~~~~~~~~~~~~ Unnecessary cast: Array#reduce accepts a type parameter for the default value.
 
 ['a', 'b'].reduce(
   (accum, name) => ({
@@ -12,7 +12,7 @@ exports[`Validating rule docs > prefer-regexp-exec.mdx > prefer-regexp-exec.mdx 
     [name]: true,
   }),
   {} as Record<string, boolean>,
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Unnecessary assertion: Array#reduce accepts a type parameter for the default value.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Unnecessary cast: Array#reduce accepts a type parameter for the default value.
 );
 "
 `;
@@ -29,5 +29,13 @@ exports[`Validating rule docs > prefer-regexp-exec.mdx > prefer-regexp-exec.mdx 
   }),
   {},
 );
-"
-`;
+pe parameter for the default value.
+
+['a', 'b'].reduce(
+  (accum, name) => ({
+    ...accum,
+    [name]: true,
+  }),
+  {} as Record<string, boolean>,
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Unnecessary cast: Array#reduce accepts a type parameter for the default value.
+);
