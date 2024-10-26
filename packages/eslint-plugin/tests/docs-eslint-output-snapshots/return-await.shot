@@ -1,25 +1,23 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+Incorrect
+Options: "never"
 
-exports[`Validating rule docs > sort-type-constituents.mdx > sort-type-constituents.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-Options: \\"in-try-catch\\"
-
-async function invalidInTryCatch1() {
+async function invalidNever1() {
   try {
-    return Promise.reject('try');
-           ~~~~~~~~~~~~~~~~~~~~~ Returning an awaited promise is required in this context.
-  } catch (e) {
-    // Doesn't execute due to missing await.
-  }
+    return await Promise.resolve('try');
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Returning an awaited promise is not allowed in this context.
+  } catch (e) {}
 }
 
-async function invalidInTryCatch2() {
-  try {
-    throw new Error('error');
-  } catch (e) {
-    // Unnecessary await; rejections here don't impact control flow.
-    return await Promise.reject('catch');
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Returning an awaited promise is not allowed in this context.
+async function invalidNever2() {
+  return await Promise.resolve('try');
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Returning an awaited promise is not allowed in this context.
+}
+
+async function invalidNever3() {
+  return await 'value';
+         ~~~~~~~~~~~~~ Returning an awaited value that is not a promise is not allowed.
+}
+t allowed in this context.
   }
 }
 
@@ -69,167 +67,3 @@ async function invalidInTryCatch7() {
   return Promise.reject('using in scope');
          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Returning an awaited promise is required in this context.
 }
-"
-`;
-
-exports[`Validating rule docs > sort-type-constituents.mdx > sort-type-constituents.mdx must next have a blockquote directing to website 2`] = `
-"Correct
-Options: \\"in-try-catch\\"
-
-async function validInTryCatch1() {
-  try {
-    return await Promise.reject('try');
-  } catch (e) {
-    // Executes as expected.
-  }
-}
-
-async function validInTryCatch2() {
-  try {
-    throw new Error('error');
-  } catch (e) {
-    return Promise.reject('catch');
-  }
-}
-
-// Prints 'starting async work', 'async work done', 'cleanup'.
-async function validInTryCatch3() {
-  async function doAsyncWork(): Promise<void> {
-    console.log('starting async work');
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    console.log('async work done');
-  }
-
-  try {
-    throw new Error('error');
-  } catch (e) {
-    return await doAsyncWork();
-  } finally {
-    console.log('cleanup');
-  }
-}
-
-async function validInTryCatch4() {
-  try {
-    throw new Error('error');
-  } catch (e) {
-    throw new Error('error2');
-  } finally {
-    return Promise.reject('finally');
-  }
-}
-
-async function validInTryCatch5() {
-  return Promise.resolve('try');
-}
-
-async function validInTryCatch6() {
-  return 'value';
-}
-
-async function validInTryCatch7() {
-  using x = createDisposable();
-  return await Promise.reject('using in scope');
-}
-"
-`;
-
-exports[`Validating rule docs > sort-type-constituents.mdx > sort-type-constituents.mdx must next have a blockquote directing to website 3`] = `
-"Incorrect
-Options: \\"always\\"
-
-async function invalidAlways1() {
-  try {
-    return Promise.resolve('try');
-           ~~~~~~~~~~~~~~~~~~~~~~ Returning an awaited promise is required in this context.
-  } catch (e) {}
-}
-
-async function invalidAlways2() {
-  return Promise.resolve('try');
-         ~~~~~~~~~~~~~~~~~~~~~~ Returning an awaited promise is required in this context.
-}
-
-async function invalidAlways3() {
-  return await 'value';
-         ~~~~~~~~~~~~~ Returning an awaited value that is not a promise is not allowed.
-}
-"
-`;
-
-exports[`Validating rule docs > sort-type-constituents.mdx > sort-type-constituents.mdx must next have a blockquote directing to website 4`] = `
-"Correct
-Options: \\"always\\"
-
-async function validAlways1() {
-  try {
-    return await Promise.resolve('try');
-  } catch (e) {}
-}
-
-async function validAlways2() {
-  return await Promise.resolve('try');
-}
-
-async function validAlways3() {
-  return 'value';
-}
-"
-`;
-
-exports[`Validating rule docs > sort-type-constituents.mdx > sort-type-constituents.mdx must next have a blockquote directing to website 5`] = `
-"Correct
-Options: \\"error-handling-correctness-only\\"
-
-async function asyncFunction(): Promise<void> {
-  if (Math.random() < 0.5) {
-    return await Promise.resolve();
-  } else {
-    return Promise.resolve();
-  }
-}
-"
-`;
-
-exports[`Validating rule docs > sort-type-constituents.mdx > sort-type-constituents.mdx must next have a blockquote directing to website 6`] = `
-"Incorrect
-Options: \\"never\\"
-
-async function invalidNever1() {
-  try {
-    return await Promise.resolve('try');
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Returning an awaited promise is not allowed in this context.
-  } catch (e) {}
-}
-
-async function invalidNever2() {
-  return await Promise.resolve('try');
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Returning an awaited promise is not allowed in this context.
-}
-
-async function invalidNever3() {
-  return await 'value';
-         ~~~~~~~~~~~~~ Returning an awaited value that is not a promise is not allowed.
-}
-"
-`;
-
-exports[`Validating rule docs > sort-type-constituents.mdx > sort-type-constituents.mdx must next have a blockquote directing to website 7`] = `
-"Correct
-Options: \\"never\\"
-
-async function validNever1() {
-  try {
-    return Promise.resolve('try');
-  } catch (e) {}
-}
-
-async function validNever2() {
-  return Promise.resolve('try');
-}
-
-async function validNever3() {
-  return 'value';
-}
-"
-`;

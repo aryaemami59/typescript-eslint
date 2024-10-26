@@ -1,24 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > no-unsafe-unary-minus.mdx > no-unsafe-unary-minus.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-
-function f() {
-  return Math.random() < 0.5 ? 42 : 'oops';
-}
-
-const z = f() as number;
-          ~~~~~~~~~~~~~ Unsafe type assertion: type 'number' is more narrow than the original type.
-
-const items = [1, '2', 3, '4'];
-
-const number = items[0] as number;
-               ~~~~~~~~~~~~~~~~~~ Unsafe type assertion: type 'number' is more narrow than the original type.
-"
-`;
-
-exports[`Validating rule docs > no-unsafe-unary-minus.mdx > no-unsafe-unary-minus.mdx must next have a blockquote directing to website 2`] = `
-"Correct
+Correct
 
 function f() {
   return Math.random() < 0.5 ? 42 : 'oops';
@@ -29,5 +9,7 @@ const z = f() as number | string | boolean;
 const items = [1, '2', 3, '4'];
 
 const number = items[0] as number | string | undefined;
-"
-`;
+items = [1, '2', 3, '4'];
+
+const number = items[0] as number;
+               ~~~~~~~~~~~~~~~~~~ Unsafe type assertion: type 'number' is more narrow than the original type.

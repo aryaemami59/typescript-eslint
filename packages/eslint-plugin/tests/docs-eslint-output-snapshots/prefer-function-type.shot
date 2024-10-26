@@ -1,90 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > prefer-includes.mdx > prefer-includes.mdx must start with frontmatter description 1`] = `
-"Incorrect
-
-interface Example {
-  (): string;
-  ~~~~~~~~~~~ Interface only has a call signature, you should use a function type instead.
-}
-"
-`;
-
-exports[`Validating rule docs > prefer-includes.mdx > prefer-includes.mdx must start with frontmatter description 2`] = `
-"Incorrect
+Incorrect
 
 function foo(example: { (): number }): number {
                         ~~~~~~~~~~ Type literal only has a call signature, you should use a function type instead.
   return example();
 }
-"
-`;
-
-exports[`Validating rule docs > prefer-includes.mdx > prefer-includes.mdx must start with frontmatter description 3`] = `
-"Incorrect
-
-interface ReturnsSelf {
-  // returns the function itself, not the \`this\` argument.
-  (arg: string): this;
-                 ~~~~ \`this\` refers to the function type 'ReturnsSelf', did you intend to use a generic \`this\` parameter like \`<Self>(this: Self, ...) => Self\` instead?
+tion = ((data: string) => number) & ((id: number) => string);
+elf, ...) => Self` instead?
 }
-"
-`;
-
-exports[`Validating rule docs > prefer-includes.mdx > prefer-includes.mdx must start with frontmatter description 4`] = `
-"Correct
-
-type Example = () => string;
-"
-`;
-
-exports[`Validating rule docs > prefer-includes.mdx > prefer-includes.mdx must start with frontmatter description 5`] = `
-"Correct
-
-function foo(example: () => number): number {
-  return bar();
-}
-"
-`;
-
-exports[`Validating rule docs > prefer-includes.mdx > prefer-includes.mdx must start with frontmatter description 6`] = `
-"Correct
-
-// returns the function itself, not the \`this\` argument.
-type ReturnsSelf = (arg: string) => ReturnsSelf;
-"
-`;
-
-exports[`Validating rule docs > prefer-includes.mdx > prefer-includes.mdx must start with frontmatter description 7`] = `
-"Correct
-
-function foo(bar: { (): string; baz: number }): string {
-  return bar();
-}
-"
-`;
-
-exports[`Validating rule docs > prefer-includes.mdx > prefer-includes.mdx must start with frontmatter description 8`] = `
-"Correct
-
-interface Foo {
-  bar: string;
-}
-interface Bar extends Foo {
-  (): void;
-}
-"
-`;
-
-exports[`Validating rule docs > prefer-includes.mdx > prefer-includes.mdx must start with frontmatter description 9`] = `
-"Correct
-
-// multiple call signatures (overloads) is allowed:
-interface Overloaded {
-  (data: string): number;
-  (id: number): string;
-}
-// this is equivelent to Overloaded interface.
-type Intersection = ((data: string) => number) & ((id: number) => string);
-"
-`;

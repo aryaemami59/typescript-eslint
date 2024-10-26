@@ -1,32 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > class-methods-use-this.mdx > code examples ESLint output 1`] = `
-"Options: { \\"ignoreOverrideMethods\\": true }
-
-class X {
-  override method() {}
-  override property = () => {};
-}
-"
-`;
-
-exports[`Validating rule docs > class-methods-use-this.mdx > code examples ESLint output 2`] = `
-"Options: { \\"ignoreClassesThatImplementAnInterface\\": true }
+Options: { "ignoreClassesThatImplementAnInterface": true }
 
 class X implements Y {
   method() {}
   property = () => {};
 }
-"
-`;
-
-exports[`Validating rule docs > class-methods-use-this.mdx > code examples ESLint output 3`] = `
-"Incorrect
-Options: { \\"ignoreClassesThatImplementAnInterface\\": \\"public-fields\\" }
-
-class X implements Y {
-  method() {}
-  property = () => {};
+erty = () => {};
+}
 
   private privateMethod() {}
   ~~~~~~~~~~~~~~~~~~~~~ Expected 'this' to be used by class method 'privateMethod'.
@@ -38,16 +17,3 @@ class X implements Y {
   protected privateProperty = () => {};
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Expected 'this' to be used by class method 'privateProperty'.
 }
-"
-`;
-
-exports[`Validating rule docs > class-methods-use-this.mdx > code examples ESLint output 4`] = `
-"Correct
-Options: { \\"ignoreClassesThatImplementAnInterface\\": \\"public-fields\\" }
-
-class X implements Y {
-  method() {}
-  property = () => {};
-}
-"
-`;

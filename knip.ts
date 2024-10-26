@@ -11,6 +11,7 @@ export default {
     types: 'off',
     unresolved: 'off',
   },
+  vitest: { config: ['vitest.config.mts', 'packages/**/vitest.config.mts'] },
   workspaces: {
     '.': {
       entry: ['tools/release/changelog-renderer.js', 'tools/scripts/**/*.mts'],
@@ -23,10 +24,6 @@ export default {
         '@nx/workspace',
         'glob',
         'husky',
-        'jest-specific-snapshot',
-        'make-dir',
-        'ncp',
-        'tmp',
         // imported for type purposes only
         'website',
       ],
@@ -34,7 +31,8 @@ export default {
     'packages/ast-spec': {
       ignore: [
         'src/**/fixtures/**',
-        'tests/*.type-test.ts',
+        'tests/util/setupVitest.mts',
+        'tests/util/serializers/index.ts',
         // @typescript-eslint/typescript-estree is not listed in dependencies to avoid circular dependency errors
         // You can check a more detailed explanation in this file
         'tests/util/parsers/typescript-estree-import.ts',
@@ -47,13 +45,14 @@ export default {
       ignore: ['tests/fixtures/**'],
     },
     'packages/integration-tests': {
-      ignore: ['fixtures/**'],
+      ignore: ['fixtures/**', 'tools/pack-packages.ts'],
     },
     'packages/parser': {
       ignore: ['tests/fixtures/**'],
     },
     'packages/scope-manager': {
-      ignore: ['tests/fixtures/**'],
+      ignore: ['tests/fixtures/**', 'tests/test-utils/serializers/*.ts'],
+      ignoreDependencies: ['pretty-format'],
     },
     'packages/type-utils': {
       ignore: ['tests/fixtures/**'],
@@ -62,9 +61,7 @@ export default {
       entry: ['src/use-at-your-own-risk.ts'],
       ignore: ['tests/fixtures/**'],
     },
-    'packages/utils': {
-      ignore: ['tests/**/*.type-test.ts'],
-    },
+    'packages/utils': {},
     'packages/website': {
       entry: [
         'docusaurus.config.mts',
