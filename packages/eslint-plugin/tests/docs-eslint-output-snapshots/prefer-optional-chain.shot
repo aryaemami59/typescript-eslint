@@ -1,14 +1,20 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+Correct
+Options: { "requireNullish": true }
 
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 1`] = `
-"Incorrect
+declare const thing1: string | null;
+thing1?.toString();
 
-foo && foo.a && foo.a.b && foo.a.b.c;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
-foo && foo['a'] && foo['a'].b && foo['a'].b.c;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
-foo && foo.a && foo.a.b && foo.a.b.method && foo.a.b.method();
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
+declare const thing2: string;
+thing2 && thing2.toString();
+ession instead, as it's more concise and easier to read.
+sier to read.
+he expression only returns `boolean`
+acceptsBoolean(foo != null && foo.bar);
+               ~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
+
+// ❌ typechecks UNSUCCESSFULLY as the expression returns `boolean | undefined`
+acceptsBoolean(foo?.bar);
+ore concise and easier to read.
 
 // With empty objects
 (((foo || {}).a || {}).b || {}).c;
@@ -20,7 +26,7 @@ foo && foo.a && foo.a.b && foo.a.b.method && foo.a.b.method();
  ~~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
   ~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
 
-// With negated \`or\`s
+// With negated `or`s
 !foo || !foo.bar;
 ~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
 !foo || !foo[bar];
@@ -37,183 +43,3 @@ foo &&
   foo.a.b.c != undefined &&
   foo.a.b.c.d !== undefined &&
   foo.a.b.c.d.e;
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 2`] = `
-"Correct
-
-foo?.a?.b?.c;
-foo?.['a']?.b?.c;
-foo?.a?.b?.method?.();
-
-foo?.a?.b?.c?.d?.e;
-
-!foo?.bar;
-!foo?.[bar];
-!foo?.bar?.baz?.();
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 3`] = `
-"Options: { \\"allowPotentiallyUnsafeFixesThatModifyTheReturnTypeIKnowWhatImDoing\\": true }
-
-declare const foo: { bar: boolean } | null | undefined;
-declare function acceptsBoolean(arg: boolean): void;
-
-// ✅ typechecks succesfully as the expression only returns \`boolean\`
-acceptsBoolean(foo != null && foo.bar);
-               ~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
-
-// ❌ typechecks UNSUCCESSFULLY as the expression returns \`boolean | undefined\`
-acceptsBoolean(foo?.bar);
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 4`] = `
-"Incorrect
-Options: { \\"checkAny\\": true }
-
-declare const thing: any;
-
-thing && thing.toString();
-~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 5`] = `
-"Correct
-Options: { \\"checkAny\\": false }
-
-declare const thing: any;
-
-thing && thing.toString();
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 6`] = `
-"Incorrect
-Options: { \\"checkUnknown\\": true }
-
-declare const thing: unknown;
-
-thing && thing.toString();
-~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 7`] = `
-"Correct
-Options: { \\"checkUnknown\\": false }
-
-declare const thing: unknown;
-
-thing && thing.toString();
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 8`] = `
-"Incorrect
-Options: { \\"checkString\\": true }
-
-declare const thing: string;
-
-thing && thing.toString();
-~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 9`] = `
-"Correct
-Options: { \\"checkString\\": false }
-
-declare const thing: string;
-
-thing && thing.toString();
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 10`] = `
-"Incorrect
-Options: { \\"checkNumber\\": true }
-
-declare const thing: number;
-
-thing && thing.toString();
-~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 11`] = `
-"Correct
-Options: { \\"checkNumber\\": false }
-
-declare const thing: number;
-
-thing && thing.toString();
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 12`] = `
-"Incorrect
-Options: { \\"checkBoolean\\": true }
-
-declare const thing: true;
-
-thing && thing.toString();
-~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 13`] = `
-"Correct
-Options: { \\"checkBoolean\\": false }
-
-declare const thing: true;
-
-thing && thing.toString();
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 14`] = `
-"Incorrect
-Options: { \\"checkBigInt\\": true }
-
-declare const thing: bigint;
-
-thing && thing.toString();
-~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 15`] = `
-"Correct
-Options: { \\"checkBigInt\\": false }
-
-declare const thing: bigint;
-
-thing && thing.toString();
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 16`] = `
-"Incorrect
-Options: { \\"requireNullish\\": true }
-
-declare const thing1: string | null;
-thing1 && thing1.toString();
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
-"
-`;
-
-exports[`Validating rule docs > prefer-promise-reject-errors.mdx > prefer-promise-reject-errors.mdx must start with frontmatter description 17`] = `
-"Correct
-Options: { \\"requireNullish\\": true }
-
-declare const thing1: string | null;
-thing1?.toString();
-
-declare const thing2: string;
-thing2 && thing2.toString();
-"
-`;

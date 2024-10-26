@@ -1,50 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > array-type.mdx > array-type.mdx must start with frontmatter description 1`] = `
-"Incorrect
-
-declare namespace Foo {
-  export function foo(s: string): void;
-  export function foo(n: number): void;
-  export function bar(): void;
-  export function foo(sn: string | number): void;
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ All foo signatures should be adjacent.
-}
-
-type Foo = {
-  foo(s: string): void;
-  foo(n: number): void;
-  bar(): void;
-  foo(sn: string | number): void;
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ All foo signatures should be adjacent.
-};
-
-interface Foo {
-  foo(s: string): void;
-  foo(n: number): void;
-  bar(): void;
-  foo(sn: string | number): void;
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ All foo signatures should be adjacent.
-}
-
-class Foo {
-  foo(s: string): void;
-  foo(n: number): void;
-  bar(): void {}
-  foo(sn: string | number): void {}
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ All foo signatures should be adjacent.
-}
-
-export function foo(s: string): void;
-export function foo(n: number): void;
-export function bar(): void;
-export function foo(sn: string | number): void;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ All foo signatures should be adjacent.
-"
-`;
-
-exports[`Validating rule docs > array-type.mdx > array-type.mdx must start with frontmatter description 2`] = `
-"Correct
+Correct
 
 declare namespace Foo {
   export function foo(s: string): void;
@@ -78,5 +32,3 @@ export function bar(): void;
 export function foo(s: string): void;
 export function foo(n: number): void;
 export function foo(sn: string | number): void;
-"
-`;

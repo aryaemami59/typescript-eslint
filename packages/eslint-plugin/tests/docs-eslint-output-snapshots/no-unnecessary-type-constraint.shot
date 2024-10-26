@@ -1,36 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > no-unnecessary-type-parameters.mdx > no-unnecessary-type-parameters.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-
-interface FooAny<T extends any> {}
-                 ~~~~~~~~~~~~~ Constraining the generic type \`T\` to \`any\` does nothing and is unnecessary.
-
-interface FooUnknown<T extends unknown> {}
-                     ~~~~~~~~~~~~~~~~~ Constraining the generic type \`T\` to \`unknown\` does nothing and is unnecessary.
-
-type BarAny<T extends any> = {};
-            ~~~~~~~~~~~~~ Constraining the generic type \`T\` to \`any\` does nothing and is unnecessary.
-
-type BarUnknown<T extends unknown> = {};
-                ~~~~~~~~~~~~~~~~~ Constraining the generic type \`T\` to \`unknown\` does nothing and is unnecessary.
-
-class BazAny<T extends any> {
-             ~~~~~~~~~~~~~ Constraining the generic type \`T\` to \`any\` does nothing and is unnecessary.
-  quxAny<U extends any>() {}
-         ~~~~~~~~~~~~~ Constraining the generic type \`U\` to \`any\` does nothing and is unnecessary.
-}
-
-const QuuxAny = <T extends any>() => {};
-                 ~~~~~~~~~~~~~ Constraining the generic type \`T\` to \`any\` does nothing and is unnecessary.
-
-function QuuzAny<T extends any>() {}
-                 ~~~~~~~~~~~~~ Constraining the generic type \`T\` to \`any\` does nothing and is unnecessary.
-"
-`;
-
-exports[`Validating rule docs > no-unnecessary-type-parameters.mdx > no-unnecessary-type-parameters.mdx must next have a blockquote directing to website 2`] = `
-"Correct
+Correct
 
 interface Foo<T> {}
 
@@ -43,5 +11,3 @@ class Baz<T> {
 const Quux = <T>() => {};
 
 function Quuz<T>() {}
-"
-`;

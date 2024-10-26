@@ -1,25 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > restrict-plus-operands.mdx > restrict-plus-operands.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-
-async function returnNumber() {
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ Async function 'returnNumber' has no 'await' expression.
-  return 1;
-}
-
-async function* asyncGenerator() {
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Async generator function 'asyncGenerator' has no 'await' expression.
-  yield 1;
-}
-
-const num = returnNumber();
-const callAsyncGenerator = () => asyncGenerator();
-"
-`;
-
-exports[`Validating rule docs > restrict-plus-operands.mdx > restrict-plus-operands.mdx must next have a blockquote directing to website 2`] = `
-"Correct
+Correct
 
 function returnNumber() {
   return 1;
@@ -31,5 +10,10 @@ function* syncGenerator() {
 
 const num = returnNumber();
 const callSyncGenerator = () => syncGenerator();
-"
-`;
+ator() {
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Async generator function 'asyncGenerator' has no 'await' expression.
+  yield 1;
+}
+
+const num = returnNumber();
+const callAsyncGenerator = () => asyncGenerator();
