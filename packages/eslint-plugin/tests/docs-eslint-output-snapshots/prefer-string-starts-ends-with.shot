@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+Options: { "allowSingleElementEquality": "always" }
 
-exports[`Validating rule docs > prefer-ts-expect-error.mdx > prefer-ts-expect-error.mdx must start with frontmatter description 1`] = `
-"Incorrect
+declare const text: string;
 
-declare const foo: string;
-
-// starts with
-foo[0] === 'b';
-~~~~~~~~~~~~~~ Use 'String#startsWith' method instead.
-foo.charAt(0) === 'b';
-~~~~~~~~~~~~~~~~~~~~~ Use 'String#startsWith' method instead.
+text[0] === 'a';
+text[0] === text[0].toUpperCase();
+text[0] === text[1];
+text[text.length - 1] === 'b';
+tsWith' method instead.
 foo.indexOf('bar') === 0;
 ~~~~~~~~~~~~~~~~~~~~~~~~ Use 'String#startsWith' method instead.
 foo.slice(0, 3) === 'bar';
@@ -36,30 +33,3 @@ foo.match(/bar$/) != null;
 ~~~~~~~~~~~~~~~~~ Use the 'String#endsWith' method instead.
 /bar$/.test(foo);
 ~~~~~~~~~~~~~~~~ Use the 'String#endsWith' method instead.
-"
-`;
-
-exports[`Validating rule docs > prefer-ts-expect-error.mdx > prefer-ts-expect-error.mdx must start with frontmatter description 2`] = `
-"Correct
-
-declare const foo: string;
-
-// starts with
-foo.startsWith('bar');
-
-// ends with
-foo.endsWith('bar');
-"
-`;
-
-exports[`Validating rule docs > prefer-ts-expect-error.mdx > prefer-ts-expect-error.mdx must start with frontmatter description 3`] = `
-"Options: { \\"allowSingleElementEquality\\": \\"always\\" }
-
-declare const text: string;
-
-text[0] === 'a';
-text[0] === text[0].toUpperCase();
-text[0] === text[1];
-text[text.length - 1] === 'b';
-"
-`;

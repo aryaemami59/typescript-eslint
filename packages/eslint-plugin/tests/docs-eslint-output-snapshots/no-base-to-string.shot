@@ -1,42 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+Options: { "ignoredTypeNames": ["RegExp"] }
 
-exports[`Validating rule docs > no-confusing-non-null-assertion.mdx > no-confusing-non-null-assertion.mdx must start with frontmatter description 1`] = `
-"Incorrect
-
-// Passing an object or class instance to string concatenation:
-'' + {};
-     ~~ '{}' will use Object's default stringification format ('[object Object]') when stringified.
-
-class MyClass {}
-const value = new MyClass();
-value + '';
-~~~~~ 'value' will use Object's default stringification format ('[object Object]') when stringified.
-
-// Interpolation and manual .toString() and \`toLocaleString()\` calls too:
-\`Value: \${value}\`;
-          ~~~~~ 'value' will use Object's default stringification format ('[object Object]') when stringified.
-String({});
-       ~~ '{}' will use Object's default stringification format ('[object Object]') when stringified.
-({}).toString();
- ~~ '{}' will use Object's default stringification format ('[object Object]') when stringified.
-({}).toLocaleString();
- ~~ '{}' will use Object's default stringification format ('[object Object]') when stringified.
-
-// Stringifying objects or instances in an array with the \`Array.prototype.join\`.
-[{}, new MyClass()].join('');
-~~~~~~~~~~~~~~~~~~~ Using \`join()\` for [{}, new MyClass()] will use Object's default stringification format ('[object Object]') when stringified.
-"
-`;
-
-exports[`Validating rule docs > no-confusing-non-null-assertion.mdx > no-confusing-non-null-assertion.mdx must start with frontmatter description 2`] = `
-"Correct
-
-// These types all have useful .toString() and \`toLocaleString()\` methods
-'Text' + true;
-\`Value: \${123}\`;
-\`Arrays too: \${[1, 2, 3]}\`;
-(() => {}).toString();
-String(42);
+`${/regex/}`;
+'' + /regex/;
+/regex/.toString();
+let value = /regex/;
+value.toString();
+let text = `${value}`;
+String(/regex/);
+(42);
 (() => {}).toLocaleString();
 
 // Defining a custom .toString class is considered acceptable
@@ -45,25 +16,10 @@ class CustomToString {
     return 'Hello, world!';
   }
 }
-\`Value: \${new CustomToString()}\`;
+`Value: ${new CustomToString()}`;
 
 const literalWithToString = {
   toString: () => 'Hello, world!',
 };
 
-\`Value: \${literalWithToString}\`;
-"
-`;
-
-exports[`Validating rule docs > no-confusing-non-null-assertion.mdx > no-confusing-non-null-assertion.mdx must start with frontmatter description 3`] = `
-"Options: { \\"ignoredTypeNames\\": [\\"RegExp\\"] }
-
-\`\${/regex/}\`;
-'' + /regex/;
-/regex/.toString();
-let value = /regex/;
-value.toString();
-let text = \`\${value}\`;
-String(/regex/);
-"
-`;
+`Value: ${literalWithToString}`;

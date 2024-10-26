@@ -1,37 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Validating rule docs > prefer-literal-enum-member.mdx > prefer-literal-enum-member.mdx must next have a blockquote directing to website 1`] = `
-"Incorrect
-
-const str: string;
-const array: any[];
-const readonlyArray: ReadonlyArray<any>;
-const typedArray: UInt8Array;
-const maybe: string;
-const userDefined: {
-  indexOf(x: any): number;
-  includes(x: any): boolean;
-};
-
-str.indexOf(value) !== -1;
-~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
-array.indexOf(value) !== -1;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
-readonlyArray.indexOf(value) === -1;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
-typedArray.indexOf(value) > -1;
-maybe?.indexOf('') !== -1;
-~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
-userDefined.indexOf(value) >= 0;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
-
-/example/.test(str);
-~~~~~~~~~~~~~~~~~~~ Use \`String#includes()\` method with a string instead.
-"
-`;
-
-exports[`Validating rule docs > prefer-literal-enum-member.mdx > prefer-literal-enum-member.mdx must next have a blockquote directing to website 2`] = `
-"Correct
+Correct
 
 const str: string;
 const array: any[];
@@ -58,5 +25,9 @@ declare const mismatchExample: {
   includes(x: unknown): boolean;
 };
 mismatchExample.indexOf(value) >= 0;
-"
-`;
+' method instead.
+userDefined.indexOf(value) >= 0;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
+
+/example/.test(str);
+~~~~~~~~~~~~~~~~~~~ Use `String#includes()` method with a string instead.
