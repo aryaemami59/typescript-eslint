@@ -1,13 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - '**'
-  merge_group:
+on: [push, pull_request, workflow_dispatch, merge_group]
 
 concurrency:
   group: '${{ github.workflow }} - ${{ github.head_ref || github.ref }}'
@@ -183,7 +176,7 @@ jobs:
         exclude:
           - os: windows-latest
             node-version: 18
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         # just run on the oldest and latest supported versions and assume the intermediate versions are good
         node-version: [18, 20]
         package:
@@ -191,6 +184,7 @@ jobs:
             'ast-spec',
             'eslint-plugin',
             'eslint-plugin-internal',
+            'integration-tests',
             'parser',
             'project-service',
             'rule-tester',
