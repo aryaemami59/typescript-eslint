@@ -76,6 +76,7 @@
     "@types/yargs": "^17.0.32",
     "@typescript-eslint/eslint-plugin": "workspace:^",
     "@typescript-eslint/eslint-plugin-internal": "workspace:^",
+    "@typescript-eslint/parser": "workspace:^",
     "@typescript-eslint/scope-manager": "workspace:^",
     "@typescript-eslint/types": "workspace:^",
     "@typescript-eslint/typescript-estree": "workspace:^",
