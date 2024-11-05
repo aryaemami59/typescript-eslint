@@ -1,4 +1,4 @@
-Correct
+Incorrect
 
 const str: string;
 const array: any[];
@@ -10,22 +10,15 @@ const userDefined: {
   includes(x: any): boolean;
 };
 
-str.includes(value);
-array.includes(value);
-!readonlyArray.includes(value);
-typedArray.includes(value);
-maybe?.includes('');
-userDefined.includes(value);
-
-str.includes('example');
-
-// The two methods have different parameters.
-declare const mismatchExample: {
-  indexOf(x: unknown, fromIndex?: number): number;
-  includes(x: unknown): boolean;
-};
-mismatchExample.indexOf(value) >= 0;
-' method instead.
+str.indexOf(value) !== -1;
+~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
+array.indexOf(value) !== -1;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
+readonlyArray.indexOf(value) === -1;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
+typedArray.indexOf(value) > -1;
+maybe?.indexOf('') !== -1;
+~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
 userDefined.indexOf(value) >= 0;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Use 'includes()' method instead.
 

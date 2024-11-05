@@ -25,8 +25,7 @@ class Foo {
 }
 class Foo {
   constructor(
-    public a?: number,
-    ~~~~~~~~~~~~~~~~~ Default parameters should be last.
-    private b: number,
+    public a,
+    private b?: number,
   ) {}
 }

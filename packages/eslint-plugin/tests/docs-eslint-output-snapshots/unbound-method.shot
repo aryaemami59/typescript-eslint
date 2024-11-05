@@ -1,16 +1,17 @@
-Options: { "ignoreStatic": true }
+Correct
 
-class OtherClass {
-  static log() {
-    console.log(OtherClass);
+class MyClass {
+  public logUnbound(): void {
+    console.log(this);
   }
+
+  public logBound = () => console.log(this);
 }
 
-// With `ignoreStatic`, statics are assumed to not rely on a particular scope
-const { log } = OtherClass;
+const instance = new MyClass();
 
-log();
-onst { logBound } = instance;
+// logBound will always be bound with the correct scope
+const { logBound } = instance;
 logBound();
 
 // .bind and lambdas will also add a correct scope
