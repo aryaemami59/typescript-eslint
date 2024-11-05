@@ -5590,6 +5590,7 @@ __metadata:
     "@microsoft/api-extractor": ^7.47.11
     "@typescript-eslint/typescript-estree": "workspace:*"
     "@vitest/coverage-v8": ^3.0.9
+    eslint: "*"
     glob: "*"
     jest-diff: ^29.7.0
     pretty-format: "*"
