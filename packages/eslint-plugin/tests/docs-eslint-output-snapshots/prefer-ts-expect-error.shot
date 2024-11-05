@@ -1,22 +1,21 @@
-Correct
+Incorrect
 
-// @ts-expect-error
+// @ts-ignore
+~~~~~~~~~~~~~ Use "@ts-expect-error" to ensure an error is actually being suppressed.
 const str: string = 1;
 
 /**
+~~~ Use "@ts-expect-error" to ensure an error is actually being suppressed.
  * Explaining comment
+~~~~~~~~~~~~~~~~~~~~~
  *
- * @ts-expect-error */
+~~
+ * @ts-ignore */
+~~~~~~~~~~~~~~~~
 const multiLine: number = 'value';
 
-/** @ts-expect-error */
-const block: string = 1;
-
-const isOptionEnabled = (key: string): boolean => {
-  // @ts-expect-error: if key isn't in globalOptions it'll be undefined which is false
-  return !!globalOptions[key];
-};
-~~~~~~ Use "@ts-expect-error" to ensure an error is actually being suppressed.
+/** @ts-ignore */
+~~~~~~~~~~~~~~~~~ Use "@ts-expect-error" to ensure an error is actually being suppressed.
 const block: string = 1;
 
 const isOptionEnabled = (key: string): boolean => {

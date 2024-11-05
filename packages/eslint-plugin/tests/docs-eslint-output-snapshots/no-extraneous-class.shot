@@ -14,7 +14,11 @@ atic properties.
 mutableCount += 1;
   }
 }
-import { Utilities } from './utilities';
+tatic util3() {
+    /* ... */
+  }
+}
+es';
 
 Utilities.sayHello();
 ~~ Unexpected class with only a constructor.

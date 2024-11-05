@@ -1,7 +1,10 @@
-Correct
+Incorrect
 
 class Foo {
-  constructor(public bar: string) {}
+  constructor(public bar: string) {
+    this.bar = bar;
+    ~~~~~~~~~~~~~~ This assignment is unnecessary since it is already assigned by a parameter property.
+  }
 }
    this.bar = bar;
     ~~~~~~~~~~~~~~ This assignment is unnecessary since it is already assigned by a parameter property.

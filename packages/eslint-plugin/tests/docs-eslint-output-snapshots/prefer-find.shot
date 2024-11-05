@@ -1,7 +1,6 @@
-Correct
+Incorrect
 
-[1, 2, 3].find(x => x > 1);
-1)[0];
+[1, 2, 3].filter(x => x > 1)[0];
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer .find(...) instead of .filter(...)[0].
 
 [1, 2, 3].filter(x => x > 1).at(0);

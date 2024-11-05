@@ -1,7 +1,7 @@
-Options: { "allowIndexSignaturePropertyAccess": true }
+Options: { "allowProtectedClassPropertyAccess": true }
 
 class X {
-  [key: string]: number;
+  protected protected_prop = 123;
 }
 
 const x = new X();

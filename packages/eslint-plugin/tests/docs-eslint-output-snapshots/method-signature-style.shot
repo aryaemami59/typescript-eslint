@@ -1,8 +1,13 @@
 Correct
-Options: "property"
+Options: "method"
 
 interface T1 {
-  func: (arg: string) => number;
+  func(arg: string): number;
+}
+type T2 = {
+  func(arg: boolean): void;
+};
+on property signature is forbidden. Use a method shorthand instead.
 }
 type T2 = {
   func: (arg: boolean) => void;
