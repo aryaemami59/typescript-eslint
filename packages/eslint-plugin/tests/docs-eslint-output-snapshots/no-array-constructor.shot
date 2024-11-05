@@ -1,6 +1,7 @@
-Incorrect
+Correct
 
-Array(0, 1, 2);
-~~~~~~~~~~~~~~ The array literal notation [] is preferable.
-new Array(0, 1, 2);
-~~~~~~~~~~~~~~~~~~ The array literal notation [] is preferable.
+Array<number>(0, 1, 2);
+new Array<Foo>(x, y, z);
+
+Array(500);
+new Array(someOtherArray.length);

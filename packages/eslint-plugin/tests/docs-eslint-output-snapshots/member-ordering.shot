@@ -9,7 +9,8 @@ interface Foo {
 }
 hould be declared before member c.
 }
-d be declared before member new.
+(): Baz;
+  ~~~~~~~~ Member call should be declared before member new.
 }
 field definitions.
 

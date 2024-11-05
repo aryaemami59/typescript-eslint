@@ -1,6 +1,7 @@
-Correct
+Incorrect
 Options: { "allowBitwiseExpressions": true }
 
+const x = 1;
 enum Foo {
   A = 1 << 0,
   B = 1 >> 0,

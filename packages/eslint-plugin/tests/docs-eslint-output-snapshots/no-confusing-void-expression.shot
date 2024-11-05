@@ -1,15 +1,9 @@
-Options: { "ignoreVoidReturningFunctions": true }
+Options: { "ignoreVoidOperator": true }
 
-function foo(): void {
-  return console.log();
-}
+// now it's obvious that we don't expect any response
+promise.then(value => void window.postMessage(value));
 
-function onError(callback: () => void): void {
-  callback();
-}
-
-onError(() => console.log('oops'));
-anything
+// now it's explicit that we don't want to return anything
 function doSomething() {
   if (!somethingToDo) {
     return void console.error('Nothing to do!');

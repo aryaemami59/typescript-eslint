@@ -9,7 +9,11 @@ describe('eslint-plugin ("./src/index.ts")', async () => {
   const ruleKeys = Object.keys(rules);
   const eslintPluginRuleKeys = Object.keys(eslintPlugin.rules);
 
-  const configs = (await fs.readdir('./src/configs', { encoding: 'utf-8' }))
+  const configs = (
+    await fs.readdir(path.join(__dirname, '..', 'src', 'configs'), {
+      encoding: 'utf-8',
+    })
+  )
     .filter(file => ['.json', '.ts'].includes(path.extname(file).toLowerCase()))
     .map(file => path.basename(file, path.extname(file)));
   const eslintPluginConfigKeys = Object.keys(eslintPlugin.configs);
