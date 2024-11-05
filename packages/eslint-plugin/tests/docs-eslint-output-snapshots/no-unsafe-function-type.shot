@@ -1,10 +1,16 @@
-Correct
+Incorrect
 
-let noParametersOrReturn: () => void;
+let noParametersOrReturn: Function;
+                          ~~~~~~~~ The `Function` type accepts any function-like value.
+                                   Prefer explicitly defining any function parameters and return type.
 noParametersOrReturn = () => {};
 
-let stringToNumber: (text: string) => number;
-stringToNumber = text => text.length;
+let stringToNumber: Function;
+                    ~~~~~~~~ The `Function` type accepts any function-like value.
+                             Prefer explicitly defining any function parameters and return type.
+stringToNumber = (text: string) => text.length;
 
-let identity: <T>(value: T) => T;
+let identity: Function;
+              ~~~~~~~~ The `Function` type accepts any function-like value.
+                       Prefer explicitly defining any function parameters and return type.
 identity = value => value;

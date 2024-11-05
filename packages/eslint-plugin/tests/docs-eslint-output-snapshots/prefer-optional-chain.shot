@@ -1,8 +1,12 @@
-Correct
+Incorrect
 Options: { "requireNullish": true }
 
 declare const thing1: string | null;
-thing1?.toString();
+thing1 && thing1.toString();
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
+he expression only returns `boolean`
+acceptsBoolean(foo != null && foo.bar);
+               ~~~~~~~~~~~~~~~~~~~~~~ Prefer using an optional chain expression instead, as it's more concise and easier to read.
 
 declare const thing2: string;
 thing2 && thing2.toString();

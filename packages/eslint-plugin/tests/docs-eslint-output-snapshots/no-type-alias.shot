@@ -9,13 +9,13 @@ type Foo = Readonly<Bar>;
 type Foo = Partial<Bar>;
 
 type Foo = Omit<Bar, 'a' | 'b'>;
- Tuple Types in union types are not allowed.
-                      ~~~~~~~~~~~~~~~~ Tuple Types in union types are not allowed.
+ple types are not allowed.
+ are not allowed.
+                      ~~~~~~~~~~~~~~~~ Tuple Types in intersection types are not allowed.
 
-type Foo = [string] | [number];
-           ~~~~~~~~ Tuple Types in union types are not allowed.
-                      ~~~~~~~~ Tuple Types in union types are not allowed.
-pes are not allowed.
+type Foo = [string] & [number];
+           ~~~~~~~~ Tuple Types in intersection types are not allowed.
+                      ~~~~~~~~ Tuple Types in intersection types are not allowed.
 ~~~~~~~~~ Mapped types in union types are not allowed.
 
 type Foo<T, U> = { [P in keyof T]?: T[P] } | { [P in keyof U]?: U[P] };
