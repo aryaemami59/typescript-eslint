@@ -1,4 +1,4 @@
-Incorrect
+Correct
 
 function makeSyncDisposable(): Disposable {
   return {

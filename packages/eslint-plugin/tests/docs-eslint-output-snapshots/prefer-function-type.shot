@@ -1,9 +1,15 @@
-Incorrect
+Correct
 
-function foo(example: { (): number }): number {
-                        ~~~~~~~~~~ Type literal only has a call signature, you should use a function type instead.
-  return example();
+interface Foo {
+  bar: string;
 }
-tion = ((data: string) => number) & ((id: number) => string);
+interface Bar extends Foo {
+  (): void;
+}
+  (data: string): number;
+  (id: number): string;
+}
+// this is equivelent to Overloaded interface.
+type Intersection = ((data: string) => number) & ((id: number) => string);
 elf, ...) => Self` instead?
 }
