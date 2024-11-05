@@ -1,5 +1,6 @@
-Correct
+Incorrect
 
 declare const arr: number[];
 
-arr.splice(0, 1);
+delete arr[0];
+~~~~~~~~~~~~~ Using the `delete` operator with an array expression is unsafe.

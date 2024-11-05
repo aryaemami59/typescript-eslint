@@ -1,13 +1,10 @@
-Correct
+Incorrect
 
-/thing/.exec('something');
+'something'.match(/thing/);
+            ~~~~~ Use the `RegExp#exec()` method instead.
 
-'some things are just things'.match(/thing/g);
-
-const text = 'something';
-const search = /thing/;
-search.exec(text);
-                    ~~~~~ Use the `RegExp#exec()` method instead.
+'some things are just things'.match(/thing/);
+                              ~~~~~ Use the `RegExp#exec()` method instead.
 
 const text = 'something';
 const search = /thing/;

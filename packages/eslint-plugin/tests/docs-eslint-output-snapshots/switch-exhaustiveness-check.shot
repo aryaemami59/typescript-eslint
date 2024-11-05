@@ -22,7 +22,6 @@ switch (day) {
   default:
     result = 42;
 }
-
     result = 5;
     break;
   case 'Saturday':

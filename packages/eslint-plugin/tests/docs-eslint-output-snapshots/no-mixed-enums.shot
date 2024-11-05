@@ -1,8 +1,11 @@
 Correct
 
 enum Status {
-  Unknown = 'unknown',
-  Closed = 'closed',
+  Unknown,
+  Closed,
+  Open,
+}
+ = 'closed',
   Open = 'open',
 }
 ing number and string enums can be confusing.

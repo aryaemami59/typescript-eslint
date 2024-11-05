@@ -1,9 +1,7 @@
-Incorrect
+Correct
 
-const f: Function = () => {};
-f();
-~ Unsafe call of a(n) `Function` typed value.
-oid } };
+declare const typedVar: () => void;
+declare const typedNested: { prop: { a: () => void } };
 
 typedVar();
 typedNested.prop.a();

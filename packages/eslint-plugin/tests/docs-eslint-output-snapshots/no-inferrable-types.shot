@@ -1,6 +1,9 @@
-Options: { "ignoreParameters": true }
+Options: { "ignoreProperties": true }
 
-function foo(a: number = 5, b: boolean = true) {
+class Foo {
+  prop: number = 5;
+}
+lean = true) {
   // ...
 }
 t literal, remove type annotation.

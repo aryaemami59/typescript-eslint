@@ -1,6 +1,6 @@
-Incorrect
+Correct
 
-import 'some-other-module';
+export const value = 'Hello, world!';
+;
 export {};
 ~~~~~~~~~~ Empty export does nothing and can be removed.
- removed.
