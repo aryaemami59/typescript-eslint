@@ -63,6 +63,7 @@
   "devDependencies": {
     "@vitest/coverage-v8": "^2.1.8",
     "downlevel-dts": "*",
+    "eslint": "*",
     "prettier": "^3.2.5",
     "rimraf": "*",
     "typescript": "*",
