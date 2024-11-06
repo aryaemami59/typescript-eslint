@@ -1,20 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > interface-with-accessors > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: Array [
+        body: [
           TSMethodSignature {
             type: "TSMethodSignature",
             computed: false,
             key: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "size",
               optional: false,
 
@@ -26,7 +23,7 @@ Program {
             },
             kind: "get",
             optional: false,
-            params: Array [],
+            params: [],
             readonly: false,
             returnType: TSTypeAnnotation {
               type: "TSTypeAnnotation",
@@ -59,7 +56,7 @@ Program {
             computed: false,
             key: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "size",
               optional: false,
 
@@ -71,17 +68,17 @@ Program {
             },
             kind: "set",
             optional: false,
-            params: Array [
+            params: [
               Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "value",
                 optional: false,
                 typeAnnotation: TSTypeAnnotation {
                   type: "TSTypeAnnotation",
                   typeAnnotation: TSUnionType {
                     type: "TSUnionType",
-                    types: Array [
+                    types: [
                       TSNumberKeyword {
                         type: "TSNumberKeyword",
 
@@ -150,10 +147,10 @@ Program {
         },
       },
       declare: false,
-      extends: Array [],
+      extends: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "Thing",
         optional: false,
 
@@ -179,4 +176,3 @@ Program {
     end: { column: 0, line: 7 },
   },
 }
-`;

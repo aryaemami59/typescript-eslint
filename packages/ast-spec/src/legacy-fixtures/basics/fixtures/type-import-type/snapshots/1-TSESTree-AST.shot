@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > type-import-type > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "A",
         optional: false,
 
@@ -71,7 +68,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "B",
         optional: false,
 
@@ -105,7 +102,7 @@ Program {
         },
         qualifier: Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "X",
           optional: false,
 
@@ -117,12 +114,12 @@ Program {
         },
         typeArguments: TSTypeParameterInstantiation {
           type: "TSTypeParameterInstantiation",
-          params: Array [
+          params: [
             TSTypeReference {
               type: "TSTypeReference",
               typeName: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "Y",
                 optional: false,
 
@@ -170,4 +167,3 @@ Program {
     end: { column: 0, line: 5 },
   },
 }
-`;

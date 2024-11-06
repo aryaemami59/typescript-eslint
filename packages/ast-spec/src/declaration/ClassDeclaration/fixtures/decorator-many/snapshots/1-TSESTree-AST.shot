@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ClassDeclaration > decorator-many > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: Array [],
+        body: [],
 
         range: [38, 40],
         loc: {
@@ -18,12 +15,12 @@ Program {
         },
       },
       declare: false,
-      decorators: Array [
+      decorators: [
         Decorator {
           type: "Decorator",
           expression: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "decoratorOne",
             optional: false,
 
@@ -44,7 +41,7 @@ Program {
           type: "Decorator",
           expression: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "decoratorTwo",
             optional: false,
 
@@ -64,7 +61,7 @@ Program {
       ],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "Foo",
         optional: false,
 
@@ -74,7 +71,7 @@ Program {
           end: { column: 9, line: 3 },
         },
       },
-      implements: Array [],
+      implements: [],
       superClass: null,
 
       range: [0, 40],
@@ -92,4 +89,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > expressions > tagged-template-expression-type-arguments > TSESTree - Tokens 1`] = `
-Array [
+[
   Identifier {
     type: "Identifier",
     value: "foo",
@@ -44,7 +41,7 @@ Array [
   },
   Template {
     type: "Template",
-    value: "\`baz\`",
+    value: "`baz`",
 
     range: [81, 86],
     loc: {
@@ -63,4 +60,3 @@ Array [
     },
   },
 ]
-`;

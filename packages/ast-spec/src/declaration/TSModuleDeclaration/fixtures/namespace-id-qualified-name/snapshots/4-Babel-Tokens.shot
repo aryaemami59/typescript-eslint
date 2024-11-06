@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > TSModuleDeclaration > namespace-id-qualified-name > Babel - Tokens 1`] = `
-Array [
+[
   Identifier {
     type: "Identifier",
     value: "namespace",
@@ -83,4 +80,3 @@ Array [
     },
   },
 ]
-`;

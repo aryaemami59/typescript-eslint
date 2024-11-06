@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > expression > TSSatisfiesExpression > identifier-object-type > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -51,7 +48,7 @@ exports[`AST Fixtures > expression > TSSatisfiesExpression > identifier-object-t
                     type: 'TSLiteralType',
                     literal: Literal {
                       type: 'Literal',
-                      raw: '\\\\'value\\\\'',
+                      raw: '\'value\'',
                       value: 'value',
 
                       range: [22, 29],
@@ -111,5 +108,4 @@ exports[`AST Fixtures > expression > TSSatisfiesExpression > identifier-object-t
       start: { column: 0, line: 1 },
       end: { column: 0, line: 2 },
     },
-  }"
-`;
+  }

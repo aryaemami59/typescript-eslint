@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > declare-function > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSDeclareFunction {
       type: "TSDeclareFunction",
       async: false,
@@ -12,7 +9,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "foo",
         optional: false,
 
@@ -22,10 +19,10 @@ Program {
           end: { column: 20, line: 3 },
         },
       },
-      params: Array [
+      params: [
         Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "bar",
           optional: false,
           typeAnnotation: TSTypeAnnotation {
@@ -88,4 +85,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

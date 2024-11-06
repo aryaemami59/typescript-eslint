@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ClassDeclaration > extends-literal > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -38,7 +35,7 @@ exports[`AST Fixtures > declaration > ClassDeclaration > extends-literal > AST A
 -       implements: Array [],
         superClass: Literal {
           type: 'Literal',
-          raw: '\\\\'Thing\\\\'',
+          raw: '\'Thing\'',
           value: 'Thing',
 
           range: [18, 25],
@@ -62,5 +59,4 @@ exports[`AST Fixtures > declaration > ClassDeclaration > extends-literal > AST A
       start: { column: 0, line: 1 },
       end: { column: 0, line: 2 },
     },
-  }"
-`;
+  }

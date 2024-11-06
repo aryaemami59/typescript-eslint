@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > element > AccessorProperty > no-annotation-with-value > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -40,7 +37,7 @@ exports[`AST Fixtures > element > AccessorProperty > no-annotation-with-value > 
               static: false,
               value: Literal {
                 type: 'Literal',
-                raw: '\\\\'str\\\\'',
+                raw: '\'str\'',
                 value: 'str',
 
                 range: [30, 35],
@@ -95,5 +92,4 @@ exports[`AST Fixtures > element > AccessorProperty > no-annotation-with-value > 
       start: { column: 0, line: 1 },
       end: { column: 0, line: 4 },
     },
-  }"
-`;
+  }

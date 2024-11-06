@@ -1,14 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > element > AccessorProperty > no-annotation-with-value > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: Array [
+        body: [
           ClassAccessorProperty {
             type: "ClassAccessorProperty",
             computed: false,
@@ -76,4 +73,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

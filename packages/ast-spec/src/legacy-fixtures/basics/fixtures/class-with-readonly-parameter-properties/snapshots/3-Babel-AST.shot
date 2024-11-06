@@ -1,14 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > class-with-readonly-parameter-properties > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: Array [
+        body: [
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
@@ -29,7 +26,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: Array [],
+                body: [],
 
                 range: [177, 179],
                 loc: {
@@ -40,7 +37,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: Array [
+              params: [
                 TSParameterProperty {
                   type: "TSParameterProperty",
                   parameter: Identifier {
@@ -187,4 +184,3 @@ Program {
     end: { column: 0, line: 9 },
   },
 }
-`;

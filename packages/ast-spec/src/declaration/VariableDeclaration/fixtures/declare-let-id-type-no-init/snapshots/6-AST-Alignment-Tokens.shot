@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > VariableDeclaration > declare-let-id-type-no-init > AST Alignment - Token 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -68,5 +65,4 @@ exports[`AST Fixtures > declaration > VariableDeclaration > declare-let-id-type-
         end: { column: 21, line: 1 },
       },
     },
-  ]"
-`;
+  ]

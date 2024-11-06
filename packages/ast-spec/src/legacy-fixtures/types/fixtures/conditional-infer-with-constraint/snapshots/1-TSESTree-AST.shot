@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > conditional-infer-with-constraint > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "X3",
         optional: false,
 
@@ -25,7 +22,7 @@ Program {
           type: "TSTypeReference",
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "T",
             optional: false,
 
@@ -44,7 +41,7 @@ Program {
         },
         extendsType: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSInferType {
               type: "TSInferType",
               typeParameter: TSTypeParameter {
@@ -62,7 +59,7 @@ Program {
                 in: false,
                 name: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -108,12 +105,12 @@ Program {
           type: "TSTypeReference",
           typeArguments: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -140,7 +137,7 @@ Program {
           },
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "MustBeNumber",
             optional: false,
 
@@ -166,14 +163,14 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "T",
               optional: false,
 
@@ -211,7 +208,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "X4",
         optional: false,
 
@@ -227,7 +224,7 @@ Program {
           type: "TSTypeReference",
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "T",
             optional: false,
 
@@ -246,7 +243,7 @@ Program {
         },
         extendsType: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSInferType {
               type: "TSInferType",
               typeParameter: TSTypeParameter {
@@ -264,7 +261,7 @@ Program {
                 in: false,
                 name: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -306,7 +303,7 @@ Program {
                 in: false,
                 name: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -352,12 +349,12 @@ Program {
           type: "TSTypeReference",
           typeArguments: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -384,7 +381,7 @@ Program {
           },
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "MustBeNumber",
             optional: false,
 
@@ -410,14 +407,14 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "T",
               optional: false,
 
@@ -455,7 +452,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "X5",
         optional: false,
 
@@ -471,7 +468,7 @@ Program {
           type: "TSTypeReference",
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "T",
             optional: false,
 
@@ -490,7 +487,7 @@ Program {
         },
         extendsType: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSInferType {
               type: "TSInferType",
               typeParameter: TSTypeParameter {
@@ -508,7 +505,7 @@ Program {
                 in: false,
                 name: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -541,7 +538,7 @@ Program {
                 in: false,
                 name: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -587,12 +584,12 @@ Program {
           type: "TSTypeReference",
           typeArguments: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -619,7 +616,7 @@ Program {
           },
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "MustBeNumber",
             optional: false,
 
@@ -645,14 +642,14 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "T",
               optional: false,
 
@@ -690,7 +687,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "X6",
         optional: false,
 
@@ -706,7 +703,7 @@ Program {
           type: "TSTypeReference",
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "T",
             optional: false,
 
@@ -725,7 +722,7 @@ Program {
         },
         extendsType: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSInferType {
               type: "TSInferType",
               typeParameter: TSTypeParameter {
@@ -734,7 +731,7 @@ Program {
                 in: false,
                 name: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -776,7 +773,7 @@ Program {
                 in: false,
                 name: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -822,12 +819,12 @@ Program {
           type: "TSTypeReference",
           typeArguments: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -854,7 +851,7 @@ Program {
           },
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "MustBeNumber",
             optional: false,
 
@@ -880,14 +877,14 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "T",
               optional: false,
 
@@ -925,7 +922,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "X7",
         optional: false,
 
@@ -941,7 +938,7 @@ Program {
           type: "TSTypeReference",
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "T",
             optional: false,
 
@@ -960,7 +957,7 @@ Program {
         },
         extendsType: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSInferType {
               type: "TSInferType",
               typeParameter: TSTypeParameter {
@@ -978,7 +975,7 @@ Program {
                 in: false,
                 name: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -1020,7 +1017,7 @@ Program {
                 in: false,
                 name: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "U",
                   optional: false,
 
@@ -1066,7 +1063,7 @@ Program {
           type: "TSTypeReference",
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "U",
             optional: false,
 
@@ -1092,14 +1089,14 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "T",
               optional: false,
 
@@ -1141,4 +1138,3 @@ Program {
     end: { column: 0, line: 16 },
   },
 }
-`;

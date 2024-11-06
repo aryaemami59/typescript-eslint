@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > TSTypeAliasDeclaration > declare > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: true,
@@ -53,4 +50,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

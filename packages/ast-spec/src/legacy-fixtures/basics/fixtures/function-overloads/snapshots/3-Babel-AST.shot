@@ -1,12 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > function-overloads > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: Array [],
+      assertions: [],
       declaration: TSDeclareFunction {
         type: "TSDeclareFunction",
         async: false,
@@ -22,7 +19,7 @@ Program {
             end: { column: 17, line: 3 },
           },
         },
-        params: Array [
+        params: [
           Identifier {
             type: "Identifier",
             name: "x",
@@ -79,7 +76,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [73, 110],
       loc: {
@@ -89,7 +86,7 @@ Program {
     },
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: Array [],
+      assertions: [],
       declaration: TSDeclareFunction {
         type: "TSDeclareFunction",
         async: false,
@@ -105,7 +102,7 @@ Program {
             end: { column: 17, line: 4 },
           },
         },
-        params: Array [
+        params: [
           Identifier {
             type: "Identifier",
             name: "x",
@@ -162,7 +159,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [111, 148],
       loc: {
@@ -172,13 +169,13 @@ Program {
     },
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: Array [],
+      assertions: [],
       declaration: FunctionDeclaration {
         type: "FunctionDeclaration",
         async: false,
         body: BlockStatement {
           type: "BlockStatement",
-          body: Array [
+          body: [
             ReturnStatement {
               type: "ReturnStatement",
               argument: Identifier {
@@ -218,7 +215,7 @@ Program {
             end: { column: 17, line: 5 },
           },
         },
-        params: Array [
+        params: [
           Identifier {
             type: "Identifier",
             name: "x",
@@ -226,7 +223,7 @@ Program {
               type: "TSTypeAnnotation",
               typeAnnotation: TSUnionType {
                 type: "TSUnionType",
-                types: Array [
+                types: [
                   TSStringKeyword {
                     type: "TSStringKeyword",
 
@@ -272,7 +269,7 @@ Program {
           type: "TSTypeAnnotation",
           typeAnnotation: TSUnionType {
             type: "TSUnionType",
-            types: Array [
+            types: [
               TSStringKeyword {
                 type: "TSStringKeyword",
 
@@ -315,7 +312,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [149, 219],
       loc: {
@@ -332,4 +329,3 @@ Program {
     end: { column: 0, line: 8 },
   },
 }
-`;

@@ -1,12 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > tuple-optional > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -16,7 +13,7 @@ Program {
               type: "TSTypeAnnotation",
               typeAnnotation: TSTupleType {
                 type: "TSTupleType",
-                elementTypes: Array [
+                elementTypes: [
                   TSStringKeyword {
                     type: "TSStringKeyword",
 
@@ -50,7 +47,7 @@ Program {
                       type: "TSParenthesizedType",
                       typeAnnotation: TSUnionType {
                         type: "TSUnionType",
-                        types: Array [
+                        types: [
                           TSStringKeyword {
                             type: "TSStringKeyword",
 
@@ -139,4 +136,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

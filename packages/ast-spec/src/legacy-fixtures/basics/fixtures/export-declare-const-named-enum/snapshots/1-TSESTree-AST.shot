@@ -1,23 +1,20 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > export-declare-const-named-enum > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: Array [],
+      attributes: [],
       declaration: TSEnumDeclaration {
         type: "TSEnumDeclaration",
         body: TSEnumBody {
           type: "TSEnumBody",
-          members: Array [
+          members: [
             TSEnumMember {
               type: "TSEnumMember",
               computed: false,
               id: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "foo",
                 optional: false,
 
@@ -50,7 +47,7 @@ Program {
               computed: false,
               id: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "bar",
                 optional: false,
 
@@ -79,7 +76,7 @@ Program {
         declare: true,
         id: Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "Foo",
           optional: false,
 
@@ -98,7 +95,7 @@ Program {
       },
       exportKind: "type",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [73, 124],
       loc: {
@@ -115,4 +112,3 @@ Program {
     end: { column: 0, line: 7 },
   },
 }
-`;

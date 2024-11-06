@@ -1,17 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > export-all-with-import-assertions > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportAllDeclaration {
       type: "ExportAllDeclaration",
-      attributes: Array [
+      attributes: [
         ImportAttribute {
           type: "ImportAttribute",
           key: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "type",
             optional: false,
 
@@ -69,4 +66,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

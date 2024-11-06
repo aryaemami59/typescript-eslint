@@ -1,14 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > class-multi-line-keyword-declare > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "declare",
         optional: false,
 
@@ -30,7 +27,7 @@ Program {
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: Array [],
+        body: [],
 
         range: [90, 92],
         loc: {
@@ -39,10 +36,10 @@ Program {
         },
       },
       declare: false,
-      decorators: Array [],
+      decorators: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "B",
         optional: false,
 
@@ -52,7 +49,7 @@ Program {
           end: { column: 7, line: 4 },
         },
       },
-      implements: Array [],
+      implements: [],
       superClass: null,
 
       range: [82, 92],
@@ -70,4 +67,3 @@ Program {
     end: { column: 0, line: 5 },
   },
 }
-`;

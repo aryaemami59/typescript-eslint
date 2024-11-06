@@ -1,16 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ExportDefaultDeclaration > class-expression > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportDefaultDeclaration {
       type: "ExportDefaultDeclaration",
       declaration: ClassExpression {
         type: "ClassExpression",
         body: ClassBody {
           type: "ClassBody",
-          body: Array [],
+          body: [],
 
           range: [26, 28],
           loc: {
@@ -53,4 +50,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

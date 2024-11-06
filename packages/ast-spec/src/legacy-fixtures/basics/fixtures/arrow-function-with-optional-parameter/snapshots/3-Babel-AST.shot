@@ -1,14 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > arrow-function-with-optional-parameter > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: CallExpression {
         type: "CallExpression",
-        arguments: Array [],
+        arguments: [],
         callee: ArrowFunctionExpression {
           type: "ArrowFunctionExpression",
           async: false,
@@ -46,7 +43,7 @@ Program {
           expression: true,
           generator: false,
           id: null,
-          params: Array [
+          params: [
             Identifier {
               type: "Identifier",
               name: "k",
@@ -90,4 +87,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

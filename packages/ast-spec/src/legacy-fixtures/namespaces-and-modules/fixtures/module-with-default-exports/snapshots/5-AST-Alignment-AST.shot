@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > module-with-default-exports > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -200,7 +197,7 @@ exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > module-with-d
 -       global: false,
         id: Literal {
           type: 'Literal',
-          raw: '\\\\'foo\\\\'',
+          raw: '\'foo\'',
           value: 'foo',
 
           range: [80, 85],
@@ -226,5 +223,4 @@ exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > module-with-d
       start: { column: 0, line: 3 },
       end: { column: 0, line: 9 },
     },
-  }"
-`;
+  }

@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ExportDefaultDeclaration > anonymous-class > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportDefaultDeclaration {
       type: "ExportDefaultDeclaration",
       declaration: ClassDeclaration {
@@ -11,7 +8,7 @@ Program {
         abstract: false,
         body: ClassBody {
           type: "ClassBody",
-          body: Array [],
+          body: [],
 
           range: [21, 23],
           loc: {
@@ -20,9 +17,9 @@ Program {
           },
         },
         declare: false,
-        decorators: Array [],
+        decorators: [],
         id: null,
-        implements: Array [],
+        implements: [],
         superClass: null,
 
         range: [15, 23],
@@ -48,4 +45,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

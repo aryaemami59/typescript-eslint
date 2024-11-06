@@ -1,17 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ImportDeclaration > assertion > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ImportDeclaration {
       type: "ImportDeclaration",
-      attributes: Array [
+      attributes: [
         ImportAttribute {
           type: "ImportAttribute",
           key: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "type",
             optional: false,
 
@@ -52,12 +49,12 @@ Program {
           end: { column: 24, line: 1 },
         },
       },
-      specifiers: Array [
+      specifiers: [
         ImportNamespaceSpecifier {
           type: "ImportNamespaceSpecifier",
           local: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "a",
             optional: false,
 
@@ -91,4 +88,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

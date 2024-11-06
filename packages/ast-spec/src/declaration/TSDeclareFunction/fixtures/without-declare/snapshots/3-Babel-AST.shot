@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > TSDeclareFunction > without-declare > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSDeclareFunction {
       type: "TSDeclareFunction",
       async: false,
@@ -19,7 +16,7 @@ Program {
           end: { column: 12, line: 1 },
         },
       },
-      params: Array [],
+      params: [],
       returnType: TSTypeAnnotation {
         type: "TSTypeAnnotation",
         typeAnnotation: TSVoidKeyword {
@@ -54,4 +51,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

@@ -1,22 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > special > Decorator > decorator-class-member-super-with-parens > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: Array [
+        body: [
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
-            decorators: Array [],
+            decorators: [],
             key: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "m",
               optional: false,
 
@@ -35,17 +32,17 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: Array [
+                body: [
                   ClassDeclaration {
                     type: "ClassDeclaration",
                     abstract: false,
                     body: ClassBody {
                       type: "ClassBody",
-                      body: Array [
+                      body: [
                         MethodDefinition {
                           type: "MethodDefinition",
                           computed: false,
-                          decorators: Array [
+                          decorators: [
                             Decorator {
                               type: "Decorator",
                               expression: MemberExpression {
@@ -63,7 +60,7 @@ Program {
                                 optional: false,
                                 property: Identifier {
                                   type: "Identifier",
-                                  decorators: Array [],
+                                  decorators: [],
                                   name: "decorate",
                                   optional: false,
 
@@ -90,7 +87,7 @@ Program {
                           ],
                           key: Identifier {
                             type: "Identifier",
-                            decorators: Array [],
+                            decorators: [],
                             name: "method2",
                             optional: false,
 
@@ -109,7 +106,7 @@ Program {
                             async: false,
                             body: BlockStatement {
                               type: "BlockStatement",
-                              body: Array [],
+                              body: [],
 
                               range: [122, 124],
                               loc: {
@@ -121,7 +118,7 @@ Program {
                             expression: false,
                             generator: false,
                             id: null,
-                            params: Array [],
+                            params: [],
 
                             range: [119, 124],
                             loc: {
@@ -145,10 +142,10 @@ Program {
                       },
                     },
                     declare: false,
-                    decorators: Array [],
+                    decorators: [],
                     id: Identifier {
                       type: "Identifier",
-                      decorators: Array [],
+                      decorators: [],
                       name: "C",
                       optional: false,
 
@@ -158,7 +155,7 @@ Program {
                         end: { column: 11, line: 3 },
                       },
                     },
-                    implements: Array [],
+                    implements: [],
                     superClass: null,
 
                     range: [48, 130],
@@ -179,7 +176,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: Array [],
+              params: [],
 
               range: [39, 134],
               loc: {
@@ -203,10 +200,10 @@ Program {
         },
       },
       declare: false,
-      decorators: Array [],
+      decorators: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "D",
         optional: false,
 
@@ -216,10 +213,10 @@ Program {
           end: { column: 7, line: 1 },
         },
       },
-      implements: Array [],
+      implements: [],
       superClass: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "DecoratorProvider",
         optional: false,
 
@@ -245,4 +242,3 @@ Program {
     end: { column: 0, line: 9 },
   },
 }
-`;

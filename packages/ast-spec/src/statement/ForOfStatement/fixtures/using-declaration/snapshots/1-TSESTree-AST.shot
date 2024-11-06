@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > statement > ForOfStatement > using-declaration > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ForOfStatement {
       type: "ForOfStatement",
       await: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [],
+        body: [],
 
         range: [25, 28],
         loc: {
@@ -19,13 +16,13 @@ Program {
       },
       left: VariableDeclaration {
         type: "VariableDeclaration",
-        declarations: Array [
+        declarations: [
           VariableDeclarator {
             type: "VariableDeclarator",
             definite: false,
             id: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "a",
               optional: false,
 
@@ -55,7 +52,7 @@ Program {
       },
       right: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "b",
         optional: false,
 
@@ -81,4 +78,3 @@ Program {
     end: { column: 0, line: 3 },
   },
 }
-`;

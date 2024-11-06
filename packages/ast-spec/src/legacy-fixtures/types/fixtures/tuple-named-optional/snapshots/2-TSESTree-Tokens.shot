@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > tuple-named-optional > TSESTree - Tokens 1`] = `
-Array [
+[
   Keyword {
     type: "Keyword",
     value: "let",
@@ -213,4 +210,3 @@ Array [
     },
   },
 ]
-`;

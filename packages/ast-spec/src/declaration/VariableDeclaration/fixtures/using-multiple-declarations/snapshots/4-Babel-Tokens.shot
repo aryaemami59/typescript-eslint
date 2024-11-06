@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > VariableDeclaration > using-multiple-declarations > Babel - Tokens 1`] = `
-Array [
+[
   Identifier {
     type: "Identifier",
     value: "using",
@@ -93,4 +90,3 @@ Array [
     },
   },
 ]
-`;

@@ -1,16 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > dynamic-import-with-import-assertions > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: ImportExpression {
         type: "ImportExpression",
         attributes: ObjectExpression {
           type: "ObjectExpression",
-          properties: Array [
+          properties: [
             Property {
               type: "Property",
               computed: false,
@@ -29,7 +26,7 @@ Program {
               shorthand: false,
               value: ObjectExpression {
                 type: "ObjectExpression",
-                properties: Array [
+                properties: [
                   Property {
                     type: "Property",
                     computed: false,
@@ -89,7 +86,7 @@ Program {
         },
         options: ObjectExpression {
           type: "ObjectExpression",
-          properties: Array [
+          properties: [
             Property {
               type: "Property",
               computed: false,
@@ -108,7 +105,7 @@ Program {
               shorthand: false,
               value: ObjectExpression {
                 type: "ObjectExpression",
-                properties: Array [
+                properties: [
                   Property {
                     type: "Property",
                     computed: false,
@@ -200,4 +197,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > VariableDeclaration > var-id-no-init > Babel - Tokens 1`] = `
-Array [
+[
   Keyword {
     type: "Keyword",
     value: "var",
@@ -33,4 +30,3 @@ Array [
     },
   },
 ]
-`;

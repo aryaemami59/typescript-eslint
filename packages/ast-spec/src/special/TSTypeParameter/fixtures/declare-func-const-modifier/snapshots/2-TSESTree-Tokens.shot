@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > special > TSTypeParameter > declare-func-const-modifier > TSESTree - Tokens 1`] = `
-Array [
+[
   Identifier {
     type: "Identifier",
     value: "declare",
@@ -103,4 +100,3 @@ Array [
     },
   },
 ]
-`;
