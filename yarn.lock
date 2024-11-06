@@ -5664,6 +5664,7 @@ __metadata:
   resolution: "@typescript-eslint/integration-tests@workspace:packages/integration-tests"
   dependencies:
     "@vitest/coverage-v8": ^3.1.1
+    typescript: "*"
     vitest: ^3.1.1
   languageName: unknown
   linkType: soft
