@@ -40,7 +40,6 @@ vi.mock(import('typescript'), async importOriginal => {
 
 vi.mock('fast-glob', async importOriginal => {
   const fastGlob = await importOriginal<typeof fastGlobModule>();
-
   return {
     ...fastGlob,
     sync: vi.fn(fastGlob.sync),
