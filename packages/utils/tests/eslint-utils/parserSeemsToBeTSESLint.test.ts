@@ -1,9 +1,9 @@
-import { describe, expect, test } from 'vitest';
+import { describe, test } from 'vitest';
 
 import { parserSeemsToBeTSESLint } from '../../src/eslint-utils/parserSeemsToBeTSESLint';
 
 describe('parserSeemsToBeTSESLint', () => {
-  test.each([
+  test.for([
     [undefined, false],
     ['espree', false],
     ['local.js', false],
@@ -22,7 +22,7 @@ describe('parserSeemsToBeTSESLint', () => {
     ['/path/to/typescript-eslint/packages/parser/index.js', true],
     ['/path/to/@typescript-eslint/packages/parser/dist/index.js', true],
     ['/path/to/@typescript-eslint/packages/parser/index.js', true],
-  ])('%s', (parserPath, expected) => {
+  ] as const)('%s', ([parserPath, expected], { expect }) => {
     expect(parserSeemsToBeTSESLint(parserPath)).toBe(expected);
   });
 });
