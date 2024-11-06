@@ -1,5 +1,4 @@
 import path from 'node:path';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { inferSingleRun } from '../../src/parseSettings/inferSingleRun';
 
@@ -67,14 +66,14 @@ describe(inferSingleRun, () => {
   ] as const)(
     'return %s when given TSESTREE_SINGLE_RUN is "%s"',
     ([run, expected], { expect }) => {
-    vi.stubEnv('TSESTREE_SINGLE_RUN', run);
+      vi.stubEnv('TSESTREE_SINGLE_RUN', run);
 
-    const actual = inferSingleRun({
-      programs: null,
-      project: './tsconfig.json',
-    });
+      const actual = inferSingleRun({
+        programs: null,
+        project: './tsconfig.json',
+      });
 
-    expect(actual).toBe(expected);
+      expect(actual).toBe(expected);
     },
   );
 

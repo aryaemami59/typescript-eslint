@@ -18,7 +18,7 @@ const PARSER_OPTION_COMBOS = [
   },
 ] as const;
 
-describe.each(PARSER_OPTION_COMBOS)(
+describe.for(PARSER_OPTION_COMBOS)(
   'experimentalDecorators: $experimentalDecorators + emitDecoratorMetadata: $emitDecoratorMetadata',
   parserOptions => {
     const ruleTester = new RuleTester({
