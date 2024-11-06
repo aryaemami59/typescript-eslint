@@ -5635,7 +5635,6 @@ __metadata:
     "@typescript-eslint/visitor-keys": 8.18.1
     "@vitest/coverage-v8": ^2.1.8
     glob: "*"
-    make-dir: "*"
     prettier: ^3.2.5
     pretty-format: "*"
     typescript: "*"
@@ -5736,7 +5735,6 @@ __metadata:
     husky: ^9.1.4
     knip: ^5.9.4
     lint-staged: ^15.2.2
-    make-dir: ^4.0.0
     markdownlint-cli: ^0.43.0
     nx: 20.2.2
     prettier: 3.3.2
@@ -13126,7 +13124,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"make-dir@npm:*, make-dir@npm:^4.0.0":
+"make-dir@npm:^4.0.0":
   version: 4.0.0
   resolution: "make-dir@npm:4.0.0"
   dependencies:
