@@ -1,5 +1,4 @@
 import fetch from 'cross-fetch';
-import makeDir from 'make-dir';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import prettier from 'prettier';
@@ -82,7 +81,7 @@ async function main(): Promise<void> {
 
   console.log('Cleaning...');
   await rimraf(vendor);
-  await makeDir(vendor);
+  await fs.mkdir(vendor, { recursive: true });
 
   // TS-VFS
   await getFileAndStoreLocally(
