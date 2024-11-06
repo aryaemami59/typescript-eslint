@@ -5569,6 +5569,7 @@ __metadata:
     eslint: "*"
     glob: "*"
     jest-diff: ^29.7.0
+    prettier: ^3.5.3
     pretty-format: "*"
     rimraf: "*"
     typescript: "*"
@@ -5639,6 +5640,7 @@ __metadata:
   resolution: "@typescript-eslint/integration-tests@workspace:packages/integration-tests"
   dependencies:
     "@vitest/coverage-v8": ^3.0.8
+    typescript: "*"
     vitest: ^3.0.8
   languageName: unknown
   linkType: soft
