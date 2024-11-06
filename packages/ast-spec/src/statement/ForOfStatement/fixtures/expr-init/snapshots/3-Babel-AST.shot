@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > statement > ForOfStatement > expr-init > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ForOfStatement {
       type: "ForOfStatement",
       await: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [],
+        body: [],
 
         range: [21, 24],
         loc: {
@@ -19,7 +16,7 @@ Program {
       },
       left: ObjectPattern {
         type: "ObjectPattern",
-        properties: Array [
+        properties: [
           Property {
             type: "Property",
             computed: false,
@@ -96,7 +93,7 @@ Program {
       },
       right: ArrayExpression {
         type: "ArrayExpression",
-        elements: Array [],
+        elements: [],
 
         range: [17, 19],
         loc: {
@@ -116,7 +113,7 @@ Program {
       await: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [],
+        body: [],
 
         range: [44, 47],
         loc: {
@@ -126,7 +123,7 @@ Program {
       },
       left: ArrayPattern {
         type: "ArrayPattern",
-        elements: Array [
+        elements: [
           Identifier {
             type: "Identifier",
             name: "x",
@@ -157,7 +154,7 @@ Program {
       },
       right: ArrayExpression {
         type: "ArrayExpression",
-        elements: Array [],
+        elements: [],
 
         range: [40, 42],
         loc: {
@@ -177,7 +174,7 @@ Program {
       await: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [],
+        body: [],
 
         range: [64, 67],
         loc: {
@@ -218,7 +215,7 @@ Program {
       },
       right: ArrayExpression {
         type: "ArrayExpression",
-        elements: Array [],
+        elements: [],
 
         range: [60, 62],
         loc: {
@@ -238,7 +235,7 @@ Program {
       await: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [],
+        body: [],
 
         range: [87, 90],
         loc: {
@@ -286,7 +283,7 @@ Program {
       },
       right: ArrayExpression {
         type: "ArrayExpression",
-        elements: Array [],
+        elements: [],
 
         range: [83, 85],
         loc: {
@@ -310,4 +307,3 @@ Program {
     end: { column: 0, line: 9 },
   },
 }
-`;

@@ -1,17 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > VariableDeclaration > declare-let-destructure-no-init > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: ObjectPattern {
             type: "ObjectPattern",
-            properties: Array [
+            properties: [
               Property {
                 type: "Property",
                 computed: false,
@@ -80,4 +77,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

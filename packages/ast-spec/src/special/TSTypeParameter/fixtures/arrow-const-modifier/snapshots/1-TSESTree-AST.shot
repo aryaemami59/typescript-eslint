@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > special > TSTypeParameter > arrow-const-modifier > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: ArrowFunctionExpression {
@@ -11,7 +8,7 @@ Program {
         async: false,
         body: BlockStatement {
           type: "BlockStatement",
-          body: Array [],
+          body: [],
 
           range: [15, 17],
           loc: {
@@ -22,17 +19,17 @@ Program {
         expression: false,
         generator: false,
         id: null,
-        params: Array [],
+        params: [],
         typeParameters: TSTypeParameterDeclaration {
           type: "TSTypeParameterDeclaration",
-          params: Array [
+          params: [
             TSTypeParameter {
               type: "TSTypeParameter",
               const: true,
               in: false,
               name: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "T",
                 optional: false,
 
@@ -81,4 +78,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

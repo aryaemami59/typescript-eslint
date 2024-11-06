@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > function-with-object-destruction > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "foo",
         optional: false,
 
@@ -21,18 +18,18 @@ Program {
       },
       typeAnnotation: TSFunctionType {
         type: "TSFunctionType",
-        params: Array [
+        params: [
           ObjectPattern {
             type: "ObjectPattern",
-            decorators: Array [],
+            decorators: [],
             optional: false,
-            properties: Array [
+            properties: [
               Property {
                 type: "Property",
                 computed: false,
                 key: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "a",
                   optional: false,
 
@@ -48,7 +45,7 @@ Program {
                 shorthand: true,
                 value: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "a",
                   optional: false,
 
@@ -133,4 +130,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

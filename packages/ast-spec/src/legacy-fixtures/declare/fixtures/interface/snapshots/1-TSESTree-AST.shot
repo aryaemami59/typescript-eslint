@@ -1,14 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > declare > interface > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: Array [],
+        body: [],
 
         range: [95, 97],
         loc: {
@@ -17,10 +14,10 @@ Program {
         },
       },
       declare: true,
-      extends: Array [],
+      extends: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "Foo",
         optional: false,
 
@@ -46,4 +43,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

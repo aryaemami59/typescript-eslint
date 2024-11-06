@@ -1,16 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > destructuring-assignment-nested > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: AssignmentExpression {
         type: "AssignmentExpression",
         left: ObjectPattern {
           type: "ObjectPattern",
-          properties: Array [
+          properties: [
             Property {
               type: "Property",
               computed: false,
@@ -31,7 +28,7 @@ Program {
                 type: "AssignmentPattern",
                 left: ObjectPattern {
                   type: "ObjectPattern",
-                  properties: Array [
+                  properties: [
                     Property {
                       type: "Property",
                       computed: false,
@@ -52,7 +49,7 @@ Program {
                         type: "AssignmentPattern",
                         left: ObjectPattern {
                           type: "ObjectPattern",
-                          properties: Array [
+                          properties: [
                             Property {
                               type: "Property",
                               computed: false,
@@ -73,7 +70,7 @@ Program {
                                 type: "AssignmentPattern",
                                 left: ArrayPattern {
                                   type: "ArrayPattern",
-                                  elements: Array [
+                                  elements: [
                                     Identifier {
                                       type: "Identifier",
                                       name: "a",
@@ -88,7 +85,7 @@ Program {
                                       type: "AssignmentPattern",
                                       left: ObjectPattern {
                                         type: "ObjectPattern",
-                                        properties: Array [
+                                        properties: [
                                           Property {
                                             type: "Property",
                                             computed: false,
@@ -109,7 +106,7 @@ Program {
                                               type: "AssignmentPattern",
                                               left: ArrayPattern {
                                                 type: "ArrayPattern",
-                                                elements: Array [
+                                                elements: [
                                                   Identifier {
                                                     type: "Identifier",
                                                     name: "x",
@@ -130,7 +127,7 @@ Program {
                                               },
                                               right: ArrayExpression {
                                                 type: "ArrayExpression",
-                                                elements: Array [
+                                                elements: [
                                                   Literal {
                                                     type: "Literal",
                                                     raw: "3",
@@ -174,7 +171,7 @@ Program {
                                       },
                                       right: ObjectExpression {
                                         type: "ObjectExpression",
-                                        properties: Array [
+                                        properties: [
                                           Property {
                                             type: "Property",
                                             computed: false,
@@ -193,7 +190,7 @@ Program {
                                             shorthand: false,
                                             value: ArrayExpression {
                                               type: "ArrayExpression",
-                                              elements: Array [
+                                              elements: [
                                                 Literal {
                                                   type: "Literal",
                                                   raw: "2",
@@ -245,7 +242,7 @@ Program {
                                 },
                                 right: ArrayExpression {
                                   type: "ArrayExpression",
-                                  elements: Array [],
+                                  elements: [],
 
                                   range: [138, 140],
                                   loc: {
@@ -277,7 +274,7 @@ Program {
                         },
                         right: ObjectExpression {
                           type: "ObjectExpression",
-                          properties: Array [],
+                          properties: [],
 
                           range: [145, 147],
                           loc: {
@@ -309,7 +306,7 @@ Program {
                 },
                 right: ObjectExpression {
                   type: "ObjectExpression",
-                  properties: Array [],
+                  properties: [],
 
                   range: [152, 154],
                   loc: {
@@ -342,7 +339,7 @@ Program {
         operator: "=",
         right: ObjectExpression {
           type: "ObjectExpression",
-          properties: Array [
+          properties: [
             Property {
               type: "Property",
               computed: false,
@@ -361,7 +358,7 @@ Program {
               shorthand: false,
               value: ObjectExpression {
                 type: "ObjectExpression",
-                properties: Array [
+                properties: [
                   Property {
                     type: "Property",
                     computed: false,
@@ -380,7 +377,7 @@ Program {
                     shorthand: false,
                     value: ObjectExpression {
                       type: "ObjectExpression",
-                      properties: Array [
+                      properties: [
                         Property {
                           type: "Property",
                           computed: false,
@@ -399,7 +396,7 @@ Program {
                           shorthand: false,
                           value: ArrayExpression {
                             type: "ArrayExpression",
-                            elements: Array [
+                            elements: [
                               Literal {
                                 type: "Literal",
                                 raw: "2",
@@ -413,7 +410,7 @@ Program {
                               },
                               ObjectExpression {
                                 type: "ObjectExpression",
-                                properties: Array [
+                                properties: [
                                   Property {
                                     type: "Property",
                                     computed: false,
@@ -432,7 +429,7 @@ Program {
                                     shorthand: false,
                                     value: ArrayExpression {
                                       type: "ArrayExpression",
-                                      elements: Array [
+                                      elements: [
                                         Literal {
                                           type: "Literal",
                                           raw: "3",
@@ -543,4 +540,3 @@ Program {
     end: { column: 0, line: 6 },
   },
 }
-`;

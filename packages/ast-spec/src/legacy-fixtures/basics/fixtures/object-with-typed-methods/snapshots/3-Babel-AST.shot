@@ -1,12 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > object-with-typed-methods > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -21,7 +18,7 @@ Program {
           },
           init: ObjectExpression {
             type: "ObjectExpression",
-            properties: Array [
+            properties: [
               Property {
                 type: "Property",
                 computed: false,
@@ -40,7 +37,7 @@ Program {
                 shorthand: false,
                 typeParameters: TSTypeParameterDeclaration {
                   type: "TSTypeParameterDeclaration",
-                  params: Array [
+                  params: [
                     TSTypeParameter {
                       type: "TSTypeParameter",
                       name: "T",
@@ -64,7 +61,7 @@ Program {
                   async: false,
                   body: BlockStatement {
                     type: "BlockStatement",
-                    body: Array [
+                    body: [
                       ReturnStatement {
                         type: "ReturnStatement",
                         argument: Literal {
@@ -96,7 +93,7 @@ Program {
                   expression: false,
                   generator: false,
                   id: null,
-                  params: Array [],
+                  params: [],
                   returnType: TSTypeAnnotation {
                     type: "TSTypeAnnotation",
                     typeAnnotation: TSNumberKeyword {
@@ -147,7 +144,7 @@ Program {
                 shorthand: false,
                 typeParameters: TSTypeParameterDeclaration {
                   type: "TSTypeParameterDeclaration",
-                  params: Array [
+                  params: [
                     TSTypeParameter {
                       type: "TSTypeParameter",
                       name: "T",
@@ -171,7 +168,7 @@ Program {
                   async: false,
                   body: BlockStatement {
                     type: "BlockStatement",
-                    body: Array [
+                    body: [
                       ReturnStatement {
                         type: "ReturnStatement",
                         argument: Literal {
@@ -203,7 +200,7 @@ Program {
                   expression: false,
                   generator: false,
                   id: null,
-                  params: Array [],
+                  params: [],
                   returnType: TSTypeAnnotation {
                     type: "TSTypeAnnotation",
                     typeAnnotation: TSNumberKeyword {
@@ -257,7 +254,7 @@ Program {
                   async: false,
                   body: BlockStatement {
                     type: "BlockStatement",
-                    body: Array [
+                    body: [
                       ReturnStatement {
                         type: "ReturnStatement",
                         argument: Literal {
@@ -289,7 +286,7 @@ Program {
                   expression: false,
                   generator: false,
                   id: null,
-                  params: Array [],
+                  params: [],
                   returnType: TSTypeAnnotation {
                     type: "TSTypeAnnotation",
                     typeAnnotation: TSNumberKeyword {
@@ -343,7 +340,7 @@ Program {
                   async: false,
                   body: BlockStatement {
                     type: "BlockStatement",
-                    body: Array [],
+                    body: [],
 
                     range: [241, 243],
                     loc: {
@@ -354,7 +351,7 @@ Program {
                   expression: false,
                   generator: false,
                   id: null,
-                  params: Array [
+                  params: [
                     Identifier {
                       type: "Identifier",
                       name: "x",
@@ -449,4 +446,3 @@ Program {
     end: { column: 0, line: 15 },
   },
 }
-`;

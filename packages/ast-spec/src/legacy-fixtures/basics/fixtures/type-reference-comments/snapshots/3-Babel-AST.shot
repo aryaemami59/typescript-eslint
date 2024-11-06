@@ -1,14 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > type-reference-comments > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: Array [
+        body: [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
@@ -58,7 +55,7 @@ Program {
                 },
                 typeParameters: TSTypeParameterInstantiation {
                   type: "TSTypeParameterInstantiation",
-                  params: Array [
+                  params: [
                     TSAnyKeyword {
                       type: "TSAnyKeyword",
 
@@ -133,4 +130,3 @@ Program {
     end: { column: 0, line: 6 },
   },
 }
-`;

@@ -1,14 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > class-with-implements-generic > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: Array [],
+        body: [],
 
         range: [101, 103],
         loc: {
@@ -26,7 +23,7 @@ Program {
           end: { column: 9, line: 3 },
         },
       },
-      implements: Array [
+      implements: [
         TSExpressionWithTypeArguments {
           type: "TSExpressionWithTypeArguments",
           expression: Identifier {
@@ -41,7 +38,7 @@ Program {
           },
           typeParameters: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
@@ -94,4 +91,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

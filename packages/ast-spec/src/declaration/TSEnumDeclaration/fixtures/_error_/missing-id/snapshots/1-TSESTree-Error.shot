@@ -1,8 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > TSEnumDeclaration > _error_ > missing-id > TSESTree - Error 1`] = `
-"TSError
+TSError
 > 1 | enum {}
     |      ^ Identifier expected.
-  2 |"
-`;
+  2 |

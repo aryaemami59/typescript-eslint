@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > TSModuleDeclaration > module-nested-twice-declare > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleDeclaration {
@@ -12,7 +9,7 @@ Program {
           type: "TSModuleDeclaration",
           body: TSModuleBlock {
             type: "TSModuleBlock",
-            body: Array [],
+            body: [],
 
             range: [27, 29],
             loc: {
@@ -82,4 +79,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

@@ -1,16 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > expression > TSSatisfiesExpression > array-array > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TSSatisfiesExpression {
         type: "TSSatisfiesExpression",
         expression: ArrayExpression {
           type: "ArrayExpression",
-          elements: Array [
+          elements: [
             Literal {
               type: "Literal",
               raw: "1",
@@ -54,7 +51,7 @@ Program {
         },
         typeAnnotation: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSLiteralType {
               type: "TSLiteralType",
               literal: Literal {
@@ -146,4 +143,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

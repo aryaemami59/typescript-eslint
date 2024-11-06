@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > expression > TSSatisfiesExpression > conditional-with-parentheses > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TSSatisfiesExpression {
@@ -34,7 +31,7 @@ Program {
           },
           test: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "foo",
             optional: false,
 
@@ -83,4 +80,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

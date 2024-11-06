@@ -1,18 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > mapped-readonly > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "map",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
@@ -30,7 +27,7 @@ Program {
                 },
                 key: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "P",
                   optional: false,
 
@@ -100,4 +97,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

@@ -1,20 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > TSEnumDeclaration > with-member-one > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSEnumDeclaration {
       type: "TSEnumDeclaration",
       body: TSEnumBody {
         type: "TSEnumBody",
-        members: Array [
+        members: [
           TSEnumMember {
             type: "TSEnumMember",
             computed: false,
             id: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "A",
               optional: false,
 
@@ -43,7 +40,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "Foo",
         optional: false,
 
@@ -69,4 +66,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

@@ -1,25 +1,22 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > tuple-named > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "x",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSTupleType {
                 type: "TSTupleType",
-                elementTypes: Array [
+                elementTypes: [
                   TSNamedTupleMember {
                     type: "TSNamedTupleMember",
                     elementType: TSNumberKeyword {
@@ -33,7 +30,7 @@ Program {
                     },
                     label: Identifier {
                       type: "Identifier",
-                      decorators: Array [],
+                      decorators: [],
                       name: "a",
                       optional: false,
 
@@ -64,7 +61,7 @@ Program {
                     },
                     label: Identifier {
                       type: "Identifier",
-                      decorators: Array [],
+                      decorators: [],
                       name: "b",
                       optional: false,
 
@@ -95,7 +92,7 @@ Program {
                     },
                     label: Identifier {
                       type: "Identifier",
-                      decorators: Array [],
+                      decorators: [],
                       name: "c",
                       optional: false,
 
@@ -162,4 +159,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > conditional-infer-with-constraint > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       id: Identifier {
@@ -39,7 +36,7 @@ Program {
         },
         extendsType: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSInferType {
               type: "TSInferType",
               typeParameter: TSTypeParameter {
@@ -99,7 +96,7 @@ Program {
           },
           typeParameters: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
@@ -143,7 +140,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             name: "T",
@@ -204,7 +201,7 @@ Program {
         },
         extendsType: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSInferType {
               type: "TSInferType",
               typeParameter: TSTypeParameter {
@@ -292,7 +289,7 @@ Program {
           },
           typeParameters: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
@@ -336,7 +333,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             name: "T",
@@ -397,7 +394,7 @@ Program {
         },
         extendsType: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSInferType {
               type: "TSInferType",
               typeParameter: TSTypeParameter {
@@ -476,7 +473,7 @@ Program {
           },
           typeParameters: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
@@ -520,7 +517,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             name: "T",
@@ -581,7 +578,7 @@ Program {
         },
         extendsType: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSInferType {
               type: "TSInferType",
               typeParameter: TSTypeParameter {
@@ -660,7 +657,7 @@ Program {
           },
           typeParameters: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
@@ -704,7 +701,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             name: "T",
@@ -765,7 +762,7 @@ Program {
         },
         extendsType: TSTupleType {
           type: "TSTupleType",
-          elementTypes: Array [
+          elementTypes: [
             TSInferType {
               type: "TSInferType",
               typeParameter: TSTypeParameter {
@@ -867,7 +864,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             name: "T",
@@ -902,4 +899,3 @@ Program {
     end: { column: 0, line: 16 },
   },
 }
-`;

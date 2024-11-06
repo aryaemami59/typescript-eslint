@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > cast-as-multi-assign > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: AssignmentExpression {
@@ -14,7 +11,7 @@ Program {
             type: "TSAsExpression",
             expression: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "a",
               optional: false,
 
@@ -91,4 +88,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

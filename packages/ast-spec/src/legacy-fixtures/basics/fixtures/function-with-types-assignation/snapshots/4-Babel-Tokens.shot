@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > function-with-types-assignation > Babel - Tokens 1`] = `
-Array [
+[
   Keyword {
     type: "Keyword",
     value: "function",
@@ -283,4 +280,3 @@ Array [
     },
   },
 ]
-`;

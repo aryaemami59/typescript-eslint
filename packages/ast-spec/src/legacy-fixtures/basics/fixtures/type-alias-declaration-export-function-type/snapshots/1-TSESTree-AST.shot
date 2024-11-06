@@ -1,18 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > type-alias-declaration-export-function-type > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: Array [],
+      attributes: [],
       declaration: TSTypeAliasDeclaration {
         type: "TSTypeAliasDeclaration",
         declare: false,
         id: Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "TestCallback",
           optional: false,
 
@@ -24,10 +21,10 @@ Program {
         },
         typeAnnotation: TSFunctionType {
           type: "TSFunctionType",
-          params: Array [
+          params: [
             Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "a",
               optional: false,
               typeAnnotation: TSTypeAnnotation {
@@ -90,7 +87,7 @@ Program {
       },
       exportKind: "type",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [73, 120],
       loc: {
@@ -107,4 +104,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

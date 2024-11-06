@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > VariableDeclaration > var-id-type-no-init > TSESTree - Tokens 1`] = `
-Array [
+[
   Keyword {
     type: "Keyword",
     value: "var",
@@ -53,4 +50,3 @@ Array [
     },
   },
 ]
-`;

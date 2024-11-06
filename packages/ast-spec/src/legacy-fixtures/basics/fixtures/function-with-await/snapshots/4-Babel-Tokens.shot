@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > function-with-await > Babel - Tokens 1`] = `
-Array [
+[
   Identifier {
     type: "Identifier",
     value: "async",
@@ -113,4 +110,3 @@ Array [
     },
   },
 ]
-`;

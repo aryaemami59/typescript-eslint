@@ -1,14 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > special > TSTypeParameter > interface-const-modifier-extends > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: Array [],
+        body: [],
 
         range: [31, 33],
         loc: {
@@ -17,10 +14,10 @@ Program {
         },
       },
       declare: false,
-      extends: Array [],
+      extends: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "J",
         optional: false,
 
@@ -32,7 +29,7 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: true,
@@ -40,7 +37,7 @@ Program {
               type: "TSTypeReference",
               typeName: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "U",
                 optional: false,
 
@@ -60,7 +57,7 @@ Program {
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "T",
               optional: false,
 
@@ -102,4 +99,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

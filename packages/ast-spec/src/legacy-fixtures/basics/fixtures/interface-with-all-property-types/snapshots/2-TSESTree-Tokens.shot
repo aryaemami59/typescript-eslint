@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > interface-with-all-property-types > TSESTree - Tokens 1`] = `
-Array [
+[
   Keyword {
     type: "Keyword",
     value: "interface",
@@ -1033,4 +1030,3 @@ Array [
     },
   },
 ]
-`;

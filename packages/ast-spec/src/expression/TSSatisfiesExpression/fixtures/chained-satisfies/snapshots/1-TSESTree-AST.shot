@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > expression > TSSatisfiesExpression > chained-satisfies > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TSSatisfiesExpression {
@@ -12,7 +9,7 @@ Program {
           type: "TSSatisfiesExpression",
           expression: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "foo",
             optional: false,
 
@@ -26,7 +23,7 @@ Program {
             type: "TSTypeReference",
             typeName: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "bar",
               optional: false,
 
@@ -54,7 +51,7 @@ Program {
           type: "TSTypeReference",
           typeName: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "baz",
             optional: false,
 
@@ -94,4 +91,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

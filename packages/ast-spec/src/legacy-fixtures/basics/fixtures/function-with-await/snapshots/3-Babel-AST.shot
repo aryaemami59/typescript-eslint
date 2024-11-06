@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > function-with-await > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: true,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [
+        body: [
           ExpressionStatement {
             type: "ExpressionStatement",
             expression: AwaitExpression {
@@ -58,7 +55,7 @@ Program {
           end: { column: 19, line: 3 },
         },
       },
-      params: Array [
+      params: [
         Identifier {
           type: "Identifier",
           name: "future",
@@ -86,4 +83,3 @@ Program {
     end: { column: 0, line: 6 },
   },
 }
-`;

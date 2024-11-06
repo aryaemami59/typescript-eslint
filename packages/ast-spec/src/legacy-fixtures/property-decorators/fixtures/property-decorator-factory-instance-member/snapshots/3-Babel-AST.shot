@@ -1,23 +1,20 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > property-decorators > property-decorator-factory-instance-member > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ClassDeclaration {
       type: "ClassDeclaration",
       body: ClassBody {
         type: "ClassBody",
-        body: Array [
+        body: [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
-            decorators: Array [
+            decorators: [
               Decorator {
                 type: "Decorator",
                 expression: CallExpression {
                   type: "CallExpression",
-                  arguments: Array [],
+                  arguments: [],
                   callee: Identifier {
                     type: "Identifier",
                     name: "Input",
@@ -66,12 +63,12 @@ Program {
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
-            decorators: Array [
+            decorators: [
               Decorator {
                 type: "Decorator",
                 expression: CallExpression {
                   type: "CallExpression",
-                  arguments: Array [],
+                  arguments: [],
                   callee: Identifier {
                     type: "Identifier",
                     name: "Output",
@@ -111,7 +108,7 @@ Program {
             static: false,
             value: NewExpression {
               type: "NewExpression",
-              arguments: Array [],
+              arguments: [],
               callee: Identifier {
                 type: "Identifier",
                 name: "EventEmitter",
@@ -171,4 +168,3 @@ Program {
     end: { column: 0, line: 8 },
   },
 }
-`;

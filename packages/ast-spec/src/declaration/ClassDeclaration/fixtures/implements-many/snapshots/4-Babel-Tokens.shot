@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ClassDeclaration > implements-many > Babel - Tokens 1`] = `
-Array [
+[
   Keyword {
     type: "Keyword",
     value: "class",
@@ -103,4 +100,3 @@ Array [
     },
   },
 ]
-`;

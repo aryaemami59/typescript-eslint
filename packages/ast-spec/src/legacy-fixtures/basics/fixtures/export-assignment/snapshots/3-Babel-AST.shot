@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > export-assignment > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSExportAssignment {
       type: "TSExportAssignment",
       expression: Identifier {
@@ -32,4 +29,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

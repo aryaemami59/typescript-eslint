@@ -1,12 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > special > ExportSpecifier > value-export-specifier > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: Array [],
+      attributes: [],
       declaration: null,
       exportKind: "value",
       source: Literal {
@@ -20,7 +17,7 @@ Program {
           end: { column: 30, line: 1 },
         },
       },
-      specifiers: Array [
+      specifiers: [
         ExportSpecifier {
           type: "ExportSpecifier",
           exported: Literal {
@@ -37,7 +34,7 @@ Program {
           exportKind: "value",
           local: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "A",
             optional: false,
 
@@ -71,4 +68,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

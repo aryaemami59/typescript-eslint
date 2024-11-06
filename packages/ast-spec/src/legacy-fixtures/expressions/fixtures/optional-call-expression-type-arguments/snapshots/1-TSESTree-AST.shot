@@ -1,22 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > expressions > optional-call-expression-type-arguments > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: ChainExpression {
         type: "ChainExpression",
         expression: CallExpression {
           type: "CallExpression",
-          arguments: Array [],
+          arguments: [],
           callee: MemberExpression {
             type: "MemberExpression",
             computed: false,
             object: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "foo",
               optional: false,
 
@@ -29,7 +26,7 @@ Program {
             optional: true,
             property: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "bar",
               optional: false,
 
@@ -49,12 +46,12 @@ Program {
           optional: false,
           typeArguments: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSTypeReference {
                 type: "TSTypeReference",
                 typeName: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "A",
                   optional: false,
 
@@ -106,13 +103,13 @@ Program {
         type: "ChainExpression",
         expression: CallExpression {
           type: "CallExpression",
-          arguments: Array [],
+          arguments: [],
           callee: MemberExpression {
             type: "MemberExpression",
             computed: false,
             object: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "foo",
               optional: false,
 
@@ -125,7 +122,7 @@ Program {
             optional: true,
             property: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "bar",
               optional: false,
 
@@ -145,7 +142,7 @@ Program {
           optional: false,
           typeArguments: TSTypeParameterInstantiation {
             type: "TSTypeParameterInstantiation",
-            params: Array [
+            params: [
               TSNumberKeyword {
                 type: "TSNumberKeyword",
 
@@ -193,4 +190,3 @@ Program {
     end: { column: 0, line: 5 },
   },
 }
-`;

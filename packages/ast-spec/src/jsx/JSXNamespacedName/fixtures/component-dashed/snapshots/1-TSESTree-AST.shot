@@ -1,25 +1,22 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > jsx > JSXNamespacedName > component-dashed > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: Array [
+        body: [
           TSInterfaceDeclaration {
             type: "TSInterfaceDeclaration",
             body: TSInterfaceBody {
               type: "TSInterfaceBody",
-              body: Array [
+              body: [
                 TSPropertySignature {
                   type: "TSPropertySignature",
                   computed: false,
                   key: Identifier {
                     type: "Identifier",
-                    decorators: Array [],
+                    decorators: [],
                     name: "foo",
                     optional: false,
 
@@ -108,10 +105,10 @@ Program {
               },
             },
             declare: false,
-            extends: Array [],
+            extends: [],
             id: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "IntrinsicElements",
               optional: false,
 
@@ -140,7 +137,7 @@ Program {
       global: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "JSX",
         optional: false,
 
@@ -160,13 +157,13 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "componentBasic",
             optional: false,
 
@@ -178,11 +175,11 @@ Program {
           },
           init: JSXElement {
             type: "JSXElement",
-            children: Array [],
+            children: [],
             closingElement: null,
             openingElement: JSXOpeningElement {
               type: "JSXOpeningElement",
-              attributes: Array [],
+              attributes: [],
               name: JSXIdentifier {
                 type: "JSXIdentifier",
                 name: "foo",
@@ -227,13 +224,13 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "componentDashed",
             optional: false,
 
@@ -245,11 +242,11 @@ Program {
           },
           init: JSXElement {
             type: "JSXElement",
-            children: Array [],
+            children: [],
             closingElement: null,
             openingElement: JSXOpeningElement {
               type: "JSXOpeningElement",
-              attributes: Array [],
+              attributes: [],
               name: JSXNamespacedName {
                 type: "JSXNamespacedName",
                 name: JSXIdentifier {
@@ -320,4 +317,3 @@ Program {
     end: { column: 0, line: 10 },
   },
 }
-`;

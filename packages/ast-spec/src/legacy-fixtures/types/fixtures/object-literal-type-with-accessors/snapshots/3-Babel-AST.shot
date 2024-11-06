@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > object-literal-type-with-accessors > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       id: Identifier {
@@ -18,7 +15,7 @@ Program {
       },
       typeAnnotation: TSTypeLiteral {
         type: "TSTypeLiteral",
-        members: Array [
+        members: [
           TSMethodSignature {
             type: "TSMethodSignature",
             computed: false,
@@ -33,7 +30,7 @@ Program {
               },
             },
             kind: "get",
-            parameters: Array [],
+            parameters: [],
             typeAnnotation: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSNumberKeyword {
@@ -73,7 +70,7 @@ Program {
               },
             },
             kind: "set",
-            parameters: Array [
+            parameters: [
               Identifier {
                 type: "Identifier",
                 name: "value",
@@ -81,7 +78,7 @@ Program {
                   type: "TSTypeAnnotation",
                   typeAnnotation: TSUnionType {
                     type: "TSUnionType",
-                    types: Array [
+                    types: [
                       TSNumberKeyword {
                         type: "TSNumberKeyword",
 
@@ -163,4 +160,3 @@ Program {
     end: { column: 0, line: 7 },
   },
 }
-`;

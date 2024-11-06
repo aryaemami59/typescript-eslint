@@ -1,14 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > TSDeclareFunction > async-ambient > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: Array [
+        body: [
           TSDeclareFunction {
             type: "TSDeclareFunction",
             async: true,
@@ -24,7 +21,7 @@ Program {
                 end: { column: 20, line: 2 },
               },
             },
-            params: Array [],
+            params: [],
             returnType: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSAnyKeyword {
@@ -87,4 +84,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

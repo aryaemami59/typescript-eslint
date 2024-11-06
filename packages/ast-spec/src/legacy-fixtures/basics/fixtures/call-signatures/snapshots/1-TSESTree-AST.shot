@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > call-signatures > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "foo",
         optional: false,
 
@@ -21,13 +18,13 @@ Program {
       },
       typeAnnotation: TSTypeLiteral {
         type: "TSTypeLiteral",
-        members: Array [
+        members: [
           TSCallSignatureDeclaration {
             type: "TSCallSignatureDeclaration",
-            params: Array [
+            params: [
               Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "a",
                 optional: false,
                 typeAnnotation: TSTypeAnnotation {
@@ -83,10 +80,10 @@ Program {
           },
           TSConstructSignatureDeclaration {
             type: "TSConstructSignatureDeclaration",
-            params: Array [
+            params: [
               Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "a",
                 optional: false,
                 typeAnnotation: TSTypeAnnotation {
@@ -164,4 +161,3 @@ Program {
     end: { column: 0, line: 7 },
   },
 }
-`;

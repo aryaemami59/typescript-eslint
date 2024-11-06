@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > special > TSTypeParameter > func-expr-const-modifier > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: FunctionExpression {
@@ -11,7 +8,7 @@ Program {
         async: false,
         body: BlockStatement {
           type: "BlockStatement",
-          body: Array [],
+          body: [],
 
           range: [22, 24],
           loc: {
@@ -22,10 +19,10 @@ Program {
         expression: false,
         generator: false,
         id: null,
-        params: Array [],
+        params: [],
         typeParameters: TSTypeParameterDeclaration {
           type: "TSTypeParameterDeclaration",
-          params: Array [
+          params: [
             TSTypeParameter {
               type: "TSTypeParameter",
               const: true,
@@ -68,4 +65,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

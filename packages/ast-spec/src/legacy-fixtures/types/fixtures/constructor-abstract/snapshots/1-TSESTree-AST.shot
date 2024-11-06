@@ -1,18 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > constructor-abstract > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "x",
             optional: false,
             typeAnnotation: TSTypeAnnotation {
@@ -20,7 +17,7 @@ Program {
               typeAnnotation: TSConstructorType {
                 type: "TSConstructorType",
                 abstract: true,
-                params: Array [],
+                params: [],
                 returnType: TSTypeAnnotation {
                   type: "TSTypeAnnotation",
                   typeAnnotation: TSVoidKeyword {
@@ -87,4 +84,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

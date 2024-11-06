@@ -1,12 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ImportDeclaration > default > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ImportDeclaration {
       type: "ImportDeclaration",
-      assertions: Array [],
+      assertions: [],
       importKind: "value",
       source: Literal {
         type: "Literal",
@@ -19,7 +16,7 @@ Program {
           end: { column: 19, line: 1 },
         },
       },
-      specifiers: Array [
+      specifiers: [
         ImportDefaultSpecifier {
           type: "ImportDefaultSpecifier",
           local: Identifier {
@@ -56,4 +53,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

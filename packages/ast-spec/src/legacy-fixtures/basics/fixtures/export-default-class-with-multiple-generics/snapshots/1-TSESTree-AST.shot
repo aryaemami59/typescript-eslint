@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > export-default-class-with-multiple-generics > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportDefaultDeclaration {
       type: "ExportDefaultDeclaration",
       declaration: ClassDeclaration {
@@ -11,7 +8,7 @@ Program {
         abstract: false,
         body: ClassBody {
           type: "ClassBody",
-          body: Array [],
+          body: [],
 
           range: [100, 102],
           loc: {
@@ -20,20 +17,20 @@ Program {
           },
         },
         declare: false,
-        decorators: Array [],
+        decorators: [],
         id: null,
-        implements: Array [],
+        implements: [],
         superClass: null,
         typeParameters: TSTypeParameterDeclaration {
           type: "TSTypeParameterDeclaration",
-          params: Array [
+          params: [
             TSTypeParameter {
               type: "TSTypeParameter",
               const: false,
               in: false,
               name: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "T",
                 optional: false,
 
@@ -57,7 +54,7 @@ Program {
               in: false,
               name: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "U",
                 optional: false,
 
@@ -107,4 +104,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

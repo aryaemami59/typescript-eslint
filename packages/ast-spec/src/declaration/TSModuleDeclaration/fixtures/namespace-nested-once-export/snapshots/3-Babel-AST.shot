@@ -1,19 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > TSModuleDeclaration > namespace-nested-once-export > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: Array [],
+      assertions: [],
       declaration: TSModuleDeclaration {
         type: "TSModuleDeclaration",
         body: TSModuleDeclaration {
           type: "TSModuleDeclaration",
           body: TSModuleBlock {
             type: "TSModuleBlock",
-            body: Array [],
+            body: [],
 
             range: [25, 27],
             loc: {
@@ -58,7 +55,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [0, 27],
       loc: {
@@ -75,4 +72,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

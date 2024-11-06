@@ -1,22 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > expression > TSSatisfiesExpression > object-object-outer-parentheses > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TSSatisfiesExpression {
         type: "TSSatisfiesExpression",
         expression: ObjectExpression {
           type: "ObjectExpression",
-          properties: Array [
+          properties: [
             Property {
               type: "Property",
               computed: false,
               key: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "prop",
                 optional: false,
 
@@ -58,13 +55,13 @@ Program {
         },
         typeAnnotation: TSTypeLiteral {
           type: "TSTypeLiteral",
-          members: Array [
+          members: [
             TSPropertySignature {
               type: "TSPropertySignature",
               computed: false,
               key: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "prop",
                 optional: false,
 
@@ -133,4 +130,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

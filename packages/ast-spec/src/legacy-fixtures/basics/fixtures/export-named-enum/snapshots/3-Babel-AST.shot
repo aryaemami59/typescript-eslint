@@ -1,12 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > export-named-enum > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: Array [],
+      assertions: [],
       declaration: TSEnumDeclaration {
         type: "TSEnumDeclaration",
         id: Identifier {
@@ -19,7 +16,7 @@ Program {
             end: { column: 15, line: 3 },
           },
         },
-        members: Array [
+        members: [
           TSEnumMember {
             type: "TSEnumMember",
             id: Identifier {
@@ -79,7 +76,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [73, 110],
       loc: {
@@ -96,4 +93,3 @@ Program {
     end: { column: 0, line: 7 },
   },
 }
-`;

@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > class-with-optional-computed-property > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -23,7 +20,7 @@ exports[`AST Fixtures > legacy-fixtures > basics > class-with-optional-computed-
 -             definite: false,
               key: Literal {
                 type: 'Literal',
-                raw: '\\\\'foo\\\\'',
+                raw: '\'foo\'',
                 value: 'foo',
 
                 range: [94, 99],
@@ -94,5 +91,4 @@ exports[`AST Fixtures > legacy-fixtures > basics > class-with-optional-computed-
       start: { column: 0, line: 3 },
       end: { column: 0, line: 6 },
     },
-  }"
-`;
+  }

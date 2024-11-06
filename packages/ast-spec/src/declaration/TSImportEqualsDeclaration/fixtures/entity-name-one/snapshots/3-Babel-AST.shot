@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > TSImportEqualsDeclaration > entity-name-one > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSImportEqualsDeclaration {
       type: "TSImportEqualsDeclaration",
       id: Identifier {
@@ -44,4 +41,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

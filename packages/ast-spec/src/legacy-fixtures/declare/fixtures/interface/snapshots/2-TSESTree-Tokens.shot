@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > declare > interface > TSESTree - Tokens 1`] = `
-Array [
+[
   Identifier {
     type: "Identifier",
     value: "declare",
@@ -53,4 +50,3 @@ Array [
     },
   },
 ]
-`;

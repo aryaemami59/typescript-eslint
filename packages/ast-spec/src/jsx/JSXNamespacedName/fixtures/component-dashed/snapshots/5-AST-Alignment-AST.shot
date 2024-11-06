@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > jsx > JSXNamespacedName > component-dashed > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -66,7 +63,7 @@ exports[`AST Fixtures > jsx > JSXNamespacedName > component-dashed > AST Alignme
                     computed: false,
                     key: Literal {
                       type: 'Literal',
-                      raw: '\\\\'foo-bar:baz-bam\\\\'',
+                      raw: '\'foo-bar:baz-bam\'',
                       value: 'foo-bar:baz-bam',
 
                       range: [74, 91],
@@ -323,5 +320,4 @@ exports[`AST Fixtures > jsx > JSXNamespacedName > component-dashed > AST Alignme
       start: { column: 0, line: 1 },
       end: { column: 0, line: 10 },
     },
-  }"
-`;
+  }

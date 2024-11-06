@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > List fixtures with Token differences 1`] = `
-Array [
+[
   "declaration/ClassDeclaration/fixtures/implements-many/fixture.ts",
   "declaration/ClassDeclaration/fixtures/implements-one/fixture.ts",
   "declaration/ExportDefaultDeclaration/fixtures/interface/fixture.ts",
@@ -141,4 +138,3 @@ Array [
   "special/TSTypeParameter/fixtures/interface-const-modifier/fixture.ts",
   "special/TSTypeParameter/fixtures/interface-in-const-modifier-multiple/fixture.ts",
 ]
-`;
