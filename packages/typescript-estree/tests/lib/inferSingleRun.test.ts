@@ -52,33 +52,36 @@ describe(inferSingleRun, () => {
     expect(actual).toBe(true);
   });
 
-  it.each(['project', 'programs'])(
+  it.for(['project', 'programs'] as const)(
     'returns false when given %s is null',
-    key => {
+    (key, { expect }) => {
       const actual = inferSingleRun({ [key]: null });
 
       expect(actual).toBe(false);
     },
   );
 
-  it.each([
+  it.for([
     ['true', true],
     ['false', false],
-  ])('return %s when given TSESTREE_SINGLE_RUN is "%s"', (run, expected) => {
-    vi.stubEnv('TSESTREE_SINGLE_RUN', run);
+  ] as const)(
+    'return %s when given TSESTREE_SINGLE_RUN is "%s"',
+    ([run, expected], { expect }) => {
+      vi.stubEnv('TSESTREE_SINGLE_RUN', run);
 
-    const actual = inferSingleRun({
-      programs: null,
-      project: './tsconfig.json',
-    });
+      const actual = inferSingleRun({
+        programs: null,
+        project: './tsconfig.json',
+      });
 
-    expect(actual).toBe(expected);
-  });
+      expect(actual).toBe(expected);
+    },
+  );
 
-  describe.each([
+  describe.for([
     'node_modules/.bin/eslint',
     'node_modules/eslint/bin/eslint.js',
-  ])('%s', pathName => {
+  ] as const)('%s', pathName => {
     it('returns false when singleRun is inferred from process.argv with --fix', () => {
       vi.stubGlobal('process', {
         ...process,
