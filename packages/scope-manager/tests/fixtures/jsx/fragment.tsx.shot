@@ -1,24 +1,193 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`jsx fragment 1`] = `
 ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$1,
-      isStrict: false,
-      references: [],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
+  "currentScope": null,
+  "declaredVariables": WeakMap {},
+  "globalScope": GlobalScope {
+    "$id": 206,
+    "block": {
+      "body": [
+        {
+          "directive": undefined,
+          "expression": {
+            "children": [],
+            "closingFragment": {
+              "range": [
+                2,
+                5,
+              ],
+              "type": "JSXClosingFragment",
+            },
+            "openingFragment": {
+              "range": [
+                0,
+                2,
+              ],
+              "type": "JSXOpeningFragment",
+            },
+            "range": [
+              0,
+              5,
+            ],
+            "type": "JSXFragment",
+          },
+          "range": [
+            0,
+            6,
+          ],
+          "type": "ExpressionStatement",
+        },
+      ],
+      "comments": undefined,
+      "range": [
+        0,
+        7,
+      ],
+      "sourceType": "script",
+      "tokens": undefined,
+      "type": "Program",
+    },
+    "childScopes": [],
+    "functionExpressionScope": false,
+    "implicit": {
+      "leftToBeResolved": [],
+      "set": Map {},
+      "variables": [],
+    },
+    "isStrict": false,
+    "leftToResolve": null,
+    "references": [],
+    "set": Map {
+      "const" => ImplicitLibVariable {
+        "$id": 421,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
+    },
+    "through": [],
+    "type": "global",
+    "upper": null,
+    "variableScope": [Circular],
+    "variables": [
+      ImplicitLibVariable {
+        "$id": 421,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+    ],
+  },
+  "nodeToScope": WeakMap {},
+  "scopes": [
+    GlobalScope {
+      "$id": 206,
+      "block": {
+        "body": [
+          {
+            "directive": undefined,
+            "expression": {
+              "children": [],
+              "closingFragment": {
+                "range": [
+                  2,
+                  5,
+                ],
+                "type": "JSXClosingFragment",
+              },
+              "openingFragment": {
+                "range": [
+                  0,
+                  2,
+                ],
+                "type": "JSXOpeningFragment",
+              },
+              "range": [
+                0,
+                5,
+              ],
+              "type": "JSXFragment",
+            },
+            "range": [
+              0,
+              6,
+            ],
+            "type": "ExpressionStatement",
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          0,
+          7,
+        ],
+        "sourceType": "script",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [],
+      "functionExpressionScope": false,
+      "implicit": {
+        "leftToBeResolved": [],
+        "set": Map {},
+        "variables": [],
+      },
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [],
+      "set": Map {
+        "const" => ImplicitLibVariable {
+          "$id": 421,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+      },
+      "through": [],
+      "type": "global",
+      "upper": null,
+      "variableScope": [Circular],
+      "variables": [
+        ImplicitLibVariable {
+          "$id": 421,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
       ],
     },
   ],
 }
-`;

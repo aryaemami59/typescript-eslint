@@ -1,58 +1,2323 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ts-module import 1`] = `
 ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-    Variable$2 {
-      defs: [
-        ImportBindingDefinition$1 {
-          name: Identifier<"bar">,
-          node: ImportSpecifier$1,
+  "currentScope": null,
+  "declaredVariables": WeakMap {},
+  "globalScope": GlobalScope {
+    "$id": 164,
+    "block": {
+      "body": [
+        {
+          "body": {
+            "body": [
+              {
+                "attributes": [],
+                "importKind": "value",
+                "range": [
+                  52,
+                  78,
+                ],
+                "source": {
+                  "range": [
+                    72,
+                    77,
+                  ],
+                  "raw": "'mod'",
+                  "type": "Literal",
+                  "value": "mod",
+                },
+                "specifiers": [
+                  {
+                    "importKind": "value",
+                    "imported": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "local": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "ImportSpecifier",
+                  },
+                ],
+                "type": "ImportDeclaration",
+              },
+            ],
+            "range": [
+              48,
+              80,
+            ],
+            "type": "TSModuleBlock",
+          },
+          "declare": true,
+          "global": false,
+          "id": {
+            "range": [
+              42,
+              47,
+            ],
+            "raw": "'foo'",
+            "type": "Literal",
+            "value": "foo",
+          },
+          "kind": "module",
+          "range": [
+            27,
+            80,
+          ],
+          "type": "TSModuleDeclaration",
         },
       ],
-      name: "bar",
-      references: [],
-      isValueVariable: true,
-      isTypeVariable: true,
+      "comments": undefined,
+      "range": [
+        27,
+        81,
+      ],
+      "sourceType": "script",
+      "tokens": undefined,
+      "type": "Program",
     },
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$2,
-      isStrict: false,
-      references: [],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
+    "childScopes": [
+      ModuleScope {
+        "$id": 165,
+        "block": {
+          "body": [
+            {
+              "body": {
+                "body": [
+                  {
+                    "attributes": [],
+                    "importKind": "value",
+                    "range": [
+                      52,
+                      78,
+                    ],
+                    "source": {
+                      "range": [
+                        72,
+                        77,
+                      ],
+                      "raw": "'mod'",
+                      "type": "Literal",
+                      "value": "mod",
+                    },
+                    "specifiers": [
+                      {
+                        "importKind": "value",
+                        "imported": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "local": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "ImportSpecifier",
+                      },
+                    ],
+                    "type": "ImportDeclaration",
+                  },
+                ],
+                "range": [
+                  48,
+                  80,
+                ],
+                "type": "TSModuleBlock",
+              },
+              "declare": true,
+              "global": false,
+              "id": {
+                "range": [
+                  42,
+                  47,
+                ],
+                "raw": "'foo'",
+                "type": "Literal",
+                "value": "foo",
+              },
+              "kind": "module",
+              "range": [
+                27,
+                80,
+              ],
+              "type": "TSModuleDeclaration",
+            },
+          ],
+          "comments": undefined,
+          "range": [
+            27,
+            81,
+          ],
+          "sourceType": "script",
+          "tokens": undefined,
+          "type": "Program",
+        },
+        "childScopes": [
+          TSModuleScope {
+            "$id": 166,
+            "block": {
+              "body": {
+                "body": [
+                  {
+                    "attributes": [],
+                    "importKind": "value",
+                    "range": [
+                      52,
+                      78,
+                    ],
+                    "source": {
+                      "range": [
+                        72,
+                        77,
+                      ],
+                      "raw": "'mod'",
+                      "type": "Literal",
+                      "value": "mod",
+                    },
+                    "specifiers": [
+                      {
+                        "importKind": "value",
+                        "imported": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "local": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "ImportSpecifier",
+                      },
+                    ],
+                    "type": "ImportDeclaration",
+                  },
+                ],
+                "range": [
+                  48,
+                  80,
+                ],
+                "type": "TSModuleBlock",
+              },
+              "declare": true,
+              "global": false,
+              "id": {
+                "range": [
+                  42,
+                  47,
+                ],
+                "raw": "'foo'",
+                "type": "Literal",
+                "value": "foo",
+              },
+              "kind": "module",
+              "range": [
+                27,
+                80,
+              ],
+              "type": "TSModuleDeclaration",
+            },
+            "childScopes": [],
+            "functionExpressionScope": false,
+            "isStrict": true,
+            "leftToResolve": null,
+            "references": [],
+            "set": Map {
+              "bar" => Variable {
+                "$id": 354,
+                "defs": [
+                  ImportBindingDefinition {
+                    "$id": 256,
+                    "isTypeDefinition": true,
+                    "isVariableDefinition": true,
+                    "name": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "node": {
+                      "importKind": "value",
+                      "imported": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "local": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "ImportSpecifier",
+                    },
+                    "parent": {
+                      "attributes": [],
+                      "importKind": "value",
+                      "range": [
+                        52,
+                        78,
+                      ],
+                      "source": {
+                        "range": [
+                          72,
+                          77,
+                        ],
+                        "raw": "'mod'",
+                        "type": "Literal",
+                        "value": "mod",
+                      },
+                      "specifiers": [
+                        {
+                          "importKind": "value",
+                          "imported": {
+                            "decorators": [],
+                            "name": "bar",
+                            "optional": false,
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "local": {
+                            "decorators": [],
+                            "name": "bar",
+                            "optional": false,
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "ImportSpecifier",
+                        },
+                      ],
+                      "type": "ImportDeclaration",
+                    },
+                    "type": "ImportBinding",
+                  },
+                ],
+                "eslintUsed": false,
+                "identifiers": [
+                  {
+                    "decorators": [],
+                    "name": "bar",
+                    "optional": false,
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                ],
+                "name": "bar",
+                "references": [],
+                "scope": [Circular],
+              },
+            },
+            "through": [],
+            "type": "tsModule",
+            "upper": [Circular],
+            "variableScope": [Circular],
+            "variables": [
+              Variable {
+                "$id": 354,
+                "defs": [
+                  ImportBindingDefinition {
+                    "$id": 256,
+                    "isTypeDefinition": true,
+                    "isVariableDefinition": true,
+                    "name": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "node": {
+                      "importKind": "value",
+                      "imported": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "local": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "ImportSpecifier",
+                    },
+                    "parent": {
+                      "attributes": [],
+                      "importKind": "value",
+                      "range": [
+                        52,
+                        78,
+                      ],
+                      "source": {
+                        "range": [
+                          72,
+                          77,
+                        ],
+                        "raw": "'mod'",
+                        "type": "Literal",
+                        "value": "mod",
+                      },
+                      "specifiers": [
+                        {
+                          "importKind": "value",
+                          "imported": {
+                            "decorators": [],
+                            "name": "bar",
+                            "optional": false,
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "local": {
+                            "decorators": [],
+                            "name": "bar",
+                            "optional": false,
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "ImportSpecifier",
+                        },
+                      ],
+                      "type": "ImportDeclaration",
+                    },
+                    "type": "ImportBinding",
+                  },
+                ],
+                "eslintUsed": false,
+                "identifiers": [
+                  {
+                    "decorators": [],
+                    "name": "bar",
+                    "optional": false,
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                ],
+                "name": "bar",
+                "references": [],
+                "scope": [Circular],
+              },
+            ],
+          },
+        ],
+        "functionExpressionScope": false,
+        "isStrict": true,
+        "leftToResolve": null,
+        "references": [],
+        "set": Map {},
+        "through": [],
+        "type": "module",
+        "upper": [Circular],
+        "variableScope": [Circular],
+        "variables": [],
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
+    ],
+    "functionExpressionScope": false,
+    "implicit": {
+      "leftToBeResolved": [],
+      "set": Map {},
+      "variables": [],
+    },
+    "isStrict": false,
+    "leftToResolve": null,
+    "references": [],
+    "set": Map {
+      "const" => ImplicitLibVariable {
+        "$id": 353,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+    },
+    "through": [],
+    "type": "global",
+    "upper": null,
+    "variableScope": [Circular],
+    "variables": [
+      ImplicitLibVariable {
+        "$id": 353,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+    ],
+  },
+  "nodeToScope": WeakMap {},
+  "scopes": [
+    GlobalScope {
+      "$id": 164,
+      "block": {
+        "body": [
+          {
+            "body": {
+              "body": [
+                {
+                  "attributes": [],
+                  "importKind": "value",
+                  "range": [
+                    52,
+                    78,
+                  ],
+                  "source": {
+                    "range": [
+                      72,
+                      77,
+                    ],
+                    "raw": "'mod'",
+                    "type": "Literal",
+                    "value": "mod",
+                  },
+                  "specifiers": [
+                    {
+                      "importKind": "value",
+                      "imported": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "local": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "ImportSpecifier",
+                    },
+                  ],
+                  "type": "ImportDeclaration",
+                },
+              ],
+              "range": [
+                48,
+                80,
+              ],
+              "type": "TSModuleBlock",
+            },
+            "declare": true,
+            "global": false,
+            "id": {
+              "range": [
+                42,
+                47,
+              ],
+              "raw": "'foo'",
+              "type": "Literal",
+              "value": "foo",
+            },
+            "kind": "module",
+            "range": [
+              27,
+              80,
+            ],
+            "type": "TSModuleDeclaration",
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          27,
+          81,
+        ],
+        "sourceType": "script",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [
+        ModuleScope {
+          "$id": 165,
+          "block": {
+            "body": [
+              {
+                "body": {
+                  "body": [
+                    {
+                      "attributes": [],
+                      "importKind": "value",
+                      "range": [
+                        52,
+                        78,
+                      ],
+                      "source": {
+                        "range": [
+                          72,
+                          77,
+                        ],
+                        "raw": "'mod'",
+                        "type": "Literal",
+                        "value": "mod",
+                      },
+                      "specifiers": [
+                        {
+                          "importKind": "value",
+                          "imported": {
+                            "decorators": [],
+                            "name": "bar",
+                            "optional": false,
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "local": {
+                            "decorators": [],
+                            "name": "bar",
+                            "optional": false,
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "ImportSpecifier",
+                        },
+                      ],
+                      "type": "ImportDeclaration",
+                    },
+                  ],
+                  "range": [
+                    48,
+                    80,
+                  ],
+                  "type": "TSModuleBlock",
+                },
+                "declare": true,
+                "global": false,
+                "id": {
+                  "range": [
+                    42,
+                    47,
+                  ],
+                  "raw": "'foo'",
+                  "type": "Literal",
+                  "value": "foo",
+                },
+                "kind": "module",
+                "range": [
+                  27,
+                  80,
+                ],
+                "type": "TSModuleDeclaration",
+              },
+            ],
+            "comments": undefined,
+            "range": [
+              27,
+              81,
+            ],
+            "sourceType": "script",
+            "tokens": undefined,
+            "type": "Program",
+          },
+          "childScopes": [
+            TSModuleScope {
+              "$id": 166,
+              "block": {
+                "body": {
+                  "body": [
+                    {
+                      "attributes": [],
+                      "importKind": "value",
+                      "range": [
+                        52,
+                        78,
+                      ],
+                      "source": {
+                        "range": [
+                          72,
+                          77,
+                        ],
+                        "raw": "'mod'",
+                        "type": "Literal",
+                        "value": "mod",
+                      },
+                      "specifiers": [
+                        {
+                          "importKind": "value",
+                          "imported": {
+                            "decorators": [],
+                            "name": "bar",
+                            "optional": false,
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "local": {
+                            "decorators": [],
+                            "name": "bar",
+                            "optional": false,
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "ImportSpecifier",
+                        },
+                      ],
+                      "type": "ImportDeclaration",
+                    },
+                  ],
+                  "range": [
+                    48,
+                    80,
+                  ],
+                  "type": "TSModuleBlock",
+                },
+                "declare": true,
+                "global": false,
+                "id": {
+                  "range": [
+                    42,
+                    47,
+                  ],
+                  "raw": "'foo'",
+                  "type": "Literal",
+                  "value": "foo",
+                },
+                "kind": "module",
+                "range": [
+                  27,
+                  80,
+                ],
+                "type": "TSModuleDeclaration",
+              },
+              "childScopes": [],
+              "functionExpressionScope": false,
+              "isStrict": true,
+              "leftToResolve": null,
+              "references": [],
+              "set": Map {
+                "bar" => Variable {
+                  "$id": 354,
+                  "defs": [
+                    ImportBindingDefinition {
+                      "$id": 256,
+                      "isTypeDefinition": true,
+                      "isVariableDefinition": true,
+                      "name": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "node": {
+                        "importKind": "value",
+                        "imported": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "local": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "ImportSpecifier",
+                      },
+                      "parent": {
+                        "attributes": [],
+                        "importKind": "value",
+                        "range": [
+                          52,
+                          78,
+                        ],
+                        "source": {
+                          "range": [
+                            72,
+                            77,
+                          ],
+                          "raw": "'mod'",
+                          "type": "Literal",
+                          "value": "mod",
+                        },
+                        "specifiers": [
+                          {
+                            "importKind": "value",
+                            "imported": {
+                              "decorators": [],
+                              "name": "bar",
+                              "optional": false,
+                              "range": [
+                                61,
+                                64,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "local": {
+                              "decorators": [],
+                              "name": "bar",
+                              "optional": false,
+                              "range": [
+                                61,
+                                64,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "ImportSpecifier",
+                          },
+                        ],
+                        "type": "ImportDeclaration",
+                      },
+                      "type": "ImportBinding",
+                    },
+                  ],
+                  "eslintUsed": false,
+                  "identifiers": [
+                    {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                  ],
+                  "name": "bar",
+                  "references": [],
+                  "scope": [Circular],
+                },
+              },
+              "through": [],
+              "type": "tsModule",
+              "upper": [Circular],
+              "variableScope": [Circular],
+              "variables": [
+                Variable {
+                  "$id": 354,
+                  "defs": [
+                    ImportBindingDefinition {
+                      "$id": 256,
+                      "isTypeDefinition": true,
+                      "isVariableDefinition": true,
+                      "name": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "node": {
+                        "importKind": "value",
+                        "imported": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "local": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "ImportSpecifier",
+                      },
+                      "parent": {
+                        "attributes": [],
+                        "importKind": "value",
+                        "range": [
+                          52,
+                          78,
+                        ],
+                        "source": {
+                          "range": [
+                            72,
+                            77,
+                          ],
+                          "raw": "'mod'",
+                          "type": "Literal",
+                          "value": "mod",
+                        },
+                        "specifiers": [
+                          {
+                            "importKind": "value",
+                            "imported": {
+                              "decorators": [],
+                              "name": "bar",
+                              "optional": false,
+                              "range": [
+                                61,
+                                64,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "local": {
+                              "decorators": [],
+                              "name": "bar",
+                              "optional": false,
+                              "range": [
+                                61,
+                                64,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "ImportSpecifier",
+                          },
+                        ],
+                        "type": "ImportDeclaration",
+                      },
+                      "type": "ImportBinding",
+                    },
+                  ],
+                  "eslintUsed": false,
+                  "identifiers": [
+                    {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                  ],
+                  "name": "bar",
+                  "references": [],
+                  "scope": [Circular],
+                },
+              ],
+            },
+          ],
+          "functionExpressionScope": false,
+          "isStrict": true,
+          "leftToResolve": null,
+          "references": [],
+          "set": Map {},
+          "through": [],
+          "type": "module",
+          "upper": [Circular],
+          "variableScope": [Circular],
+          "variables": [],
+        },
+      ],
+      "functionExpressionScope": false,
+      "implicit": {
+        "leftToBeResolved": [],
+        "set": Map {},
+        "variables": [],
+      },
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [],
+      "set": Map {
+        "const" => ImplicitLibVariable {
+          "$id": 353,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+      },
+      "through": [],
+      "type": "global",
+      "upper": null,
+      "variableScope": [Circular],
+      "variables": [
+        ImplicitLibVariable {
+          "$id": 353,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
       ],
     },
-    ModuleScope$2 {
-      block: Program$2,
-      isStrict: true,
-      references: [],
-      set: Map {},
-      type: "module",
-      upper: GlobalScope$1,
-      variables: [],
-    },
-    TSModuleScope$3 {
-      block: TSModuleDeclaration$3,
-      isStrict: true,
-      references: [],
-      set: Map {
-        "bar" => Variable$2,
+    ModuleScope {
+      "$id": 165,
+      "block": {
+        "body": [
+          {
+            "body": {
+              "body": [
+                {
+                  "attributes": [],
+                  "importKind": "value",
+                  "range": [
+                    52,
+                    78,
+                  ],
+                  "source": {
+                    "range": [
+                      72,
+                      77,
+                    ],
+                    "raw": "'mod'",
+                    "type": "Literal",
+                    "value": "mod",
+                  },
+                  "specifiers": [
+                    {
+                      "importKind": "value",
+                      "imported": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "local": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "ImportSpecifier",
+                    },
+                  ],
+                  "type": "ImportDeclaration",
+                },
+              ],
+              "range": [
+                48,
+                80,
+              ],
+              "type": "TSModuleBlock",
+            },
+            "declare": true,
+            "global": false,
+            "id": {
+              "range": [
+                42,
+                47,
+              ],
+              "raw": "'foo'",
+              "type": "Literal",
+              "value": "foo",
+            },
+            "kind": "module",
+            "range": [
+              27,
+              80,
+            ],
+            "type": "TSModuleDeclaration",
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          27,
+          81,
+        ],
+        "sourceType": "script",
+        "tokens": undefined,
+        "type": "Program",
       },
-      type: "tsModule",
-      upper: ModuleScope$2,
-      variables: [
-        Variable$2,
+      "childScopes": [
+        TSModuleScope {
+          "$id": 166,
+          "block": {
+            "body": {
+              "body": [
+                {
+                  "attributes": [],
+                  "importKind": "value",
+                  "range": [
+                    52,
+                    78,
+                  ],
+                  "source": {
+                    "range": [
+                      72,
+                      77,
+                    ],
+                    "raw": "'mod'",
+                    "type": "Literal",
+                    "value": "mod",
+                  },
+                  "specifiers": [
+                    {
+                      "importKind": "value",
+                      "imported": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "local": {
+                        "decorators": [],
+                        "name": "bar",
+                        "optional": false,
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "ImportSpecifier",
+                    },
+                  ],
+                  "type": "ImportDeclaration",
+                },
+              ],
+              "range": [
+                48,
+                80,
+              ],
+              "type": "TSModuleBlock",
+            },
+            "declare": true,
+            "global": false,
+            "id": {
+              "range": [
+                42,
+                47,
+              ],
+              "raw": "'foo'",
+              "type": "Literal",
+              "value": "foo",
+            },
+            "kind": "module",
+            "range": [
+              27,
+              80,
+            ],
+            "type": "TSModuleDeclaration",
+          },
+          "childScopes": [],
+          "functionExpressionScope": false,
+          "isStrict": true,
+          "leftToResolve": null,
+          "references": [],
+          "set": Map {
+            "bar" => Variable {
+              "$id": 354,
+              "defs": [
+                ImportBindingDefinition {
+                  "$id": 256,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "bar",
+                    "optional": false,
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "importKind": "value",
+                    "imported": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "local": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "ImportSpecifier",
+                  },
+                  "parent": {
+                    "attributes": [],
+                    "importKind": "value",
+                    "range": [
+                      52,
+                      78,
+                    ],
+                    "source": {
+                      "range": [
+                        72,
+                        77,
+                      ],
+                      "raw": "'mod'",
+                      "type": "Literal",
+                      "value": "mod",
+                    },
+                    "specifiers": [
+                      {
+                        "importKind": "value",
+                        "imported": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "local": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "ImportSpecifier",
+                      },
+                    ],
+                    "type": "ImportDeclaration",
+                  },
+                  "type": "ImportBinding",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "bar",
+                  "optional": false,
+                  "range": [
+                    61,
+                    64,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "bar",
+              "references": [],
+              "scope": [Circular],
+            },
+          },
+          "through": [],
+          "type": "tsModule",
+          "upper": [Circular],
+          "variableScope": [Circular],
+          "variables": [
+            Variable {
+              "$id": 354,
+              "defs": [
+                ImportBindingDefinition {
+                  "$id": 256,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "bar",
+                    "optional": false,
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "importKind": "value",
+                    "imported": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "local": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "ImportSpecifier",
+                  },
+                  "parent": {
+                    "attributes": [],
+                    "importKind": "value",
+                    "range": [
+                      52,
+                      78,
+                    ],
+                    "source": {
+                      "range": [
+                        72,
+                        77,
+                      ],
+                      "raw": "'mod'",
+                      "type": "Literal",
+                      "value": "mod",
+                    },
+                    "specifiers": [
+                      {
+                        "importKind": "value",
+                        "imported": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "local": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "ImportSpecifier",
+                      },
+                    ],
+                    "type": "ImportDeclaration",
+                  },
+                  "type": "ImportBinding",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "bar",
+                  "optional": false,
+                  "range": [
+                    61,
+                    64,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "bar",
+              "references": [],
+              "scope": [Circular],
+            },
+          ],
+        },
+      ],
+      "functionExpressionScope": false,
+      "isStrict": true,
+      "leftToResolve": null,
+      "references": [],
+      "set": Map {},
+      "through": [],
+      "type": "module",
+      "upper": GlobalScope {
+        "$id": 164,
+        "block": {
+          "body": [
+            {
+              "body": {
+                "body": [
+                  {
+                    "attributes": [],
+                    "importKind": "value",
+                    "range": [
+                      52,
+                      78,
+                    ],
+                    "source": {
+                      "range": [
+                        72,
+                        77,
+                      ],
+                      "raw": "'mod'",
+                      "type": "Literal",
+                      "value": "mod",
+                    },
+                    "specifiers": [
+                      {
+                        "importKind": "value",
+                        "imported": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "local": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "ImportSpecifier",
+                      },
+                    ],
+                    "type": "ImportDeclaration",
+                  },
+                ],
+                "range": [
+                  48,
+                  80,
+                ],
+                "type": "TSModuleBlock",
+              },
+              "declare": true,
+              "global": false,
+              "id": {
+                "range": [
+                  42,
+                  47,
+                ],
+                "raw": "'foo'",
+                "type": "Literal",
+                "value": "foo",
+              },
+              "kind": "module",
+              "range": [
+                27,
+                80,
+              ],
+              "type": "TSModuleDeclaration",
+            },
+          ],
+          "comments": undefined,
+          "range": [
+            27,
+            81,
+          ],
+          "sourceType": "script",
+          "tokens": undefined,
+          "type": "Program",
+        },
+        "childScopes": [
+          [Circular],
+        ],
+        "functionExpressionScope": false,
+        "implicit": {
+          "leftToBeResolved": [],
+          "set": Map {},
+          "variables": [],
+        },
+        "isStrict": false,
+        "leftToResolve": null,
+        "references": [],
+        "set": Map {
+          "const" => ImplicitLibVariable {
+            "$id": 353,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+        },
+        "through": [],
+        "type": "global",
+        "upper": null,
+        "variableScope": [Circular],
+        "variables": [
+          ImplicitLibVariable {
+            "$id": 353,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+        ],
+      },
+      "variableScope": [Circular],
+      "variables": [],
+    },
+    TSModuleScope {
+      "$id": 166,
+      "block": {
+        "body": {
+          "body": [
+            {
+              "attributes": [],
+              "importKind": "value",
+              "range": [
+                52,
+                78,
+              ],
+              "source": {
+                "range": [
+                  72,
+                  77,
+                ],
+                "raw": "'mod'",
+                "type": "Literal",
+                "value": "mod",
+              },
+              "specifiers": [
+                {
+                  "importKind": "value",
+                  "imported": {
+                    "decorators": [],
+                    "name": "bar",
+                    "optional": false,
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "local": {
+                    "decorators": [],
+                    "name": "bar",
+                    "optional": false,
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    61,
+                    64,
+                  ],
+                  "type": "ImportSpecifier",
+                },
+              ],
+              "type": "ImportDeclaration",
+            },
+          ],
+          "range": [
+            48,
+            80,
+          ],
+          "type": "TSModuleBlock",
+        },
+        "declare": true,
+        "global": false,
+        "id": {
+          "range": [
+            42,
+            47,
+          ],
+          "raw": "'foo'",
+          "type": "Literal",
+          "value": "foo",
+        },
+        "kind": "module",
+        "range": [
+          27,
+          80,
+        ],
+        "type": "TSModuleDeclaration",
+      },
+      "childScopes": [],
+      "functionExpressionScope": false,
+      "isStrict": true,
+      "leftToResolve": null,
+      "references": [],
+      "set": Map {
+        "bar" => Variable {
+          "$id": 354,
+          "defs": [
+            ImportBindingDefinition {
+              "$id": 256,
+              "isTypeDefinition": true,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "bar",
+                "optional": false,
+                "range": [
+                  61,
+                  64,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "importKind": "value",
+                "imported": {
+                  "decorators": [],
+                  "name": "bar",
+                  "optional": false,
+                  "range": [
+                    61,
+                    64,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "local": {
+                  "decorators": [],
+                  "name": "bar",
+                  "optional": false,
+                  "range": [
+                    61,
+                    64,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  61,
+                  64,
+                ],
+                "type": "ImportSpecifier",
+              },
+              "parent": {
+                "attributes": [],
+                "importKind": "value",
+                "range": [
+                  52,
+                  78,
+                ],
+                "source": {
+                  "range": [
+                    72,
+                    77,
+                  ],
+                  "raw": "'mod'",
+                  "type": "Literal",
+                  "value": "mod",
+                },
+                "specifiers": [
+                  {
+                    "importKind": "value",
+                    "imported": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "local": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "ImportSpecifier",
+                  },
+                ],
+                "type": "ImportDeclaration",
+              },
+              "type": "ImportBinding",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "bar",
+              "optional": false,
+              "range": [
+                61,
+                64,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "bar",
+          "references": [],
+          "scope": [Circular],
+        },
+      },
+      "through": [],
+      "type": "tsModule",
+      "upper": ModuleScope {
+        "$id": 165,
+        "block": {
+          "body": [
+            {
+              "body": {
+                "body": [
+                  {
+                    "attributes": [],
+                    "importKind": "value",
+                    "range": [
+                      52,
+                      78,
+                    ],
+                    "source": {
+                      "range": [
+                        72,
+                        77,
+                      ],
+                      "raw": "'mod'",
+                      "type": "Literal",
+                      "value": "mod",
+                    },
+                    "specifiers": [
+                      {
+                        "importKind": "value",
+                        "imported": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "local": {
+                          "decorators": [],
+                          "name": "bar",
+                          "optional": false,
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          61,
+                          64,
+                        ],
+                        "type": "ImportSpecifier",
+                      },
+                    ],
+                    "type": "ImportDeclaration",
+                  },
+                ],
+                "range": [
+                  48,
+                  80,
+                ],
+                "type": "TSModuleBlock",
+              },
+              "declare": true,
+              "global": false,
+              "id": {
+                "range": [
+                  42,
+                  47,
+                ],
+                "raw": "'foo'",
+                "type": "Literal",
+                "value": "foo",
+              },
+              "kind": "module",
+              "range": [
+                27,
+                80,
+              ],
+              "type": "TSModuleDeclaration",
+            },
+          ],
+          "comments": undefined,
+          "range": [
+            27,
+            81,
+          ],
+          "sourceType": "script",
+          "tokens": undefined,
+          "type": "Program",
+        },
+        "childScopes": [
+          [Circular],
+        ],
+        "functionExpressionScope": false,
+        "isStrict": true,
+        "leftToResolve": null,
+        "references": [],
+        "set": Map {},
+        "through": [],
+        "type": "module",
+        "upper": GlobalScope {
+          "$id": 164,
+          "block": {
+            "body": [
+              {
+                "body": {
+                  "body": [
+                    {
+                      "attributes": [],
+                      "importKind": "value",
+                      "range": [
+                        52,
+                        78,
+                      ],
+                      "source": {
+                        "range": [
+                          72,
+                          77,
+                        ],
+                        "raw": "'mod'",
+                        "type": "Literal",
+                        "value": "mod",
+                      },
+                      "specifiers": [
+                        {
+                          "importKind": "value",
+                          "imported": {
+                            "decorators": [],
+                            "name": "bar",
+                            "optional": false,
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "local": {
+                            "decorators": [],
+                            "name": "bar",
+                            "optional": false,
+                            "range": [
+                              61,
+                              64,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            61,
+                            64,
+                          ],
+                          "type": "ImportSpecifier",
+                        },
+                      ],
+                      "type": "ImportDeclaration",
+                    },
+                  ],
+                  "range": [
+                    48,
+                    80,
+                  ],
+                  "type": "TSModuleBlock",
+                },
+                "declare": true,
+                "global": false,
+                "id": {
+                  "range": [
+                    42,
+                    47,
+                  ],
+                  "raw": "'foo'",
+                  "type": "Literal",
+                  "value": "foo",
+                },
+                "kind": "module",
+                "range": [
+                  27,
+                  80,
+                ],
+                "type": "TSModuleDeclaration",
+              },
+            ],
+            "comments": undefined,
+            "range": [
+              27,
+              81,
+            ],
+            "sourceType": "script",
+            "tokens": undefined,
+            "type": "Program",
+          },
+          "childScopes": [
+            [Circular],
+          ],
+          "functionExpressionScope": false,
+          "implicit": {
+            "leftToBeResolved": [],
+            "set": Map {},
+            "variables": [],
+          },
+          "isStrict": false,
+          "leftToResolve": null,
+          "references": [],
+          "set": Map {
+            "const" => ImplicitLibVariable {
+              "$id": 353,
+              "defs": [],
+              "eslintExplicitGlobal": undefined,
+              "eslintExplicitGlobalComments": undefined,
+              "eslintImplicitGlobalSetting": "readonly",
+              "eslintUsed": false,
+              "identifiers": [],
+              "isTypeVariable": true,
+              "isValueVariable": false,
+              "name": "const",
+              "references": [],
+              "scope": [Circular],
+              "writeable": false,
+            },
+          },
+          "through": [],
+          "type": "global",
+          "upper": null,
+          "variableScope": [Circular],
+          "variables": [
+            ImplicitLibVariable {
+              "$id": 353,
+              "defs": [],
+              "eslintExplicitGlobal": undefined,
+              "eslintExplicitGlobalComments": undefined,
+              "eslintImplicitGlobalSetting": "readonly",
+              "eslintUsed": false,
+              "identifiers": [],
+              "isTypeVariable": true,
+              "isValueVariable": false,
+              "name": "const",
+              "references": [],
+              "scope": [Circular],
+              "writeable": false,
+            },
+          ],
+        },
+        "variableScope": [Circular],
+        "variables": [],
+      },
+      "variableScope": [Circular],
+      "variables": [
+        Variable {
+          "$id": 354,
+          "defs": [
+            ImportBindingDefinition {
+              "$id": 256,
+              "isTypeDefinition": true,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "bar",
+                "optional": false,
+                "range": [
+                  61,
+                  64,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "importKind": "value",
+                "imported": {
+                  "decorators": [],
+                  "name": "bar",
+                  "optional": false,
+                  "range": [
+                    61,
+                    64,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "local": {
+                  "decorators": [],
+                  "name": "bar",
+                  "optional": false,
+                  "range": [
+                    61,
+                    64,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  61,
+                  64,
+                ],
+                "type": "ImportSpecifier",
+              },
+              "parent": {
+                "attributes": [],
+                "importKind": "value",
+                "range": [
+                  52,
+                  78,
+                ],
+                "source": {
+                  "range": [
+                    72,
+                    77,
+                  ],
+                  "raw": "'mod'",
+                  "type": "Literal",
+                  "value": "mod",
+                },
+                "specifiers": [
+                  {
+                    "importKind": "value",
+                    "imported": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "local": {
+                      "decorators": [],
+                      "name": "bar",
+                      "optional": false,
+                      "range": [
+                        61,
+                        64,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      61,
+                      64,
+                    ],
+                    "type": "ImportSpecifier",
+                  },
+                ],
+                "type": "ImportDeclaration",
+              },
+              "type": "ImportBinding",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "bar",
+              "optional": false,
+              "range": [
+                61,
+                64,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "bar",
+          "references": [],
+          "scope": [Circular],
+        },
       ],
     },
   ],
 }
-`;

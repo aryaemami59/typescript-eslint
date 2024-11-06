@@ -1,57 +1,1205 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`call-expression type-parameters1 1`] = `
 ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-    Variable$2 {
-      defs: [
-        TypeDefinition$1 {
-          name: Identifier<"T">,
-          node: TSTypeAliasDeclaration$1,
+  "currentScope": null,
+  "declaredVariables": WeakMap {},
+  "globalScope": GlobalScope {
+    "$id": 603,
+    "block": {
+      "body": [
+        {
+          "declare": false,
+          "id": {
+            "decorators": [],
+            "name": "T",
+            "optional": false,
+            "range": [
+              5,
+              6,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "range": [
+            0,
+            11,
+          ],
+          "type": "TSTypeAliasDeclaration",
+          "typeAnnotation": {
+            "literal": {
+              "range": [
+                9,
+                10,
+              ],
+              "raw": "1",
+              "type": "Literal",
+              "value": 1,
+            },
+            "range": [
+              9,
+              10,
+            ],
+            "type": "TSLiteralType",
+          },
+          "typeParameters": undefined,
+        },
+        {
+          "directive": undefined,
+          "expression": {
+            "arguments": [],
+            "callee": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                12,
+                15,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "optional": false,
+            "range": [
+              12,
+              20,
+            ],
+            "type": "CallExpression",
+            "typeArguments": {
+              "params": [
+                {
+                  "range": [
+                    16,
+                    17,
+                  ],
+                  "type": "TSTypeReference",
+                  "typeArguments": undefined,
+                  "typeName": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      16,
+                      17,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                },
+              ],
+              "range": [
+                15,
+                18,
+              ],
+              "type": "TSTypeParameterInstantiation",
+            },
+          },
+          "range": [
+            12,
+            21,
+          ],
+          "type": "ExpressionStatement",
         },
       ],
-      name: "T",
-      references: [
-        Reference$2 {
-          identifier: Identifier<"T">,
-          isRead: true,
-          isTypeReference: true,
-          isValueReference: false,
-          isWrite: false,
-          resolved: Variable$2,
-        },
+      "comments": undefined,
+      "range": [
+        0,
+        22,
       ],
-      isValueVariable: false,
-      isTypeVariable: true,
+      "sourceType": "script",
+      "tokens": undefined,
+      "type": "Program",
     },
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$2,
-      isStrict: false,
-      references: [
-        Reference$1 {
-          identifier: Identifier<"foo">,
-          isRead: true,
-          isTypeReference: false,
-          isValueReference: true,
-          isWrite: false,
-          resolved: null,
+    "childScopes": [],
+    "functionExpressionScope": false,
+    "implicit": {
+      "leftToBeResolved": [
+        Reference {
+          "$id": 644,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              12,
+              15,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": undefined,
+          "resolved": null,
+          "writeExpr": undefined,
         },
-        Reference$2,
+        Reference {
+          "$id": 645,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "T",
+            "optional": false,
+            "range": [
+              16,
+              17,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 1173,
+            "defs": [
+              TypeDefinition {
+                "$id": 800,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    5,
+                    6,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      5,
+                      6,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    0,
+                    11,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "literal": {
+                      "range": [
+                        9,
+                        10,
+                      ],
+                      "raw": "1",
+                      "type": "Literal",
+                      "value": 1,
+                    },
+                    "range": [
+                      9,
+                      10,
+                    ],
+                    "type": "TSLiteralType",
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  5,
+                  6,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "T",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
+        },
       ],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
-        "T" => Variable$2,
+      "set": Map {},
+      "variables": [],
+    },
+    "isStrict": false,
+    "leftToResolve": null,
+    "references": [
+      Reference {
+        "$id": 644,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "foo",
+          "optional": false,
+          "range": [
+            12,
+            15,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "init": undefined,
+        "maybeImplicitGlobal": undefined,
+        "resolved": null,
+        "writeExpr": undefined,
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
-        Variable$2,
+      Reference {
+        "$id": 645,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "T",
+          "optional": false,
+          "range": [
+            16,
+            17,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "init": undefined,
+        "maybeImplicitGlobal": null,
+        "resolved": Variable {
+          "$id": 1173,
+          "defs": [
+            TypeDefinition {
+              "$id": 800,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  5,
+                  6,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    5,
+                    6,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  0,
+                  11,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "literal": {
+                    "range": [
+                      9,
+                      10,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                  "range": [
+                    9,
+                    10,
+                  ],
+                  "type": "TSLiteralType",
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                5,
+                6,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "T",
+          "references": [
+            [Circular],
+          ],
+          "scope": [Circular],
+        },
+        "writeExpr": undefined,
+      },
+    ],
+    "set": Map {
+      "const" => ImplicitLibVariable {
+        "$id": 1172,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      "T" => Variable {
+        "$id": 1173,
+        "defs": [
+          TypeDefinition {
+            "$id": 800,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                5,
+                6,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  5,
+                  6,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                0,
+                11,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "literal": {
+                  "range": [
+                    9,
+                    10,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+                "range": [
+                  9,
+                  10,
+                ],
+                "type": "TSLiteralType",
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "T",
+            "optional": false,
+            "range": [
+              5,
+              6,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "T",
+        "references": [
+          Reference {
+            "$id": 645,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                16,
+                17,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": undefined,
+          },
+        ],
+        "scope": [Circular],
+      },
+    },
+    "through": [
+      Reference {
+        "$id": 644,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "foo",
+          "optional": false,
+          "range": [
+            12,
+            15,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "init": undefined,
+        "maybeImplicitGlobal": undefined,
+        "resolved": null,
+        "writeExpr": undefined,
+      },
+    ],
+    "type": "global",
+    "upper": null,
+    "variableScope": [Circular],
+    "variables": [
+      ImplicitLibVariable {
+        "$id": 1172,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      Variable {
+        "$id": 1173,
+        "defs": [
+          TypeDefinition {
+            "$id": 800,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                5,
+                6,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  5,
+                  6,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                0,
+                11,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "literal": {
+                  "range": [
+                    9,
+                    10,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+                "range": [
+                  9,
+                  10,
+                ],
+                "type": "TSLiteralType",
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "T",
+            "optional": false,
+            "range": [
+              5,
+              6,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "T",
+        "references": [
+          Reference {
+            "$id": 645,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                16,
+                17,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": undefined,
+          },
+        ],
+        "scope": [Circular],
+      },
+    ],
+  },
+  "nodeToScope": WeakMap {},
+  "scopes": [
+    GlobalScope {
+      "$id": 603,
+      "block": {
+        "body": [
+          {
+            "declare": false,
+            "id": {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                5,
+                6,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "range": [
+              0,
+              11,
+            ],
+            "type": "TSTypeAliasDeclaration",
+            "typeAnnotation": {
+              "literal": {
+                "range": [
+                  9,
+                  10,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+              "range": [
+                9,
+                10,
+              ],
+              "type": "TSLiteralType",
+            },
+            "typeParameters": undefined,
+          },
+          {
+            "directive": undefined,
+            "expression": {
+              "arguments": [],
+              "callee": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  12,
+                  15,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "optional": false,
+              "range": [
+                12,
+                20,
+              ],
+              "type": "CallExpression",
+              "typeArguments": {
+                "params": [
+                  {
+                    "range": [
+                      16,
+                      17,
+                    ],
+                    "type": "TSTypeReference",
+                    "typeArguments": undefined,
+                    "typeName": {
+                      "decorators": [],
+                      "name": "T",
+                      "optional": false,
+                      "range": [
+                        16,
+                        17,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                  },
+                ],
+                "range": [
+                  15,
+                  18,
+                ],
+                "type": "TSTypeParameterInstantiation",
+              },
+            },
+            "range": [
+              12,
+              21,
+            ],
+            "type": "ExpressionStatement",
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          0,
+          22,
+        ],
+        "sourceType": "script",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [],
+      "functionExpressionScope": false,
+      "implicit": {
+        "leftToBeResolved": [
+          Reference {
+            "$id": 644,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                12,
+                15,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": undefined,
+            "resolved": null,
+            "writeExpr": undefined,
+          },
+          Reference {
+            "$id": 645,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                16,
+                17,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": Variable {
+              "$id": 1173,
+              "defs": [
+                TypeDefinition {
+                  "$id": 800,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      5,
+                      6,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "declare": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "T",
+                      "optional": false,
+                      "range": [
+                        5,
+                        6,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      0,
+                      11,
+                    ],
+                    "type": "TSTypeAliasDeclaration",
+                    "typeAnnotation": {
+                      "literal": {
+                        "range": [
+                          9,
+                          10,
+                        ],
+                        "raw": "1",
+                        "type": "Literal",
+                        "value": 1,
+                      },
+                      "range": [
+                        9,
+                        10,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                    "typeParameters": undefined,
+                  },
+                  "parent": null,
+                  "type": "Type",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    5,
+                    6,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "T",
+              "references": [
+                [Circular],
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": undefined,
+          },
+        ],
+        "set": Map {},
+        "variables": [],
+      },
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [
+        Reference {
+          "$id": 644,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              12,
+              15,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": undefined,
+          "resolved": null,
+          "writeExpr": undefined,
+        },
+        Reference {
+          "$id": 645,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "T",
+            "optional": false,
+            "range": [
+              16,
+              17,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 1173,
+            "defs": [
+              TypeDefinition {
+                "$id": 800,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    5,
+                    6,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      5,
+                      6,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    0,
+                    11,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "literal": {
+                      "range": [
+                        9,
+                        10,
+                      ],
+                      "raw": "1",
+                      "type": "Literal",
+                      "value": 1,
+                    },
+                    "range": [
+                      9,
+                      10,
+                    ],
+                    "type": "TSLiteralType",
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  5,
+                  6,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "T",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
+        },
+      ],
+      "set": Map {
+        "const" => ImplicitLibVariable {
+          "$id": 1172,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        "T" => Variable {
+          "$id": 1173,
+          "defs": [
+            TypeDefinition {
+              "$id": 800,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  5,
+                  6,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    5,
+                    6,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  0,
+                  11,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "literal": {
+                    "range": [
+                      9,
+                      10,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                  "range": [
+                    9,
+                    10,
+                  ],
+                  "type": "TSLiteralType",
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                5,
+                6,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "T",
+          "references": [
+            Reference {
+              "$id": 645,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  16,
+                  17,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
+      },
+      "through": [
+        Reference {
+          "$id": 644,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              12,
+              15,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": undefined,
+          "resolved": null,
+          "writeExpr": undefined,
+        },
+      ],
+      "type": "global",
+      "upper": null,
+      "variableScope": [Circular],
+      "variables": [
+        ImplicitLibVariable {
+          "$id": 1172,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        Variable {
+          "$id": 1173,
+          "defs": [
+            TypeDefinition {
+              "$id": 800,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  5,
+                  6,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    5,
+                    6,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  0,
+                  11,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "literal": {
+                    "range": [
+                      9,
+                      10,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                  "range": [
+                    9,
+                    10,
+                  ],
+                  "type": "TSLiteralType",
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                5,
+                6,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "T",
+          "references": [
+            Reference {
+              "$id": 645,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  16,
+                  17,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
       ],
     },
   ],
 }
-`;
