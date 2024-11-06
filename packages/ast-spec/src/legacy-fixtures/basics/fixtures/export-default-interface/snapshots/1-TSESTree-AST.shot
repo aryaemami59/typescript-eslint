@@ -1,22 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > export-default-interface > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportDefaultDeclaration {
       type: "ExportDefaultDeclaration",
       declaration: TSInterfaceDeclaration {
         type: "TSInterfaceDeclaration",
         body: TSInterfaceBody {
           type: "TSInterfaceBody",
-          body: Array [
+          body: [
             TSMethodSignature {
               type: "TSMethodSignature",
               computed: false,
               key: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "method1",
                 optional: false,
 
@@ -28,7 +25,7 @@ Program {
               },
               kind: "method",
               optional: false,
-              params: Array [],
+              params: [],
               readonly: false,
               returnType: TSTypeAnnotation {
                 type: "TSTypeAnnotation",
@@ -65,10 +62,10 @@ Program {
           },
         },
         declare: false,
-        extends: Array [],
+        extends: [],
         id: Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "T",
           optional: false,
 
@@ -102,4 +99,3 @@ Program {
     end: { column: 0, line: 6 },
   },
 }
-`;

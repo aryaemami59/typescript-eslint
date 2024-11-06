@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > element > AccessorProperty > modifier-abstract > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: true,
       body: ClassBody {
         type: "ClassBody",
-        body: Array [
+        body: [
           ClassAccessorProperty {
             type: "ClassAccessorProperty",
             abstract: true,
@@ -86,4 +83,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

@@ -1,18 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > jsx > JSXNamespacedName > component > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "x",
             optional: false,
 
@@ -24,11 +21,11 @@ Program {
           },
           init: JSXElement {
             type: "JSXElement",
-            children: Array [],
+            children: [],
             closingElement: null,
             openingElement: JSXOpeningElement {
               type: "JSXOpeningElement",
-              attributes: Array [
+              attributes: [
                 JSXAttribute {
                   type: "JSXAttribute",
                   name: JSXNamespacedName {
@@ -62,7 +59,7 @@ Program {
                   },
                   value: Literal {
                     type: "Literal",
-                    raw: "\\"tight spacing\\"",
+                    raw: ""tight spacing"",
                     value: "tight spacing",
 
                     range: [38, 53],
@@ -123,13 +120,13 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           definite: false,
           id: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "y",
             optional: false,
 
@@ -141,11 +138,11 @@ Program {
           },
           init: JSXElement {
             type: "JSXElement",
-            children: Array [],
+            children: [],
             closingElement: null,
             openingElement: JSXOpeningElement {
               type: "JSXOpeningElement",
-              attributes: Array [
+              attributes: [
                 JSXAttribute {
                   type: "JSXAttribute",
                   name: JSXNamespacedName {
@@ -179,7 +176,7 @@ Program {
                   },
                   value: Literal {
                     type: "Literal",
-                    raw: "\\"loose spacing\\"",
+                    raw: ""loose spacing"",
                     value: "loose spacing",
 
                     range: [96, 111],
@@ -242,7 +239,7 @@ Program {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: Array [
+        body: [
           TSPropertySignature {
             type: "TSPropertySignature",
             computed: false,
@@ -294,10 +291,10 @@ Program {
         },
       },
       declare: false,
-      extends: Array [],
+      extends: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "NamespacePropComponentProps",
         optional: false,
 
@@ -319,12 +316,12 @@ Program {
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [
+        body: [
           ReturnStatement {
             type: "ReturnStatement",
             argument: JSXElement {
               type: "JSXElement",
-              children: Array [
+              children: [
                 JSXExpressionContainer {
                   type: "JSXExpressionContainer",
                   expression: MemberExpression {
@@ -332,7 +329,7 @@ Program {
                     computed: true,
                     object: Identifier {
                       type: "Identifier",
-                      decorators: Array [],
+                      decorators: [],
                       name: "props",
                       optional: false,
 
@@ -390,7 +387,7 @@ Program {
               },
               openingElement: JSXOpeningElement {
                 type: "JSXOpeningElement",
-                attributes: Array [],
+                attributes: [],
                 name: JSXIdentifier {
                   type: "JSXIdentifier",
                   name: "div",
@@ -436,7 +433,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "NamespacePropComponent",
         optional: false,
 
@@ -446,10 +443,10 @@ Program {
           end: { column: 31, line: 8 },
         },
       },
-      params: Array [
+      params: [
         Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "props",
           optional: false,
           typeAnnotation: TSTypeAnnotation {
@@ -458,7 +455,7 @@ Program {
               type: "TSTypeReference",
               typeName: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "NamespacePropComponentProps",
                 optional: false,
 
@@ -506,4 +503,3 @@ Program {
     end: { column: 0, line: 11 },
   },
 }
-`;

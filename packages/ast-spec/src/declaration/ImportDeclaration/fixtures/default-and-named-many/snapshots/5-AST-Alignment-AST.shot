@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ImportDeclaration > default-and-named-many > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -15,7 +12,7 @@ exports[`AST Fixtures > declaration > ImportDeclaration > default-and-named-many
         importKind: 'value',
         source: Literal {
           type: 'Literal',
-          raw: '\\\\'mod\\\\'',
+          raw: '\'mod\'',
           value: 'mod',
 
           range: [27, 32],
@@ -164,5 +161,4 @@ exports[`AST Fixtures > declaration > ImportDeclaration > default-and-named-many
       start: { column: 0, line: 1 },
       end: { column: 0, line: 2 },
     },
-  }"
-`;
+  }

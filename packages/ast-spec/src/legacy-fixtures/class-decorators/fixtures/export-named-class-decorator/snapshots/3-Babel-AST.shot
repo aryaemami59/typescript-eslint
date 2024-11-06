@@ -1,17 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > class-decorators > export-named-class-decorator > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: Array [],
+      assertions: [],
       declaration: ClassDeclaration {
         type: "ClassDeclaration",
         body: ClassBody {
           type: "ClassBody",
-          body: Array [],
+          body: [],
 
           range: [98, 100],
           loc: {
@@ -19,7 +16,7 @@ Program {
             end: { column: 19, line: 4 },
           },
         },
-        decorators: Array [
+        decorators: [
           Decorator {
             type: "Decorator",
             expression: Identifier {
@@ -60,7 +57,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [81, 100],
       loc: {
@@ -77,4 +74,3 @@ Program {
     end: { column: 0, line: 5 },
   },
 }
-`;

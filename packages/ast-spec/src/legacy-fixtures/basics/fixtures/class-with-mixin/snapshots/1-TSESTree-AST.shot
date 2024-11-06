@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > class-with-mixin > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [
+        body: [
           ReturnStatement {
             type: "ReturnStatement",
             argument: ClassExpression {
@@ -17,7 +14,7 @@ Program {
               abstract: false,
               body: ClassBody {
                 type: "ClassBody",
-                body: Array [],
+                body: [],
 
                 range: [150, 152],
                 loc: {
@@ -26,12 +23,12 @@ Program {
                 },
               },
               declare: false,
-              decorators: Array [],
+              decorators: [],
               id: null,
-              implements: Array [],
+              implements: [],
               superClass: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "Base",
                 optional: false,
 
@@ -68,7 +65,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "M",
         optional: false,
 
@@ -78,10 +75,10 @@ Program {
           end: { column: 10, line: 3 },
         },
       },
-      params: Array [
+      params: [
         Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "Base",
           optional: false,
           typeAnnotation: TSTypeAnnotation {
@@ -90,7 +87,7 @@ Program {
               type: "TSTypeReference",
               typeName: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "T",
                 optional: false,
 
@@ -124,7 +121,7 @@ Program {
       ],
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
@@ -132,10 +129,10 @@ Program {
               type: "TSTypeReference",
               typeArguments: TSTypeParameterInstantiation {
                 type: "TSTypeParameterInstantiation",
-                params: Array [
+                params: [
                   TSTypeLiteral {
                     type: "TSTypeLiteral",
-                    members: Array [],
+                    members: [],
 
                     range: [106, 108],
                     loc: {
@@ -153,7 +150,7 @@ Program {
               },
               typeName: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "Constructor",
                 optional: false,
 
@@ -173,7 +170,7 @@ Program {
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "T",
               optional: false,
 
@@ -211,7 +208,7 @@ Program {
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: Array [],
+        body: [],
 
         range: [196, 198],
         loc: {
@@ -220,10 +217,10 @@ Program {
         },
       },
       declare: false,
-      decorators: Array [],
+      decorators: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "X",
         optional: false,
 
@@ -233,12 +230,12 @@ Program {
           end: { column: 7, line: 7 },
         },
       },
-      implements: Array [
+      implements: [
         TSClassImplements {
           type: "TSClassImplements",
           expression: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "I",
             optional: false,
 
@@ -258,10 +255,10 @@ Program {
       ],
       superClass: CallExpression {
         type: "CallExpression",
-        arguments: Array [
+        arguments: [
           Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "C",
             optional: false,
 
@@ -274,7 +271,7 @@ Program {
         ],
         callee: Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "M",
           optional: false,
 
@@ -287,7 +284,7 @@ Program {
         optional: false,
         typeArguments: TSTypeParameterInstantiation {
           type: "TSTypeParameterInstantiation",
-          params: Array [
+          params: [
             TSAnyKeyword {
               type: "TSAnyKeyword",
 
@@ -324,7 +321,7 @@ Program {
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: Array [],
+        body: [],
 
         range: [208, 210],
         loc: {
@@ -333,10 +330,10 @@ Program {
         },
       },
       declare: false,
-      decorators: Array [],
+      decorators: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "C",
         optional: false,
 
@@ -346,7 +343,7 @@ Program {
           end: { column: 7, line: 9 },
         },
       },
-      implements: Array [],
+      implements: [],
       superClass: null,
 
       range: [200, 210],
@@ -359,7 +356,7 @@ Program {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: Array [],
+        body: [],
 
         range: [223, 225],
         loc: {
@@ -368,10 +365,10 @@ Program {
         },
       },
       declare: false,
-      extends: Array [],
+      extends: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "I",
         optional: false,
 
@@ -393,7 +390,7 @@ Program {
       declare: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "Constructor",
         optional: false,
 
@@ -406,12 +403,12 @@ Program {
       typeAnnotation: TSConstructorType {
         type: "TSConstructorType",
         abstract: false,
-        params: Array [
+        params: [
           RestElement {
             type: "RestElement",
             argument: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "args",
               optional: false,
 
@@ -421,7 +418,7 @@ Program {
                 end: { column: 34, line: 11 },
               },
             },
-            decorators: Array [],
+            decorators: [],
             optional: false,
             typeAnnotation: TSTypeAnnotation {
               type: "TSTypeAnnotation",
@@ -464,7 +461,7 @@ Program {
             type: "TSTypeReference",
             typeName: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "T",
               optional: false,
 
@@ -497,14 +494,14 @@ Program {
       },
       typeParameters: TSTypeParameterDeclaration {
         type: "TSTypeParameterDeclaration",
-        params: Array [
+        params: [
           TSTypeParameter {
             type: "TSTypeParameter",
             const: false,
             in: false,
             name: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "T",
               optional: false,
 
@@ -546,4 +543,3 @@ Program {
     end: { column: 0, line: 12 },
   },
 }
-`;

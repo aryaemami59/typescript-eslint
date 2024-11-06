@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > special > ExportSpecifier > type-only-export-specifiers > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -16,7 +13,7 @@ exports[`AST Fixtures > special > ExportSpecifier > type-only-export-specifiers 
         exportKind: 'value',
         source: Literal {
           type: 'Literal',
-          raw: '\\\\'mod\\\\'',
+          raw: '\'mod\'',
           value: 'mod',
 
           range: [31, 36],
@@ -110,5 +107,4 @@ exports[`AST Fixtures > special > ExportSpecifier > type-only-export-specifiers 
       start: { column: 0, line: 1 },
       end: { column: 0, line: 2 },
     },
-  }"
-`;
+  }

@@ -1,19 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > jsx > JSXNamespacedName > component-dashed > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: Array [
+        body: [
           TSInterfaceDeclaration {
             type: "TSInterfaceDeclaration",
             body: TSInterfaceBody {
               type: "TSInterfaceBody",
-              body: Array [
+              body: [
                 TSPropertySignature {
                   type: "TSPropertySignature",
                   computed: false,
@@ -145,7 +142,7 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -160,11 +157,11 @@ Program {
           },
           init: JSXElement {
             type: "JSXElement",
-            children: Array [],
+            children: [],
             closingElement: null,
             openingElement: JSXOpeningElement {
               type: "JSXOpeningElement",
-              attributes: Array [],
+              attributes: [],
               name: JSXIdentifier {
                 type: "JSXIdentifier",
                 name: "foo",
@@ -208,7 +205,7 @@ Program {
     },
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -223,11 +220,11 @@ Program {
           },
           init: JSXElement {
             type: "JSXElement",
-            children: Array [],
+            children: [],
             closingElement: null,
             openingElement: JSXOpeningElement {
               type: "JSXOpeningElement",
-              attributes: Array [],
+              attributes: [],
               name: JSXNamespacedName {
                 type: "JSXNamespacedName",
                 name: JSXIdentifier {
@@ -297,4 +294,3 @@ Program {
     end: { column: 0, line: 10 },
   },
 }
-`;

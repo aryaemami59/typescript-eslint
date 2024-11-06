@@ -1,18 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > type-alias-declaration-export > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: Array [],
+      attributes: [],
       declaration: TSTypeAliasDeclaration {
         type: "TSTypeAliasDeclaration",
         declare: false,
         id: Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "TestAlias",
           optional: false,
 
@@ -24,7 +21,7 @@ Program {
         },
         typeAnnotation: TSUnionType {
           type: "TSUnionType",
-          types: Array [
+          types: [
             TSStringKeyword {
               type: "TSStringKeyword",
 
@@ -60,7 +57,7 @@ Program {
       },
       exportKind: "type",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [73, 113],
       loc: {
@@ -77,4 +74,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

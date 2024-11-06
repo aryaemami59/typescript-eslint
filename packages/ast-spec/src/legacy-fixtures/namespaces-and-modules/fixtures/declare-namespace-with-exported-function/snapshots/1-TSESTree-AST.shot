@@ -1,17 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > namespaces-and-modules > declare-namespace-with-exported-function > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSModuleDeclaration {
       type: "TSModuleDeclaration",
       body: TSModuleBlock {
         type: "TSModuleBlock",
-        body: Array [
+        body: [
           ExportNamedDeclaration {
             type: "ExportNamedDeclaration",
-            attributes: Array [],
+            attributes: [],
             declaration: TSDeclareFunction {
               type: "TSDeclareFunction",
               async: false,
@@ -20,7 +17,7 @@ Program {
               generator: false,
               id: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "select",
                 optional: false,
 
@@ -30,10 +27,10 @@ Program {
                   end: { column: 24, line: 4 },
                 },
               },
-              params: Array [
+              params: [
                 Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "selector",
                   optional: false,
                   typeAnnotation: TSTypeAnnotation {
@@ -68,7 +65,7 @@ Program {
                   type: "TSTypeReference",
                   typeArguments: TSTypeParameterInstantiation {
                     type: "TSTypeParameterInstantiation",
-                    params: Array [
+                    params: [
                       TSAnyKeyword {
                         type: "TSAnyKeyword",
 
@@ -88,7 +85,7 @@ Program {
                   },
                   typeName: Identifier {
                     type: "Identifier",
-                    decorators: Array [],
+                    decorators: [],
                     name: "Selection",
                     optional: false,
 
@@ -121,7 +118,7 @@ Program {
             },
             exportKind: "value",
             source: null,
-            specifiers: Array [],
+            specifiers: [],
 
             range: [98, 155],
             loc: {
@@ -141,7 +138,7 @@ Program {
       global: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "d3",
         optional: false,
 
@@ -168,4 +165,3 @@ Program {
     end: { column: 0, line: 6 },
   },
 }
-`;

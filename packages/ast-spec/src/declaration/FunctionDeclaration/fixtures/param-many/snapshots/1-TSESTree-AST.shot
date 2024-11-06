@@ -1,15 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > FunctionDeclaration > param-many > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [],
+        body: [],
 
         range: [22, 24],
         loc: {
@@ -22,7 +19,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "foo",
         optional: false,
 
@@ -32,10 +29,10 @@ Program {
           end: { column: 12, line: 1 },
         },
       },
-      params: Array [
+      params: [
         Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "a",
           optional: false,
 
@@ -47,7 +44,7 @@ Program {
         },
         Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "b",
           optional: false,
 
@@ -59,7 +56,7 @@ Program {
         },
         Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "c",
           optional: false,
 
@@ -86,4 +83,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

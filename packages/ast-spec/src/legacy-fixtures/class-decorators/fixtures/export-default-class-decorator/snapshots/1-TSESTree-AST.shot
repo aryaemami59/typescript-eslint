@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > class-decorators > export-default-class-decorator > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportDefaultDeclaration {
       type: "ExportDefaultDeclaration",
       declaration: ClassDeclaration {
@@ -11,7 +8,7 @@ Program {
         abstract: false,
         body: ClassBody {
           type: "ClassBody",
-          body: Array [],
+          body: [],
 
           range: [106, 108],
           loc: {
@@ -20,12 +17,12 @@ Program {
           },
         },
         declare: false,
-        decorators: Array [
+        decorators: [
           Decorator {
             type: "Decorator",
             expression: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "sealed",
               optional: false,
 
@@ -45,7 +42,7 @@ Program {
         ],
         id: Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "Qux",
           optional: false,
 
@@ -55,7 +52,7 @@ Program {
             end: { column: 24, line: 4 },
           },
         },
-        implements: Array [],
+        implements: [],
         superClass: null,
 
         range: [96, 108],
@@ -81,4 +78,3 @@ Program {
     end: { column: 0, line: 5 },
   },
 }
-`;

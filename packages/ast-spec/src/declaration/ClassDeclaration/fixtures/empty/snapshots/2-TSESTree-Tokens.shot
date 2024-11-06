@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ClassDeclaration > empty > TSESTree - Tokens 1`] = `
-Array [
+[
   Keyword {
     type: "Keyword",
     value: "class",
@@ -43,4 +40,3 @@ Array [
     },
   },
 ]
-`;

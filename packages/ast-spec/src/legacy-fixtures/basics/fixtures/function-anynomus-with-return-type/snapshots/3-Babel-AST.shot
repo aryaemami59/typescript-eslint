@@ -1,12 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > function-anynomus-with-return-type > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     VariableDeclaration {
       type: "VariableDeclaration",
-      declarations: Array [
+      declarations: [
         VariableDeclarator {
           type: "VariableDeclarator",
           id: Identifier {
@@ -24,7 +21,7 @@ Program {
             async: false,
             body: BlockStatement {
               type: "BlockStatement",
-              body: Array [],
+              body: [],
 
               range: [101, 103],
               loc: {
@@ -35,7 +32,7 @@ Program {
             expression: false,
             generator: false,
             id: null,
-            params: Array [],
+            params: [],
             returnType: TSTypeAnnotation {
               type: "TSTypeAnnotation",
               typeAnnotation: TSVoidKeyword {
@@ -86,4 +83,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

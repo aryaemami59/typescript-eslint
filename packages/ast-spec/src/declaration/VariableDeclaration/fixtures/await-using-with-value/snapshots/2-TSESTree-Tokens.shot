@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > VariableDeclaration > await-using-with-value > TSESTree - Tokens 1`] = `
-Array [
+[
   Identifier {
     type: "Identifier",
     value: "await",
@@ -63,4 +60,3 @@ Array [
     },
   },
 ]
-`;

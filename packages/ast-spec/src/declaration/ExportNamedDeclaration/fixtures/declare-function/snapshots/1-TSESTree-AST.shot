@@ -1,12 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ExportNamedDeclaration > declare-function > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: Array [],
+      attributes: [],
       declaration: TSDeclareFunction {
         type: "TSDeclareFunction",
         async: false,
@@ -15,7 +12,7 @@ Program {
         generator: false,
         id: Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "foo",
           optional: false,
 
@@ -25,7 +22,7 @@ Program {
             end: { column: 27, line: 1 },
           },
         },
-        params: Array [],
+        params: [],
         returnType: TSTypeAnnotation {
           type: "TSTypeAnnotation",
           typeAnnotation: TSVoidKeyword {
@@ -53,7 +50,7 @@ Program {
       },
       exportKind: "type",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [0, 36],
       loc: {
@@ -70,4 +67,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

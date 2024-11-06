@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > statement > ForInStatement > expr-init > TSESTree - Tokens 1`] = `
-Array [
+[
   Keyword {
     type: "Keyword",
     value: "for",
@@ -483,4 +480,3 @@ Array [
     },
   },
 ]
-`;

@@ -1,24 +1,21 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > destructuring-assignment-nested > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: AssignmentExpression {
         type: "AssignmentExpression",
         left: ObjectPattern {
           type: "ObjectPattern",
-          decorators: Array [],
+          decorators: [],
           optional: false,
-          properties: Array [
+          properties: [
             Property {
               type: "Property",
               computed: false,
               key: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "foo",
                 optional: false,
 
@@ -34,18 +31,18 @@ Program {
               shorthand: false,
               value: AssignmentPattern {
                 type: "AssignmentPattern",
-                decorators: Array [],
+                decorators: [],
                 left: ObjectPattern {
                   type: "ObjectPattern",
-                  decorators: Array [],
+                  decorators: [],
                   optional: false,
-                  properties: Array [
+                  properties: [
                     Property {
                       type: "Property",
                       computed: false,
                       key: Identifier {
                         type: "Identifier",
-                        decorators: Array [],
+                        decorators: [],
                         name: "bar",
                         optional: false,
 
@@ -61,18 +58,18 @@ Program {
                       shorthand: false,
                       value: AssignmentPattern {
                         type: "AssignmentPattern",
-                        decorators: Array [],
+                        decorators: [],
                         left: ObjectPattern {
                           type: "ObjectPattern",
-                          decorators: Array [],
+                          decorators: [],
                           optional: false,
-                          properties: Array [
+                          properties: [
                             Property {
                               type: "Property",
                               computed: false,
                               key: Identifier {
                                 type: "Identifier",
-                                decorators: Array [],
+                                decorators: [],
                                 name: "baz",
                                 optional: false,
 
@@ -88,14 +85,14 @@ Program {
                               shorthand: false,
                               value: AssignmentPattern {
                                 type: "AssignmentPattern",
-                                decorators: Array [],
+                                decorators: [],
                                 left: ArrayPattern {
                                   type: "ArrayPattern",
-                                  decorators: Array [],
-                                  elements: Array [
+                                  decorators: [],
+                                  elements: [
                                     Identifier {
                                       type: "Identifier",
-                                      decorators: Array [],
+                                      decorators: [],
                                       name: "a",
                                       optional: false,
 
@@ -107,18 +104,18 @@ Program {
                                     },
                                     AssignmentPattern {
                                       type: "AssignmentPattern",
-                                      decorators: Array [],
+                                      decorators: [],
                                       left: ObjectPattern {
                                         type: "ObjectPattern",
-                                        decorators: Array [],
+                                        decorators: [],
                                         optional: false,
-                                        properties: Array [
+                                        properties: [
                                           Property {
                                             type: "Property",
                                             computed: false,
                                             key: Identifier {
                                               type: "Identifier",
-                                              decorators: Array [],
+                                              decorators: [],
                                               name: "foo",
                                               optional: false,
 
@@ -134,14 +131,14 @@ Program {
                                             shorthand: false,
                                             value: AssignmentPattern {
                                               type: "AssignmentPattern",
-                                              decorators: Array [],
+                                              decorators: [],
                                               left: ArrayPattern {
                                                 type: "ArrayPattern",
-                                                decorators: Array [],
-                                                elements: Array [
+                                                decorators: [],
+                                                elements: [
                                                   Identifier {
                                                     type: "Identifier",
-                                                    decorators: Array [],
+                                                    decorators: [],
                                                     name: "x",
                                                     optional: false,
 
@@ -163,7 +160,7 @@ Program {
                                               optional: false,
                                               right: ArrayExpression {
                                                 type: "ArrayExpression",
-                                                elements: Array [
+                                                elements: [
                                                   Literal {
                                                     type: "Literal",
                                                     raw: "3",
@@ -208,13 +205,13 @@ Program {
                                       optional: false,
                                       right: ObjectExpression {
                                         type: "ObjectExpression",
-                                        properties: Array [
+                                        properties: [
                                           Property {
                                             type: "Property",
                                             computed: false,
                                             key: Identifier {
                                               type: "Identifier",
-                                              decorators: Array [],
+                                              decorators: [],
                                               name: "foo",
                                               optional: false,
 
@@ -230,7 +227,7 @@ Program {
                                             shorthand: false,
                                             value: ArrayExpression {
                                               type: "ArrayExpression",
-                                              elements: Array [
+                                              elements: [
                                                 Literal {
                                                   type: "Literal",
                                                   raw: "2",
@@ -284,7 +281,7 @@ Program {
                                 optional: false,
                                 right: ArrayExpression {
                                   type: "ArrayExpression",
-                                  elements: Array [],
+                                  elements: [],
 
                                   range: [138, 140],
                                   loc: {
@@ -317,7 +314,7 @@ Program {
                         optional: false,
                         right: ObjectExpression {
                           type: "ObjectExpression",
-                          properties: Array [],
+                          properties: [],
 
                           range: [145, 147],
                           loc: {
@@ -350,7 +347,7 @@ Program {
                 optional: false,
                 right: ObjectExpression {
                   type: "ObjectExpression",
-                  properties: Array [],
+                  properties: [],
 
                   range: [152, 154],
                   loc: {
@@ -383,13 +380,13 @@ Program {
         operator: "=",
         right: ObjectExpression {
           type: "ObjectExpression",
-          properties: Array [
+          properties: [
             Property {
               type: "Property",
               computed: false,
               key: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "foo",
                 optional: false,
 
@@ -405,13 +402,13 @@ Program {
               shorthand: false,
               value: ObjectExpression {
                 type: "ObjectExpression",
-                properties: Array [
+                properties: [
                   Property {
                     type: "Property",
                     computed: false,
                     key: Identifier {
                       type: "Identifier",
-                      decorators: Array [],
+                      decorators: [],
                       name: "bar",
                       optional: false,
 
@@ -427,13 +424,13 @@ Program {
                     shorthand: false,
                     value: ObjectExpression {
                       type: "ObjectExpression",
-                      properties: Array [
+                      properties: [
                         Property {
                           type: "Property",
                           computed: false,
                           key: Identifier {
                             type: "Identifier",
-                            decorators: Array [],
+                            decorators: [],
                             name: "baz",
                             optional: false,
 
@@ -449,7 +446,7 @@ Program {
                           shorthand: false,
                           value: ArrayExpression {
                             type: "ArrayExpression",
-                            elements: Array [
+                            elements: [
                               Literal {
                                 type: "Literal",
                                 raw: "2",
@@ -463,13 +460,13 @@ Program {
                               },
                               ObjectExpression {
                                 type: "ObjectExpression",
-                                properties: Array [
+                                properties: [
                                   Property {
                                     type: "Property",
                                     computed: false,
                                     key: Identifier {
                                       type: "Identifier",
-                                      decorators: Array [],
+                                      decorators: [],
                                       name: "foo",
                                       optional: false,
 
@@ -485,7 +482,7 @@ Program {
                                     shorthand: false,
                                     value: ArrayExpression {
                                       type: "ArrayExpression",
-                                      elements: Array [
+                                      elements: [
                                         Literal {
                                           type: "Literal",
                                           raw: "3",
@@ -596,4 +593,3 @@ Program {
     end: { column: 0, line: 6 },
   },
 }
-`;

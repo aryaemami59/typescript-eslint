@@ -1,20 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > expression > UpdateExpression > valid-assignment > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: Array [
+        body: [
           PropertyDefinition {
             type: "PropertyDefinition",
             computed: false,
             declare: false,
-            decorators: Array [],
+            decorators: [],
             definite: false,
             key: PrivateIdentifier {
               type: "PrivateIdentifier",
@@ -41,10 +38,10 @@ Program {
           MethodDefinition {
             type: "MethodDefinition",
             computed: false,
-            decorators: Array [],
+            decorators: [],
             key: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "m",
               optional: false,
 
@@ -63,7 +60,7 @@ Program {
               async: false,
               body: BlockStatement {
                 type: "BlockStatement",
-                body: Array [
+                body: [
                   ExpressionStatement {
                     type: "ExpressionStatement",
                     expression: UpdateExpression {
@@ -123,7 +120,7 @@ Program {
                         computed: false,
                         object: CallExpression {
                           type: "CallExpression",
-                          arguments: Array [],
+                          arguments: [],
                           callee: MemberExpression {
                             type: "MemberExpression",
                             computed: false,
@@ -139,7 +136,7 @@ Program {
                             optional: false,
                             property: Identifier {
                               type: "Identifier",
-                              decorators: Array [],
+                              decorators: [],
                               name: "m",
                               optional: false,
 
@@ -167,7 +164,7 @@ Program {
                         optional: false,
                         property: Identifier {
                           type: "Identifier",
-                          decorators: Array [],
+                          decorators: [],
                           name: "a",
                           optional: false,
 
@@ -267,7 +264,7 @@ Program {
                       type: "UpdateExpression",
                       argument: Identifier {
                         type: "Identifier",
-                        decorators: Array [],
+                        decorators: [],
                         name: "F",
                         optional: false,
 
@@ -618,7 +615,7 @@ Program {
               expression: false,
               generator: false,
               id: null,
-              params: Array [],
+              params: [],
 
               range: [20, 229],
               loc: {
@@ -642,10 +639,10 @@ Program {
         },
       },
       declare: false,
-      decorators: Array [],
+      decorators: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "F",
         optional: false,
 
@@ -655,7 +652,7 @@ Program {
           end: { column: 7, line: 1 },
         },
       },
-      implements: Array [],
+      implements: [],
       superClass: null,
 
       range: [0, 231],
@@ -673,4 +670,3 @@ Program {
     end: { column: 0, line: 17 },
   },
 }
-`;

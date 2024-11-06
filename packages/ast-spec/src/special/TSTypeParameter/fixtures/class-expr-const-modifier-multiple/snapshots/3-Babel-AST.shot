@@ -1,16 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > special > TSTypeParameter > class-expr-const-modifier-multiple > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: ClassExpression {
         type: "ClassExpression",
         body: ClassBody {
           type: "ClassBody",
-          body: Array [],
+          body: [],
 
           range: [19, 21],
           loc: {
@@ -22,7 +19,7 @@ Program {
         superClass: null,
         typeParameters: TSTypeParameterDeclaration {
           type: "TSTypeParameterDeclaration",
-          params: Array [
+          params: [
             TSTypeParameter {
               type: "TSTypeParameter",
               name: "T",
@@ -75,4 +72,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

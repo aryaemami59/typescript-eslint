@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > special > TSTypeParameter > func-decl-const-modifier-multiple > Babel - Tokens 1`] = `
-Array [
+[
   Keyword {
     type: "Keyword",
     value: "function",
@@ -123,4 +120,3 @@ Array [
     },
   },
 ]
-`;

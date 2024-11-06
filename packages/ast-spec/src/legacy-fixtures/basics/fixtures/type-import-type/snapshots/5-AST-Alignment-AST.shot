@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > type-import-type > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -31,7 +28,7 @@ exports[`AST Fixtures > legacy-fixtures > basics > type-import-type > AST Alignm
 -             type: 'TSLiteralType',
 -             literal: Literal {
 -               type: 'Literal',
--               raw: '\\\\'A\\\\'',
+-               raw: '\'A\'',
 -               value: 'A',
 -
 -               range: [96, 99],
@@ -42,7 +39,7 @@ exports[`AST Fixtures > legacy-fixtures > basics > type-import-type > AST Alignm
 -             },
 +           argument: Literal {
 +             type: 'Literal',
-+             raw: '\\\\'A\\\\'',
++             raw: '\'A\'',
 +             value: 'A',
 
               range: [96, 99],
@@ -96,7 +93,7 @@ exports[`AST Fixtures > legacy-fixtures > basics > type-import-type > AST Alignm
 -           type: 'TSLiteralType',
 -           literal: Literal {
 -             type: 'Literal',
--             raw: '\\\\'B\\\\'',
+-             raw: '\'B\'',
 -             value: 'B',
 -
 -             range: [118, 121],
@@ -107,7 +104,7 @@ exports[`AST Fixtures > legacy-fixtures > basics > type-import-type > AST Alignm
 -           },
 +         argument: Literal {
 +           type: 'Literal',
-+           raw: '\\\\'B\\\\'',
++           raw: '\'B\'',
 +           value: 'B',
 
             range: [118, 121],
@@ -184,5 +181,4 @@ exports[`AST Fixtures > legacy-fixtures > basics > type-import-type > AST Alignm
       start: { column: 0, line: 3 },
       end: { column: 0, line: 5 },
     },
-  }"
-`;
+  }

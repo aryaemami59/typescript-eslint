@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ExportAllDeclaration > assertion > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -28,7 +25,7 @@ exports[`AST Fixtures > declaration > ExportAllDeclaration > assertion > AST Ali
             },
             value: Literal {
               type: 'Literal',
-              raw: '\\\\'json\\\\'',
+              raw: '\'json\'',
               value: 'json',
 
               range: [35, 41],
@@ -49,7 +46,7 @@ exports[`AST Fixtures > declaration > ExportAllDeclaration > assertion > AST Ali
         exportKind: 'value',
         source: Literal {
           type: 'Literal',
-          raw: '\\\\'mod\\\\'',
+          raw: '\'mod\'',
           value: 'mod',
 
           range: [14, 19],
@@ -73,5 +70,4 @@ exports[`AST Fixtures > declaration > ExportAllDeclaration > assertion > AST Ali
       start: { column: 0, line: 1 },
       end: { column: 0, line: 2 },
     },
-  }"
-`;
+  }

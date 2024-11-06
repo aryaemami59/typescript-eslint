@@ -1,17 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ExportNamedDeclaration > enum > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: Array [],
+      attributes: [],
       declaration: TSEnumDeclaration {
         type: "TSEnumDeclaration",
         body: TSEnumBody {
           type: "TSEnumBody",
-          members: Array [],
+          members: [],
 
           range: [16, 18],
           loc: {
@@ -23,7 +20,7 @@ Program {
         declare: false,
         id: Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "Foo",
           optional: false,
 
@@ -42,7 +39,7 @@ Program {
       },
       exportKind: "value",
       source: null,
-      specifiers: Array [],
+      specifiers: [],
 
       range: [0, 18],
       loc: {
@@ -59,4 +56,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

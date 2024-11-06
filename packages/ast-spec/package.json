@@ -51,7 +51,6 @@
     "eslint": "*",
     "glob": "*",
     "jest-diff": "^29.7.0",
-    "make-dir": "*",
     "prettier": "^3.2.5",
     "pretty-format": "*",
     "rimraf": "*",

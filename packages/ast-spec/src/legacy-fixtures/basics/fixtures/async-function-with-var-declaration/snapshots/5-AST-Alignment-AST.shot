@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > async-function-with-var-declaration > AST Alignment - AST 1`] = `
-"Snapshot Diff:
+Snapshot Diff:
 - TSESTree
 + Babel
 
@@ -34,7 +31,7 @@ exports[`AST Fixtures > legacy-fixtures > basics > async-function-with-var-decla
                   },
                   init: Literal {
                     type: 'Literal',
-                    raw: '\\\\'foo\\\\'',
+                    raw: '\'foo\'',
                     value: 'foo',
 
                     range: [109, 114],
@@ -80,7 +77,7 @@ exports[`AST Fixtures > legacy-fixtures > basics > async-function-with-var-decla
                   },
                   init: Literal {
                     type: 'Literal',
-                    raw: '\\\\'bar\\\\'',
+                    raw: '\'bar\'',
                     value: 'bar',
 
                     range: [128, 133],
@@ -126,7 +123,7 @@ exports[`AST Fixtures > legacy-fixtures > basics > async-function-with-var-decla
                   },
                   init: Literal {
                     type: 'Literal',
-                    raw: '\\\\'fooBar\\\\'',
+                    raw: '\'fooBar\'',
                     value: 'fooBar',
 
                     range: [152, 160],
@@ -191,5 +188,4 @@ exports[`AST Fixtures > legacy-fixtures > basics > async-function-with-var-decla
       start: { column: 0, line: 3 },
       end: { column: 0, line: 8 },
     },
-  }"
-`;
+  }

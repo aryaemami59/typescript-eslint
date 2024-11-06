@@ -1,9 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > types > index-signature-without-type > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSTypeAliasDeclaration {
       type: "TSTypeAliasDeclaration",
       id: Identifier {
@@ -18,10 +15,10 @@ Program {
       },
       typeAnnotation: TSTypeLiteral {
         type: "TSTypeLiteral",
-        members: Array [
+        members: [
           TSIndexSignature {
             type: "TSIndexSignature",
-            parameters: Array [
+            parameters: [
               Identifier {
                 type: "Identifier",
                 name: "a",
@@ -82,4 +79,3 @@ Program {
     end: { column: 0, line: 6 },
   },
 }
-`;

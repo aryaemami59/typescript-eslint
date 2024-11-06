@@ -1,26 +1,23 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > readonly-arrays > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     FunctionDeclaration {
       type: "FunctionDeclaration",
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [
+        body: [
           ExpressionStatement {
             type: "ExpressionStatement",
             expression: CallExpression {
               type: "CallExpression",
-              arguments: Array [],
+              arguments: [],
               callee: MemberExpression {
                 type: "MemberExpression",
                 computed: false,
                 object: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "arr",
                   optional: false,
 
@@ -33,7 +30,7 @@ Program {
                 optional: false,
                 property: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "slice",
                   optional: false,
 
@@ -69,7 +66,7 @@ Program {
             type: "ExpressionStatement",
             expression: CallExpression {
               type: "CallExpression",
-              arguments: Array [
+              arguments: [
                 Literal {
                   type: "Literal",
                   raw: "'hello!'",
@@ -87,7 +84,7 @@ Program {
                 computed: false,
                 object: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "arr",
                   optional: false,
 
@@ -100,7 +97,7 @@ Program {
                 optional: false,
                 property: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "push",
                   optional: false,
 
@@ -145,7 +142,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "foo",
         optional: false,
 
@@ -155,10 +152,10 @@ Program {
           end: { column: 12, line: 3 },
         },
       },
-      params: Array [
+      params: [
         Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "arr",
           optional: false,
           typeAnnotation: TSTypeAnnotation {
@@ -167,7 +164,7 @@ Program {
               type: "TSTypeReference",
               typeArguments: TSTypeParameterInstantiation {
                 type: "TSTypeParameterInstantiation",
-                params: Array [
+                params: [
                   TSStringKeyword {
                     type: "TSStringKeyword",
 
@@ -187,7 +184,7 @@ Program {
               },
               typeName: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "ReadonlyArray",
                 optional: false,
 
@@ -231,18 +228,18 @@ Program {
       async: false,
       body: BlockStatement {
         type: "BlockStatement",
-        body: Array [
+        body: [
           ExpressionStatement {
             type: "ExpressionStatement",
             expression: CallExpression {
               type: "CallExpression",
-              arguments: Array [],
+              arguments: [],
               callee: MemberExpression {
                 type: "MemberExpression",
                 computed: false,
                 object: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "arr",
                   optional: false,
 
@@ -255,7 +252,7 @@ Program {
                 optional: false,
                 property: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "slice",
                   optional: false,
 
@@ -291,7 +288,7 @@ Program {
             type: "ExpressionStatement",
             expression: CallExpression {
               type: "CallExpression",
-              arguments: Array [
+              arguments: [
                 Literal {
                   type: "Literal",
                   raw: "'hello!'",
@@ -309,7 +306,7 @@ Program {
                 computed: false,
                 object: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "arr",
                   optional: false,
 
@@ -322,7 +319,7 @@ Program {
                 optional: false,
                 property: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "push",
                   optional: false,
 
@@ -367,7 +364,7 @@ Program {
       generator: false,
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "foo",
         optional: false,
 
@@ -377,10 +374,10 @@ Program {
           end: { column: 12, line: 8 },
         },
       },
-      params: Array [
+      params: [
         Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "arr",
           optional: false,
           typeAnnotation: TSTypeAnnotation {
@@ -444,4 +441,3 @@ Program {
     end: { column: 0, line: 12 },
   },
 }
-`;

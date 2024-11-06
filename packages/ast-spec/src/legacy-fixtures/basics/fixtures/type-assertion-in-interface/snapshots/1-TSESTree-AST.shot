@@ -1,20 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > type-assertion-in-interface > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: Array [
+        body: [
           TSMethodSignature {
             type: "TSMethodSignature",
             computed: false,
             key: Identifier {
               type: "Identifier",
-              decorators: Array [],
+              decorators: [],
               name: "isString",
               optional: false,
 
@@ -26,10 +23,10 @@ Program {
             },
             kind: "method",
             optional: false,
-            params: Array [
+            params: [
               Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "node",
                 optional: false,
                 typeAnnotation: TSTypeAnnotation {
@@ -66,7 +63,7 @@ Program {
                 asserts: true,
                 parameterName: Identifier {
                   type: "Identifier",
-                  decorators: Array [],
+                  decorators: [],
                   name: "node",
                   optional: false,
 
@@ -108,10 +105,10 @@ Program {
         },
       },
       declare: false,
-      extends: Array [],
+      extends: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "AssertFoo",
         optional: false,
 
@@ -137,4 +134,3 @@ Program {
     end: { column: 0, line: 6 },
   },
 }
-`;

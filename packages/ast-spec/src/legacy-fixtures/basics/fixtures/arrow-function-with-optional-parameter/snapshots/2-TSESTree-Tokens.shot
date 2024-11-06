@@ -1,7 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > arrow-function-with-optional-parameter > TSESTree - Tokens 1`] = `
-Array [
+[
   Punctuator {
     type: "Punctuator",
     value: "(",
@@ -133,4 +130,3 @@ Array [
     },
   },
 ]
-`;

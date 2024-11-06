@@ -1,16 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ExportNamedDeclaration > braced-identifier-aliased-to-string-literal-without-source > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      assertions: Array [],
+      assertions: [],
       declaration: null,
       exportKind: "value",
       source: null,
-      specifiers: Array [
+      specifiers: [
         ExportSpecifier {
           type: "ExportSpecifier",
           exported: Literal {
@@ -59,4 +56,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

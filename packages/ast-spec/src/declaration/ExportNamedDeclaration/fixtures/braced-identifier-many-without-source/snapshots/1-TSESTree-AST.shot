@@ -1,21 +1,18 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > declaration > ExportNamedDeclaration > braced-identifier-many-without-source > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExportNamedDeclaration {
       type: "ExportNamedDeclaration",
-      attributes: Array [],
+      attributes: [],
       declaration: null,
       exportKind: "value",
       source: null,
-      specifiers: Array [
+      specifiers: [
         ExportSpecifier {
           type: "ExportSpecifier",
           exported: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "a",
             optional: false,
 
@@ -28,7 +25,7 @@ Program {
           exportKind: "value",
           local: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "a",
             optional: false,
 
@@ -49,7 +46,7 @@ Program {
           type: "ExportSpecifier",
           exported: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "b",
             optional: false,
 
@@ -62,7 +59,7 @@ Program {
           exportKind: "value",
           local: Identifier {
             type: "Identifier",
-            decorators: Array [],
+            decorators: [],
             name: "b",
             optional: false,
 
@@ -96,4 +93,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

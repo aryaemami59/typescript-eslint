@@ -1,14 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > basics > interface-with-extends-member-expression > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     TSInterfaceDeclaration {
       type: "TSInterfaceDeclaration",
       body: TSInterfaceBody {
         type: "TSInterfaceBody",
-        body: Array [],
+        body: [],
 
         range: [103, 105],
         loc: {
@@ -16,7 +13,7 @@ Program {
           end: { column: 32, line: 3 },
         },
       },
-      extends: Array [
+      extends: [
         TSExpressionWithTypeArguments {
           type: "TSExpressionWithTypeArguments",
           expression: TSQualifiedName {
@@ -82,4 +79,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

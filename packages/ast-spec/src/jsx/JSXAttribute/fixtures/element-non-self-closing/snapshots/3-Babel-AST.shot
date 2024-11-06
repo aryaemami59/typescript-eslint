@@ -1,18 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > jsx > JSXAttribute > element-non-self-closing > Babel - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: JSXElement {
         type: "JSXElement",
-        children: Array [],
+        children: [],
         closingElement: null,
         openingElement: JSXOpeningElement {
           type: "JSXOpeningElement",
-          attributes: Array [
+          attributes: [
             JSXAttribute {
               type: "JSXAttribute",
               name: JSXIdentifier {
@@ -27,7 +24,7 @@ Program {
               },
               value: JSXElement {
                 type: "JSXElement",
-                children: Array [
+                children: [
                   JSXText {
                     type: "JSXText",
                     raw: "bar",
@@ -61,7 +58,7 @@ Program {
                 },
                 openingElement: JSXOpeningElement {
                   type: "JSXOpeningElement",
-                  attributes: Array [],
+                  attributes: [],
                   name: JSXIdentifier {
                     type: "JSXIdentifier",
                     name: "div",
@@ -136,4 +133,3 @@ Program {
     end: { column: 0, line: 2 },
   },
 }
-`;

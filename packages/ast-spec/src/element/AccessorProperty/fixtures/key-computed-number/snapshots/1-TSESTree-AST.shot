@@ -1,20 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > element > AccessorProperty > key-computed-number > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ClassDeclaration {
       type: "ClassDeclaration",
       abstract: false,
       body: ClassBody {
         type: "ClassBody",
-        body: Array [
+        body: [
           AccessorProperty {
             type: "AccessorProperty",
             computed: true,
             declare: false,
-            decorators: Array [],
+            decorators: [],
             definite: false,
             key: Literal {
               type: "Literal",
@@ -58,10 +55,10 @@ Program {
         },
       },
       declare: false,
-      decorators: Array [],
+      decorators: [],
       id: Identifier {
         type: "Identifier",
-        decorators: Array [],
+        decorators: [],
         name: "Foo",
         optional: false,
 
@@ -71,7 +68,7 @@ Program {
           end: { column: 9, line: 1 },
         },
       },
-      implements: Array [],
+      implements: [],
       superClass: null,
 
       range: [0, 33],
@@ -89,4 +86,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;

@@ -1,21 +1,18 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AST Fixtures > legacy-fixtures > expressions > tagged-template-expression-type-arguments > TSESTree - AST 1`] = `
 Program {
   type: "Program",
-  body: Array [
+  body: [
     ExpressionStatement {
       type: "ExpressionStatement",
       expression: TaggedTemplateExpression {
         type: "TaggedTemplateExpression",
         quasi: TemplateLiteral {
           type: "TemplateLiteral",
-          expressions: Array [],
-          quasis: Array [
+          expressions: [],
+          quasis: [
             TemplateElement {
               type: "TemplateElement",
               tail: true,
-              value: Object {
+              value: {
                 "cooked": "baz",
                 "raw": "baz",
               },
@@ -36,7 +33,7 @@ Program {
         },
         tag: Identifier {
           type: "Identifier",
-          decorators: Array [],
+          decorators: [],
           name: "foo",
           optional: false,
 
@@ -48,12 +45,12 @@ Program {
         },
         typeArguments: TSTypeParameterInstantiation {
           type: "TSTypeParameterInstantiation",
-          params: Array [
+          params: [
             TSTypeReference {
               type: "TSTypeReference",
               typeName: Identifier {
                 type: "Identifier",
-                decorators: Array [],
+                decorators: [],
                 name: "bar",
                 optional: false,
 
@@ -101,4 +98,3 @@ Program {
     end: { column: 0, line: 4 },
   },
 }
-`;
