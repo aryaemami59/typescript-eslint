@@ -1,102 +1,3976 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`type-declaration interface-heritage2 1`] = `
 ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-    Variable$2 {
-      defs: [
-        TypeDefinition$1 {
-          name: Identifier<"unreferenced">,
-          node: TSTypeAliasDeclaration$1,
+  "currentScope": null,
+  "declaredVariables": WeakMap {},
+  "globalScope": GlobalScope {
+    "$id": 30,
+    "block": {
+      "body": [
+        {
+          "declare": false,
+          "id": {
+            "decorators": [],
+            "name": "unreferenced",
+            "optional": false,
+            "range": [
+              5,
+              17,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "range": [
+            0,
+            23,
+          ],
+          "type": "TSTypeAliasDeclaration",
+          "typeAnnotation": {
+            "members": [],
+            "range": [
+              20,
+              22,
+            ],
+            "type": "TSTypeLiteral",
+          },
+          "typeParameters": undefined,
+        },
+        {
+          "body": {
+            "body": [
+              {
+                "attributes": [],
+                "declaration": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "unreferenced",
+                    "optional": false,
+                    "range": [
+                      57,
+                      69,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    52,
+                    75,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "members": [],
+                    "range": [
+                      72,
+                      74,
+                    ],
+                    "type": "TSTypeLiteral",
+                  },
+                  "typeParameters": undefined,
+                },
+                "exportKind": "type",
+                "range": [
+                  45,
+                  75,
+                ],
+                "source": null,
+                "specifiers": [],
+                "type": "ExportNamedDeclaration",
+              },
+            ],
+            "range": [
+              41,
+              77,
+            ],
+            "type": "TSModuleBlock",
+          },
+          "declare": false,
+          "global": false,
+          "id": {
+            "decorators": [],
+            "name": "Member",
+            "optional": false,
+            "range": [
+              34,
+              40,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "kind": "namespace",
+          "range": [
+            24,
+            77,
+          ],
+          "type": "TSModuleDeclaration",
+        },
+        {
+          "body": {
+            "body": [],
+            "range": [
+              120,
+              122,
+            ],
+            "type": "TSInterfaceBody",
+          },
+          "declare": false,
+          "extends": [
+            {
+              "expression": {
+                "computed": false,
+                "object": {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    100,
+                    106,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "optional": false,
+                "property": {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    107,
+                    119,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  100,
+                  119,
+                ],
+                "type": "MemberExpression",
+              },
+              "range": [
+                100,
+                119,
+              ],
+              "type": "TSInterfaceHeritage",
+              "typeArguments": undefined,
+            },
+          ],
+          "id": {
+            "decorators": [],
+            "name": "Foo",
+            "optional": false,
+            "range": [
+              88,
+              91,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "range": [
+            78,
+            122,
+          ],
+          "type": "TSInterfaceDeclaration",
+          "typeParameters": undefined,
         },
       ],
-      name: "unreferenced",
-      references: [],
-      isValueVariable: false,
-      isTypeVariable: true,
+      "comments": undefined,
+      "range": [
+        0,
+        123,
+      ],
+      "sourceType": "script",
+      "tokens": undefined,
+      "type": "Program",
     },
-    Variable$3 {
-      defs: [
-        TSModuleNameDefinition$2 {
-          name: Identifier<"Member">,
-          node: TSModuleDeclaration$2,
+    "childScopes": [
+      TSModuleScope {
+        "$id": 31,
+        "block": {
+          "body": {
+            "body": [
+              {
+                "attributes": [],
+                "declaration": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "unreferenced",
+                    "optional": false,
+                    "range": [
+                      57,
+                      69,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    52,
+                    75,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "members": [],
+                    "range": [
+                      72,
+                      74,
+                    ],
+                    "type": "TSTypeLiteral",
+                  },
+                  "typeParameters": undefined,
+                },
+                "exportKind": "type",
+                "range": [
+                  45,
+                  75,
+                ],
+                "source": null,
+                "specifiers": [],
+                "type": "ExportNamedDeclaration",
+              },
+            ],
+            "range": [
+              41,
+              77,
+            ],
+            "type": "TSModuleBlock",
+          },
+          "declare": false,
+          "global": false,
+          "id": {
+            "decorators": [],
+            "name": "Member",
+            "optional": false,
+            "range": [
+              34,
+              40,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "kind": "namespace",
+          "range": [
+            24,
+            77,
+          ],
+          "type": "TSModuleDeclaration",
         },
-      ],
-      name: "Member",
-      references: [
-        Reference$1 {
-          identifier: Identifier<"Member">,
-          isRead: true,
-          isTypeReference: true,
-          isValueReference: false,
-          isWrite: false,
-          resolved: Variable$3,
+        "childScopes": [],
+        "functionExpressionScope": false,
+        "isStrict": true,
+        "leftToResolve": null,
+        "references": [],
+        "set": Map {
+          "unreferenced" => Variable {
+            "$id": 80,
+            "defs": [
+              TypeDefinition {
+                "$id": 56,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    57,
+                    69,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "unreferenced",
+                    "optional": false,
+                    "range": [
+                      57,
+                      69,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    52,
+                    75,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "members": [],
+                    "range": [
+                      72,
+                      74,
+                    ],
+                    "type": "TSTypeLiteral",
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  57,
+                  69,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "unreferenced",
+            "references": [],
+            "scope": [Circular],
+          },
         },
-      ],
-      isValueVariable: true,
-      isTypeVariable: true,
-    },
-    Variable$4 {
-      defs: [
-        TypeDefinition$3 {
-          name: Identifier<"unreferenced">,
-          node: TSTypeAliasDeclaration$3,
-        },
-      ],
-      name: "unreferenced",
-      references: [],
-      isValueVariable: false,
-      isTypeVariable: true,
-    },
-    Variable$5 {
-      defs: [
-        TypeDefinition$4 {
-          name: Identifier<"Foo">,
-          node: TSInterfaceDeclaration$4,
-        },
-      ],
-      name: "Foo",
-      references: [],
-      isValueVariable: false,
-      isTypeVariable: true,
-    },
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$5,
-      isStrict: false,
-      references: [
-        Reference$1,
-      ],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
-        "unreferenced" => Variable$2,
-        "Member" => Variable$3,
-        "Foo" => Variable$5,
+        "through": [],
+        "type": "tsModule",
+        "upper": [Circular],
+        "variableScope": [Circular],
+        "variables": [
+          Variable {
+            "$id": 80,
+            "defs": [
+              TypeDefinition {
+                "$id": 56,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    57,
+                    69,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "unreferenced",
+                    "optional": false,
+                    "range": [
+                      57,
+                      69,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    52,
+                    75,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "members": [],
+                    "range": [
+                      72,
+                      74,
+                    ],
+                    "type": "TSTypeLiteral",
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  57,
+                  69,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "unreferenced",
+            "references": [],
+            "scope": [Circular],
+          },
+        ],
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
-        Variable$2,
-        Variable$3,
-        Variable$5,
+    ],
+    "functionExpressionScope": false,
+    "implicit": {
+      "leftToBeResolved": [
+        Reference {
+          "$id": 42,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "Member",
+            "optional": false,
+            "range": [
+              100,
+              106,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 79,
+            "defs": [
+              TSModuleNameDefinition {
+                "$id": 55,
+                "isTypeDefinition": true,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    34,
+                    40,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "body": {
+                    "body": [
+                      {
+                        "attributes": [],
+                        "declaration": {
+                          "declare": false,
+                          "id": {
+                            "decorators": [],
+                            "name": "unreferenced",
+                            "optional": false,
+                            "range": [
+                              57,
+                              69,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            52,
+                            75,
+                          ],
+                          "type": "TSTypeAliasDeclaration",
+                          "typeAnnotation": {
+                            "members": [],
+                            "range": [
+                              72,
+                              74,
+                            ],
+                            "type": "TSTypeLiteral",
+                          },
+                          "typeParameters": undefined,
+                        },
+                        "exportKind": "type",
+                        "range": [
+                          45,
+                          75,
+                        ],
+                        "source": null,
+                        "specifiers": [],
+                        "type": "ExportNamedDeclaration",
+                      },
+                    ],
+                    "range": [
+                      41,
+                      77,
+                    ],
+                    "type": "TSModuleBlock",
+                  },
+                  "declare": false,
+                  "global": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "Member",
+                    "optional": false,
+                    "range": [
+                      34,
+                      40,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "kind": "namespace",
+                  "range": [
+                    24,
+                    77,
+                  ],
+                  "type": "TSModuleDeclaration",
+                },
+                "parent": null,
+                "type": "TSModuleName",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  34,
+                  40,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Member",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
+        },
+      ],
+      "set": Map {},
+      "variables": [],
+    },
+    "isStrict": false,
+    "leftToResolve": null,
+    "references": [
+      Reference {
+        "$id": 42,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "Member",
+          "optional": false,
+          "range": [
+            100,
+            106,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "init": undefined,
+        "maybeImplicitGlobal": null,
+        "resolved": Variable {
+          "$id": 79,
+          "defs": [
+            TSModuleNameDefinition {
+              "$id": 55,
+              "isTypeDefinition": true,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  34,
+                  40,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "body": {
+                  "body": [
+                    {
+                      "attributes": [],
+                      "declaration": {
+                        "declare": false,
+                        "id": {
+                          "decorators": [],
+                          "name": "unreferenced",
+                          "optional": false,
+                          "range": [
+                            57,
+                            69,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          52,
+                          75,
+                        ],
+                        "type": "TSTypeAliasDeclaration",
+                        "typeAnnotation": {
+                          "members": [],
+                          "range": [
+                            72,
+                            74,
+                          ],
+                          "type": "TSTypeLiteral",
+                        },
+                        "typeParameters": undefined,
+                      },
+                      "exportKind": "type",
+                      "range": [
+                        45,
+                        75,
+                      ],
+                      "source": null,
+                      "specifiers": [],
+                      "type": "ExportNamedDeclaration",
+                    },
+                  ],
+                  "range": [
+                    41,
+                    77,
+                  ],
+                  "type": "TSModuleBlock",
+                },
+                "declare": false,
+                "global": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    34,
+                    40,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "kind": "namespace",
+                "range": [
+                  24,
+                  77,
+                ],
+                "type": "TSModuleDeclaration",
+              },
+              "parent": null,
+              "type": "TSModuleName",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                34,
+                40,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Member",
+          "references": [
+            [Circular],
+          ],
+          "scope": [Circular],
+        },
+        "writeExpr": undefined,
+      },
+    ],
+    "set": Map {
+      "const" => ImplicitLibVariable {
+        "$id": 77,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      "unreferenced" => Variable {
+        "$id": 78,
+        "defs": [
+          TypeDefinition {
+            "$id": 54,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "unreferenced",
+              "optional": false,
+              "range": [
+                5,
+                17,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  5,
+                  17,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                0,
+                23,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "members": [],
+                "range": [
+                  20,
+                  22,
+                ],
+                "type": "TSTypeLiteral",
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "unreferenced",
+            "optional": false,
+            "range": [
+              5,
+              17,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "unreferenced",
+        "references": [],
+        "scope": [Circular],
+      },
+      "Member" => Variable {
+        "$id": 79,
+        "defs": [
+          TSModuleNameDefinition {
+            "$id": 55,
+            "isTypeDefinition": true,
+            "isVariableDefinition": true,
+            "name": {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                34,
+                40,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "body": {
+                "body": [
+                  {
+                    "attributes": [],
+                    "declaration": {
+                      "declare": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "unreferenced",
+                        "optional": false,
+                        "range": [
+                          57,
+                          69,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        52,
+                        75,
+                      ],
+                      "type": "TSTypeAliasDeclaration",
+                      "typeAnnotation": {
+                        "members": [],
+                        "range": [
+                          72,
+                          74,
+                        ],
+                        "type": "TSTypeLiteral",
+                      },
+                      "typeParameters": undefined,
+                    },
+                    "exportKind": "type",
+                    "range": [
+                      45,
+                      75,
+                    ],
+                    "source": null,
+                    "specifiers": [],
+                    "type": "ExportNamedDeclaration",
+                  },
+                ],
+                "range": [
+                  41,
+                  77,
+                ],
+                "type": "TSModuleBlock",
+              },
+              "declare": false,
+              "global": false,
+              "id": {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  34,
+                  40,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "kind": "namespace",
+              "range": [
+                24,
+                77,
+              ],
+              "type": "TSModuleDeclaration",
+            },
+            "parent": null,
+            "type": "TSModuleName",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "Member",
+            "optional": false,
+            "range": [
+              34,
+              40,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "Member",
+        "references": [
+          Reference {
+            "$id": 42,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                100,
+                106,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": undefined,
+          },
+        ],
+        "scope": [Circular],
+      },
+      "Foo" => Variable {
+        "$id": 81,
+        "defs": [
+          TypeDefinition {
+            "$id": 57,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "Foo",
+              "optional": false,
+              "range": [
+                88,
+                91,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "body": {
+                "body": [],
+                "range": [
+                  120,
+                  122,
+                ],
+                "type": "TSInterfaceBody",
+              },
+              "declare": false,
+              "extends": [
+                {
+                  "expression": {
+                    "computed": false,
+                    "object": {
+                      "decorators": [],
+                      "name": "Member",
+                      "optional": false,
+                      "range": [
+                        100,
+                        106,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "optional": false,
+                    "property": {
+                      "decorators": [],
+                      "name": "unreferenced",
+                      "optional": false,
+                      "range": [
+                        107,
+                        119,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      100,
+                      119,
+                    ],
+                    "type": "MemberExpression",
+                  },
+                  "range": [
+                    100,
+                    119,
+                  ],
+                  "type": "TSInterfaceHeritage",
+                  "typeArguments": undefined,
+                },
+              ],
+              "id": {
+                "decorators": [],
+                "name": "Foo",
+                "optional": false,
+                "range": [
+                  88,
+                  91,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                78,
+                122,
+              ],
+              "type": "TSInterfaceDeclaration",
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "Foo",
+            "optional": false,
+            "range": [
+              88,
+              91,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "Foo",
+        "references": [],
+        "scope": [Circular],
+      },
+    },
+    "through": [],
+    "type": "global",
+    "upper": null,
+    "variableScope": [Circular],
+    "variables": [
+      ImplicitLibVariable {
+        "$id": 77,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      Variable {
+        "$id": 78,
+        "defs": [
+          TypeDefinition {
+            "$id": 54,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "unreferenced",
+              "optional": false,
+              "range": [
+                5,
+                17,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  5,
+                  17,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                0,
+                23,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "members": [],
+                "range": [
+                  20,
+                  22,
+                ],
+                "type": "TSTypeLiteral",
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "unreferenced",
+            "optional": false,
+            "range": [
+              5,
+              17,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "unreferenced",
+        "references": [],
+        "scope": [Circular],
+      },
+      Variable {
+        "$id": 79,
+        "defs": [
+          TSModuleNameDefinition {
+            "$id": 55,
+            "isTypeDefinition": true,
+            "isVariableDefinition": true,
+            "name": {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                34,
+                40,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "body": {
+                "body": [
+                  {
+                    "attributes": [],
+                    "declaration": {
+                      "declare": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "unreferenced",
+                        "optional": false,
+                        "range": [
+                          57,
+                          69,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        52,
+                        75,
+                      ],
+                      "type": "TSTypeAliasDeclaration",
+                      "typeAnnotation": {
+                        "members": [],
+                        "range": [
+                          72,
+                          74,
+                        ],
+                        "type": "TSTypeLiteral",
+                      },
+                      "typeParameters": undefined,
+                    },
+                    "exportKind": "type",
+                    "range": [
+                      45,
+                      75,
+                    ],
+                    "source": null,
+                    "specifiers": [],
+                    "type": "ExportNamedDeclaration",
+                  },
+                ],
+                "range": [
+                  41,
+                  77,
+                ],
+                "type": "TSModuleBlock",
+              },
+              "declare": false,
+              "global": false,
+              "id": {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  34,
+                  40,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "kind": "namespace",
+              "range": [
+                24,
+                77,
+              ],
+              "type": "TSModuleDeclaration",
+            },
+            "parent": null,
+            "type": "TSModuleName",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "Member",
+            "optional": false,
+            "range": [
+              34,
+              40,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "Member",
+        "references": [
+          Reference {
+            "$id": 42,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                100,
+                106,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": undefined,
+          },
+        ],
+        "scope": [Circular],
+      },
+      Variable {
+        "$id": 81,
+        "defs": [
+          TypeDefinition {
+            "$id": 57,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "Foo",
+              "optional": false,
+              "range": [
+                88,
+                91,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "body": {
+                "body": [],
+                "range": [
+                  120,
+                  122,
+                ],
+                "type": "TSInterfaceBody",
+              },
+              "declare": false,
+              "extends": [
+                {
+                  "expression": {
+                    "computed": false,
+                    "object": {
+                      "decorators": [],
+                      "name": "Member",
+                      "optional": false,
+                      "range": [
+                        100,
+                        106,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "optional": false,
+                    "property": {
+                      "decorators": [],
+                      "name": "unreferenced",
+                      "optional": false,
+                      "range": [
+                        107,
+                        119,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      100,
+                      119,
+                    ],
+                    "type": "MemberExpression",
+                  },
+                  "range": [
+                    100,
+                    119,
+                  ],
+                  "type": "TSInterfaceHeritage",
+                  "typeArguments": undefined,
+                },
+              ],
+              "id": {
+                "decorators": [],
+                "name": "Foo",
+                "optional": false,
+                "range": [
+                  88,
+                  91,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                78,
+                122,
+              ],
+              "type": "TSInterfaceDeclaration",
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "Foo",
+            "optional": false,
+            "range": [
+              88,
+              91,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "Foo",
+        "references": [],
+        "scope": [Circular],
+      },
+    ],
+  },
+  "nodeToScope": WeakMap {},
+  "scopes": [
+    GlobalScope {
+      "$id": 30,
+      "block": {
+        "body": [
+          {
+            "declare": false,
+            "id": {
+              "decorators": [],
+              "name": "unreferenced",
+              "optional": false,
+              "range": [
+                5,
+                17,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "range": [
+              0,
+              23,
+            ],
+            "type": "TSTypeAliasDeclaration",
+            "typeAnnotation": {
+              "members": [],
+              "range": [
+                20,
+                22,
+              ],
+              "type": "TSTypeLiteral",
+            },
+            "typeParameters": undefined,
+          },
+          {
+            "body": {
+              "body": [
+                {
+                  "attributes": [],
+                  "declaration": {
+                    "declare": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "unreferenced",
+                      "optional": false,
+                      "range": [
+                        57,
+                        69,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      52,
+                      75,
+                    ],
+                    "type": "TSTypeAliasDeclaration",
+                    "typeAnnotation": {
+                      "members": [],
+                      "range": [
+                        72,
+                        74,
+                      ],
+                      "type": "TSTypeLiteral",
+                    },
+                    "typeParameters": undefined,
+                  },
+                  "exportKind": "type",
+                  "range": [
+                    45,
+                    75,
+                  ],
+                  "source": null,
+                  "specifiers": [],
+                  "type": "ExportNamedDeclaration",
+                },
+              ],
+              "range": [
+                41,
+                77,
+              ],
+              "type": "TSModuleBlock",
+            },
+            "declare": false,
+            "global": false,
+            "id": {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                34,
+                40,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "kind": "namespace",
+            "range": [
+              24,
+              77,
+            ],
+            "type": "TSModuleDeclaration",
+          },
+          {
+            "body": {
+              "body": [],
+              "range": [
+                120,
+                122,
+              ],
+              "type": "TSInterfaceBody",
+            },
+            "declare": false,
+            "extends": [
+              {
+                "expression": {
+                  "computed": false,
+                  "object": {
+                    "decorators": [],
+                    "name": "Member",
+                    "optional": false,
+                    "range": [
+                      100,
+                      106,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "optional": false,
+                  "property": {
+                    "decorators": [],
+                    "name": "unreferenced",
+                    "optional": false,
+                    "range": [
+                      107,
+                      119,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    100,
+                    119,
+                  ],
+                  "type": "MemberExpression",
+                },
+                "range": [
+                  100,
+                  119,
+                ],
+                "type": "TSInterfaceHeritage",
+                "typeArguments": undefined,
+              },
+            ],
+            "id": {
+              "decorators": [],
+              "name": "Foo",
+              "optional": false,
+              "range": [
+                88,
+                91,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "range": [
+              78,
+              122,
+            ],
+            "type": "TSInterfaceDeclaration",
+            "typeParameters": undefined,
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          0,
+          123,
+        ],
+        "sourceType": "script",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [
+        TSModuleScope {
+          "$id": 31,
+          "block": {
+            "body": {
+              "body": [
+                {
+                  "attributes": [],
+                  "declaration": {
+                    "declare": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "unreferenced",
+                      "optional": false,
+                      "range": [
+                        57,
+                        69,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      52,
+                      75,
+                    ],
+                    "type": "TSTypeAliasDeclaration",
+                    "typeAnnotation": {
+                      "members": [],
+                      "range": [
+                        72,
+                        74,
+                      ],
+                      "type": "TSTypeLiteral",
+                    },
+                    "typeParameters": undefined,
+                  },
+                  "exportKind": "type",
+                  "range": [
+                    45,
+                    75,
+                  ],
+                  "source": null,
+                  "specifiers": [],
+                  "type": "ExportNamedDeclaration",
+                },
+              ],
+              "range": [
+                41,
+                77,
+              ],
+              "type": "TSModuleBlock",
+            },
+            "declare": false,
+            "global": false,
+            "id": {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                34,
+                40,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "kind": "namespace",
+            "range": [
+              24,
+              77,
+            ],
+            "type": "TSModuleDeclaration",
+          },
+          "childScopes": [],
+          "functionExpressionScope": false,
+          "isStrict": true,
+          "leftToResolve": null,
+          "references": [],
+          "set": Map {
+            "unreferenced" => Variable {
+              "$id": 80,
+              "defs": [
+                TypeDefinition {
+                  "$id": 56,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "unreferenced",
+                    "optional": false,
+                    "range": [
+                      57,
+                      69,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "declare": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "unreferenced",
+                      "optional": false,
+                      "range": [
+                        57,
+                        69,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      52,
+                      75,
+                    ],
+                    "type": "TSTypeAliasDeclaration",
+                    "typeAnnotation": {
+                      "members": [],
+                      "range": [
+                        72,
+                        74,
+                      ],
+                      "type": "TSTypeLiteral",
+                    },
+                    "typeParameters": undefined,
+                  },
+                  "parent": null,
+                  "type": "Type",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    57,
+                    69,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "unreferenced",
+              "references": [],
+              "scope": [Circular],
+            },
+          },
+          "through": [],
+          "type": "tsModule",
+          "upper": [Circular],
+          "variableScope": [Circular],
+          "variables": [
+            Variable {
+              "$id": 80,
+              "defs": [
+                TypeDefinition {
+                  "$id": 56,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "unreferenced",
+                    "optional": false,
+                    "range": [
+                      57,
+                      69,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "declare": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "unreferenced",
+                      "optional": false,
+                      "range": [
+                        57,
+                        69,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      52,
+                      75,
+                    ],
+                    "type": "TSTypeAliasDeclaration",
+                    "typeAnnotation": {
+                      "members": [],
+                      "range": [
+                        72,
+                        74,
+                      ],
+                      "type": "TSTypeLiteral",
+                    },
+                    "typeParameters": undefined,
+                  },
+                  "parent": null,
+                  "type": "Type",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    57,
+                    69,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "unreferenced",
+              "references": [],
+              "scope": [Circular],
+            },
+          ],
+        },
+      ],
+      "functionExpressionScope": false,
+      "implicit": {
+        "leftToBeResolved": [
+          Reference {
+            "$id": 42,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                100,
+                106,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": Variable {
+              "$id": 79,
+              "defs": [
+                TSModuleNameDefinition {
+                  "$id": 55,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "Member",
+                    "optional": false,
+                    "range": [
+                      34,
+                      40,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "body": {
+                      "body": [
+                        {
+                          "attributes": [],
+                          "declaration": {
+                            "declare": false,
+                            "id": {
+                              "decorators": [],
+                              "name": "unreferenced",
+                              "optional": false,
+                              "range": [
+                                57,
+                                69,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "range": [
+                              52,
+                              75,
+                            ],
+                            "type": "TSTypeAliasDeclaration",
+                            "typeAnnotation": {
+                              "members": [],
+                              "range": [
+                                72,
+                                74,
+                              ],
+                              "type": "TSTypeLiteral",
+                            },
+                            "typeParameters": undefined,
+                          },
+                          "exportKind": "type",
+                          "range": [
+                            45,
+                            75,
+                          ],
+                          "source": null,
+                          "specifiers": [],
+                          "type": "ExportNamedDeclaration",
+                        },
+                      ],
+                      "range": [
+                        41,
+                        77,
+                      ],
+                      "type": "TSModuleBlock",
+                    },
+                    "declare": false,
+                    "global": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "Member",
+                      "optional": false,
+                      "range": [
+                        34,
+                        40,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "kind": "namespace",
+                    "range": [
+                      24,
+                      77,
+                    ],
+                    "type": "TSModuleDeclaration",
+                  },
+                  "parent": null,
+                  "type": "TSModuleName",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    34,
+                    40,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "Member",
+              "references": [
+                [Circular],
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": undefined,
+          },
+        ],
+        "set": Map {},
+        "variables": [],
+      },
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [
+        Reference {
+          "$id": 42,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "Member",
+            "optional": false,
+            "range": [
+              100,
+              106,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 79,
+            "defs": [
+              TSModuleNameDefinition {
+                "$id": 55,
+                "isTypeDefinition": true,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    34,
+                    40,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "body": {
+                    "body": [
+                      {
+                        "attributes": [],
+                        "declaration": {
+                          "declare": false,
+                          "id": {
+                            "decorators": [],
+                            "name": "unreferenced",
+                            "optional": false,
+                            "range": [
+                              57,
+                              69,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            52,
+                            75,
+                          ],
+                          "type": "TSTypeAliasDeclaration",
+                          "typeAnnotation": {
+                            "members": [],
+                            "range": [
+                              72,
+                              74,
+                            ],
+                            "type": "TSTypeLiteral",
+                          },
+                          "typeParameters": undefined,
+                        },
+                        "exportKind": "type",
+                        "range": [
+                          45,
+                          75,
+                        ],
+                        "source": null,
+                        "specifiers": [],
+                        "type": "ExportNamedDeclaration",
+                      },
+                    ],
+                    "range": [
+                      41,
+                      77,
+                    ],
+                    "type": "TSModuleBlock",
+                  },
+                  "declare": false,
+                  "global": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "Member",
+                    "optional": false,
+                    "range": [
+                      34,
+                      40,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "kind": "namespace",
+                  "range": [
+                    24,
+                    77,
+                  ],
+                  "type": "TSModuleDeclaration",
+                },
+                "parent": null,
+                "type": "TSModuleName",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  34,
+                  40,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Member",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
+        },
+      ],
+      "set": Map {
+        "const" => ImplicitLibVariable {
+          "$id": 77,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        "unreferenced" => Variable {
+          "$id": 78,
+          "defs": [
+            TypeDefinition {
+              "$id": 54,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  5,
+                  17,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    5,
+                    17,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  0,
+                  23,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "members": [],
+                  "range": [
+                    20,
+                    22,
+                  ],
+                  "type": "TSTypeLiteral",
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "unreferenced",
+              "optional": false,
+              "range": [
+                5,
+                17,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "unreferenced",
+          "references": [],
+          "scope": [Circular],
+        },
+        "Member" => Variable {
+          "$id": 79,
+          "defs": [
+            TSModuleNameDefinition {
+              "$id": 55,
+              "isTypeDefinition": true,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  34,
+                  40,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "body": {
+                  "body": [
+                    {
+                      "attributes": [],
+                      "declaration": {
+                        "declare": false,
+                        "id": {
+                          "decorators": [],
+                          "name": "unreferenced",
+                          "optional": false,
+                          "range": [
+                            57,
+                            69,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          52,
+                          75,
+                        ],
+                        "type": "TSTypeAliasDeclaration",
+                        "typeAnnotation": {
+                          "members": [],
+                          "range": [
+                            72,
+                            74,
+                          ],
+                          "type": "TSTypeLiteral",
+                        },
+                        "typeParameters": undefined,
+                      },
+                      "exportKind": "type",
+                      "range": [
+                        45,
+                        75,
+                      ],
+                      "source": null,
+                      "specifiers": [],
+                      "type": "ExportNamedDeclaration",
+                    },
+                  ],
+                  "range": [
+                    41,
+                    77,
+                  ],
+                  "type": "TSModuleBlock",
+                },
+                "declare": false,
+                "global": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    34,
+                    40,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "kind": "namespace",
+                "range": [
+                  24,
+                  77,
+                ],
+                "type": "TSModuleDeclaration",
+              },
+              "parent": null,
+              "type": "TSModuleName",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                34,
+                40,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Member",
+          "references": [
+            Reference {
+              "$id": 42,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  100,
+                  106,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
+        "Foo" => Variable {
+          "$id": 81,
+          "defs": [
+            TypeDefinition {
+              "$id": 57,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "Foo",
+                "optional": false,
+                "range": [
+                  88,
+                  91,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "body": {
+                  "body": [],
+                  "range": [
+                    120,
+                    122,
+                  ],
+                  "type": "TSInterfaceBody",
+                },
+                "declare": false,
+                "extends": [
+                  {
+                    "expression": {
+                      "computed": false,
+                      "object": {
+                        "decorators": [],
+                        "name": "Member",
+                        "optional": false,
+                        "range": [
+                          100,
+                          106,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "optional": false,
+                      "property": {
+                        "decorators": [],
+                        "name": "unreferenced",
+                        "optional": false,
+                        "range": [
+                          107,
+                          119,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        100,
+                        119,
+                      ],
+                      "type": "MemberExpression",
+                    },
+                    "range": [
+                      100,
+                      119,
+                    ],
+                    "type": "TSInterfaceHeritage",
+                    "typeArguments": undefined,
+                  },
+                ],
+                "id": {
+                  "decorators": [],
+                  "name": "Foo",
+                  "optional": false,
+                  "range": [
+                    88,
+                    91,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  78,
+                  122,
+                ],
+                "type": "TSInterfaceDeclaration",
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Foo",
+              "optional": false,
+              "range": [
+                88,
+                91,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Foo",
+          "references": [],
+          "scope": [Circular],
+        },
+      },
+      "through": [],
+      "type": "global",
+      "upper": null,
+      "variableScope": [Circular],
+      "variables": [
+        ImplicitLibVariable {
+          "$id": 77,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        Variable {
+          "$id": 78,
+          "defs": [
+            TypeDefinition {
+              "$id": 54,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  5,
+                  17,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    5,
+                    17,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  0,
+                  23,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "members": [],
+                  "range": [
+                    20,
+                    22,
+                  ],
+                  "type": "TSTypeLiteral",
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "unreferenced",
+              "optional": false,
+              "range": [
+                5,
+                17,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "unreferenced",
+          "references": [],
+          "scope": [Circular],
+        },
+        Variable {
+          "$id": 79,
+          "defs": [
+            TSModuleNameDefinition {
+              "$id": 55,
+              "isTypeDefinition": true,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  34,
+                  40,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "body": {
+                  "body": [
+                    {
+                      "attributes": [],
+                      "declaration": {
+                        "declare": false,
+                        "id": {
+                          "decorators": [],
+                          "name": "unreferenced",
+                          "optional": false,
+                          "range": [
+                            57,
+                            69,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          52,
+                          75,
+                        ],
+                        "type": "TSTypeAliasDeclaration",
+                        "typeAnnotation": {
+                          "members": [],
+                          "range": [
+                            72,
+                            74,
+                          ],
+                          "type": "TSTypeLiteral",
+                        },
+                        "typeParameters": undefined,
+                      },
+                      "exportKind": "type",
+                      "range": [
+                        45,
+                        75,
+                      ],
+                      "source": null,
+                      "specifiers": [],
+                      "type": "ExportNamedDeclaration",
+                    },
+                  ],
+                  "range": [
+                    41,
+                    77,
+                  ],
+                  "type": "TSModuleBlock",
+                },
+                "declare": false,
+                "global": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    34,
+                    40,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "kind": "namespace",
+                "range": [
+                  24,
+                  77,
+                ],
+                "type": "TSModuleDeclaration",
+              },
+              "parent": null,
+              "type": "TSModuleName",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                34,
+                40,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Member",
+          "references": [
+            Reference {
+              "$id": 42,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  100,
+                  106,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
+        Variable {
+          "$id": 81,
+          "defs": [
+            TypeDefinition {
+              "$id": 57,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "Foo",
+                "optional": false,
+                "range": [
+                  88,
+                  91,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "body": {
+                  "body": [],
+                  "range": [
+                    120,
+                    122,
+                  ],
+                  "type": "TSInterfaceBody",
+                },
+                "declare": false,
+                "extends": [
+                  {
+                    "expression": {
+                      "computed": false,
+                      "object": {
+                        "decorators": [],
+                        "name": "Member",
+                        "optional": false,
+                        "range": [
+                          100,
+                          106,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "optional": false,
+                      "property": {
+                        "decorators": [],
+                        "name": "unreferenced",
+                        "optional": false,
+                        "range": [
+                          107,
+                          119,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        100,
+                        119,
+                      ],
+                      "type": "MemberExpression",
+                    },
+                    "range": [
+                      100,
+                      119,
+                    ],
+                    "type": "TSInterfaceHeritage",
+                    "typeArguments": undefined,
+                  },
+                ],
+                "id": {
+                  "decorators": [],
+                  "name": "Foo",
+                  "optional": false,
+                  "range": [
+                    88,
+                    91,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  78,
+                  122,
+                ],
+                "type": "TSInterfaceDeclaration",
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Foo",
+              "optional": false,
+              "range": [
+                88,
+                91,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Foo",
+          "references": [],
+          "scope": [Circular],
+        },
       ],
     },
-    TSModuleScope$2 {
-      block: TSModuleDeclaration$2,
-      isStrict: true,
-      references: [],
-      set: Map {
-        "unreferenced" => Variable$4,
+    TSModuleScope {
+      "$id": 31,
+      "block": {
+        "body": {
+          "body": [
+            {
+              "attributes": [],
+              "declaration": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    57,
+                    69,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  52,
+                  75,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "members": [],
+                  "range": [
+                    72,
+                    74,
+                  ],
+                  "type": "TSTypeLiteral",
+                },
+                "typeParameters": undefined,
+              },
+              "exportKind": "type",
+              "range": [
+                45,
+                75,
+              ],
+              "source": null,
+              "specifiers": [],
+              "type": "ExportNamedDeclaration",
+            },
+          ],
+          "range": [
+            41,
+            77,
+          ],
+          "type": "TSModuleBlock",
+        },
+        "declare": false,
+        "global": false,
+        "id": {
+          "decorators": [],
+          "name": "Member",
+          "optional": false,
+          "range": [
+            34,
+            40,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "kind": "namespace",
+        "range": [
+          24,
+          77,
+        ],
+        "type": "TSModuleDeclaration",
       },
-      type: "tsModule",
-      upper: GlobalScope$1,
-      variables: [
-        Variable$4,
+      "childScopes": [],
+      "functionExpressionScope": false,
+      "isStrict": true,
+      "leftToResolve": null,
+      "references": [],
+      "set": Map {
+        "unreferenced" => Variable {
+          "$id": 80,
+          "defs": [
+            TypeDefinition {
+              "$id": 56,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  57,
+                  69,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    57,
+                    69,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  52,
+                  75,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "members": [],
+                  "range": [
+                    72,
+                    74,
+                  ],
+                  "type": "TSTypeLiteral",
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "unreferenced",
+              "optional": false,
+              "range": [
+                57,
+                69,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "unreferenced",
+          "references": [],
+          "scope": [Circular],
+        },
+      },
+      "through": [],
+      "type": "tsModule",
+      "upper": GlobalScope {
+        "$id": 30,
+        "block": {
+          "body": [
+            {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  5,
+                  17,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                0,
+                23,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "members": [],
+                "range": [
+                  20,
+                  22,
+                ],
+                "type": "TSTypeLiteral",
+              },
+              "typeParameters": undefined,
+            },
+            {
+              "body": {
+                "body": [
+                  {
+                    "attributes": [],
+                    "declaration": {
+                      "declare": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "unreferenced",
+                        "optional": false,
+                        "range": [
+                          57,
+                          69,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        52,
+                        75,
+                      ],
+                      "type": "TSTypeAliasDeclaration",
+                      "typeAnnotation": {
+                        "members": [],
+                        "range": [
+                          72,
+                          74,
+                        ],
+                        "type": "TSTypeLiteral",
+                      },
+                      "typeParameters": undefined,
+                    },
+                    "exportKind": "type",
+                    "range": [
+                      45,
+                      75,
+                    ],
+                    "source": null,
+                    "specifiers": [],
+                    "type": "ExportNamedDeclaration",
+                  },
+                ],
+                "range": [
+                  41,
+                  77,
+                ],
+                "type": "TSModuleBlock",
+              },
+              "declare": false,
+              "global": false,
+              "id": {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  34,
+                  40,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "kind": "namespace",
+              "range": [
+                24,
+                77,
+              ],
+              "type": "TSModuleDeclaration",
+            },
+            {
+              "body": {
+                "body": [],
+                "range": [
+                  120,
+                  122,
+                ],
+                "type": "TSInterfaceBody",
+              },
+              "declare": false,
+              "extends": [
+                {
+                  "expression": {
+                    "computed": false,
+                    "object": {
+                      "decorators": [],
+                      "name": "Member",
+                      "optional": false,
+                      "range": [
+                        100,
+                        106,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "optional": false,
+                    "property": {
+                      "decorators": [],
+                      "name": "unreferenced",
+                      "optional": false,
+                      "range": [
+                        107,
+                        119,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      100,
+                      119,
+                    ],
+                    "type": "MemberExpression",
+                  },
+                  "range": [
+                    100,
+                    119,
+                  ],
+                  "type": "TSInterfaceHeritage",
+                  "typeArguments": undefined,
+                },
+              ],
+              "id": {
+                "decorators": [],
+                "name": "Foo",
+                "optional": false,
+                "range": [
+                  88,
+                  91,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                78,
+                122,
+              ],
+              "type": "TSInterfaceDeclaration",
+              "typeParameters": undefined,
+            },
+          ],
+          "comments": undefined,
+          "range": [
+            0,
+            123,
+          ],
+          "sourceType": "script",
+          "tokens": undefined,
+          "type": "Program",
+        },
+        "childScopes": [
+          [Circular],
+        ],
+        "functionExpressionScope": false,
+        "implicit": {
+          "leftToBeResolved": [
+            Reference {
+              "$id": 42,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  100,
+                  106,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": null,
+              "resolved": Variable {
+                "$id": 79,
+                "defs": [
+                  TSModuleNameDefinition {
+                    "$id": 55,
+                    "isTypeDefinition": true,
+                    "isVariableDefinition": true,
+                    "name": {
+                      "decorators": [],
+                      "name": "Member",
+                      "optional": false,
+                      "range": [
+                        34,
+                        40,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "node": {
+                      "body": {
+                        "body": [
+                          {
+                            "attributes": [],
+                            "declaration": {
+                              "declare": false,
+                              "id": {
+                                "decorators": [],
+                                "name": "unreferenced",
+                                "optional": false,
+                                "range": [
+                                  57,
+                                  69,
+                                ],
+                                "type": "Identifier",
+                                "typeAnnotation": undefined,
+                              },
+                              "range": [
+                                52,
+                                75,
+                              ],
+                              "type": "TSTypeAliasDeclaration",
+                              "typeAnnotation": {
+                                "members": [],
+                                "range": [
+                                  72,
+                                  74,
+                                ],
+                                "type": "TSTypeLiteral",
+                              },
+                              "typeParameters": undefined,
+                            },
+                            "exportKind": "type",
+                            "range": [
+                              45,
+                              75,
+                            ],
+                            "source": null,
+                            "specifiers": [],
+                            "type": "ExportNamedDeclaration",
+                          },
+                        ],
+                        "range": [
+                          41,
+                          77,
+                        ],
+                        "type": "TSModuleBlock",
+                      },
+                      "declare": false,
+                      "global": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "Member",
+                        "optional": false,
+                        "range": [
+                          34,
+                          40,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "kind": "namespace",
+                      "range": [
+                        24,
+                        77,
+                      ],
+                      "type": "TSModuleDeclaration",
+                    },
+                    "parent": null,
+                    "type": "TSModuleName",
+                  },
+                ],
+                "eslintUsed": false,
+                "identifiers": [
+                  {
+                    "decorators": [],
+                    "name": "Member",
+                    "optional": false,
+                    "range": [
+                      34,
+                      40,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                ],
+                "name": "Member",
+                "references": [
+                  [Circular],
+                ],
+                "scope": [Circular],
+              },
+              "writeExpr": undefined,
+            },
+          ],
+          "set": Map {},
+          "variables": [],
+        },
+        "isStrict": false,
+        "leftToResolve": null,
+        "references": [
+          Reference {
+            "$id": 42,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "Member",
+              "optional": false,
+              "range": [
+                100,
+                106,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": Variable {
+              "$id": 79,
+              "defs": [
+                TSModuleNameDefinition {
+                  "$id": 55,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "Member",
+                    "optional": false,
+                    "range": [
+                      34,
+                      40,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "body": {
+                      "body": [
+                        {
+                          "attributes": [],
+                          "declaration": {
+                            "declare": false,
+                            "id": {
+                              "decorators": [],
+                              "name": "unreferenced",
+                              "optional": false,
+                              "range": [
+                                57,
+                                69,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "range": [
+                              52,
+                              75,
+                            ],
+                            "type": "TSTypeAliasDeclaration",
+                            "typeAnnotation": {
+                              "members": [],
+                              "range": [
+                                72,
+                                74,
+                              ],
+                              "type": "TSTypeLiteral",
+                            },
+                            "typeParameters": undefined,
+                          },
+                          "exportKind": "type",
+                          "range": [
+                            45,
+                            75,
+                          ],
+                          "source": null,
+                          "specifiers": [],
+                          "type": "ExportNamedDeclaration",
+                        },
+                      ],
+                      "range": [
+                        41,
+                        77,
+                      ],
+                      "type": "TSModuleBlock",
+                    },
+                    "declare": false,
+                    "global": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "Member",
+                      "optional": false,
+                      "range": [
+                        34,
+                        40,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "kind": "namespace",
+                    "range": [
+                      24,
+                      77,
+                    ],
+                    "type": "TSModuleDeclaration",
+                  },
+                  "parent": null,
+                  "type": "TSModuleName",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    34,
+                    40,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "Member",
+              "references": [
+                [Circular],
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": undefined,
+          },
+        ],
+        "set": Map {
+          "const" => ImplicitLibVariable {
+            "$id": 77,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+          "unreferenced" => Variable {
+            "$id": 78,
+            "defs": [
+              TypeDefinition {
+                "$id": 54,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    5,
+                    17,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "unreferenced",
+                    "optional": false,
+                    "range": [
+                      5,
+                      17,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    0,
+                    23,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "members": [],
+                    "range": [
+                      20,
+                      22,
+                    ],
+                    "type": "TSTypeLiteral",
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  5,
+                  17,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "unreferenced",
+            "references": [],
+            "scope": [Circular],
+          },
+          "Member" => Variable {
+            "$id": 79,
+            "defs": [
+              TSModuleNameDefinition {
+                "$id": 55,
+                "isTypeDefinition": true,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    34,
+                    40,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "body": {
+                    "body": [
+                      {
+                        "attributes": [],
+                        "declaration": {
+                          "declare": false,
+                          "id": {
+                            "decorators": [],
+                            "name": "unreferenced",
+                            "optional": false,
+                            "range": [
+                              57,
+                              69,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            52,
+                            75,
+                          ],
+                          "type": "TSTypeAliasDeclaration",
+                          "typeAnnotation": {
+                            "members": [],
+                            "range": [
+                              72,
+                              74,
+                            ],
+                            "type": "TSTypeLiteral",
+                          },
+                          "typeParameters": undefined,
+                        },
+                        "exportKind": "type",
+                        "range": [
+                          45,
+                          75,
+                        ],
+                        "source": null,
+                        "specifiers": [],
+                        "type": "ExportNamedDeclaration",
+                      },
+                    ],
+                    "range": [
+                      41,
+                      77,
+                    ],
+                    "type": "TSModuleBlock",
+                  },
+                  "declare": false,
+                  "global": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "Member",
+                    "optional": false,
+                    "range": [
+                      34,
+                      40,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "kind": "namespace",
+                  "range": [
+                    24,
+                    77,
+                  ],
+                  "type": "TSModuleDeclaration",
+                },
+                "parent": null,
+                "type": "TSModuleName",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  34,
+                  40,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Member",
+            "references": [
+              Reference {
+                "$id": 42,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    100,
+                    106,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": undefined,
+                "maybeImplicitGlobal": null,
+                "resolved": [Circular],
+                "writeExpr": undefined,
+              },
+            ],
+            "scope": [Circular],
+          },
+          "Foo" => Variable {
+            "$id": 81,
+            "defs": [
+              TypeDefinition {
+                "$id": 57,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "Foo",
+                  "optional": false,
+                  "range": [
+                    88,
+                    91,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "body": {
+                    "body": [],
+                    "range": [
+                      120,
+                      122,
+                    ],
+                    "type": "TSInterfaceBody",
+                  },
+                  "declare": false,
+                  "extends": [
+                    {
+                      "expression": {
+                        "computed": false,
+                        "object": {
+                          "decorators": [],
+                          "name": "Member",
+                          "optional": false,
+                          "range": [
+                            100,
+                            106,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "optional": false,
+                        "property": {
+                          "decorators": [],
+                          "name": "unreferenced",
+                          "optional": false,
+                          "range": [
+                            107,
+                            119,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          100,
+                          119,
+                        ],
+                        "type": "MemberExpression",
+                      },
+                      "range": [
+                        100,
+                        119,
+                      ],
+                      "type": "TSInterfaceHeritage",
+                      "typeArguments": undefined,
+                    },
+                  ],
+                  "id": {
+                    "decorators": [],
+                    "name": "Foo",
+                    "optional": false,
+                    "range": [
+                      88,
+                      91,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    78,
+                    122,
+                  ],
+                  "type": "TSInterfaceDeclaration",
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Foo",
+                "optional": false,
+                "range": [
+                  88,
+                  91,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Foo",
+            "references": [],
+            "scope": [Circular],
+          },
+        },
+        "through": [],
+        "type": "global",
+        "upper": null,
+        "variableScope": [Circular],
+        "variables": [
+          ImplicitLibVariable {
+            "$id": 77,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+          Variable {
+            "$id": 78,
+            "defs": [
+              TypeDefinition {
+                "$id": 54,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    5,
+                    17,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "unreferenced",
+                    "optional": false,
+                    "range": [
+                      5,
+                      17,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    0,
+                    23,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "members": [],
+                    "range": [
+                      20,
+                      22,
+                    ],
+                    "type": "TSTypeLiteral",
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  5,
+                  17,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "unreferenced",
+            "references": [],
+            "scope": [Circular],
+          },
+          Variable {
+            "$id": 79,
+            "defs": [
+              TSModuleNameDefinition {
+                "$id": 55,
+                "isTypeDefinition": true,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    34,
+                    40,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "body": {
+                    "body": [
+                      {
+                        "attributes": [],
+                        "declaration": {
+                          "declare": false,
+                          "id": {
+                            "decorators": [],
+                            "name": "unreferenced",
+                            "optional": false,
+                            "range": [
+                              57,
+                              69,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            52,
+                            75,
+                          ],
+                          "type": "TSTypeAliasDeclaration",
+                          "typeAnnotation": {
+                            "members": [],
+                            "range": [
+                              72,
+                              74,
+                            ],
+                            "type": "TSTypeLiteral",
+                          },
+                          "typeParameters": undefined,
+                        },
+                        "exportKind": "type",
+                        "range": [
+                          45,
+                          75,
+                        ],
+                        "source": null,
+                        "specifiers": [],
+                        "type": "ExportNamedDeclaration",
+                      },
+                    ],
+                    "range": [
+                      41,
+                      77,
+                    ],
+                    "type": "TSModuleBlock",
+                  },
+                  "declare": false,
+                  "global": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "Member",
+                    "optional": false,
+                    "range": [
+                      34,
+                      40,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "kind": "namespace",
+                  "range": [
+                    24,
+                    77,
+                  ],
+                  "type": "TSModuleDeclaration",
+                },
+                "parent": null,
+                "type": "TSModuleName",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Member",
+                "optional": false,
+                "range": [
+                  34,
+                  40,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Member",
+            "references": [
+              Reference {
+                "$id": 42,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "Member",
+                  "optional": false,
+                  "range": [
+                    100,
+                    106,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": undefined,
+                "maybeImplicitGlobal": null,
+                "resolved": [Circular],
+                "writeExpr": undefined,
+              },
+            ],
+            "scope": [Circular],
+          },
+          Variable {
+            "$id": 81,
+            "defs": [
+              TypeDefinition {
+                "$id": 57,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "Foo",
+                  "optional": false,
+                  "range": [
+                    88,
+                    91,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "body": {
+                    "body": [],
+                    "range": [
+                      120,
+                      122,
+                    ],
+                    "type": "TSInterfaceBody",
+                  },
+                  "declare": false,
+                  "extends": [
+                    {
+                      "expression": {
+                        "computed": false,
+                        "object": {
+                          "decorators": [],
+                          "name": "Member",
+                          "optional": false,
+                          "range": [
+                            100,
+                            106,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "optional": false,
+                        "property": {
+                          "decorators": [],
+                          "name": "unreferenced",
+                          "optional": false,
+                          "range": [
+                            107,
+                            119,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          100,
+                          119,
+                        ],
+                        "type": "MemberExpression",
+                      },
+                      "range": [
+                        100,
+                        119,
+                      ],
+                      "type": "TSInterfaceHeritage",
+                      "typeArguments": undefined,
+                    },
+                  ],
+                  "id": {
+                    "decorators": [],
+                    "name": "Foo",
+                    "optional": false,
+                    "range": [
+                      88,
+                      91,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    78,
+                    122,
+                  ],
+                  "type": "TSInterfaceDeclaration",
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Foo",
+                "optional": false,
+                "range": [
+                  88,
+                  91,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Foo",
+            "references": [],
+            "scope": [Circular],
+          },
+        ],
+      },
+      "variableScope": [Circular],
+      "variables": [
+        Variable {
+          "$id": 80,
+          "defs": [
+            TypeDefinition {
+              "$id": 56,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "unreferenced",
+                "optional": false,
+                "range": [
+                  57,
+                  69,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "unreferenced",
+                  "optional": false,
+                  "range": [
+                    57,
+                    69,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  52,
+                  75,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "members": [],
+                  "range": [
+                    72,
+                    74,
+                  ],
+                  "type": "TSTypeLiteral",
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "unreferenced",
+              "optional": false,
+              "range": [
+                57,
+                69,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "unreferenced",
+          "references": [],
+          "scope": [Circular],
+        },
       ],
     },
   ],
 }
-`;

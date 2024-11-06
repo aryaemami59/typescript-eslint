@@ -1,60 +1,1729 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`jsx factory default-jsxPragma-fragment 1`] = `
 ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-    Variable$2 {
-      defs: [
-        ImportBindingDefinition$1 {
-          name: Identifier<"React">,
-          node: ImportDefaultSpecifier$1,
+  "currentScope": null,
+  "declaredVariables": WeakMap {},
+  "globalScope": GlobalScope {
+    "$id": 227,
+    "block": {
+      "body": [
+        {
+          "attributes": [],
+          "importKind": "value",
+          "range": [
+            29,
+            55,
+          ],
+          "source": {
+            "range": [
+              47,
+              54,
+            ],
+            "raw": "'react'",
+            "type": "Literal",
+            "value": "react",
+          },
+          "specifiers": [
+            {
+              "local": {
+                "decorators": [],
+                "name": "React",
+                "optional": false,
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                36,
+                41,
+              ],
+              "type": "ImportDefaultSpecifier",
+            },
+          ],
+          "type": "ImportDeclaration",
+        },
+        {
+          "directive": undefined,
+          "expression": {
+            "children": [],
+            "closingFragment": {
+              "range": [
+                59,
+                62,
+              ],
+              "type": "JSXClosingFragment",
+            },
+            "openingFragment": {
+              "range": [
+                57,
+                59,
+              ],
+              "type": "JSXOpeningFragment",
+            },
+            "range": [
+              57,
+              62,
+            ],
+            "type": "JSXFragment",
+          },
+          "range": [
+            57,
+            63,
+          ],
+          "type": "ExpressionStatement",
         },
       ],
-      name: "React",
-      references: [
-        Reference$1 {
-          identifier: Identifier<"React">,
-          isRead: true,
-          isTypeReference: false,
-          isValueReference: true,
-          isWrite: false,
-          resolved: Variable$2,
+      "comments": undefined,
+      "range": [
+        29,
+        64,
+      ],
+      "sourceType": "module",
+      "tokens": undefined,
+      "type": "Program",
+    },
+    "childScopes": [
+      ModuleScope {
+        "$id": 228,
+        "block": {
+          "body": [
+            {
+              "attributes": [],
+              "importKind": "value",
+              "range": [
+                29,
+                55,
+              ],
+              "source": {
+                "range": [
+                  47,
+                  54,
+                ],
+                "raw": "'react'",
+                "type": "Literal",
+                "value": "react",
+              },
+              "specifiers": [
+                {
+                  "local": {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "ImportDefaultSpecifier",
+                },
+              ],
+              "type": "ImportDeclaration",
+            },
+            {
+              "directive": undefined,
+              "expression": {
+                "children": [],
+                "closingFragment": {
+                  "range": [
+                    59,
+                    62,
+                  ],
+                  "type": "JSXClosingFragment",
+                },
+                "openingFragment": {
+                  "range": [
+                    57,
+                    59,
+                  ],
+                  "type": "JSXOpeningFragment",
+                },
+                "range": [
+                  57,
+                  62,
+                ],
+                "type": "JSXFragment",
+              },
+              "range": [
+                57,
+                63,
+              ],
+              "type": "ExpressionStatement",
+            },
+          ],
+          "comments": undefined,
+          "range": [
+            29,
+            64,
+          ],
+          "sourceType": "module",
+          "tokens": undefined,
+          "type": "Program",
+        },
+        "childScopes": [],
+        "functionExpressionScope": false,
+        "isStrict": true,
+        "leftToResolve": null,
+        "references": [
+          Reference {
+            "$id": 244,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "React",
+              "optional": false,
+              "range": [
+                36,
+                41,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": undefined,
+            "resolved": Variable {
+              "$id": 458,
+              "defs": [
+                ImportBindingDefinition {
+                  "$id": 323,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "local": {
+                      "decorators": [],
+                      "name": "React",
+                      "optional": false,
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "ImportDefaultSpecifier",
+                  },
+                  "parent": {
+                    "attributes": [],
+                    "importKind": "value",
+                    "range": [
+                      29,
+                      55,
+                    ],
+                    "source": {
+                      "range": [
+                        47,
+                        54,
+                      ],
+                      "raw": "'react'",
+                      "type": "Literal",
+                      "value": "react",
+                    },
+                    "specifiers": [
+                      {
+                        "local": {
+                          "decorators": [],
+                          "name": "React",
+                          "optional": false,
+                          "range": [
+                            36,
+                            41,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          36,
+                          41,
+                        ],
+                        "type": "ImportDefaultSpecifier",
+                      },
+                    ],
+                    "type": "ImportDeclaration",
+                  },
+                  "type": "ImportBinding",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "React",
+              "references": [
+                [Circular],
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": undefined,
+          },
+        ],
+        "set": Map {
+          "React" => Variable {
+            "$id": 458,
+            "defs": [
+              ImportBindingDefinition {
+                "$id": 323,
+                "isTypeDefinition": true,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "local": {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "ImportDefaultSpecifier",
+                },
+                "parent": {
+                  "attributes": [],
+                  "importKind": "value",
+                  "range": [
+                    29,
+                    55,
+                  ],
+                  "source": {
+                    "range": [
+                      47,
+                      54,
+                    ],
+                    "raw": "'react'",
+                    "type": "Literal",
+                    "value": "react",
+                  },
+                  "specifiers": [
+                    {
+                      "local": {
+                        "decorators": [],
+                        "name": "React",
+                        "optional": false,
+                        "range": [
+                          36,
+                          41,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "ImportDefaultSpecifier",
+                    },
+                  ],
+                  "type": "ImportDeclaration",
+                },
+                "type": "ImportBinding",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "React",
+                "optional": false,
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "React",
+            "references": [
+              Reference {
+                "$id": 244,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": undefined,
+                "maybeImplicitGlobal": undefined,
+                "resolved": [Circular],
+                "writeExpr": undefined,
+              },
+            ],
+            "scope": [Circular],
+          },
+        },
+        "through": [],
+        "type": "module",
+        "upper": [Circular],
+        "variableScope": [Circular],
+        "variables": [
+          Variable {
+            "$id": 458,
+            "defs": [
+              ImportBindingDefinition {
+                "$id": 323,
+                "isTypeDefinition": true,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "local": {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "ImportDefaultSpecifier",
+                },
+                "parent": {
+                  "attributes": [],
+                  "importKind": "value",
+                  "range": [
+                    29,
+                    55,
+                  ],
+                  "source": {
+                    "range": [
+                      47,
+                      54,
+                    ],
+                    "raw": "'react'",
+                    "type": "Literal",
+                    "value": "react",
+                  },
+                  "specifiers": [
+                    {
+                      "local": {
+                        "decorators": [],
+                        "name": "React",
+                        "optional": false,
+                        "range": [
+                          36,
+                          41,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "ImportDefaultSpecifier",
+                    },
+                  ],
+                  "type": "ImportDeclaration",
+                },
+                "type": "ImportBinding",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "React",
+                "optional": false,
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "React",
+            "references": [
+              Reference {
+                "$id": 244,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": undefined,
+                "maybeImplicitGlobal": undefined,
+                "resolved": [Circular],
+                "writeExpr": undefined,
+              },
+            ],
+            "scope": [Circular],
+          },
+        ],
+      },
+    ],
+    "functionExpressionScope": false,
+    "implicit": {
+      "leftToBeResolved": [],
+      "set": Map {},
+      "variables": [],
+    },
+    "isStrict": false,
+    "leftToResolve": null,
+    "references": [],
+    "set": Map {
+      "const" => ImplicitLibVariable {
+        "$id": 457,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+    },
+    "through": [],
+    "type": "global",
+    "upper": null,
+    "variableScope": [Circular],
+    "variables": [
+      ImplicitLibVariable {
+        "$id": 457,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+    ],
+  },
+  "nodeToScope": WeakMap {},
+  "scopes": [
+    GlobalScope {
+      "$id": 227,
+      "block": {
+        "body": [
+          {
+            "attributes": [],
+            "importKind": "value",
+            "range": [
+              29,
+              55,
+            ],
+            "source": {
+              "range": [
+                47,
+                54,
+              ],
+              "raw": "'react'",
+              "type": "Literal",
+              "value": "react",
+            },
+            "specifiers": [
+              {
+                "local": {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "ImportDefaultSpecifier",
+              },
+            ],
+            "type": "ImportDeclaration",
+          },
+          {
+            "directive": undefined,
+            "expression": {
+              "children": [],
+              "closingFragment": {
+                "range": [
+                  59,
+                  62,
+                ],
+                "type": "JSXClosingFragment",
+              },
+              "openingFragment": {
+                "range": [
+                  57,
+                  59,
+                ],
+                "type": "JSXOpeningFragment",
+              },
+              "range": [
+                57,
+                62,
+              ],
+              "type": "JSXFragment",
+            },
+            "range": [
+              57,
+              63,
+            ],
+            "type": "ExpressionStatement",
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          29,
+          64,
+        ],
+        "sourceType": "module",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [
+        ModuleScope {
+          "$id": 228,
+          "block": {
+            "body": [
+              {
+                "attributes": [],
+                "importKind": "value",
+                "range": [
+                  29,
+                  55,
+                ],
+                "source": {
+                  "range": [
+                    47,
+                    54,
+                  ],
+                  "raw": "'react'",
+                  "type": "Literal",
+                  "value": "react",
+                },
+                "specifiers": [
+                  {
+                    "local": {
+                      "decorators": [],
+                      "name": "React",
+                      "optional": false,
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "ImportDefaultSpecifier",
+                  },
+                ],
+                "type": "ImportDeclaration",
+              },
+              {
+                "directive": undefined,
+                "expression": {
+                  "children": [],
+                  "closingFragment": {
+                    "range": [
+                      59,
+                      62,
+                    ],
+                    "type": "JSXClosingFragment",
+                  },
+                  "openingFragment": {
+                    "range": [
+                      57,
+                      59,
+                    ],
+                    "type": "JSXOpeningFragment",
+                  },
+                  "range": [
+                    57,
+                    62,
+                  ],
+                  "type": "JSXFragment",
+                },
+                "range": [
+                  57,
+                  63,
+                ],
+                "type": "ExpressionStatement",
+              },
+            ],
+            "comments": undefined,
+            "range": [
+              29,
+              64,
+            ],
+            "sourceType": "module",
+            "tokens": undefined,
+            "type": "Program",
+          },
+          "childScopes": [],
+          "functionExpressionScope": false,
+          "isStrict": true,
+          "leftToResolve": null,
+          "references": [
+            Reference {
+              "$id": 244,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "React",
+                "optional": false,
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": undefined,
+              "resolved": Variable {
+                "$id": 458,
+                "defs": [
+                  ImportBindingDefinition {
+                    "$id": 323,
+                    "isTypeDefinition": true,
+                    "isVariableDefinition": true,
+                    "name": {
+                      "decorators": [],
+                      "name": "React",
+                      "optional": false,
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "node": {
+                      "local": {
+                        "decorators": [],
+                        "name": "React",
+                        "optional": false,
+                        "range": [
+                          36,
+                          41,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "ImportDefaultSpecifier",
+                    },
+                    "parent": {
+                      "attributes": [],
+                      "importKind": "value",
+                      "range": [
+                        29,
+                        55,
+                      ],
+                      "source": {
+                        "range": [
+                          47,
+                          54,
+                        ],
+                        "raw": "'react'",
+                        "type": "Literal",
+                        "value": "react",
+                      },
+                      "specifiers": [
+                        {
+                          "local": {
+                            "decorators": [],
+                            "name": "React",
+                            "optional": false,
+                            "range": [
+                              36,
+                              41,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            36,
+                            41,
+                          ],
+                          "type": "ImportDefaultSpecifier",
+                        },
+                      ],
+                      "type": "ImportDeclaration",
+                    },
+                    "type": "ImportBinding",
+                  },
+                ],
+                "eslintUsed": false,
+                "identifiers": [
+                  {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                ],
+                "name": "React",
+                "references": [
+                  [Circular],
+                ],
+                "scope": [Circular],
+              },
+              "writeExpr": undefined,
+            },
+          ],
+          "set": Map {
+            "React" => Variable {
+              "$id": 458,
+              "defs": [
+                ImportBindingDefinition {
+                  "$id": 323,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "local": {
+                      "decorators": [],
+                      "name": "React",
+                      "optional": false,
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "ImportDefaultSpecifier",
+                  },
+                  "parent": {
+                    "attributes": [],
+                    "importKind": "value",
+                    "range": [
+                      29,
+                      55,
+                    ],
+                    "source": {
+                      "range": [
+                        47,
+                        54,
+                      ],
+                      "raw": "'react'",
+                      "type": "Literal",
+                      "value": "react",
+                    },
+                    "specifiers": [
+                      {
+                        "local": {
+                          "decorators": [],
+                          "name": "React",
+                          "optional": false,
+                          "range": [
+                            36,
+                            41,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          36,
+                          41,
+                        ],
+                        "type": "ImportDefaultSpecifier",
+                      },
+                    ],
+                    "type": "ImportDeclaration",
+                  },
+                  "type": "ImportBinding",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "React",
+              "references": [
+                Reference {
+                  "$id": 244,
+                  "from": [Circular],
+                  "identifier": {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": undefined,
+                  "maybeImplicitGlobal": undefined,
+                  "resolved": [Circular],
+                  "writeExpr": undefined,
+                },
+              ],
+              "scope": [Circular],
+            },
+          },
+          "through": [],
+          "type": "module",
+          "upper": [Circular],
+          "variableScope": [Circular],
+          "variables": [
+            Variable {
+              "$id": 458,
+              "defs": [
+                ImportBindingDefinition {
+                  "$id": 323,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "local": {
+                      "decorators": [],
+                      "name": "React",
+                      "optional": false,
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "ImportDefaultSpecifier",
+                  },
+                  "parent": {
+                    "attributes": [],
+                    "importKind": "value",
+                    "range": [
+                      29,
+                      55,
+                    ],
+                    "source": {
+                      "range": [
+                        47,
+                        54,
+                      ],
+                      "raw": "'react'",
+                      "type": "Literal",
+                      "value": "react",
+                    },
+                    "specifiers": [
+                      {
+                        "local": {
+                          "decorators": [],
+                          "name": "React",
+                          "optional": false,
+                          "range": [
+                            36,
+                            41,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          36,
+                          41,
+                        ],
+                        "type": "ImportDefaultSpecifier",
+                      },
+                    ],
+                    "type": "ImportDeclaration",
+                  },
+                  "type": "ImportBinding",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "React",
+              "references": [
+                Reference {
+                  "$id": 244,
+                  "from": [Circular],
+                  "identifier": {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": undefined,
+                  "maybeImplicitGlobal": undefined,
+                  "resolved": [Circular],
+                  "writeExpr": undefined,
+                },
+              ],
+              "scope": [Circular],
+            },
+          ],
         },
       ],
-      isValueVariable: true,
-      isTypeVariable: true,
-    },
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$2,
-      isStrict: false,
-      references: [],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
+      "functionExpressionScope": false,
+      "implicit": {
+        "leftToBeResolved": [],
+        "set": Map {},
+        "variables": [],
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [],
+      "set": Map {
+        "const" => ImplicitLibVariable {
+          "$id": 457,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+      },
+      "through": [],
+      "type": "global",
+      "upper": null,
+      "variableScope": [Circular],
+      "variables": [
+        ImplicitLibVariable {
+          "$id": 457,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
       ],
     },
-    ModuleScope$2 {
-      block: Program$2,
-      isStrict: true,
-      references: [
-        Reference$1,
-      ],
-      set: Map {
-        "React" => Variable$2,
+    ModuleScope {
+      "$id": 228,
+      "block": {
+        "body": [
+          {
+            "attributes": [],
+            "importKind": "value",
+            "range": [
+              29,
+              55,
+            ],
+            "source": {
+              "range": [
+                47,
+                54,
+              ],
+              "raw": "'react'",
+              "type": "Literal",
+              "value": "react",
+            },
+            "specifiers": [
+              {
+                "local": {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "ImportDefaultSpecifier",
+              },
+            ],
+            "type": "ImportDeclaration",
+          },
+          {
+            "directive": undefined,
+            "expression": {
+              "children": [],
+              "closingFragment": {
+                "range": [
+                  59,
+                  62,
+                ],
+                "type": "JSXClosingFragment",
+              },
+              "openingFragment": {
+                "range": [
+                  57,
+                  59,
+                ],
+                "type": "JSXOpeningFragment",
+              },
+              "range": [
+                57,
+                62,
+              ],
+              "type": "JSXFragment",
+            },
+            "range": [
+              57,
+              63,
+            ],
+            "type": "ExpressionStatement",
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          29,
+          64,
+        ],
+        "sourceType": "module",
+        "tokens": undefined,
+        "type": "Program",
       },
-      type: "module",
-      upper: GlobalScope$1,
-      variables: [
-        Variable$2,
+      "childScopes": [],
+      "functionExpressionScope": false,
+      "isStrict": true,
+      "leftToResolve": null,
+      "references": [
+        Reference {
+          "$id": 244,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "React",
+            "optional": false,
+            "range": [
+              36,
+              41,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": undefined,
+          "resolved": Variable {
+            "$id": 458,
+            "defs": [
+              ImportBindingDefinition {
+                "$id": 323,
+                "isTypeDefinition": true,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "local": {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "ImportDefaultSpecifier",
+                },
+                "parent": {
+                  "attributes": [],
+                  "importKind": "value",
+                  "range": [
+                    29,
+                    55,
+                  ],
+                  "source": {
+                    "range": [
+                      47,
+                      54,
+                    ],
+                    "raw": "'react'",
+                    "type": "Literal",
+                    "value": "react",
+                  },
+                  "specifiers": [
+                    {
+                      "local": {
+                        "decorators": [],
+                        "name": "React",
+                        "optional": false,
+                        "range": [
+                          36,
+                          41,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "ImportDefaultSpecifier",
+                    },
+                  ],
+                  "type": "ImportDeclaration",
+                },
+                "type": "ImportBinding",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "React",
+                "optional": false,
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "React",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
+        },
+      ],
+      "set": Map {
+        "React" => Variable {
+          "$id": 458,
+          "defs": [
+            ImportBindingDefinition {
+              "$id": 323,
+              "isTypeDefinition": true,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "React",
+                "optional": false,
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "local": {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "ImportDefaultSpecifier",
+              },
+              "parent": {
+                "attributes": [],
+                "importKind": "value",
+                "range": [
+                  29,
+                  55,
+                ],
+                "source": {
+                  "range": [
+                    47,
+                    54,
+                  ],
+                  "raw": "'react'",
+                  "type": "Literal",
+                  "value": "react",
+                },
+                "specifiers": [
+                  {
+                    "local": {
+                      "decorators": [],
+                      "name": "React",
+                      "optional": false,
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "ImportDefaultSpecifier",
+                  },
+                ],
+                "type": "ImportDeclaration",
+              },
+              "type": "ImportBinding",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "React",
+              "optional": false,
+              "range": [
+                36,
+                41,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "React",
+          "references": [
+            Reference {
+              "$id": 244,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "React",
+                "optional": false,
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": undefined,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
+      },
+      "through": [],
+      "type": "module",
+      "upper": GlobalScope {
+        "$id": 227,
+        "block": {
+          "body": [
+            {
+              "attributes": [],
+              "importKind": "value",
+              "range": [
+                29,
+                55,
+              ],
+              "source": {
+                "range": [
+                  47,
+                  54,
+                ],
+                "raw": "'react'",
+                "type": "Literal",
+                "value": "react",
+              },
+              "specifiers": [
+                {
+                  "local": {
+                    "decorators": [],
+                    "name": "React",
+                    "optional": false,
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "ImportDefaultSpecifier",
+                },
+              ],
+              "type": "ImportDeclaration",
+            },
+            {
+              "directive": undefined,
+              "expression": {
+                "children": [],
+                "closingFragment": {
+                  "range": [
+                    59,
+                    62,
+                  ],
+                  "type": "JSXClosingFragment",
+                },
+                "openingFragment": {
+                  "range": [
+                    57,
+                    59,
+                  ],
+                  "type": "JSXOpeningFragment",
+                },
+                "range": [
+                  57,
+                  62,
+                ],
+                "type": "JSXFragment",
+              },
+              "range": [
+                57,
+                63,
+              ],
+              "type": "ExpressionStatement",
+            },
+          ],
+          "comments": undefined,
+          "range": [
+            29,
+            64,
+          ],
+          "sourceType": "module",
+          "tokens": undefined,
+          "type": "Program",
+        },
+        "childScopes": [
+          [Circular],
+        ],
+        "functionExpressionScope": false,
+        "implicit": {
+          "leftToBeResolved": [],
+          "set": Map {},
+          "variables": [],
+        },
+        "isStrict": false,
+        "leftToResolve": null,
+        "references": [],
+        "set": Map {
+          "const" => ImplicitLibVariable {
+            "$id": 457,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+        },
+        "through": [],
+        "type": "global",
+        "upper": null,
+        "variableScope": [Circular],
+        "variables": [
+          ImplicitLibVariable {
+            "$id": 457,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+        ],
+      },
+      "variableScope": [Circular],
+      "variables": [
+        Variable {
+          "$id": 458,
+          "defs": [
+            ImportBindingDefinition {
+              "$id": 323,
+              "isTypeDefinition": true,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "React",
+                "optional": false,
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "local": {
+                  "decorators": [],
+                  "name": "React",
+                  "optional": false,
+                  "range": [
+                    36,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "ImportDefaultSpecifier",
+              },
+              "parent": {
+                "attributes": [],
+                "importKind": "value",
+                "range": [
+                  29,
+                  55,
+                ],
+                "source": {
+                  "range": [
+                    47,
+                    54,
+                  ],
+                  "raw": "'react'",
+                  "type": "Literal",
+                  "value": "react",
+                },
+                "specifiers": [
+                  {
+                    "local": {
+                      "decorators": [],
+                      "name": "React",
+                      "optional": false,
+                      "range": [
+                        36,
+                        41,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      36,
+                      41,
+                    ],
+                    "type": "ImportDefaultSpecifier",
+                  },
+                ],
+                "type": "ImportDeclaration",
+              },
+              "type": "ImportBinding",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "React",
+              "optional": false,
+              "range": [
+                36,
+                41,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "React",
+          "references": [
+            Reference {
+              "$id": 244,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "React",
+                "optional": false,
+                "range": [
+                  36,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": undefined,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
       ],
     },
   ],
 }
-`;

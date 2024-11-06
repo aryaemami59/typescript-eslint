@@ -1,33 +1,583 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`export named-source2 1`] = `
 ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$1,
-      isStrict: false,
-      references: [],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
+  "currentScope": null,
+  "declaredVariables": WeakMap {},
+  "globalScope": GlobalScope {
+    "$id": 439,
+    "block": {
+      "body": [
+        {
+          "attributes": [],
+          "declaration": null,
+          "exportKind": "value",
+          "range": [
+            27,
+            56,
+          ],
+          "source": {
+            "range": [
+              50,
+              55,
+            ],
+            "raw": "'foo'",
+            "type": "Literal",
+            "value": "foo",
+          },
+          "specifiers": [
+            {
+              "exportKind": "value",
+              "exported": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  41,
+                  42,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "local": {
+                "decorators": [],
+                "name": "v",
+                "optional": false,
+                "range": [
+                  36,
+                  37,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                36,
+                42,
+              ],
+              "type": "ExportSpecifier",
+            },
+          ],
+          "type": "ExportNamedDeclaration",
+        },
+      ],
+      "comments": undefined,
+      "range": [
+        27,
+        57,
+      ],
+      "sourceType": "module",
+      "tokens": undefined,
+      "type": "Program",
+    },
+    "childScopes": [
+      ModuleScope {
+        "$id": 440,
+        "block": {
+          "body": [
+            {
+              "attributes": [],
+              "declaration": null,
+              "exportKind": "value",
+              "range": [
+                27,
+                56,
+              ],
+              "source": {
+                "range": [
+                  50,
+                  55,
+                ],
+                "raw": "'foo'",
+                "type": "Literal",
+                "value": "foo",
+              },
+              "specifiers": [
+                {
+                  "exportKind": "value",
+                  "exported": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      41,
+                      42,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "local": {
+                    "decorators": [],
+                    "name": "v",
+                    "optional": false,
+                    "range": [
+                      36,
+                      37,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    36,
+                    42,
+                  ],
+                  "type": "ExportSpecifier",
+                },
+              ],
+              "type": "ExportNamedDeclaration",
+            },
+          ],
+          "comments": undefined,
+          "range": [
+            27,
+            57,
+          ],
+          "sourceType": "module",
+          "tokens": undefined,
+          "type": "Program",
+        },
+        "childScopes": [],
+        "functionExpressionScope": false,
+        "isStrict": true,
+        "leftToResolve": null,
+        "references": [],
+        "set": Map {},
+        "through": [],
+        "type": "module",
+        "upper": [Circular],
+        "variableScope": [Circular],
+        "variables": [],
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
+    ],
+    "functionExpressionScope": false,
+    "implicit": {
+      "leftToBeResolved": [],
+      "set": Map {},
+      "variables": [],
+    },
+    "isStrict": false,
+    "leftToResolve": null,
+    "references": [],
+    "set": Map {
+      "const" => ImplicitLibVariable {
+        "$id": 880,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+    },
+    "through": [],
+    "type": "global",
+    "upper": null,
+    "variableScope": [Circular],
+    "variables": [
+      ImplicitLibVariable {
+        "$id": 880,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+    ],
+  },
+  "nodeToScope": WeakMap {},
+  "scopes": [
+    GlobalScope {
+      "$id": 439,
+      "block": {
+        "body": [
+          {
+            "attributes": [],
+            "declaration": null,
+            "exportKind": "value",
+            "range": [
+              27,
+              56,
+            ],
+            "source": {
+              "range": [
+                50,
+                55,
+              ],
+              "raw": "'foo'",
+              "type": "Literal",
+              "value": "foo",
+            },
+            "specifiers": [
+              {
+                "exportKind": "value",
+                "exported": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    41,
+                    42,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "local": {
+                  "decorators": [],
+                  "name": "v",
+                  "optional": false,
+                  "range": [
+                    36,
+                    37,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  36,
+                  42,
+                ],
+                "type": "ExportSpecifier",
+              },
+            ],
+            "type": "ExportNamedDeclaration",
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          27,
+          57,
+        ],
+        "sourceType": "module",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [
+        ModuleScope {
+          "$id": 440,
+          "block": {
+            "body": [
+              {
+                "attributes": [],
+                "declaration": null,
+                "exportKind": "value",
+                "range": [
+                  27,
+                  56,
+                ],
+                "source": {
+                  "range": [
+                    50,
+                    55,
+                  ],
+                  "raw": "'foo'",
+                  "type": "Literal",
+                  "value": "foo",
+                },
+                "specifiers": [
+                  {
+                    "exportKind": "value",
+                    "exported": {
+                      "decorators": [],
+                      "name": "x",
+                      "optional": false,
+                      "range": [
+                        41,
+                        42,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "local": {
+                      "decorators": [],
+                      "name": "v",
+                      "optional": false,
+                      "range": [
+                        36,
+                        37,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      36,
+                      42,
+                    ],
+                    "type": "ExportSpecifier",
+                  },
+                ],
+                "type": "ExportNamedDeclaration",
+              },
+            ],
+            "comments": undefined,
+            "range": [
+              27,
+              57,
+            ],
+            "sourceType": "module",
+            "tokens": undefined,
+            "type": "Program",
+          },
+          "childScopes": [],
+          "functionExpressionScope": false,
+          "isStrict": true,
+          "leftToResolve": null,
+          "references": [],
+          "set": Map {},
+          "through": [],
+          "type": "module",
+          "upper": [Circular],
+          "variableScope": [Circular],
+          "variables": [],
+        },
+      ],
+      "functionExpressionScope": false,
+      "implicit": {
+        "leftToBeResolved": [],
+        "set": Map {},
+        "variables": [],
+      },
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [],
+      "set": Map {
+        "const" => ImplicitLibVariable {
+          "$id": 880,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+      },
+      "through": [],
+      "type": "global",
+      "upper": null,
+      "variableScope": [Circular],
+      "variables": [
+        ImplicitLibVariable {
+          "$id": 880,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
       ],
     },
-    ModuleScope$2 {
-      block: Program$1,
-      isStrict: true,
-      references: [],
-      set: Map {},
-      type: "module",
-      upper: GlobalScope$1,
-      variables: [],
+    ModuleScope {
+      "$id": 440,
+      "block": {
+        "body": [
+          {
+            "attributes": [],
+            "declaration": null,
+            "exportKind": "value",
+            "range": [
+              27,
+              56,
+            ],
+            "source": {
+              "range": [
+                50,
+                55,
+              ],
+              "raw": "'foo'",
+              "type": "Literal",
+              "value": "foo",
+            },
+            "specifiers": [
+              {
+                "exportKind": "value",
+                "exported": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    41,
+                    42,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "local": {
+                  "decorators": [],
+                  "name": "v",
+                  "optional": false,
+                  "range": [
+                    36,
+                    37,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  36,
+                  42,
+                ],
+                "type": "ExportSpecifier",
+              },
+            ],
+            "type": "ExportNamedDeclaration",
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          27,
+          57,
+        ],
+        "sourceType": "module",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [],
+      "functionExpressionScope": false,
+      "isStrict": true,
+      "leftToResolve": null,
+      "references": [],
+      "set": Map {},
+      "through": [],
+      "type": "module",
+      "upper": GlobalScope {
+        "$id": 439,
+        "block": {
+          "body": [
+            {
+              "attributes": [],
+              "declaration": null,
+              "exportKind": "value",
+              "range": [
+                27,
+                56,
+              ],
+              "source": {
+                "range": [
+                  50,
+                  55,
+                ],
+                "raw": "'foo'",
+                "type": "Literal",
+                "value": "foo",
+              },
+              "specifiers": [
+                {
+                  "exportKind": "value",
+                  "exported": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      41,
+                      42,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "local": {
+                    "decorators": [],
+                    "name": "v",
+                    "optional": false,
+                    "range": [
+                      36,
+                      37,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    36,
+                    42,
+                  ],
+                  "type": "ExportSpecifier",
+                },
+              ],
+              "type": "ExportNamedDeclaration",
+            },
+          ],
+          "comments": undefined,
+          "range": [
+            27,
+            57,
+          ],
+          "sourceType": "module",
+          "tokens": undefined,
+          "type": "Program",
+        },
+        "childScopes": [
+          [Circular],
+        ],
+        "functionExpressionScope": false,
+        "implicit": {
+          "leftToBeResolved": [],
+          "set": Map {},
+          "variables": [],
+        },
+        "isStrict": false,
+        "leftToResolve": null,
+        "references": [],
+        "set": Map {
+          "const" => ImplicitLibVariable {
+            "$id": 880,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+        },
+        "through": [],
+        "type": "global",
+        "upper": null,
+        "variableScope": [Circular],
+        "variables": [
+          ImplicitLibVariable {
+            "$id": 880,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+        ],
+      },
+      "variableScope": [Circular],
+      "variables": [],
     },
   ],
 }
-`;

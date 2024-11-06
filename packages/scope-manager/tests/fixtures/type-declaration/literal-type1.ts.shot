@@ -1,87 +1,3089 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`type-declaration literal-type1 1`] = `
 ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-    Variable$2 {
-      defs: [
-        TypeDefinition$1 {
-          name: Identifier<"Color">,
-          node: TSTypeAliasDeclaration$1,
+  "currentScope": null,
+  "declaredVariables": WeakMap {},
+  "globalScope": GlobalScope {
+    "$id": 27,
+    "block": {
+      "body": [
+        {
+          "declare": false,
+          "id": {
+            "decorators": [],
+            "name": "Color",
+            "optional": false,
+            "range": [
+              5,
+              10,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "range": [
+            0,
+            28,
+          ],
+          "type": "TSTypeAliasDeclaration",
+          "typeAnnotation": {
+            "range": [
+              13,
+              27,
+            ],
+            "type": "TSUnionType",
+            "types": [
+              {
+                "literal": {
+                  "range": [
+                    13,
+                    18,
+                  ],
+                  "raw": "'red'",
+                  "type": "Literal",
+                  "value": "red",
+                },
+                "range": [
+                  13,
+                  18,
+                ],
+                "type": "TSLiteralType",
+              },
+              {
+                "literal": {
+                  "range": [
+                    21,
+                    27,
+                  ],
+                  "raw": "'blue'",
+                  "type": "Literal",
+                  "value": "blue",
+                },
+                "range": [
+                  21,
+                  27,
+                ],
+                "type": "TSLiteralType",
+              },
+            ],
+          },
+          "typeParameters": undefined,
+        },
+        {
+          "declare": false,
+          "id": {
+            "decorators": [],
+            "name": "Quantity",
+            "optional": false,
+            "range": [
+              34,
+              42,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "range": [
+            29,
+            59,
+          ],
+          "type": "TSTypeAliasDeclaration",
+          "typeAnnotation": {
+            "range": [
+              45,
+              58,
+            ],
+            "type": "TSUnionType",
+            "types": [
+              {
+                "literal": {
+                  "range": [
+                    45,
+                    50,
+                  ],
+                  "raw": "'one'",
+                  "type": "Literal",
+                  "value": "one",
+                },
+                "range": [
+                  45,
+                  50,
+                ],
+                "type": "TSLiteralType",
+              },
+              {
+                "literal": {
+                  "range": [
+                    53,
+                    58,
+                  ],
+                  "raw": "'two'",
+                  "type": "Literal",
+                  "value": "two",
+                },
+                "range": [
+                  53,
+                  58,
+                ],
+                "type": "TSLiteralType",
+              },
+            ],
+          },
+          "typeParameters": undefined,
+        },
+        {
+          "declare": false,
+          "id": {
+            "decorators": [],
+            "name": "SeussFish",
+            "optional": false,
+            "range": [
+              65,
+              74,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "range": [
+            60,
+            104,
+          ],
+          "type": "TSTypeAliasDeclaration",
+          "typeAnnotation": {
+            "quasis": [
+              {
+                "range": [
+                  77,
+                  80,
+                ],
+                "tail": false,
+                "type": "TemplateElement",
+                "value": {
+                  "cooked": "",
+                  "raw": "",
+                },
+              },
+              {
+                "range": [
+                  96,
+                  103,
+                ],
+                "tail": true,
+                "type": "TemplateElement",
+                "value": {
+                  "cooked": " fish",
+                  "raw": " fish",
+                },
+              },
+            ],
+            "range": [
+              77,
+              103,
+            ],
+            "type": "TSTemplateLiteralType",
+            "types": [
+              {
+                "range": [
+                  80,
+                  96,
+                ],
+                "type": "TSUnionType",
+                "types": [
+                  {
+                    "range": [
+                      80,
+                      88,
+                    ],
+                    "type": "TSTypeReference",
+                    "typeArguments": undefined,
+                    "typeName": {
+                      "decorators": [],
+                      "name": "Quantity",
+                      "optional": false,
+                      "range": [
+                        80,
+                        88,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                  },
+                  {
+                    "range": [
+                      91,
+                      96,
+                    ],
+                    "type": "TSTypeReference",
+                    "typeArguments": undefined,
+                    "typeName": {
+                      "decorators": [],
+                      "name": "Color",
+                      "optional": false,
+                      "range": [
+                        91,
+                        96,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          "typeParameters": undefined,
         },
       ],
-      name: "Color",
-      references: [
-        Reference$2 {
-          identifier: Identifier<"Color">,
-          isRead: true,
-          isTypeReference: true,
-          isValueReference: false,
-          isWrite: false,
-          resolved: Variable$2,
-        },
+      "comments": undefined,
+      "range": [
+        0,
+        105,
       ],
-      isValueVariable: false,
-      isTypeVariable: true,
+      "sourceType": "script",
+      "tokens": undefined,
+      "type": "Program",
     },
-    Variable$3 {
-      defs: [
-        TypeDefinition$2 {
-          name: Identifier<"Quantity">,
-          node: TSTypeAliasDeclaration$2,
+    "childScopes": [],
+    "functionExpressionScope": false,
+    "implicit": {
+      "leftToBeResolved": [
+        Reference {
+          "$id": 39,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "Quantity",
+            "optional": false,
+            "range": [
+              80,
+              88,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 70,
+            "defs": [
+              TypeDefinition {
+                "$id": 49,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "Quantity",
+                  "optional": false,
+                  "range": [
+                    34,
+                    42,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "Quantity",
+                    "optional": false,
+                    "range": [
+                      34,
+                      42,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    29,
+                    59,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "range": [
+                      45,
+                      58,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "literal": {
+                          "range": [
+                            45,
+                            50,
+                          ],
+                          "raw": "'one'",
+                          "type": "Literal",
+                          "value": "one",
+                        },
+                        "range": [
+                          45,
+                          50,
+                        ],
+                        "type": "TSLiteralType",
+                      },
+                      {
+                        "literal": {
+                          "range": [
+                            53,
+                            58,
+                          ],
+                          "raw": "'two'",
+                          "type": "Literal",
+                          "value": "two",
+                        },
+                        "range": [
+                          53,
+                          58,
+                        ],
+                        "type": "TSLiteralType",
+                      },
+                    ],
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Quantity",
+                "optional": false,
+                "range": [
+                  34,
+                  42,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Quantity",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
+        },
+        Reference {
+          "$id": 40,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "Color",
+            "optional": false,
+            "range": [
+              91,
+              96,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 69,
+            "defs": [
+              TypeDefinition {
+                "$id": 48,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "Color",
+                  "optional": false,
+                  "range": [
+                    5,
+                    10,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "Color",
+                    "optional": false,
+                    "range": [
+                      5,
+                      10,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    0,
+                    28,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "range": [
+                      13,
+                      27,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "literal": {
+                          "range": [
+                            13,
+                            18,
+                          ],
+                          "raw": "'red'",
+                          "type": "Literal",
+                          "value": "red",
+                        },
+                        "range": [
+                          13,
+                          18,
+                        ],
+                        "type": "TSLiteralType",
+                      },
+                      {
+                        "literal": {
+                          "range": [
+                            21,
+                            27,
+                          ],
+                          "raw": "'blue'",
+                          "type": "Literal",
+                          "value": "blue",
+                        },
+                        "range": [
+                          21,
+                          27,
+                        ],
+                        "type": "TSLiteralType",
+                      },
+                    ],
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Color",
+                "optional": false,
+                "range": [
+                  5,
+                  10,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Color",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
         },
       ],
-      name: "Quantity",
-      references: [
-        Reference$1 {
-          identifier: Identifier<"Quantity">,
-          isRead: true,
-          isTypeReference: true,
-          isValueReference: false,
-          isWrite: false,
-          resolved: Variable$3,
-        },
-      ],
-      isValueVariable: false,
-      isTypeVariable: true,
+      "set": Map {},
+      "variables": [],
     },
-    Variable$4 {
-      defs: [
-        TypeDefinition$3 {
-          name: Identifier<"SeussFish">,
-          node: TSTypeAliasDeclaration$3,
+    "isStrict": false,
+    "leftToResolve": null,
+    "references": [
+      Reference {
+        "$id": 39,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "Quantity",
+          "optional": false,
+          "range": [
+            80,
+            88,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
         },
-      ],
-      name: "SeussFish",
-      references: [],
-      isValueVariable: false,
-      isTypeVariable: true,
-    },
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$4,
-      isStrict: false,
-      references: [
-        Reference$1,
-        Reference$2,
-      ],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
-        "Color" => Variable$2,
-        "Quantity" => Variable$3,
-        "SeussFish" => Variable$4,
+        "init": undefined,
+        "maybeImplicitGlobal": null,
+        "resolved": Variable {
+          "$id": 70,
+          "defs": [
+            TypeDefinition {
+              "$id": 49,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "Quantity",
+                "optional": false,
+                "range": [
+                  34,
+                  42,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Quantity",
+                  "optional": false,
+                  "range": [
+                    34,
+                    42,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  29,
+                  59,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "range": [
+                    45,
+                    58,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "literal": {
+                        "range": [
+                          45,
+                          50,
+                        ],
+                        "raw": "'one'",
+                        "type": "Literal",
+                        "value": "one",
+                      },
+                      "range": [
+                        45,
+                        50,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                    {
+                      "literal": {
+                        "range": [
+                          53,
+                          58,
+                        ],
+                        "raw": "'two'",
+                        "type": "Literal",
+                        "value": "two",
+                      },
+                      "range": [
+                        53,
+                        58,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                  ],
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Quantity",
+              "optional": false,
+              "range": [
+                34,
+                42,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Quantity",
+          "references": [
+            [Circular],
+          ],
+          "scope": [Circular],
+        },
+        "writeExpr": undefined,
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
-        Variable$2,
-        Variable$3,
-        Variable$4,
+      Reference {
+        "$id": 40,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "Color",
+          "optional": false,
+          "range": [
+            91,
+            96,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "init": undefined,
+        "maybeImplicitGlobal": null,
+        "resolved": Variable {
+          "$id": 69,
+          "defs": [
+            TypeDefinition {
+              "$id": 48,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "Color",
+                "optional": false,
+                "range": [
+                  5,
+                  10,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Color",
+                  "optional": false,
+                  "range": [
+                    5,
+                    10,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  0,
+                  28,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "range": [
+                    13,
+                    27,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "literal": {
+                        "range": [
+                          13,
+                          18,
+                        ],
+                        "raw": "'red'",
+                        "type": "Literal",
+                        "value": "red",
+                      },
+                      "range": [
+                        13,
+                        18,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                    {
+                      "literal": {
+                        "range": [
+                          21,
+                          27,
+                        ],
+                        "raw": "'blue'",
+                        "type": "Literal",
+                        "value": "blue",
+                      },
+                      "range": [
+                        21,
+                        27,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                  ],
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Color",
+              "optional": false,
+              "range": [
+                5,
+                10,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Color",
+          "references": [
+            [Circular],
+          ],
+          "scope": [Circular],
+        },
+        "writeExpr": undefined,
+      },
+    ],
+    "set": Map {
+      "const" => ImplicitLibVariable {
+        "$id": 68,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      "Color" => Variable {
+        "$id": 69,
+        "defs": [
+          TypeDefinition {
+            "$id": 48,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "Color",
+              "optional": false,
+              "range": [
+                5,
+                10,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "Color",
+                "optional": false,
+                "range": [
+                  5,
+                  10,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                0,
+                28,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "range": [
+                  13,
+                  27,
+                ],
+                "type": "TSUnionType",
+                "types": [
+                  {
+                    "literal": {
+                      "range": [
+                        13,
+                        18,
+                      ],
+                      "raw": "'red'",
+                      "type": "Literal",
+                      "value": "red",
+                    },
+                    "range": [
+                      13,
+                      18,
+                    ],
+                    "type": "TSLiteralType",
+                  },
+                  {
+                    "literal": {
+                      "range": [
+                        21,
+                        27,
+                      ],
+                      "raw": "'blue'",
+                      "type": "Literal",
+                      "value": "blue",
+                    },
+                    "range": [
+                      21,
+                      27,
+                    ],
+                    "type": "TSLiteralType",
+                  },
+                ],
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "Color",
+            "optional": false,
+            "range": [
+              5,
+              10,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "Color",
+        "references": [
+          Reference {
+            "$id": 40,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "Color",
+              "optional": false,
+              "range": [
+                91,
+                96,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": undefined,
+          },
+        ],
+        "scope": [Circular],
+      },
+      "Quantity" => Variable {
+        "$id": 70,
+        "defs": [
+          TypeDefinition {
+            "$id": 49,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "Quantity",
+              "optional": false,
+              "range": [
+                34,
+                42,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "Quantity",
+                "optional": false,
+                "range": [
+                  34,
+                  42,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                29,
+                59,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "range": [
+                  45,
+                  58,
+                ],
+                "type": "TSUnionType",
+                "types": [
+                  {
+                    "literal": {
+                      "range": [
+                        45,
+                        50,
+                      ],
+                      "raw": "'one'",
+                      "type": "Literal",
+                      "value": "one",
+                    },
+                    "range": [
+                      45,
+                      50,
+                    ],
+                    "type": "TSLiteralType",
+                  },
+                  {
+                    "literal": {
+                      "range": [
+                        53,
+                        58,
+                      ],
+                      "raw": "'two'",
+                      "type": "Literal",
+                      "value": "two",
+                    },
+                    "range": [
+                      53,
+                      58,
+                    ],
+                    "type": "TSLiteralType",
+                  },
+                ],
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "Quantity",
+            "optional": false,
+            "range": [
+              34,
+              42,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "Quantity",
+        "references": [
+          Reference {
+            "$id": 39,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "Quantity",
+              "optional": false,
+              "range": [
+                80,
+                88,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": undefined,
+          },
+        ],
+        "scope": [Circular],
+      },
+      "SeussFish" => Variable {
+        "$id": 71,
+        "defs": [
+          TypeDefinition {
+            "$id": 50,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "SeussFish",
+              "optional": false,
+              "range": [
+                65,
+                74,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "SeussFish",
+                "optional": false,
+                "range": [
+                  65,
+                  74,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                60,
+                104,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "quasis": [
+                  {
+                    "range": [
+                      77,
+                      80,
+                    ],
+                    "tail": false,
+                    "type": "TemplateElement",
+                    "value": {
+                      "cooked": "",
+                      "raw": "",
+                    },
+                  },
+                  {
+                    "range": [
+                      96,
+                      103,
+                    ],
+                    "tail": true,
+                    "type": "TemplateElement",
+                    "value": {
+                      "cooked": " fish",
+                      "raw": " fish",
+                    },
+                  },
+                ],
+                "range": [
+                  77,
+                  103,
+                ],
+                "type": "TSTemplateLiteralType",
+                "types": [
+                  {
+                    "range": [
+                      80,
+                      96,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          80,
+                          88,
+                        ],
+                        "type": "TSTypeReference",
+                        "typeArguments": undefined,
+                        "typeName": {
+                          "decorators": [],
+                          "name": "Quantity",
+                          "optional": false,
+                          "range": [
+                            80,
+                            88,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                      },
+                      {
+                        "range": [
+                          91,
+                          96,
+                        ],
+                        "type": "TSTypeReference",
+                        "typeArguments": undefined,
+                        "typeName": {
+                          "decorators": [],
+                          "name": "Color",
+                          "optional": false,
+                          "range": [
+                            91,
+                            96,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                      },
+                    ],
+                  },
+                ],
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "SeussFish",
+            "optional": false,
+            "range": [
+              65,
+              74,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "SeussFish",
+        "references": [],
+        "scope": [Circular],
+      },
+    },
+    "through": [],
+    "type": "global",
+    "upper": null,
+    "variableScope": [Circular],
+    "variables": [
+      ImplicitLibVariable {
+        "$id": 68,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      Variable {
+        "$id": 69,
+        "defs": [
+          TypeDefinition {
+            "$id": 48,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "Color",
+              "optional": false,
+              "range": [
+                5,
+                10,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "Color",
+                "optional": false,
+                "range": [
+                  5,
+                  10,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                0,
+                28,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "range": [
+                  13,
+                  27,
+                ],
+                "type": "TSUnionType",
+                "types": [
+                  {
+                    "literal": {
+                      "range": [
+                        13,
+                        18,
+                      ],
+                      "raw": "'red'",
+                      "type": "Literal",
+                      "value": "red",
+                    },
+                    "range": [
+                      13,
+                      18,
+                    ],
+                    "type": "TSLiteralType",
+                  },
+                  {
+                    "literal": {
+                      "range": [
+                        21,
+                        27,
+                      ],
+                      "raw": "'blue'",
+                      "type": "Literal",
+                      "value": "blue",
+                    },
+                    "range": [
+                      21,
+                      27,
+                    ],
+                    "type": "TSLiteralType",
+                  },
+                ],
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "Color",
+            "optional": false,
+            "range": [
+              5,
+              10,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "Color",
+        "references": [
+          Reference {
+            "$id": 40,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "Color",
+              "optional": false,
+              "range": [
+                91,
+                96,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": undefined,
+          },
+        ],
+        "scope": [Circular],
+      },
+      Variable {
+        "$id": 70,
+        "defs": [
+          TypeDefinition {
+            "$id": 49,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "Quantity",
+              "optional": false,
+              "range": [
+                34,
+                42,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "Quantity",
+                "optional": false,
+                "range": [
+                  34,
+                  42,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                29,
+                59,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "range": [
+                  45,
+                  58,
+                ],
+                "type": "TSUnionType",
+                "types": [
+                  {
+                    "literal": {
+                      "range": [
+                        45,
+                        50,
+                      ],
+                      "raw": "'one'",
+                      "type": "Literal",
+                      "value": "one",
+                    },
+                    "range": [
+                      45,
+                      50,
+                    ],
+                    "type": "TSLiteralType",
+                  },
+                  {
+                    "literal": {
+                      "range": [
+                        53,
+                        58,
+                      ],
+                      "raw": "'two'",
+                      "type": "Literal",
+                      "value": "two",
+                    },
+                    "range": [
+                      53,
+                      58,
+                    ],
+                    "type": "TSLiteralType",
+                  },
+                ],
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "Quantity",
+            "optional": false,
+            "range": [
+              34,
+              42,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "Quantity",
+        "references": [
+          Reference {
+            "$id": 39,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "Quantity",
+              "optional": false,
+              "range": [
+                80,
+                88,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": undefined,
+          },
+        ],
+        "scope": [Circular],
+      },
+      Variable {
+        "$id": 71,
+        "defs": [
+          TypeDefinition {
+            "$id": 50,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "SeussFish",
+              "optional": false,
+              "range": [
+                65,
+                74,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "SeussFish",
+                "optional": false,
+                "range": [
+                  65,
+                  74,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                60,
+                104,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "quasis": [
+                  {
+                    "range": [
+                      77,
+                      80,
+                    ],
+                    "tail": false,
+                    "type": "TemplateElement",
+                    "value": {
+                      "cooked": "",
+                      "raw": "",
+                    },
+                  },
+                  {
+                    "range": [
+                      96,
+                      103,
+                    ],
+                    "tail": true,
+                    "type": "TemplateElement",
+                    "value": {
+                      "cooked": " fish",
+                      "raw": " fish",
+                    },
+                  },
+                ],
+                "range": [
+                  77,
+                  103,
+                ],
+                "type": "TSTemplateLiteralType",
+                "types": [
+                  {
+                    "range": [
+                      80,
+                      96,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          80,
+                          88,
+                        ],
+                        "type": "TSTypeReference",
+                        "typeArguments": undefined,
+                        "typeName": {
+                          "decorators": [],
+                          "name": "Quantity",
+                          "optional": false,
+                          "range": [
+                            80,
+                            88,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                      },
+                      {
+                        "range": [
+                          91,
+                          96,
+                        ],
+                        "type": "TSTypeReference",
+                        "typeArguments": undefined,
+                        "typeName": {
+                          "decorators": [],
+                          "name": "Color",
+                          "optional": false,
+                          "range": [
+                            91,
+                            96,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                      },
+                    ],
+                  },
+                ],
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "SeussFish",
+            "optional": false,
+            "range": [
+              65,
+              74,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "SeussFish",
+        "references": [],
+        "scope": [Circular],
+      },
+    ],
+  },
+  "nodeToScope": WeakMap {},
+  "scopes": [
+    GlobalScope {
+      "$id": 27,
+      "block": {
+        "body": [
+          {
+            "declare": false,
+            "id": {
+              "decorators": [],
+              "name": "Color",
+              "optional": false,
+              "range": [
+                5,
+                10,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "range": [
+              0,
+              28,
+            ],
+            "type": "TSTypeAliasDeclaration",
+            "typeAnnotation": {
+              "range": [
+                13,
+                27,
+              ],
+              "type": "TSUnionType",
+              "types": [
+                {
+                  "literal": {
+                    "range": [
+                      13,
+                      18,
+                    ],
+                    "raw": "'red'",
+                    "type": "Literal",
+                    "value": "red",
+                  },
+                  "range": [
+                    13,
+                    18,
+                  ],
+                  "type": "TSLiteralType",
+                },
+                {
+                  "literal": {
+                    "range": [
+                      21,
+                      27,
+                    ],
+                    "raw": "'blue'",
+                    "type": "Literal",
+                    "value": "blue",
+                  },
+                  "range": [
+                    21,
+                    27,
+                  ],
+                  "type": "TSLiteralType",
+                },
+              ],
+            },
+            "typeParameters": undefined,
+          },
+          {
+            "declare": false,
+            "id": {
+              "decorators": [],
+              "name": "Quantity",
+              "optional": false,
+              "range": [
+                34,
+                42,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "range": [
+              29,
+              59,
+            ],
+            "type": "TSTypeAliasDeclaration",
+            "typeAnnotation": {
+              "range": [
+                45,
+                58,
+              ],
+              "type": "TSUnionType",
+              "types": [
+                {
+                  "literal": {
+                    "range": [
+                      45,
+                      50,
+                    ],
+                    "raw": "'one'",
+                    "type": "Literal",
+                    "value": "one",
+                  },
+                  "range": [
+                    45,
+                    50,
+                  ],
+                  "type": "TSLiteralType",
+                },
+                {
+                  "literal": {
+                    "range": [
+                      53,
+                      58,
+                    ],
+                    "raw": "'two'",
+                    "type": "Literal",
+                    "value": "two",
+                  },
+                  "range": [
+                    53,
+                    58,
+                  ],
+                  "type": "TSLiteralType",
+                },
+              ],
+            },
+            "typeParameters": undefined,
+          },
+          {
+            "declare": false,
+            "id": {
+              "decorators": [],
+              "name": "SeussFish",
+              "optional": false,
+              "range": [
+                65,
+                74,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "range": [
+              60,
+              104,
+            ],
+            "type": "TSTypeAliasDeclaration",
+            "typeAnnotation": {
+              "quasis": [
+                {
+                  "range": [
+                    77,
+                    80,
+                  ],
+                  "tail": false,
+                  "type": "TemplateElement",
+                  "value": {
+                    "cooked": "",
+                    "raw": "",
+                  },
+                },
+                {
+                  "range": [
+                    96,
+                    103,
+                  ],
+                  "tail": true,
+                  "type": "TemplateElement",
+                  "value": {
+                    "cooked": " fish",
+                    "raw": " fish",
+                  },
+                },
+              ],
+              "range": [
+                77,
+                103,
+              ],
+              "type": "TSTemplateLiteralType",
+              "types": [
+                {
+                  "range": [
+                    80,
+                    96,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "range": [
+                        80,
+                        88,
+                      ],
+                      "type": "TSTypeReference",
+                      "typeArguments": undefined,
+                      "typeName": {
+                        "decorators": [],
+                        "name": "Quantity",
+                        "optional": false,
+                        "range": [
+                          80,
+                          88,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                    },
+                    {
+                      "range": [
+                        91,
+                        96,
+                      ],
+                      "type": "TSTypeReference",
+                      "typeArguments": undefined,
+                      "typeName": {
+                        "decorators": [],
+                        "name": "Color",
+                        "optional": false,
+                        "range": [
+                          91,
+                          96,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+            "typeParameters": undefined,
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          0,
+          105,
+        ],
+        "sourceType": "script",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [],
+      "functionExpressionScope": false,
+      "implicit": {
+        "leftToBeResolved": [
+          Reference {
+            "$id": 39,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "Quantity",
+              "optional": false,
+              "range": [
+                80,
+                88,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": Variable {
+              "$id": 70,
+              "defs": [
+                TypeDefinition {
+                  "$id": 49,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "Quantity",
+                    "optional": false,
+                    "range": [
+                      34,
+                      42,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "declare": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "Quantity",
+                      "optional": false,
+                      "range": [
+                        34,
+                        42,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      29,
+                      59,
+                    ],
+                    "type": "TSTypeAliasDeclaration",
+                    "typeAnnotation": {
+                      "range": [
+                        45,
+                        58,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "literal": {
+                            "range": [
+                              45,
+                              50,
+                            ],
+                            "raw": "'one'",
+                            "type": "Literal",
+                            "value": "one",
+                          },
+                          "range": [
+                            45,
+                            50,
+                          ],
+                          "type": "TSLiteralType",
+                        },
+                        {
+                          "literal": {
+                            "range": [
+                              53,
+                              58,
+                            ],
+                            "raw": "'two'",
+                            "type": "Literal",
+                            "value": "two",
+                          },
+                          "range": [
+                            53,
+                            58,
+                          ],
+                          "type": "TSLiteralType",
+                        },
+                      ],
+                    },
+                    "typeParameters": undefined,
+                  },
+                  "parent": null,
+                  "type": "Type",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "Quantity",
+                  "optional": false,
+                  "range": [
+                    34,
+                    42,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "Quantity",
+              "references": [
+                [Circular],
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": undefined,
+          },
+          Reference {
+            "$id": 40,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "Color",
+              "optional": false,
+              "range": [
+                91,
+                96,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": Variable {
+              "$id": 69,
+              "defs": [
+                TypeDefinition {
+                  "$id": 48,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "Color",
+                    "optional": false,
+                    "range": [
+                      5,
+                      10,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "declare": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "Color",
+                      "optional": false,
+                      "range": [
+                        5,
+                        10,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      0,
+                      28,
+                    ],
+                    "type": "TSTypeAliasDeclaration",
+                    "typeAnnotation": {
+                      "range": [
+                        13,
+                        27,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "literal": {
+                            "range": [
+                              13,
+                              18,
+                            ],
+                            "raw": "'red'",
+                            "type": "Literal",
+                            "value": "red",
+                          },
+                          "range": [
+                            13,
+                            18,
+                          ],
+                          "type": "TSLiteralType",
+                        },
+                        {
+                          "literal": {
+                            "range": [
+                              21,
+                              27,
+                            ],
+                            "raw": "'blue'",
+                            "type": "Literal",
+                            "value": "blue",
+                          },
+                          "range": [
+                            21,
+                            27,
+                          ],
+                          "type": "TSLiteralType",
+                        },
+                      ],
+                    },
+                    "typeParameters": undefined,
+                  },
+                  "parent": null,
+                  "type": "Type",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "Color",
+                  "optional": false,
+                  "range": [
+                    5,
+                    10,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "Color",
+              "references": [
+                [Circular],
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": undefined,
+          },
+        ],
+        "set": Map {},
+        "variables": [],
+      },
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [
+        Reference {
+          "$id": 39,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "Quantity",
+            "optional": false,
+            "range": [
+              80,
+              88,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 70,
+            "defs": [
+              TypeDefinition {
+                "$id": 49,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "Quantity",
+                  "optional": false,
+                  "range": [
+                    34,
+                    42,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "Quantity",
+                    "optional": false,
+                    "range": [
+                      34,
+                      42,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    29,
+                    59,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "range": [
+                      45,
+                      58,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "literal": {
+                          "range": [
+                            45,
+                            50,
+                          ],
+                          "raw": "'one'",
+                          "type": "Literal",
+                          "value": "one",
+                        },
+                        "range": [
+                          45,
+                          50,
+                        ],
+                        "type": "TSLiteralType",
+                      },
+                      {
+                        "literal": {
+                          "range": [
+                            53,
+                            58,
+                          ],
+                          "raw": "'two'",
+                          "type": "Literal",
+                          "value": "two",
+                        },
+                        "range": [
+                          53,
+                          58,
+                        ],
+                        "type": "TSLiteralType",
+                      },
+                    ],
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Quantity",
+                "optional": false,
+                "range": [
+                  34,
+                  42,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Quantity",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
+        },
+        Reference {
+          "$id": 40,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "Color",
+            "optional": false,
+            "range": [
+              91,
+              96,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 69,
+            "defs": [
+              TypeDefinition {
+                "$id": 48,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "Color",
+                  "optional": false,
+                  "range": [
+                    5,
+                    10,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "Color",
+                    "optional": false,
+                    "range": [
+                      5,
+                      10,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    0,
+                    28,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "range": [
+                      13,
+                      27,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "literal": {
+                          "range": [
+                            13,
+                            18,
+                          ],
+                          "raw": "'red'",
+                          "type": "Literal",
+                          "value": "red",
+                        },
+                        "range": [
+                          13,
+                          18,
+                        ],
+                        "type": "TSLiteralType",
+                      },
+                      {
+                        "literal": {
+                          "range": [
+                            21,
+                            27,
+                          ],
+                          "raw": "'blue'",
+                          "type": "Literal",
+                          "value": "blue",
+                        },
+                        "range": [
+                          21,
+                          27,
+                        ],
+                        "type": "TSLiteralType",
+                      },
+                    ],
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Color",
+                "optional": false,
+                "range": [
+                  5,
+                  10,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Color",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
+        },
+      ],
+      "set": Map {
+        "const" => ImplicitLibVariable {
+          "$id": 68,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        "Color" => Variable {
+          "$id": 69,
+          "defs": [
+            TypeDefinition {
+              "$id": 48,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "Color",
+                "optional": false,
+                "range": [
+                  5,
+                  10,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Color",
+                  "optional": false,
+                  "range": [
+                    5,
+                    10,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  0,
+                  28,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "range": [
+                    13,
+                    27,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "literal": {
+                        "range": [
+                          13,
+                          18,
+                        ],
+                        "raw": "'red'",
+                        "type": "Literal",
+                        "value": "red",
+                      },
+                      "range": [
+                        13,
+                        18,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                    {
+                      "literal": {
+                        "range": [
+                          21,
+                          27,
+                        ],
+                        "raw": "'blue'",
+                        "type": "Literal",
+                        "value": "blue",
+                      },
+                      "range": [
+                        21,
+                        27,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                  ],
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Color",
+              "optional": false,
+              "range": [
+                5,
+                10,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Color",
+          "references": [
+            Reference {
+              "$id": 40,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "Color",
+                "optional": false,
+                "range": [
+                  91,
+                  96,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
+        "Quantity" => Variable {
+          "$id": 70,
+          "defs": [
+            TypeDefinition {
+              "$id": 49,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "Quantity",
+                "optional": false,
+                "range": [
+                  34,
+                  42,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Quantity",
+                  "optional": false,
+                  "range": [
+                    34,
+                    42,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  29,
+                  59,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "range": [
+                    45,
+                    58,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "literal": {
+                        "range": [
+                          45,
+                          50,
+                        ],
+                        "raw": "'one'",
+                        "type": "Literal",
+                        "value": "one",
+                      },
+                      "range": [
+                        45,
+                        50,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                    {
+                      "literal": {
+                        "range": [
+                          53,
+                          58,
+                        ],
+                        "raw": "'two'",
+                        "type": "Literal",
+                        "value": "two",
+                      },
+                      "range": [
+                        53,
+                        58,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                  ],
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Quantity",
+              "optional": false,
+              "range": [
+                34,
+                42,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Quantity",
+          "references": [
+            Reference {
+              "$id": 39,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "Quantity",
+                "optional": false,
+                "range": [
+                  80,
+                  88,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
+        "SeussFish" => Variable {
+          "$id": 71,
+          "defs": [
+            TypeDefinition {
+              "$id": 50,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "SeussFish",
+                "optional": false,
+                "range": [
+                  65,
+                  74,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "SeussFish",
+                  "optional": false,
+                  "range": [
+                    65,
+                    74,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  60,
+                  104,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "quasis": [
+                    {
+                      "range": [
+                        77,
+                        80,
+                      ],
+                      "tail": false,
+                      "type": "TemplateElement",
+                      "value": {
+                        "cooked": "",
+                        "raw": "",
+                      },
+                    },
+                    {
+                      "range": [
+                        96,
+                        103,
+                      ],
+                      "tail": true,
+                      "type": "TemplateElement",
+                      "value": {
+                        "cooked": " fish",
+                        "raw": " fish",
+                      },
+                    },
+                  ],
+                  "range": [
+                    77,
+                    103,
+                  ],
+                  "type": "TSTemplateLiteralType",
+                  "types": [
+                    {
+                      "range": [
+                        80,
+                        96,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            80,
+                            88,
+                          ],
+                          "type": "TSTypeReference",
+                          "typeArguments": undefined,
+                          "typeName": {
+                            "decorators": [],
+                            "name": "Quantity",
+                            "optional": false,
+                            "range": [
+                              80,
+                              88,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                        },
+                        {
+                          "range": [
+                            91,
+                            96,
+                          ],
+                          "type": "TSTypeReference",
+                          "typeArguments": undefined,
+                          "typeName": {
+                            "decorators": [],
+                            "name": "Color",
+                            "optional": false,
+                            "range": [
+                              91,
+                              96,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                        },
+                      ],
+                    },
+                  ],
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "SeussFish",
+              "optional": false,
+              "range": [
+                65,
+                74,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "SeussFish",
+          "references": [],
+          "scope": [Circular],
+        },
+      },
+      "through": [],
+      "type": "global",
+      "upper": null,
+      "variableScope": [Circular],
+      "variables": [
+        ImplicitLibVariable {
+          "$id": 68,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        Variable {
+          "$id": 69,
+          "defs": [
+            TypeDefinition {
+              "$id": 48,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "Color",
+                "optional": false,
+                "range": [
+                  5,
+                  10,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Color",
+                  "optional": false,
+                  "range": [
+                    5,
+                    10,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  0,
+                  28,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "range": [
+                    13,
+                    27,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "literal": {
+                        "range": [
+                          13,
+                          18,
+                        ],
+                        "raw": "'red'",
+                        "type": "Literal",
+                        "value": "red",
+                      },
+                      "range": [
+                        13,
+                        18,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                    {
+                      "literal": {
+                        "range": [
+                          21,
+                          27,
+                        ],
+                        "raw": "'blue'",
+                        "type": "Literal",
+                        "value": "blue",
+                      },
+                      "range": [
+                        21,
+                        27,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                  ],
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Color",
+              "optional": false,
+              "range": [
+                5,
+                10,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Color",
+          "references": [
+            Reference {
+              "$id": 40,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "Color",
+                "optional": false,
+                "range": [
+                  91,
+                  96,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
+        Variable {
+          "$id": 70,
+          "defs": [
+            TypeDefinition {
+              "$id": 49,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "Quantity",
+                "optional": false,
+                "range": [
+                  34,
+                  42,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Quantity",
+                  "optional": false,
+                  "range": [
+                    34,
+                    42,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  29,
+                  59,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "range": [
+                    45,
+                    58,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "literal": {
+                        "range": [
+                          45,
+                          50,
+                        ],
+                        "raw": "'one'",
+                        "type": "Literal",
+                        "value": "one",
+                      },
+                      "range": [
+                        45,
+                        50,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                    {
+                      "literal": {
+                        "range": [
+                          53,
+                          58,
+                        ],
+                        "raw": "'two'",
+                        "type": "Literal",
+                        "value": "two",
+                      },
+                      "range": [
+                        53,
+                        58,
+                      ],
+                      "type": "TSLiteralType",
+                    },
+                  ],
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Quantity",
+              "optional": false,
+              "range": [
+                34,
+                42,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Quantity",
+          "references": [
+            Reference {
+              "$id": 39,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "Quantity",
+                "optional": false,
+                "range": [
+                  80,
+                  88,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
+        Variable {
+          "$id": 71,
+          "defs": [
+            TypeDefinition {
+              "$id": 50,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "SeussFish",
+                "optional": false,
+                "range": [
+                  65,
+                  74,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "SeussFish",
+                  "optional": false,
+                  "range": [
+                    65,
+                    74,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  60,
+                  104,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "quasis": [
+                    {
+                      "range": [
+                        77,
+                        80,
+                      ],
+                      "tail": false,
+                      "type": "TemplateElement",
+                      "value": {
+                        "cooked": "",
+                        "raw": "",
+                      },
+                    },
+                    {
+                      "range": [
+                        96,
+                        103,
+                      ],
+                      "tail": true,
+                      "type": "TemplateElement",
+                      "value": {
+                        "cooked": " fish",
+                        "raw": " fish",
+                      },
+                    },
+                  ],
+                  "range": [
+                    77,
+                    103,
+                  ],
+                  "type": "TSTemplateLiteralType",
+                  "types": [
+                    {
+                      "range": [
+                        80,
+                        96,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            80,
+                            88,
+                          ],
+                          "type": "TSTypeReference",
+                          "typeArguments": undefined,
+                          "typeName": {
+                            "decorators": [],
+                            "name": "Quantity",
+                            "optional": false,
+                            "range": [
+                              80,
+                              88,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                        },
+                        {
+                          "range": [
+                            91,
+                            96,
+                          ],
+                          "type": "TSTypeReference",
+                          "typeArguments": undefined,
+                          "typeName": {
+                            "decorators": [],
+                            "name": "Color",
+                            "optional": false,
+                            "range": [
+                              91,
+                              96,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                        },
+                      ],
+                    },
+                  ],
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "SeussFish",
+              "optional": false,
+              "range": [
+                65,
+                74,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "SeussFish",
+          "references": [],
+          "scope": [Circular],
+        },
       ],
     },
   ],
 }
-`;

@@ -1,107 +1,5092 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`functions function-expression type-parameters type-parameter-declaration 1`] = `
 ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-    Variable$2 {
-      defs: [
-        VariableDefinition$1 {
-          name: Identifier<"foo">,
-          node: VariableDeclarator$1,
+  "currentScope": null,
+  "declaredVariables": WeakMap {},
+  "globalScope": GlobalScope {
+    "$id": 304,
+    "block": {
+      "body": [
+        {
+          "declarations": [
+            {
+              "definite": false,
+              "id": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": {
+                "async": false,
+                "body": {
+                  "body": [],
+                  "range": [
+                    27,
+                    29,
+                  ],
+                  "type": "BlockStatement",
+                },
+                "declare": false,
+                "expression": false,
+                "generator": false,
+                "id": null,
+                "params": [],
+                "range": [
+                  12,
+                  29,
+                ],
+                "returnType": undefined,
+                "type": "FunctionExpression",
+                "typeParameters": {
+                  "params": [
+                    {
+                      "const": false,
+                      "constraint": undefined,
+                      "default": undefined,
+                      "in": false,
+                      "name": {
+                        "decorators": [],
+                        "name": "T",
+                        "optional": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "out": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "TSTypeParameter",
+                    },
+                  ],
+                  "range": [
+                    21,
+                    24,
+                  ],
+                  "type": "TSTypeParameterDeclaration",
+                },
+              },
+              "range": [
+                6,
+                29,
+              ],
+              "type": "VariableDeclarator",
+            },
+          ],
+          "declare": false,
+          "kind": "const",
+          "range": [
+            0,
+            30,
+          ],
+          "type": "VariableDeclaration",
+        },
+        {
+          "declare": false,
+          "id": {
+            "decorators": [],
+            "name": "Unresolved",
+            "optional": false,
+            "range": [
+              37,
+              47,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "range": [
+            32,
+            52,
+          ],
+          "type": "TSTypeAliasDeclaration",
+          "typeAnnotation": {
+            "range": [
+              50,
+              51,
+            ],
+            "type": "TSTypeReference",
+            "typeArguments": undefined,
+            "typeName": {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                50,
+                51,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          },
+          "typeParameters": undefined,
         },
       ],
-      name: "foo",
-      references: [
-        Reference$1 {
-          identifier: Identifier<"foo">,
-          init: true,
-          isRead: false,
-          isTypeReference: false,
-          isValueReference: true,
-          isWrite: true,
-          resolved: Variable$2,
-          writeExpr: FunctionExpression$2,
-        },
+      "comments": undefined,
+      "range": [
+        0,
+        53,
       ],
-      isValueVariable: true,
-      isTypeVariable: false,
+      "sourceType": "script",
+      "tokens": undefined,
+      "type": "Program",
     },
-    Variable$3 {
-      defs: [],
-      name: "arguments",
-      references: [],
-      isValueVariable: true,
-      isTypeVariable: true,
-    },
-    Variable$4 {
-      defs: [
-        TypeDefinition$2 {
-          name: Identifier<"T">,
-          node: TSTypeParameter$3,
+    "childScopes": [
+      FunctionScope {
+        "$id": 305,
+        "block": {
+          "async": false,
+          "body": {
+            "body": [],
+            "range": [
+              27,
+              29,
+            ],
+            "type": "BlockStatement",
+          },
+          "declare": false,
+          "expression": false,
+          "generator": false,
+          "id": null,
+          "params": [],
+          "range": [
+            12,
+            29,
+          ],
+          "returnType": undefined,
+          "type": "FunctionExpression",
+          "typeParameters": {
+            "params": [
+              {
+                "const": false,
+                "constraint": undefined,
+                "default": undefined,
+                "in": false,
+                "name": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "out": false,
+                "range": [
+                  22,
+                  23,
+                ],
+                "type": "TSTypeParameter",
+              },
+            ],
+            "range": [
+              21,
+              24,
+            ],
+            "type": "TSTypeParameterDeclaration",
+          },
         },
-      ],
-      name: "T",
-      references: [],
-      isValueVariable: false,
-      isTypeVariable: true,
-    },
-    Variable$5 {
-      defs: [
-        TypeDefinition$3 {
-          name: Identifier<"Unresolved">,
-          node: TSTypeAliasDeclaration$4,
+        "childScopes": [],
+        "functionExpressionScope": false,
+        "isStrict": false,
+        "leftToResolve": null,
+        "references": [],
+        "set": Map {
+          "arguments" => Variable {
+            "$id": 586,
+            "defs": [],
+            "eslintUsed": false,
+            "identifiers": [],
+            "name": "arguments",
+            "references": [],
+            "scope": [Circular],
+          },
+          "T" => Variable {
+            "$id": 587,
+            "defs": [
+              TypeDefinition {
+                "$id": 405,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "const": false,
+                  "constraint": undefined,
+                  "default": undefined,
+                  "in": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "out": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "TSTypeParameter",
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  22,
+                  23,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "T",
+            "references": [],
+            "scope": [Circular],
+          },
         },
-      ],
-      name: "Unresolved",
-      references: [],
-      isValueVariable: false,
-      isTypeVariable: true,
-    },
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$5,
-      isStrict: false,
-      references: [
-        Reference$1,
-        Reference$2 {
-          identifier: Identifier<"T">,
-          isRead: true,
-          isTypeReference: true,
-          isValueReference: false,
-          isWrite: false,
-          resolved: null,
-        },
-      ],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
-        "foo" => Variable$2,
-        "Unresolved" => Variable$5,
+        "through": [],
+        "type": "function",
+        "upper": [Circular],
+        "variableScope": [Circular],
+        "variables": [
+          Variable {
+            "$id": 586,
+            "defs": [],
+            "eslintUsed": false,
+            "identifiers": [],
+            "name": "arguments",
+            "references": [],
+            "scope": [Circular],
+          },
+          Variable {
+            "$id": 587,
+            "defs": [
+              TypeDefinition {
+                "$id": 405,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "const": false,
+                  "constraint": undefined,
+                  "default": undefined,
+                  "in": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "out": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "TSTypeParameter",
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  22,
+                  23,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "T",
+            "references": [],
+            "scope": [Circular],
+          },
+        ],
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
-        Variable$2,
-        Variable$5,
+    ],
+    "functionExpressionScope": false,
+    "implicit": {
+      "leftToBeResolved": [
+        Reference {
+          "$id": 329,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              6,
+              9,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": true,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 585,
+            "defs": [
+              VariableDefinition {
+                "$id": 404,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      6,
+                      9,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": {
+                    "async": false,
+                    "body": {
+                      "body": [],
+                      "range": [
+                        27,
+                        29,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": null,
+                    "params": [],
+                    "range": [
+                      12,
+                      29,
+                    ],
+                    "returnType": undefined,
+                    "type": "FunctionExpression",
+                    "typeParameters": {
+                      "params": [
+                        {
+                          "const": false,
+                          "constraint": undefined,
+                          "default": undefined,
+                          "in": false,
+                          "name": {
+                            "decorators": [],
+                            "name": "T",
+                            "optional": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "out": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "TSTypeParameter",
+                        },
+                      ],
+                      "range": [
+                        21,
+                        24,
+                      ],
+                      "type": "TSTypeParameterDeclaration",
+                    },
+                  },
+                  "range": [
+                    6,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+                "parent": {
+                  "declarations": [
+                    {
+                      "definite": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "foo",
+                        "optional": false,
+                        "range": [
+                          6,
+                          9,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "init": {
+                        "async": false,
+                        "body": {
+                          "body": [],
+                          "range": [
+                            27,
+                            29,
+                          ],
+                          "type": "BlockStatement",
+                        },
+                        "declare": false,
+                        "expression": false,
+                        "generator": false,
+                        "id": null,
+                        "params": [],
+                        "range": [
+                          12,
+                          29,
+                        ],
+                        "returnType": undefined,
+                        "type": "FunctionExpression",
+                        "typeParameters": {
+                          "params": [
+                            {
+                              "const": false,
+                              "constraint": undefined,
+                              "default": undefined,
+                              "in": false,
+                              "name": {
+                                "decorators": [],
+                                "name": "T",
+                                "optional": false,
+                                "range": [
+                                  22,
+                                  23,
+                                ],
+                                "type": "Identifier",
+                                "typeAnnotation": undefined,
+                              },
+                              "out": false,
+                              "range": [
+                                22,
+                                23,
+                              ],
+                              "type": "TSTypeParameter",
+                            },
+                          ],
+                          "range": [
+                            21,
+                            24,
+                          ],
+                          "type": "TSTypeParameterDeclaration",
+                        },
+                      },
+                      "range": [
+                        6,
+                        29,
+                      ],
+                      "type": "VariableDeclarator",
+                    },
+                  ],
+                  "declare": false,
+                  "kind": "const",
+                  "range": [
+                    0,
+                    30,
+                  ],
+                  "type": "VariableDeclaration",
+                },
+                "type": "Variable",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "foo",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": {
+            "async": false,
+            "body": {
+              "body": [],
+              "range": [
+                27,
+                29,
+              ],
+              "type": "BlockStatement",
+            },
+            "declare": false,
+            "expression": false,
+            "generator": false,
+            "id": null,
+            "params": [],
+            "range": [
+              12,
+              29,
+            ],
+            "returnType": undefined,
+            "type": "FunctionExpression",
+            "typeParameters": {
+              "params": [
+                {
+                  "const": false,
+                  "constraint": undefined,
+                  "default": undefined,
+                  "in": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "out": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "TSTypeParameter",
+                },
+              ],
+              "range": [
+                21,
+                24,
+              ],
+              "type": "TSTypeParameterDeclaration",
+            },
+          },
+        },
+        Reference {
+          "$id": 330,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "T",
+            "optional": false,
+            "range": [
+              50,
+              51,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": null,
+          "writeExpr": undefined,
+        },
+      ],
+      "set": Map {},
+      "variables": [],
+    },
+    "isStrict": false,
+    "leftToResolve": null,
+    "references": [
+      Reference {
+        "$id": 329,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "foo",
+          "optional": false,
+          "range": [
+            6,
+            9,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "init": true,
+        "maybeImplicitGlobal": null,
+        "resolved": Variable {
+          "$id": 585,
+          "defs": [
+            VariableDefinition {
+              "$id": 404,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "definite": false,
+                "id": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": {
+                  "async": false,
+                  "body": {
+                    "body": [],
+                    "range": [
+                      27,
+                      29,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": null,
+                  "params": [],
+                  "range": [
+                    12,
+                    29,
+                  ],
+                  "returnType": undefined,
+                  "type": "FunctionExpression",
+                  "typeParameters": {
+                    "params": [
+                      {
+                        "const": false,
+                        "constraint": undefined,
+                        "default": undefined,
+                        "in": false,
+                        "name": {
+                          "decorators": [],
+                          "name": "T",
+                          "optional": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "out": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "TSTypeParameter",
+                      },
+                    ],
+                    "range": [
+                      21,
+                      24,
+                    ],
+                    "type": "TSTypeParameterDeclaration",
+                  },
+                },
+                "range": [
+                  6,
+                  29,
+                ],
+                "type": "VariableDeclarator",
+              },
+              "parent": {
+                "declarations": [
+                  {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "foo",
+                      "optional": false,
+                      "range": [
+                        6,
+                        9,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "init": {
+                      "async": false,
+                      "body": {
+                        "body": [],
+                        "range": [
+                          27,
+                          29,
+                        ],
+                        "type": "BlockStatement",
+                      },
+                      "declare": false,
+                      "expression": false,
+                      "generator": false,
+                      "id": null,
+                      "params": [],
+                      "range": [
+                        12,
+                        29,
+                      ],
+                      "returnType": undefined,
+                      "type": "FunctionExpression",
+                      "typeParameters": {
+                        "params": [
+                          {
+                            "const": false,
+                            "constraint": undefined,
+                            "default": undefined,
+                            "in": false,
+                            "name": {
+                              "decorators": [],
+                              "name": "T",
+                              "optional": false,
+                              "range": [
+                                22,
+                                23,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "out": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "TSTypeParameter",
+                          },
+                        ],
+                        "range": [
+                          21,
+                          24,
+                        ],
+                        "type": "TSTypeParameterDeclaration",
+                      },
+                    },
+                    "range": [
+                      6,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                ],
+                "declare": false,
+                "kind": "const",
+                "range": [
+                  0,
+                  30,
+                ],
+                "type": "VariableDeclaration",
+              },
+              "type": "Variable",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                6,
+                9,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "foo",
+          "references": [
+            [Circular],
+          ],
+          "scope": [Circular],
+        },
+        "writeExpr": {
+          "async": false,
+          "body": {
+            "body": [],
+            "range": [
+              27,
+              29,
+            ],
+            "type": "BlockStatement",
+          },
+          "declare": false,
+          "expression": false,
+          "generator": false,
+          "id": null,
+          "params": [],
+          "range": [
+            12,
+            29,
+          ],
+          "returnType": undefined,
+          "type": "FunctionExpression",
+          "typeParameters": {
+            "params": [
+              {
+                "const": false,
+                "constraint": undefined,
+                "default": undefined,
+                "in": false,
+                "name": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "out": false,
+                "range": [
+                  22,
+                  23,
+                ],
+                "type": "TSTypeParameter",
+              },
+            ],
+            "range": [
+              21,
+              24,
+            ],
+            "type": "TSTypeParameterDeclaration",
+          },
+        },
+      },
+      Reference {
+        "$id": 330,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "T",
+          "optional": false,
+          "range": [
+            50,
+            51,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "init": undefined,
+        "maybeImplicitGlobal": null,
+        "resolved": null,
+        "writeExpr": undefined,
+      },
+    ],
+    "set": Map {
+      "const" => ImplicitLibVariable {
+        "$id": 584,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      "foo" => Variable {
+        "$id": 585,
+        "defs": [
+          VariableDefinition {
+            "$id": 404,
+            "isTypeDefinition": false,
+            "isVariableDefinition": true,
+            "name": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                6,
+                9,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "definite": false,
+              "id": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": {
+                "async": false,
+                "body": {
+                  "body": [],
+                  "range": [
+                    27,
+                    29,
+                  ],
+                  "type": "BlockStatement",
+                },
+                "declare": false,
+                "expression": false,
+                "generator": false,
+                "id": null,
+                "params": [],
+                "range": [
+                  12,
+                  29,
+                ],
+                "returnType": undefined,
+                "type": "FunctionExpression",
+                "typeParameters": {
+                  "params": [
+                    {
+                      "const": false,
+                      "constraint": undefined,
+                      "default": undefined,
+                      "in": false,
+                      "name": {
+                        "decorators": [],
+                        "name": "T",
+                        "optional": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "out": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "TSTypeParameter",
+                    },
+                  ],
+                  "range": [
+                    21,
+                    24,
+                  ],
+                  "type": "TSTypeParameterDeclaration",
+                },
+              },
+              "range": [
+                6,
+                29,
+              ],
+              "type": "VariableDeclarator",
+            },
+            "parent": {
+              "declarations": [
+                {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      6,
+                      9,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": {
+                    "async": false,
+                    "body": {
+                      "body": [],
+                      "range": [
+                        27,
+                        29,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": null,
+                    "params": [],
+                    "range": [
+                      12,
+                      29,
+                    ],
+                    "returnType": undefined,
+                    "type": "FunctionExpression",
+                    "typeParameters": {
+                      "params": [
+                        {
+                          "const": false,
+                          "constraint": undefined,
+                          "default": undefined,
+                          "in": false,
+                          "name": {
+                            "decorators": [],
+                            "name": "T",
+                            "optional": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "out": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "TSTypeParameter",
+                        },
+                      ],
+                      "range": [
+                        21,
+                        24,
+                      ],
+                      "type": "TSTypeParameterDeclaration",
+                    },
+                  },
+                  "range": [
+                    6,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+              ],
+              "declare": false,
+              "kind": "const",
+              "range": [
+                0,
+                30,
+              ],
+              "type": "VariableDeclaration",
+            },
+            "type": "Variable",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              6,
+              9,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "foo",
+        "references": [
+          Reference {
+            "$id": 329,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                6,
+                9,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": true,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": {
+              "async": false,
+              "body": {
+                "body": [],
+                "range": [
+                  27,
+                  29,
+                ],
+                "type": "BlockStatement",
+              },
+              "declare": false,
+              "expression": false,
+              "generator": false,
+              "id": null,
+              "params": [],
+              "range": [
+                12,
+                29,
+              ],
+              "returnType": undefined,
+              "type": "FunctionExpression",
+              "typeParameters": {
+                "params": [
+                  {
+                    "const": false,
+                    "constraint": undefined,
+                    "default": undefined,
+                    "in": false,
+                    "name": {
+                      "decorators": [],
+                      "name": "T",
+                      "optional": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "out": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "TSTypeParameter",
+                  },
+                ],
+                "range": [
+                  21,
+                  24,
+                ],
+                "type": "TSTypeParameterDeclaration",
+              },
+            },
+          },
+        ],
+        "scope": [Circular],
+      },
+      "Unresolved" => Variable {
+        "$id": 588,
+        "defs": [
+          TypeDefinition {
+            "$id": 406,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "Unresolved",
+              "optional": false,
+              "range": [
+                37,
+                47,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "Unresolved",
+                "optional": false,
+                "range": [
+                  37,
+                  47,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                32,
+                52,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "range": [
+                  50,
+                  51,
+                ],
+                "type": "TSTypeReference",
+                "typeArguments": undefined,
+                "typeName": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    50,
+                    51,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "Unresolved",
+            "optional": false,
+            "range": [
+              37,
+              47,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "Unresolved",
+        "references": [],
+        "scope": [Circular],
+      },
+    },
+    "through": [
+      Reference {
+        "$id": 330,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "T",
+          "optional": false,
+          "range": [
+            50,
+            51,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "init": undefined,
+        "maybeImplicitGlobal": null,
+        "resolved": null,
+        "writeExpr": undefined,
+      },
+    ],
+    "type": "global",
+    "upper": null,
+    "variableScope": [Circular],
+    "variables": [
+      ImplicitLibVariable {
+        "$id": 584,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      Variable {
+        "$id": 585,
+        "defs": [
+          VariableDefinition {
+            "$id": 404,
+            "isTypeDefinition": false,
+            "isVariableDefinition": true,
+            "name": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                6,
+                9,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "definite": false,
+              "id": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": {
+                "async": false,
+                "body": {
+                  "body": [],
+                  "range": [
+                    27,
+                    29,
+                  ],
+                  "type": "BlockStatement",
+                },
+                "declare": false,
+                "expression": false,
+                "generator": false,
+                "id": null,
+                "params": [],
+                "range": [
+                  12,
+                  29,
+                ],
+                "returnType": undefined,
+                "type": "FunctionExpression",
+                "typeParameters": {
+                  "params": [
+                    {
+                      "const": false,
+                      "constraint": undefined,
+                      "default": undefined,
+                      "in": false,
+                      "name": {
+                        "decorators": [],
+                        "name": "T",
+                        "optional": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "out": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "TSTypeParameter",
+                    },
+                  ],
+                  "range": [
+                    21,
+                    24,
+                  ],
+                  "type": "TSTypeParameterDeclaration",
+                },
+              },
+              "range": [
+                6,
+                29,
+              ],
+              "type": "VariableDeclarator",
+            },
+            "parent": {
+              "declarations": [
+                {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      6,
+                      9,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": {
+                    "async": false,
+                    "body": {
+                      "body": [],
+                      "range": [
+                        27,
+                        29,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": null,
+                    "params": [],
+                    "range": [
+                      12,
+                      29,
+                    ],
+                    "returnType": undefined,
+                    "type": "FunctionExpression",
+                    "typeParameters": {
+                      "params": [
+                        {
+                          "const": false,
+                          "constraint": undefined,
+                          "default": undefined,
+                          "in": false,
+                          "name": {
+                            "decorators": [],
+                            "name": "T",
+                            "optional": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "out": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "TSTypeParameter",
+                        },
+                      ],
+                      "range": [
+                        21,
+                        24,
+                      ],
+                      "type": "TSTypeParameterDeclaration",
+                    },
+                  },
+                  "range": [
+                    6,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+              ],
+              "declare": false,
+              "kind": "const",
+              "range": [
+                0,
+                30,
+              ],
+              "type": "VariableDeclaration",
+            },
+            "type": "Variable",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              6,
+              9,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "foo",
+        "references": [
+          Reference {
+            "$id": 329,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                6,
+                9,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": true,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": {
+              "async": false,
+              "body": {
+                "body": [],
+                "range": [
+                  27,
+                  29,
+                ],
+                "type": "BlockStatement",
+              },
+              "declare": false,
+              "expression": false,
+              "generator": false,
+              "id": null,
+              "params": [],
+              "range": [
+                12,
+                29,
+              ],
+              "returnType": undefined,
+              "type": "FunctionExpression",
+              "typeParameters": {
+                "params": [
+                  {
+                    "const": false,
+                    "constraint": undefined,
+                    "default": undefined,
+                    "in": false,
+                    "name": {
+                      "decorators": [],
+                      "name": "T",
+                      "optional": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "out": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "TSTypeParameter",
+                  },
+                ],
+                "range": [
+                  21,
+                  24,
+                ],
+                "type": "TSTypeParameterDeclaration",
+              },
+            },
+          },
+        ],
+        "scope": [Circular],
+      },
+      Variable {
+        "$id": 588,
+        "defs": [
+          TypeDefinition {
+            "$id": 406,
+            "isTypeDefinition": true,
+            "isVariableDefinition": false,
+            "name": {
+              "decorators": [],
+              "name": "Unresolved",
+              "optional": false,
+              "range": [
+                37,
+                47,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "Unresolved",
+                "optional": false,
+                "range": [
+                  37,
+                  47,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                32,
+                52,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "range": [
+                  50,
+                  51,
+                ],
+                "type": "TSTypeReference",
+                "typeArguments": undefined,
+                "typeName": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    50,
+                    51,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              },
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "Type",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "Unresolved",
+            "optional": false,
+            "range": [
+              37,
+              47,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "Unresolved",
+        "references": [],
+        "scope": [Circular],
+      },
+    ],
+  },
+  "nodeToScope": WeakMap {},
+  "scopes": [
+    GlobalScope {
+      "$id": 304,
+      "block": {
+        "body": [
+          {
+            "declarations": [
+              {
+                "definite": false,
+                "id": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": {
+                  "async": false,
+                  "body": {
+                    "body": [],
+                    "range": [
+                      27,
+                      29,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": null,
+                  "params": [],
+                  "range": [
+                    12,
+                    29,
+                  ],
+                  "returnType": undefined,
+                  "type": "FunctionExpression",
+                  "typeParameters": {
+                    "params": [
+                      {
+                        "const": false,
+                        "constraint": undefined,
+                        "default": undefined,
+                        "in": false,
+                        "name": {
+                          "decorators": [],
+                          "name": "T",
+                          "optional": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "out": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "TSTypeParameter",
+                      },
+                    ],
+                    "range": [
+                      21,
+                      24,
+                    ],
+                    "type": "TSTypeParameterDeclaration",
+                  },
+                },
+                "range": [
+                  6,
+                  29,
+                ],
+                "type": "VariableDeclarator",
+              },
+            ],
+            "declare": false,
+            "kind": "const",
+            "range": [
+              0,
+              30,
+            ],
+            "type": "VariableDeclaration",
+          },
+          {
+            "declare": false,
+            "id": {
+              "decorators": [],
+              "name": "Unresolved",
+              "optional": false,
+              "range": [
+                37,
+                47,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "range": [
+              32,
+              52,
+            ],
+            "type": "TSTypeAliasDeclaration",
+            "typeAnnotation": {
+              "range": [
+                50,
+                51,
+              ],
+              "type": "TSTypeReference",
+              "typeArguments": undefined,
+              "typeName": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  50,
+                  51,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            },
+            "typeParameters": undefined,
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          0,
+          53,
+        ],
+        "sourceType": "script",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [
+        FunctionScope {
+          "$id": 305,
+          "block": {
+            "async": false,
+            "body": {
+              "body": [],
+              "range": [
+                27,
+                29,
+              ],
+              "type": "BlockStatement",
+            },
+            "declare": false,
+            "expression": false,
+            "generator": false,
+            "id": null,
+            "params": [],
+            "range": [
+              12,
+              29,
+            ],
+            "returnType": undefined,
+            "type": "FunctionExpression",
+            "typeParameters": {
+              "params": [
+                {
+                  "const": false,
+                  "constraint": undefined,
+                  "default": undefined,
+                  "in": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "out": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "TSTypeParameter",
+                },
+              ],
+              "range": [
+                21,
+                24,
+              ],
+              "type": "TSTypeParameterDeclaration",
+            },
+          },
+          "childScopes": [],
+          "functionExpressionScope": false,
+          "isStrict": false,
+          "leftToResolve": null,
+          "references": [],
+          "set": Map {
+            "arguments" => Variable {
+              "$id": 586,
+              "defs": [],
+              "eslintUsed": false,
+              "identifiers": [],
+              "name": "arguments",
+              "references": [],
+              "scope": [Circular],
+            },
+            "T" => Variable {
+              "$id": 587,
+              "defs": [
+                TypeDefinition {
+                  "$id": 405,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "const": false,
+                    "constraint": undefined,
+                    "default": undefined,
+                    "in": false,
+                    "name": {
+                      "decorators": [],
+                      "name": "T",
+                      "optional": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "out": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "TSTypeParameter",
+                  },
+                  "parent": null,
+                  "type": "Type",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "T",
+              "references": [],
+              "scope": [Circular],
+            },
+          },
+          "through": [],
+          "type": "function",
+          "upper": [Circular],
+          "variableScope": [Circular],
+          "variables": [
+            Variable {
+              "$id": 586,
+              "defs": [],
+              "eslintUsed": false,
+              "identifiers": [],
+              "name": "arguments",
+              "references": [],
+              "scope": [Circular],
+            },
+            Variable {
+              "$id": 587,
+              "defs": [
+                TypeDefinition {
+                  "$id": 405,
+                  "isTypeDefinition": true,
+                  "isVariableDefinition": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "const": false,
+                    "constraint": undefined,
+                    "default": undefined,
+                    "in": false,
+                    "name": {
+                      "decorators": [],
+                      "name": "T",
+                      "optional": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "out": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "TSTypeParameter",
+                  },
+                  "parent": null,
+                  "type": "Type",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "T",
+              "references": [],
+              "scope": [Circular],
+            },
+          ],
+        },
+      ],
+      "functionExpressionScope": false,
+      "implicit": {
+        "leftToBeResolved": [
+          Reference {
+            "$id": 329,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                6,
+                9,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": true,
+            "maybeImplicitGlobal": null,
+            "resolved": Variable {
+              "$id": 585,
+              "defs": [
+                VariableDefinition {
+                  "$id": 404,
+                  "isTypeDefinition": false,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      6,
+                      9,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "foo",
+                      "optional": false,
+                      "range": [
+                        6,
+                        9,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "init": {
+                      "async": false,
+                      "body": {
+                        "body": [],
+                        "range": [
+                          27,
+                          29,
+                        ],
+                        "type": "BlockStatement",
+                      },
+                      "declare": false,
+                      "expression": false,
+                      "generator": false,
+                      "id": null,
+                      "params": [],
+                      "range": [
+                        12,
+                        29,
+                      ],
+                      "returnType": undefined,
+                      "type": "FunctionExpression",
+                      "typeParameters": {
+                        "params": [
+                          {
+                            "const": false,
+                            "constraint": undefined,
+                            "default": undefined,
+                            "in": false,
+                            "name": {
+                              "decorators": [],
+                              "name": "T",
+                              "optional": false,
+                              "range": [
+                                22,
+                                23,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "out": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "TSTypeParameter",
+                          },
+                        ],
+                        "range": [
+                          21,
+                          24,
+                        ],
+                        "type": "TSTypeParameterDeclaration",
+                      },
+                    },
+                    "range": [
+                      6,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                  "parent": {
+                    "declarations": [
+                      {
+                        "definite": false,
+                        "id": {
+                          "decorators": [],
+                          "name": "foo",
+                          "optional": false,
+                          "range": [
+                            6,
+                            9,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "init": {
+                          "async": false,
+                          "body": {
+                            "body": [],
+                            "range": [
+                              27,
+                              29,
+                            ],
+                            "type": "BlockStatement",
+                          },
+                          "declare": false,
+                          "expression": false,
+                          "generator": false,
+                          "id": null,
+                          "params": [],
+                          "range": [
+                            12,
+                            29,
+                          ],
+                          "returnType": undefined,
+                          "type": "FunctionExpression",
+                          "typeParameters": {
+                            "params": [
+                              {
+                                "const": false,
+                                "constraint": undefined,
+                                "default": undefined,
+                                "in": false,
+                                "name": {
+                                  "decorators": [],
+                                  "name": "T",
+                                  "optional": false,
+                                  "range": [
+                                    22,
+                                    23,
+                                  ],
+                                  "type": "Identifier",
+                                  "typeAnnotation": undefined,
+                                },
+                                "out": false,
+                                "range": [
+                                  22,
+                                  23,
+                                ],
+                                "type": "TSTypeParameter",
+                              },
+                            ],
+                            "range": [
+                              21,
+                              24,
+                            ],
+                            "type": "TSTypeParameterDeclaration",
+                          },
+                        },
+                        "range": [
+                          6,
+                          29,
+                        ],
+                        "type": "VariableDeclarator",
+                      },
+                    ],
+                    "declare": false,
+                    "kind": "const",
+                    "range": [
+                      0,
+                      30,
+                    ],
+                    "type": "VariableDeclaration",
+                  },
+                  "type": "Variable",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "foo",
+              "references": [
+                [Circular],
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": {
+              "async": false,
+              "body": {
+                "body": [],
+                "range": [
+                  27,
+                  29,
+                ],
+                "type": "BlockStatement",
+              },
+              "declare": false,
+              "expression": false,
+              "generator": false,
+              "id": null,
+              "params": [],
+              "range": [
+                12,
+                29,
+              ],
+              "returnType": undefined,
+              "type": "FunctionExpression",
+              "typeParameters": {
+                "params": [
+                  {
+                    "const": false,
+                    "constraint": undefined,
+                    "default": undefined,
+                    "in": false,
+                    "name": {
+                      "decorators": [],
+                      "name": "T",
+                      "optional": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "out": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "TSTypeParameter",
+                  },
+                ],
+                "range": [
+                  21,
+                  24,
+                ],
+                "type": "TSTypeParameterDeclaration",
+              },
+            },
+          },
+          Reference {
+            "$id": 330,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                50,
+                51,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": null,
+            "writeExpr": undefined,
+          },
+        ],
+        "set": Map {},
+        "variables": [],
+      },
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [
+        Reference {
+          "$id": 329,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              6,
+              9,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": true,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 585,
+            "defs": [
+              VariableDefinition {
+                "$id": 404,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      6,
+                      9,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": {
+                    "async": false,
+                    "body": {
+                      "body": [],
+                      "range": [
+                        27,
+                        29,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": null,
+                    "params": [],
+                    "range": [
+                      12,
+                      29,
+                    ],
+                    "returnType": undefined,
+                    "type": "FunctionExpression",
+                    "typeParameters": {
+                      "params": [
+                        {
+                          "const": false,
+                          "constraint": undefined,
+                          "default": undefined,
+                          "in": false,
+                          "name": {
+                            "decorators": [],
+                            "name": "T",
+                            "optional": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "out": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "TSTypeParameter",
+                        },
+                      ],
+                      "range": [
+                        21,
+                        24,
+                      ],
+                      "type": "TSTypeParameterDeclaration",
+                    },
+                  },
+                  "range": [
+                    6,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+                "parent": {
+                  "declarations": [
+                    {
+                      "definite": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "foo",
+                        "optional": false,
+                        "range": [
+                          6,
+                          9,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "init": {
+                        "async": false,
+                        "body": {
+                          "body": [],
+                          "range": [
+                            27,
+                            29,
+                          ],
+                          "type": "BlockStatement",
+                        },
+                        "declare": false,
+                        "expression": false,
+                        "generator": false,
+                        "id": null,
+                        "params": [],
+                        "range": [
+                          12,
+                          29,
+                        ],
+                        "returnType": undefined,
+                        "type": "FunctionExpression",
+                        "typeParameters": {
+                          "params": [
+                            {
+                              "const": false,
+                              "constraint": undefined,
+                              "default": undefined,
+                              "in": false,
+                              "name": {
+                                "decorators": [],
+                                "name": "T",
+                                "optional": false,
+                                "range": [
+                                  22,
+                                  23,
+                                ],
+                                "type": "Identifier",
+                                "typeAnnotation": undefined,
+                              },
+                              "out": false,
+                              "range": [
+                                22,
+                                23,
+                              ],
+                              "type": "TSTypeParameter",
+                            },
+                          ],
+                          "range": [
+                            21,
+                            24,
+                          ],
+                          "type": "TSTypeParameterDeclaration",
+                        },
+                      },
+                      "range": [
+                        6,
+                        29,
+                      ],
+                      "type": "VariableDeclarator",
+                    },
+                  ],
+                  "declare": false,
+                  "kind": "const",
+                  "range": [
+                    0,
+                    30,
+                  ],
+                  "type": "VariableDeclaration",
+                },
+                "type": "Variable",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "foo",
+            "references": [
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": {
+            "async": false,
+            "body": {
+              "body": [],
+              "range": [
+                27,
+                29,
+              ],
+              "type": "BlockStatement",
+            },
+            "declare": false,
+            "expression": false,
+            "generator": false,
+            "id": null,
+            "params": [],
+            "range": [
+              12,
+              29,
+            ],
+            "returnType": undefined,
+            "type": "FunctionExpression",
+            "typeParameters": {
+              "params": [
+                {
+                  "const": false,
+                  "constraint": undefined,
+                  "default": undefined,
+                  "in": false,
+                  "name": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "out": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "TSTypeParameter",
+                },
+              ],
+              "range": [
+                21,
+                24,
+              ],
+              "type": "TSTypeParameterDeclaration",
+            },
+          },
+        },
+        Reference {
+          "$id": 330,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "T",
+            "optional": false,
+            "range": [
+              50,
+              51,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": null,
+          "writeExpr": undefined,
+        },
+      ],
+      "set": Map {
+        "const" => ImplicitLibVariable {
+          "$id": 584,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        "foo" => Variable {
+          "$id": 585,
+          "defs": [
+            VariableDefinition {
+              "$id": 404,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "definite": false,
+                "id": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": {
+                  "async": false,
+                  "body": {
+                    "body": [],
+                    "range": [
+                      27,
+                      29,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": null,
+                  "params": [],
+                  "range": [
+                    12,
+                    29,
+                  ],
+                  "returnType": undefined,
+                  "type": "FunctionExpression",
+                  "typeParameters": {
+                    "params": [
+                      {
+                        "const": false,
+                        "constraint": undefined,
+                        "default": undefined,
+                        "in": false,
+                        "name": {
+                          "decorators": [],
+                          "name": "T",
+                          "optional": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "out": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "TSTypeParameter",
+                      },
+                    ],
+                    "range": [
+                      21,
+                      24,
+                    ],
+                    "type": "TSTypeParameterDeclaration",
+                  },
+                },
+                "range": [
+                  6,
+                  29,
+                ],
+                "type": "VariableDeclarator",
+              },
+              "parent": {
+                "declarations": [
+                  {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "foo",
+                      "optional": false,
+                      "range": [
+                        6,
+                        9,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "init": {
+                      "async": false,
+                      "body": {
+                        "body": [],
+                        "range": [
+                          27,
+                          29,
+                        ],
+                        "type": "BlockStatement",
+                      },
+                      "declare": false,
+                      "expression": false,
+                      "generator": false,
+                      "id": null,
+                      "params": [],
+                      "range": [
+                        12,
+                        29,
+                      ],
+                      "returnType": undefined,
+                      "type": "FunctionExpression",
+                      "typeParameters": {
+                        "params": [
+                          {
+                            "const": false,
+                            "constraint": undefined,
+                            "default": undefined,
+                            "in": false,
+                            "name": {
+                              "decorators": [],
+                              "name": "T",
+                              "optional": false,
+                              "range": [
+                                22,
+                                23,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "out": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "TSTypeParameter",
+                          },
+                        ],
+                        "range": [
+                          21,
+                          24,
+                        ],
+                        "type": "TSTypeParameterDeclaration",
+                      },
+                    },
+                    "range": [
+                      6,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                ],
+                "declare": false,
+                "kind": "const",
+                "range": [
+                  0,
+                  30,
+                ],
+                "type": "VariableDeclaration",
+              },
+              "type": "Variable",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                6,
+                9,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "foo",
+          "references": [
+            Reference {
+              "$id": 329,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": true,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": {
+                "async": false,
+                "body": {
+                  "body": [],
+                  "range": [
+                    27,
+                    29,
+                  ],
+                  "type": "BlockStatement",
+                },
+                "declare": false,
+                "expression": false,
+                "generator": false,
+                "id": null,
+                "params": [],
+                "range": [
+                  12,
+                  29,
+                ],
+                "returnType": undefined,
+                "type": "FunctionExpression",
+                "typeParameters": {
+                  "params": [
+                    {
+                      "const": false,
+                      "constraint": undefined,
+                      "default": undefined,
+                      "in": false,
+                      "name": {
+                        "decorators": [],
+                        "name": "T",
+                        "optional": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "out": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "TSTypeParameter",
+                    },
+                  ],
+                  "range": [
+                    21,
+                    24,
+                  ],
+                  "type": "TSTypeParameterDeclaration",
+                },
+              },
+            },
+          ],
+          "scope": [Circular],
+        },
+        "Unresolved" => Variable {
+          "$id": 588,
+          "defs": [
+            TypeDefinition {
+              "$id": 406,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "Unresolved",
+                "optional": false,
+                "range": [
+                  37,
+                  47,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Unresolved",
+                  "optional": false,
+                  "range": [
+                    37,
+                    47,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  32,
+                  52,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "range": [
+                    50,
+                    51,
+                  ],
+                  "type": "TSTypeReference",
+                  "typeArguments": undefined,
+                  "typeName": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      50,
+                      51,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Unresolved",
+              "optional": false,
+              "range": [
+                37,
+                47,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Unresolved",
+          "references": [],
+          "scope": [Circular],
+        },
+      },
+      "through": [
+        Reference {
+          "$id": 330,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "T",
+            "optional": false,
+            "range": [
+              50,
+              51,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": null,
+          "resolved": null,
+          "writeExpr": undefined,
+        },
+      ],
+      "type": "global",
+      "upper": null,
+      "variableScope": [Circular],
+      "variables": [
+        ImplicitLibVariable {
+          "$id": 584,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        Variable {
+          "$id": 585,
+          "defs": [
+            VariableDefinition {
+              "$id": 404,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "definite": false,
+                "id": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": {
+                  "async": false,
+                  "body": {
+                    "body": [],
+                    "range": [
+                      27,
+                      29,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": null,
+                  "params": [],
+                  "range": [
+                    12,
+                    29,
+                  ],
+                  "returnType": undefined,
+                  "type": "FunctionExpression",
+                  "typeParameters": {
+                    "params": [
+                      {
+                        "const": false,
+                        "constraint": undefined,
+                        "default": undefined,
+                        "in": false,
+                        "name": {
+                          "decorators": [],
+                          "name": "T",
+                          "optional": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "out": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "TSTypeParameter",
+                      },
+                    ],
+                    "range": [
+                      21,
+                      24,
+                    ],
+                    "type": "TSTypeParameterDeclaration",
+                  },
+                },
+                "range": [
+                  6,
+                  29,
+                ],
+                "type": "VariableDeclarator",
+              },
+              "parent": {
+                "declarations": [
+                  {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "foo",
+                      "optional": false,
+                      "range": [
+                        6,
+                        9,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "init": {
+                      "async": false,
+                      "body": {
+                        "body": [],
+                        "range": [
+                          27,
+                          29,
+                        ],
+                        "type": "BlockStatement",
+                      },
+                      "declare": false,
+                      "expression": false,
+                      "generator": false,
+                      "id": null,
+                      "params": [],
+                      "range": [
+                        12,
+                        29,
+                      ],
+                      "returnType": undefined,
+                      "type": "FunctionExpression",
+                      "typeParameters": {
+                        "params": [
+                          {
+                            "const": false,
+                            "constraint": undefined,
+                            "default": undefined,
+                            "in": false,
+                            "name": {
+                              "decorators": [],
+                              "name": "T",
+                              "optional": false,
+                              "range": [
+                                22,
+                                23,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "out": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "TSTypeParameter",
+                          },
+                        ],
+                        "range": [
+                          21,
+                          24,
+                        ],
+                        "type": "TSTypeParameterDeclaration",
+                      },
+                    },
+                    "range": [
+                      6,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                ],
+                "declare": false,
+                "kind": "const",
+                "range": [
+                  0,
+                  30,
+                ],
+                "type": "VariableDeclaration",
+              },
+              "type": "Variable",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                6,
+                9,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "foo",
+          "references": [
+            Reference {
+              "$id": 329,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": true,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": {
+                "async": false,
+                "body": {
+                  "body": [],
+                  "range": [
+                    27,
+                    29,
+                  ],
+                  "type": "BlockStatement",
+                },
+                "declare": false,
+                "expression": false,
+                "generator": false,
+                "id": null,
+                "params": [],
+                "range": [
+                  12,
+                  29,
+                ],
+                "returnType": undefined,
+                "type": "FunctionExpression",
+                "typeParameters": {
+                  "params": [
+                    {
+                      "const": false,
+                      "constraint": undefined,
+                      "default": undefined,
+                      "in": false,
+                      "name": {
+                        "decorators": [],
+                        "name": "T",
+                        "optional": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "out": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "TSTypeParameter",
+                    },
+                  ],
+                  "range": [
+                    21,
+                    24,
+                  ],
+                  "type": "TSTypeParameterDeclaration",
+                },
+              },
+            },
+          ],
+          "scope": [Circular],
+        },
+        Variable {
+          "$id": 588,
+          "defs": [
+            TypeDefinition {
+              "$id": 406,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "Unresolved",
+                "optional": false,
+                "range": [
+                  37,
+                  47,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "declare": false,
+                "id": {
+                  "decorators": [],
+                  "name": "Unresolved",
+                  "optional": false,
+                  "range": [
+                    37,
+                    47,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  32,
+                  52,
+                ],
+                "type": "TSTypeAliasDeclaration",
+                "typeAnnotation": {
+                  "range": [
+                    50,
+                    51,
+                  ],
+                  "type": "TSTypeReference",
+                  "typeArguments": undefined,
+                  "typeName": {
+                    "decorators": [],
+                    "name": "T",
+                    "optional": false,
+                    "range": [
+                      50,
+                      51,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                },
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "Unresolved",
+              "optional": false,
+              "range": [
+                37,
+                47,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "Unresolved",
+          "references": [],
+          "scope": [Circular],
+        },
       ],
     },
-    FunctionScope$2 {
-      block: FunctionExpression$2,
-      isStrict: false,
-      references: [],
-      set: Map {
-        "arguments" => Variable$3,
-        "T" => Variable$4,
+    FunctionScope {
+      "$id": 305,
+      "block": {
+        "async": false,
+        "body": {
+          "body": [],
+          "range": [
+            27,
+            29,
+          ],
+          "type": "BlockStatement",
+        },
+        "declare": false,
+        "expression": false,
+        "generator": false,
+        "id": null,
+        "params": [],
+        "range": [
+          12,
+          29,
+        ],
+        "returnType": undefined,
+        "type": "FunctionExpression",
+        "typeParameters": {
+          "params": [
+            {
+              "const": false,
+              "constraint": undefined,
+              "default": undefined,
+              "in": false,
+              "name": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  22,
+                  23,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "out": false,
+              "range": [
+                22,
+                23,
+              ],
+              "type": "TSTypeParameter",
+            },
+          ],
+          "range": [
+            21,
+            24,
+          ],
+          "type": "TSTypeParameterDeclaration",
+        },
       },
-      type: "function",
-      upper: GlobalScope$1,
-      variables: [
-        Variable$3,
-        Variable$4,
+      "childScopes": [],
+      "functionExpressionScope": false,
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [],
+      "set": Map {
+        "arguments" => Variable {
+          "$id": 586,
+          "defs": [],
+          "eslintUsed": false,
+          "identifiers": [],
+          "name": "arguments",
+          "references": [],
+          "scope": [Circular],
+        },
+        "T" => Variable {
+          "$id": 587,
+          "defs": [
+            TypeDefinition {
+              "$id": 405,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  22,
+                  23,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "const": false,
+                "constraint": undefined,
+                "default": undefined,
+                "in": false,
+                "name": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "out": false,
+                "range": [
+                  22,
+                  23,
+                ],
+                "type": "TSTypeParameter",
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                22,
+                23,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "T",
+          "references": [],
+          "scope": [Circular],
+        },
+      },
+      "through": [],
+      "type": "function",
+      "upper": GlobalScope {
+        "$id": 304,
+        "block": {
+          "body": [
+            {
+              "declarations": [
+                {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      6,
+                      9,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": {
+                    "async": false,
+                    "body": {
+                      "body": [],
+                      "range": [
+                        27,
+                        29,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": null,
+                    "params": [],
+                    "range": [
+                      12,
+                      29,
+                    ],
+                    "returnType": undefined,
+                    "type": "FunctionExpression",
+                    "typeParameters": {
+                      "params": [
+                        {
+                          "const": false,
+                          "constraint": undefined,
+                          "default": undefined,
+                          "in": false,
+                          "name": {
+                            "decorators": [],
+                            "name": "T",
+                            "optional": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "out": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "TSTypeParameter",
+                        },
+                      ],
+                      "range": [
+                        21,
+                        24,
+                      ],
+                      "type": "TSTypeParameterDeclaration",
+                    },
+                  },
+                  "range": [
+                    6,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+              ],
+              "declare": false,
+              "kind": "const",
+              "range": [
+                0,
+                30,
+              ],
+              "type": "VariableDeclaration",
+            },
+            {
+              "declare": false,
+              "id": {
+                "decorators": [],
+                "name": "Unresolved",
+                "optional": false,
+                "range": [
+                  37,
+                  47,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                32,
+                52,
+              ],
+              "type": "TSTypeAliasDeclaration",
+              "typeAnnotation": {
+                "range": [
+                  50,
+                  51,
+                ],
+                "type": "TSTypeReference",
+                "typeArguments": undefined,
+                "typeName": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    50,
+                    51,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              },
+              "typeParameters": undefined,
+            },
+          ],
+          "comments": undefined,
+          "range": [
+            0,
+            53,
+          ],
+          "sourceType": "script",
+          "tokens": undefined,
+          "type": "Program",
+        },
+        "childScopes": [
+          [Circular],
+        ],
+        "functionExpressionScope": false,
+        "implicit": {
+          "leftToBeResolved": [
+            Reference {
+              "$id": 329,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": true,
+              "maybeImplicitGlobal": null,
+              "resolved": Variable {
+                "$id": 585,
+                "defs": [
+                  VariableDefinition {
+                    "$id": 404,
+                    "isTypeDefinition": false,
+                    "isVariableDefinition": true,
+                    "name": {
+                      "decorators": [],
+                      "name": "foo",
+                      "optional": false,
+                      "range": [
+                        6,
+                        9,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "node": {
+                      "definite": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "foo",
+                        "optional": false,
+                        "range": [
+                          6,
+                          9,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "init": {
+                        "async": false,
+                        "body": {
+                          "body": [],
+                          "range": [
+                            27,
+                            29,
+                          ],
+                          "type": "BlockStatement",
+                        },
+                        "declare": false,
+                        "expression": false,
+                        "generator": false,
+                        "id": null,
+                        "params": [],
+                        "range": [
+                          12,
+                          29,
+                        ],
+                        "returnType": undefined,
+                        "type": "FunctionExpression",
+                        "typeParameters": {
+                          "params": [
+                            {
+                              "const": false,
+                              "constraint": undefined,
+                              "default": undefined,
+                              "in": false,
+                              "name": {
+                                "decorators": [],
+                                "name": "T",
+                                "optional": false,
+                                "range": [
+                                  22,
+                                  23,
+                                ],
+                                "type": "Identifier",
+                                "typeAnnotation": undefined,
+                              },
+                              "out": false,
+                              "range": [
+                                22,
+                                23,
+                              ],
+                              "type": "TSTypeParameter",
+                            },
+                          ],
+                          "range": [
+                            21,
+                            24,
+                          ],
+                          "type": "TSTypeParameterDeclaration",
+                        },
+                      },
+                      "range": [
+                        6,
+                        29,
+                      ],
+                      "type": "VariableDeclarator",
+                    },
+                    "parent": {
+                      "declarations": [
+                        {
+                          "definite": false,
+                          "id": {
+                            "decorators": [],
+                            "name": "foo",
+                            "optional": false,
+                            "range": [
+                              6,
+                              9,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "init": {
+                            "async": false,
+                            "body": {
+                              "body": [],
+                              "range": [
+                                27,
+                                29,
+                              ],
+                              "type": "BlockStatement",
+                            },
+                            "declare": false,
+                            "expression": false,
+                            "generator": false,
+                            "id": null,
+                            "params": [],
+                            "range": [
+                              12,
+                              29,
+                            ],
+                            "returnType": undefined,
+                            "type": "FunctionExpression",
+                            "typeParameters": {
+                              "params": [
+                                {
+                                  "const": false,
+                                  "constraint": undefined,
+                                  "default": undefined,
+                                  "in": false,
+                                  "name": {
+                                    "decorators": [],
+                                    "name": "T",
+                                    "optional": false,
+                                    "range": [
+                                      22,
+                                      23,
+                                    ],
+                                    "type": "Identifier",
+                                    "typeAnnotation": undefined,
+                                  },
+                                  "out": false,
+                                  "range": [
+                                    22,
+                                    23,
+                                  ],
+                                  "type": "TSTypeParameter",
+                                },
+                              ],
+                              "range": [
+                                21,
+                                24,
+                              ],
+                              "type": "TSTypeParameterDeclaration",
+                            },
+                          },
+                          "range": [
+                            6,
+                            29,
+                          ],
+                          "type": "VariableDeclarator",
+                        },
+                      ],
+                      "declare": false,
+                      "kind": "const",
+                      "range": [
+                        0,
+                        30,
+                      ],
+                      "type": "VariableDeclaration",
+                    },
+                    "type": "Variable",
+                  },
+                ],
+                "eslintUsed": false,
+                "identifiers": [
+                  {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      6,
+                      9,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                ],
+                "name": "foo",
+                "references": [
+                  [Circular],
+                ],
+                "scope": [Circular],
+              },
+              "writeExpr": {
+                "async": false,
+                "body": {
+                  "body": [],
+                  "range": [
+                    27,
+                    29,
+                  ],
+                  "type": "BlockStatement",
+                },
+                "declare": false,
+                "expression": false,
+                "generator": false,
+                "id": null,
+                "params": [],
+                "range": [
+                  12,
+                  29,
+                ],
+                "returnType": undefined,
+                "type": "FunctionExpression",
+                "typeParameters": {
+                  "params": [
+                    {
+                      "const": false,
+                      "constraint": undefined,
+                      "default": undefined,
+                      "in": false,
+                      "name": {
+                        "decorators": [],
+                        "name": "T",
+                        "optional": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "out": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "TSTypeParameter",
+                    },
+                  ],
+                  "range": [
+                    21,
+                    24,
+                  ],
+                  "type": "TSTypeParameterDeclaration",
+                },
+              },
+            },
+            Reference {
+              "$id": 330,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  50,
+                  51,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": null,
+              "resolved": null,
+              "writeExpr": undefined,
+            },
+          ],
+          "set": Map {},
+          "variables": [],
+        },
+        "isStrict": false,
+        "leftToResolve": null,
+        "references": [
+          Reference {
+            "$id": 329,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                6,
+                9,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": true,
+            "maybeImplicitGlobal": null,
+            "resolved": Variable {
+              "$id": 585,
+              "defs": [
+                VariableDefinition {
+                  "$id": 404,
+                  "isTypeDefinition": false,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      6,
+                      9,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "node": {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "foo",
+                      "optional": false,
+                      "range": [
+                        6,
+                        9,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "init": {
+                      "async": false,
+                      "body": {
+                        "body": [],
+                        "range": [
+                          27,
+                          29,
+                        ],
+                        "type": "BlockStatement",
+                      },
+                      "declare": false,
+                      "expression": false,
+                      "generator": false,
+                      "id": null,
+                      "params": [],
+                      "range": [
+                        12,
+                        29,
+                      ],
+                      "returnType": undefined,
+                      "type": "FunctionExpression",
+                      "typeParameters": {
+                        "params": [
+                          {
+                            "const": false,
+                            "constraint": undefined,
+                            "default": undefined,
+                            "in": false,
+                            "name": {
+                              "decorators": [],
+                              "name": "T",
+                              "optional": false,
+                              "range": [
+                                22,
+                                23,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "out": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "TSTypeParameter",
+                          },
+                        ],
+                        "range": [
+                          21,
+                          24,
+                        ],
+                        "type": "TSTypeParameterDeclaration",
+                      },
+                    },
+                    "range": [
+                      6,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                  "parent": {
+                    "declarations": [
+                      {
+                        "definite": false,
+                        "id": {
+                          "decorators": [],
+                          "name": "foo",
+                          "optional": false,
+                          "range": [
+                            6,
+                            9,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "init": {
+                          "async": false,
+                          "body": {
+                            "body": [],
+                            "range": [
+                              27,
+                              29,
+                            ],
+                            "type": "BlockStatement",
+                          },
+                          "declare": false,
+                          "expression": false,
+                          "generator": false,
+                          "id": null,
+                          "params": [],
+                          "range": [
+                            12,
+                            29,
+                          ],
+                          "returnType": undefined,
+                          "type": "FunctionExpression",
+                          "typeParameters": {
+                            "params": [
+                              {
+                                "const": false,
+                                "constraint": undefined,
+                                "default": undefined,
+                                "in": false,
+                                "name": {
+                                  "decorators": [],
+                                  "name": "T",
+                                  "optional": false,
+                                  "range": [
+                                    22,
+                                    23,
+                                  ],
+                                  "type": "Identifier",
+                                  "typeAnnotation": undefined,
+                                },
+                                "out": false,
+                                "range": [
+                                  22,
+                                  23,
+                                ],
+                                "type": "TSTypeParameter",
+                              },
+                            ],
+                            "range": [
+                              21,
+                              24,
+                            ],
+                            "type": "TSTypeParameterDeclaration",
+                          },
+                        },
+                        "range": [
+                          6,
+                          29,
+                        ],
+                        "type": "VariableDeclarator",
+                      },
+                    ],
+                    "declare": false,
+                    "kind": "const",
+                    "range": [
+                      0,
+                      30,
+                    ],
+                    "type": "VariableDeclaration",
+                  },
+                  "type": "Variable",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+              ],
+              "name": "foo",
+              "references": [
+                [Circular],
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": {
+              "async": false,
+              "body": {
+                "body": [],
+                "range": [
+                  27,
+                  29,
+                ],
+                "type": "BlockStatement",
+              },
+              "declare": false,
+              "expression": false,
+              "generator": false,
+              "id": null,
+              "params": [],
+              "range": [
+                12,
+                29,
+              ],
+              "returnType": undefined,
+              "type": "FunctionExpression",
+              "typeParameters": {
+                "params": [
+                  {
+                    "const": false,
+                    "constraint": undefined,
+                    "default": undefined,
+                    "in": false,
+                    "name": {
+                      "decorators": [],
+                      "name": "T",
+                      "optional": false,
+                      "range": [
+                        22,
+                        23,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "out": false,
+                    "range": [
+                      22,
+                      23,
+                    ],
+                    "type": "TSTypeParameter",
+                  },
+                ],
+                "range": [
+                  21,
+                  24,
+                ],
+                "type": "TSTypeParameterDeclaration",
+              },
+            },
+          },
+          Reference {
+            "$id": 330,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                50,
+                51,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": null,
+            "writeExpr": undefined,
+          },
+        ],
+        "set": Map {
+          "const" => ImplicitLibVariable {
+            "$id": 584,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+          "foo" => Variable {
+            "$id": 585,
+            "defs": [
+              VariableDefinition {
+                "$id": 404,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      6,
+                      9,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": {
+                    "async": false,
+                    "body": {
+                      "body": [],
+                      "range": [
+                        27,
+                        29,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": null,
+                    "params": [],
+                    "range": [
+                      12,
+                      29,
+                    ],
+                    "returnType": undefined,
+                    "type": "FunctionExpression",
+                    "typeParameters": {
+                      "params": [
+                        {
+                          "const": false,
+                          "constraint": undefined,
+                          "default": undefined,
+                          "in": false,
+                          "name": {
+                            "decorators": [],
+                            "name": "T",
+                            "optional": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "out": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "TSTypeParameter",
+                        },
+                      ],
+                      "range": [
+                        21,
+                        24,
+                      ],
+                      "type": "TSTypeParameterDeclaration",
+                    },
+                  },
+                  "range": [
+                    6,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+                "parent": {
+                  "declarations": [
+                    {
+                      "definite": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "foo",
+                        "optional": false,
+                        "range": [
+                          6,
+                          9,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "init": {
+                        "async": false,
+                        "body": {
+                          "body": [],
+                          "range": [
+                            27,
+                            29,
+                          ],
+                          "type": "BlockStatement",
+                        },
+                        "declare": false,
+                        "expression": false,
+                        "generator": false,
+                        "id": null,
+                        "params": [],
+                        "range": [
+                          12,
+                          29,
+                        ],
+                        "returnType": undefined,
+                        "type": "FunctionExpression",
+                        "typeParameters": {
+                          "params": [
+                            {
+                              "const": false,
+                              "constraint": undefined,
+                              "default": undefined,
+                              "in": false,
+                              "name": {
+                                "decorators": [],
+                                "name": "T",
+                                "optional": false,
+                                "range": [
+                                  22,
+                                  23,
+                                ],
+                                "type": "Identifier",
+                                "typeAnnotation": undefined,
+                              },
+                              "out": false,
+                              "range": [
+                                22,
+                                23,
+                              ],
+                              "type": "TSTypeParameter",
+                            },
+                          ],
+                          "range": [
+                            21,
+                            24,
+                          ],
+                          "type": "TSTypeParameterDeclaration",
+                        },
+                      },
+                      "range": [
+                        6,
+                        29,
+                      ],
+                      "type": "VariableDeclarator",
+                    },
+                  ],
+                  "declare": false,
+                  "kind": "const",
+                  "range": [
+                    0,
+                    30,
+                  ],
+                  "type": "VariableDeclaration",
+                },
+                "type": "Variable",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "foo",
+            "references": [
+              Reference {
+                "$id": 329,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": true,
+                "maybeImplicitGlobal": null,
+                "resolved": [Circular],
+                "writeExpr": {
+                  "async": false,
+                  "body": {
+                    "body": [],
+                    "range": [
+                      27,
+                      29,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": null,
+                  "params": [],
+                  "range": [
+                    12,
+                    29,
+                  ],
+                  "returnType": undefined,
+                  "type": "FunctionExpression",
+                  "typeParameters": {
+                    "params": [
+                      {
+                        "const": false,
+                        "constraint": undefined,
+                        "default": undefined,
+                        "in": false,
+                        "name": {
+                          "decorators": [],
+                          "name": "T",
+                          "optional": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "out": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "TSTypeParameter",
+                      },
+                    ],
+                    "range": [
+                      21,
+                      24,
+                    ],
+                    "type": "TSTypeParameterDeclaration",
+                  },
+                },
+              },
+            ],
+            "scope": [Circular],
+          },
+          "Unresolved" => Variable {
+            "$id": 588,
+            "defs": [
+              TypeDefinition {
+                "$id": 406,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "Unresolved",
+                  "optional": false,
+                  "range": [
+                    37,
+                    47,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "Unresolved",
+                    "optional": false,
+                    "range": [
+                      37,
+                      47,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    32,
+                    52,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "range": [
+                      50,
+                      51,
+                    ],
+                    "type": "TSTypeReference",
+                    "typeArguments": undefined,
+                    "typeName": {
+                      "decorators": [],
+                      "name": "T",
+                      "optional": false,
+                      "range": [
+                        50,
+                        51,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Unresolved",
+                "optional": false,
+                "range": [
+                  37,
+                  47,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Unresolved",
+            "references": [],
+            "scope": [Circular],
+          },
+        },
+        "through": [
+          Reference {
+            "$id": 330,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                50,
+                51,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": null,
+            "resolved": null,
+            "writeExpr": undefined,
+          },
+        ],
+        "type": "global",
+        "upper": null,
+        "variableScope": [Circular],
+        "variables": [
+          ImplicitLibVariable {
+            "$id": 584,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+          Variable {
+            "$id": 585,
+            "defs": [
+              VariableDefinition {
+                "$id": 404,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      6,
+                      9,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": {
+                    "async": false,
+                    "body": {
+                      "body": [],
+                      "range": [
+                        27,
+                        29,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": null,
+                    "params": [],
+                    "range": [
+                      12,
+                      29,
+                    ],
+                    "returnType": undefined,
+                    "type": "FunctionExpression",
+                    "typeParameters": {
+                      "params": [
+                        {
+                          "const": false,
+                          "constraint": undefined,
+                          "default": undefined,
+                          "in": false,
+                          "name": {
+                            "decorators": [],
+                            "name": "T",
+                            "optional": false,
+                            "range": [
+                              22,
+                              23,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "out": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "TSTypeParameter",
+                        },
+                      ],
+                      "range": [
+                        21,
+                        24,
+                      ],
+                      "type": "TSTypeParameterDeclaration",
+                    },
+                  },
+                  "range": [
+                    6,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+                "parent": {
+                  "declarations": [
+                    {
+                      "definite": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "foo",
+                        "optional": false,
+                        "range": [
+                          6,
+                          9,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "init": {
+                        "async": false,
+                        "body": {
+                          "body": [],
+                          "range": [
+                            27,
+                            29,
+                          ],
+                          "type": "BlockStatement",
+                        },
+                        "declare": false,
+                        "expression": false,
+                        "generator": false,
+                        "id": null,
+                        "params": [],
+                        "range": [
+                          12,
+                          29,
+                        ],
+                        "returnType": undefined,
+                        "type": "FunctionExpression",
+                        "typeParameters": {
+                          "params": [
+                            {
+                              "const": false,
+                              "constraint": undefined,
+                              "default": undefined,
+                              "in": false,
+                              "name": {
+                                "decorators": [],
+                                "name": "T",
+                                "optional": false,
+                                "range": [
+                                  22,
+                                  23,
+                                ],
+                                "type": "Identifier",
+                                "typeAnnotation": undefined,
+                              },
+                              "out": false,
+                              "range": [
+                                22,
+                                23,
+                              ],
+                              "type": "TSTypeParameter",
+                            },
+                          ],
+                          "range": [
+                            21,
+                            24,
+                          ],
+                          "type": "TSTypeParameterDeclaration",
+                        },
+                      },
+                      "range": [
+                        6,
+                        29,
+                      ],
+                      "type": "VariableDeclarator",
+                    },
+                  ],
+                  "declare": false,
+                  "kind": "const",
+                  "range": [
+                    0,
+                    30,
+                  ],
+                  "type": "VariableDeclaration",
+                },
+                "type": "Variable",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  6,
+                  9,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "foo",
+            "references": [
+              Reference {
+                "$id": 329,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    6,
+                    9,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": true,
+                "maybeImplicitGlobal": null,
+                "resolved": [Circular],
+                "writeExpr": {
+                  "async": false,
+                  "body": {
+                    "body": [],
+                    "range": [
+                      27,
+                      29,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": null,
+                  "params": [],
+                  "range": [
+                    12,
+                    29,
+                  ],
+                  "returnType": undefined,
+                  "type": "FunctionExpression",
+                  "typeParameters": {
+                    "params": [
+                      {
+                        "const": false,
+                        "constraint": undefined,
+                        "default": undefined,
+                        "in": false,
+                        "name": {
+                          "decorators": [],
+                          "name": "T",
+                          "optional": false,
+                          "range": [
+                            22,
+                            23,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "out": false,
+                        "range": [
+                          22,
+                          23,
+                        ],
+                        "type": "TSTypeParameter",
+                      },
+                    ],
+                    "range": [
+                      21,
+                      24,
+                    ],
+                    "type": "TSTypeParameterDeclaration",
+                  },
+                },
+              },
+            ],
+            "scope": [Circular],
+          },
+          Variable {
+            "$id": 588,
+            "defs": [
+              TypeDefinition {
+                "$id": 406,
+                "isTypeDefinition": true,
+                "isVariableDefinition": false,
+                "name": {
+                  "decorators": [],
+                  "name": "Unresolved",
+                  "optional": false,
+                  "range": [
+                    37,
+                    47,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "declare": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "Unresolved",
+                    "optional": false,
+                    "range": [
+                      37,
+                      47,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    32,
+                    52,
+                  ],
+                  "type": "TSTypeAliasDeclaration",
+                  "typeAnnotation": {
+                    "range": [
+                      50,
+                      51,
+                    ],
+                    "type": "TSTypeReference",
+                    "typeArguments": undefined,
+                    "typeName": {
+                      "decorators": [],
+                      "name": "T",
+                      "optional": false,
+                      "range": [
+                        50,
+                        51,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                  },
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "Type",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "Unresolved",
+                "optional": false,
+                "range": [
+                  37,
+                  47,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "Unresolved",
+            "references": [],
+            "scope": [Circular],
+          },
+        ],
+      },
+      "variableScope": [Circular],
+      "variables": [
+        Variable {
+          "$id": 586,
+          "defs": [],
+          "eslintUsed": false,
+          "identifiers": [],
+          "name": "arguments",
+          "references": [],
+          "scope": [Circular],
+        },
+        Variable {
+          "$id": 587,
+          "defs": [
+            TypeDefinition {
+              "$id": 405,
+              "isTypeDefinition": true,
+              "isVariableDefinition": false,
+              "name": {
+                "decorators": [],
+                "name": "T",
+                "optional": false,
+                "range": [
+                  22,
+                  23,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "const": false,
+                "constraint": undefined,
+                "default": undefined,
+                "in": false,
+                "name": {
+                  "decorators": [],
+                  "name": "T",
+                  "optional": false,
+                  "range": [
+                    22,
+                    23,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "out": false,
+                "range": [
+                  22,
+                  23,
+                ],
+                "type": "TSTypeParameter",
+              },
+              "parent": null,
+              "type": "Type",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "T",
+              "optional": false,
+              "range": [
+                22,
+                23,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "T",
+          "references": [],
+          "scope": [Circular],
+        },
       ],
     },
   ],
 }
-`;
