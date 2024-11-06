@@ -18,6 +18,8 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "prettier": "^3.5.1",
+    "typescript": "*",
     "vitest": "^3.0.5"
   }
 }

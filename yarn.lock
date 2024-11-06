@@ -5606,7 +5606,7 @@ __metadata:
     eslint: "*"
     glob: "*"
     jest-diff: ^29.7.0
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     pretty-format: "*"
     rimraf: "*"
     typescript: "*"
@@ -5627,6 +5627,7 @@ __metadata:
     eslint: "*"
     prettier: ^3.2.5
     rimraf: "*"
+    typescript: "*"
     vitest: ^3.0.5
   languageName: unknown
   linkType: soft
@@ -5658,7 +5659,7 @@ __metadata:
     mdast-util-mdx: ^3.0.0
     micromark-extension-mdxjs: ^3.0.0
     natural-compare: ^1.4.0
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     rimraf: "*"
     title-case: ^3.0.3
     ts-api-utils: ^2.0.1
@@ -5677,6 +5678,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@typescript-eslint/integration-tests@workspace:packages/integration-tests"
   dependencies:
+    prettier: ^3.5.1
+    typescript: "*"
     vitest: ^3.0.5
   languageName: unknown
   linkType: soft
@@ -5694,7 +5697,7 @@ __metadata:
     debug: ^4.3.4
     downlevel-dts: "*"
     glob: "*"
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     rimraf: "*"
     typescript: "*"
     vitest: ^3.0.5
@@ -5714,6 +5717,7 @@ __metadata:
     eslint: "*"
     natural-compare: ^1.4.0
     prettier: ^3.2.5
+    rimraf: "*"
     typescript: "*"
     vitest: ^3.0.5
   languageName: unknown
@@ -5731,6 +5735,7 @@ __metadata:
     "@vitest/coverage-v8": ^3.0.5
     ajv: ^6.12.6
     chai: ^4.4.1
+    downlevel-dts: "*"
     eslint: "*"
     eslint-visitor-keys: ^4.2.0
     espree: ^10.3.0
@@ -5738,6 +5743,8 @@ __metadata:
     json-stable-stringify-without-jsonify: ^1.0.1
     lodash.merge: 4.6.2
     mocha: ^10.4.0
+    prettier: ^3.5.1
+    rimraf: "*"
     semver: ^7.6.0
     sinon: ^16.1.3
     source-map-support: ^0.5.21
@@ -5758,7 +5765,7 @@ __metadata:
     "@typescript-eslint/visitor-keys": 8.24.0
     "@vitest/coverage-v8": ^3.0.5
     glob: "*"
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     pretty-format: "*"
     typescript: "*"
     vitest: ^3.0.5
@@ -5777,7 +5784,7 @@ __metadata:
     debug: ^4.3.4
     downlevel-dts: "*"
     eslint: "*"
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     rimraf: "*"
     ts-api-utils: ^2.0.1
     typescript: "*"
@@ -5794,7 +5801,7 @@ __metadata:
   dependencies:
     "@vitest/coverage-v8": ^3.0.5
     downlevel-dts: "*"
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     rimraf: "*"
     tsx: "*"
     typescript: "*"
@@ -5882,11 +5889,12 @@ __metadata:
     "@typescript-eslint/visitor-keys": 8.24.0
     "@vitest/coverage-v8": ^3.0.5
     debug: ^4.3.4
+    downlevel-dts: "*"
     fast-glob: ^3.3.2
     glob: "*"
     is-glob: ^4.0.3
     minimatch: ^9.0.4
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     rimraf: "*"
     semver: ^7.6.0
     ts-api-utils: ^2.0.1
@@ -5907,7 +5915,7 @@ __metadata:
     "@typescript-eslint/typescript-estree": 8.24.0
     "@vitest/coverage-v8": ^3.0.5
     downlevel-dts: "*"
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     rimraf: "*"
     typescript: "*"
     vitest: ^3.0.5
@@ -5926,7 +5934,7 @@ __metadata:
     "@vitest/coverage-v8": ^3.0.5
     downlevel-dts: "*"
     eslint-visitor-keys: ^4.2.0
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     rimraf: "*"
     typescript: "*"
     vitest: ^3.0.5
@@ -5946,7 +5954,7 @@ __metadata:
     esbuild: ~0.24.0
     eslint: "*"
     esquery: "*"
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     tsx: "*"
   languageName: unknown
   linkType: soft
@@ -19119,7 +19127,7 @@ __metadata:
     "@vitest/coverage-v8": ^3.0.5
     downlevel-dts: "*"
     eslint: "*"
-    prettier: ^3.2.5
+    prettier: ^3.5.1
     rimraf: "*"
     typescript: "*"
     vitest: ^3.0.5

@@ -41,7 +41,7 @@
     "esbuild": "~0.24.0",
     "eslint": "*",
     "esquery": "*",
-    "prettier": "^3.2.5",
+    "prettier": "^3.5.1",
     "tsx": "*"
   }
 }

@@ -54,7 +54,7 @@
     "@types/eslint-visitor-keys": "*",
     "@vitest/coverage-v8": "^3.0.5",
     "downlevel-dts": "*",
-    "prettier": "^3.2.5",
+    "prettier": "^3.5.1",
     "rimraf": "*",
     "typescript": "*",
     "vitest": "^3.0.5"
