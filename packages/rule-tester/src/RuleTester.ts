@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 // Forked from https://github.com/eslint/eslint/blob/ad9dd6a933fd098a0d99c6a9aa059850535c23ee/lib/rule-tester/rule-tester.js
 
-import type * as ParserType from '@typescript-eslint/parser';
 import type { TSESTree, TSUtils } from '@typescript-eslint/utils';
 import type {
   AnyRuleCreateFunction,
@@ -64,8 +63,9 @@ const DUPLICATE_PARSER_ERROR_MESSAGE = `Do not set the parser at the test level 
 
 // instead of creating a hard dependency, just use a soft require
 // a bit weird, but if they're using this tooling, it'll be installed
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const defaultParser = require(TYPESCRIPT_ESLINT_PARSER) as typeof ParserType;
+
+const defaultParser = parser;
+// const defaultParser = require(TYPESCRIPT_ESLINT_PARSER) as typeof ParserType;
 
 /*
  * testerDefaultConfig must not be modified as it allows to reset the tester to
