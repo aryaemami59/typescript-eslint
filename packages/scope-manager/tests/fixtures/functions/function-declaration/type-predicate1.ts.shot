@@ -1,92 +1,5224 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`functions function-declaration type-predicate1 1`] = `
 ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-    Variable$2 {
-      defs: [
-        FunctionNameDefinition$1 {
-          name: Identifier<"foo">,
-          node: FunctionDeclaration$1,
+  "currentScope": null,
+  "declaredVariables": WeakMap {},
+  "globalScope": GlobalScope {
+    "$id": 334,
+    "block": {
+      "body": [
+        {
+          "async": false,
+          "body": {
+            "body": [
+              {
+                "argument": {
+                  "left": {
+                    "argument": {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        56,
+                        59,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "operator": "typeof",
+                    "prefix": true,
+                    "range": [
+                      49,
+                      59,
+                    ],
+                    "type": "UnaryExpression",
+                  },
+                  "operator": "===",
+                  "range": [
+                    49,
+                    72,
+                  ],
+                  "right": {
+                    "range": [
+                      64,
+                      72,
+                    ],
+                    "raw": "'string'",
+                    "type": "Literal",
+                    "value": "string",
+                  },
+                  "type": "BinaryExpression",
+                },
+                "range": [
+                  42,
+                  73,
+                ],
+                "type": "ReturnStatement",
+              },
+            ],
+            "range": [
+              38,
+              75,
+            ],
+            "type": "BlockStatement",
+          },
+          "declare": false,
+          "expression": false,
+          "generator": false,
+          "id": {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              9,
+              12,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "params": [
+            {
+              "decorators": [],
+              "name": "arg",
+              "optional": false,
+              "range": [
+                13,
+                21,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  16,
+                  21,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    18,
+                    21,
+                  ],
+                  "type": "TSAnyKeyword",
+                },
+              },
+            },
+          ],
+          "range": [
+            0,
+            75,
+          ],
+          "returnType": {
+            "range": [
+              22,
+              37,
+            ],
+            "type": "TSTypeAnnotation",
+            "typeAnnotation": {
+              "asserts": false,
+              "parameterName": {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  24,
+                  27,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                24,
+                37,
+              ],
+              "type": "TSTypePredicate",
+              "typeAnnotation": {
+                "range": [
+                  31,
+                  37,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    31,
+                    37,
+                  ],
+                  "type": "TSStringKeyword",
+                },
+              },
+            },
+          },
+          "type": "FunctionDeclaration",
+          "typeParameters": undefined,
         },
       ],
-      name: "foo",
-      references: [],
-      isValueVariable: true,
-      isTypeVariable: false,
-    },
-    Variable$3 {
-      defs: [],
-      name: "arguments",
-      references: [],
-      isValueVariable: true,
-      isTypeVariable: true,
-    },
-    Variable$4 {
-      defs: [
-        ParameterDefinition$2 {
-          name: Identifier<"arg">,
-          node: FunctionDeclaration$1,
-        },
+      "comments": undefined,
+      "range": [
+        0,
+        76,
       ],
-      name: "arg",
-      references: [
-        Reference$1 {
-          identifier: Identifier<"arg">,
-          isRead: true,
-          isTypeReference: false,
-          isValueReference: true,
-          isWrite: false,
-          resolved: Variable$4,
-        },
-        Reference$2 {
-          identifier: Identifier<"arg">,
-          isRead: true,
-          isTypeReference: false,
-          isValueReference: true,
-          isWrite: false,
-          resolved: Variable$4,
-        },
-      ],
-      isValueVariable: true,
-      isTypeVariable: false,
+      "sourceType": "script",
+      "tokens": undefined,
+      "type": "Program",
     },
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$2,
-      isStrict: false,
-      references: [],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
-        "foo" => Variable$2,
+    "childScopes": [
+      FunctionScope {
+        "$id": 335,
+        "block": {
+          "async": false,
+          "body": {
+            "body": [
+              {
+                "argument": {
+                  "left": {
+                    "argument": {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        56,
+                        59,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "operator": "typeof",
+                    "prefix": true,
+                    "range": [
+                      49,
+                      59,
+                    ],
+                    "type": "UnaryExpression",
+                  },
+                  "operator": "===",
+                  "range": [
+                    49,
+                    72,
+                  ],
+                  "right": {
+                    "range": [
+                      64,
+                      72,
+                    ],
+                    "raw": "'string'",
+                    "type": "Literal",
+                    "value": "string",
+                  },
+                  "type": "BinaryExpression",
+                },
+                "range": [
+                  42,
+                  73,
+                ],
+                "type": "ReturnStatement",
+              },
+            ],
+            "range": [
+              38,
+              75,
+            ],
+            "type": "BlockStatement",
+          },
+          "declare": false,
+          "expression": false,
+          "generator": false,
+          "id": {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              9,
+              12,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "params": [
+            {
+              "decorators": [],
+              "name": "arg",
+              "optional": false,
+              "range": [
+                13,
+                21,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  16,
+                  21,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    18,
+                    21,
+                  ],
+                  "type": "TSAnyKeyword",
+                },
+              },
+            },
+          ],
+          "range": [
+            0,
+            75,
+          ],
+          "returnType": {
+            "range": [
+              22,
+              37,
+            ],
+            "type": "TSTypeAnnotation",
+            "typeAnnotation": {
+              "asserts": false,
+              "parameterName": {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  24,
+                  27,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                24,
+                37,
+              ],
+              "type": "TSTypePredicate",
+              "typeAnnotation": {
+                "range": [
+                  31,
+                  37,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    31,
+                    37,
+                  ],
+                  "type": "TSStringKeyword",
+                },
+              },
+            },
+          },
+          "type": "FunctionDeclaration",
+          "typeParameters": undefined,
+        },
+        "childScopes": [],
+        "functionExpressionScope": false,
+        "isStrict": false,
+        "leftToResolve": null,
+        "references": [
+          Reference {
+            "$id": 366,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "arg",
+              "optional": false,
+              "range": [
+                24,
+                27,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": undefined,
+            "resolved": Variable {
+              "$id": 661,
+              "defs": [
+                ParameterDefinition {
+                  "$id": 449,
+                  "isTypeDefinition": false,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      13,
+                      21,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        16,
+                        21,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          18,
+                          21,
+                        ],
+                        "type": "TSAnyKeyword",
+                      },
+                    },
+                  },
+                  "node": {
+                    "async": false,
+                    "body": {
+                      "body": [
+                        {
+                          "argument": {
+                            "left": {
+                              "argument": {
+                                "decorators": [],
+                                "name": "arg",
+                                "optional": false,
+                                "range": [
+                                  56,
+                                  59,
+                                ],
+                                "type": "Identifier",
+                                "typeAnnotation": undefined,
+                              },
+                              "operator": "typeof",
+                              "prefix": true,
+                              "range": [
+                                49,
+                                59,
+                              ],
+                              "type": "UnaryExpression",
+                            },
+                            "operator": "===",
+                            "range": [
+                              49,
+                              72,
+                            ],
+                            "right": {
+                              "range": [
+                                64,
+                                72,
+                              ],
+                              "raw": "'string'",
+                              "type": "Literal",
+                              "value": "string",
+                            },
+                            "type": "BinaryExpression",
+                          },
+                          "range": [
+                            42,
+                            73,
+                          ],
+                          "type": "ReturnStatement",
+                        },
+                      ],
+                      "range": [
+                        38,
+                        75,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "foo",
+                      "optional": false,
+                      "range": [
+                        9,
+                        12,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "params": [
+                      {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          13,
+                          21,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": {
+                          "range": [
+                            16,
+                            21,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              18,
+                              21,
+                            ],
+                            "type": "TSAnyKeyword",
+                          },
+                        },
+                      },
+                    ],
+                    "range": [
+                      0,
+                      75,
+                    ],
+                    "returnType": {
+                      "range": [
+                        22,
+                        37,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "asserts": false,
+                        "parameterName": {
+                          "decorators": [],
+                          "name": "arg",
+                          "optional": false,
+                          "range": [
+                            24,
+                            27,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          24,
+                          37,
+                        ],
+                        "type": "TSTypePredicate",
+                        "typeAnnotation": {
+                          "range": [
+                            31,
+                            37,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              31,
+                              37,
+                            ],
+                            "type": "TSStringKeyword",
+                          },
+                        },
+                      },
+                    },
+                    "type": "FunctionDeclaration",
+                    "typeParameters": undefined,
+                  },
+                  "parent": null,
+                  "rest": false,
+                  "type": "Parameter",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+              ],
+              "name": "arg",
+              "references": [
+                [Circular],
+                Reference {
+                  "$id": 367,
+                  "from": [Circular],
+                  "identifier": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      56,
+                      59,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": undefined,
+                  "maybeImplicitGlobal": undefined,
+                  "resolved": [Circular],
+                  "writeExpr": undefined,
+                },
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": undefined,
+          },
+          Reference {
+            "$id": 367,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "arg",
+              "optional": false,
+              "range": [
+                56,
+                59,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": undefined,
+            "maybeImplicitGlobal": undefined,
+            "resolved": Variable {
+              "$id": 661,
+              "defs": [
+                ParameterDefinition {
+                  "$id": 449,
+                  "isTypeDefinition": false,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      13,
+                      21,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        16,
+                        21,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          18,
+                          21,
+                        ],
+                        "type": "TSAnyKeyword",
+                      },
+                    },
+                  },
+                  "node": {
+                    "async": false,
+                    "body": {
+                      "body": [
+                        {
+                          "argument": {
+                            "left": {
+                              "argument": {
+                                "decorators": [],
+                                "name": "arg",
+                                "optional": false,
+                                "range": [
+                                  56,
+                                  59,
+                                ],
+                                "type": "Identifier",
+                                "typeAnnotation": undefined,
+                              },
+                              "operator": "typeof",
+                              "prefix": true,
+                              "range": [
+                                49,
+                                59,
+                              ],
+                              "type": "UnaryExpression",
+                            },
+                            "operator": "===",
+                            "range": [
+                              49,
+                              72,
+                            ],
+                            "right": {
+                              "range": [
+                                64,
+                                72,
+                              ],
+                              "raw": "'string'",
+                              "type": "Literal",
+                              "value": "string",
+                            },
+                            "type": "BinaryExpression",
+                          },
+                          "range": [
+                            42,
+                            73,
+                          ],
+                          "type": "ReturnStatement",
+                        },
+                      ],
+                      "range": [
+                        38,
+                        75,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "foo",
+                      "optional": false,
+                      "range": [
+                        9,
+                        12,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "params": [
+                      {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          13,
+                          21,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": {
+                          "range": [
+                            16,
+                            21,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              18,
+                              21,
+                            ],
+                            "type": "TSAnyKeyword",
+                          },
+                        },
+                      },
+                    ],
+                    "range": [
+                      0,
+                      75,
+                    ],
+                    "returnType": {
+                      "range": [
+                        22,
+                        37,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "asserts": false,
+                        "parameterName": {
+                          "decorators": [],
+                          "name": "arg",
+                          "optional": false,
+                          "range": [
+                            24,
+                            27,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          24,
+                          37,
+                        ],
+                        "type": "TSTypePredicate",
+                        "typeAnnotation": {
+                          "range": [
+                            31,
+                            37,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              31,
+                              37,
+                            ],
+                            "type": "TSStringKeyword",
+                          },
+                        },
+                      },
+                    },
+                    "type": "FunctionDeclaration",
+                    "typeParameters": undefined,
+                  },
+                  "parent": null,
+                  "rest": false,
+                  "type": "Parameter",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+              ],
+              "name": "arg",
+              "references": [
+                Reference {
+                  "$id": 366,
+                  "from": [Circular],
+                  "identifier": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      24,
+                      27,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": undefined,
+                  "maybeImplicitGlobal": undefined,
+                  "resolved": [Circular],
+                  "writeExpr": undefined,
+                },
+                [Circular],
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": undefined,
+          },
+        ],
+        "set": Map {
+          "arguments" => Variable {
+            "$id": 660,
+            "defs": [],
+            "eslintUsed": false,
+            "identifiers": [],
+            "name": "arguments",
+            "references": [],
+            "scope": [Circular],
+          },
+          "arg" => Variable {
+            "$id": 661,
+            "defs": [
+              ParameterDefinition {
+                "$id": 449,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+                "node": {
+                  "async": false,
+                  "body": {
+                    "body": [
+                      {
+                        "argument": {
+                          "left": {
+                            "argument": {
+                              "decorators": [],
+                              "name": "arg",
+                              "optional": false,
+                              "range": [
+                                56,
+                                59,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "operator": "typeof",
+                            "prefix": true,
+                            "range": [
+                              49,
+                              59,
+                            ],
+                            "type": "UnaryExpression",
+                          },
+                          "operator": "===",
+                          "range": [
+                            49,
+                            72,
+                          ],
+                          "right": {
+                            "range": [
+                              64,
+                              72,
+                            ],
+                            "raw": "'string'",
+                            "type": "Literal",
+                            "value": "string",
+                          },
+                          "type": "BinaryExpression",
+                        },
+                        "range": [
+                          42,
+                          73,
+                        ],
+                        "type": "ReturnStatement",
+                      },
+                    ],
+                    "range": [
+                      38,
+                      75,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      9,
+                      12,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "params": [
+                    {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        13,
+                        21,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          16,
+                          21,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            18,
+                            21,
+                          ],
+                          "type": "TSAnyKeyword",
+                        },
+                      },
+                    },
+                  ],
+                  "range": [
+                    0,
+                    75,
+                  ],
+                  "returnType": {
+                    "range": [
+                      22,
+                      37,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "asserts": false,
+                      "parameterName": {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          24,
+                          27,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        24,
+                        37,
+                      ],
+                      "type": "TSTypePredicate",
+                      "typeAnnotation": {
+                        "range": [
+                          31,
+                          37,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            31,
+                            37,
+                          ],
+                          "type": "TSStringKeyword",
+                        },
+                      },
+                    },
+                  },
+                  "type": "FunctionDeclaration",
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "rest": false,
+                "type": "Parameter",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  13,
+                  21,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    16,
+                    21,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      18,
+                      21,
+                    ],
+                    "type": "TSAnyKeyword",
+                  },
+                },
+              },
+            ],
+            "name": "arg",
+            "references": [
+              Reference {
+                "$id": 366,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    24,
+                    27,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": undefined,
+                "maybeImplicitGlobal": undefined,
+                "resolved": [Circular],
+                "writeExpr": undefined,
+              },
+              Reference {
+                "$id": 367,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    56,
+                    59,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": undefined,
+                "maybeImplicitGlobal": undefined,
+                "resolved": [Circular],
+                "writeExpr": undefined,
+              },
+            ],
+            "scope": [Circular],
+          },
+        },
+        "through": [],
+        "type": "function",
+        "upper": [Circular],
+        "variableScope": [Circular],
+        "variables": [
+          Variable {
+            "$id": 660,
+            "defs": [],
+            "eslintUsed": false,
+            "identifiers": [],
+            "name": "arguments",
+            "references": [],
+            "scope": [Circular],
+          },
+          Variable {
+            "$id": 661,
+            "defs": [
+              ParameterDefinition {
+                "$id": 449,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+                "node": {
+                  "async": false,
+                  "body": {
+                    "body": [
+                      {
+                        "argument": {
+                          "left": {
+                            "argument": {
+                              "decorators": [],
+                              "name": "arg",
+                              "optional": false,
+                              "range": [
+                                56,
+                                59,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "operator": "typeof",
+                            "prefix": true,
+                            "range": [
+                              49,
+                              59,
+                            ],
+                            "type": "UnaryExpression",
+                          },
+                          "operator": "===",
+                          "range": [
+                            49,
+                            72,
+                          ],
+                          "right": {
+                            "range": [
+                              64,
+                              72,
+                            ],
+                            "raw": "'string'",
+                            "type": "Literal",
+                            "value": "string",
+                          },
+                          "type": "BinaryExpression",
+                        },
+                        "range": [
+                          42,
+                          73,
+                        ],
+                        "type": "ReturnStatement",
+                      },
+                    ],
+                    "range": [
+                      38,
+                      75,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      9,
+                      12,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "params": [
+                    {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        13,
+                        21,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          16,
+                          21,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            18,
+                            21,
+                          ],
+                          "type": "TSAnyKeyword",
+                        },
+                      },
+                    },
+                  ],
+                  "range": [
+                    0,
+                    75,
+                  ],
+                  "returnType": {
+                    "range": [
+                      22,
+                      37,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "asserts": false,
+                      "parameterName": {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          24,
+                          27,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        24,
+                        37,
+                      ],
+                      "type": "TSTypePredicate",
+                      "typeAnnotation": {
+                        "range": [
+                          31,
+                          37,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            31,
+                            37,
+                          ],
+                          "type": "TSStringKeyword",
+                        },
+                      },
+                    },
+                  },
+                  "type": "FunctionDeclaration",
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "rest": false,
+                "type": "Parameter",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  13,
+                  21,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    16,
+                    21,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      18,
+                      21,
+                    ],
+                    "type": "TSAnyKeyword",
+                  },
+                },
+              },
+            ],
+            "name": "arg",
+            "references": [
+              Reference {
+                "$id": 366,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    24,
+                    27,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": undefined,
+                "maybeImplicitGlobal": undefined,
+                "resolved": [Circular],
+                "writeExpr": undefined,
+              },
+              Reference {
+                "$id": 367,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    56,
+                    59,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": undefined,
+                "maybeImplicitGlobal": undefined,
+                "resolved": [Circular],
+                "writeExpr": undefined,
+              },
+            ],
+            "scope": [Circular],
+          },
+        ],
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
-        Variable$2,
+    ],
+    "functionExpressionScope": false,
+    "implicit": {
+      "leftToBeResolved": [],
+      "set": Map {},
+      "variables": [],
+    },
+    "isStrict": false,
+    "leftToResolve": null,
+    "references": [],
+    "set": Map {
+      "const" => ImplicitLibVariable {
+        "$id": 658,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      "foo" => Variable {
+        "$id": 659,
+        "defs": [
+          FunctionNameDefinition {
+            "$id": 448,
+            "isTypeDefinition": false,
+            "isVariableDefinition": true,
+            "name": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                9,
+                12,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "async": false,
+              "body": {
+                "body": [
+                  {
+                    "argument": {
+                      "left": {
+                        "argument": {
+                          "decorators": [],
+                          "name": "arg",
+                          "optional": false,
+                          "range": [
+                            56,
+                            59,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "operator": "typeof",
+                        "prefix": true,
+                        "range": [
+                          49,
+                          59,
+                        ],
+                        "type": "UnaryExpression",
+                      },
+                      "operator": "===",
+                      "range": [
+                        49,
+                        72,
+                      ],
+                      "right": {
+                        "range": [
+                          64,
+                          72,
+                        ],
+                        "raw": "'string'",
+                        "type": "Literal",
+                        "value": "string",
+                      },
+                      "type": "BinaryExpression",
+                    },
+                    "range": [
+                      42,
+                      73,
+                    ],
+                    "type": "ReturnStatement",
+                  },
+                ],
+                "range": [
+                  38,
+                  75,
+                ],
+                "type": "BlockStatement",
+              },
+              "declare": false,
+              "expression": false,
+              "generator": false,
+              "id": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  9,
+                  12,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "params": [
+                {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+              ],
+              "range": [
+                0,
+                75,
+              ],
+              "returnType": {
+                "range": [
+                  22,
+                  37,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "asserts": false,
+                  "parameterName": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      24,
+                      27,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    24,
+                    37,
+                  ],
+                  "type": "TSTypePredicate",
+                  "typeAnnotation": {
+                    "range": [
+                      31,
+                      37,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        31,
+                        37,
+                      ],
+                      "type": "TSStringKeyword",
+                    },
+                  },
+                },
+              },
+              "type": "FunctionDeclaration",
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "FunctionName",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              9,
+              12,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "foo",
+        "references": [],
+        "scope": [Circular],
+      },
+    },
+    "through": [],
+    "type": "global",
+    "upper": null,
+    "variableScope": [Circular],
+    "variables": [
+      ImplicitLibVariable {
+        "$id": 658,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      Variable {
+        "$id": 659,
+        "defs": [
+          FunctionNameDefinition {
+            "$id": 448,
+            "isTypeDefinition": false,
+            "isVariableDefinition": true,
+            "name": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                9,
+                12,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "node": {
+              "async": false,
+              "body": {
+                "body": [
+                  {
+                    "argument": {
+                      "left": {
+                        "argument": {
+                          "decorators": [],
+                          "name": "arg",
+                          "optional": false,
+                          "range": [
+                            56,
+                            59,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "operator": "typeof",
+                        "prefix": true,
+                        "range": [
+                          49,
+                          59,
+                        ],
+                        "type": "UnaryExpression",
+                      },
+                      "operator": "===",
+                      "range": [
+                        49,
+                        72,
+                      ],
+                      "right": {
+                        "range": [
+                          64,
+                          72,
+                        ],
+                        "raw": "'string'",
+                        "type": "Literal",
+                        "value": "string",
+                      },
+                      "type": "BinaryExpression",
+                    },
+                    "range": [
+                      42,
+                      73,
+                    ],
+                    "type": "ReturnStatement",
+                  },
+                ],
+                "range": [
+                  38,
+                  75,
+                ],
+                "type": "BlockStatement",
+              },
+              "declare": false,
+              "expression": false,
+              "generator": false,
+              "id": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  9,
+                  12,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "params": [
+                {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+              ],
+              "range": [
+                0,
+                75,
+              ],
+              "returnType": {
+                "range": [
+                  22,
+                  37,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "asserts": false,
+                  "parameterName": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      24,
+                      27,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    24,
+                    37,
+                  ],
+                  "type": "TSTypePredicate",
+                  "typeAnnotation": {
+                    "range": [
+                      31,
+                      37,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        31,
+                        37,
+                      ],
+                      "type": "TSStringKeyword",
+                    },
+                  },
+                },
+              },
+              "type": "FunctionDeclaration",
+              "typeParameters": undefined,
+            },
+            "parent": null,
+            "type": "FunctionName",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "foo",
+            "optional": false,
+            "range": [
+              9,
+              12,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+        ],
+        "name": "foo",
+        "references": [],
+        "scope": [Circular],
+      },
+    ],
+  },
+  "nodeToScope": WeakMap {},
+  "scopes": [
+    GlobalScope {
+      "$id": 334,
+      "block": {
+        "body": [
+          {
+            "async": false,
+            "body": {
+              "body": [
+                {
+                  "argument": {
+                    "left": {
+                      "argument": {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          56,
+                          59,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "operator": "typeof",
+                      "prefix": true,
+                      "range": [
+                        49,
+                        59,
+                      ],
+                      "type": "UnaryExpression",
+                    },
+                    "operator": "===",
+                    "range": [
+                      49,
+                      72,
+                    ],
+                    "right": {
+                      "range": [
+                        64,
+                        72,
+                      ],
+                      "raw": "'string'",
+                      "type": "Literal",
+                      "value": "string",
+                    },
+                    "type": "BinaryExpression",
+                  },
+                  "range": [
+                    42,
+                    73,
+                  ],
+                  "type": "ReturnStatement",
+                },
+              ],
+              "range": [
+                38,
+                75,
+              ],
+              "type": "BlockStatement",
+            },
+            "declare": false,
+            "expression": false,
+            "generator": false,
+            "id": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                9,
+                12,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "params": [
+              {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  13,
+                  21,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    16,
+                    21,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      18,
+                      21,
+                    ],
+                    "type": "TSAnyKeyword",
+                  },
+                },
+              },
+            ],
+            "range": [
+              0,
+              75,
+            ],
+            "returnType": {
+              "range": [
+                22,
+                37,
+              ],
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": {
+                "asserts": false,
+                "parameterName": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    24,
+                    27,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  24,
+                  37,
+                ],
+                "type": "TSTypePredicate",
+                "typeAnnotation": {
+                  "range": [
+                    31,
+                    37,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      31,
+                      37,
+                    ],
+                    "type": "TSStringKeyword",
+                  },
+                },
+              },
+            },
+            "type": "FunctionDeclaration",
+            "typeParameters": undefined,
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          0,
+          76,
+        ],
+        "sourceType": "script",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [
+        FunctionScope {
+          "$id": 335,
+          "block": {
+            "async": false,
+            "body": {
+              "body": [
+                {
+                  "argument": {
+                    "left": {
+                      "argument": {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          56,
+                          59,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "operator": "typeof",
+                      "prefix": true,
+                      "range": [
+                        49,
+                        59,
+                      ],
+                      "type": "UnaryExpression",
+                    },
+                    "operator": "===",
+                    "range": [
+                      49,
+                      72,
+                    ],
+                    "right": {
+                      "range": [
+                        64,
+                        72,
+                      ],
+                      "raw": "'string'",
+                      "type": "Literal",
+                      "value": "string",
+                    },
+                    "type": "BinaryExpression",
+                  },
+                  "range": [
+                    42,
+                    73,
+                  ],
+                  "type": "ReturnStatement",
+                },
+              ],
+              "range": [
+                38,
+                75,
+              ],
+              "type": "BlockStatement",
+            },
+            "declare": false,
+            "expression": false,
+            "generator": false,
+            "id": {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                9,
+                12,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "params": [
+              {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  13,
+                  21,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    16,
+                    21,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      18,
+                      21,
+                    ],
+                    "type": "TSAnyKeyword",
+                  },
+                },
+              },
+            ],
+            "range": [
+              0,
+              75,
+            ],
+            "returnType": {
+              "range": [
+                22,
+                37,
+              ],
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": {
+                "asserts": false,
+                "parameterName": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    24,
+                    27,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  24,
+                  37,
+                ],
+                "type": "TSTypePredicate",
+                "typeAnnotation": {
+                  "range": [
+                    31,
+                    37,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      31,
+                      37,
+                    ],
+                    "type": "TSStringKeyword",
+                  },
+                },
+              },
+            },
+            "type": "FunctionDeclaration",
+            "typeParameters": undefined,
+          },
+          "childScopes": [],
+          "functionExpressionScope": false,
+          "isStrict": false,
+          "leftToResolve": null,
+          "references": [
+            Reference {
+              "$id": 366,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  24,
+                  27,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": undefined,
+              "resolved": Variable {
+                "$id": 661,
+                "defs": [
+                  ParameterDefinition {
+                    "$id": 449,
+                    "isTypeDefinition": false,
+                    "isVariableDefinition": true,
+                    "name": {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        13,
+                        21,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          16,
+                          21,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            18,
+                            21,
+                          ],
+                          "type": "TSAnyKeyword",
+                        },
+                      },
+                    },
+                    "node": {
+                      "async": false,
+                      "body": {
+                        "body": [
+                          {
+                            "argument": {
+                              "left": {
+                                "argument": {
+                                  "decorators": [],
+                                  "name": "arg",
+                                  "optional": false,
+                                  "range": [
+                                    56,
+                                    59,
+                                  ],
+                                  "type": "Identifier",
+                                  "typeAnnotation": undefined,
+                                },
+                                "operator": "typeof",
+                                "prefix": true,
+                                "range": [
+                                  49,
+                                  59,
+                                ],
+                                "type": "UnaryExpression",
+                              },
+                              "operator": "===",
+                              "range": [
+                                49,
+                                72,
+                              ],
+                              "right": {
+                                "range": [
+                                  64,
+                                  72,
+                                ],
+                                "raw": "'string'",
+                                "type": "Literal",
+                                "value": "string",
+                              },
+                              "type": "BinaryExpression",
+                            },
+                            "range": [
+                              42,
+                              73,
+                            ],
+                            "type": "ReturnStatement",
+                          },
+                        ],
+                        "range": [
+                          38,
+                          75,
+                        ],
+                        "type": "BlockStatement",
+                      },
+                      "declare": false,
+                      "expression": false,
+                      "generator": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "foo",
+                        "optional": false,
+                        "range": [
+                          9,
+                          12,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "params": [
+                        {
+                          "decorators": [],
+                          "name": "arg",
+                          "optional": false,
+                          "range": [
+                            13,
+                            21,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": {
+                            "range": [
+                              16,
+                              21,
+                            ],
+                            "type": "TSTypeAnnotation",
+                            "typeAnnotation": {
+                              "range": [
+                                18,
+                                21,
+                              ],
+                              "type": "TSAnyKeyword",
+                            },
+                          },
+                        },
+                      ],
+                      "range": [
+                        0,
+                        75,
+                      ],
+                      "returnType": {
+                        "range": [
+                          22,
+                          37,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "asserts": false,
+                          "parameterName": {
+                            "decorators": [],
+                            "name": "arg",
+                            "optional": false,
+                            "range": [
+                              24,
+                              27,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            24,
+                            37,
+                          ],
+                          "type": "TSTypePredicate",
+                          "typeAnnotation": {
+                            "range": [
+                              31,
+                              37,
+                            ],
+                            "type": "TSTypeAnnotation",
+                            "typeAnnotation": {
+                              "range": [
+                                31,
+                                37,
+                              ],
+                              "type": "TSStringKeyword",
+                            },
+                          },
+                        },
+                      },
+                      "type": "FunctionDeclaration",
+                      "typeParameters": undefined,
+                    },
+                    "parent": null,
+                    "rest": false,
+                    "type": "Parameter",
+                  },
+                ],
+                "eslintUsed": false,
+                "identifiers": [
+                  {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      13,
+                      21,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        16,
+                        21,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          18,
+                          21,
+                        ],
+                        "type": "TSAnyKeyword",
+                      },
+                    },
+                  },
+                ],
+                "name": "arg",
+                "references": [
+                  [Circular],
+                  Reference {
+                    "$id": 367,
+                    "from": [Circular],
+                    "identifier": {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        56,
+                        59,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "init": undefined,
+                    "maybeImplicitGlobal": undefined,
+                    "resolved": [Circular],
+                    "writeExpr": undefined,
+                  },
+                ],
+                "scope": [Circular],
+              },
+              "writeExpr": undefined,
+            },
+            Reference {
+              "$id": 367,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  56,
+                  59,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": undefined,
+              "resolved": Variable {
+                "$id": 661,
+                "defs": [
+                  ParameterDefinition {
+                    "$id": 449,
+                    "isTypeDefinition": false,
+                    "isVariableDefinition": true,
+                    "name": {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        13,
+                        21,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          16,
+                          21,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            18,
+                            21,
+                          ],
+                          "type": "TSAnyKeyword",
+                        },
+                      },
+                    },
+                    "node": {
+                      "async": false,
+                      "body": {
+                        "body": [
+                          {
+                            "argument": {
+                              "left": {
+                                "argument": {
+                                  "decorators": [],
+                                  "name": "arg",
+                                  "optional": false,
+                                  "range": [
+                                    56,
+                                    59,
+                                  ],
+                                  "type": "Identifier",
+                                  "typeAnnotation": undefined,
+                                },
+                                "operator": "typeof",
+                                "prefix": true,
+                                "range": [
+                                  49,
+                                  59,
+                                ],
+                                "type": "UnaryExpression",
+                              },
+                              "operator": "===",
+                              "range": [
+                                49,
+                                72,
+                              ],
+                              "right": {
+                                "range": [
+                                  64,
+                                  72,
+                                ],
+                                "raw": "'string'",
+                                "type": "Literal",
+                                "value": "string",
+                              },
+                              "type": "BinaryExpression",
+                            },
+                            "range": [
+                              42,
+                              73,
+                            ],
+                            "type": "ReturnStatement",
+                          },
+                        ],
+                        "range": [
+                          38,
+                          75,
+                        ],
+                        "type": "BlockStatement",
+                      },
+                      "declare": false,
+                      "expression": false,
+                      "generator": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "foo",
+                        "optional": false,
+                        "range": [
+                          9,
+                          12,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "params": [
+                        {
+                          "decorators": [],
+                          "name": "arg",
+                          "optional": false,
+                          "range": [
+                            13,
+                            21,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": {
+                            "range": [
+                              16,
+                              21,
+                            ],
+                            "type": "TSTypeAnnotation",
+                            "typeAnnotation": {
+                              "range": [
+                                18,
+                                21,
+                              ],
+                              "type": "TSAnyKeyword",
+                            },
+                          },
+                        },
+                      ],
+                      "range": [
+                        0,
+                        75,
+                      ],
+                      "returnType": {
+                        "range": [
+                          22,
+                          37,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "asserts": false,
+                          "parameterName": {
+                            "decorators": [],
+                            "name": "arg",
+                            "optional": false,
+                            "range": [
+                              24,
+                              27,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "range": [
+                            24,
+                            37,
+                          ],
+                          "type": "TSTypePredicate",
+                          "typeAnnotation": {
+                            "range": [
+                              31,
+                              37,
+                            ],
+                            "type": "TSTypeAnnotation",
+                            "typeAnnotation": {
+                              "range": [
+                                31,
+                                37,
+                              ],
+                              "type": "TSStringKeyword",
+                            },
+                          },
+                        },
+                      },
+                      "type": "FunctionDeclaration",
+                      "typeParameters": undefined,
+                    },
+                    "parent": null,
+                    "rest": false,
+                    "type": "Parameter",
+                  },
+                ],
+                "eslintUsed": false,
+                "identifiers": [
+                  {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      13,
+                      21,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        16,
+                        21,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          18,
+                          21,
+                        ],
+                        "type": "TSAnyKeyword",
+                      },
+                    },
+                  },
+                ],
+                "name": "arg",
+                "references": [
+                  Reference {
+                    "$id": 366,
+                    "from": [Circular],
+                    "identifier": {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        24,
+                        27,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "init": undefined,
+                    "maybeImplicitGlobal": undefined,
+                    "resolved": [Circular],
+                    "writeExpr": undefined,
+                  },
+                  [Circular],
+                ],
+                "scope": [Circular],
+              },
+              "writeExpr": undefined,
+            },
+          ],
+          "set": Map {
+            "arguments" => Variable {
+              "$id": 660,
+              "defs": [],
+              "eslintUsed": false,
+              "identifiers": [],
+              "name": "arguments",
+              "references": [],
+              "scope": [Circular],
+            },
+            "arg" => Variable {
+              "$id": 661,
+              "defs": [
+                ParameterDefinition {
+                  "$id": 449,
+                  "isTypeDefinition": false,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      13,
+                      21,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        16,
+                        21,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          18,
+                          21,
+                        ],
+                        "type": "TSAnyKeyword",
+                      },
+                    },
+                  },
+                  "node": {
+                    "async": false,
+                    "body": {
+                      "body": [
+                        {
+                          "argument": {
+                            "left": {
+                              "argument": {
+                                "decorators": [],
+                                "name": "arg",
+                                "optional": false,
+                                "range": [
+                                  56,
+                                  59,
+                                ],
+                                "type": "Identifier",
+                                "typeAnnotation": undefined,
+                              },
+                              "operator": "typeof",
+                              "prefix": true,
+                              "range": [
+                                49,
+                                59,
+                              ],
+                              "type": "UnaryExpression",
+                            },
+                            "operator": "===",
+                            "range": [
+                              49,
+                              72,
+                            ],
+                            "right": {
+                              "range": [
+                                64,
+                                72,
+                              ],
+                              "raw": "'string'",
+                              "type": "Literal",
+                              "value": "string",
+                            },
+                            "type": "BinaryExpression",
+                          },
+                          "range": [
+                            42,
+                            73,
+                          ],
+                          "type": "ReturnStatement",
+                        },
+                      ],
+                      "range": [
+                        38,
+                        75,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "foo",
+                      "optional": false,
+                      "range": [
+                        9,
+                        12,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "params": [
+                      {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          13,
+                          21,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": {
+                          "range": [
+                            16,
+                            21,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              18,
+                              21,
+                            ],
+                            "type": "TSAnyKeyword",
+                          },
+                        },
+                      },
+                    ],
+                    "range": [
+                      0,
+                      75,
+                    ],
+                    "returnType": {
+                      "range": [
+                        22,
+                        37,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "asserts": false,
+                        "parameterName": {
+                          "decorators": [],
+                          "name": "arg",
+                          "optional": false,
+                          "range": [
+                            24,
+                            27,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          24,
+                          37,
+                        ],
+                        "type": "TSTypePredicate",
+                        "typeAnnotation": {
+                          "range": [
+                            31,
+                            37,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              31,
+                              37,
+                            ],
+                            "type": "TSStringKeyword",
+                          },
+                        },
+                      },
+                    },
+                    "type": "FunctionDeclaration",
+                    "typeParameters": undefined,
+                  },
+                  "parent": null,
+                  "rest": false,
+                  "type": "Parameter",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+              ],
+              "name": "arg",
+              "references": [
+                Reference {
+                  "$id": 366,
+                  "from": [Circular],
+                  "identifier": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      24,
+                      27,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": undefined,
+                  "maybeImplicitGlobal": undefined,
+                  "resolved": [Circular],
+                  "writeExpr": undefined,
+                },
+                Reference {
+                  "$id": 367,
+                  "from": [Circular],
+                  "identifier": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      56,
+                      59,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": undefined,
+                  "maybeImplicitGlobal": undefined,
+                  "resolved": [Circular],
+                  "writeExpr": undefined,
+                },
+              ],
+              "scope": [Circular],
+            },
+          },
+          "through": [],
+          "type": "function",
+          "upper": [Circular],
+          "variableScope": [Circular],
+          "variables": [
+            Variable {
+              "$id": 660,
+              "defs": [],
+              "eslintUsed": false,
+              "identifiers": [],
+              "name": "arguments",
+              "references": [],
+              "scope": [Circular],
+            },
+            Variable {
+              "$id": 661,
+              "defs": [
+                ParameterDefinition {
+                  "$id": 449,
+                  "isTypeDefinition": false,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      13,
+                      21,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        16,
+                        21,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          18,
+                          21,
+                        ],
+                        "type": "TSAnyKeyword",
+                      },
+                    },
+                  },
+                  "node": {
+                    "async": false,
+                    "body": {
+                      "body": [
+                        {
+                          "argument": {
+                            "left": {
+                              "argument": {
+                                "decorators": [],
+                                "name": "arg",
+                                "optional": false,
+                                "range": [
+                                  56,
+                                  59,
+                                ],
+                                "type": "Identifier",
+                                "typeAnnotation": undefined,
+                              },
+                              "operator": "typeof",
+                              "prefix": true,
+                              "range": [
+                                49,
+                                59,
+                              ],
+                              "type": "UnaryExpression",
+                            },
+                            "operator": "===",
+                            "range": [
+                              49,
+                              72,
+                            ],
+                            "right": {
+                              "range": [
+                                64,
+                                72,
+                              ],
+                              "raw": "'string'",
+                              "type": "Literal",
+                              "value": "string",
+                            },
+                            "type": "BinaryExpression",
+                          },
+                          "range": [
+                            42,
+                            73,
+                          ],
+                          "type": "ReturnStatement",
+                        },
+                      ],
+                      "range": [
+                        38,
+                        75,
+                      ],
+                      "type": "BlockStatement",
+                    },
+                    "declare": false,
+                    "expression": false,
+                    "generator": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "foo",
+                      "optional": false,
+                      "range": [
+                        9,
+                        12,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "params": [
+                      {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          13,
+                          21,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": {
+                          "range": [
+                            16,
+                            21,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              18,
+                              21,
+                            ],
+                            "type": "TSAnyKeyword",
+                          },
+                        },
+                      },
+                    ],
+                    "range": [
+                      0,
+                      75,
+                    ],
+                    "returnType": {
+                      "range": [
+                        22,
+                        37,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "asserts": false,
+                        "parameterName": {
+                          "decorators": [],
+                          "name": "arg",
+                          "optional": false,
+                          "range": [
+                            24,
+                            27,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "range": [
+                          24,
+                          37,
+                        ],
+                        "type": "TSTypePredicate",
+                        "typeAnnotation": {
+                          "range": [
+                            31,
+                            37,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              31,
+                              37,
+                            ],
+                            "type": "TSStringKeyword",
+                          },
+                        },
+                      },
+                    },
+                    "type": "FunctionDeclaration",
+                    "typeParameters": undefined,
+                  },
+                  "parent": null,
+                  "rest": false,
+                  "type": "Parameter",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+              ],
+              "name": "arg",
+              "references": [
+                Reference {
+                  "$id": 366,
+                  "from": [Circular],
+                  "identifier": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      24,
+                      27,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": undefined,
+                  "maybeImplicitGlobal": undefined,
+                  "resolved": [Circular],
+                  "writeExpr": undefined,
+                },
+                Reference {
+                  "$id": 367,
+                  "from": [Circular],
+                  "identifier": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      56,
+                      59,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": undefined,
+                  "maybeImplicitGlobal": undefined,
+                  "resolved": [Circular],
+                  "writeExpr": undefined,
+                },
+              ],
+              "scope": [Circular],
+            },
+          ],
+        },
+      ],
+      "functionExpressionScope": false,
+      "implicit": {
+        "leftToBeResolved": [],
+        "set": Map {},
+        "variables": [],
+      },
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [],
+      "set": Map {
+        "const" => ImplicitLibVariable {
+          "$id": 658,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        "foo" => Variable {
+          "$id": 659,
+          "defs": [
+            FunctionNameDefinition {
+              "$id": 448,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  9,
+                  12,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "async": false,
+                "body": {
+                  "body": [
+                    {
+                      "argument": {
+                        "left": {
+                          "argument": {
+                            "decorators": [],
+                            "name": "arg",
+                            "optional": false,
+                            "range": [
+                              56,
+                              59,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "operator": "typeof",
+                          "prefix": true,
+                          "range": [
+                            49,
+                            59,
+                          ],
+                          "type": "UnaryExpression",
+                        },
+                        "operator": "===",
+                        "range": [
+                          49,
+                          72,
+                        ],
+                        "right": {
+                          "range": [
+                            64,
+                            72,
+                          ],
+                          "raw": "'string'",
+                          "type": "Literal",
+                          "value": "string",
+                        },
+                        "type": "BinaryExpression",
+                      },
+                      "range": [
+                        42,
+                        73,
+                      ],
+                      "type": "ReturnStatement",
+                    },
+                  ],
+                  "range": [
+                    38,
+                    75,
+                  ],
+                  "type": "BlockStatement",
+                },
+                "declare": false,
+                "expression": false,
+                "generator": false,
+                "id": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    9,
+                    12,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "params": [
+                  {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      13,
+                      21,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        16,
+                        21,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          18,
+                          21,
+                        ],
+                        "type": "TSAnyKeyword",
+                      },
+                    },
+                  },
+                ],
+                "range": [
+                  0,
+                  75,
+                ],
+                "returnType": {
+                  "range": [
+                    22,
+                    37,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "asserts": false,
+                    "parameterName": {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        24,
+                        27,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      24,
+                      37,
+                    ],
+                    "type": "TSTypePredicate",
+                    "typeAnnotation": {
+                      "range": [
+                        31,
+                        37,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          31,
+                          37,
+                        ],
+                        "type": "TSStringKeyword",
+                      },
+                    },
+                  },
+                },
+                "type": "FunctionDeclaration",
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "FunctionName",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                9,
+                12,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "foo",
+          "references": [],
+          "scope": [Circular],
+        },
+      },
+      "through": [],
+      "type": "global",
+      "upper": null,
+      "variableScope": [Circular],
+      "variables": [
+        ImplicitLibVariable {
+          "$id": 658,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        Variable {
+          "$id": 659,
+          "defs": [
+            FunctionNameDefinition {
+              "$id": 448,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  9,
+                  12,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "node": {
+                "async": false,
+                "body": {
+                  "body": [
+                    {
+                      "argument": {
+                        "left": {
+                          "argument": {
+                            "decorators": [],
+                            "name": "arg",
+                            "optional": false,
+                            "range": [
+                              56,
+                              59,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "operator": "typeof",
+                          "prefix": true,
+                          "range": [
+                            49,
+                            59,
+                          ],
+                          "type": "UnaryExpression",
+                        },
+                        "operator": "===",
+                        "range": [
+                          49,
+                          72,
+                        ],
+                        "right": {
+                          "range": [
+                            64,
+                            72,
+                          ],
+                          "raw": "'string'",
+                          "type": "Literal",
+                          "value": "string",
+                        },
+                        "type": "BinaryExpression",
+                      },
+                      "range": [
+                        42,
+                        73,
+                      ],
+                      "type": "ReturnStatement",
+                    },
+                  ],
+                  "range": [
+                    38,
+                    75,
+                  ],
+                  "type": "BlockStatement",
+                },
+                "declare": false,
+                "expression": false,
+                "generator": false,
+                "id": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    9,
+                    12,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "params": [
+                  {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      13,
+                      21,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        16,
+                        21,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          18,
+                          21,
+                        ],
+                        "type": "TSAnyKeyword",
+                      },
+                    },
+                  },
+                ],
+                "range": [
+                  0,
+                  75,
+                ],
+                "returnType": {
+                  "range": [
+                    22,
+                    37,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "asserts": false,
+                    "parameterName": {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        24,
+                        27,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      24,
+                      37,
+                    ],
+                    "type": "TSTypePredicate",
+                    "typeAnnotation": {
+                      "range": [
+                        31,
+                        37,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          31,
+                          37,
+                        ],
+                        "type": "TSStringKeyword",
+                      },
+                    },
+                  },
+                },
+                "type": "FunctionDeclaration",
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "type": "FunctionName",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "foo",
+              "optional": false,
+              "range": [
+                9,
+                12,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+          ],
+          "name": "foo",
+          "references": [],
+          "scope": [Circular],
+        },
       ],
     },
-    FunctionScope$2 {
-      block: FunctionDeclaration$1,
-      isStrict: false,
-      references: [
-        Reference$1,
-        Reference$2,
-      ],
-      set: Map {
-        "arguments" => Variable$3,
-        "arg" => Variable$4,
+    FunctionScope {
+      "$id": 335,
+      "block": {
+        "async": false,
+        "body": {
+          "body": [
+            {
+              "argument": {
+                "left": {
+                  "argument": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      56,
+                      59,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "operator": "typeof",
+                  "prefix": true,
+                  "range": [
+                    49,
+                    59,
+                  ],
+                  "type": "UnaryExpression",
+                },
+                "operator": "===",
+                "range": [
+                  49,
+                  72,
+                ],
+                "right": {
+                  "range": [
+                    64,
+                    72,
+                  ],
+                  "raw": "'string'",
+                  "type": "Literal",
+                  "value": "string",
+                },
+                "type": "BinaryExpression",
+              },
+              "range": [
+                42,
+                73,
+              ],
+              "type": "ReturnStatement",
+            },
+          ],
+          "range": [
+            38,
+            75,
+          ],
+          "type": "BlockStatement",
+        },
+        "declare": false,
+        "expression": false,
+        "generator": false,
+        "id": {
+          "decorators": [],
+          "name": "foo",
+          "optional": false,
+          "range": [
+            9,
+            12,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "params": [
+          {
+            "decorators": [],
+            "name": "arg",
+            "optional": false,
+            "range": [
+              13,
+              21,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": {
+              "range": [
+                16,
+                21,
+              ],
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": {
+                "range": [
+                  18,
+                  21,
+                ],
+                "type": "TSAnyKeyword",
+              },
+            },
+          },
+        ],
+        "range": [
+          0,
+          75,
+        ],
+        "returnType": {
+          "range": [
+            22,
+            37,
+          ],
+          "type": "TSTypeAnnotation",
+          "typeAnnotation": {
+            "asserts": false,
+            "parameterName": {
+              "decorators": [],
+              "name": "arg",
+              "optional": false,
+              "range": [
+                24,
+                27,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "range": [
+              24,
+              37,
+            ],
+            "type": "TSTypePredicate",
+            "typeAnnotation": {
+              "range": [
+                31,
+                37,
+              ],
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": {
+                "range": [
+                  31,
+                  37,
+                ],
+                "type": "TSStringKeyword",
+              },
+            },
+          },
+        },
+        "type": "FunctionDeclaration",
+        "typeParameters": undefined,
       },
-      type: "function",
-      upper: GlobalScope$1,
-      variables: [
-        Variable$3,
-        Variable$4,
+      "childScopes": [],
+      "functionExpressionScope": false,
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [
+        Reference {
+          "$id": 366,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "arg",
+            "optional": false,
+            "range": [
+              24,
+              27,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": undefined,
+          "resolved": Variable {
+            "$id": 661,
+            "defs": [
+              ParameterDefinition {
+                "$id": 449,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+                "node": {
+                  "async": false,
+                  "body": {
+                    "body": [
+                      {
+                        "argument": {
+                          "left": {
+                            "argument": {
+                              "decorators": [],
+                              "name": "arg",
+                              "optional": false,
+                              "range": [
+                                56,
+                                59,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "operator": "typeof",
+                            "prefix": true,
+                            "range": [
+                              49,
+                              59,
+                            ],
+                            "type": "UnaryExpression",
+                          },
+                          "operator": "===",
+                          "range": [
+                            49,
+                            72,
+                          ],
+                          "right": {
+                            "range": [
+                              64,
+                              72,
+                            ],
+                            "raw": "'string'",
+                            "type": "Literal",
+                            "value": "string",
+                          },
+                          "type": "BinaryExpression",
+                        },
+                        "range": [
+                          42,
+                          73,
+                        ],
+                        "type": "ReturnStatement",
+                      },
+                    ],
+                    "range": [
+                      38,
+                      75,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      9,
+                      12,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "params": [
+                    {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        13,
+                        21,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          16,
+                          21,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            18,
+                            21,
+                          ],
+                          "type": "TSAnyKeyword",
+                        },
+                      },
+                    },
+                  ],
+                  "range": [
+                    0,
+                    75,
+                  ],
+                  "returnType": {
+                    "range": [
+                      22,
+                      37,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "asserts": false,
+                      "parameterName": {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          24,
+                          27,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        24,
+                        37,
+                      ],
+                      "type": "TSTypePredicate",
+                      "typeAnnotation": {
+                        "range": [
+                          31,
+                          37,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            31,
+                            37,
+                          ],
+                          "type": "TSStringKeyword",
+                        },
+                      },
+                    },
+                  },
+                  "type": "FunctionDeclaration",
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "rest": false,
+                "type": "Parameter",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  13,
+                  21,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    16,
+                    21,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      18,
+                      21,
+                    ],
+                    "type": "TSAnyKeyword",
+                  },
+                },
+              },
+            ],
+            "name": "arg",
+            "references": [
+              [Circular],
+              Reference {
+                "$id": 367,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    56,
+                    59,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": undefined,
+                "maybeImplicitGlobal": undefined,
+                "resolved": [Circular],
+                "writeExpr": undefined,
+              },
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
+        },
+        Reference {
+          "$id": 367,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "arg",
+            "optional": false,
+            "range": [
+              56,
+              59,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": undefined,
+          "maybeImplicitGlobal": undefined,
+          "resolved": Variable {
+            "$id": 661,
+            "defs": [
+              ParameterDefinition {
+                "$id": 449,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+                "node": {
+                  "async": false,
+                  "body": {
+                    "body": [
+                      {
+                        "argument": {
+                          "left": {
+                            "argument": {
+                              "decorators": [],
+                              "name": "arg",
+                              "optional": false,
+                              "range": [
+                                56,
+                                59,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "operator": "typeof",
+                            "prefix": true,
+                            "range": [
+                              49,
+                              59,
+                            ],
+                            "type": "UnaryExpression",
+                          },
+                          "operator": "===",
+                          "range": [
+                            49,
+                            72,
+                          ],
+                          "right": {
+                            "range": [
+                              64,
+                              72,
+                            ],
+                            "raw": "'string'",
+                            "type": "Literal",
+                            "value": "string",
+                          },
+                          "type": "BinaryExpression",
+                        },
+                        "range": [
+                          42,
+                          73,
+                        ],
+                        "type": "ReturnStatement",
+                      },
+                    ],
+                    "range": [
+                      38,
+                      75,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      9,
+                      12,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "params": [
+                    {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        13,
+                        21,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          16,
+                          21,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            18,
+                            21,
+                          ],
+                          "type": "TSAnyKeyword",
+                        },
+                      },
+                    },
+                  ],
+                  "range": [
+                    0,
+                    75,
+                  ],
+                  "returnType": {
+                    "range": [
+                      22,
+                      37,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "asserts": false,
+                      "parameterName": {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          24,
+                          27,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        24,
+                        37,
+                      ],
+                      "type": "TSTypePredicate",
+                      "typeAnnotation": {
+                        "range": [
+                          31,
+                          37,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            31,
+                            37,
+                          ],
+                          "type": "TSStringKeyword",
+                        },
+                      },
+                    },
+                  },
+                  "type": "FunctionDeclaration",
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "rest": false,
+                "type": "Parameter",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  13,
+                  21,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    16,
+                    21,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      18,
+                      21,
+                    ],
+                    "type": "TSAnyKeyword",
+                  },
+                },
+              },
+            ],
+            "name": "arg",
+            "references": [
+              Reference {
+                "$id": 366,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    24,
+                    27,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": undefined,
+                "maybeImplicitGlobal": undefined,
+                "resolved": [Circular],
+                "writeExpr": undefined,
+              },
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": undefined,
+        },
+      ],
+      "set": Map {
+        "arguments" => Variable {
+          "$id": 660,
+          "defs": [],
+          "eslintUsed": false,
+          "identifiers": [],
+          "name": "arguments",
+          "references": [],
+          "scope": [Circular],
+        },
+        "arg" => Variable {
+          "$id": 661,
+          "defs": [
+            ParameterDefinition {
+              "$id": 449,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  13,
+                  21,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    16,
+                    21,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      18,
+                      21,
+                    ],
+                    "type": "TSAnyKeyword",
+                  },
+                },
+              },
+              "node": {
+                "async": false,
+                "body": {
+                  "body": [
+                    {
+                      "argument": {
+                        "left": {
+                          "argument": {
+                            "decorators": [],
+                            "name": "arg",
+                            "optional": false,
+                            "range": [
+                              56,
+                              59,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "operator": "typeof",
+                          "prefix": true,
+                          "range": [
+                            49,
+                            59,
+                          ],
+                          "type": "UnaryExpression",
+                        },
+                        "operator": "===",
+                        "range": [
+                          49,
+                          72,
+                        ],
+                        "right": {
+                          "range": [
+                            64,
+                            72,
+                          ],
+                          "raw": "'string'",
+                          "type": "Literal",
+                          "value": "string",
+                        },
+                        "type": "BinaryExpression",
+                      },
+                      "range": [
+                        42,
+                        73,
+                      ],
+                      "type": "ReturnStatement",
+                    },
+                  ],
+                  "range": [
+                    38,
+                    75,
+                  ],
+                  "type": "BlockStatement",
+                },
+                "declare": false,
+                "expression": false,
+                "generator": false,
+                "id": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    9,
+                    12,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "params": [
+                  {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      13,
+                      21,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        16,
+                        21,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          18,
+                          21,
+                        ],
+                        "type": "TSAnyKeyword",
+                      },
+                    },
+                  },
+                ],
+                "range": [
+                  0,
+                  75,
+                ],
+                "returnType": {
+                  "range": [
+                    22,
+                    37,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "asserts": false,
+                    "parameterName": {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        24,
+                        27,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      24,
+                      37,
+                    ],
+                    "type": "TSTypePredicate",
+                    "typeAnnotation": {
+                      "range": [
+                        31,
+                        37,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          31,
+                          37,
+                        ],
+                        "type": "TSStringKeyword",
+                      },
+                    },
+                  },
+                },
+                "type": "FunctionDeclaration",
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "rest": false,
+              "type": "Parameter",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "arg",
+              "optional": false,
+              "range": [
+                13,
+                21,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  16,
+                  21,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    18,
+                    21,
+                  ],
+                  "type": "TSAnyKeyword",
+                },
+              },
+            },
+          ],
+          "name": "arg",
+          "references": [
+            Reference {
+              "$id": 366,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  24,
+                  27,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": undefined,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+            Reference {
+              "$id": 367,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  56,
+                  59,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": undefined,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
+      },
+      "through": [],
+      "type": "function",
+      "upper": GlobalScope {
+        "$id": 334,
+        "block": {
+          "body": [
+            {
+              "async": false,
+              "body": {
+                "body": [
+                  {
+                    "argument": {
+                      "left": {
+                        "argument": {
+                          "decorators": [],
+                          "name": "arg",
+                          "optional": false,
+                          "range": [
+                            56,
+                            59,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": undefined,
+                        },
+                        "operator": "typeof",
+                        "prefix": true,
+                        "range": [
+                          49,
+                          59,
+                        ],
+                        "type": "UnaryExpression",
+                      },
+                      "operator": "===",
+                      "range": [
+                        49,
+                        72,
+                      ],
+                      "right": {
+                        "range": [
+                          64,
+                          72,
+                        ],
+                        "raw": "'string'",
+                        "type": "Literal",
+                        "value": "string",
+                      },
+                      "type": "BinaryExpression",
+                    },
+                    "range": [
+                      42,
+                      73,
+                    ],
+                    "type": "ReturnStatement",
+                  },
+                ],
+                "range": [
+                  38,
+                  75,
+                ],
+                "type": "BlockStatement",
+              },
+              "declare": false,
+              "expression": false,
+              "generator": false,
+              "id": {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  9,
+                  12,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "params": [
+                {
+                  "decorators": [],
+                  "name": "arg",
+                  "optional": false,
+                  "range": [
+                    13,
+                    21,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      16,
+                      21,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        18,
+                        21,
+                      ],
+                      "type": "TSAnyKeyword",
+                    },
+                  },
+                },
+              ],
+              "range": [
+                0,
+                75,
+              ],
+              "returnType": {
+                "range": [
+                  22,
+                  37,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "asserts": false,
+                  "parameterName": {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      24,
+                      27,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "range": [
+                    24,
+                    37,
+                  ],
+                  "type": "TSTypePredicate",
+                  "typeAnnotation": {
+                    "range": [
+                      31,
+                      37,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        31,
+                        37,
+                      ],
+                      "type": "TSStringKeyword",
+                    },
+                  },
+                },
+              },
+              "type": "FunctionDeclaration",
+              "typeParameters": undefined,
+            },
+          ],
+          "comments": undefined,
+          "range": [
+            0,
+            76,
+          ],
+          "sourceType": "script",
+          "tokens": undefined,
+          "type": "Program",
+        },
+        "childScopes": [
+          [Circular],
+        ],
+        "functionExpressionScope": false,
+        "implicit": {
+          "leftToBeResolved": [],
+          "set": Map {},
+          "variables": [],
+        },
+        "isStrict": false,
+        "leftToResolve": null,
+        "references": [],
+        "set": Map {
+          "const" => ImplicitLibVariable {
+            "$id": 658,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+          "foo" => Variable {
+            "$id": 659,
+            "defs": [
+              FunctionNameDefinition {
+                "$id": 448,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    9,
+                    12,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "async": false,
+                  "body": {
+                    "body": [
+                      {
+                        "argument": {
+                          "left": {
+                            "argument": {
+                              "decorators": [],
+                              "name": "arg",
+                              "optional": false,
+                              "range": [
+                                56,
+                                59,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "operator": "typeof",
+                            "prefix": true,
+                            "range": [
+                              49,
+                              59,
+                            ],
+                            "type": "UnaryExpression",
+                          },
+                          "operator": "===",
+                          "range": [
+                            49,
+                            72,
+                          ],
+                          "right": {
+                            "range": [
+                              64,
+                              72,
+                            ],
+                            "raw": "'string'",
+                            "type": "Literal",
+                            "value": "string",
+                          },
+                          "type": "BinaryExpression",
+                        },
+                        "range": [
+                          42,
+                          73,
+                        ],
+                        "type": "ReturnStatement",
+                      },
+                    ],
+                    "range": [
+                      38,
+                      75,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      9,
+                      12,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "params": [
+                    {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        13,
+                        21,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          16,
+                          21,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            18,
+                            21,
+                          ],
+                          "type": "TSAnyKeyword",
+                        },
+                      },
+                    },
+                  ],
+                  "range": [
+                    0,
+                    75,
+                  ],
+                  "returnType": {
+                    "range": [
+                      22,
+                      37,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "asserts": false,
+                      "parameterName": {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          24,
+                          27,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        24,
+                        37,
+                      ],
+                      "type": "TSTypePredicate",
+                      "typeAnnotation": {
+                        "range": [
+                          31,
+                          37,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            31,
+                            37,
+                          ],
+                          "type": "TSStringKeyword",
+                        },
+                      },
+                    },
+                  },
+                  "type": "FunctionDeclaration",
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "FunctionName",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  9,
+                  12,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "foo",
+            "references": [],
+            "scope": [Circular],
+          },
+        },
+        "through": [],
+        "type": "global",
+        "upper": null,
+        "variableScope": [Circular],
+        "variables": [
+          ImplicitLibVariable {
+            "$id": 658,
+            "defs": [],
+            "eslintExplicitGlobal": undefined,
+            "eslintExplicitGlobalComments": undefined,
+            "eslintImplicitGlobalSetting": "readonly",
+            "eslintUsed": false,
+            "identifiers": [],
+            "isTypeVariable": true,
+            "isValueVariable": false,
+            "name": "const",
+            "references": [],
+            "scope": [Circular],
+            "writeable": false,
+          },
+          Variable {
+            "$id": 659,
+            "defs": [
+              FunctionNameDefinition {
+                "$id": 448,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    9,
+                    12,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "node": {
+                  "async": false,
+                  "body": {
+                    "body": [
+                      {
+                        "argument": {
+                          "left": {
+                            "argument": {
+                              "decorators": [],
+                              "name": "arg",
+                              "optional": false,
+                              "range": [
+                                56,
+                                59,
+                              ],
+                              "type": "Identifier",
+                              "typeAnnotation": undefined,
+                            },
+                            "operator": "typeof",
+                            "prefix": true,
+                            "range": [
+                              49,
+                              59,
+                            ],
+                            "type": "UnaryExpression",
+                          },
+                          "operator": "===",
+                          "range": [
+                            49,
+                            72,
+                          ],
+                          "right": {
+                            "range": [
+                              64,
+                              72,
+                            ],
+                            "raw": "'string'",
+                            "type": "Literal",
+                            "value": "string",
+                          },
+                          "type": "BinaryExpression",
+                        },
+                        "range": [
+                          42,
+                          73,
+                        ],
+                        "type": "ReturnStatement",
+                      },
+                    ],
+                    "range": [
+                      38,
+                      75,
+                    ],
+                    "type": "BlockStatement",
+                  },
+                  "declare": false,
+                  "expression": false,
+                  "generator": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "foo",
+                    "optional": false,
+                    "range": [
+                      9,
+                      12,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "params": [
+                    {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        13,
+                        21,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          16,
+                          21,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            18,
+                            21,
+                          ],
+                          "type": "TSAnyKeyword",
+                        },
+                      },
+                    },
+                  ],
+                  "range": [
+                    0,
+                    75,
+                  ],
+                  "returnType": {
+                    "range": [
+                      22,
+                      37,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "asserts": false,
+                      "parameterName": {
+                        "decorators": [],
+                        "name": "arg",
+                        "optional": false,
+                        "range": [
+                          24,
+                          27,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": undefined,
+                      },
+                      "range": [
+                        24,
+                        37,
+                      ],
+                      "type": "TSTypePredicate",
+                      "typeAnnotation": {
+                        "range": [
+                          31,
+                          37,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            31,
+                            37,
+                          ],
+                          "type": "TSStringKeyword",
+                        },
+                      },
+                    },
+                  },
+                  "type": "FunctionDeclaration",
+                  "typeParameters": undefined,
+                },
+                "parent": null,
+                "type": "FunctionName",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "foo",
+                "optional": false,
+                "range": [
+                  9,
+                  12,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+            ],
+            "name": "foo",
+            "references": [],
+            "scope": [Circular],
+          },
+        ],
+      },
+      "variableScope": [Circular],
+      "variables": [
+        Variable {
+          "$id": 660,
+          "defs": [],
+          "eslintUsed": false,
+          "identifiers": [],
+          "name": "arguments",
+          "references": [],
+          "scope": [Circular],
+        },
+        Variable {
+          "$id": 661,
+          "defs": [
+            ParameterDefinition {
+              "$id": 449,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  13,
+                  21,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    16,
+                    21,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      18,
+                      21,
+                    ],
+                    "type": "TSAnyKeyword",
+                  },
+                },
+              },
+              "node": {
+                "async": false,
+                "body": {
+                  "body": [
+                    {
+                      "argument": {
+                        "left": {
+                          "argument": {
+                            "decorators": [],
+                            "name": "arg",
+                            "optional": false,
+                            "range": [
+                              56,
+                              59,
+                            ],
+                            "type": "Identifier",
+                            "typeAnnotation": undefined,
+                          },
+                          "operator": "typeof",
+                          "prefix": true,
+                          "range": [
+                            49,
+                            59,
+                          ],
+                          "type": "UnaryExpression",
+                        },
+                        "operator": "===",
+                        "range": [
+                          49,
+                          72,
+                        ],
+                        "right": {
+                          "range": [
+                            64,
+                            72,
+                          ],
+                          "raw": "'string'",
+                          "type": "Literal",
+                          "value": "string",
+                        },
+                        "type": "BinaryExpression",
+                      },
+                      "range": [
+                        42,
+                        73,
+                      ],
+                      "type": "ReturnStatement",
+                    },
+                  ],
+                  "range": [
+                    38,
+                    75,
+                  ],
+                  "type": "BlockStatement",
+                },
+                "declare": false,
+                "expression": false,
+                "generator": false,
+                "id": {
+                  "decorators": [],
+                  "name": "foo",
+                  "optional": false,
+                  "range": [
+                    9,
+                    12,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "params": [
+                  {
+                    "decorators": [],
+                    "name": "arg",
+                    "optional": false,
+                    "range": [
+                      13,
+                      21,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        16,
+                        21,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          18,
+                          21,
+                        ],
+                        "type": "TSAnyKeyword",
+                      },
+                    },
+                  },
+                ],
+                "range": [
+                  0,
+                  75,
+                ],
+                "returnType": {
+                  "range": [
+                    22,
+                    37,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "asserts": false,
+                    "parameterName": {
+                      "decorators": [],
+                      "name": "arg",
+                      "optional": false,
+                      "range": [
+                        24,
+                        27,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": undefined,
+                    },
+                    "range": [
+                      24,
+                      37,
+                    ],
+                    "type": "TSTypePredicate",
+                    "typeAnnotation": {
+                      "range": [
+                        31,
+                        37,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          31,
+                          37,
+                        ],
+                        "type": "TSStringKeyword",
+                      },
+                    },
+                  },
+                },
+                "type": "FunctionDeclaration",
+                "typeParameters": undefined,
+              },
+              "parent": null,
+              "rest": false,
+              "type": "Parameter",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "arg",
+              "optional": false,
+              "range": [
+                13,
+                21,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  16,
+                  21,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    18,
+                    21,
+                  ],
+                  "type": "TSAnyKeyword",
+                },
+              },
+            },
+          ],
+          "name": "arg",
+          "references": [
+            Reference {
+              "$id": 366,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  24,
+                  27,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": undefined,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+            Reference {
+              "$id": 367,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "arg",
+                "optional": false,
+                "range": [
+                  56,
+                  59,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": undefined,
+              "maybeImplicitGlobal": undefined,
+              "resolved": [Circular],
+              "writeExpr": undefined,
+            },
+          ],
+          "scope": [Circular],
+        },
       ],
     },
   ],
 }
-`;

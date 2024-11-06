@@ -1,62 +1,4045 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`type-assertion assignment angle-bracket-assignment 1`] = `
 ScopeManager {
-  variables: [
-    ImplicitGlobalConstTypeVariable,
-    Variable$2 {
-      defs: [
-        VariableDefinition$1 {
-          name: Identifier<"x">,
-          node: VariableDeclarator$1,
+  "currentScope": null,
+  "declaredVariables": WeakMap {},
+  "globalScope": GlobalScope {
+    "$id": 137,
+    "block": {
+      "body": [
+        {
+          "declarations": [
+            {
+              "definite": false,
+              "id": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+              "init": {
+                "range": [
+                  28,
+                  29,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+              "range": [
+                4,
+                29,
+              ],
+              "type": "VariableDeclarator",
+            },
+          ],
+          "declare": false,
+          "kind": "let",
+          "range": [
+            0,
+            30,
+          ],
+          "type": "VariableDeclaration",
+        },
+        {
+          "directive": undefined,
+          "expression": {
+            "left": {
+              "expression": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  40,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "range": [
+                32,
+                41,
+              ],
+              "type": "TSTypeAssertion",
+              "typeAnnotation": {
+                "range": [
+                  33,
+                  39,
+                ],
+                "type": "TSNumberKeyword",
+              },
+            },
+            "operator": "+=",
+            "range": [
+              31,
+              47,
+            ],
+            "right": {
+              "range": [
+                46,
+                47,
+              ],
+              "raw": "1",
+              "type": "Literal",
+              "value": 1,
+            },
+            "type": "AssignmentExpression",
+          },
+          "range": [
+            31,
+            48,
+          ],
+          "type": "ExpressionStatement",
         },
       ],
-      name: "x",
-      references: [
-        Reference$1 {
-          identifier: Identifier<"x">,
-          init: true,
-          isRead: false,
-          isTypeReference: false,
-          isValueReference: true,
-          isWrite: true,
-          resolved: Variable$2,
-          writeExpr: Literal$2,
-        },
-        Reference$2 {
-          identifier: Identifier<"x">,
-          init: false,
-          isRead: true,
-          isTypeReference: false,
-          isValueReference: true,
-          isWrite: true,
-          resolved: Variable$2,
-          writeExpr: Literal$3,
-        },
+      "comments": undefined,
+      "range": [
+        0,
+        49,
       ],
-      isValueVariable: true,
-      isTypeVariable: false,
+      "sourceType": "script",
+      "tokens": undefined,
+      "type": "Program",
     },
-  ],
-  scopes: [
-    GlobalScope$1 {
-      block: Program$4,
-      isStrict: false,
-      references: [
-        Reference$1,
-        Reference$2,
+    "childScopes": [],
+    "functionExpressionScope": false,
+    "implicit": {
+      "leftToBeResolved": [
+        Reference {
+          "$id": 141,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "x",
+            "optional": false,
+            "range": [
+              4,
+              25,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": {
+              "range": [
+                5,
+                25,
+              ],
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": {
+                "range": [
+                  7,
+                  25,
+                ],
+                "type": "TSUnionType",
+                "types": [
+                  {
+                    "range": [
+                      7,
+                      13,
+                    ],
+                    "type": "TSNumberKeyword",
+                  },
+                  {
+                    "range": [
+                      16,
+                      25,
+                    ],
+                    "type": "TSUndefinedKeyword",
+                  },
+                ],
+              },
+            },
+          },
+          "init": true,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 291,
+            "defs": [
+              VariableDefinition {
+                "$id": 214,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "node": {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      4,
+                      25,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        5,
+                        25,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          7,
+                          25,
+                        ],
+                        "type": "TSUnionType",
+                        "types": [
+                          {
+                            "range": [
+                              7,
+                              13,
+                            ],
+                            "type": "TSNumberKeyword",
+                          },
+                          {
+                            "range": [
+                              16,
+                              25,
+                            ],
+                            "type": "TSUndefinedKeyword",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  "init": {
+                    "range": [
+                      28,
+                      29,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                  "range": [
+                    4,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+                "parent": {
+                  "declarations": [
+                    {
+                      "definite": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "x",
+                        "optional": false,
+                        "range": [
+                          4,
+                          25,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": {
+                          "range": [
+                            5,
+                            25,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              7,
+                              25,
+                            ],
+                            "type": "TSUnionType",
+                            "types": [
+                              {
+                                "range": [
+                                  7,
+                                  13,
+                                ],
+                                "type": "TSNumberKeyword",
+                              },
+                              {
+                                "range": [
+                                  16,
+                                  25,
+                                ],
+                                "type": "TSUndefinedKeyword",
+                              },
+                            ],
+                          },
+                        },
+                      },
+                      "init": {
+                        "range": [
+                          28,
+                          29,
+                        ],
+                        "raw": "1",
+                        "type": "Literal",
+                        "value": 1,
+                      },
+                      "range": [
+                        4,
+                        29,
+                      ],
+                      "type": "VariableDeclarator",
+                    },
+                  ],
+                  "declare": false,
+                  "kind": "let",
+                  "range": [
+                    0,
+                    30,
+                  ],
+                  "type": "VariableDeclaration",
+                },
+                "type": "Variable",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+            "name": "x",
+            "references": [
+              [Circular],
+              Reference {
+                "$id": 142,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    40,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": false,
+                "maybeImplicitGlobal": undefined,
+                "resolved": [Circular],
+                "writeExpr": {
+                  "range": [
+                    46,
+                    47,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+              },
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": {
+            "range": [
+              28,
+              29,
+            ],
+            "raw": "1",
+            "type": "Literal",
+            "value": 1,
+          },
+        },
+        Reference {
+          "$id": 142,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "x",
+            "optional": false,
+            "range": [
+              40,
+              41,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": false,
+          "maybeImplicitGlobal": undefined,
+          "resolved": Variable {
+            "$id": 291,
+            "defs": [
+              VariableDefinition {
+                "$id": 214,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "node": {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      4,
+                      25,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        5,
+                        25,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          7,
+                          25,
+                        ],
+                        "type": "TSUnionType",
+                        "types": [
+                          {
+                            "range": [
+                              7,
+                              13,
+                            ],
+                            "type": "TSNumberKeyword",
+                          },
+                          {
+                            "range": [
+                              16,
+                              25,
+                            ],
+                            "type": "TSUndefinedKeyword",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  "init": {
+                    "range": [
+                      28,
+                      29,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                  "range": [
+                    4,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+                "parent": {
+                  "declarations": [
+                    {
+                      "definite": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "x",
+                        "optional": false,
+                        "range": [
+                          4,
+                          25,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": {
+                          "range": [
+                            5,
+                            25,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              7,
+                              25,
+                            ],
+                            "type": "TSUnionType",
+                            "types": [
+                              {
+                                "range": [
+                                  7,
+                                  13,
+                                ],
+                                "type": "TSNumberKeyword",
+                              },
+                              {
+                                "range": [
+                                  16,
+                                  25,
+                                ],
+                                "type": "TSUndefinedKeyword",
+                              },
+                            ],
+                          },
+                        },
+                      },
+                      "init": {
+                        "range": [
+                          28,
+                          29,
+                        ],
+                        "raw": "1",
+                        "type": "Literal",
+                        "value": 1,
+                      },
+                      "range": [
+                        4,
+                        29,
+                      ],
+                      "type": "VariableDeclarator",
+                    },
+                  ],
+                  "declare": false,
+                  "kind": "let",
+                  "range": [
+                    0,
+                    30,
+                  ],
+                  "type": "VariableDeclaration",
+                },
+                "type": "Variable",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+            "name": "x",
+            "references": [
+              Reference {
+                "$id": 141,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "init": true,
+                "maybeImplicitGlobal": null,
+                "resolved": [Circular],
+                "writeExpr": {
+                  "range": [
+                    28,
+                    29,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+              },
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": {
+            "range": [
+              46,
+              47,
+            ],
+            "raw": "1",
+            "type": "Literal",
+            "value": 1,
+          },
+        },
       ],
-      set: Map {
-        "const" => ImplicitGlobalConstTypeVariable,
-        "x" => Variable$2,
+      "set": Map {},
+      "variables": [],
+    },
+    "isStrict": false,
+    "leftToResolve": null,
+    "references": [
+      Reference {
+        "$id": 141,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "x",
+          "optional": false,
+          "range": [
+            4,
+            25,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": {
+            "range": [
+              5,
+              25,
+            ],
+            "type": "TSTypeAnnotation",
+            "typeAnnotation": {
+              "range": [
+                7,
+                25,
+              ],
+              "type": "TSUnionType",
+              "types": [
+                {
+                  "range": [
+                    7,
+                    13,
+                  ],
+                  "type": "TSNumberKeyword",
+                },
+                {
+                  "range": [
+                    16,
+                    25,
+                  ],
+                  "type": "TSUndefinedKeyword",
+                },
+              ],
+            },
+          },
+        },
+        "init": true,
+        "maybeImplicitGlobal": null,
+        "resolved": Variable {
+          "$id": 291,
+          "defs": [
+            VariableDefinition {
+              "$id": 214,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+              "node": {
+                "definite": false,
+                "id": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "init": {
+                  "range": [
+                    28,
+                    29,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+                "range": [
+                  4,
+                  29,
+                ],
+                "type": "VariableDeclarator",
+              },
+              "parent": {
+                "declarations": [
+                  {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "x",
+                      "optional": false,
+                      "range": [
+                        4,
+                        25,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          5,
+                          25,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            7,
+                            25,
+                          ],
+                          "type": "TSUnionType",
+                          "types": [
+                            {
+                              "range": [
+                                7,
+                                13,
+                              ],
+                              "type": "TSNumberKeyword",
+                            },
+                            {
+                              "range": [
+                                16,
+                                25,
+                              ],
+                              "type": "TSUndefinedKeyword",
+                            },
+                          ],
+                        },
+                      },
+                    },
+                    "init": {
+                      "range": [
+                        28,
+                        29,
+                      ],
+                      "raw": "1",
+                      "type": "Literal",
+                      "value": 1,
+                    },
+                    "range": [
+                      4,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                ],
+                "declare": false,
+                "kind": "let",
+                "range": [
+                  0,
+                  30,
+                ],
+                "type": "VariableDeclaration",
+              },
+              "type": "Variable",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                4,
+                25,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  5,
+                  25,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    7,
+                    25,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "range": [
+                        7,
+                        13,
+                      ],
+                      "type": "TSNumberKeyword",
+                    },
+                    {
+                      "range": [
+                        16,
+                        25,
+                      ],
+                      "type": "TSUndefinedKeyword",
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+          "name": "x",
+          "references": [
+            [Circular],
+            Reference {
+              "$id": 142,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  40,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": false,
+              "maybeImplicitGlobal": undefined,
+              "resolved": [Circular],
+              "writeExpr": {
+                "range": [
+                  46,
+                  47,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+            },
+          ],
+          "scope": [Circular],
+        },
+        "writeExpr": {
+          "range": [
+            28,
+            29,
+          ],
+          "raw": "1",
+          "type": "Literal",
+          "value": 1,
+        },
       },
-      type: "global",
-      upper: null,
-      variables: [
-        ImplicitGlobalConstTypeVariable,
-        Variable$2,
+      Reference {
+        "$id": 142,
+        "from": [Circular],
+        "identifier": {
+          "decorators": [],
+          "name": "x",
+          "optional": false,
+          "range": [
+            40,
+            41,
+          ],
+          "type": "Identifier",
+          "typeAnnotation": undefined,
+        },
+        "init": false,
+        "maybeImplicitGlobal": undefined,
+        "resolved": Variable {
+          "$id": 291,
+          "defs": [
+            VariableDefinition {
+              "$id": 214,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+              "node": {
+                "definite": false,
+                "id": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "init": {
+                  "range": [
+                    28,
+                    29,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+                "range": [
+                  4,
+                  29,
+                ],
+                "type": "VariableDeclarator",
+              },
+              "parent": {
+                "declarations": [
+                  {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "x",
+                      "optional": false,
+                      "range": [
+                        4,
+                        25,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          5,
+                          25,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            7,
+                            25,
+                          ],
+                          "type": "TSUnionType",
+                          "types": [
+                            {
+                              "range": [
+                                7,
+                                13,
+                              ],
+                              "type": "TSNumberKeyword",
+                            },
+                            {
+                              "range": [
+                                16,
+                                25,
+                              ],
+                              "type": "TSUndefinedKeyword",
+                            },
+                          ],
+                        },
+                      },
+                    },
+                    "init": {
+                      "range": [
+                        28,
+                        29,
+                      ],
+                      "raw": "1",
+                      "type": "Literal",
+                      "value": 1,
+                    },
+                    "range": [
+                      4,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                ],
+                "declare": false,
+                "kind": "let",
+                "range": [
+                  0,
+                  30,
+                ],
+                "type": "VariableDeclaration",
+              },
+              "type": "Variable",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                4,
+                25,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  5,
+                  25,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    7,
+                    25,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "range": [
+                        7,
+                        13,
+                      ],
+                      "type": "TSNumberKeyword",
+                    },
+                    {
+                      "range": [
+                        16,
+                        25,
+                      ],
+                      "type": "TSUndefinedKeyword",
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+          "name": "x",
+          "references": [
+            Reference {
+              "$id": 141,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+              "init": true,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": {
+                "range": [
+                  28,
+                  29,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+            },
+            [Circular],
+          ],
+          "scope": [Circular],
+        },
+        "writeExpr": {
+          "range": [
+            46,
+            47,
+          ],
+          "raw": "1",
+          "type": "Literal",
+          "value": 1,
+        },
+      },
+    ],
+    "set": Map {
+      "const" => ImplicitLibVariable {
+        "$id": 290,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      "x" => Variable {
+        "$id": 291,
+        "defs": [
+          VariableDefinition {
+            "$id": 214,
+            "isTypeDefinition": false,
+            "isVariableDefinition": true,
+            "name": {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                4,
+                25,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  5,
+                  25,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    7,
+                    25,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "range": [
+                        7,
+                        13,
+                      ],
+                      "type": "TSNumberKeyword",
+                    },
+                    {
+                      "range": [
+                        16,
+                        25,
+                      ],
+                      "type": "TSUndefinedKeyword",
+                    },
+                  ],
+                },
+              },
+            },
+            "node": {
+              "definite": false,
+              "id": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+              "init": {
+                "range": [
+                  28,
+                  29,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+              "range": [
+                4,
+                29,
+              ],
+              "type": "VariableDeclarator",
+            },
+            "parent": {
+              "declarations": [
+                {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      4,
+                      25,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        5,
+                        25,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          7,
+                          25,
+                        ],
+                        "type": "TSUnionType",
+                        "types": [
+                          {
+                            "range": [
+                              7,
+                              13,
+                            ],
+                            "type": "TSNumberKeyword",
+                          },
+                          {
+                            "range": [
+                              16,
+                              25,
+                            ],
+                            "type": "TSUndefinedKeyword",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  "init": {
+                    "range": [
+                      28,
+                      29,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                  "range": [
+                    4,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+              ],
+              "declare": false,
+              "kind": "let",
+              "range": [
+                0,
+                30,
+              ],
+              "type": "VariableDeclaration",
+            },
+            "type": "Variable",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "x",
+            "optional": false,
+            "range": [
+              4,
+              25,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": {
+              "range": [
+                5,
+                25,
+              ],
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": {
+                "range": [
+                  7,
+                  25,
+                ],
+                "type": "TSUnionType",
+                "types": [
+                  {
+                    "range": [
+                      7,
+                      13,
+                    ],
+                    "type": "TSNumberKeyword",
+                  },
+                  {
+                    "range": [
+                      16,
+                      25,
+                    ],
+                    "type": "TSUndefinedKeyword",
+                  },
+                ],
+              },
+            },
+          },
+        ],
+        "name": "x",
+        "references": [
+          Reference {
+            "$id": 141,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                4,
+                25,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  5,
+                  25,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    7,
+                    25,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "range": [
+                        7,
+                        13,
+                      ],
+                      "type": "TSNumberKeyword",
+                    },
+                    {
+                      "range": [
+                        16,
+                        25,
+                      ],
+                      "type": "TSUndefinedKeyword",
+                    },
+                  ],
+                },
+              },
+            },
+            "init": true,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": {
+              "range": [
+                28,
+                29,
+              ],
+              "raw": "1",
+              "type": "Literal",
+              "value": 1,
+            },
+          },
+          Reference {
+            "$id": 142,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                40,
+                41,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": false,
+            "maybeImplicitGlobal": undefined,
+            "resolved": [Circular],
+            "writeExpr": {
+              "range": [
+                46,
+                47,
+              ],
+              "raw": "1",
+              "type": "Literal",
+              "value": 1,
+            },
+          },
+        ],
+        "scope": [Circular],
+      },
+    },
+    "through": [],
+    "type": "global",
+    "upper": null,
+    "variableScope": [Circular],
+    "variables": [
+      ImplicitLibVariable {
+        "$id": 290,
+        "defs": [],
+        "eslintExplicitGlobal": undefined,
+        "eslintExplicitGlobalComments": undefined,
+        "eslintImplicitGlobalSetting": "readonly",
+        "eslintUsed": false,
+        "identifiers": [],
+        "isTypeVariable": true,
+        "isValueVariable": false,
+        "name": "const",
+        "references": [],
+        "scope": [Circular],
+        "writeable": false,
+      },
+      Variable {
+        "$id": 291,
+        "defs": [
+          VariableDefinition {
+            "$id": 214,
+            "isTypeDefinition": false,
+            "isVariableDefinition": true,
+            "name": {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                4,
+                25,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  5,
+                  25,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    7,
+                    25,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "range": [
+                        7,
+                        13,
+                      ],
+                      "type": "TSNumberKeyword",
+                    },
+                    {
+                      "range": [
+                        16,
+                        25,
+                      ],
+                      "type": "TSUndefinedKeyword",
+                    },
+                  ],
+                },
+              },
+            },
+            "node": {
+              "definite": false,
+              "id": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+              "init": {
+                "range": [
+                  28,
+                  29,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+              "range": [
+                4,
+                29,
+              ],
+              "type": "VariableDeclarator",
+            },
+            "parent": {
+              "declarations": [
+                {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      4,
+                      25,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        5,
+                        25,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          7,
+                          25,
+                        ],
+                        "type": "TSUnionType",
+                        "types": [
+                          {
+                            "range": [
+                              7,
+                              13,
+                            ],
+                            "type": "TSNumberKeyword",
+                          },
+                          {
+                            "range": [
+                              16,
+                              25,
+                            ],
+                            "type": "TSUndefinedKeyword",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  "init": {
+                    "range": [
+                      28,
+                      29,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                  "range": [
+                    4,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+              ],
+              "declare": false,
+              "kind": "let",
+              "range": [
+                0,
+                30,
+              ],
+              "type": "VariableDeclaration",
+            },
+            "type": "Variable",
+          },
+        ],
+        "eslintUsed": false,
+        "identifiers": [
+          {
+            "decorators": [],
+            "name": "x",
+            "optional": false,
+            "range": [
+              4,
+              25,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": {
+              "range": [
+                5,
+                25,
+              ],
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": {
+                "range": [
+                  7,
+                  25,
+                ],
+                "type": "TSUnionType",
+                "types": [
+                  {
+                    "range": [
+                      7,
+                      13,
+                    ],
+                    "type": "TSNumberKeyword",
+                  },
+                  {
+                    "range": [
+                      16,
+                      25,
+                    ],
+                    "type": "TSUndefinedKeyword",
+                  },
+                ],
+              },
+            },
+          },
+        ],
+        "name": "x",
+        "references": [
+          Reference {
+            "$id": 141,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                4,
+                25,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  5,
+                  25,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    7,
+                    25,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "range": [
+                        7,
+                        13,
+                      ],
+                      "type": "TSNumberKeyword",
+                    },
+                    {
+                      "range": [
+                        16,
+                        25,
+                      ],
+                      "type": "TSUndefinedKeyword",
+                    },
+                  ],
+                },
+              },
+            },
+            "init": true,
+            "maybeImplicitGlobal": null,
+            "resolved": [Circular],
+            "writeExpr": {
+              "range": [
+                28,
+                29,
+              ],
+              "raw": "1",
+              "type": "Literal",
+              "value": 1,
+            },
+          },
+          Reference {
+            "$id": 142,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                40,
+                41,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": false,
+            "maybeImplicitGlobal": undefined,
+            "resolved": [Circular],
+            "writeExpr": {
+              "range": [
+                46,
+                47,
+              ],
+              "raw": "1",
+              "type": "Literal",
+              "value": 1,
+            },
+          },
+        ],
+        "scope": [Circular],
+      },
+    ],
+  },
+  "nodeToScope": WeakMap {},
+  "scopes": [
+    GlobalScope {
+      "$id": 137,
+      "block": {
+        "body": [
+          {
+            "declarations": [
+              {
+                "definite": false,
+                "id": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "init": {
+                  "range": [
+                    28,
+                    29,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+                "range": [
+                  4,
+                  29,
+                ],
+                "type": "VariableDeclarator",
+              },
+            ],
+            "declare": false,
+            "kind": "let",
+            "range": [
+              0,
+              30,
+            ],
+            "type": "VariableDeclaration",
+          },
+          {
+            "directive": undefined,
+            "expression": {
+              "left": {
+                "expression": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    40,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "range": [
+                  32,
+                  41,
+                ],
+                "type": "TSTypeAssertion",
+                "typeAnnotation": {
+                  "range": [
+                    33,
+                    39,
+                  ],
+                  "type": "TSNumberKeyword",
+                },
+              },
+              "operator": "+=",
+              "range": [
+                31,
+                47,
+              ],
+              "right": {
+                "range": [
+                  46,
+                  47,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+              "type": "AssignmentExpression",
+            },
+            "range": [
+              31,
+              48,
+            ],
+            "type": "ExpressionStatement",
+          },
+        ],
+        "comments": undefined,
+        "range": [
+          0,
+          49,
+        ],
+        "sourceType": "script",
+        "tokens": undefined,
+        "type": "Program",
+      },
+      "childScopes": [],
+      "functionExpressionScope": false,
+      "implicit": {
+        "leftToBeResolved": [
+          Reference {
+            "$id": 141,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                4,
+                25,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  5,
+                  25,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    7,
+                    25,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "range": [
+                        7,
+                        13,
+                      ],
+                      "type": "TSNumberKeyword",
+                    },
+                    {
+                      "range": [
+                        16,
+                        25,
+                      ],
+                      "type": "TSUndefinedKeyword",
+                    },
+                  ],
+                },
+              },
+            },
+            "init": true,
+            "maybeImplicitGlobal": null,
+            "resolved": Variable {
+              "$id": 291,
+              "defs": [
+                VariableDefinition {
+                  "$id": 214,
+                  "isTypeDefinition": false,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      4,
+                      25,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        5,
+                        25,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          7,
+                          25,
+                        ],
+                        "type": "TSUnionType",
+                        "types": [
+                          {
+                            "range": [
+                              7,
+                              13,
+                            ],
+                            "type": "TSNumberKeyword",
+                          },
+                          {
+                            "range": [
+                              16,
+                              25,
+                            ],
+                            "type": "TSUndefinedKeyword",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  "node": {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "x",
+                      "optional": false,
+                      "range": [
+                        4,
+                        25,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          5,
+                          25,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            7,
+                            25,
+                          ],
+                          "type": "TSUnionType",
+                          "types": [
+                            {
+                              "range": [
+                                7,
+                                13,
+                              ],
+                              "type": "TSNumberKeyword",
+                            },
+                            {
+                              "range": [
+                                16,
+                                25,
+                              ],
+                              "type": "TSUndefinedKeyword",
+                            },
+                          ],
+                        },
+                      },
+                    },
+                    "init": {
+                      "range": [
+                        28,
+                        29,
+                      ],
+                      "raw": "1",
+                      "type": "Literal",
+                      "value": 1,
+                    },
+                    "range": [
+                      4,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                  "parent": {
+                    "declarations": [
+                      {
+                        "definite": false,
+                        "id": {
+                          "decorators": [],
+                          "name": "x",
+                          "optional": false,
+                          "range": [
+                            4,
+                            25,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": {
+                            "range": [
+                              5,
+                              25,
+                            ],
+                            "type": "TSTypeAnnotation",
+                            "typeAnnotation": {
+                              "range": [
+                                7,
+                                25,
+                              ],
+                              "type": "TSUnionType",
+                              "types": [
+                                {
+                                  "range": [
+                                    7,
+                                    13,
+                                  ],
+                                  "type": "TSNumberKeyword",
+                                },
+                                {
+                                  "range": [
+                                    16,
+                                    25,
+                                  ],
+                                  "type": "TSUndefinedKeyword",
+                                },
+                              ],
+                            },
+                          },
+                        },
+                        "init": {
+                          "range": [
+                            28,
+                            29,
+                          ],
+                          "raw": "1",
+                          "type": "Literal",
+                          "value": 1,
+                        },
+                        "range": [
+                          4,
+                          29,
+                        ],
+                        "type": "VariableDeclarator",
+                      },
+                    ],
+                    "declare": false,
+                    "kind": "let",
+                    "range": [
+                      0,
+                      30,
+                    ],
+                    "type": "VariableDeclaration",
+                  },
+                  "type": "Variable",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+              ],
+              "name": "x",
+              "references": [
+                [Circular],
+                Reference {
+                  "$id": 142,
+                  "from": [Circular],
+                  "identifier": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      40,
+                      41,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": undefined,
+                  },
+                  "init": false,
+                  "maybeImplicitGlobal": undefined,
+                  "resolved": [Circular],
+                  "writeExpr": {
+                    "range": [
+                      46,
+                      47,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                },
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": {
+              "range": [
+                28,
+                29,
+              ],
+              "raw": "1",
+              "type": "Literal",
+              "value": 1,
+            },
+          },
+          Reference {
+            "$id": 142,
+            "from": [Circular],
+            "identifier": {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                40,
+                41,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": undefined,
+            },
+            "init": false,
+            "maybeImplicitGlobal": undefined,
+            "resolved": Variable {
+              "$id": 291,
+              "defs": [
+                VariableDefinition {
+                  "$id": 214,
+                  "isTypeDefinition": false,
+                  "isVariableDefinition": true,
+                  "name": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      4,
+                      25,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        5,
+                        25,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          7,
+                          25,
+                        ],
+                        "type": "TSUnionType",
+                        "types": [
+                          {
+                            "range": [
+                              7,
+                              13,
+                            ],
+                            "type": "TSNumberKeyword",
+                          },
+                          {
+                            "range": [
+                              16,
+                              25,
+                            ],
+                            "type": "TSUndefinedKeyword",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  "node": {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "x",
+                      "optional": false,
+                      "range": [
+                        4,
+                        25,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          5,
+                          25,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            7,
+                            25,
+                          ],
+                          "type": "TSUnionType",
+                          "types": [
+                            {
+                              "range": [
+                                7,
+                                13,
+                              ],
+                              "type": "TSNumberKeyword",
+                            },
+                            {
+                              "range": [
+                                16,
+                                25,
+                              ],
+                              "type": "TSUndefinedKeyword",
+                            },
+                          ],
+                        },
+                      },
+                    },
+                    "init": {
+                      "range": [
+                        28,
+                        29,
+                      ],
+                      "raw": "1",
+                      "type": "Literal",
+                      "value": 1,
+                    },
+                    "range": [
+                      4,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                  "parent": {
+                    "declarations": [
+                      {
+                        "definite": false,
+                        "id": {
+                          "decorators": [],
+                          "name": "x",
+                          "optional": false,
+                          "range": [
+                            4,
+                            25,
+                          ],
+                          "type": "Identifier",
+                          "typeAnnotation": {
+                            "range": [
+                              5,
+                              25,
+                            ],
+                            "type": "TSTypeAnnotation",
+                            "typeAnnotation": {
+                              "range": [
+                                7,
+                                25,
+                              ],
+                              "type": "TSUnionType",
+                              "types": [
+                                {
+                                  "range": [
+                                    7,
+                                    13,
+                                  ],
+                                  "type": "TSNumberKeyword",
+                                },
+                                {
+                                  "range": [
+                                    16,
+                                    25,
+                                  ],
+                                  "type": "TSUndefinedKeyword",
+                                },
+                              ],
+                            },
+                          },
+                        },
+                        "init": {
+                          "range": [
+                            28,
+                            29,
+                          ],
+                          "raw": "1",
+                          "type": "Literal",
+                          "value": 1,
+                        },
+                        "range": [
+                          4,
+                          29,
+                        ],
+                        "type": "VariableDeclarator",
+                      },
+                    ],
+                    "declare": false,
+                    "kind": "let",
+                    "range": [
+                      0,
+                      30,
+                    ],
+                    "type": "VariableDeclaration",
+                  },
+                  "type": "Variable",
+                },
+              ],
+              "eslintUsed": false,
+              "identifiers": [
+                {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+              ],
+              "name": "x",
+              "references": [
+                Reference {
+                  "$id": 141,
+                  "from": [Circular],
+                  "identifier": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      4,
+                      25,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        5,
+                        25,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          7,
+                          25,
+                        ],
+                        "type": "TSUnionType",
+                        "types": [
+                          {
+                            "range": [
+                              7,
+                              13,
+                            ],
+                            "type": "TSNumberKeyword",
+                          },
+                          {
+                            "range": [
+                              16,
+                              25,
+                            ],
+                            "type": "TSUndefinedKeyword",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  "init": true,
+                  "maybeImplicitGlobal": null,
+                  "resolved": [Circular],
+                  "writeExpr": {
+                    "range": [
+                      28,
+                      29,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                },
+                [Circular],
+              ],
+              "scope": [Circular],
+            },
+            "writeExpr": {
+              "range": [
+                46,
+                47,
+              ],
+              "raw": "1",
+              "type": "Literal",
+              "value": 1,
+            },
+          },
+        ],
+        "set": Map {},
+        "variables": [],
+      },
+      "isStrict": false,
+      "leftToResolve": null,
+      "references": [
+        Reference {
+          "$id": 141,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "x",
+            "optional": false,
+            "range": [
+              4,
+              25,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": {
+              "range": [
+                5,
+                25,
+              ],
+              "type": "TSTypeAnnotation",
+              "typeAnnotation": {
+                "range": [
+                  7,
+                  25,
+                ],
+                "type": "TSUnionType",
+                "types": [
+                  {
+                    "range": [
+                      7,
+                      13,
+                    ],
+                    "type": "TSNumberKeyword",
+                  },
+                  {
+                    "range": [
+                      16,
+                      25,
+                    ],
+                    "type": "TSUndefinedKeyword",
+                  },
+                ],
+              },
+            },
+          },
+          "init": true,
+          "maybeImplicitGlobal": null,
+          "resolved": Variable {
+            "$id": 291,
+            "defs": [
+              VariableDefinition {
+                "$id": 214,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "node": {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      4,
+                      25,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        5,
+                        25,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          7,
+                          25,
+                        ],
+                        "type": "TSUnionType",
+                        "types": [
+                          {
+                            "range": [
+                              7,
+                              13,
+                            ],
+                            "type": "TSNumberKeyword",
+                          },
+                          {
+                            "range": [
+                              16,
+                              25,
+                            ],
+                            "type": "TSUndefinedKeyword",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  "init": {
+                    "range": [
+                      28,
+                      29,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                  "range": [
+                    4,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+                "parent": {
+                  "declarations": [
+                    {
+                      "definite": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "x",
+                        "optional": false,
+                        "range": [
+                          4,
+                          25,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": {
+                          "range": [
+                            5,
+                            25,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              7,
+                              25,
+                            ],
+                            "type": "TSUnionType",
+                            "types": [
+                              {
+                                "range": [
+                                  7,
+                                  13,
+                                ],
+                                "type": "TSNumberKeyword",
+                              },
+                              {
+                                "range": [
+                                  16,
+                                  25,
+                                ],
+                                "type": "TSUndefinedKeyword",
+                              },
+                            ],
+                          },
+                        },
+                      },
+                      "init": {
+                        "range": [
+                          28,
+                          29,
+                        ],
+                        "raw": "1",
+                        "type": "Literal",
+                        "value": 1,
+                      },
+                      "range": [
+                        4,
+                        29,
+                      ],
+                      "type": "VariableDeclarator",
+                    },
+                  ],
+                  "declare": false,
+                  "kind": "let",
+                  "range": [
+                    0,
+                    30,
+                  ],
+                  "type": "VariableDeclaration",
+                },
+                "type": "Variable",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+            "name": "x",
+            "references": [
+              [Circular],
+              Reference {
+                "$id": 142,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    40,
+                    41,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": undefined,
+                },
+                "init": false,
+                "maybeImplicitGlobal": undefined,
+                "resolved": [Circular],
+                "writeExpr": {
+                  "range": [
+                    46,
+                    47,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+              },
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": {
+            "range": [
+              28,
+              29,
+            ],
+            "raw": "1",
+            "type": "Literal",
+            "value": 1,
+          },
+        },
+        Reference {
+          "$id": 142,
+          "from": [Circular],
+          "identifier": {
+            "decorators": [],
+            "name": "x",
+            "optional": false,
+            "range": [
+              40,
+              41,
+            ],
+            "type": "Identifier",
+            "typeAnnotation": undefined,
+          },
+          "init": false,
+          "maybeImplicitGlobal": undefined,
+          "resolved": Variable {
+            "$id": 291,
+            "defs": [
+              VariableDefinition {
+                "$id": 214,
+                "isTypeDefinition": false,
+                "isVariableDefinition": true,
+                "name": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "node": {
+                  "definite": false,
+                  "id": {
+                    "decorators": [],
+                    "name": "x",
+                    "optional": false,
+                    "range": [
+                      4,
+                      25,
+                    ],
+                    "type": "Identifier",
+                    "typeAnnotation": {
+                      "range": [
+                        5,
+                        25,
+                      ],
+                      "type": "TSTypeAnnotation",
+                      "typeAnnotation": {
+                        "range": [
+                          7,
+                          25,
+                        ],
+                        "type": "TSUnionType",
+                        "types": [
+                          {
+                            "range": [
+                              7,
+                              13,
+                            ],
+                            "type": "TSNumberKeyword",
+                          },
+                          {
+                            "range": [
+                              16,
+                              25,
+                            ],
+                            "type": "TSUndefinedKeyword",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  "init": {
+                    "range": [
+                      28,
+                      29,
+                    ],
+                    "raw": "1",
+                    "type": "Literal",
+                    "value": 1,
+                  },
+                  "range": [
+                    4,
+                    29,
+                  ],
+                  "type": "VariableDeclarator",
+                },
+                "parent": {
+                  "declarations": [
+                    {
+                      "definite": false,
+                      "id": {
+                        "decorators": [],
+                        "name": "x",
+                        "optional": false,
+                        "range": [
+                          4,
+                          25,
+                        ],
+                        "type": "Identifier",
+                        "typeAnnotation": {
+                          "range": [
+                            5,
+                            25,
+                          ],
+                          "type": "TSTypeAnnotation",
+                          "typeAnnotation": {
+                            "range": [
+                              7,
+                              25,
+                            ],
+                            "type": "TSUnionType",
+                            "types": [
+                              {
+                                "range": [
+                                  7,
+                                  13,
+                                ],
+                                "type": "TSNumberKeyword",
+                              },
+                              {
+                                "range": [
+                                  16,
+                                  25,
+                                ],
+                                "type": "TSUndefinedKeyword",
+                              },
+                            ],
+                          },
+                        },
+                      },
+                      "init": {
+                        "range": [
+                          28,
+                          29,
+                        ],
+                        "raw": "1",
+                        "type": "Literal",
+                        "value": 1,
+                      },
+                      "range": [
+                        4,
+                        29,
+                      ],
+                      "type": "VariableDeclarator",
+                    },
+                  ],
+                  "declare": false,
+                  "kind": "let",
+                  "range": [
+                    0,
+                    30,
+                  ],
+                  "type": "VariableDeclaration",
+                },
+                "type": "Variable",
+              },
+            ],
+            "eslintUsed": false,
+            "identifiers": [
+              {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+            "name": "x",
+            "references": [
+              Reference {
+                "$id": 141,
+                "from": [Circular],
+                "identifier": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "init": true,
+                "maybeImplicitGlobal": null,
+                "resolved": [Circular],
+                "writeExpr": {
+                  "range": [
+                    28,
+                    29,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+              },
+              [Circular],
+            ],
+            "scope": [Circular],
+          },
+          "writeExpr": {
+            "range": [
+              46,
+              47,
+            ],
+            "raw": "1",
+            "type": "Literal",
+            "value": 1,
+          },
+        },
+      ],
+      "set": Map {
+        "const" => ImplicitLibVariable {
+          "$id": 290,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        "x" => Variable {
+          "$id": 291,
+          "defs": [
+            VariableDefinition {
+              "$id": 214,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+              "node": {
+                "definite": false,
+                "id": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "init": {
+                  "range": [
+                    28,
+                    29,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+                "range": [
+                  4,
+                  29,
+                ],
+                "type": "VariableDeclarator",
+              },
+              "parent": {
+                "declarations": [
+                  {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "x",
+                      "optional": false,
+                      "range": [
+                        4,
+                        25,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          5,
+                          25,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            7,
+                            25,
+                          ],
+                          "type": "TSUnionType",
+                          "types": [
+                            {
+                              "range": [
+                                7,
+                                13,
+                              ],
+                              "type": "TSNumberKeyword",
+                            },
+                            {
+                              "range": [
+                                16,
+                                25,
+                              ],
+                              "type": "TSUndefinedKeyword",
+                            },
+                          ],
+                        },
+                      },
+                    },
+                    "init": {
+                      "range": [
+                        28,
+                        29,
+                      ],
+                      "raw": "1",
+                      "type": "Literal",
+                      "value": 1,
+                    },
+                    "range": [
+                      4,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                ],
+                "declare": false,
+                "kind": "let",
+                "range": [
+                  0,
+                  30,
+                ],
+                "type": "VariableDeclaration",
+              },
+              "type": "Variable",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                4,
+                25,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  5,
+                  25,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    7,
+                    25,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "range": [
+                        7,
+                        13,
+                      ],
+                      "type": "TSNumberKeyword",
+                    },
+                    {
+                      "range": [
+                        16,
+                        25,
+                      ],
+                      "type": "TSUndefinedKeyword",
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+          "name": "x",
+          "references": [
+            Reference {
+              "$id": 141,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+              "init": true,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": {
+                "range": [
+                  28,
+                  29,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+            },
+            Reference {
+              "$id": 142,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  40,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": false,
+              "maybeImplicitGlobal": undefined,
+              "resolved": [Circular],
+              "writeExpr": {
+                "range": [
+                  46,
+                  47,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+            },
+          ],
+          "scope": [Circular],
+        },
+      },
+      "through": [],
+      "type": "global",
+      "upper": null,
+      "variableScope": [Circular],
+      "variables": [
+        ImplicitLibVariable {
+          "$id": 290,
+          "defs": [],
+          "eslintExplicitGlobal": undefined,
+          "eslintExplicitGlobalComments": undefined,
+          "eslintImplicitGlobalSetting": "readonly",
+          "eslintUsed": false,
+          "identifiers": [],
+          "isTypeVariable": true,
+          "isValueVariable": false,
+          "name": "const",
+          "references": [],
+          "scope": [Circular],
+          "writeable": false,
+        },
+        Variable {
+          "$id": 291,
+          "defs": [
+            VariableDefinition {
+              "$id": 214,
+              "isTypeDefinition": false,
+              "isVariableDefinition": true,
+              "name": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+              "node": {
+                "definite": false,
+                "id": {
+                  "decorators": [],
+                  "name": "x",
+                  "optional": false,
+                  "range": [
+                    4,
+                    25,
+                  ],
+                  "type": "Identifier",
+                  "typeAnnotation": {
+                    "range": [
+                      5,
+                      25,
+                    ],
+                    "type": "TSTypeAnnotation",
+                    "typeAnnotation": {
+                      "range": [
+                        7,
+                        25,
+                      ],
+                      "type": "TSUnionType",
+                      "types": [
+                        {
+                          "range": [
+                            7,
+                            13,
+                          ],
+                          "type": "TSNumberKeyword",
+                        },
+                        {
+                          "range": [
+                            16,
+                            25,
+                          ],
+                          "type": "TSUndefinedKeyword",
+                        },
+                      ],
+                    },
+                  },
+                },
+                "init": {
+                  "range": [
+                    28,
+                    29,
+                  ],
+                  "raw": "1",
+                  "type": "Literal",
+                  "value": 1,
+                },
+                "range": [
+                  4,
+                  29,
+                ],
+                "type": "VariableDeclarator",
+              },
+              "parent": {
+                "declarations": [
+                  {
+                    "definite": false,
+                    "id": {
+                      "decorators": [],
+                      "name": "x",
+                      "optional": false,
+                      "range": [
+                        4,
+                        25,
+                      ],
+                      "type": "Identifier",
+                      "typeAnnotation": {
+                        "range": [
+                          5,
+                          25,
+                        ],
+                        "type": "TSTypeAnnotation",
+                        "typeAnnotation": {
+                          "range": [
+                            7,
+                            25,
+                          ],
+                          "type": "TSUnionType",
+                          "types": [
+                            {
+                              "range": [
+                                7,
+                                13,
+                              ],
+                              "type": "TSNumberKeyword",
+                            },
+                            {
+                              "range": [
+                                16,
+                                25,
+                              ],
+                              "type": "TSUndefinedKeyword",
+                            },
+                          ],
+                        },
+                      },
+                    },
+                    "init": {
+                      "range": [
+                        28,
+                        29,
+                      ],
+                      "raw": "1",
+                      "type": "Literal",
+                      "value": 1,
+                    },
+                    "range": [
+                      4,
+                      29,
+                    ],
+                    "type": "VariableDeclarator",
+                  },
+                ],
+                "declare": false,
+                "kind": "let",
+                "range": [
+                  0,
+                  30,
+                ],
+                "type": "VariableDeclaration",
+              },
+              "type": "Variable",
+            },
+          ],
+          "eslintUsed": false,
+          "identifiers": [
+            {
+              "decorators": [],
+              "name": "x",
+              "optional": false,
+              "range": [
+                4,
+                25,
+              ],
+              "type": "Identifier",
+              "typeAnnotation": {
+                "range": [
+                  5,
+                  25,
+                ],
+                "type": "TSTypeAnnotation",
+                "typeAnnotation": {
+                  "range": [
+                    7,
+                    25,
+                  ],
+                  "type": "TSUnionType",
+                  "types": [
+                    {
+                      "range": [
+                        7,
+                        13,
+                      ],
+                      "type": "TSNumberKeyword",
+                    },
+                    {
+                      "range": [
+                        16,
+                        25,
+                      ],
+                      "type": "TSUndefinedKeyword",
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+          "name": "x",
+          "references": [
+            Reference {
+              "$id": 141,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  4,
+                  25,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": {
+                  "range": [
+                    5,
+                    25,
+                  ],
+                  "type": "TSTypeAnnotation",
+                  "typeAnnotation": {
+                    "range": [
+                      7,
+                      25,
+                    ],
+                    "type": "TSUnionType",
+                    "types": [
+                      {
+                        "range": [
+                          7,
+                          13,
+                        ],
+                        "type": "TSNumberKeyword",
+                      },
+                      {
+                        "range": [
+                          16,
+                          25,
+                        ],
+                        "type": "TSUndefinedKeyword",
+                      },
+                    ],
+                  },
+                },
+              },
+              "init": true,
+              "maybeImplicitGlobal": null,
+              "resolved": [Circular],
+              "writeExpr": {
+                "range": [
+                  28,
+                  29,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+            },
+            Reference {
+              "$id": 142,
+              "from": [Circular],
+              "identifier": {
+                "decorators": [],
+                "name": "x",
+                "optional": false,
+                "range": [
+                  40,
+                  41,
+                ],
+                "type": "Identifier",
+                "typeAnnotation": undefined,
+              },
+              "init": false,
+              "maybeImplicitGlobal": undefined,
+              "resolved": [Circular],
+              "writeExpr": {
+                "range": [
+                  46,
+                  47,
+                ],
+                "raw": "1",
+                "type": "Literal",
+                "value": 1,
+              },
+            },
+          ],
+          "scope": [Circular],
+        },
       ],
     },
   ],
 }
-`;
