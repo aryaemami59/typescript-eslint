@@ -51,12 +51,6 @@
         "passWithNoTests": true,
         "watch": false,
         "reportsDirectory": "{projectRoot}/coverage"
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
       }
     },
     "@nx/eslint:lint": {

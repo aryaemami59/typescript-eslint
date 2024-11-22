@@ -130,8 +130,6 @@ jobs:
     name: Run integration tests on primary Node.js version
     needs: [build]
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
