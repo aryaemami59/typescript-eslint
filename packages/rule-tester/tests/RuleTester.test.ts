@@ -64,7 +64,6 @@ async function satisfiesAllDependencyConstraints(
   return true;
 }
 
-// vi.mock(import('../src/utils/dependencyConstraints.js'), { spy: true });
 vi.mock(
   import('../src/utils/dependencyConstraints.js'),
   async importOriginal => {
@@ -85,30 +84,10 @@ const satisfiesAllDependencyConstraintsMock = vi.mocked(
 );
 
 vi.mock('totally-real-dependency/package.json', { spy: true });
-// vi.mock('totally-real-dependency/package.json', () => ({
-//   version: '10.0.0',
-// }));
 
 vi.mock('totally-real-dependency-prerelease/package.json', { spy: true });
-// vi.mock('totally-real-dependency-prerelease/package.json', () => ({
-//   version: '10.0.0-rc.1',
-// }));
 
 vi.mock(import('@typescript-eslint/parser'), { spy: true });
-// vi.mock(import('@typescript-eslint/parser'), async importOriginal => {
-//   const actualParser = await importOriginal();
-//   return {
-//     ...actualParser,
-//     __esModule: true,
-//     clearCaches: vi.fn(),
-//     createProgram: actualParser.createProgram,
-//     meta: actualParser.meta,
-//     parse: actualParser.parse,
-//     parseForESLint: actualParser.parseForESLint,
-//     version: actualParser.version,
-//     withoutProjectParserOptions: actualParser.withoutProjectParserOptions,
-//   };
-// });
 
 /* eslint-disable vitest/prefer-spy-on --
      we need to specifically assign to the properties or else it will use the

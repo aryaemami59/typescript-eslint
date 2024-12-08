@@ -33,9 +33,11 @@ interface MockProgramWithConfigFile {
 }
 
 vi.mock(import('../../src/create-program/shared.js'), async importOriginal => {
+  const actual = await importOriginal();
+
   return {
-    ...(await importOriginal()),
-    getAstFromProgram(program: MockProgramWithConfigFile): unknown {
+    ...actual,
+    getAstFromProgram: ((program: MockProgramWithConfigFile): unknown => {
       if (
         program.__FROM_CONFIG_FILE__?.endsWith('non-matching-tsconfig.json')
       ) {
@@ -44,15 +46,17 @@ vi.mock(import('../../src/create-program/shared.js'), async importOriginal => {
       // Remove temporary tracking value for the config added by mock createProgramFromConfigFile() below
       delete program.__FROM_CONFIG_FILE__;
       return { ast: {}, program };
-    },
-  } as Awaited<ReturnType<typeof importOriginal>>;
+    }) as unknown as typeof actual.getAstFromProgram,
+  };
 });
 
 vi.mock(
   import('../../src/create-program/useProvidedPrograms.js'),
   async importOriginal => {
+    const actual = await importOriginal();
+
     return {
-      ...(await importOriginal()),
+      ...actual,
       createProgramFromConfigFile: vi.fn(
         (configFile): MockProgramWithConfigFile => {
           return {
@@ -61,21 +65,21 @@ vi.mock(
             ...mockProgram,
           };
         },
-      ),
-    } as unknown as Awaited<ReturnType<typeof importOriginal>>;
+      ) as unknown as typeof actual.createProgramFromConfigFile,
+    };
   },
 );
 
 vi.mock(
   import('../../src/create-program/getWatchProgramsForProjects.js'),
   async importOriginal => {
+    const actual = await importOriginal();
+
     return {
-      ...(await importOriginal()),
+      ...actual,
       getWatchProgramsForProjects: vi.fn(() => [
         mockProgram,
-      ]) as unknown as Awaited<
-        ReturnType<typeof importOriginal>
-      >['getWatchProgramsForProjects'],
+      ]) as unknown as typeof actual.getWatchProgramsForProjects,
     };
   },
 );
