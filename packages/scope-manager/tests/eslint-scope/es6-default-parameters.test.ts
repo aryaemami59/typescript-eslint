@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import { getRealVariables, parseAndAnalyze } from '../test-utils';
 
 function forEach<T extends string>(
