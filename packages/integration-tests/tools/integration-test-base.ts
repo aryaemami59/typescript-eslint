@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import * as os from 'node:os';
 import path from 'node:path';
 import { promisify } from 'node:util';
-import { afterAll, describe, expect, inject, it, vi } from 'vitest';
+import { inject } from 'vitest';
 
 // eslint-disable-next-line @typescript-eslint/internal/no-relative-paths-to-internal-packages
 import rootPackageJson from '../../../package.json';
