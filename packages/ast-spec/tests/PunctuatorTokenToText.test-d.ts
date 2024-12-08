@@ -1,7 +1,5 @@
 import type { PunctuationSyntaxKind } from 'typescript';
 
-import { expectTypeOf, test } from 'vitest';
-
 import type { PunctuatorTokenToText } from '../src';
 
 test('type tests', () => {

@@ -1,5 +1,3 @@
-import { beforeEach, expect } from 'vitest';
-
 import { resetIds } from '../../../src/ID';
 import * as DefinitionBase from './DefinitionBase';
 import * as Reference from './Reference';

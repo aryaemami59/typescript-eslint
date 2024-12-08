@@ -1,14 +1,5 @@
 import debug from 'debug';
 import * as ts from 'typescript';
-import {
-  afterAll,
-  afterEach,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest';
 
 import { createProjectService } from '../../src/create-program/createProjectService.js';
 import { getParsedConfigFile } from '../../src/create-program/getParsedConfigFile.js';

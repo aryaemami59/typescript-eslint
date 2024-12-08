@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import type { TSESTreeOptions } from '../../src';
 
 import { withoutProjectParserOptions } from '../../src';

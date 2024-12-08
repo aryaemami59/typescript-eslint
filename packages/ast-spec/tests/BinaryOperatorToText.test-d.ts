@@ -4,8 +4,6 @@ import type {
   SyntaxKind,
 } from 'typescript';
 
-import { expectTypeOf, test } from 'vitest';
-
 import type { BinaryOperatorToText } from '../src';
 
 type BinaryOperatorWithoutInvalidTypes = Exclude<

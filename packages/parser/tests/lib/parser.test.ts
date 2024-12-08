@@ -4,7 +4,6 @@ import * as scopeManager from '@typescript-eslint/scope-manager';
 import * as typescriptESTree from '@typescript-eslint/typescript-estree';
 import path from 'node:path';
 import { ScriptTarget } from 'typescript';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { parse, parseForESLint } from '../../src/parser';
 

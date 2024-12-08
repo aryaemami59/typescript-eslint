@@ -5,7 +5,6 @@ import type { MockInstance } from 'vitest';
 import * as parser from '@typescript-eslint/parser';
 import { AST_NODE_TYPES } from '@typescript-eslint/typescript-estree';
 import * as semver from 'semver';
-import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type {
   DependencyConstraint,
