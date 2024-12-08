@@ -1,5 +1,4 @@
 import semver from 'semver';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type * as Parser from '../../src/parser';
 

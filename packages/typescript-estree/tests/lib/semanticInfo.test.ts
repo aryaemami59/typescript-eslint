@@ -2,7 +2,6 @@ import * as glob from 'glob';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as ts from 'typescript';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { ParseAndGenerateServicesResult } from '../../src/parser';
 import type { TSESTreeOptions } from '../../src/parser-options';

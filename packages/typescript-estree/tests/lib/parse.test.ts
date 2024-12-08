@@ -3,7 +3,6 @@ import type { CacheDurationSeconds } from '@typescript-eslint/types';
 import debug from 'debug';
 import * as fastGlobModule from 'fast-glob';
 import { join, resolve } from 'node:path';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { TSESTreeOptions } from '../../src/parser-options';
 

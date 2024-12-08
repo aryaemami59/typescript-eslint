@@ -1,5 +1,3 @@
-import { expectTypeOf, test } from 'vitest';
-
 import type { AST_NODE_TYPES } from '../src/ast-node-types';
 import type { Node } from '../src/unions/Node';
 
