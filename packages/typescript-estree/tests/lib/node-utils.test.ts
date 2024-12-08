@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import { unescapeStringLiteralText } from '../../src/node-utils';
 
 describe('unescapeStringLiteralText()', () => {

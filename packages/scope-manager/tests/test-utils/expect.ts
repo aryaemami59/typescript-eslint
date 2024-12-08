@@ -1,7 +1,6 @@
 import type { TSESTree } from '@typescript-eslint/types';
 
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
-import { expect } from 'vitest';
 
 import type {
   CatchClauseDefinition,
