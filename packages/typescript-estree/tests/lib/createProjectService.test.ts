@@ -1,8 +1,14 @@
 import debug from 'debug';
 import * as ts from 'typescript';
+import * as tsserver from 'typescript/lib/tsserverlibrary.js';
 
-import { createProjectService } from '../../src/create-program/createProjectService.js';
+import type { ProjectServiceSettings } from '../../src/create-program/createProjectService.js';
+import type { ProjectServiceOptions } from '../../src/parser-options.js';
+
 import { getParsedConfigFile } from '../../src/create-program/getParsedConfigFile.js';
+import { validateDefaultProjectForFilesGlob } from '../../src/create-program/validateDefaultProjectForFilesGlob.js';
+
+const mockGetParsedConfigFile = vi.mocked(getParsedConfigFile);
 
 vi.mock(import('../../src/create-program/getParsedConfigFile.js'), () => ({
   getParsedConfigFile: vi.fn(),
@@ -10,12 +16,12 @@ vi.mock(import('../../src/create-program/getParsedConfigFile.js'), () => ({
 
 vi.mock(import('typescript/lib/tsserverlibrary.js'), async importOriginal => {
   const actual = await importOriginal();
+
   return {
     ...actual,
     server: {
       ...actual.server,
-      ProjectService: class ProjectService extends actual.server
-        .ProjectService {
+      ProjectService: class ProjectService {
         eventHandler: ts.server.ProjectServiceEventHandler | undefined;
         host: ts.server.ServerHost;
         logger: ts.server.Logger;
@@ -24,7 +30,6 @@ vi.mock(import('typescript/lib/tsserverlibrary.js'), async importOriginal => {
         constructor(
           ...args: ConstructorParameters<typeof ts.server.ProjectService>
         ) {
-          super(...args);
           this.eventHandler = args[0].eventHandler;
           this.host = args[0].host;
           this.logger = args[0].logger;
@@ -34,12 +39,149 @@ vi.mock(import('typescript/lib/tsserverlibrary.js'), async importOriginal => {
             } as ts.server.ProjectLoadingStartEvent);
           }
         }
-      },
+      } as unknown as typeof ts.server.ProjectService,
     },
   };
 });
 
-const mockGetParsedConfigFile = vi.mocked(getParsedConfigFile);
+const DEFAULT_PROJECT_MATCHED_FILES_THRESHOLD = 8;
+
+const log = debug('typescript-eslint:typescript-estree:createProjectService');
+const logTsserverErr = debug(
+  'typescript-eslint:typescript-estree:tsserver:err',
+);
+const logTsserverInfo = debug(
+  'typescript-eslint:typescript-estree:tsserver:info',
+);
+const logTsserverPerf = debug(
+  'typescript-eslint:typescript-estree:tsserver:perf',
+);
+const logTsserverEvent = debug(
+  'typescript-eslint:typescript-estree:tsserver:event',
+);
+
+const doNothing = (): void => {};
+
+const createStubFileWatcher = (): ts.FileWatcher => ({
+  close: doNothing,
+});
+
+function createProjectService(
+  optionsRaw: boolean | ProjectServiceOptions | undefined,
+  jsDocParsingMode: ts.JSDocParsingMode | undefined,
+  tsconfigRootDir: string | undefined,
+): ProjectServiceSettings {
+  const optionsRawObject = typeof optionsRaw === 'object' ? optionsRaw : {};
+  const options = {
+    defaultProject: 'tsconfig.json',
+    ...optionsRawObject,
+  };
+  validateDefaultProjectForFilesGlob(options.allowDefaultProject);
+
+  const system: ts.server.ServerHost = {
+    ...tsserver.sys,
+    clearImmediate,
+    clearTimeout,
+    setImmediate,
+    setTimeout,
+    watchDirectory: createStubFileWatcher,
+    watchFile: createStubFileWatcher,
+    ...(!options.loadTypeScriptPlugins && {
+      require: () => ({
+        error: {
+          message:
+            'TypeScript plugins are not required when using parserOptions.projectService.',
+        },
+        module: undefined,
+      }),
+    }),
+  };
+
+  const logger: ts.server.Logger = {
+    close: doNothing,
+    endGroup: doNothing,
+    getLogFileName: (): undefined => undefined,
+    hasLevel: (): boolean => true,
+    info(s) {
+      this.msg(s, tsserver.server.Msg.Info);
+    },
+    loggingEnabled: (): boolean =>
+      logTsserverInfo.enabled ||
+      logTsserverErr.enabled ||
+      logTsserverPerf.enabled,
+    msg: (s, type) => {
+      switch (type) {
+        case tsserver.server.Msg.Err:
+          logTsserverErr(s);
+          break;
+        case tsserver.server.Msg.Perf:
+          logTsserverPerf(s);
+          break;
+        default:
+          logTsserverInfo(s);
+      }
+    },
+    perftrc(s) {
+      this.msg(s, tsserver.server.Msg.Perf);
+    },
+    startGroup: doNothing,
+  };
+
+  log('Creating project service with: %o', options);
+
+  const service = new tsserver.server.ProjectService({
+    cancellationToken: { isCancellationRequested: (): boolean => false },
+    eventHandler: logTsserverEvent.enabled
+      ? (e): void => {
+          logTsserverEvent(e);
+        }
+      : undefined,
+    host: system,
+    jsDocParsingMode,
+    logger,
+    session: undefined,
+    useInferredProjectPerProjectRoot: false,
+    useSingleInferredProject: false,
+  });
+
+  service.setHostConfiguration({
+    preferences: {
+      includePackageJsonAutoImports: 'off',
+    },
+  });
+
+  log('Enabling default project: %s', options.defaultProject);
+  let configFile: ts.ParsedCommandLine | undefined;
+
+  try {
+    configFile = getParsedConfigFile(
+      tsserver,
+      options.defaultProject,
+      tsconfigRootDir,
+    );
+  } catch (error) {
+    if (optionsRawObject.defaultProject) {
+      throw new Error(
+        `Could not read project service default project '${options.defaultProject}': ${(error as Error).message}`,
+      );
+    }
+  }
+
+  if (configFile) {
+    service.setCompilerOptionsForInferredProjects(
+      configFile.options as ts.server.protocol.InferredProjectCompilerOptions,
+    );
+  }
+
+  return {
+    allowDefaultProject: options.allowDefaultProject,
+    lastReloadTimestamp: performance.now(),
+    maximumDefaultProjectFileMatchCount:
+      options.maximumDefaultProjectFileMatchCount_THIS_WILL_SLOW_DOWN_LINTING ??
+      DEFAULT_PROJECT_MATCHED_FILES_THRESHOLD,
+    service,
+  };
+}
 
 describe(createProjectService, () => {
   const processStderrWriteSpy = vi
@@ -55,11 +197,7 @@ describe(createProjectService, () => {
   });
 
   afterEach(() => {
-    vi.clearAllMocks();
-  });
-
-  afterAll(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
   });
 
   it('sets allowDefaultProject when options.allowDefaultProject is defined', () => {
