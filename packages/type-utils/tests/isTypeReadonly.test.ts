@@ -4,7 +4,6 @@ import type * as ts from 'typescript';
 import { parseForESLint } from '@typescript-eslint/parser';
 import { AST_NODE_TYPES } from '@typescript-eslint/utils';
 import path from 'node:path';
-import { describe, expect, it } from 'vitest';
 
 import type { ReadonlynessOptions } from '../src/isTypeReadonly';
 

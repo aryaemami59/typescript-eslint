@@ -3,7 +3,6 @@ import type { TSESTree } from '@typescript-eslint/typescript-estree';
 import { parseForESLint } from '@typescript-eslint/parser';
 import path from 'node:path';
 import * as ts from 'typescript';
-import { describe, it } from 'vitest';
 
 import { getTypeFlags, isTypeFlagSet } from '../src';
 import { expectToHaveParserServices } from './test-utils/expectToHaveParserServices';

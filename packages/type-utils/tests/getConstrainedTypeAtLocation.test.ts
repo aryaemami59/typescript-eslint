@@ -4,7 +4,6 @@ import type { ParserServicesWithTypeInformation } from '@typescript-eslint/types
 import { parseForESLint } from '@typescript-eslint/parser';
 import path from 'node:path';
 import * as tsutils from 'ts-api-utils';
-import { describe, expect, it } from 'vitest';
 
 import { getConstrainedTypeAtLocation, isTypeUnknownType } from '../src';
 

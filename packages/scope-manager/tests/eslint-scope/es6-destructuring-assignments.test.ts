@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/dot-notation -- ['implicit'] is private */
-import { describe, expect, it } from 'vitest';
-
 import {
   expectToBeForScope,
   expectToBeFunctionScope,
