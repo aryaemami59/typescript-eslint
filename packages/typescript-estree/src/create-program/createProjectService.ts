@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function -- for TypeScript APIs*/
+import type * as ts from 'typescript/lib/tsserverlibrary';
+
 import debug from 'debug';
-import * as ts from 'typescript/lib/tsserverlibrary';
 
 import type { ProjectServiceOptions } from '../parser-options';
 
@@ -52,9 +53,8 @@ export function createProjectService(
 
   // We import this lazily to avoid its cost for users who don't use the service
   // TODO: Once we drop support for TS<5.3 we can import from "typescript" directly
-  //\ eslint-disable-next-line @typescript-eslint/no-require-imports
-  const tsserver = ts;
-  // const tsserver = require('typescript/lib/tsserverlibrary.js') as typeof ts;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const tsserver = require('typescript/lib/tsserverlibrary') as typeof ts;
 
   // TODO: see getWatchProgramsForProjects
   // We don't watch the disk, we just refer to these when ESLint calls us
