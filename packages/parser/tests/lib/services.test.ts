@@ -16,7 +16,14 @@ import {
 // Setup
 //------------------------------------------------------------------------------
 
-const FIXTURES_DIR = './tests/fixtures/services';
+const FIXTURES_DIR = path.join(
+  __dirname,
+  '..',
+  '..',
+  'tests',
+  'fixtures',
+  'services',
+);
 const testFiles = glob.sync(`**/*.src.ts`, {
   cwd: FIXTURES_DIR,
 });
