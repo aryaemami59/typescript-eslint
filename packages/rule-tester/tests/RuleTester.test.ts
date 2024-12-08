@@ -4,7 +4,6 @@ import type { MockInstance } from 'vitest';
 
 import * as parser from '@typescript-eslint/parser';
 import { AST_NODE_TYPES } from '@typescript-eslint/typescript-estree';
-import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { InvalidTestCase, RuleTesterConfig, ValidTestCase } from '../src';
 import type { RuleTesterTestFrameworkFunctionBase } from '../src/TestFramework';

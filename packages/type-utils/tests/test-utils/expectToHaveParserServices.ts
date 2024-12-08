@@ -3,8 +3,6 @@ import type {
   ParserServicesWithTypeInformation,
 } from '@typescript-eslint/typescript-estree';
 
-import { expect } from 'vitest';
-
 export function expectToHaveParserServices(
   services: ParserServices | null | undefined,
 ): asserts services is ParserServicesWithTypeInformation {

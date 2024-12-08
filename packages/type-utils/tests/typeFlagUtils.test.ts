@@ -4,7 +4,6 @@ import type { TestContext } from 'vitest';
 import { parseForESLint } from '@typescript-eslint/parser';
 import path from 'node:path';
 import * as ts from 'typescript';
-import { describe, it } from 'vitest';
 
 import { getTypeFlags, isTypeFlagSet } from '../src';
 import { expectToHaveParserServices } from './test-utils/expectToHaveParserServices';
