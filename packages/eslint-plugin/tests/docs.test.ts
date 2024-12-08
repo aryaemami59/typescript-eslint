@@ -12,7 +12,6 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { titleCase } from 'title-case';
-import { beforeAll, describe, expect, it, test } from 'vitest';
 import { VitestSnapshotEnvironment } from 'vitest/snapshot';
 
 import rules from '../src/rules';
