@@ -1,7 +1,5 @@
 import type { TSESTree } from '@typescript-eslint/types';
 
-import { expectTypeOf, test } from 'vitest';
-
 import type { RuleListener } from '../../src/ts-eslint';
 
 type RuleListenerKeysWithoutIndexSignature = {

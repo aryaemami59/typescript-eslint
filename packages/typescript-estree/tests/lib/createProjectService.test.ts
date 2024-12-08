@@ -1,15 +1,6 @@
 import debug from 'debug';
 import * as ts from 'typescript';
 import * as tsserver from 'typescript/lib/tsserverlibrary.js';
-import {
-  afterAll,
-  afterEach,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest';
 
 import type { ProjectServiceSettings } from '../../src/create-program/createProjectService.js';
 import type { ProjectServiceOptions } from '../../src/parser-options.js';

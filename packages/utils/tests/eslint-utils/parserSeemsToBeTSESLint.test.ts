@@ -1,5 +1,3 @@
-import { describe, test } from 'vitest';
-
 import { parserSeemsToBeTSESLint } from '../../src/eslint-utils/parserSeemsToBeTSESLint';
 
 describe(parserSeemsToBeTSESLint, () => {
