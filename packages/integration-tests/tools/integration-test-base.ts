@@ -1,9 +1,9 @@
-import * as fs from 'node:fs/promises';
-import * as path from 'node:path';
-import { pathToFileURL } from 'node:url';
+import childProcess from 'node:child_process';
+import fs from 'node:fs/promises';
+import * as os from 'node:os';
+import path from 'node:path';
+import { promisify } from 'node:util';
 import { inject } from 'vitest';
-
-import type { PackageJSON } from './pack-packages.js';
 
 import rootPackageJson from '../../../package.json';
 

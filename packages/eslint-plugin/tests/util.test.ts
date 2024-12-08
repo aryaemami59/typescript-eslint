@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import { isDefinitionFile, upperCaseFirst } from '../src/util';
 
 describe(isDefinitionFile, () => {

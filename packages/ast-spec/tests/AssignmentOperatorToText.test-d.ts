@@ -1,7 +1,5 @@
 import type { AssignmentOperator } from 'typescript';
 
-import { expectTypeOf, test } from 'vitest';
-
 import type { AssignmentOperatorToText } from '../src';
 
 test('type tests', () => {

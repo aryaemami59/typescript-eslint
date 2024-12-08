@@ -1,5 +1,3 @@
-import { describe, expect, test } from 'vitest';
-
 import { createRule } from '../src/util';
 import { areOptionsValid } from './areOptionsValid';
 
