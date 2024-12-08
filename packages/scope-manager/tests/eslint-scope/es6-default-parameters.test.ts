@@ -1,5 +1,4 @@
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
-import { describe, it } from 'vitest';
 
 import { getRealVariables, parseAndAnalyze } from '../test-utils';
 

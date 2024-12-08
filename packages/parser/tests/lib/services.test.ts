@@ -2,7 +2,6 @@ import { createProgram } from '@typescript-eslint/typescript-estree';
 import * as glob from 'glob';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { describe, it } from 'vitest';
 
 import type { ParserOptions } from '../../src/parser';
 
