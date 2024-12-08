@@ -1,18 +1,15 @@
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 
 import { ExpiringCache } from '../../src/parseSettings/ExpiringCache';
 import { getProjectConfigFiles } from '../../src/parseSettings/getProjectConfigFiles';
 
-const mockExistsSync = vi.fn<(filePath: string) => boolean>();
+const mockExistsSync = vi.mocked(existsSync);
 
-vi.mock(
-  import('node:fs'),
-  async importOriginal =>
-    ({
-      ...(await importOriginal()),
-      existsSync: (filePath: string): boolean => mockExistsSync(filePath),
-    }) as unknown as ReturnType<typeof importOriginal>,
-);
+vi.mock(import('node:fs'), async importOriginal => ({
+  ...(await importOriginal()),
+  existsSync: vi.fn(),
+}));
 
 const parseSettings = {
   filePath: './repos/repo/packages/package/file.ts',

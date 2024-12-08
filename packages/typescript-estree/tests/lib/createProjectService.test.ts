@@ -8,27 +8,20 @@ import type { ProjectServiceOptions } from '../../src/parser-options.js';
 import { getParsedConfigFile } from '../../src/create-program/getParsedConfigFile.js';
 import { validateDefaultProjectForFilesGlob } from '../../src/create-program/validateDefaultProjectForFilesGlob.js';
 
-vi.mock(
-  import('../../src/create-program/getParsedConfigFile.js'),
-  async importOriginal => {
-    const actual = await importOriginal();
-    const getParsedConfigFile = vi.fn(actual.getParsedConfigFile);
+const mockGetParsedConfigFile = vi.mocked(getParsedConfigFile);
 
-    return {
-      ...actual,
-      getParsedConfigFile,
-    };
-  },
-);
+vi.mock(import('../../src/create-program/getParsedConfigFile.js'), () => ({
+  getParsedConfigFile: vi.fn(),
+}));
 
 vi.mock(import('typescript/lib/tsserverlibrary.js'), async importOriginal => {
   const actual = await importOriginal();
+
   return {
     ...actual,
     server: {
       ...actual.server,
-      ProjectService: class ProjectService extends actual.server
-        .ProjectService {
+      ProjectService: class ProjectService {
         eventHandler: ts.server.ProjectServiceEventHandler | undefined;
         host: ts.server.ServerHost;
         logger: ts.server.Logger;
@@ -37,7 +30,6 @@ vi.mock(import('typescript/lib/tsserverlibrary.js'), async importOriginal => {
         constructor(
           ...args: ConstructorParameters<typeof ts.server.ProjectService>
         ) {
-          super(...args);
           this.eventHandler = args[0].eventHandler;
           this.host = args[0].host;
           this.logger = args[0].logger;
@@ -47,7 +39,7 @@ vi.mock(import('typescript/lib/tsserverlibrary.js'), async importOriginal => {
             } as ts.server.ProjectLoadingStartEvent);
           }
         }
-      },
+      } as unknown as typeof ts.server.ProjectService,
     },
   };
 });
@@ -191,8 +183,6 @@ function createProjectService(
   };
 }
 
-const mockGetParsedConfigFile = vi.mocked(getParsedConfigFile);
-
 describe(createProjectService, () => {
   const processStderrWriteSpy = vi
     .spyOn(process.stderr, 'write')
@@ -207,11 +197,7 @@ describe(createProjectService, () => {
   });
 
   afterEach(() => {
-    vi.clearAllMocks();
-  });
-
-  afterAll(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
   });
 
   it('sets allowDefaultProject when options.allowDefaultProject is defined', () => {
