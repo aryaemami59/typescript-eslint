@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import * as os from 'node:os';
 import path from 'node:path';
 import { promisify } from 'node:util';
-import { describe, expect, inject, it, vi } from 'vitest';
+import { inject } from 'vitest';
 
 import rootPackageJson from '../../../package.json';
 

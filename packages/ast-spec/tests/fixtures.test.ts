@@ -1,7 +1,6 @@
 import * as glob from 'glob';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import { describe, expect, it } from 'vitest';
 
 import type {
   Fixture,

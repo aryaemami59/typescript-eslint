@@ -1,7 +1,5 @@
 import type { TSESTree } from '@typescript-eslint/typescript-estree';
 
-import { expect } from 'vitest';
-
 import type { ParserOptions } from '../../src/parser';
 
 import * as parser from '../../src/parser';

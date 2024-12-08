@@ -1,6 +1,5 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { describe, expect, it } from 'vitest';
 
 import eslintPlugin from '../src';
 import rules from '../src/rules';
