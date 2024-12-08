@@ -1,5 +1,4 @@
 import path from 'node:path';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { ExpiringCache } from '../../src/parseSettings/ExpiringCache';
 import { getProjectConfigFiles } from '../../src/parseSettings/getProjectConfigFiles';

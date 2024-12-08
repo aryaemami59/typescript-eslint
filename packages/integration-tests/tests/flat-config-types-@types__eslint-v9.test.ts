@@ -1,5 +1,3 @@
-import { expect } from 'vitest';
-
 import {
   eslintIntegrationTest,
   typescriptIntegrationTest,
