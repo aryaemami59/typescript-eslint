@@ -27,8 +27,6 @@ describe('Warn on unsupported TypeScript version', () => {
         'WARNING: You are currently running a version of TypeScript which is not officially supported by @typescript-eslint/typescript-estree.',
       ),
     );
-
-    vi.unstubAllGlobals();
   });
 
   it('should warn the user if they are running on a non TTY process and a custom loggerFn was passed', () => {
@@ -40,8 +38,6 @@ describe('Warn on unsupported TypeScript version', () => {
       loggerFn,
     });
     expect(loggerFn).toHaveBeenCalled();
-
-    vi.unstubAllGlobals();
   });
 
   it('should not warn the user if they are running on a non TTY process and a custom loggerFn was not passed', () => {
@@ -51,7 +47,5 @@ describe('Warn on unsupported TypeScript version', () => {
 
     parser.parse('');
     expect(console.log).not.toHaveBeenCalled();
-
-    vi.unstubAllGlobals();
   });
 });
