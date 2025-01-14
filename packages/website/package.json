@@ -15,7 +15,7 @@
     "build": "docusaurus build",
     "clear": "docusaurus clear",
     "clean": "tsc -b tsconfig.json --clean & yarn run clear",
-    "format": "prettier --write . --ignore-path=$PROJECT_CWD/.prettierignore",
+    "format": "yarn run -T format",
     "generate-website-dts": "tsx ./tools/generate-website-dts.mts",
     "stylelint": "stylelint \"src/**/*.css\"",
     "stylelint:fix": "stylelint \"src/**/*.css\" --fix",

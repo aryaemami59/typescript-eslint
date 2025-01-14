@@ -5,11 +5,11 @@
   "root": "packages/eslint-plugin-internal",
   "sourceRoot": "packages/eslint-plugin-internal/src",
   "targets": {
-    "test": {
-      "executor": "@nx/vite:test"
-    },
     "lint": {
       "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/vite:test"
     }
   }
 }
