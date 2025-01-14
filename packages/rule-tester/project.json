@@ -5,11 +5,11 @@
   "root": "packages/rule-tester",
   "sourceRoot": "packages/rule-tester/src",
   "targets": {
-    "test": {
-      "executor": "@nx/vite:test"
-    },
     "lint": {
       "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/vite:test"
     }
   }
 }
