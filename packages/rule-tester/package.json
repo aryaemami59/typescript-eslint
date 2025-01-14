@@ -40,7 +40,7 @@
     "postbuild": "downlevel-dts dist _ts4.2/dist --to=4.2",
     "clean": "tsc -b tsconfig.build.json --clean & yarn run postclean",
     "postclean": "rimraf dist/ _ts4.2/ coverage/",
-    "format": "prettier --write . --ignore-path=$PROJECT_CWD/.prettierignore",
+    "format": "yarn run -T format",
     "lint": "yarn run -T lint",
     "pretest-eslint-base": "tsc -b tsconfig.build.json",
     "test-eslint-base": "mocha --require source-map-support/register ./tests/eslint-base/eslint-base.test.js",
