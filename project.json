@@ -20,6 +20,10 @@
         "lintFilePatterns": ["{workspaceRoot}/!packages"]
       }
     },
+    "test": {
+      "executor": "@nx/vite:test",
+      "dependsOn": ["typescript-eslint:build"]
+    },
     "generate-configs": {
       "command": "tsx tools/scripts/generate-configs.mts",
       "dependsOn": ["eslint-plugin:build"]
