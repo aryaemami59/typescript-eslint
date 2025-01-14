@@ -35,12 +35,12 @@
     "estree"
   ],
   "scripts": {
-    "build": "tsc -b tsconfig.build.json",
+    "build": "tsc -b tsconfig.build.json && yarn run postbuild",
     "postbuild": "downlevel-dts dist _ts4.2/dist --to=4.2",
-    "clean": "tsc -b tsconfig.build.json --clean",
-    "postclean": "rimraf dist && rimraf _ts3.4 && rimraf coverage",
-    "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
-    "lint": "npx nx lint",
+    "clean": "tsc -b tsconfig.build.json --clean & yarn run postclean",
+    "postclean": "rimraf dist/ _ts4.2/ coverage/",
+    "format": "prettier --write . --ignore-path=$PROJECT_CWD/.prettierignore",
+    "lint": "eslint .",
     "pretest-eslint-base": "tsc -b tsconfig.build.json",
     "test-eslint-base": "mocha --require source-map-support/register ./tests/eslint-base/eslint-base.test.js",
     "test": "vitest --run",
@@ -85,9 +85,9 @@
     "access": "public"
   },
   "typesVersions": {
-    "<3.8": {
+    "<4.7": {
       "*": [
-        "_ts3.4/*"
+        "_ts4.2/*"
       ]
     }
   }

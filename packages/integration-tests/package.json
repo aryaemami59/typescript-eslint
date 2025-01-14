@@ -12,12 +12,13 @@
   "homepage": "https://typescript-eslint.io",
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
-    "lint": "npx nx lint",
+    "format": "prettier --write . --ignore-path=$PROJECT_CWD/.prettierignore",
+    "lint": "eslint .",
     "test": "vitest --run",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "eslint": "*",
     "prettier": "^3.5.1",
     "typescript": "*",
     "vitest": "^3.0.5"
