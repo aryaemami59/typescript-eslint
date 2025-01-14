@@ -10,7 +10,6 @@ const vitestConfig = mergeConfig(
 
   defineConfig({
     test: {
-      coverage: { enabled: false },
       dir: path.join(import.meta.dirname, 'tests'),
 
       fileParallelism: os.platform() !== 'win32',
