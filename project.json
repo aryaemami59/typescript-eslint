@@ -6,8 +6,17 @@
   "sourceRoot": ".",
   "// These targets are used for repo level utils and checking repo files which do not belong to specific published packages": {},
   "targets": {
+    "clean": {
+      "command": "rimraf dist/ coverage/ .eslintcache"
+    },
     "typecheck": {
-      "command": "tsc -b ./tsconfig.repo-config-files.json"
+      "command": "tsc -b ./tsconfig.repo-config-files.json",
+      "dependsOn": [
+        {
+          "projects": ["typescript-eslint"],
+          "target": "build"
+        }
+      ]
     },
     "lint": {
       "executor": "@nx/eslint:lint",
@@ -16,13 +25,25 @@
       }
     },
     "generate-configs": {
-      "command": "tsx tools/scripts/generate-configs.mts"
+      "command": "tsx tools/scripts/generate-configs.mts",
+      "dependsOn": [
+        {
+          "projects": ["eslint-plugin"],
+          "target": "build"
+        }
+      ]
     },
     "generate-contributors": {
       "command": "tsx tools/scripts/generate-contributors.mts"
     },
     "generate-lib": {
-      "command": "tsx tools/scripts/generate-lib.mts"
+      "command": "tsx tools/scripts/generate-lib.mts",
+      "dependsOn": [
+        {
+          "projects": ["typescript-eslint", "eslint-plugin-internal"],
+          "target": "build"
+        }
+      ]
     },
     "generate-sponsors": {
       "command": "tsx tools/scripts/generate-sponsors.mts"
