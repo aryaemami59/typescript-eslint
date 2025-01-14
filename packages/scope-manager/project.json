@@ -5,11 +5,11 @@
   "sourceRoot": "packages/scope-manager/src",
   "projectType": "library",
   "targets": {
-    "test": {
-      "executor": "@nx/vite:test"
-    },
     "lint": {
       "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/vite:test"
     }
   }
 }

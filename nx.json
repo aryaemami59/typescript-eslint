@@ -106,7 +106,6 @@
       "cache": true
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
       "dependsOn": [
         {
           "projects": ["eslint-plugin-internal", "typescript-eslint"],
