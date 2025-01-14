@@ -100,7 +100,6 @@
       "cache": true
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
       "dependsOn": ["eslint-plugin-internal:build", "typescript-eslint:build"],
       "inputs": [
         "default",
