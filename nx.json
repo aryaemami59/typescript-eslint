@@ -16,13 +16,24 @@
       }
     },
     {
-      "include": ["packages/*"],
-      "exclude": ["packages/website", "packages/website-eslint"],
       "plugin": "@nx/vite/plugin",
       "options": {
         "buildTargetName": "vite:build",
         "testTargetName": "test",
-        "typecheckTargetName": "vite:typecheck"
+        "serveTargetName": "serve",
+        "devTargetName": "dev",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "vite:typecheck",
+        "buildDepsTargetName": "vite:build-deps",
+        "watchDepsTargetName": "vite:watch-deps"
+      }
+    },
+    {
+      "include": ["packages/*"],
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
       }
     }
   ],
@@ -64,10 +75,20 @@
         }
       ],
       "outputs": ["{projectRoot}/dist", "{projectRoot}/_ts4.*"],
-      "cache": true,
       "options": {
         "cwd": "{projectRoot}"
-      }
+      },
+      "cache": true
+    },
+    "test": {
+      "dependsOn": [
+        {
+          "target": "build",
+          "dependencies": true
+        }
+      ],
+      "outputs": ["{projectRoot}/coverage"],
+      "cache": true
     },
     "@nx/vite:test": {
       "dependsOn": [
@@ -89,6 +110,9 @@
         },
         {
           "fileset": "{workspaceRoot}/vitest.config.base.mts"
+        },
+        {
+          "fileset": "{projectRoot}/vitest.config.mts"
         }
       ],
       "outputs": ["{options.reportsDirectory}"],
@@ -99,37 +123,7 @@
         "reportsDirectory": "{projectRoot}/coverage"
       }
     },
-    "test": {
-      "options": {
-        "config": "{projectRoot}/vitest.config.mts",
-        "watch": false
-      },
-      "dependsOn": [
-        {
-          "target": "build",
-          "dependencies": true
-        }
-      ],
-      "inputs": [
-        {
-          "input": "default"
-        },
-        {
-          "input": "production",
-          "dependencies": true
-        },
-        {
-          "fileset": "{workspaceRoot}/vitest.config.mts"
-        },
-        {
-          "fileset": "{workspaceRoot}/vitest.config.base.mts"
-        }
-      ],
-      "outputs": ["{options.reportsDirectory}"],
-      "cache": true
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
+    "@nx/eslint:lint": {
       "dependsOn": [
         {
           "projects": ["eslint-plugin-internal", "typescript-eslint"],
@@ -141,6 +135,16 @@
         "cache": true,
         "eslintConfig": "{workspaceRoot}/eslint.config.mjs"
       },
+      "outputs": ["{options.outputFile}"],
+      "cache": true
+    },
+    "lint": {
+      "dependsOn": [
+        {
+          "projects": ["eslint-plugin-internal", "typescript-eslint"],
+          "target": "build"
+        }
+      ],
       "inputs": [
         {
           "input": "default"

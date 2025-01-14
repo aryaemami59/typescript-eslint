@@ -1,7 +1,6 @@
 import type { InvalidTestCase } from '@typescript-eslint/rule-tester';
 
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
-import * as path from 'node:path';
 
 import type {
   InferMessageIdsTypeFromRule,
@@ -1054,16 +1053,7 @@ ruleTester.run('prefer-readonly-parameter-types', rule, {
       ],
       options: [
         {
-          allow: [
-            {
-              from: 'file',
-              name: 'RegExp',
-              path: path.relative(
-                process.cwd(),
-                path.join(__dirname, '..', '..'),
-              ),
-            },
-          ],
+          allow: [{ from: 'file', name: 'RegExp' }],
         },
       ],
     },

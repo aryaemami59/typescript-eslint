@@ -5,9 +5,6 @@
   "root": "packages/parser",
   "sourceRoot": "packages/parser/src",
   "targets": {
-    "test": {
-      "executor": "@nx/vite:test"
-    },
     "lint": {
       "executor": "@nx/eslint:lint"
     }

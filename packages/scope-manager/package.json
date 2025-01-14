@@ -6,6 +6,7 @@
     "dist",
     "!*.tsbuildinfo",
     "package.json",
+    "_ts4.3",
     "README.md",
     "LICENSE"
   ],

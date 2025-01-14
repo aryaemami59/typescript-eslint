@@ -6,9 +6,6 @@
   "root": "packages/integration-tests",
   "sourceRoot": "packages/integration-tests/tools",
   "targets": {
-    "test": {
-      "executor": "@nx/vite:test"
-    },
     "typecheck": {
       "dependsOn": []
     },
