@@ -26,35 +26,33 @@ describe('isSymbolFromDefaultLibrary', () => {
     return { program: services.program, symbol: type.getSymbol() };
   }
 
-  function runTestForAliasDeclaration(code: string, expected: boolean): void {
-    const { program, symbol } = getTypes(code);
-    const result = isSymbolFromDefaultLibrary(program, symbol);
-    expect(result).toBe(expected);
-  }
-
   describe('is symbol from default library', () => {
-    function runTest(code: string): void {
-      runTestForAliasDeclaration(code, true);
-    }
-
-    it.each([
+    it.for([
       ['type Test = Array<number>;'],
       ['type Test = Map<string,number>;'],
       ['type Test = Promise<void>'],
       ['type Test = Error'],
       ['type Test = Object'],
-    ])('when code is %s, returns true', runTest);
+    ] as const)('when code is %s, returns true', ([code], { expect }) => {
+      const { program, symbol } = getTypes(code);
+
+      const result = isSymbolFromDefaultLibrary(program, symbol);
+
+      expect(result).toBe(true);
+    });
   });
 
   describe('is not symbol from default library', () => {
-    function runTest(code: string): void {
-      runTestForAliasDeclaration(code, false);
-    }
-
-    it.each([
+    it.for([
       ['const test: Array<number> = [1,2,3];'],
       ['type Test = number;'],
       ['interface Test { bar: string; };'],
-    ])('when code is %s, returns false', runTest);
+    ] as const)('when code is %s, returns false', ([code], { expect }) => {
+      const { program, symbol } = getTypes(code);
+
+      const result = isSymbolFromDefaultLibrary(program, symbol);
+
+      expect(result).toBe(false);
+    });
   });
 });
