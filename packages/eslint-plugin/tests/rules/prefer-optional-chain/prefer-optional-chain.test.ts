@@ -14,7 +14,7 @@ const ruleTester = new RuleTester({
   },
 });
 
-describe('|| {}', { timeout: 20_000 }, () => {
+describe('|| {}', () => {
   ruleTester.run('prefer-optional-chain', rule, {
     invalid: [
       {

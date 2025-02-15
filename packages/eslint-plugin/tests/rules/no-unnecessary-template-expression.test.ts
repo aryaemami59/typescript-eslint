@@ -959,7 +959,7 @@ this code has trailing position template expression but it isn\\'t whitespace
 ];
 
 describe('fixer should not change runtime value', () => {
-  it.for(invalidCases)('$code', ({ code, output }, { expect }) => {
+  test.for(invalidCases)('$code', ({ code, output }, { expect }) => {
     if (!output) {
       return;
     }

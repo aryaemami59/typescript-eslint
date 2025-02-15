@@ -199,7 +199,7 @@ describe('Rule schemas should validate options correctly', () => {
     semi: ['never'],
   };
 
-  it.for(testCases)(
+  test.for(testCases)(
     '%s must accept valid options',
     ([ruleName, rule], { expect }) => {
       expect(
@@ -211,9 +211,12 @@ describe('Rule schemas should validate options correctly', () => {
     },
   );
 
-  it.for(testCases)('%s rejects arbitrary options', ([, rule], { expect }) => {
-    expect(areOptionsValid(rule, [{ 'arbitrary-schemas.test.ts': true }])).toBe(
-      false,
-    );
-  });
+  test.for(testCases)(
+    '%s rejects arbitrary options',
+    ([, rule], { expect }) => {
+      expect(
+        areOptionsValid(rule, [{ 'arbitrary-schemas.test.ts': true }]),
+      ).toBe(false);
+    },
+  );
 });
