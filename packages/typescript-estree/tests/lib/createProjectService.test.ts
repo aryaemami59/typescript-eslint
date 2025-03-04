@@ -300,7 +300,7 @@ describe(createProjectService, () => {
 
   it('uses the default project compiler options when options.defaultProject is set and getParsedConfigFile succeeds', async () => {
     const compilerOptions: ts.CompilerOptions = { strict: true };
-    mockGetParsedConfigFile.mockReturnValue({
+    mockGetParsedConfigFile.mockReturnValueOnce({
       errors: [],
       fileNames: [],
       options: compilerOptions,
@@ -331,7 +331,7 @@ describe(createProjectService, () => {
   it('uses tsconfigRootDir as getParsedConfigFile projectDirectory when provided', async () => {
     const compilerOptions: ts.CompilerOptions = { strict: true };
     const tsconfigRootDir = 'path/to/repo';
-    mockGetParsedConfigFile.mockReturnValue({
+    mockGetParsedConfigFile.mockReturnValueOnce({
       errors: [],
       fileNames: [],
       options: compilerOptions,

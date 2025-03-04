@@ -1,25 +1,20 @@
-[
-  "// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`jsx > fragment`]",
-  ScopeManager {
-    variables: [
-      ImplicitGlobalConstTypeVariable,
-    ],
-    scopes: [
-      GlobalScope$1 {
-        block: Program$1,
-        isStrict: false,
-        references: [],
-        set: Map {
-          "const" => ImplicitGlobalConstTypeVariable,
-        },
-        type: "global",
-        upper: null,
-        variables: [
-          ImplicitGlobalConstTypeVariable,
-        ],
+ScopeManager {
+  variables: [
+    ImplicitGlobalConstTypeVariable,
+  ],
+  scopes: [
+    GlobalScope$1 {
+      block: Program$1,
+      isStrict: false,
+      references: [],
+      set: Map {
+        "const" => ImplicitGlobalConstTypeVariable,
       },
-    ],
-  },
-]
+      type: "global",
+      upper: null,
+      variables: [
+        ImplicitGlobalConstTypeVariable,
+      ],
+    },
+  ],
+}

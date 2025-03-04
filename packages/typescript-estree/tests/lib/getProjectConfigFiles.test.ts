@@ -60,7 +60,7 @@ describe(getProjectConfigFiles, () => {
 
   describe('when caching hits', () => {
     it('returns a local tsconfig.json without calling existsSync a second time', () => {
-      mockExistsSync.mockReturnValue(true);
+      mockExistsSync.mockReturnValueOnce(true);
 
       getProjectConfigFiles(parseSettings, true);
       const actual = getProjectConfigFiles(parseSettings, true);
@@ -138,7 +138,7 @@ describe(getProjectConfigFiles, () => {
 
   describe('when caching misses', () => {
     it('returns a local tsconfig.json when matched', () => {
-      mockExistsSync.mockReturnValue(true);
+      mockExistsSync.mockReturnValueOnce(true);
 
       const actual = getProjectConfigFiles(parseSettings, true);
 
@@ -168,7 +168,7 @@ describe(getProjectConfigFiles, () => {
     });
 
     it('throws when searching passes the tsconfigRootDir', () => {
-      mockExistsSync.mockReturnValue(false);
+      mockExistsSync.mockReturnValueOnce(false);
 
       expect(() =>
         getProjectConfigFiles({ ...parseSettings, tsconfigRootDir: '/' }, true),

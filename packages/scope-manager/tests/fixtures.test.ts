@@ -58,17 +58,11 @@ function nestDescribe(
       nestDescribe(fixture, segments.slice(1));
     });
   } else {
-    it(
+    test(
       fixture.name,
       { only: [...fixture.segments, fixture.name].join(path.sep) === ONLY },
       async () => {
         const contents = await fs.readFile(fixture.absolute, 'utf8');
-
-        const { VitestSnapshotEnvironment } = await import('vitest/snapshot');
-
-        const vitestSnapshotHeader = new VitestSnapshotEnvironment({
-          snapshotsDirName: fixture.snapshotPath,
-        }).getHeader();
 
         const lines = contents.split('\n');
         const options: Record<string, unknown> = {
@@ -156,15 +150,9 @@ function nestDescribe(
           const { scopeManager } = parseAndAnalyze(contents, options, {
             jsx: fixture.ext.endsWith('x'),
           });
-          await expect([
-            `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-            scopeManager,
-          ]).toMatchFileSnapshot(fixture.snapshotFile);
+          await expect(scopeManager).toMatchFileSnapshot(fixture.snapshotFile);
         } catch (e) {
-          await expect([
-            `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-            e,
-          ]).toMatchFileSnapshot(fixture.snapshotFile);
+          await expect(e).toMatchFileSnapshot(fixture.snapshotFile);
         }
       },
     );
