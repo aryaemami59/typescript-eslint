@@ -71,7 +71,6 @@
     "espree": "^10.3.0",
     "esprima": "^4.0.1",
     "mocha": "^10.4.0",
-    "prettier": "^3.5.3",
     "rimraf": "*",
     "sinon": "^16.1.3",
     "source-map-support": "^0.5.21",

@@ -376,7 +376,6 @@ describe('Validating rule docs', async () => {
       },
     );
 
-    // eslint-disable-next-line vitest/no-done-callback
     test('code examples ESLint output', async ({ expect }) => {
       const { VitestSnapshotEnvironment } = await import('vitest/snapshot');
       // TypeScript can't infer type arguments unless we provide them explicitly

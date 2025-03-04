@@ -65,7 +65,6 @@
     "downlevel-dts": "*",
     "eslint": "*",
     "glob": "*",
-    "prettier": "^3.5.3",
     "rimraf": "*",
     "typescript": "*",
     "vitest": "^3.0.7"

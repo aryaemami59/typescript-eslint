@@ -51,7 +51,6 @@
   "devDependencies": {
     "downlevel-dts": "*",
     "eslint": "*",
-    "prettier": "^3.5.3",
     "rimraf": "*",
     "tsx": "*",
     "typescript": "*"
