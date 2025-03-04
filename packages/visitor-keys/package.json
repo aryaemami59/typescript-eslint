@@ -44,7 +44,7 @@
     "postclean": "rimraf dist/ _ts4.3/ coverage/",
     "format": "yarn run -T format",
     "lint": "yarn run -T lint",
-    "test": "vitest --run",
+    "test": "vitest --run --config=$INIT_CWD/vitest.config.mts",
     "check-types": "yarn run --top-level nx typecheck"
   },
   "dependencies": {
