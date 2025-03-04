@@ -1,5 +1,5 @@
 import * as path from 'node:path';
-import { defaultExclude, defineConfig, mergeConfig } from 'vitest/config';
+import { defaultExclude, defineProject, mergeConfig } from 'vitest/config';
 
 import { vitestBaseConfig } from '../../vitest.config.base.mjs';
 import packageJson from './package.json' with { type: 'json' };
@@ -7,7 +7,7 @@ import packageJson from './package.json' with { type: 'json' };
 const vitestConfig = mergeConfig(
   vitestBaseConfig,
 
-  defineConfig({
+  defineProject({
     plugins: [
       {
         load(id) {
@@ -41,6 +41,7 @@ const vitestConfig = mergeConfig(
 
           return;
         },
+
         name: 'virtual-dependency-totally-real-dependency-package-json',
 
         resolveId(source) {
@@ -59,8 +60,7 @@ const vitestConfig = mergeConfig(
     test: {
       dir: path.join(import.meta.dirname, 'tests'),
       exclude: [...defaultExclude, 'eslint-base/eslint-base.test.js'],
-      name: packageJson.name,
-
+      name: packageJson.name.replace('@typescript-eslint/', ''),
       root: import.meta.dirname,
     },
   }),

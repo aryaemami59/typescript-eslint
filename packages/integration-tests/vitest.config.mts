@@ -1,6 +1,6 @@
 import * as os from 'node:os';
 import * as path from 'node:path';
-import { defineConfig, mergeConfig } from 'vitest/config';
+import { defineProject, mergeConfig } from 'vitest/config';
 
 import { vitestBaseConfig } from '../../vitest.config.base.mjs';
 import packageJson from './package.json' with { type: 'json' };
@@ -8,15 +8,17 @@ import packageJson from './package.json' with { type: 'json' };
 const vitestConfig = mergeConfig(
   vitestBaseConfig,
 
-  defineConfig({
+  defineProject({
     test: {
       dir: path.join(import.meta.dirname, 'tests'),
-
-      fileParallelism: os.platform() !== 'win32',
-
       globalSetup: ['./tools/pack-packages.ts'],
+      name: packageJson.name.replace('@typescript-eslint/', ''),
 
-      name: packageJson.name,
+      poolOptions: {
+        forks: {
+          singleFork: os.platform() === 'win32',
+        },
+      },
 
       root: import.meta.dirname,
     },
