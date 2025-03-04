@@ -155,7 +155,7 @@ describe('TypeOrValueSpecifier', () => {
     );
   });
 
-  describe(typeMatchesSpecifier, { timeout: 10_000 }, () => {
+  describe(typeMatchesSpecifier, () => {
     const tsconfigRootDir = path.join(__dirname, 'fixtures');
     const filePath = path.join(tsconfigRootDir, 'file.ts');
 

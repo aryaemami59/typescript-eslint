@@ -40,7 +40,7 @@ describe(isTypeReadonly, () => {
       const options = undefined;
 
       describe('basics', () => {
-        describe('is readonly', { timeout: 10_000 }, () => {
+        describe('is readonly', () => {
           // Record.
           it.for([
             ['type Test = { readonly bar: string; };'],
