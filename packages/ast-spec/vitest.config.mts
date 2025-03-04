@@ -1,9 +1,5 @@
 import * as path from 'node:path';
-import {
-  coverageConfigDefaults,
-  defineConfig,
-  mergeConfig,
-} from 'vitest/config';
+import { defineProject, mergeConfig } from 'vitest/config';
 
 import { vitestBaseConfig } from '../../vitest.config.base.mjs';
 import packageJson from './package.json' with { type: 'json' };
@@ -11,16 +7,11 @@ import packageJson from './package.json' with { type: 'json' };
 const vitestConfig = mergeConfig(
   vitestBaseConfig,
 
-  defineConfig({
+  defineProject({
     test: {
-      coverage: {
-        exclude: [...coverageConfigDefaults.exclude, './**/fixtures/'],
-      },
       dir: path.join(import.meta.dirname, 'tests'),
-      name: packageJson.name,
-
+      name: packageJson.name.replace('@typescript-eslint/', ''),
       root: import.meta.dirname,
-
       setupFiles: ['./tests/util/setupVitest.mts'],
 
       typecheck: {

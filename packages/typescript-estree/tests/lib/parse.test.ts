@@ -643,21 +643,21 @@ describe(parser.parseAndGenerateServices, () => {
         });
 
         it('extension matching the file name but not a file on disk', () => {
-            expect(
-              testExtraFileExtensions('other/unknownFileType.unknown', [
-                '.unknown',
-              ]),
-            ).toThrow(
-              /unknownFileType\.unknown was not found by the project service/,
-            );
+          expect(
+            testExtraFileExtensions('other/unknownFileType.unknown', [
+              '.unknown',
+            ]),
+          ).toThrow(
+            /unknownFileType\.unknown was not found by the project service/,
+          );
         });
 
         it('the extension does not match the file name', () => {
-            expect(
+          expect(
             testExtraFileExtensions('other/unknownFileType.unknown', ['.vue']),
-            ).toThrow(
-              /unknownFileType\.unknown was not found by the project service/,
-        );
+          ).toThrow(
+            /unknownFileType\.unknown was not found by the project service/,
+          );
         });
       });
     },

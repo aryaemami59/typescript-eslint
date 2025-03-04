@@ -54,7 +54,7 @@ describe(isUnsafeAssignment, () => {
       expect(checker.typeToString(receiver)).toBe(receiverStr);
     }
 
-    it('any to a non-any', { timeout: 10_000 }, () => {
+    it('any to a non-any', () => {
       const { checker, receiver, sender } = getTypes(
         'const test: string = (1 as any);',
       );

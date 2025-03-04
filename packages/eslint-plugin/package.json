@@ -55,7 +55,7 @@
     "generate:breaking-changes": "tsx tools/generate-breaking-changes.mts",
     "generate:configs": "yarn run -T generate-configs",
     "lint": "yarn run -T lint",
-    "test": "vitest --run",
+    "test": "vitest --run --config=$INIT_CWD/vitest.config.mts",
     "test-single": "vitest --run --no-coverage",
     "check-types": "yarn run --top-level nx typecheck"
   },

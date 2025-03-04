@@ -45,7 +45,7 @@
     "format": "yarn run -T format",
     "generate-lib": "yarn run --top-level nx generate-lib repo",
     "lint": "yarn run -T lint",
-    "test": "vitest --run",
+    "test": "vitest --run --config=$INIT_CWD/vitest.config.mts",
     "check-types": "yarn run --top-level nx typecheck"
   },
   "dependencies": {
