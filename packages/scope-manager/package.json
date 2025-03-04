@@ -43,7 +43,7 @@
     "clean": "tsc -b tsconfig.build.json --clean & yarn run postclean",
     "postclean": "rimraf dist/ _ts4.3/ coverage/",
     "clean-fixtures": "rimraf -g \"./src/**/fixtures/**/snapshots\"",
-    "format": "prettier --write . --ignore-path=$PROJECT_CWD/.prettierignore",
+    "format": "yarn run -T format",
     "generate-lib": "yarn run --top-level nx generate-lib repo",
     "lint": "eslint .",
     "test": "vitest --run",

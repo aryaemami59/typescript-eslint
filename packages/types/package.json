@@ -43,7 +43,7 @@
     "postbuild": "downlevel-dts dist _ts4.3/dist --to=4.3",
     "clean": "tsc -b tsconfig.build.json --clean & yarn run postclean",
     "postclean": "rimraf dist/ src/generated/ _ts4.3/ coverage/",
-    "format": "prettier --write . --ignore-path=$PROJECT_CWD/.prettierignore",
+    "format": "yarn run -T format",
     "generate-lib": "yarn run --top-level nx run scope-manager:generate-lib",
     "lint": "eslint .",
     "check-types": "yarn run --top-level nx typecheck"

@@ -12,7 +12,7 @@
   "homepage": "https://typescript-eslint.io",
   "license": "MIT",
   "scripts": {
-    "format": "prettier --write . --ignore-path=$PROJECT_CWD/.prettierignore",
+    "format": "yarn run -T format",
     "lint": "eslint .",
     "test": "vitest --run",
     "check-types": "yarn run --top-level nx typecheck"
