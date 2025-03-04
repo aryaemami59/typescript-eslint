@@ -46,7 +46,7 @@
     "format": "yarn run -T format",
     "generate-lib": "yarn run --top-level nx generate-lib repo",
     "lint": "eslint .",
-    "test": "vitest --run",
+    "test": "yarn run -T test",
     "check-types": "yarn run --top-level nx typecheck"
   },
   "dependencies": {

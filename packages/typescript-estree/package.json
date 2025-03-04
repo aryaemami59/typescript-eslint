@@ -51,7 +51,7 @@
     "postclean": "rimraf dist/ _ts4.3/ coverage/",
     "format": "yarn run -T format",
     "lint": "eslint .",
-    "test": "vitest --run",
+    "test": "yarn run -T test",
     "check-types": "yarn run --top-level nx typecheck"
   },
   "dependencies": {

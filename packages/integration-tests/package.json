@@ -14,7 +14,7 @@
   "scripts": {
     "format": "yarn run -T format",
     "lint": "eslint .",
-    "test": "vitest --run",
+    "test": "yarn run -T test",
     "check-types": "yarn run --top-level nx typecheck"
   },
   "devDependencies": {
