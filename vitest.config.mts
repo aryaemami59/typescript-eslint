@@ -1,9 +1,5 @@
 import * as path from 'node:path';
-import {
-  coverageConfigDefaults,
-  defineConfig,
-  mergeConfig,
-} from 'vitest/config';
+import { defineConfig, mergeConfig } from 'vitest/config';
 
 import { vitestBaseConfig } from './vitest.config.base.mjs';
 
@@ -14,12 +10,11 @@ const vitestConfig = mergeConfig(
     test: {
       coverage: {
         exclude: [
-          ...coverageConfigDefaults.exclude,
           'packages/{website?(-eslint),?(rule-schema-to-typescript-)types}/src',
           'packages/ast-spec/src/**/fixtures',
         ],
 
-        include: ['packages/*/src', 'packages/integration-tests/tools'],
+        include: ['packages/*/src'],
       },
 
       dir: path.join(import.meta.dirname, 'packages'),
