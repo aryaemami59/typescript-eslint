@@ -55,7 +55,7 @@
     "format": "yarn run -T format",
     "generate:breaking-changes": "tsx tools/generate-breaking-changes.mts",
     "generate:configs": "yarn run -T generate-configs",
-    "lint": "eslint .",
+    "lint": "yarn run -T lint",
     "test": "yarn run -T test",
     "test-single": "vitest --run --no-coverage",
     "check-types": "yarn run --top-level nx typecheck"

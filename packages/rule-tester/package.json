@@ -41,7 +41,7 @@
     "clean": "tsc -b tsconfig.build.json --clean & yarn run postclean",
     "postclean": "rimraf dist/ _ts4.2/ coverage/",
     "format": "yarn run -T format",
-    "lint": "eslint .",
+    "lint": "yarn run -T lint",
     "pretest-eslint-base": "tsc -b tsconfig.build.json",
     "test-eslint-base": "mocha --require source-map-support/register ./tests/eslint-base/eslint-base.test.js",
     "test": "yarn run -T test",

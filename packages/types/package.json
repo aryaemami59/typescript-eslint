@@ -45,12 +45,11 @@
     "postclean": "rimraf dist/ src/generated/ _ts4.3/ coverage/",
     "format": "yarn run -T format",
     "generate-lib": "yarn run --top-level nx run scope-manager:generate-lib",
-    "lint": "eslint .",
+    "lint": "yarn run -T lint",
     "check-types": "yarn run --top-level nx typecheck"
   },
   "devDependencies": {
     "downlevel-dts": "*",
-    "eslint": "*",
     "rimraf": "*",
     "tsx": "*",
     "typescript": "*"

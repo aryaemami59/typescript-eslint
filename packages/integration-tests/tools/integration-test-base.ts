@@ -52,6 +52,7 @@ function integrationTest(
         );
 
         await fs.mkdir(testFolder, { recursive: true });
+
         if (KEEP_INTEGRATION_TEST_DIR) {
           console.error(testFolder);
         }

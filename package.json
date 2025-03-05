@@ -38,7 +38,7 @@
     "lint-markdown-fix": "yarn lint-markdown --fix",
     "lint-markdown": "markdownlint \"**/*.md\" --config=.markdownlint.json --ignore-path=.markdownlintignore",
     "lint-stylelint": "nx lint website stylelint",
-    "lint": "nx run-many --target=lint --parallel=20",
+    "lint": "eslint --cache --config=$PROJECT_CWD/eslint.config.mjs $INIT_CWD",
     "postinstall": "tsx tools/scripts/postinstall.mts",
     "pre-commit": "lint-staged",
     "release": "tsx tools/release/release.mts",

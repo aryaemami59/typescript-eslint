@@ -7,7 +7,7 @@
  * against the exact same version of the package.
  */
 
-import type { TestProject } from 'vitest/node' with { 'resolution-mode': 'import' };
+import type { TestProject } from 'vitest/node';
 
 import * as child_process from 'node:child_process';
 import fs from 'node:fs/promises';
@@ -33,13 +33,13 @@ const PACKAGES_DIR = path.resolve(__dirname, '..', '..');
 
 const homeOrTmpDir = os.tmpdir() || os.homedir();
 
-const tarFolder = path.resolve(
+const tarFolder = path.join(
   homeOrTmpDir,
   'typescript-eslint-integration-tests',
   'tarballs',
 );
 
-export const setup = async ({ provide }: TestProject): Promise<void> => {
+export const setup = async (project: TestProject): Promise<void> => {
   const PACKAGES = await fs.readdir(PACKAGES_DIR, { withFileTypes: true });
 
   await fs.mkdir(tarFolder, { recursive: true });
@@ -64,6 +64,7 @@ export const setup = async ({ provide }: TestProject): Promise<void> => {
               with: { type: 'json' },
             })
           ).default;
+
           if ('private' in packageJson && packageJson.private === true) {
             return;
           }
@@ -92,7 +93,7 @@ export const setup = async ({ provide }: TestProject): Promise<void> => {
 
   console.log('Finished packing local packages.');
 
-  provide('tseslintPackages', tseslintPackages);
+  project.provide('tseslintPackages', tseslintPackages);
 };
 
 export const teardown = async (): Promise<void> => {

@@ -5465,7 +5465,6 @@ __metadata:
   resolution: "@typescript-eslint/integration-tests@workspace:packages/integration-tests"
   dependencies:
     "@vitest/coverage-v8": ^3.0.7
-    eslint: "*"
     typescript: "*"
     vitest: ^3.0.7
   languageName: unknown
@@ -5482,7 +5481,6 @@ __metadata:
     "@vitest/coverage-v8": ^3.0.7
     debug: ^4.3.4
     downlevel-dts: "*"
-    eslint: "*"
     glob: "*"
     rimraf: "*"
     typescript: "*"
@@ -5582,7 +5580,6 @@ __metadata:
   resolution: "@typescript-eslint/types@workspace:packages/types"
   dependencies:
     downlevel-dts: "*"
-    eslint: "*"
     rimraf: "*"
     tsx: "*"
     typescript: "*"
@@ -5670,7 +5667,6 @@ __metadata:
     "@vitest/coverage-v8": ^3.0.7
     debug: ^4.3.4
     downlevel-dts: "*"
-    eslint: "*"
     fast-glob: ^3.3.2
     glob: "*"
     is-glob: ^4.0.3

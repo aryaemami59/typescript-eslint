@@ -13,13 +13,12 @@
   "license": "MIT",
   "scripts": {
     "format": "yarn run -T format",
-    "lint": "eslint .",
+    "lint": "yarn run -T lint",
     "test": "yarn run -T test",
     "check-types": "yarn run --top-level nx typecheck"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^3.0.7",
-    "eslint": "*",
     "typescript": "*",
     "vitest": "^3.0.7"
   }

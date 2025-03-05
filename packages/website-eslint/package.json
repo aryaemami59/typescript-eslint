@@ -30,7 +30,7 @@
     "build": "tsx ./build.mts",
     "clean": "rimraf dist/",
     "format": "yarn run -T format",
-    "lint": "eslint .",
+    "lint": "yarn run -T lint",
     "check-types": "yarn run --top-level nx typecheck"
   },
   "devDependencies": {
