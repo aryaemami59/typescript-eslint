@@ -14,7 +14,7 @@ const vitestConfig = mergeConfig(
 
       root: import.meta.dirname,
 
-      setupFiles: [`${import.meta.dirname}/tests/util/setupVitest.mts`],
+      setupFiles: ['./tests/util/setupVitest.mts'],
 
       typecheck: {
         enabled: true,

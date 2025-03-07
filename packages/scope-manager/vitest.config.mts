@@ -13,9 +13,7 @@ const vitestConfig = mergeConfig(
       name: packageJson.name.split('/').pop(),
       root: import.meta.dirname,
 
-      setupFiles: [
-        `${import.meta.dirname}/tests/test-utils/serializers/index.ts`,
-      ],
+      setupFiles: ['./tests/test-utils/serializers/index.ts'],
     },
   }),
 );
