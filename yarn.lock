@@ -5394,7 +5394,6 @@ __metadata:
     eslint: "*"
     glob: "*"
     jest-diff: ^29.7.0
-    prettier: ^3.5.3
     pretty-format: "*"
     rimraf: "*"
     typescript: "*"
