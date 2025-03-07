@@ -12,7 +12,7 @@ const vitestConfig = mergeConfig(
     test: {
       dir: path.join(import.meta.dirname, 'tests'),
 
-      globalSetup: [`${import.meta.dirname}/tools/pack-packages.ts`],
+      globalSetup: ['./tools/pack-packages.ts'],
 
       name: packageJson.name.split('/').pop(),
 
