@@ -49,12 +49,10 @@
     "check-types": "yarn run --top-level nx typecheck"
   },
   "devDependencies": {
-    "@vitest/coverage-v8": "^3.0.8",
     "downlevel-dts": "*",
     "rimraf": "*",
     "tsx": "*",
-    "typescript": "*",
-    "vitest": "^3.0.8"
+    "typescript": "*"
   },
   "funding": {
     "type": "opencollective",
