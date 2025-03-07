@@ -15,7 +15,13 @@
       "executor": "nx:run-script",
       "options": {
         "script": "generate:breaking-changes"
-      }
+      },
+      "dependsOn": [
+        {
+          "projects": ["utils", "type-utils"],
+          "target": "build"
+        }
+      ]
     }
   }
 }
