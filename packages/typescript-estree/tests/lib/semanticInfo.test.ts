@@ -376,7 +376,6 @@ describe('semanticInfo', async () => {
   );
 
   it('file not in single provided program instance should throw', () => {
-    // { timeout: 10_000 },
     const filename = 'non-existent-file.ts';
     const program = createProgram(path.join(FIXTURES_DIR, 'tsconfig.json'));
     const options = createOptions(filename);
@@ -394,7 +393,6 @@ describe('semanticInfo', async () => {
   });
 
   it('file not in multiple provided program instances should throw a program instance error', () => {
-    // { timeout: 15_000 },
     const filename = 'non-existent-file.ts';
     const program1 = createProgram(path.join(FIXTURES_DIR, 'tsconfig.json'));
     const options = createOptions(filename);

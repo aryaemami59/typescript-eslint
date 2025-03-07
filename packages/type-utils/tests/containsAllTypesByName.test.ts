@@ -1,5 +1,6 @@
 import type { TSESTree } from '@typescript-eslint/typescript-estree';
 import type * as ts from 'typescript';
+import type { TestContext } from 'vitest';
 
 import { parseForESLint } from '@typescript-eslint/parser';
 import path from 'node:path';
@@ -23,84 +24,93 @@ describe(containsAllTypesByName, () => {
   }
 
   describe('allowAny', () => {
+    function runTestForAliasDeclaration(
+      code: string,
+      allowAny: boolean,
+      expected: boolean,
+      expect: TestContext['expect'],
+    ): void {
+      const type = getType(code);
+      const result = containsAllTypesByName(type, allowAny, new Set());
+      expect(result).toBe(expected);
+    }
+
     describe('is true', () => {
+      function runTest(
+        [code, expected]: readonly [code: string, expected: boolean],
+        { expect }: TestContext,
+      ): void {
+        runTestForAliasDeclaration(code, true, expected, expect);
+      }
+
       it.for([
         ['type Test = unknown;', false],
         ['type Test = any;', false],
         ['type Test = string;', false],
-      ] as const)(
-        'when code is "%s" expected is %s',
-        ([code, expected], { expect }) => {
-          const type = getType(code);
-
-          const result = containsAllTypesByName(type, true, new Set());
-
-          expect(result).toBe(expected);
-        },
-      );
+      ] as const)('when code is "%s" expected is %s', runTest);
     });
 
     describe('is false', () => {
+      function runTest(
+        [code, expected]: readonly [code: string, expected: boolean],
+        { expect }: TestContext,
+      ): void {
+        runTestForAliasDeclaration(code, false, expected, expect);
+      }
+
       it.for([
         ['type Test = unknown;', true],
         ['type Test = any;', true],
         ['type Test = string;', false],
-      ] as const)(
-        'when code is "%s" expected is %s',
-        ([code, expected], { expect }) => {
-          const type = getType(code);
-
-          const result = containsAllTypesByName(type, false, new Set());
-
-          expect(result).toBe(expected);
-        },
-      );
+      ] as const)('when code is "%s" expected is %s', runTest);
     });
   });
 
   describe('matchAnyInstead', () => {
+    function runTestForAliasDeclaration(
+      code: string,
+      matchAnyInstead: boolean,
+      expected: boolean,
+      expect: TestContext['expect'],
+    ): void {
+      const type = getType(code);
+      const result = containsAllTypesByName(
+        type,
+        false,
+        new Set(['Object', 'Promise']),
+        matchAnyInstead,
+      );
+      expect(result).toBe(expected);
+    }
+
     describe('is true', () => {
+      function runTest(
+        [code, expected]: readonly [code: string, expected: boolean],
+        { expect }: TestContext,
+      ): void {
+        runTestForAliasDeclaration(code, true, expected, expect);
+      }
+
       it.for([
         [`type Test = Promise<void> & string`, true],
         ['type Test = Promise<void> | string', true],
         ['type Test = Promise<void> | Object', true],
-      ] as const)(
-        'when code is "%s" expected is %s',
-        ([code, expected], { expect }) => {
-          const type = getType(code);
-
-          const result = containsAllTypesByName(
-            type,
-            false,
-            new Set(['Object', 'Promise']),
-            true,
-          );
-
-          expect(result).toBe(expected);
-        },
-      );
+      ] as const)('when code is "%s" expected is %s', runTest);
     });
 
     describe('is false', () => {
+      function runTest(
+        [code, expected]: readonly [code: string, expected: boolean],
+        { expect }: TestContext,
+      ): void {
+        runTestForAliasDeclaration(code, false, expected, expect);
+      }
+
       it.for([
         ['type Test = Promise<void> & string', false],
         ['type Test = Promise<void> | string', false],
         ['type Test = Promise<void> | Object', true],
-      ] as const)(
-        'when code is "%s" expected is %s',
-        ([code, expected], { expect }) => {
-          const type = getType(code);
-
-          const result = containsAllTypesByName(
-            type,
-            false,
-            new Set(['Object', 'Promise']),
-            false,
-          );
-
-          expect(result).toBe(expected);
-        },
-      );
+      ] as const)('when code is "%s" expected is %s', runTest);
     });
   });
 });

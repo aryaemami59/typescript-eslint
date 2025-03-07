@@ -41,7 +41,7 @@ export default {
       ],
       vitest: {
         entry: [
-          '**/*.{bench,test,test-d,spec}.?(c|m)[jt]s?(x)',
+          '**/*.{bench,test,test-d}.?(c|m)ts?(x)',
           'tests/util/setupVitest.mts',
         ],
       },
@@ -60,7 +60,7 @@ export default {
       ignore: ['fixtures/**', 'typings/global.d.ts'],
       vitest: {
         entry: [
-          '**/*.{bench,test,test-d,spec}.?(c|m)[jt]s?(x)',
+          '**/*.{bench,test,test-d}.?(c|m)ts?(x)',
           'tools/pack-packages.ts',
         ],
       },
@@ -75,7 +75,7 @@ export default {
       ignore: ['tests/fixtures/**'],
       vitest: {
         entry: [
-          '**/*.{bench,test,test-d,spec}.?(c|m)[jt]s?(x)',
+          '**/*.{bench,test,test-d}.?(c|m)ts?(x)',
           'tests/test-utils/serializers/index.ts',
         ],
       },

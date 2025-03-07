@@ -12,6 +12,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { titleCase } from 'title-case';
+import { VitestSnapshotEnvironment } from 'vitest/snapshot';
 
 import rules from '../src/rules';
 import { areOptionsValid } from './areOptionsValid';
@@ -377,7 +378,6 @@ describe('Validating rule docs', async () => {
     );
 
     test('code examples ESLint output', async ({ expect }) => {
-      const { VitestSnapshotEnvironment } = await import('vitest/snapshot');
       // TypeScript can't infer type arguments unless we provide them explicitly
       linter.defineRule<
         keyof (typeof rule)['meta']['messages'],

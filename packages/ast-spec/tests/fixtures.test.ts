@@ -1,6 +1,7 @@
 import * as glob from 'glob';
-import * as fs from 'node:fs/promises';
-import * as path from 'node:path';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { VitestSnapshotEnvironment } from 'vitest/snapshot';
 
 import type {
   Fixture,
@@ -53,6 +54,65 @@ const ERROR_FIXTURES: readonly string[] = glob.sync(
   },
 );
 
+const FIXTURES: readonly Fixture[] = [...VALID_FIXTURES, ...ERROR_FIXTURES].map(
+  absolute => {
+    const relativeToSrc = path.relative(SRC_DIR, absolute);
+    const { dir, ext } = path.parse(relativeToSrc);
+    const segments = dir.split(path.sep).filter(s => s !== 'fixtures');
+    const name = segments.pop()!;
+    const fixtureDir = path.join(SRC_DIR, dir);
+    const configPath = path.join(fixtureDir, 'config' /* .ts */);
+    const snapshotPath = path.join(fixtureDir, 'snapshots');
+    return {
+      absolute,
+      config: ((): ASTFixtureConfig => {
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-require-imports
+          return require(configPath).default;
+        } catch {
+          return {};
+        }
+      })(),
+      ext,
+      isError: /[\\/]_error_[\\/]/.test(absolute),
+      isJSX: ext.endsWith('x'),
+      name,
+      relative: path.relative(SRC_DIR, absolute).replaceAll('\\', '/'),
+      segments,
+      snapshotFiles: {
+        error: {
+          alignment: (i: number) =>
+            path.join(snapshotPath, `${i}-Alignment-Error.shot`),
+          babel: (i: number) =>
+            path.join(snapshotPath, `${i}-Babel-Error.shot`),
+          tsestree: (i: number) =>
+            path.join(snapshotPath, `${i}-TSESTree-Error.shot`),
+        },
+        success: {
+          alignment: {
+            ast: (i: number) =>
+              path.join(snapshotPath, `${i}-AST-Alignment-AST.shot`),
+            tokens: (i: number) =>
+              path.join(snapshotPath, `${i}-AST-Alignment-Tokens.shot`),
+          },
+          babel: {
+            ast: (i: number) => path.join(snapshotPath, `${i}-Babel-AST.shot`),
+            tokens: (i: number) =>
+              path.join(snapshotPath, `${i}-Babel-Tokens.shot`),
+          },
+          tsestree: {
+            ast: (i: number) =>
+              path.join(snapshotPath, `${i}-TSESTree-AST.shot`),
+            tokens: (i: number) =>
+              path.join(snapshotPath, `${i}-TSESTree-Tokens.shot`),
+          },
+        },
+      },
+      snapshotPath,
+    };
+  },
+);
+
 function expectSuccessResponse(
   thing: ParserResponse,
 ): asserts thing is ParserResponseSuccess {
@@ -70,56 +130,98 @@ function nestDescribe(fixture: Fixture, segments = fixture.segments): void {
       nestDescribe(fixture, segments.slice(1));
     });
   } else {
-    describe(
-      fixture.name,
-      // intentional focused test that only happens during development
-      { only: [...fixture.segments, fixture.name].join(path.sep) === ONLY },
-      async () => {
-        const { VitestSnapshotEnvironment } = await import('vitest/snapshot');
+    const test = async (): Promise<void> => {
+      const vitestSnapshotHeader = new VitestSnapshotEnvironment({
+        snapshotsDirName: fixture.snapshotPath,
+      }).getHeader();
 
-        const vitestSnapshotHeader = new VitestSnapshotEnvironment({
-          snapshotsDirName: fixture.snapshotPath,
-        }).getHeader();
+      const contents = await fs.readFile(fixture.absolute, 'utf8');
 
-        const contents = await fs.readFile(fixture.absolute, 'utf8');
+      await fs.mkdir(fixture.snapshotPath, { recursive: true });
 
-        await fs.mkdir(fixture.snapshotPath, { recursive: true });
+      const tsestreeParsed = parseTSESTree(fixture, contents);
+      const babelParsed = parseBabel(fixture, contents);
+      const babelError = babelParsed.type === ParserResponseType.Error;
+      const tsestreeError = tsestreeParsed.type === ParserResponseType.Error;
 
-        const tsestreeParsed = parseTSESTree(fixture, contents);
-        const babelParsed = parseBabel(fixture, contents);
-        const babelError = babelParsed.type === ParserResponseType.Error;
-        const tsestreeError = tsestreeParsed.type === ParserResponseType.Error;
+      let errorLabel: ErrorLabel;
+      if (!babelError && tsestreeError) {
+        errorLabel = ErrorLabel.TSESTree;
+      } else if (babelError && !tsestreeError) {
+        errorLabel = ErrorLabel.Babel;
+      } else if (babelError && tsestreeError) {
+        errorLabel = ErrorLabel.Both;
+      } else {
+        errorLabel = ErrorLabel.None;
+      }
 
-        let errorLabel: ErrorLabel;
-        if (!babelError && tsestreeError) {
-          errorLabel = ErrorLabel.TSESTree;
-        } else if (babelError && !tsestreeError) {
-          errorLabel = ErrorLabel.Babel;
-        } else if (babelError && tsestreeError) {
-          errorLabel = ErrorLabel.Both;
-        } else {
-          errorLabel = ErrorLabel.None;
+      if (fixture.isError) {
+        if (
+          errorLabel === ErrorLabel.TSESTree ||
+          errorLabel === ErrorLabel.Babel
+        ) {
+          fixturesWithErrorDifferences[errorLabel].add(fixture.relative);
         }
 
-        if (fixture.isError) {
-          if (
-            errorLabel === ErrorLabel.TSESTree ||
-            errorLabel === ErrorLabel.Babel
-          ) {
-            fixturesWithErrorDifferences[errorLabel].add(fixture.relative);
-          }
+        it('TSESTree - Error', async () => {
+          await expect(
+            [
+              `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
+              serializeError(tsestreeParsed.error, contents),
+              '',
+            ].join('\n'),
+          ).toMatchFileSnapshot(
+            fixture.snapshotFiles.error.tsestree(segments.length + 1),
+          );
+        });
+        it('Babel - Error', async () => {
+          await expect(
+            [
+              `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
+              babelParsed.error,
+              '',
+            ].join('\n'),
+          ).toMatchFileSnapshot(
+            fixture.snapshotFiles.error.babel(segments.length + 2),
+          );
+        });
+        it('Error Alignment', async () => {
+          await expect(
+            [
+              `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
+              errorLabel,
+              '',
+            ].join('\n'),
+          ).toMatchFileSnapshot(
+            fixture.snapshotFiles.error.alignment(segments.length + 3),
+          );
+        });
+        it('Should parse with errors', () => {
+          // if this fails and you WEREN'T expecting a parser error, then your fixture should not be in the `_error_` subfolder
+          // if this fails and you WERE expecting a parser error - then something is broken.
+          expect(errorLabel).not.toBe(ErrorLabel.None);
+        });
+      } else {
+        it('TSESTree - AST', async () => {
+          expectSuccessResponse(tsestreeParsed);
+          await expect(tsestreeParsed.ast).toMatchFileSnapshot(
+            fixture.snapshotFiles.success.tsestree.ast(segments.length + 1),
+          );
+        });
+        it('TSESTree - Tokens', async () => {
+          expectSuccessResponse(tsestreeParsed);
+          await expect(tsestreeParsed.tokens).toMatchFileSnapshot(
+            fixture.snapshotFiles.success.tsestree.tokens(segments.length + 2),
+          );
+        });
 
-          it('TSESTree - Error', async () => {
-            await expect(
-              [
-                `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-                serializeError(tsestreeParsed.error, contents),
-                '',
-              ].join('\n'),
-            ).toMatchFileSnapshot(
-              fixture.snapshotFiles.error.tsestree(segments.length + 1),
-            );
-          });
+        if (fixture.config.expectBabelToNotSupport != null) {
+          fixturesConfiguredToExpectBabelToNotSupport.set(
+            fixture.relative,
+            fixture.config.expectBabelToNotSupport,
+          );
+
+          // eslint-disable-next-line vitest/no-identical-title -- intentional duplication that won't ever happen due to exclusionary conditions
           it('Babel - Error', async () => {
             await expect(
               [
@@ -128,243 +230,136 @@ function nestDescribe(fixture: Fixture, segments = fixture.segments): void {
                 '',
               ].join('\n'),
             ).toMatchFileSnapshot(
-              fixture.snapshotFiles.error.babel(segments.length + 2),
+              fixture.snapshotFiles.error.babel(segments.length + 3),
             );
           });
-          it('Error Alignment', async () => {
+          // eslint-disable-next-line vitest/no-disabled-tests -- intentional skip for CLI documentation purposes
+          it.skip('Babel - Skipped as this fixture is configured to expect babel to error', () => {});
+          // eslint-disable-next-line vitest/no-disabled-tests -- intentional skip for CLI documentation purposes
+          it.skip('AST Alignment - Skipped as this fixture is configured to expect babel to error', () => {});
+        } else {
+          it('Babel - AST', async () => {
+            expectSuccessResponse(babelParsed);
+            await expect(babelParsed.ast).toMatchFileSnapshot(
+              fixture.snapshotFiles.success.babel.ast(segments.length + 3),
+            );
+          });
+          it('Babel - Tokens', async () => {
+            expectSuccessResponse(babelParsed);
+            await expect(babelParsed.tokens).toMatchFileSnapshot(
+              fixture.snapshotFiles.success.babel.tokens(segments.length + 4),
+            );
+          });
+          it('AST Alignment - AST', async () => {
+            expectSuccessResponse(tsestreeParsed);
+            expectSuccessResponse(babelParsed);
+            const diffResult = snapshotDiff(
+              'TSESTree',
+              tsestreeParsed.ast,
+              'Babel',
+              babelParsed.ast,
+            );
             await expect(
               [
                 `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-                errorLabel,
+                diffResult,
                 '',
               ].join('\n'),
             ).toMatchFileSnapshot(
-              fixture.snapshotFiles.error.alignment(segments.length + 3),
+              fixture.snapshotFiles.success.alignment.ast(segments.length + 5),
             );
+
+            if (diffHasChanges(diffResult)) {
+              fixturesWithASTDifferences.add(fixture.relative);
+            }
           });
-          it('Should parse with errors', () => {
-            // if this fails and you WEREN'T expecting a parser error, then your fixture should not be in the `_error_` subfolder
-            // if this fails and you WERE expecting a parser error - then something is broken.
-            expect(errorLabel).not.toBe(ErrorLabel.None);
-          });
-        } else {
-          it('TSESTree - AST', async () => {
+          it('AST Alignment - Token', async () => {
             expectSuccessResponse(tsestreeParsed);
-            await expect(tsestreeParsed.ast).toMatchFileSnapshot(
-              fixture.snapshotFiles.success.tsestree.ast(segments.length + 1),
+            expectSuccessResponse(babelParsed);
+            const diffResult = snapshotDiff(
+              'TSESTree',
+              tsestreeParsed.tokens,
+              'Babel',
+              babelParsed.tokens,
             );
-          });
-          it('TSESTree - Tokens', async () => {
-            expectSuccessResponse(tsestreeParsed);
-            await expect(tsestreeParsed.tokens).toMatchFileSnapshot(
-              fixture.snapshotFiles.success.tsestree.tokens(
-                segments.length + 2,
+            await expect(
+              [
+                `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
+                diffResult,
+                '',
+              ].join('\n'),
+            ).toMatchFileSnapshot(
+              fixture.snapshotFiles.success.alignment.tokens(
+                segments.length + 6,
               ),
             );
-          });
 
-          if (fixture.config.expectBabelToNotSupport != null) {
-            fixturesConfiguredToExpectBabelToNotSupport.set(
-              fixture.relative,
-              fixture.config.expectBabelToNotSupport,
-            );
-
-            // eslint-disable-next-line vitest/no-identical-title -- intentional duplication that won't ever happen due to exclusionary conditions
-            it('Babel - Error', async () => {
-              await expect(
-                [
-                  `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-                  babelParsed.error,
-                  '',
-                ].join('\n'),
-              ).toMatchFileSnapshot(
-                fixture.snapshotFiles.error.babel(segments.length + 3),
-              );
-            });
-            // eslint-disable-next-line vitest/no-disabled-tests -- intentional skip for CLI documentation purposes
-            it.skip('Babel - Skipped as this fixture is configured to expect babel to error', () => {});
-            // eslint-disable-next-line vitest/no-disabled-tests -- intentional skip for CLI documentation purposes
-            it.skip('AST Alignment - Skipped as this fixture is configured to expect babel to error', () => {});
-          } else {
-            it('Babel - AST', async () => {
-              expectSuccessResponse(babelParsed);
-              await expect(babelParsed.ast).toMatchFileSnapshot(
-                fixture.snapshotFiles.success.babel.ast(segments.length + 3),
-              );
-            });
-            it('Babel - Tokens', async () => {
-              expectSuccessResponse(babelParsed);
-              await expect(babelParsed.tokens).toMatchFileSnapshot(
-                fixture.snapshotFiles.success.babel.tokens(segments.length + 4),
-              );
-            });
-            it('AST Alignment - AST', async () => {
-              expectSuccessResponse(tsestreeParsed);
-              expectSuccessResponse(babelParsed);
-              const diffResult = snapshotDiff(
-                'TSESTree',
-                tsestreeParsed.ast,
-                'Babel',
-                babelParsed.ast,
-              );
-              await expect(
-                [
-                  `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-                  diffResult,
-                  '',
-                ].join('\n'),
-              ).toMatchFileSnapshot(
-                fixture.snapshotFiles.success.alignment.ast(
-                  segments.length + 5,
-                ),
-              );
-
-              if (diffHasChanges(diffResult)) {
-                fixturesWithASTDifferences.add(fixture.relative);
-              }
-            });
-            it('AST Alignment - Token', async () => {
-              expectSuccessResponse(tsestreeParsed);
-              expectSuccessResponse(babelParsed);
-              const diffResult = snapshotDiff(
-                'TSESTree',
-                tsestreeParsed.tokens,
-                'Babel',
-                babelParsed.tokens,
-              );
-              await expect(
-                [
-                  `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-                  diffResult,
-                  '',
-                ].join('\n'),
-              ).toMatchFileSnapshot(
-                fixture.snapshotFiles.success.alignment.tokens(
-                  segments.length + 6,
-                ),
-              );
-
-              if (diffHasChanges(diffResult)) {
-                fixturesWithTokenDifferences.add(fixture.relative);
-              }
-            });
-          }
-
-          it('Should parse with no errors', () => {
-            // log the error for debug purposes in case there wasn't supposed to be an error
-            switch (errorLabel) {
-              case ErrorLabel.Babel:
-                expectErrorResponse(babelParsed);
-                if (fixture.config.expectBabelToNotSupport == null) {
-                  console.error('Babel:\n', babelParsed.error);
-                }
-                break;
-
-              case ErrorLabel.Both:
-                expectErrorResponse(babelParsed);
-                expectErrorResponse(tsestreeParsed);
-                console.error('Babel:\n', babelParsed.error);
-                console.error('TSESTree:\n', tsestreeParsed.error);
-                break;
-
-              case ErrorLabel.None:
-                return;
-
-              case ErrorLabel.TSESTree:
-                expectErrorResponse(tsestreeParsed);
-                console.error('TSESTree:\n', tsestreeParsed.error);
-                break;
-            }
-
-            // NOTE - the comments below exist so that they show up in the stack trace vitest shows
-            //        when the test fails. Yes, sadly, they're duplicated, but it's necessary to
-            //        provide the best and most understandable DevX that we can here.
-            //        Vitest will print a code frame with the fail line as well as 2 lines before and after
-
-            // if this fails and you WERE expecting a parser error, then your fixture should be in the `_error_` subfolder
-            // if this fails and you WEREN'T expecting a parser error - then something is broken.
-            expect(errorLabel).not.toBe(ErrorLabel.TSESTree);
-
-            // if this fails and you WERE expecting a parser error, then your fixture should be in the `_error_` subfolder
-            // if this fails and you WEREN'T expecting a parser error - then something is broken.
-            expect(errorLabel).not.toBe(ErrorLabel.Both);
-
-            if (fixture.config.expectBabelToNotSupport != null) {
-              // if this fails and you WERE expecting a parser error, then Babel parsed without error and you should remove the `expectBabelToNotSupport` config.
-              expect(errorLabel).toBe(ErrorLabel.Babel);
-            } else {
-              // if this fails and you WERE expecting a parser error, then your fixture should be in the `_error_` subfolder
-              // if this fails and you WEREN'T expecting a parser error - then something is broken.
-              expect(errorLabel).not.toBe(ErrorLabel.Babel);
+            if (diffHasChanges(diffResult)) {
+              fixturesWithTokenDifferences.add(fixture.relative);
             }
           });
         }
-      },
+
+        it('Should parse with no errors', () => {
+          // log the error for debug purposes in case there wasn't supposed to be an error
+          switch (errorLabel) {
+            case ErrorLabel.Babel:
+              expectErrorResponse(babelParsed);
+              if (fixture.config.expectBabelToNotSupport == null) {
+                console.error('Babel:\n', babelParsed.error);
+              }
+              break;
+
+            case ErrorLabel.Both:
+              expectErrorResponse(babelParsed);
+              expectErrorResponse(tsestreeParsed);
+              console.error('Babel:\n', babelParsed.error);
+              console.error('TSESTree:\n', tsestreeParsed.error);
+              break;
+
+            case ErrorLabel.None:
+              return;
+
+            case ErrorLabel.TSESTree:
+              expectErrorResponse(tsestreeParsed);
+              console.error('TSESTree:\n', tsestreeParsed.error);
+              break;
+          }
+
+          // NOTE - the comments below exist so that they show up in the stack trace jest shows
+          //        when the test fails. Yes, sadly, they're duplicated, but it's necessary to
+          //        provide the best and most understandable DevX that we can here.
+          //        Vitest will print a code frame with the fail line as well as 2 lines before and after
+
+          // if this fails and you WERE expecting a parser error, then your fixture should be in the `_error_` subfolder
+          // if this fails and you WEREN'T expecting a parser error - then something is broken.
+          expect(errorLabel).not.toBe(ErrorLabel.TSESTree);
+
+          // if this fails and you WERE expecting a parser error, then your fixture should be in the `_error_` subfolder
+          // if this fails and you WEREN'T expecting a parser error - then something is broken.
+          expect(errorLabel).not.toBe(ErrorLabel.Both);
+
+          if (fixture.config.expectBabelToNotSupport != null) {
+            // if this fails and you WERE expecting a parser error, then Babel parsed without error and you should remove the `expectBabelToNotSupport` config.
+            expect(errorLabel).toBe(ErrorLabel.Babel);
+          } else {
+            // if this fails and you WERE expecting a parser error, then your fixture should be in the `_error_` subfolder
+            // if this fails and you WEREN'T expecting a parser error - then something is broken.
+            expect(errorLabel).not.toBe(ErrorLabel.Babel);
+          }
+        });
+      }
+    };
+
+    describe(
+      fixture.name,
+      { only: [...fixture.segments, fixture.name].join(path.sep) === ONLY },
+      test,
     );
   }
 }
 
 describe('AST Fixtures', async () => {
-  const { VitestSnapshotEnvironment } = await import('vitest/snapshot');
-
-  const FIXTURES: readonly Fixture[] = await Promise.all(
-    [...VALID_FIXTURES, ...ERROR_FIXTURES].map(async absolute => {
-      const relativeToSrc = path.relative(SRC_DIR, absolute);
-      const { dir, ext } = path.parse(relativeToSrc);
-      const segments = dir.split(path.sep).filter(s => s !== 'fixtures');
-      const name = segments.pop()!;
-      const fixtureDir = path.join(SRC_DIR, dir);
-      const configPath = path.join(fixtureDir, 'config' /* .ts */);
-      const snapshotPath = path.join(fixtureDir, 'snapshots');
-      return {
-        absolute,
-        config: await (async (): Promise<ASTFixtureConfig> => {
-          try {
-            return (await import(configPath)).default;
-          } catch {
-            return {};
-          }
-        })(),
-        ext,
-        isError: /[\\/]_error_[\\/]/.test(absolute),
-        isJSX: ext.endsWith('x'),
-        name,
-        relative: path.relative(SRC_DIR, absolute).replaceAll('\\', '/'),
-        segments,
-        snapshotFiles: {
-          error: {
-            alignment: (i: number) =>
-              path.join(snapshotPath, `${i}-Alignment-Error.shot`),
-            babel: (i: number) =>
-              path.join(snapshotPath, `${i}-Babel-Error.shot`),
-            tsestree: (i: number) =>
-              path.join(snapshotPath, `${i}-TSESTree-Error.shot`),
-          },
-          success: {
-            alignment: {
-              ast: (i: number) =>
-                path.join(snapshotPath, `${i}-AST-Alignment-AST.shot`),
-              tokens: (i: number) =>
-                path.join(snapshotPath, `${i}-AST-Alignment-Tokens.shot`),
-            },
-            babel: {
-              ast: (i: number) =>
-                path.join(snapshotPath, `${i}-Babel-AST.shot`),
-              tokens: (i: number) =>
-                path.join(snapshotPath, `${i}-Babel-Tokens.shot`),
-            },
-            tsestree: {
-              ast: (i: number) =>
-                path.join(snapshotPath, `${i}-TSESTree-AST.shot`),
-              tokens: (i: number) =>
-                path.join(snapshotPath, `${i}-TSESTree-Tokens.shot`),
-            },
-          },
-        },
-        snapshotPath,
-      };
-    }),
-  );
   await Promise.all(FIXTURES.map(f => nestDescribe(f)));
 
   const vitestSnapshotHeader = new VitestSnapshotEnvironment({

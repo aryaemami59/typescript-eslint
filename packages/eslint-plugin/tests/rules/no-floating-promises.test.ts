@@ -711,9 +711,13 @@ myTag\`abc\`;
               // https://github.com/typescript-eslint/typescript-eslint/pull/9234/files#r1626465054
               path: process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE
                 ? 'file.ts'
-                : path.relative(
-                    process.cwd(),
-                    path.join(__dirname, '..', 'fixtures', 'file.ts'),
+                : path.posix.join(
+                    ...path
+                      .relative(
+                        process.cwd(),
+                        path.join(__dirname, '..', 'fixtures', 'file.ts'),
+                      )
+                      .split(path.sep),
                   ),
             },
           ],

@@ -1,5 +1,5 @@
 import * as glob from 'glob';
-import * as fs from 'node:fs/promises';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 
 import type { AnalyzeOptions } from './test-utils';
