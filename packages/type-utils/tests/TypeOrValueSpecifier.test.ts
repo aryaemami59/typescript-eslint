@@ -1,4 +1,5 @@
 import type { TSESTree } from '@typescript-eslint/utils';
+import type { TestContext } from 'vitest';
 
 import { parseForESLint } from '@typescript-eslint/parser';
 import Ajv from 'ajv';
@@ -17,11 +18,23 @@ describe('TypeOrValueSpecifier', () => {
     const ajv = new Ajv();
     const validate = ajv.compile(typeOrValueSpecifiersSchema);
 
+    function runTestPositive(
+      [typeOrValueSpecifier]: readonly [typeOrValueSpecifier: unknown],
+      { expect }: TestContext,
+    ): void {
+      expect(validate([typeOrValueSpecifier])).toBe(true);
+    }
+
+    function runTestNegative(
+      [typeOrValueSpecifier]: readonly [typeOrValueSpecifier: unknown],
+      { expect }: TestContext,
+    ): void {
+      expect(validate([typeOrValueSpecifier])).toBe(false);
+    }
+
     it.for([['MyType'], ['myValue'], ['any'], ['void'], ['never']] as const)(
       'matches a simple string specifier %s',
-      ([typeOrValueSpecifier], { expect }) => {
-        expect(validate([typeOrValueSpecifier])).toBe(true);
-      },
+      runTestPositive,
     );
 
     it.for([
@@ -31,58 +44,47 @@ describe('TypeOrValueSpecifier', () => {
       [undefined],
       [['MyType']],
       [(): void => {}],
-    ] as const)(
-      "doesn't match any non-string basic type: %s",
-      ([typeOrValueSpecifier], { expect }) => {
-        expect(validate([typeOrValueSpecifier])).toBe(false);
-      },
-    );
+    ] as const)("doesn't match any non-string basic type: %s", runTestNegative);
 
     it.for([
       [{ from: 'file', name: 'MyType' }],
       [{ from: 'file', name: ['MyType', 'myValue'] }],
       [{ from: 'file', name: 'MyType', path: './filename.js' }],
       [{ from: 'file', name: ['MyType', 'myValue'], path: './filename.js' }],
-    ] as const)(
-      'matches a file specifier: %s',
-      ([typeOrValueSpecifier], { expect }) => {
-        expect(validate([typeOrValueSpecifier])).toBe(true);
-      },
-    );
+    ] as const)('matches a file specifier: %s', runTestPositive);
 
     it.for([
       [{ from: 'file', name: 42 }],
       [{ from: 'file', name: ['MyType', 42] }],
       [{ from: 'file', name: ['MyType', 'MyType'] }],
       [{ from: 'file', name: [] }],
-      [{ from: 'file', path: './filename.js' }],
+      [{ from: 'file', path: `${ROOT_DIR}/filename.js` }],
       [{ from: 'file', name: 'MyType', path: 42 }],
-      [{ from: 'file', name: ['MyType', 'MyType'], path: './filename.js' }],
-      [{ from: 'file', name: [], path: './filename.js' }],
+      [
+        {
+          from: 'file',
+          name: ['MyType', 'MyType'],
+          path: `${ROOT_DIR}/filename.js`,
+        },
+      ],
+      [{ from: 'file', name: [], path: `${ROOT_DIR}/filename.js` }],
       [
         {
           from: 'file',
           name: ['MyType', 'myValue'],
-          path: ['./filename.js', './another-file.js'],
+          path: [`${ROOT_DIR}/filename.js`, `${ROOT_DIR}/another-file.js`],
         },
       ],
       [{ from: 'file', name: 'MyType', unrelatedProperty: '' }],
     ] as const)(
       "doesn't match a malformed file specifier: %s",
-      ([typeOrValueSpecifier], { expect }) => {
-        expect(validate([typeOrValueSpecifier])).toBe(false);
-      },
+      runTestNegative,
     );
 
     it.for([
       [{ from: 'lib', name: 'MyType' }],
       [{ from: 'lib', name: ['MyType', 'myValue'] }],
-    ] as const)(
-      'matches a lib specifier: %s',
-      ([typeOrValueSpecifier], { expect }) => {
-        expect(validate([typeOrValueSpecifier])).toBe(true);
-      },
-    );
+    ] as const)('matches a lib specifier: %s', runTestPositive);
 
     it.for([
       [{ from: 'lib', name: 42 }],
@@ -91,12 +93,7 @@ describe('TypeOrValueSpecifier', () => {
       [{ from: 'lib', name: [] }],
       [{ from: 'lib' }],
       [{ from: 'lib', name: 'MyType', unrelatedProperty: '' }],
-    ] as const)(
-      "doesn't match a malformed lib specifier: %s",
-      ([typeOrValueSpecifier], { expect }) => {
-        expect(validate([typeOrValueSpecifier])).toBe(false);
-      },
-    );
+    ] as const)("doesn't match a malformed lib specifier: %s", runTestNegative);
 
     it.for([
       [{ from: 'package', name: 'MyType', package: 'jquery' }],
@@ -107,12 +104,7 @@ describe('TypeOrValueSpecifier', () => {
           package: 'jquery',
         },
       ],
-    ] as const)(
-      'matches a package specifier: %s',
-      ([typeOrValueSpecifier], { expect }) => {
-        expect(validate([typeOrValueSpecifier])).toBe(true);
-      },
-    );
+    ] as const)('matches a package specifier: %s', runTestPositive);
 
     it.for([
       [{ from: 'package', name: 42, package: 'jquery' }],
@@ -136,7 +128,7 @@ describe('TypeOrValueSpecifier', () => {
         {
           from: 'package',
           name: ['MyType', 'myValue'],
-          package: ['jquery', './another-file.js'],
+          package: ['jquery', `${ROOT_DIR}/another-file.js`],
         },
       ],
       [
@@ -149,50 +141,61 @@ describe('TypeOrValueSpecifier', () => {
       ],
     ] as const)(
       "doesn't match a malformed package specifier: %s",
-      ([typeOrValueSpecifier], { expect }) => {
-        expect(validate([typeOrValueSpecifier])).toBe(false);
-      },
+      runTestNegative,
     );
   });
 
   describe(typeMatchesSpecifier, () => {
-    const tsconfigRootDir = path.join(__dirname, 'fixtures');
-    const filePath = path.join(tsconfigRootDir, 'file.ts');
+    function runTests(
+      code: string,
+      specifier: TypeOrValueSpecifier,
+      expected: boolean,
+      expect: TestContext['expect'],
+    ): void {
+      const rootDir = path.join(__dirname, 'fixtures');
+      const { ast, services } = parseForESLint(code, {
+        disallowAutomaticSingleRunInference: true,
+        filePath: path.join(rootDir, 'file.ts'),
+        project: './tsconfig.json',
+        tsconfigRootDir: rootDir,
+      });
+      const type = services
+        .program!.getTypeChecker()
+        .getTypeAtLocation(
+          services.esTreeNodeToTSNodeMap.get(
+            (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
+              .id,
+          ),
+        );
+      expect(typeMatchesSpecifier(type, specifier, services.program!)).toBe(
+        expected,
+      );
+    }
 
-    const parseOptions: Parameters<typeof parseForESLint>[1] = {
-      disallowAutomaticSingleRunInference: true,
-      filePath,
-      project: './tsconfig.json',
-      tsconfigRootDir,
-    };
+    function runTestPositive(
+      [code, specifier]: [code: string, specifier: TypeOrValueSpecifier],
+      testContext: Partial<TestContext> & Pick<TestContext, 'expect'> = {
+        expect,
+      },
+    ): void {
+      runTests(code, specifier, true, testContext.expect);
+    }
+
+    function runTestNegative(
+      [code, specifier]: [code: string, specifier: TypeOrValueSpecifier],
+      testContext: Partial<TestContext> & Pick<TestContext, 'expect'> = {
+        expect,
+      },
+    ): void {
+      runTests(code, specifier, false, testContext.expect);
+    }
 
     it.for([
       ['interface Foo {prop: string}; type Test = Foo;', 'Foo'],
       ['type Test = RegExp;', 'RegExp'],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       'matches a matching universal string specifier',
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          true,
-        );
-      },
+      runTestPositive,
     );
 
     it.for([
@@ -202,28 +205,7 @@ describe('TypeOrValueSpecifier', () => {
       ['type Test = RegExp;', 'BigInt'],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       "doesn't match a mismatched universal string specifier",
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          false,
-        );
-      },
+      runTestNegative,
     );
 
     it.for([
@@ -297,28 +279,7 @@ describe('TypeOrValueSpecifier', () => {
       ],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       'matches a matching file specifier: %s',
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          true,
-        );
-      },
+      runTestPositive,
     );
 
     it.for([
@@ -332,40 +293,23 @@ describe('TypeOrValueSpecifier', () => {
       ],
       [
         'interface Foo {prop: string}; type Test = Foo;',
-        { from: 'file', name: 'Foo', path: 'tests/fixtures/wrong-file.ts' },
+        {
+          from: 'file',
+          name: 'Foo',
+          path: `${ROOT_DIR}/tests/fixtures/wrong-file.ts`,
+        },
       ],
       [
         'interface Foo {prop: string}; type Test = Foo;',
         {
           from: 'file',
           name: ['Foo', 'Bar'],
-          path: 'tests/fixtures/wrong-file.ts',
+          path: `${ROOT_DIR}/tests/fixtures/wrong-file.ts`,
         },
       ],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       "doesn't match a mismatched file specifier: %s",
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          false,
-        );
-      },
+      runTestNegative,
     );
 
     it.for([
@@ -373,28 +317,7 @@ describe('TypeOrValueSpecifier', () => {
       ['type Test = RegExp;', { from: 'lib', name: ['RegExp', 'BigInt'] }],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       'matches a matching lib specifier: %s',
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          true,
-        );
-      },
+      runTestPositive,
     );
 
     it.for([
@@ -402,28 +325,7 @@ describe('TypeOrValueSpecifier', () => {
       ['type Test = RegExp;', { from: 'lib', name: ['BigInt', 'Date'] }],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       "doesn't match a mismatched lib specifier: %s",
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          false,
-        );
-      },
+      runTestNegative,
     );
 
     it.for([
@@ -431,28 +333,7 @@ describe('TypeOrValueSpecifier', () => {
       ['type Test = string;', { from: 'lib', name: ['string', 'number'] }],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       'matches a matching intrinsic type specifier: %s',
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          true,
-        );
-      },
+      runTestPositive,
     );
 
     it.for([
@@ -460,28 +341,7 @@ describe('TypeOrValueSpecifier', () => {
       ['type Test = string;', { from: 'lib', name: ['number', 'boolean'] }],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       "doesn't match a mismatched intrinsic type specifier: %s",
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          false,
-        );
-      },
+      runTestNegative,
     );
 
     it.for([
@@ -566,28 +426,7 @@ describe('TypeOrValueSpecifier', () => {
       ],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       'matches a matching package specifier: %s',
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          true,
-        );
-      },
+      runTestPositive,
     );
 
     it.for([
@@ -610,28 +449,7 @@ describe('TypeOrValueSpecifier', () => {
       ],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       "doesn't match a mismatched type specifier for an intersection type: %s",
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          false,
-        );
-      },
+      runTestNegative,
     );
 
     it.for([
@@ -645,28 +463,7 @@ describe('TypeOrValueSpecifier', () => {
       ],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       'matches a matching type specifier for an intersection type: %s',
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          true,
-        );
-      },
+      runTestPositive,
     );
 
     it.for([
@@ -691,28 +488,7 @@ describe('TypeOrValueSpecifier', () => {
       ],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       'matches a matching package specifier for an intersection type: %s',
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          true,
-        );
-      },
+      runTestPositive,
     );
 
     it.for([
@@ -737,57 +513,24 @@ describe('TypeOrValueSpecifier', () => {
       ],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       "doesn't match a mismatched package specifier for an intersection type: %s",
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          false,
-        );
-      },
+      runTestNegative,
     );
 
     it("does not match a `declare global` with the 'global' package name", () => {
-      const code = `
+      runTestNegative([
+        `
           declare global {
             export type URL = {};
           }
 
           type Test = URL;
-        `;
-
-      const specifier = {
-        from: 'package',
-        name: 'URL',
-        package: 'global',
-      } as const;
-
-      const { ast, services } = parseForESLint(code, parseOptions);
-      const type = services
-        .program!.getTypeChecker()
-        .getTypeAtLocation(
-          services.esTreeNodeToTSNodeMap.get(
-            (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-              .id,
-          ),
-        );
-      expect(typeMatchesSpecifier(type, specifier, services.program!)).toBe(
-        false,
-      );
+        `,
+        {
+          from: 'package',
+          name: 'URL',
+          package: 'global',
+        },
+      ]);
     });
 
     it.for([
@@ -817,28 +560,7 @@ describe('TypeOrValueSpecifier', () => {
       ],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       "doesn't match a mismatched package specifier: %s",
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          false,
-        );
-      },
+      runTestNegative,
     );
 
     it.for([
@@ -904,28 +626,7 @@ describe('TypeOrValueSpecifier', () => {
       ],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       "doesn't match a mismatched specifier type: %s",
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          false,
-        );
-      },
+      runTestNegative,
     );
 
     it.for([
@@ -933,28 +634,7 @@ describe('TypeOrValueSpecifier', () => {
       ['type Test = Foo;', { from: 'lib', name: ['Foo', 'number'] }],
     ] as const satisfies [string, TypeOrValueSpecifier][])(
       "doesn't match an error type: %s",
-      ([code, specifier], { expect }) => {
-        const { ast, services } = parseForESLint(code, parseOptions);
-
-        if (services.program == null) {
-          expect.fail();
-          expect.unreachable();
-          return;
-        }
-
-        const type = services.program
-          .getTypeChecker()
-          .getTypeAtLocation(
-            services.esTreeNodeToTSNodeMap.get(
-              (ast.body[ast.body.length - 1] as TSESTree.TSTypeAliasDeclaration)
-                .id,
-            ),
-          );
-
-        expect(typeMatchesSpecifier(type, specifier, services.program)).toBe(
-          false,
-        );
-      },
+      runTestNegative,
     );
   });
 });
