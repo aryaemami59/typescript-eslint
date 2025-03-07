@@ -12,7 +12,7 @@
         "parallel": true,
         "commands": [
           { "command": "tsc -b ./tsconfig.repo-config-files.json --clean" },
-          { "command": "rimraf dist/ coverage/" }
+          { "command": "rimraf dist/ coverage/ .eslintcache" }
         ]
       }
     },
