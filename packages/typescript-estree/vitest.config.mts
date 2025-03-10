@@ -10,15 +10,15 @@ const vitestConfig = mergeConfig(
   defineProject({
     test: {
       dir: path.join(import.meta.dirname, 'tests', 'lib'),
+
       exclude: process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE
         ? [...defaultExclude, 'parse.project-true.test.ts']
         : [...defaultExclude],
-      name: packageJson.name.split('/').pop(),
 
+      name: packageJson.name.replace('@typescript-eslint/', ''),
       root: import.meta.dirname,
       testTimeout: 10_000,
       unstubEnvs: true,
-
       unstubGlobals: true,
     },
   }),
