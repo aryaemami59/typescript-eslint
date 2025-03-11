@@ -1,13 +1,9 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.build.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": ".",
-    "outDir": "dist",
-    "tsBuildInfoFile": "dist/tsconfig.build.tsbuildinfo",
+    "rootDir": "./",
     // Build is done by esbuild
     "emitDeclarationOnly": true,
-    "types": ["node"],
     "allowJs": true,
     "checkJs": true
   },
