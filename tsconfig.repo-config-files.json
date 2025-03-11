@@ -11,9 +11,6 @@
     "tools/**/*.ts",
     "tools/**/*.mts",
     "eslint.config.mjs",
-    "vitest.config.base.mts",
-    "vitest.config.mts",
-    "package.json",
     "knip.ts",
     ".github/**/*.js"
   ],
