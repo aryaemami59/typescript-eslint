@@ -18,6 +18,9 @@
         {
           "projects": ["typescript-estree"],
           "target": "build"
+        },
+        {
+          "target": "typecheck"
         }
       ]
     },
