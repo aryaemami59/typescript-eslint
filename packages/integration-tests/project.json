@@ -2,7 +2,6 @@
   "name": "integration-tests",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "implicitDependencies": ["typescript-eslint"],
   "root": "packages/integration-tests",
   "sourceRoot": "packages/integration-tests/tools",
   "targets": {

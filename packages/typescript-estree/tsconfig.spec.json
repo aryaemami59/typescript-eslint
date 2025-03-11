@@ -1,17 +1,14 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/packages/typescript-estree",
-    "types": ["vitest/globals", "vitest/importMeta"]
+    "outDir": "../../dist/out-tsc/packages/typescript-estree"
   },
-  // "include": ["vitest.config.mts", "package.json", "tests"],
-  // "exclude": ["**/fixtures/**"],
   "references": [
     {
       "path": "./tsconfig.build.json"
     },
     {
-      "path": "../../tsconfig.repo-config-files.json"
+      "path": "../../tsconfig.spec.json"
     }
   ]
 }
