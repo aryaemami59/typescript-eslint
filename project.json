@@ -22,21 +22,11 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "dependsOn": [
-        {
-          "projects": ["typescript-eslint"],
-          "target": "build"
-        }
-      ]
+      "dependsOn": ["typescript-eslint:build"]
     },
     "generate-configs": {
       "command": "tsx tools/scripts/generate-configs.mts",
-      "dependsOn": [
-        {
-          "projects": ["eslint-plugin"],
-          "target": "build"
-        }
-      ]
+      "dependsOn": ["eslint-plugin:build"]
     },
     "generate-contributors": {
       "command": "tsx tools/scripts/generate-contributors.mts"
