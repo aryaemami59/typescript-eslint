@@ -60,21 +60,8 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        {
-          "target": "build",
-          "dependencies": true
-        }
-      ],
-      "inputs": [
-        {
-          "input": "production"
-        },
-        {
-          "input": "production",
-          "dependencies": true
-        }
-      ],
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"],
       "outputs": ["{projectRoot}/dist", "{projectRoot}/_ts4.*"],
       "options": {
         "cwd": "{projectRoot}"
@@ -82,39 +69,18 @@
       "cache": true
     },
     "test": {
-      "dependsOn": [
-        {
-          "target": "build",
-          "dependencies": true
-        }
-      ],
+      "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/coverage"],
       "cache": true
     },
     "@nx/vite:test": {
-      "dependsOn": [
-        {
-          "target": "build",
-          "dependencies": true
-        }
-      ],
+      "dependsOn": ["^build"],
       "inputs": [
-        {
-          "input": "default"
-        },
-        {
-          "input": "production",
-          "dependencies": true
-        },
-        {
-          "fileset": "{workspaceRoot}/vitest.config.mts"
-        },
-        {
-          "fileset": "{workspaceRoot}/vitest.config.base.mts"
-        },
-        {
-          "fileset": "{projectRoot}/vitest.config.mts"
-        }
+        "default",
+        "^production",
+        "{workspaceRoot}/vitest.config.mts",
+        "{workspaceRoot}/vitest.config.base.mts",
+        "{projectRoot}/vitest.config.mts"
       ],
       "outputs": ["{options.reportsDirectory}"],
       "cache": true,
@@ -147,12 +113,8 @@
         }
       ],
       "inputs": [
-        {
-          "input": "default"
-        },
-        {
-          "fileset": "{workspaceRoot}/eslint.config.mjs"
-        },
+        "default",
+        "{workspaceRoot}/eslint.config.mjs",
         {
           "dependentTasksOutputFiles": "**/*.js",
           "transitive": false
@@ -163,18 +125,9 @@
     }
   },
   "namedInputs": {
-    "default": [
-      {
-        "fileset": "{projectRoot}/**/*"
-      },
-      {
-        "input": "sharedGlobals"
-      }
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "sharedGlobals": [
-      {
-        "fileset": "{workspaceRoot}/.github/workflows/ci.yml"
-      },
+      "{workspaceRoot}/.github/workflows/ci.yml",
       {
         "runtime": "node -v"
       },
@@ -184,29 +137,15 @@
       {
         "runtime": "yarn -v"
       },
-      {
-        "fileset": "{workspaceRoot}/yarn.lock"
-      }
+      "{workspaceRoot}/yarn.lock"
     ],
     "production": [
-      {
-        "input": "default"
-      },
-      {
-        "fileset": "!{projectRoot}/**/?(*.)+(test).?(m|c)[jt]s?(x)?(.snap|.shot)"
-      },
-      {
-        "fileset": "!{projectRoot}/tests"
-      },
-      {
-        "fileset": "!{projectRoot}/tsconfig.spec.json"
-      },
-      {
-        "fileset": "!{projectRoot}/vitest.config.mts"
-      },
-      {
-        "fileset": "!{projectRoot}/src/test-setup.[jt]s"
-      }
+      "default",
+      "!{projectRoot}/**/?(*.)+(test).?(m|c)[jt]s?(x)?(.snap|.shot)",
+      "!{projectRoot}/tests",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/vitest.config.mts",
+      "!{projectRoot}/src/test-setup.[jt]s"
     ]
   }
 }
