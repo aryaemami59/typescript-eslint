@@ -7,21 +7,12 @@
   "implicitDependencies": ["ast-spec"],
   "targets": {
     "copy-ast-spec": {
-      "dependsOn": [
-        {
-          "target": "build",
-          "dependencies": true
-        }
-      ],
+      "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/src/generated"],
       "cache": true
     },
     "build": {
-      "dependsOn": [
-        {
-          "target": "copy-ast-spec"
-        }
-      ]
+      "dependsOn": ["copy-ast-spec"]
     },
     "lint": {
       "executor": "@nx/eslint:lint"
