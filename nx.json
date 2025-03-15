@@ -125,7 +125,10 @@
     },
     "typecheck": {
       "dependsOn": ["types:copy-ast-spec"],
-      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/dist/out-tsc/{projectRoot}",
+        "{projectRoot}/dist"
+      ],
       "cache": true
     }
   },
