@@ -4,10 +4,9 @@
   "projectType": "library",
   "root": "packages/types",
   "sourceRoot": "packages/types/src",
-  "implicitDependencies": ["ast-spec"],
   "targets": {
     "copy-ast-spec": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["ast-spec:build"],
       "outputs": ["{projectRoot}/src/generated"],
       "cache": true
     },
