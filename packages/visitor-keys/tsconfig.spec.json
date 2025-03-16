@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/packages/visitor-keys"
+    "outDir": "../../dist/packages/visitor-keys"
   },
   "references": [
     {
