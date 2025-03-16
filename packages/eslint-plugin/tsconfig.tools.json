@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/packages/eslint-plugin/tools"
+    "outDir": "../../dist/packages/eslint-plugin"
   },
   "include": ["tools"],
   "references": [{ "path": "./tsconfig.build.json" }]

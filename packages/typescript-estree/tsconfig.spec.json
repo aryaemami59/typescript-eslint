@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/packages/typescript-estree"
+    "outDir": "../../dist/packages/typescript-estree"
   },
   "references": [
     {
