@@ -7,8 +7,7 @@
     "allowJs": true,
     "checkJs": true
   },
-  "include": ["src/**/*.ts", "src/index.js", "types", "build.mts"],
-  "exclude": ["jest.config.js", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "include": ["src/**/*.ts", "src/index.js", "build.mts"],
   "references": [
     {
       "path": "../visitor-keys/tsconfig.build.json"

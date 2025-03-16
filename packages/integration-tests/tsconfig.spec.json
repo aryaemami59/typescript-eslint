@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/packages/integration-tests"
+    "outDir": "../../dist/packages/integration-tests"
   },
   "include": ["vitest.config.mts", "package.json", "tests", "tools", "typings"],
   "references": [
