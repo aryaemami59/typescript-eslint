@@ -57,7 +57,7 @@
     "lint": "yarn run -T lint",
     "test": "vitest --run --config=$INIT_CWD/vitest.config.mts",
     "test-single": "vitest --run --no-coverage",
-    "check-types": "yarn run --top-level nx typecheck"
+    "check-types": "yarn run -T nx typecheck"
   },
   "dependencies": {
     "@eslint-community/regexpp": "^4.10.0",

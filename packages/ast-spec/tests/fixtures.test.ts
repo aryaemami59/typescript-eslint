@@ -4,6 +4,7 @@ import path from 'node:path';
 import { VitestSnapshotEnvironment } from 'vitest/snapshot';
 
 import type {
+  ASTFixtureConfig,
   Fixture,
   ParserResponse,
   ParserResponseError,
