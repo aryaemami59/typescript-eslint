@@ -431,7 +431,7 @@ export default tseslint.config(
   },
   {
     files: [
-      'eslint.config.{js,cjs,mjs}',
+      'eslint.config.mjs',
       'knip.ts',
       'packages/*/src/index.ts',
       'vitest.config.mts',

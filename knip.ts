@@ -1,6 +1,53 @@
 import type { KnipConfig } from 'knip' with { 'resolution-mode': 'import' };
 
+import * as path from 'node:path';
+
 export default {
+  cspell: {
+    config: [path.posix.join(__dirname, '.cspell.json')],
+  },
+
+  entry: ['src/index.ts'],
+
+  eslint: {
+    config: [path.posix.join(__dirname, 'eslint.config.mjs')],
+    entry: [path.posix.join(__dirname, 'eslint.config.mjs')],
+  },
+
+  'github-actions': {
+    config: [path.posix.join(__dirname, '.github/workflows/**/*.yml')],
+    entry: [
+      path.posix.join(__dirname, '.github/actions/breaking-pr-check/index.js'),
+    ],
+  },
+
+  husky: {
+    config: [path.posix.join(__dirname, '.husky/pre-commit')],
+  },
+
+  'lint-staged': {
+    config: [path.posix.join(__dirname, '.lintstagedrc')],
+  },
+
+  markdownlint: {
+    config: [path.posix.join(__dirname, '.markdownlint.json')],
+  },
+
+  node: {
+    config: ['package.json'],
+    entry: ['package.json'],
+  },
+
+  nx: {
+    config: [path.posix.join(__dirname, 'nx.json'), 'project.json'],
+  },
+
+  prettier: {
+    config: [path.posix.join(__dirname, '.prettierrc.json')],
+  },
+
+  project: ['src/**/*.ts'],
+
   rules: {
     classMembers: 'off',
     duplicates: 'off',
@@ -11,37 +58,43 @@ export default {
     types: 'off',
     unresolved: 'off',
   },
+
+  vite: false,
+
   vitest: {
-    config: ['vitest.config.mts', 'packages/*/vitest.config.mts'],
+    config: ['vitest.config.mts'],
+    entry: ['tests/**/*.{bench,test,test-d}.?(c|m)ts?(x)'],
   },
+
   workspaces: {
     '.': {
       entry: ['tools/release/changelog-renderer.js', 'tools/scripts/**/*.mts'],
-      ignore: ['tools/scripts/typings/typescript.d.ts', 'typings/*.d.ts'],
       ignoreDependencies: [
-        '@babel/code-frame',
-        '@babel/core',
-        '@babel/eslint-parser',
-        '@babel/parser',
-        '@babel/types',
-        '@nx/js',
         '@nx/workspace',
-        'glob',
         // imported for type purposes only
         'website',
       ],
+
+      project: [
+        'tools/scripts/**/*.mts',
+        '!tools/scripts/typings/typescript.d.ts',
+        '!typings/*.d.ts',
+      ],
     },
+
     'packages/ast-spec': {
       ignore: [
-        'src/**/fixtures/**',
         // @typescript-eslint/typescript-estree is not listed in dependencies to avoid circular dependency errors
         // You can check a more detailed explanation in this file
         'tests/util/parsers/typescript-estree-import.ts',
-        'typings/global.d.ts',
       ],
+
+      project: ['src/**/*.ts', 'tests/util/**/*.ts', '!src/**/fixtures/**'],
+
       vitest: {
+        config: ['vitest.config.mts'],
         entry: [
-          '**/*.{bench,test,test-d}.?(c|m)ts?(x)',
+          'tests/**/*.{bench,test,test-d}.?(c|m)ts?(x)',
           'tests/util/setupVitest.mts',
         ],
       },
@@ -57,25 +110,23 @@ export default {
       ignore: ['tests/fixtures/**'],
     },
     'packages/integration-tests': {
-      ignore: ['fixtures/**', 'typings/global.d.ts'],
-      vitest: {
-        entry: [
-          '**/*.{bench,test,test-d}.?(c|m)ts?(x)',
-          'tools/pack-packages.ts',
-        ],
-      },
+      ignore: ['fixtures/**'],
     },
     'packages/parser': {
       ignore: ['tests/fixtures/**'],
     },
     'packages/rule-tester': {
       ignore: ['typings/eslint.d.ts'],
+      mocha: {
+        entry: ['tests/eslint-base/eslint-base.test.js'],
+      },
     },
     'packages/scope-manager': {
       ignore: ['tests/fixtures/**'],
       vitest: {
+        config: ['vitest.config.mts'],
         entry: [
-          '**/*.{bench,test,test-d}.?(c|m)ts?(x)',
+          'tests/**/*.{bench,test,test-d}.?(c|m)ts?(x)',
           'tests/test-utils/serializers/index.ts',
         ],
       },
@@ -105,12 +156,6 @@ export default {
         'src/theme/**/*.tsx',
         'src/theme/prism-include-languages.js',
       ],
-      ignore: [
-        'src/globals.d.ts',
-        'src/hooks/*',
-        'src/types.d.ts',
-        'typings/*',
-      ],
       ignoreDependencies: [
         // used in MDX docs
         'raw-loader',
@@ -131,12 +176,24 @@ export default {
         '@docusaurus/BrowserOnly',
         '@docusaurus/module-type-aliases',
         '@generated/docusaurus.config',
-        '^@site/.*',
         '^@theme/.*',
         '^@theme-original/.*',
         'docusaurus-plugin-typedoc',
         'typedoc-plugin-markdown',
       ],
+
+      paths: {
+        '@site/*': ['./*'],
+      },
+
+      project: [
+        'src/**/*.ts?(x)',
+        'plugins/**/*.ts?(x)',
+        '!src/hooks/useRulesMeta.ts',
+        '!src/{globals,types}.d.ts',
+      ],
+
+      vitest: false,
     },
     'packages/website-eslint': {
       entry: [
@@ -154,7 +211,16 @@ export default {
         // virtual module
         'vt',
       ],
+
+      vitest: false,
     },
-    'tools/dummypkg': {},
+
+    'tools/dummypkg': {
+      vitest: false,
+    },
+  },
+
+  yarn: {
+    entry: [path.posix.join(__dirname, '.yarnrc.yml')],
   },
 } satisfies KnipConfig;
