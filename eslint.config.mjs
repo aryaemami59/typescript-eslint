@@ -29,8 +29,10 @@ const restrictNamedDeclarations = {
 };
 
 const vitestFiles = [
-  'packages/eslint-plugin-internal/tests/**/*.test.{ts,tsx,cts,mts}',
-  'packages/typescript-eslint/tests/**/*.test.{ts,tsx,cts,mts}',
+  'packages/*/tests/**/*.test?(-d).?(m|c)ts?(x)',
+  'packages/parser/tests/**/*.?(m|c)ts?(x)',
+  'packages/integration-tests/tools/integration-test-base.ts',
+  'packages/integration-tests/tools/pack-packages.ts',
 ];
 
 export default tseslint.config(
@@ -364,16 +366,6 @@ export default tseslint.config(
 
   // define the vitest globals for all test files
   {
-    files: ['packages/*/tests/**/*.{ts,tsx,cts,mts}'],
-    ignores: vitestFiles,
-    languageOptions: {
-      globals: {
-        ...vitestPlugin.environments.env.globals,
-      },
-    },
-  },
-  // define the vitest globals for all test files
-  {
     files: vitestFiles,
     languageOptions: {
       globals: {
@@ -383,41 +375,7 @@ export default tseslint.config(
   },
   // test file specific configuration
   {
-    files: [
-      'packages/*/tests/**/*.test.{ts,tsx,cts,mts}',
-      'packages/*/tests/**/test.{ts,tsx,cts,mts}',
-      'packages/parser/tests/**/*.{ts,tsx,cts,mts}',
-      'packages/integration-tests/tools/integration-test-base.ts',
-      'packages/integration-tests/tools/pack-packages.ts',
-    ],
-    ignores: vitestFiles,
-    rules: {
-      '@typescript-eslint/no-empty-function': [
-        'error',
-        { allow: ['arrowFunctions'] },
-      ],
-      '@typescript-eslint/no-non-null-assertion': 'off',
-      '@typescript-eslint/no-unsafe-assignment': 'off',
-      '@typescript-eslint/no-unsafe-call': 'off',
-      '@typescript-eslint/no-unsafe-member-access': 'off',
-      '@typescript-eslint/no-unsafe-return': 'off',
-      'vitest/no-alias-methods': 'error',
-      'vitest/no-disabled-tests': 'error',
-      'vitest/no-focused-tests': 'error',
-      'vitest/no-identical-title': 'error',
-      'vitest/no-test-prefixes': 'error',
-      'vitest/no-test-return-statement': 'error',
-      'vitest/prefer-each': 'error',
-      'vitest/prefer-spy-on': 'error',
-      'vitest/prefer-to-be': 'error',
-      'vitest/prefer-to-contain': 'error',
-      'vitest/prefer-to-have-length': 'error',
-      'vitest/valid-expect': 'error',
-    },
-    settings: { vitest: { typecheck: true } },
-  },
-  // test file specific configuration
-  {
+    ...vitestPlugin.configs.recommended,
     files: vitestFiles,
     rules: {
       '@typescript-eslint/no-empty-function': [
