@@ -43,10 +43,10 @@
     "clean": "rimraf dist/ _ts4.3/ coverage/",
     "clean-fixtures": "rimraf -g \"./src/**/fixtures/**/snapshots\"",
     "format": "yarn run -T format",
-    "generate-lib": "yarn run --top-level nx generate-lib repo",
+    "generate-lib": "yarn run -T nx generate-lib repo",
     "lint": "yarn run -T lint",
     "test": "vitest --run --config=$INIT_CWD/vitest.config.mts",
-    "check-types": "yarn run --top-level nx typecheck"
+    "check-types": "yarn run -T nx typecheck"
   },
   "dependencies": {
     "@typescript-eslint/types": "8.29.1",
