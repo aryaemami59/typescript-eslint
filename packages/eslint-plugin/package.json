@@ -56,7 +56,7 @@
     "generate:configs": "yarn run -T generate-configs",
     "lint": "yarn run -T lint",
     "test": "vitest --run --config=$INIT_CWD/vitest.config.mts",
-    "test-single": "vitest --run --no-coverage",
+    "test-single": "vitest --run --config=$INIT_CWD/vitest.config.mts --no-coverage",
     "check-types": "yarn run -T nx typecheck"
   },
   "dependencies": {
