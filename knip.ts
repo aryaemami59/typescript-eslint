@@ -114,15 +114,22 @@ export default {
     },
     'packages/parser': {
       ignore: ['tests/fixtures/**'],
+
+      vitest: {
+        config: ['vitest.config.mts'],
+        entry: ['tests/lib/**/*.{bench,test,test-d}.?(c|m)ts?(x)'],
+      },
     },
     'packages/rule-tester': {
       ignore: ['typings/eslint.d.ts'],
+
       mocha: {
         entry: ['tests/eslint-base/eslint-base.test.js'],
       },
     },
     'packages/scope-manager': {
       ignore: ['tests/fixtures/**'],
+
       vitest: {
         config: ['vitest.config.mts'],
         entry: [
@@ -137,6 +144,11 @@ export default {
     'packages/typescript-estree': {
       entry: ['src/use-at-your-own-risk.ts'],
       ignore: ['tests/fixtures/**', 'typings/typescript.d.ts'],
+
+      vitest: {
+        config: ['vitest.config.mts'],
+        entry: ['tests/lib/**/*.{bench,test,test-d}.?(c|m)ts?(x)'],
+      },
     },
     'packages/utils': {
       ignore: [
