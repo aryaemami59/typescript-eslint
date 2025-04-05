@@ -14,12 +14,7 @@ import {
 
 const tseslintPackages = inject('tseslintPackages');
 
-const BASE_DEPENDENCIES: PackageJSON['devDependencies'] = {
-  ...tseslintPackages,
-  eslint: rootPackageJson.devDependencies.eslint,
-  typescript: rootPackageJson.devDependencies.typescript,
-  vitest: rootPackageJson.devDependencies.vitest,
-};
+const BASE_DEPENDENCIES = inject('BASE_DEPENDENCIES');
 
 const FIXTURES_DIR = path.join(__dirname, '..', 'fixtures');
 
@@ -33,15 +28,15 @@ function integrationTest(
 ): void {
   const fixture = path.parse(testFilename).name.replace('.test', '');
 
+  const fixtureDir = path.join(FIXTURES_DIR, fixture);
+
+  const testFolder = path.join(integrationTestDir, fixture);
+
+  const fixturePackageJsonPath = pathToFileURL(
+    path.join(fixtureDir, 'package.json'),
+  ).href;
+
   describe(fixture, () => {
-    const fixtureDir = path.join(FIXTURES_DIR, fixture);
-
-    const testFolder = path.join(integrationTestDir, fixture);
-
-    const fixturePackageJsonPath = pathToFileURL(
-      path.join(fixtureDir, 'package.json'),
-    ).href;
-
     beforeAll(async () => {
       await fs.mkdir(testFolder, { recursive: true });
 
