@@ -39,7 +39,8 @@ export const integrationTestDir = path.join(
   'typescript-eslint-integration-tests',
 );
 
-export const YARN_RC_CONTENT = 'nodeLinker: node-modules\n';
+export const YARN_RC_CONTENT =
+  'nodeLinker: node-modules\n\nenableGlobalCache: true\n';
 
 const tarFolder = path.join(integrationTestDir, 'tarballs');
 
