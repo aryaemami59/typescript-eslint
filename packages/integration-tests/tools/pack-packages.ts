@@ -16,6 +16,8 @@ import * as path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { promisify } from 'node:util';
 
+import rootPackageJson from '../../../package.json';
+
 export const execFile = promisify(child_process.execFile);
 
 export interface PackageJSON {
@@ -32,13 +34,14 @@ declare module 'vitest' {
 
 const PACKAGES_DIR = path.resolve(__dirname, '..', '..');
 
-export const homeOrTmpDir = os.tmpdir() || os.homedir();
-
-const tarFolder = path.join(
-  homeOrTmpDir,
+export const integrationTestDir = path.join(
+  os.tmpdir() || os.homedir(),
   'typescript-eslint-integration-tests',
-  'tarballs',
 );
+
+export const YARN_RC_CONTENT = 'nodeLinker: node-modules\n';
+
+const tarFolder = path.join(integrationTestDir, 'tarballs');
 
 export const setup = async (project: TestProject): Promise<void> => {
   const PACKAGES = await fs.readdir(PACKAGES_DIR, {
@@ -95,6 +98,43 @@ export const setup = async (project: TestProject): Promise<void> => {
     ).filter(e => e != null),
   );
 
+  const BASE_DEPENDENCIES: PackageJSON['devDependencies'] = {
+    ...tseslintPackages,
+    eslint: rootPackageJson.devDependencies.eslint,
+    typescript: rootPackageJson.devDependencies.typescript,
+    vitest: rootPackageJson.devDependencies.vitest,
+  };
+
+  const temp = await fs.mkdtemp(path.join(integrationTestDir, 'temp'), {
+    encoding: 'utf-8',
+  });
+
+  await fs.writeFile(
+    path.join(temp, 'package.json'),
+    JSON.stringify(
+      {
+        devDependencies: BASE_DEPENDENCIES,
+        packageManager: rootPackageJson.packageManager,
+        private: true,
+        resolutions: tseslintPackages,
+      },
+      null,
+      2,
+    ),
+    { encoding: 'utf-8' },
+  );
+
+  await fs.writeFile(path.join(temp, '.yarnrc.yml'), YARN_RC_CONTENT, {
+    encoding: 'utf-8',
+  });
+
+  await execFile('yarn', ['install', '--no-immutable'], {
+    cwd: temp,
+    shell: true,
+  });
+
+  await fs.rm(temp, { recursive: true });
+
   console.log('Finished packing local packages.');
 
   project.provide('tseslintPackages', tseslintPackages);
@@ -102,6 +142,6 @@ export const setup = async (project: TestProject): Promise<void> => {
 
 export const teardown = async (): Promise<void> => {
   if (process.env.KEEP_INTEGRATION_TEST_DIR !== 'true') {
-    await fs.rm(path.dirname(tarFolder), { recursive: true });
+    await fs.rm(integrationTestDir, { recursive: true });
   }
 };
