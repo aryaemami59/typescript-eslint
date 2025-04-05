@@ -38,71 +38,72 @@ function integrationTest(
 
     const testFolder = path.join(integrationTestDir, fixture);
 
-    describe(testName, () => {
-      beforeAll(async () => {
-        await fs.mkdir(testFolder, { recursive: true });
+    const fixturePackageJsonPath = pathToFileURL(
+      path.join(fixtureDir, 'package.json'),
+    ).href;
 
-        // copy the fixture files to the temp folder
-        await fs.cp(fixtureDir, testFolder, { recursive: true });
+    beforeAll(async () => {
+      await fs.mkdir(testFolder, { recursive: true });
 
-        // build and write the package.json for the test
-        const fixturePackageJson: PackageJSON = (
-          await import(
-            pathToFileURL(path.join(fixtureDir, 'package.json')).href,
-            { with: { type: 'json' } }
-          )
-        ).default;
+      // copy the fixture files to the temp folder
+      await fs.cp(fixtureDir, testFolder, { recursive: true });
 
-        await fs.writeFile(
-          path.join(testFolder, 'package.json'),
-          JSON.stringify(
-            {
-              private: true,
-              ...fixturePackageJson,
-              devDependencies: {
-                ...BASE_DEPENDENCIES,
-                ...fixturePackageJson.devDependencies,
-              },
+      // build and write the package.json for the test
+      const fixturePackageJson: PackageJSON = (
+        await import(fixturePackageJsonPath, { with: { type: 'json' } })
+      ).default;
 
-              packageManager: rootPackageJson.packageManager,
-
-              // ensure everything uses the locally packed versions instead of the NPM versions
-              resolutions: {
-                ...tseslintPackages,
-              },
-            },
-            null,
-            2,
-          ),
-          { encoding: 'utf-8' },
-        );
-        // console.log('package.json written.');
-
-        // Ensure yarn uses the node-modules linker and not PnP
-        await fs.writeFile(
-          path.join(testFolder, '.yarnrc.yml'),
-          YARN_RC_CONTENT,
-          { encoding: 'utf-8' },
-        );
-
-        const { stderr, stdout } = await execFile(
-          'yarn',
-          ['install', '--no-immutable'],
+      await fs.writeFile(
+        path.join(testFolder, 'package.json'),
+        JSON.stringify(
           {
-            cwd: testFolder,
-            shell: true,
+            private: true,
+            ...fixturePackageJson,
+            devDependencies: {
+              ...BASE_DEPENDENCIES,
+              ...fixturePackageJson.devDependencies,
+            },
+
+            packageManager: rootPackageJson.packageManager,
+
+            // ensure everything uses the locally packed versions instead of the NPM versions
+            resolutions: {
+              ...tseslintPackages,
+            },
           },
-        );
+          null,
+          2,
+        ),
+        { encoding: 'utf-8' },
+      );
+      // console.log('package.json written.');
 
-        if (stderr) {
-          console.error(stderr);
+      // Ensure yarn uses the node-modules linker and not PnP
+      await fs.writeFile(
+        path.join(testFolder, '.yarnrc.yml'),
+        YARN_RC_CONTENT,
+        { encoding: 'utf-8' },
+      );
 
-          if (stdout) {
-            console.log(stdout);
-          }
+      const { stderr, stdout } = await execFile(
+        'yarn',
+        ['install', '--no-immutable'],
+        {
+          cwd: testFolder,
+          shell: true,
+        },
+      );
+
+      if (stderr) {
+        console.error(stderr);
+
+        if (stdout) {
+          console.log(stdout);
         }
-      });
+      }
+    });
 
+    describe(testName, () => {
       it('should work successfully', async () => {
         await executeTest(testFolder);
       });
