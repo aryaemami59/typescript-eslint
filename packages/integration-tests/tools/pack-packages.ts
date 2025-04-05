@@ -29,6 +29,8 @@ export interface PackageJSON {
 declare module 'vitest' {
   export interface ProvidedContext {
     tseslintPackages: PackageJSON['devDependencies'];
+
+    BASE_DEPENDENCIES: PackageJSON['devDependencies'];
   }
 }
 
@@ -139,6 +141,8 @@ export const setup = async (project: TestProject): Promise<void> => {
   console.log('Finished packing local packages.');
 
   project.provide('tseslintPackages', tseslintPackages);
+
+  project.provide('BASE_DEPENDENCIES', BASE_DEPENDENCIES);
 };
 
 export const teardown = async (): Promise<void> => {
