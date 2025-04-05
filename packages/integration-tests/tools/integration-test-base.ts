@@ -1,22 +1,7 @@
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import { pathToFileURL } from 'node:url';
-import { inject } from 'vitest';
 
-import type { PackageJSON } from './pack-packages.js';
-
-import rootPackageJson from '../../../package.json';
-import {
-  execFile,
-  integrationTestDir,
-  YARN_RC_CONTENT,
-} from './pack-packages.js';
-
-const tseslintPackages = inject('tseslintPackages');
-
-const BASE_DEPENDENCIES = inject('BASE_DEPENDENCIES');
-
-const FIXTURES_DIR = path.join(__dirname, '..', 'fixtures');
+import { execFile, INTEGRATION_TEST_DIR } from './pack-packages.js';
 
 // make sure that vitest doesn't timeout the test
 vi.setConfig({ testTimeout: 60_000 });
@@ -28,76 +13,9 @@ function integrationTest(
 ): void {
   const fixture = path.parse(testFilename).name.replace('.test', '');
 
-  const fixtureDir = path.join(FIXTURES_DIR, fixture);
-
-  const testFolder = path.join(integrationTestDir, fixture);
-
-  const fixturePackageJsonPath = pathToFileURL(
-    path.join(fixtureDir, 'package.json'),
-  ).href;
+  const testFolder = path.join(INTEGRATION_TEST_DIR, fixture);
 
   describe(fixture, () => {
-    beforeAll(async () => {
-      await fs.mkdir(testFolder, { recursive: true });
-
-      // copy the fixture files to the temp folder
-      await fs.cp(fixtureDir, testFolder, { recursive: true });
-
-      // build and write the package.json for the test
-      const fixturePackageJson: PackageJSON = (
-        await import(fixturePackageJsonPath, { with: { type: 'json' } })
-      ).default;
-
-      await fs.writeFile(
-        path.join(testFolder, 'package.json'),
-        JSON.stringify(
-          {
-            private: true,
-            ...fixturePackageJson,
-            devDependencies: {
-              ...BASE_DEPENDENCIES,
-              ...fixturePackageJson.devDependencies,
-            },
-
-            packageManager: rootPackageJson.packageManager,
-
-            // ensure everything uses the locally packed versions instead of the NPM versions
-            resolutions: {
-              ...tseslintPackages,
-            },
-          },
-          null,
-          2,
-        ),
-        { encoding: 'utf-8' },
-      );
-      // console.log('package.json written.');
-
-      // Ensure yarn uses the node-modules linker and not PnP
-      await fs.writeFile(
-        path.join(testFolder, '.yarnrc.yml'),
-        YARN_RC_CONTENT,
-        { encoding: 'utf-8' },
-      );
-
-      const { stderr, stdout } = await execFile(
-        'yarn',
-        ['install', '--no-immutable'],
-        {
-          cwd: testFolder,
-          shell: true,
-        },
-      );
-
-      if (stderr) {
-        console.error(stderr);
-
-        if (stdout) {
-          console.log(stdout);
-        }
-      }
-    });
-
     describe(testName, () => {
       it('should work successfully', async () => {
         await executeTest(testFolder);
