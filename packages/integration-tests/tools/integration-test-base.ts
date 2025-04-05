@@ -6,7 +6,11 @@ import { inject } from 'vitest';
 import type { PackageJSON } from './pack-packages.js';
 
 import rootPackageJson from '../../../package.json';
-import { execFile, homeOrTmpDir } from './pack-packages.js';
+import {
+  execFile,
+  integrationTestDir,
+  YARN_RC_CONTENT,
+} from './pack-packages.js';
 
 const tseslintPackages = inject('tseslintPackages');
 
@@ -28,17 +32,14 @@ function integrationTest(
   executeTest: (testFolder: string) => Promise<void>,
 ): void {
   const fixture = path.parse(testFilename).name.replace('.test', '');
+
   describe(fixture, () => {
     const fixtureDir = path.join(FIXTURES_DIR, fixture);
 
-    describe(testName, () => {
-      it('should work successfully', async () => {
-        const testFolder = path.join(
-          homeOrTmpDir,
-          'typescript-eslint-integration-tests',
-          fixture,
-        );
+    const testFolder = path.join(integrationTestDir, fixture);
 
+    describe(testName, () => {
+      beforeAll(async () => {
         await fs.mkdir(testFolder, { recursive: true });
 
         // copy the fixture files to the temp folder
@@ -62,6 +63,9 @@ function integrationTest(
                 ...BASE_DEPENDENCIES,
                 ...fixturePackageJson.devDependencies,
               },
+
+              packageManager: rootPackageJson.packageManager,
+
               // ensure everything uses the locally packed versions instead of the NPM versions
               resolutions: {
                 ...tseslintPackages,
@@ -77,15 +81,29 @@ function integrationTest(
         // Ensure yarn uses the node-modules linker and not PnP
         await fs.writeFile(
           path.join(testFolder, '.yarnrc.yml'),
-          `nodeLinker: node-modules\n`,
+          YARN_RC_CONTENT,
           { encoding: 'utf-8' },
         );
 
-        await execFile('yarn', ['install', '--no-immutable'], {
-          cwd: testFolder,
-          shell: true,
-        });
+        const { stderr, stdout } = await execFile(
+          'yarn',
+          ['install', '--no-immutable'],
+          {
+            cwd: testFolder,
+            shell: true,
+          },
+        );
 
+        if (stderr) {
+          console.error(stderr);
+
+          if (stdout) {
+            console.log(stdout);
+          }
+        }
+      });
+
+      it('should work successfully', async () => {
         await executeTest(testFolder);
       });
     });
