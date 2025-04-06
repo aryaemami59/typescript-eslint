@@ -52,12 +52,24 @@ const FIXTURES_DIR = path.join(__dirname, '..', FIXTURES_DIR_BASENAME);
 const TAR_FOLDER = path.join(INTEGRATION_TEST_DIR, 'tarballs');
 
 export const setup = async (project: TestProject): Promise<void> => {
+  const testFileBaseNames = project.vitest.state
+    .getPaths()
+    .map(testFilePath => path.basename(testFilePath, '.test.ts'));
+
   const PACKAGES = await fs.readdir(PACKAGES_DIR, {
     encoding: 'utf-8',
     withFileTypes: true,
   });
 
   await fs.mkdir(FIXTURES_DESTINATION_DIR, { recursive: true });
+
+  const temp = await fs.mkdtemp(path.join(INTEGRATION_TEST_DIR, 'temp'), {
+    encoding: 'utf-8',
+  });
+
+  await fs.writeFile(path.join(temp, '.yarnrc.yml'), YARN_RC_CONTENT, {
+    encoding: 'utf-8',
+  });
 
   await fs.mkdir(TAR_FOLDER, { recursive: true });
 
@@ -108,20 +120,12 @@ export const setup = async (project: TestProject): Promise<void> => {
     ).filter(e => e != null),
   );
 
-  const testFileBaseNames = project.vitest.state
-    .getPaths()
-    .map(testFilePath => path.basename(testFilePath, '.test.ts'));
-
   const BASE_DEPENDENCIES: PackageJSON['devDependencies'] = {
     ...tseslintPackages,
     eslint: rootPackageJson.devDependencies.eslint,
     typescript: rootPackageJson.devDependencies.typescript,
     vitest: rootPackageJson.devDependencies.vitest,
   };
-
-  const temp = await fs.mkdtemp(path.join(INTEGRATION_TEST_DIR, 'temp'), {
-    encoding: 'utf-8',
-  });
 
   await fs.writeFile(
     path.join(temp, 'package.json'),
@@ -138,16 +142,10 @@ export const setup = async (project: TestProject): Promise<void> => {
     { encoding: 'utf-8' },
   );
 
-  await fs.writeFile(path.join(temp, '.yarnrc.yml'), YARN_RC_CONTENT, {
-    encoding: 'utf-8',
-  });
-
   await execFile('yarn', ['install', '--no-immutable'], {
     cwd: temp,
     shell: true,
   });
-
-  await fs.rm(temp, { recursive: true });
 
   await Promise.all(
     testFileBaseNames.map(async fixture => {
@@ -212,6 +210,8 @@ export const setup = async (project: TestProject): Promise<void> => {
       }
     }),
   );
+
+  await fs.rm(temp, { recursive: true });
 
   console.log('Finished packing local packages.');
 };
