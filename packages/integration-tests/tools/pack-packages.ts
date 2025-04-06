@@ -20,14 +20,10 @@ import rootPackageJson from '../../../package.json';
 
 export const execFile = promisify(child_process.execFile);
 
-export interface PackageJSON {
+interface PackageJSON {
   devDependencies: Record<string, string>;
   name: string;
   private?: boolean;
-}
-
-export interface PackageJSONModule extends PackageJSON {
-  default: PackageJSON;
 }
 
 const PACKAGES_DIR = path.resolve(__dirname, '..', '..');
@@ -44,8 +40,7 @@ export const FIXTURES_DESTINATION_DIR = path.join(
   FIXTURES_DIR_BASENAME,
 );
 
-export const YARN_RC_CONTENT =
-  'nodeLinker: node-modules\n\nenableGlobalCache: true\n';
+const YARN_RC_CONTENT = 'nodeLinker: node-modules\n\nenableGlobalCache: true\n';
 
 const FIXTURES_DIR = path.join(__dirname, '..', FIXTURES_DIR_BASENAME);
 
@@ -62,14 +57,6 @@ export const setup = async (project: TestProject): Promise<void> => {
   });
 
   await fs.mkdir(FIXTURES_DESTINATION_DIR, { recursive: true });
-
-  const temp = await fs.mkdtemp(path.join(INTEGRATION_TEST_DIR, 'temp'), {
-    encoding: 'utf-8',
-  });
-
-  await fs.writeFile(path.join(temp, '.yarnrc.yml'), YARN_RC_CONTENT, {
-    encoding: 'utf-8',
-  });
 
   await fs.mkdir(TAR_FOLDER, { recursive: true });
 
@@ -126,6 +113,14 @@ export const setup = async (project: TestProject): Promise<void> => {
     typescript: rootPackageJson.devDependencies.typescript,
     vitest: rootPackageJson.devDependencies.vitest,
   };
+
+  const temp = await fs.mkdtemp(path.join(INTEGRATION_TEST_DIR, 'temp'), {
+    encoding: 'utf-8',
+  });
+
+  await fs.writeFile(path.join(temp, '.yarnrc.yml'), YARN_RC_CONTENT, {
+    encoding: 'utf-8',
+  });
 
   await fs.writeFile(
     path.join(temp, 'package.json'),
