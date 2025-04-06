@@ -108,7 +108,7 @@ export const setup = async (project: TestProject): Promise<void> => {
     ).filter(e => e != null),
   );
 
-  const testFileBasenames = project.vitest.state
+  const testFileBaseNames = project.vitest.state
     .getPaths()
     .map(testFilePath => path.basename(testFilePath, '.test.ts'));
 
@@ -149,28 +149,8 @@ export const setup = async (project: TestProject): Promise<void> => {
 
   await fs.rm(temp, { recursive: true });
 
-  // await fs.cp(FIXTURES_DIR, FIXTURES_DESTINATION_DIR, {
-  //   filter(source) {
-  //     const sourceBasename = path.basename(source);
-
-  //     const sourceDirectoryName = path.basename(path.dirname(source));
-
-  //     if (sourceBasename === FIXTURES_DIR_BASENAME) {
-  //       return true;
-  //     }
-
-  //     if (sourceDirectoryName === FIXTURES_DIR_BASENAME) {
-  //       return testFileBasenames.includes(sourceBasename);
-  //     }
-
-  //     return true;
-  //   },
-
-  //   recursive: true,
-  // });
-
   await Promise.all(
-    testFileBasenames.map(async fixture => {
+    testFileBaseNames.map(async fixture => {
       const testFolder = path.join(FIXTURES_DESTINATION_DIR, fixture);
 
       const fixtureDir = path.join(FIXTURES_DIR, fixture);
