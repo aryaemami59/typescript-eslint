@@ -1,7 +1,7 @@
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 
-import { execFile, INTEGRATION_TEST_DIR } from './pack-packages.js';
+import { execFile, FIXTURES_DESTINATION_DIR } from './pack-packages.js';
 
 // make sure that vitest doesn't timeout the test
 vi.setConfig({ testTimeout: 60_000 });
@@ -13,7 +13,7 @@ function integrationTest(
 ): void {
   const fixture = path.parse(testFilename).name.replace('.test', '');
 
-  const testFolder = path.join(INTEGRATION_TEST_DIR, fixture);
+  const testFolder = path.join(FIXTURES_DESTINATION_DIR, fixture);
 
   describe(fixture, () => {
     describe(testName, () => {
