@@ -99,15 +99,14 @@ export const setup = async (project: TestProject): Promise<void> => {
     .getPaths()
     .map(e => path.basename(e, '.test.ts'));
 
-  console.log(testFiles);
-
   await fs.cp(FIXTURES_DIR, INTEGRATION_TEST_DIR, {
     filter(source, destination) {
-      console.log(source, destination);
+      const sourceBasename = path.basename(source);
+
       if (
-        path.basename(source) === path.basename(FIXTURES_DIR) ||
+        sourceBasename === path.basename(FIXTURES_DIR) ||
         path.basename(INTEGRATION_TEST_DIR) === path.basename(destination) ||
-        testFiles.includes(path.basename(source)) ||
+        testFiles.includes(sourceBasename) ||
         testFiles.includes(path.basename(path.dirname(destination)))
       ) {
         return true;
@@ -118,8 +117,6 @@ export const setup = async (project: TestProject): Promise<void> => {
 
     recursive: true,
   });
-
-  console.log(await fs.readdir(INTEGRATION_TEST_DIR));
 
   const BASE_DEPENDENCIES: PackageJSON['devDependencies'] = {
     ...tseslintPackages,
@@ -170,7 +167,7 @@ export const setup = async (project: TestProject): Promise<void> => {
 
       const fixturePackageJson: PackageJSON = (
         await project.import<PackageJSON & { default: PackageJSON }>(
-          path.join(fixtureDir, 'package.json'),
+          pathToFileURL(path.join(fixtureDir, 'package.json')).href,
         )
       ).default;
 

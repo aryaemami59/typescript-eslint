@@ -32,7 +32,6 @@ export function eslintIntegrationTest(
     // lint, outputting to a JSON file
     const outFile = path.join(testFolder, 'eslint.json');
 
-    await fs.writeFile(outFile, '', { encoding: 'utf-8' });
     let stderr = '';
     try {
       await execFile(
