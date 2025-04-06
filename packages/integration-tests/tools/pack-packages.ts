@@ -104,21 +104,21 @@ export const setup = async (project: TestProject): Promise<void> => {
     .getPaths()
     .map(e => path.basename(e, '.test.ts'));
 
-  await fs.cp(FIXTURES_DIR, FIXTURES_DESTINATION_DIR, {
-    filter(source, destination) {
-      const sourceBasename = path.basename(source);
+  const FIXTURES_DIR_BASENAME = path.basename(FIXTURES_DIR);
 
-      if (
-        sourceBasename === path.basename(FIXTURES_DIR) ||
-        path.basename(FIXTURES_DESTINATION_DIR) ===
-          path.basename(destination) ||
-        testFiles.includes(sourceBasename) ||
-        testFiles.includes(path.basename(path.dirname(destination)))
-      ) {
+  await fs.cp(FIXTURES_DIR, FIXTURES_DESTINATION_DIR, {
+    filter(source) {
+      const parsedSourcePath = path.parse(source);
+
+      if (parsedSourcePath.name === FIXTURES_DIR_BASENAME) {
         return true;
       }
 
-      return false;
+      if (path.basename(parsedSourcePath.dir) === FIXTURES_DIR_BASENAME) {
+        return testFiles.includes(parsedSourcePath.name);
+      }
+
+      return true;
     },
 
     recursive: true,
