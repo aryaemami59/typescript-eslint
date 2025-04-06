@@ -28,9 +28,14 @@ export interface PackageJSON {
 
 const PACKAGES_DIR = path.resolve(__dirname, '..', '..');
 
-export const INTEGRATION_TEST_DIR = path.join(
+const INTEGRATION_TEST_DIR = path.join(
   os.tmpdir() || os.homedir(),
   'typescript-eslint-integration-tests',
+);
+
+export const FIXTURES_DESTINATION_DIR = path.join(
+  INTEGRATION_TEST_DIR,
+  'fixtures',
 );
 
 export const YARN_RC_CONTENT =
@@ -99,13 +104,14 @@ export const setup = async (project: TestProject): Promise<void> => {
     .getPaths()
     .map(e => path.basename(e, '.test.ts'));
 
-  await fs.cp(FIXTURES_DIR, INTEGRATION_TEST_DIR, {
+  await fs.cp(FIXTURES_DIR, FIXTURES_DESTINATION_DIR, {
     filter(source, destination) {
       const sourceBasename = path.basename(source);
 
       if (
         sourceBasename === path.basename(FIXTURES_DIR) ||
-        path.basename(INTEGRATION_TEST_DIR) === path.basename(destination) ||
+        path.basename(FIXTURES_DESTINATION_DIR) ===
+          path.basename(destination) ||
         testFiles.includes(sourceBasename) ||
         testFiles.includes(path.basename(path.dirname(destination)))
       ) {
@@ -125,7 +131,7 @@ export const setup = async (project: TestProject): Promise<void> => {
     vitest: rootPackageJson.devDependencies.vitest,
   };
 
-  const temp = await fs.mkdtemp(path.join(INTEGRATION_TEST_DIR, 'temp'), {
+  const temp = await fs.mkdtemp(path.join(FIXTURES_DESTINATION_DIR, 'temp'), {
     encoding: 'utf-8',
   });
 
@@ -157,17 +163,17 @@ export const setup = async (project: TestProject): Promise<void> => {
 
   await Promise.all(
     testFiles.map(async fixture => {
-      const testFolder = path.join(INTEGRATION_TEST_DIR, fixture);
+      const testFolder = path.join(FIXTURES_DESTINATION_DIR, fixture);
 
       const fixtureDir = path.join(FIXTURES_DIR, fixture);
 
-      // const fixturePackageJsonPath = pathToFileURL(
-      //   path.join(fixtureDir, 'package.json'),
-      // ).href;
+      const fixturePackageJsonPath = pathToFileURL(
+        path.join(fixtureDir, 'package.json'),
+      ).href;
 
       const fixturePackageJson: PackageJSON = (
         await project.import<PackageJSON & { default: PackageJSON }>(
-          pathToFileURL(path.join(fixtureDir, 'package.json')).href,
+          fixturePackageJsonPath,
         )
       ).default;
 
