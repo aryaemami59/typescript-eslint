@@ -112,26 +112,6 @@ export const setup = async (project: TestProject): Promise<void> => {
     .getPaths()
     .map(testFilePath => path.basename(testFilePath, '.test.ts'));
 
-  await fs.cp(FIXTURES_DIR, FIXTURES_DESTINATION_DIR, {
-    filter(source) {
-      const sourceBasename = path.basename(source);
-
-      const sourceDirectoryName = path.basename(path.dirname(source));
-
-      if (sourceBasename === FIXTURES_DIR_BASENAME) {
-        return true;
-      }
-
-      if (sourceDirectoryName === FIXTURES_DIR_BASENAME) {
-        return testFileBasenames.includes(sourceBasename);
-      }
-
-      return true;
-    },
-
-    recursive: true,
-  });
-
   const BASE_DEPENDENCIES: PackageJSON['devDependencies'] = {
     ...tseslintPackages,
     eslint: rootPackageJson.devDependencies.eslint,
@@ -139,7 +119,7 @@ export const setup = async (project: TestProject): Promise<void> => {
     vitest: rootPackageJson.devDependencies.vitest,
   };
 
-  const temp = await fs.mkdtemp(path.join(FIXTURES_DESTINATION_DIR, 'temp'), {
+  const temp = await fs.mkdtemp(path.join(INTEGRATION_TEST_DIR, 'temp'), {
     encoding: 'utf-8',
   });
 
@@ -169,6 +149,26 @@ export const setup = async (project: TestProject): Promise<void> => {
 
   await fs.rm(temp, { recursive: true });
 
+  // await fs.cp(FIXTURES_DIR, FIXTURES_DESTINATION_DIR, {
+  //   filter(source) {
+  //     const sourceBasename = path.basename(source);
+
+  //     const sourceDirectoryName = path.basename(path.dirname(source));
+
+  //     if (sourceBasename === FIXTURES_DIR_BASENAME) {
+  //       return true;
+  //     }
+
+  //     if (sourceDirectoryName === FIXTURES_DIR_BASENAME) {
+  //       return testFileBasenames.includes(sourceBasename);
+  //     }
+
+  //     return true;
+  //   },
+
+  //   recursive: true,
+  // });
+
   await Promise.all(
     testFileBasenames.map(async fixture => {
       const testFolder = path.join(FIXTURES_DESTINATION_DIR, fixture);
@@ -181,6 +181,8 @@ export const setup = async (project: TestProject): Promise<void> => {
           { with: { type: 'json' } }
         )
       ).default;
+
+      await fs.cp(fixtureDir, testFolder, { recursive: true });
 
       await fs.writeFile(
         path.join(testFolder, 'package.json'),
