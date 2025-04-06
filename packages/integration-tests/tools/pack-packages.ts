@@ -105,8 +105,8 @@ export const setup = async (project: TestProject): Promise<void> => {
     filter(source, destination) {
       console.log(source, destination);
       if (
-        source === FIXTURES_DIR ||
-        INTEGRATION_TEST_DIR === destination ||
+        path.basename(source) === path.basename(FIXTURES_DIR) ||
+        path.basename(INTEGRATION_TEST_DIR) === path.basename(destination) ||
         testFiles.includes(path.basename(source)) ||
         testFiles.includes(path.basename(path.dirname(destination)))
       ) {
