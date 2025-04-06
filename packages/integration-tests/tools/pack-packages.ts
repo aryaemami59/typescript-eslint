@@ -103,6 +103,7 @@ export const setup = async (project: TestProject): Promise<void> => {
 
   await fs.cp(FIXTURES_DIR, INTEGRATION_TEST_DIR, {
     filter(source, destination) {
+      console.log(source, destination);
       if (
         source === FIXTURES_DIR ||
         INTEGRATION_TEST_DIR === destination ||
