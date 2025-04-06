@@ -100,11 +100,12 @@ export const setup = async (project: TestProject): Promise<void> => {
     .map(e => path.basename(e, '.test.ts'));
 
   await fs.cp(FIXTURES_DIR, INTEGRATION_TEST_DIR, {
-    filter(source) {
+    filter(source, destination) {
       if (
         source === FIXTURES_DIR ||
+        INTEGRATION_TEST_DIR === destination ||
         testFiles.includes(path.basename(source)) ||
-        testFiles.includes(path.basename(path.dirname(source)))
+        testFiles.includes(path.basename(path.dirname(destination)))
       ) {
         return true;
       }
