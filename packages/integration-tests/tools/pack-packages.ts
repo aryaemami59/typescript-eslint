@@ -26,6 +26,10 @@ export interface PackageJSON {
   private?: boolean;
 }
 
+export interface PackageJSONModule extends PackageJSON {
+  default: PackageJSON;
+}
+
 const PACKAGES_DIR = path.resolve(__dirname, '..', '..');
 
 const INTEGRATION_TEST_DIR = path.join(
@@ -33,15 +37,17 @@ const INTEGRATION_TEST_DIR = path.join(
   'typescript-eslint-integration-tests',
 );
 
+const FIXTURES_DIR_BASENAME = 'fixtures';
+
 export const FIXTURES_DESTINATION_DIR = path.join(
   INTEGRATION_TEST_DIR,
-  'fixtures',
+  FIXTURES_DIR_BASENAME,
 );
 
 export const YARN_RC_CONTENT =
   'nodeLinker: node-modules\n\nenableGlobalCache: true\n';
 
-const FIXTURES_DIR = path.join(__dirname, '..', 'fixtures');
+const FIXTURES_DIR = path.join(__dirname, '..', FIXTURES_DIR_BASENAME);
 
 const TAR_FOLDER = path.join(INTEGRATION_TEST_DIR, 'tarballs');
 
@@ -50,6 +56,8 @@ export const setup = async (project: TestProject): Promise<void> => {
     encoding: 'utf-8',
     withFileTypes: true,
   });
+
+  await fs.mkdir(FIXTURES_DESTINATION_DIR, { recursive: true });
 
   await fs.mkdir(TAR_FOLDER, { recursive: true });
 
@@ -69,9 +77,9 @@ export const setup = async (project: TestProject): Promise<void> => {
           }
 
           const packageJson: PackageJSON = (
-            await project.import<PackageJSON & { default: PackageJSON }>(
-              pathToFileURL(packagePath).href,
-            )
+            await import(pathToFileURL(packagePath).href, {
+              with: { type: 'json' },
+            })
           ).default;
 
           if ('private' in packageJson && packageJson.private === true) {
@@ -100,22 +108,22 @@ export const setup = async (project: TestProject): Promise<void> => {
     ).filter(e => e != null),
   );
 
-  const testFiles = project.vitest.state
+  const testFileBasenames = project.vitest.state
     .getPaths()
-    .map(e => path.basename(e, '.test.ts'));
-
-  const FIXTURES_DIR_BASENAME = path.basename(FIXTURES_DIR);
+    .map(testFilePath => path.basename(testFilePath, '.test.ts'));
 
   await fs.cp(FIXTURES_DIR, FIXTURES_DESTINATION_DIR, {
     filter(source) {
-      const parsedSourcePath = path.parse(source);
+      const sourceBasename = path.basename(source);
 
-      if (parsedSourcePath.name === FIXTURES_DIR_BASENAME) {
+      const sourceDirectoryName = path.basename(path.dirname(source));
+
+      if (sourceBasename === FIXTURES_DIR_BASENAME) {
         return true;
       }
 
-      if (path.basename(parsedSourcePath.dir) === FIXTURES_DIR_BASENAME) {
-        return testFiles.includes(parsedSourcePath.name);
+      if (sourceDirectoryName === FIXTURES_DIR_BASENAME) {
+        return testFileBasenames.includes(sourceBasename);
       }
 
       return true;
@@ -162,18 +170,15 @@ export const setup = async (project: TestProject): Promise<void> => {
   await fs.rm(temp, { recursive: true });
 
   await Promise.all(
-    testFiles.map(async fixture => {
+    testFileBasenames.map(async fixture => {
       const testFolder = path.join(FIXTURES_DESTINATION_DIR, fixture);
 
       const fixtureDir = path.join(FIXTURES_DIR, fixture);
 
-      const fixturePackageJsonPath = pathToFileURL(
-        path.join(fixtureDir, 'package.json'),
-      ).href;
-
       const fixturePackageJson: PackageJSON = (
-        await project.import<PackageJSON & { default: PackageJSON }>(
-          fixturePackageJsonPath,
+        await import(
+          pathToFileURL(path.join(fixtureDir, 'package.json')).href,
+          { with: { type: 'json' } }
         )
       ).default;
 
