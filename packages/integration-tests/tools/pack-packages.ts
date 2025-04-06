@@ -137,6 +137,12 @@ export const setup = async (project: TestProject): Promise<void> => {
     { encoding: 'utf-8' },
   );
 
+  // We install the tarballs here once so that yarn can cache them globally.
+  // This solves 2 problems:
+  // 1. Tests can be run concurrently because they won't be trying to install
+  //    the same tarballs at the same time.
+  // 2. Installing the tarballs for each test becomes much faster as Yarn can
+  //    grab them from the global cache folder.
   await execFile('yarn', ['install', '--no-immutable'], {
     cwd: temp,
     shell: true,
