@@ -4,6 +4,7 @@
   "projectType": "library",
   "root": "packages/integration-tests",
   "sourceRoot": "packages/integration-tests/tools",
+  "implicitDependencies": ["typescript-eslint"],
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint"
