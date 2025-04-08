@@ -11,7 +11,7 @@ vi.mock(import('node:fs'), async importOriginal => {
 
   return {
     ...actual,
-    default: actual,
+    default: actual.default,
     existsSync: vi.fn(actual.existsSync),
   };
 });
