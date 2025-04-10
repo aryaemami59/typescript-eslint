@@ -12,7 +12,7 @@ import { createProgramFromConfigFile as createProgram } from '../../src/create-p
 import { parseAndGenerateServices } from '../../src/parser';
 import { expectToHaveParserServices } from '../test-utils/expectToHaveParserServices';
 import {
-  createSnapshotTestBlock,
+  deeplyCopy,
   formatSnapshotName,
   parseCodeAndGenerateServices,
 } from '../test-utils/test-utils';
@@ -60,19 +60,16 @@ describe('semanticInfo', async () => {
         path.extname(filename),
       );
 
-      return [
-        snapshotName,
-        createSnapshotTestBlock(
-          code,
-          createOptions(filename),
-          /*generateServices*/ true,
-        ),
-      ] as const;
+      const { ast } = parseAndGenerateServices(code, createOptions(filename));
+
+      const result = deeplyCopy(ast);
+
+      return [snapshotName, result] as const;
     }),
   );
 
-  it.for(testCases)('%s', ([, createSnapshotTestBlock]) => {
-    createSnapshotTestBlock();
+  it.for(testCases)('%s', ([, result], { expect }) => {
+    expect(result).toMatchSnapshot();
   });
 
   it(`should cache the created ts.program`, async () => {
