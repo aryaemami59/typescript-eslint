@@ -168,7 +168,7 @@ describe(getProjectConfigFiles, () => {
     });
 
     it('throws when searching passes the tsconfigRootDir', () => {
-      mockExistsSync.mockReturnValueOnce(false);
+      mockExistsSync.mockReturnValue(false);
 
       expect(() =>
         getProjectConfigFiles({ ...parseSettings, tsconfigRootDir: '/' }, true),
