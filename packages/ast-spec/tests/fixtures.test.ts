@@ -355,6 +355,7 @@ function nestDescribe(fixture: Fixture, segments = fixture.segments): void {
     };
 
     describe(
+      // eslint-disable-next-line vitest/valid-describe-callback -- intentional focused test that only happens during development
       fixture.name,
       { only: [...fixture.segments, fixture.name].join(path.sep) === ONLY },
       test,
