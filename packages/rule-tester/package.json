@@ -38,7 +38,7 @@
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf dist/ coverage/",
     "format": "yarn run -T format",
-    "lint": "yarn run -T lint",
+    "lint": "yarn run -BT nx lint",
     "pretest-eslint-base": "tsc -b tsconfig.build.json",
     "test-eslint-base": "mocha --require source-map-support/register ./tests/eslint-base/eslint-base.test.js",
     "test": "vitest --run --config=$INIT_CWD/vitest.config.mts",
