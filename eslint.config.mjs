@@ -402,7 +402,6 @@ export default tseslint.config(
   {
     files: [
       'packages/eslint-plugin-internal/tests/rules/**/*.test.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin-tslint/tests/rules/**/*.test.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/tests/rules/**/*.test.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/tests/eslint-rules/**/*.test.{ts,tsx,cts,mts}',
     ],
@@ -447,7 +446,6 @@ export default tseslint.config(
     extends: [eslintPluginPlugin.configs['flat/recommended']],
     files: [
       'packages/eslint-plugin-internal/**/*.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin-tslint/**/*.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/**/*.{ts,tsx,cts,mts}',
     ],
 
@@ -458,10 +456,8 @@ export default tseslint.config(
   {
     files: [
       'packages/eslint-plugin-internal/src/rules/**/*.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin-tslint/src/rules/**/*.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/src/configs/**/*.{ts,tsx,cts,mts}',
       'packages/typescript-eslint/src/configs/**/*.{ts,tsx,cts,mts}',
-      'packages/core/src/configs/**/*.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/src/rules/**/*.{ts,tsx,cts,mts}',
     ],
     rules: {
@@ -510,7 +506,6 @@ export default tseslint.config(
     files: [
       'packages/scope-manager/src/lib/*.{ts,tsx,cts,mts}',
       'packages/eslint-plugin/src/configs/*.{ts,tsx,cts,mts}',
-      'packages/core/src/configs/*.{ts,tsx,cts,mts}',
     ],
     rules: {
       '@typescript-eslint/internal/no-poorly-typed-ts-props': 'off',
