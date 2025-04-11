@@ -42,7 +42,7 @@
     "clean": "rimraf dist/ src/generated/ coverage/",
     "format": "yarn run -T format",
     "generate-lib": "yarn run -T nx run scope-manager:generate-lib",
-    "lint": "yarn run -T lint",
+    "lint": "yarn run -BT nx lint",
     "check-types": "yarn run -T nx typecheck"
   },
   "devDependencies": {

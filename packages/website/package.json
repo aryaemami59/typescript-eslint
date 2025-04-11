@@ -19,7 +19,7 @@
     "generate-website-dts": "tsx ./tools/generate-website-dts.mts",
     "stylelint": "stylelint \"src/**/*.css\"",
     "stylelint:fix": "stylelint \"src/**/*.css\" --fix",
-    "lint": "yarn run -T lint",
+    "lint": "yarn run -BT nx lint",
     "serve": "docusaurus serve",
     "start": "yarn run -T nx start",
     "swizzle": "docusaurus swizzle",

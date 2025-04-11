@@ -27,7 +27,7 @@
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf dist/ coverage/",
     "format": "yarn run -T format",
-    "lint": "yarn run -T lint",
+    "lint": "yarn run -BT nx lint",
     "check-types": "yarn run -T nx typecheck"
   },
   "dependencies": {
