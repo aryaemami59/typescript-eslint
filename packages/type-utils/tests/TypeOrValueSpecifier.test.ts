@@ -173,7 +173,10 @@ describe('TypeOrValueSpecifier', () => {
     }
 
     function runTestPositive(
-      [code, specifier]: [code: string, specifier: TypeOrValueSpecifier],
+      [code, specifier]: readonly [
+        code: string,
+        specifier: TypeOrValueSpecifier,
+      ],
       testContext: Partial<TestContext> & Pick<TestContext, 'expect'> = {
         expect,
       },
@@ -182,7 +185,10 @@ describe('TypeOrValueSpecifier', () => {
     }
 
     function runTestNegative(
-      [code, specifier]: [code: string, specifier: TypeOrValueSpecifier],
+      [code, specifier]: readonly [
+        code: string,
+        specifier: TypeOrValueSpecifier,
+      ],
       testContext: Partial<TestContext> & Pick<TestContext, 'expect'> = {
         expect,
       },
