@@ -416,9 +416,9 @@ export default tseslint.config(
   // plugin rule tests
   {
     files: [
-      'packages/eslint-plugin-internal/tests/rules/**/*.test.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin/tests/rules/**/*.test.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin/tests/eslint-rules/**/*.test.{ts,tsx,cts,mts}',
+      'packages/eslint-plugin-internal/tests/rules/**/*.test.?(m|c)ts?(x)',
+      'packages/eslint-plugin/tests/rules/**/*.test.?(m|c)ts?(x)',
+      'packages/eslint-plugin/tests/eslint-rules/**/*.test.?(m|c)ts?(x)',
     ],
     rules: {
       '@typescript-eslint/internal/plugin-test-formatting': 'error',
@@ -430,9 +430,9 @@ export default tseslint.config(
   //
   {
     files: [
-      '**/tools/**/*.{ts,tsx,cts,mts}',
-      '**/tests/**/*.{ts,tsx,cts,mts}',
-      'packages/integration-tests/**/*.{ts,tsx,cts,mts}',
+      '**/tools/**/*.?(m|c)ts?(x)',
+      '**/tests/**/*.?(m|c)ts?(x)',
+      'packages/integration-tests/**/*.?(m|c)ts?(x)',
     ],
     rules: {
       // allow console logs in tools and tests
@@ -460,8 +460,8 @@ export default tseslint.config(
   {
     extends: [eslintPluginPlugin.configs['flat/recommended']],
     files: [
-      'packages/eslint-plugin-internal/**/*.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin/**/*.{ts,tsx,cts,mts}',
+      'packages/eslint-plugin-internal/**/*.?(m|c)ts?(x)',
+      'packages/eslint-plugin/**/*.?(m|c)ts?(x)',
     ],
 
     rules: {
@@ -470,10 +470,10 @@ export default tseslint.config(
   },
   {
     files: [
-      'packages/eslint-plugin-internal/src/rules/**/*.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin/src/configs/**/*.{ts,tsx,cts,mts}',
-      'packages/typescript-eslint/src/configs/**/*.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin/src/rules/**/*.{ts,tsx,cts,mts}',
+      'packages/eslint-plugin-internal/src/rules/**/*.?(m|c)ts?(x)',
+      'packages/eslint-plugin/src/configs/**/*.?(m|c)ts?(x)',
+      'packages/typescript-eslint/src/configs/**/*.?(m|c)ts?(x)',
+      'packages/eslint-plugin/src/rules/**/*.?(m|c)ts?(x)',
     ],
     rules: {
       'eslint-plugin/no-property-in-node': [
@@ -519,8 +519,8 @@ export default tseslint.config(
 
   {
     files: [
-      'packages/scope-manager/src/lib/*.{ts,tsx,cts,mts}',
-      'packages/eslint-plugin/src/configs/*.{ts,tsx,cts,mts}',
+      'packages/scope-manager/src/lib/*.?(m|c)ts?(x)',
+      'packages/eslint-plugin/src/configs/*.?(m|c)ts?(x)',
     ],
     rules: {
       '@typescript-eslint/internal/no-poorly-typed-ts-props': 'off',
@@ -534,7 +534,7 @@ export default tseslint.config(
   //
 
   {
-    files: ['packages/ast-spec/src/**/*.{ts,tsx,cts,mts}'],
+    files: ['packages/ast-spec/src/**/*.?(m|c)ts?(x)'],
     rules: {
       // disallow ALL unused vars
       '@typescript-eslint/no-unused-vars': ['error', { caughtErrors: 'all' }],
@@ -542,7 +542,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['packages/ast-spec/**/*.{ts,tsx,cts,mts}'],
+    files: ['packages/ast-spec/**/*.?(m|c)ts?(x)'],
     rules: {
       'no-restricted-imports': [
         'error',
@@ -585,7 +585,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['packages/website/src/**/*.{ts,tsx,cts,mts}'],
+    files: ['packages/website/src/**/*.?(m|c)ts?(x)'],
     rules: {
       'import/no-default-export': 'off',
       // allow console logs in the website to help with debugging things in production
@@ -593,10 +593,7 @@ export default tseslint.config(
     },
   },
   {
-    files: [
-      'packages/website-eslint/src/mock/**/*.js',
-      '**/*.d.{ts,tsx,cts,mts}',
-    ],
+    files: ['packages/website-eslint/src/mock/**/*.js', '**/*.d.?(m|c)ts?(x)'],
     rules: {
       // mocks and declaration files have to mirror their original package
       'import/no-default-export': 'off',
