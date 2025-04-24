@@ -95,6 +95,8 @@ export default {
         entry: [
           'tests/**/*.{bench,test,test-d}.?(c|m)ts?(x)',
           'tests/util/setupVitest.mts',
+          'tests/util/custom-matchers/custom-matchers.ts',
+          'tests/util/custom-matchers/vitest-custom-matchers.d.ts',
         ],
       },
     },
