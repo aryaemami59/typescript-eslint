@@ -35,6 +35,7 @@ const vitestFiles = [
   'packages/integration-tests/tools/integration-test-base.ts',
   'packages/integration-tests/tools/pack-packages.ts',
   'packages/scope-manager/tests/test-utils/serializers/index.ts',
+  'packages/typescript-estree/tests/test-utils/custom-matchers/custom-matchers.ts',
 ];
 
 export default tseslint.config(
