@@ -32,6 +32,7 @@ const vitestFiles = [
   'packages/*/tests/**/*.test?(-d).?(m|c)ts?(x)',
   'packages/parser/tests/**/*.?(m|c)ts?(x)',
   'packages/ast-spec/tests/util/setupVitest.mts',
+  'packages/ast-spec/tests/util/custom-matchers/custom-matchers.ts',
   'packages/integration-tests/tools/integration-test-base.ts',
   'packages/integration-tests/tools/pack-packages.ts',
   'packages/scope-manager/tests/test-utils/serializers/index.ts',
