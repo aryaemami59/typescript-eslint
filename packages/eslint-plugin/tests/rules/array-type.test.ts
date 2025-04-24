@@ -2,10 +2,10 @@ import * as parser from '@typescript-eslint/parser';
 import { RuleTester } from '@typescript-eslint/rule-tester';
 import { TSESLint } from '@typescript-eslint/utils';
 
-import type { OptionString } from '../../src/rules/array-type';
+import type { OptionString } from '../../src/rules/array-type.js';
 
-import rule from '../../src/rules/array-type';
-import { areOptionsValid } from '../areOptionsValid';
+import rule from '../../src/rules/array-type.js';
+import { areOptionsValid } from '../areOptionsValid.js';
 
 const ruleTester = new RuleTester();
 
@@ -1997,17 +1997,247 @@ interface FooInterface {
 // https://github.com/eslint/eslint/issues/11187
 describe('array-type (nested)', () => {
   const linter = new TSESLint.Linter({ configType: 'eslintrc' });
-  linter.defineRule('array-type', rule);
-  linter.defineParser('@typescript-eslint/parser', parser);
+
+  beforeAll(() => {
+    linter.defineRule('array-type', rule);
+    linter.defineParser('@typescript-eslint/parser', parser);
+  });
 
   describe('should deeply fix correctly', () => {
-    function testOutput(
-      defaultOption: OptionString,
+    const NON_READONLY_TEST_CASES = [
+      [
+        'let a: ({ foo: Array<Array<Bar> | Array<any>> })[] = []',
+        'let a: ({ foo: (Bar[] | any[])[] })[] = []',
+        'array',
+      ],
+      [
+        `
+  class Foo<T = Array<Array<Bar>>> extends Bar<T, Array<T>> implements Baz<Array<T>> {
+      private s: Array<T>
+
+      constructor (p: Array<T>) {
+          return new Array()
+      }
+  }
+        `,
+        `
+  class Foo<T = Bar[][]> extends Bar<T, T[]> implements Baz<T[]> {
+      private s: T[]
+
+      constructor (p: T[]) {
+          return new Array()
+      }
+  }
+        `,
+        'array',
+      ],
+      [
+        `
+  interface WorkingArray {
+    outerProperty: Array<
+      { innerPropertyOne: string } & { innerPropertyTwo: string }
+    >;
+  }
+
+  interface BrokenArray {
+    outerProperty: Array<
+      ({ innerPropertyOne: string } & { innerPropertyTwo: string })
+    >;
+  }
+        `,
+        `
+  interface WorkingArray {
+    outerProperty: ({ innerPropertyOne: string } & { innerPropertyTwo: string })[];
+  }
+
+  interface BrokenArray {
+    outerProperty: ({ innerPropertyOne: string } & { innerPropertyTwo: string })[];
+  }
+        `,
+        'array',
+      ],
+      [
+        `
+  type WorkingArray = {
+    outerProperty: Array<
+      { innerPropertyOne: string } & { innerPropertyTwo: string }
+    >;
+  }
+
+  type BrokenArray = {
+    outerProperty: Array<
+      ({ innerPropertyOne: string } & { innerPropertyTwo: string })
+    >;
+  }
+        `,
+        `
+  type WorkingArray = {
+    outerProperty: ({ innerPropertyOne: string } & { innerPropertyTwo: string })[];
+  }
+
+  type BrokenArray = {
+    outerProperty: ({ innerPropertyOne: string } & { innerPropertyTwo: string })[];
+  }
+        `,
+        'array',
+      ],
+      [
+        'const a: Array<(string|number)>;',
+        'const a: (string|number)[];',
+        'array',
+      ],
+      [
+        'let xx: Array<Array<number>> = [[1, 2], [3]];',
+        'let xx: number[][] = [[1, 2], [3]];',
+        'array-simple',
+      ],
+      [
+        'let xx: Array<Array<number>> = [[1, 2], [3]];',
+        'let xx: number[][] = [[1, 2], [3]];',
+        'array',
+      ],
+      [
+        'let yy: number[][] = [[4, 5], [6]];',
+        'let yy: Array<Array<number>> = [[4, 5], [6]];',
+        'generic',
+      ],
+      ['let a: Array<>[] = [];', 'let a: any[][] = [];', 'array'],
+      ['let a: Array<any[]> = [];', 'let a: any[][] = [];', 'array'],
+      ['let a: Array<any[]>[] = [];', 'let a: any[][][] = [];', 'array'],
+      ['let a: Array<>[] = [];', 'let a: Array<Array<>> = [];', 'generic'],
+      [
+        'let a: Array<any[]> = [];',
+        'let a: Array<Array<any>> = [];',
+        'generic',
+      ],
+      [
+        'let a: Array<any[]>[] = [];',
+        'let a: Array<Array<Array<any>>> = [];',
+        'generic',
+      ],
+      [
+        'let a: Array<Array>[] = [];',
+        'let a: Array<Array<Array>> = [];',
+        'generic',
+      ],
+      [
+        'let a: Array<Array[]>[] = [];',
+        'let a: Array<Array<Array<Array>>> = [];',
+        'generic',
+      ],
+    ] as const satisfies readonly [
       code: string,
       output: string,
-      readonlyOption?: OptionString,
-    ): void {
-      it(code, () => {
+      defaultOption: OptionString,
+    ][];
+
+    it.for(NON_READONLY_TEST_CASES)(
+      '%s',
+      ([code, output, defaultOption], { expect }) => {
+        const result = linter.verifyAndFix(
+          code,
+          {
+            parser: '@typescript-eslint/parser',
+            rules: {
+              'array-type': [2, { default: defaultOption }],
+            },
+          },
+          {
+            fix: true,
+          },
+        );
+
+        expect(result.messages).toHaveLength(0);
+
+        expect(result.output).toBe(output);
+      },
+    );
+  });
+
+  describe('should deeply fix correctly (readonly)', () => {
+    const READONLY_TEST_CASES = [
+      [
+        'let x: readonly number[][]',
+        'let x: ReadonlyArray<Array<number>>',
+        'generic',
+        undefined,
+      ],
+      [
+        'let x: readonly (readonly number[])[]',
+        'let x: ReadonlyArray<ReadonlyArray<number>>',
+        'generic',
+        undefined,
+      ],
+      [
+        'let x: ReadonlyArray<Array<number>>',
+        'let x: readonly number[][]',
+        'array',
+        undefined,
+      ],
+      [
+        'let x: ReadonlyArray<ReadonlyArray<number>>',
+        'let x: readonly (readonly number[])[]',
+        'array',
+        undefined,
+      ],
+      [
+        'let x: ReadonlyArray<readonly number[]>',
+        'let x: readonly (readonly number[])[]',
+        'array',
+        undefined,
+      ],
+      [
+        'let a: readonly number[][] = []',
+        'let a: ReadonlyArray<number[]> = []',
+        'array',
+        'generic',
+      ],
+      [
+        'let a: readonly number[][] = []',
+        'let a: readonly Array<number>[] = []',
+        'generic',
+        'array',
+      ],
+      [
+        'type T = readonly(string)[]',
+        'type T = ReadonlyArray<string>',
+        'generic',
+        'generic',
+      ],
+      [
+        'let a: readonly(readonly string[])[] = []',
+        'let a: ReadonlyArray<ReadonlyArray<string>> = []',
+        'generic',
+        'generic',
+      ],
+      [
+        'type T = readonly(readonly string[])[]',
+        'type T = ReadonlyArray<ReadonlyArray<string>>',
+        'generic',
+        'generic',
+      ],
+      [
+        'type T = readonly (readonly string[])[]',
+        'type T = ReadonlyArray<ReadonlyArray<string>>',
+        'generic',
+        'generic',
+      ],
+      [
+        'type T = readonly    (readonly string[])[]',
+        'type T = ReadonlyArray<ReadonlyArray<string>>',
+        'generic',
+        'generic',
+      ],
+    ] as const satisfies readonly [
+      code: string,
+      output: string,
+      defaultOption: OptionString,
+      readonlyOption: OptionString | undefined,
+    ][];
+
+    it.for(READONLY_TEST_CASES)(
+      '%s',
+      ([code, output, defaultOption, readonlyOption], { expect }) => {
         const result = linter.verifyAndFix(
           code,
           {
@@ -2025,207 +2255,9 @@ describe('array-type (nested)', () => {
         );
 
         expect(result.messages).toHaveLength(0);
+
         expect(result.output).toBe(output);
-      });
-    }
-
-    testOutput(
-      'array',
-      'let a: ({ foo: Array<Array<Bar> | Array<any>> })[] = []',
-      'let a: ({ foo: (Bar[] | any[])[] })[] = []',
-    );
-    testOutput(
-      'array',
-      `
-class Foo<T = Array<Array<Bar>>> extends Bar<T, Array<T>> implements Baz<Array<T>> {
-    private s: Array<T>
-
-    constructor (p: Array<T>) {
-        return new Array()
-    }
-}
-      `,
-      `
-class Foo<T = Bar[][]> extends Bar<T, T[]> implements Baz<T[]> {
-    private s: T[]
-
-    constructor (p: T[]) {
-        return new Array()
-    }
-}
-      `,
-    );
-    testOutput(
-      'array',
-      `
-interface WorkingArray {
-  outerProperty: Array<
-    { innerPropertyOne: string } & { innerPropertyTwo: string }
-  >;
-}
-
-interface BrokenArray {
-  outerProperty: Array<
-    ({ innerPropertyOne: string } & { innerPropertyTwo: string })
-  >;
-}
-      `,
-      `
-interface WorkingArray {
-  outerProperty: ({ innerPropertyOne: string } & { innerPropertyTwo: string })[];
-}
-
-interface BrokenArray {
-  outerProperty: ({ innerPropertyOne: string } & { innerPropertyTwo: string })[];
-}
-      `,
-    );
-    testOutput(
-      'array',
-      `
-type WorkingArray = {
-  outerProperty: Array<
-    { innerPropertyOne: string } & { innerPropertyTwo: string }
-  >;
-}
-
-type BrokenArray = {
-  outerProperty: Array<
-    ({ innerPropertyOne: string } & { innerPropertyTwo: string })
-  >;
-}
-      `,
-      `
-type WorkingArray = {
-  outerProperty: ({ innerPropertyOne: string } & { innerPropertyTwo: string })[];
-}
-
-type BrokenArray = {
-  outerProperty: ({ innerPropertyOne: string } & { innerPropertyTwo: string })[];
-}
-      `,
-    );
-    testOutput(
-      'array',
-      'const a: Array<(string|number)>;',
-      'const a: (string|number)[];',
-    );
-    testOutput(
-      'array-simple',
-      'let xx: Array<Array<number>> = [[1, 2], [3]];',
-      'let xx: number[][] = [[1, 2], [3]];',
-    );
-    testOutput(
-      'array',
-      'let xx: Array<Array<number>> = [[1, 2], [3]];',
-      'let xx: number[][] = [[1, 2], [3]];',
-    );
-    testOutput(
-      'generic',
-      'let yy: number[][] = [[4, 5], [6]];',
-      'let yy: Array<Array<number>> = [[4, 5], [6]];',
-    );
-    testOutput('array', 'let a: Array<>[] = [];', 'let a: any[][] = [];');
-    testOutput('array', 'let a: Array<any[]> = [];', 'let a: any[][] = [];');
-    testOutput(
-      'array',
-      'let a: Array<any[]>[] = [];',
-      'let a: any[][][] = [];',
-    );
-
-    testOutput(
-      'generic',
-      'let a: Array<>[] = [];',
-      'let a: Array<Array<>> = [];',
-    );
-    testOutput(
-      'generic',
-      'let a: Array<any[]> = [];',
-      'let a: Array<Array<any>> = [];',
-    );
-    testOutput(
-      'generic',
-      'let a: Array<any[]>[] = [];',
-      'let a: Array<Array<Array<any>>> = [];',
-    );
-    testOutput(
-      'generic',
-      'let a: Array<Array>[] = [];',
-      'let a: Array<Array<Array>> = [];',
-    );
-    testOutput(
-      'generic',
-      'let a: Array<Array[]>[] = [];',
-      'let a: Array<Array<Array<Array>>> = [];',
-    );
-
-    // readonly
-    testOutput(
-      'generic',
-      'let x: readonly number[][]',
-      'let x: ReadonlyArray<Array<number>>',
-    );
-    testOutput(
-      'generic',
-      'let x: readonly (readonly number[])[]',
-      'let x: ReadonlyArray<ReadonlyArray<number>>',
-    );
-    testOutput(
-      'array',
-      'let x: ReadonlyArray<Array<number>>',
-      'let x: readonly number[][]',
-    );
-    testOutput(
-      'array',
-      'let x: ReadonlyArray<ReadonlyArray<number>>',
-      'let x: readonly (readonly number[])[]',
-    );
-    testOutput(
-      'array',
-      'let x: ReadonlyArray<readonly number[]>',
-      'let x: readonly (readonly number[])[]',
-    );
-    testOutput(
-      'array',
-      'let a: readonly number[][] = []',
-      'let a: ReadonlyArray<number[]> = []',
-      'generic',
-    );
-    testOutput(
-      'generic',
-      'let a: readonly number[][] = []',
-      'let a: readonly Array<number>[] = []',
-      'array',
-    );
-    testOutput(
-      'generic',
-      'type T = readonly(string)[]',
-      'type T = ReadonlyArray<string>',
-      'generic',
-    );
-    testOutput(
-      'generic',
-      'let a: readonly(readonly string[])[] = []',
-      'let a: ReadonlyArray<ReadonlyArray<string>> = []',
-      'generic',
-    );
-    testOutput(
-      'generic',
-      'type T = readonly(readonly string[])[]',
-      'type T = ReadonlyArray<ReadonlyArray<string>>',
-      'generic',
-    );
-    testOutput(
-      'generic',
-      'type T = readonly (readonly string[])[]',
-      'type T = ReadonlyArray<ReadonlyArray<string>>',
-      'generic',
-    );
-    testOutput(
-      'generic',
-      'type T = readonly    (readonly string[])[]',
-      'type T = ReadonlyArray<ReadonlyArray<string>>',
-      'generic',
+      },
     );
   });
 });

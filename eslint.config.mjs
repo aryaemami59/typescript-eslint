@@ -32,9 +32,14 @@ const vitestFiles = [
   'packages/*/tests/**/*.test?(-d).?(m|c)ts?(x)',
   'packages/parser/tests/**/*.?(m|c)ts?(x)',
   'packages/ast-spec/tests/util/setupVitest.mts',
+  'packages/ast-spec/tests/util/custom-matchers/custom-matchers.ts',
   'packages/integration-tests/tools/integration-test-base.ts',
   'packages/integration-tests/tools/pack-packages.ts',
   'packages/scope-manager/tests/test-utils/serializers/index.ts',
+  'packages/scope-manager/tests/test-utils/custom-matchers/custom-matchers.ts',
+  'packages/scope-manager/tests/test-utils/getSpecificNode.ts',
+  'packages/type-utils/tests/test-utils/custom-matchers/custom-matchers.ts',
+  'packages/typescript-estree/tests/test-utils/custom-matchers/custom-matchers.ts',
 ];
 
 export default tseslint.config(
@@ -92,8 +97,6 @@ export default tseslint.config(
       'packages/types/src/generated/**/*.ts',
       // Playground types downloaded from the web
       'packages/website/src/vendor/',
-      // see the file header in eslint-base.test.js for more info
-      'packages/rule-tester/tests/eslint-base/',
     ],
     name: 'global-ignores',
   },

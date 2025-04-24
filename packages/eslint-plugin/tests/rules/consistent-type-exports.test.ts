@@ -1,19 +1,10 @@
 /* eslint-disable @typescript-eslint/internal/plugin-test-formatting -- Prettier doesn't yet support TS 5.6 string literal module identifiers */
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/consistent-type-exports';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/consistent-type-exports.js';
+import { DEFAULT_TESTER_CONFIG } from '../test-utils/test-utils.js';
 
-const rootDir = getFixturesRootDir();
-
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: rootDir,
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 ruleTester.run('consistent-type-exports', rule, {
   valid: [

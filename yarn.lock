@@ -3715,25 +3715,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx/eslint@npm:21.0.3":
-  version: 21.0.3
-  resolution: "@nx/eslint@npm:21.0.3"
-  dependencies:
-    "@nx/devkit": 21.0.3
-    "@nx/js": 21.0.3
-    semver: ^7.5.3
-    tslib: ^2.3.0
-    typescript: ~5.7.2
-  peerDependencies:
-    "@zkochan/js-yaml": 0.0.7
-    eslint: ^8.0.0 || ^9.0.0
-  peerDependenciesMeta:
-    "@zkochan/js-yaml":
-      optional: true
-  checksum: 1520df77239618e9a3d4475b426d2c851a1ac649672ee1ecadad6c6654eeacaa69c8876f47fac8308e2b019153cc28556f4fc01a03489f63a7441290607e70a1
-  languageName: node
-  linkType: hard
-
 "@nx/js@npm:21.0.3":
   version: 21.0.3
   resolution: "@nx/js@npm:21.0.3"
@@ -5416,6 +5397,7 @@ __metadata:
     "@typescript-eslint/type-utils": "workspace:*"
     "@typescript-eslint/utils": "workspace:*"
     "@vitest/coverage-v8": ^3.1.4
+    eslint: "*"
     prettier: ^3.2.5
     rimraf: "*"
     vitest: ^3.1.4
@@ -5468,6 +5450,7 @@ __metadata:
   resolution: "@typescript-eslint/integration-tests@workspace:packages/integration-tests"
   dependencies:
     "@vitest/coverage-v8": ^3.1.4
+    eslint: "*"
     vitest: ^3.1.4
   languageName: unknown
   linkType: soft
@@ -5482,6 +5465,7 @@ __metadata:
     "@typescript-eslint/visitor-keys": 8.32.1
     "@vitest/coverage-v8": ^3.1.4
     debug: ^4.3.4
+    eslint: "*"
     glob: "*"
     rimraf: "*"
     typescript: "*"
@@ -5513,6 +5497,7 @@ __metadata:
     "@typescript-eslint/type-utils": 8.32.1
     "@typescript-eslint/utils": 8.32.1
     "@vitest/coverage-v8": ^3.1.4
+    eslint: "*"
     natural-compare: ^1.4.0
     prettier: ^3.2.5
     rimraf: "*"
@@ -5553,6 +5538,7 @@ __metadata:
     "@typescript-eslint/visitor-keys": 8.32.1
     "@vitest/coverage-v8": ^3.1.4
     "@vitest/pretty-format": ^3.1.4
+    eslint: "*"
     glob: "*"
     rimraf: "*"
     typescript: "*"
@@ -5599,6 +5585,7 @@ __metadata:
   resolution: "@typescript-eslint/types@workspace:packages/types"
   dependencies:
     "@vitest/coverage-v8": ^3.1.4
+    eslint: "*"
     rimraf: "*"
     tsx: "*"
     typescript: "*"
@@ -5617,7 +5604,6 @@ __metadata:
     "@eslint/eslintrc": ^3.2.0
     "@eslint/js": ^9.26.0
     "@nx/devkit": 21.0.3
-    "@nx/eslint": 21.0.3
     "@nx/js": 21.0.3
     "@nx/vite": 21.0.3
     "@nx/workspace": 21.0.3
@@ -5680,6 +5666,7 @@ __metadata:
     "@typescript-eslint/visitor-keys": 8.32.1
     "@vitest/coverage-v8": ^3.1.4
     debug: ^4.3.4
+    eslint: "*"
     fast-glob: ^3.3.2
     glob: "*"
     is-glob: ^4.0.3
@@ -5703,6 +5690,7 @@ __metadata:
     "@typescript-eslint/types": 8.32.1
     "@typescript-eslint/typescript-estree": 8.32.1
     "@vitest/coverage-v8": ^3.1.4
+    eslint: "*"
     rimraf: "*"
     typescript: "*"
     vitest: ^3.1.4
@@ -5718,6 +5706,7 @@ __metadata:
   dependencies:
     "@typescript-eslint/types": 8.32.1
     "@vitest/coverage-v8": ^3.1.4
+    eslint: "*"
     eslint-visitor-keys: ^4.2.0
     rimraf: "*"
     typescript: "*"
@@ -18743,6 +18732,7 @@ __metadata:
     "@typescript-eslint/parser": 8.32.1
     "@typescript-eslint/utils": 8.32.1
     "@vitest/coverage-v8": ^3.1.4
+    eslint: "*"
     rimraf: "*"
     typescript: "*"
     vitest: ^3.1.4
