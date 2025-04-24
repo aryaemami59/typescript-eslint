@@ -163,7 +163,7 @@ function nestDescribe(
 
 fixtures.forEach(f => nestDescribe(f));
 
-describe.runIf(ONLY === '')(
+describe.skipIf(ONLY !== '')(
   'ast snapshots should have an associated test',
   () => {
     const snapshots = glob.sync(`${FIXTURES_DIR}/**/*.shot`).map(absolute => {
