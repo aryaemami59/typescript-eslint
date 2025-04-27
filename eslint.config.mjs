@@ -38,6 +38,7 @@ const vitestFiles = [
   'packages/scope-manager/tests/test-utils/serializers/index.ts',
   'packages/scope-manager/tests/test-utils/custom-matchers/custom-matchers.ts',
   'packages/scope-manager/tests/test-utils/getSpecificNode.ts',
+  'packages/type-utils/tests/test-utils/custom-matchers/custom-matchers.ts',
   'packages/typescript-estree/tests/test-utils/custom-matchers/custom-matchers.ts',
 ];
 
