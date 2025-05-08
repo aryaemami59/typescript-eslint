@@ -96,15 +96,15 @@ describe(createProjectService, () => {
       throw new Error('tsconfig.json(1,1): error TS1234: Oh no!');
     });
 
-    expect(() =>
+    expect(() => {
       createProjectService(
         {
           allowDefaultProject: ['file.js'],
         },
         undefined,
         undefined,
-      ),
-    ).not.toThrow();
+      );
+    }).not.toThrow();
   });
 
   it('throws an error with a relative path when options.defaultProject is set to a relative path and getParsedConfigFile throws a diagnostic error', () => {
@@ -112,7 +112,7 @@ describe(createProjectService, () => {
       throw new Error('./tsconfig.eslint.json(1,1): error TS1234: Oh no!');
     });
 
-    expect(() =>
+    expect(() => {
       createProjectService(
         {
           allowDefaultProject: ['file.js'],
@@ -120,8 +120,8 @@ describe(createProjectService, () => {
         },
         undefined,
         undefined,
-      ),
-    ).toThrow(
+      );
+    }).toThrow(
       /Could not read project service default project '\.\/tsconfig.eslint.json': .+ error TS1234: Oh no!/,
     );
   });
@@ -131,7 +131,7 @@ describe(createProjectService, () => {
       throw new Error('./tsconfig.eslint.json(1,1): error TS1234: Oh no!');
     });
 
-    expect(() =>
+    expect(() => {
       createProjectService(
         {
           allowDefaultProject: ['file.js'],
@@ -139,8 +139,8 @@ describe(createProjectService, () => {
         },
         undefined,
         undefined,
-      ),
-    ).toThrow(
+      );
+    }).toThrow(
       /Could not read project service default project 'tsconfig.eslint.json': .+ error TS1234: Oh no!/,
     );
   });
@@ -152,7 +152,7 @@ describe(createProjectService, () => {
       );
     });
 
-    expect(() =>
+    expect(() => {
       createProjectService(
         {
           allowDefaultProject: ['file.js'],
@@ -160,8 +160,8 @@ describe(createProjectService, () => {
         },
         undefined,
         undefined,
-      ),
-    ).toThrow(
+      );
+    }).toThrow(
       "Could not read project service default project 'tsconfig.json': `getParsedConfigFile` is only supported in a Node-like environment.",
     );
   });
@@ -185,8 +185,12 @@ describe(createProjectService, () => {
       undefined,
     );
 
-    expect(
+    const setCompilerOptionsForInferredProjectsSpy = vi.mocked(
       service.setCompilerOptionsForInferredProjects,
+    );
+
+    expect(
+      setCompilerOptionsForInferredProjectsSpy,
     ).toHaveBeenCalledExactlyOnceWith(compilerOptions);
 
     expect(mockGetParsedConfigFile).toHaveBeenCalledExactlyOnceWith(
@@ -213,8 +217,12 @@ describe(createProjectService, () => {
       tsconfigRootDir,
     );
 
-    expect(
+    const setCompilerOptionsForInferredProjectsSpy = vi.mocked(
       service.setCompilerOptionsForInferredProjects,
+    );
+
+    expect(
+      setCompilerOptionsForInferredProjectsSpy,
     ).toHaveBeenCalledExactlyOnceWith(compilerOptions);
 
     expect(mockGetParsedConfigFile).toHaveBeenCalledExactlyOnceWith(
@@ -232,6 +240,7 @@ describe(createProjectService, () => {
     debug.disable();
 
     expect(enabled).toBe(true);
+
     expect(processStderrWriteSpy).toHaveBeenCalledExactlyOnceWith(
       expect.stringMatching(
         /^.*typescript-eslint:typescript-estree:tsserver:err foo\n$/,
@@ -245,6 +254,7 @@ describe(createProjectService, () => {
     service.logger.msg('foo', ts.server.Msg.Err);
 
     expect(enabled).toBe(false);
+
     expect(processStderrWriteSpy).not.toHaveBeenCalled();
   });
 
@@ -256,6 +266,7 @@ describe(createProjectService, () => {
     debug.disable();
 
     expect(enabled).toBe(true);
+
     expect(processStderrWriteSpy).toHaveBeenCalledExactlyOnceWith(
       expect.stringMatching(
         /^.*typescript-eslint:typescript-estree:tsserver:info foo\n$/,
@@ -269,6 +280,7 @@ describe(createProjectService, () => {
     service.logger.info('foo');
 
     expect(enabled).toBe(false);
+
     expect(processStderrWriteSpy).not.toHaveBeenCalled();
   });
 
@@ -280,6 +292,7 @@ describe(createProjectService, () => {
     debug.disable();
 
     expect(enabled).toBe(true);
+
     expect(processStderrWriteSpy).toHaveBeenCalledExactlyOnceWith(
       expect.stringMatching(
         /^.*typescript-eslint:typescript-estree:tsserver:perf foo\n$/,
@@ -293,6 +306,7 @@ describe(createProjectService, () => {
     service.logger.perftrc('foo');
 
     expect(enabled).toBe(false);
+
     expect(processStderrWriteSpy).not.toHaveBeenCalled();
   });
 
@@ -332,7 +346,9 @@ describe(createProjectService, () => {
   it('provides a stub require to the host system when loadTypeScriptPlugins is falsy', () => {
     const { service } = createProjectService({}, undefined, undefined);
 
-    const required = service.host.require?.('', '');
+    assert.isDefined(service.host.require);
+
+    const required = service.host.require('', '');
 
     expect(required).toStrictEqual({
       error: {
@@ -352,9 +368,13 @@ describe(createProjectService, () => {
       undefined,
     );
 
+    type ImportedTSServer = typeof ts & {
+      sys: ts.System & Pick<ts.server.ServerHost, 'require'>;
+    };
+
     expect(service.host.require).toBe(
       (
-        await vi.importActual<Record<string, Record<string, object>>>(
+        await vi.importActual<ImportedTSServer>(
           'typescript/lib/tsserverlibrary.js',
         )
       ).sys.require,
@@ -370,7 +390,9 @@ describe(createProjectService, () => {
       undefined,
     );
 
-    expect(service.setHostConfiguration).toHaveBeenCalledExactlyOnceWith({
+    const setHostConfigurationSpy = vi.mocked(service.setHostConfiguration);
+
+    expect(setHostConfigurationSpy).toHaveBeenCalledExactlyOnceWith({
       preferences: {
         includePackageJsonAutoImports: 'off',
       },

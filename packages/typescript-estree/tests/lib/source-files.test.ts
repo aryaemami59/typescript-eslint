@@ -1,6 +1,6 @@
 import * as ts from 'typescript';
 
-import { getCodeText, isSourceFile } from '../../src/source-files';
+import { getCodeText, isSourceFile } from '../../src/source-files.js';
 
 describe(isSourceFile, () => {
   it.for([

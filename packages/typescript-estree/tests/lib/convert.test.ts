@@ -3,10 +3,10 @@ import type { TSESTree } from '@typescript-eslint/types';
 import { AST_NODE_TYPES } from '@typescript-eslint/types';
 import * as ts from 'typescript';
 
-import type { TSESTreeToTSNode, TSNode } from '../../src';
-import type { ConverterOptions } from '../../src/convert';
+import type { ConverterOptions } from '../../src/convert.js';
+import type { TSESTreeToTSNode, TSNode } from '../../src/index.js';
 
-import { Converter } from '../../src/convert';
+import { Converter } from '../../src/convert.js';
 
 describe('convert', () => {
   afterEach(() => {
@@ -259,6 +259,7 @@ describe('convert', () => {
         range: [0, 20],
         type: AST_NODE_TYPES.TSAbstractKeyword,
       });
+
       expect(convertedNode).toStrictEqual({
         loc: {
           end: {
@@ -365,6 +366,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const esTsEnumDeclaration = getEsTsEnumDeclaration({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -382,6 +384,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const esTsEnumDeclaration = getEsTsEnumDeclaration({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -398,6 +401,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const esTsEnumDeclaration = getEsTsEnumDeclaration({
         suppressDeprecatedPropertyWarnings: true,
       });
@@ -429,6 +433,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const tsMappedType = getEsTsMappedType({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -446,6 +451,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const tsMappedType = getEsTsMappedType({
         suppressDeprecatedPropertyWarnings: false,
       });
@@ -462,6 +468,7 @@ describe('convert', () => {
       const emitWarning = vi
         .spyOn(process, 'emitWarning')
         .mockImplementation(() => {});
+
       const tsMappedType = getEsTsMappedType({
         suppressDeprecatedPropertyWarnings: true,
       });

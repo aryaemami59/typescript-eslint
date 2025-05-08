@@ -1,4 +1,4 @@
-import { createParseSettings } from '../../src/parseSettings/createParseSettings';
+import { createParseSettings } from '../../src/parseSettings/createParseSettings.js';
 
 const projectService = { service: true };
 
