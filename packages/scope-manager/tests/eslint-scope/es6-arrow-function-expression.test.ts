@@ -18,14 +18,13 @@ describe('ES6 arrow function expression', () => {
     let scope = scopeManager.scopes[0];
     let variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(1);
 
     scope = scopeManager.scopes[1];
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.ArrowFunctionExpression);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.ArrowFunctionExpression);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(2);
 
@@ -42,14 +41,13 @@ describe('ES6 arrow function expression', () => {
     let scope = scopeManager.scopes[0];
     let variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(1);
 
     scope = scopeManager.scopes[1];
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.ArrowFunctionExpression);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.ArrowFunctionExpression);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(4);
 
@@ -71,14 +69,13 @@ describe('ES6 arrow function expression', () => {
     let scope = scopeManager.scopes[0];
     let variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(true);
     expect(variables).toHaveLength(1);
 
     scope = scopeManager.scopes[1];
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.ArrowFunctionExpression);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.ArrowFunctionExpression);
     expect(scope.isStrict).toBe(true);
     expect(variables).toHaveLength(0);
   });
@@ -95,14 +92,13 @@ describe('ES6 arrow function expression', () => {
     let scope = scopeManager.scopes[0];
     let variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.global);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.Program);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(1);
 
     scope = scopeManager.scopes[1];
     variables = getRealVariables(scope.variables);
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.ArrowFunctionExpression);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.ArrowFunctionExpression);
     expect(scope.isStrict).toBe(true);
     expect(variables).toHaveLength(0);
   });
@@ -116,7 +112,7 @@ describe('ES6 arrow function expression', () => {
     const variables = getRealVariables(scope.variables);
 
     assert.isScopeOfType(scope, ScopeType.function);
-    expect(scope.block.type).toBe(AST_NODE_TYPES.ArrowFunctionExpression);
+    assert.isNodeOfType(scope.block, AST_NODE_TYPES.ArrowFunctionExpression);
     expect(scope.isStrict).toBe(false);
     expect(variables).toHaveLength(1);
   });
