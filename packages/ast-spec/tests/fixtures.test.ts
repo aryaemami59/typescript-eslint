@@ -1,4 +1,4 @@
-import * as glob from 'glob';
+import { glob } from 'glob';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -6,6 +6,7 @@ import { VitestSnapshotEnvironment } from 'vitest/snapshot';
 
 import type { ASTFixtureConfig, Fixture } from './util/parsers/parser-types.js';
 
+import { getErrorLabel } from './util/getErrorLabel.js';
 import { parseBabel } from './util/parsers/babel.js';
 import { ErrorLabel, ParserResponseType } from './util/parsers/parser-types.js';
 import { parseTSESTree } from './util/parsers/typescript-estree.js';
@@ -21,8 +22,8 @@ const SRC_DIR = path.join(PACKAGE_ROOT, 'src');
 // prettier-ignore
 const ONLY = [].join(path.sep);
 
-const fixturesWithASTDifferences = new Set<string>();
-const fixturesWithTokenDifferences = new Set<string>();
+const fixturesWithASTDifferences = new Map<string, string>();
+const fixturesWithTokenDifferences = new Map<string, string>();
 const fixturesConfiguredToExpectBabelToNotSupport = new Map<string, string>();
 
 const fixturesWithErrorDifferences = {
@@ -30,28 +31,24 @@ const fixturesWithErrorDifferences = {
   [ErrorLabel.TSESTree]: new Set<string>(),
 } as const;
 
-const VALID_FIXTURES: readonly string[] = glob.sync(
-  `**/fixtures/*/fixture.{ts,tsx}`,
-  {
-    absolute: true,
-    cwd: SRC_DIR,
-  },
-);
-const ERROR_FIXTURES: readonly string[] = glob.sync(
-  `**/fixtures/_error_/*/fixture.{ts,tsx}`,
-  {
-    absolute: true,
-    cwd: SRC_DIR,
-  },
-);
-
 describe('AST Fixtures', async () => {
+  const VALID_FIXTURES = await glob(
+    ['**/fixtures/*/fixture.ts?(x)', '**/fixtures/_error_/*/fixture.ts?(x)'],
+    {
+      absolute: true,
+      cwd: SRC_DIR,
+    },
+  );
+
   const FIXTURES: readonly Fixture[] = await Promise.all(
-    [...VALID_FIXTURES, ...ERROR_FIXTURES].map(async absolute => {
+    VALID_FIXTURES.map(async absolute => {
       const relativeToSrc = path.relative(SRC_DIR, absolute);
       const { base, dir, ext } = path.parse(relativeToSrc);
       const directorySegments = dir.split(path.sep);
-      const segments = directorySegments.filter(s => s !== 'fixtures');
+      const segments = directorySegments.filter(
+        segment => segment !== 'fixtures',
+      );
+
       const name = segments.pop();
 
       assert.isDefined(name);
@@ -90,20 +87,7 @@ describe('AST Fixtures', async () => {
       const isBabelError = babelParsed.type === ParserResponseType.Error;
       const isTSESTreeError = TSESTreeParsed.type === ParserResponseType.Error;
 
-      const getErrorLabel = (): ErrorLabel => {
-        if (!isBabelError && isTSESTreeError) {
-          return ErrorLabel.TSESTree;
-        }
-        if (isBabelError && !isTSESTreeError) {
-          return ErrorLabel.Babel;
-        }
-        if (isBabelError && isTSESTreeError) {
-          return ErrorLabel.Both;
-        }
-        return ErrorLabel.None;
-      };
-
-      const errorLabel = getErrorLabel();
+      const errorLabel = getErrorLabel(isBabelError, isTSESTreeError);
 
       if (
         errorLabel === ErrorLabel.TSESTree ||
@@ -138,11 +122,11 @@ describe('AST Fixtures', async () => {
         );
 
         if (diffHasChanges(diffAstResult)) {
-          fixturesWithASTDifferences.add(relative);
+          fixturesWithASTDifferences.set(relative, diffAstResult);
         }
 
         if (diffHasChanges(diffTokensResult)) {
-          fixturesWithTokenDifferences.add(relative);
+          fixturesWithTokenDifferences.set(relative, diffTokensResult);
         }
       }
 
@@ -163,33 +147,48 @@ describe('AST Fixtures', async () => {
         snapshotFiles: {
           error: {
             alignment: (i: number) =>
-              path.join(snapshotPath, `${i}-Alignment-Error.shot`),
+              path.join(snapshotPath, `${i.toString()}-Alignment-Error.shot`),
+
             babel: (i: number) =>
-              path.join(snapshotPath, `${i}-Babel-Error.shot`),
+              path.join(snapshotPath, `${i.toString()}-Babel-Error.shot`),
+
             tsestree: (i: number) =>
-              path.join(snapshotPath, `${i}-TSESTree-Error.shot`),
+              path.join(snapshotPath, `${i.toString()}-TSESTree-Error.shot`),
           },
+
           success: {
             alignment: {
               ast: (i: number) =>
-                path.join(snapshotPath, `${i}-AST-Alignment-AST.shot`),
+                path.join(
+                  snapshotPath,
+                  `${i.toString()}-AST-Alignment-AST.shot`,
+                ),
+
               tokens: (i: number) =>
-                path.join(snapshotPath, `${i}-AST-Alignment-Tokens.shot`),
+                path.join(
+                  snapshotPath,
+                  `${i.toString()}-AST-Alignment-Tokens.shot`,
+                ),
             },
+
             babel: {
               ast: (i: number) =>
-                path.join(snapshotPath, `${i}-Babel-AST.shot`),
+                path.join(snapshotPath, `${i.toString()}-Babel-AST.shot`),
+
               tokens: (i: number) =>
-                path.join(snapshotPath, `${i}-Babel-Tokens.shot`),
+                path.join(snapshotPath, `${i.toString()}-Babel-Tokens.shot`),
             },
+
             tsestree: {
               ast: (i: number) =>
-                path.join(snapshotPath, `${i}-TSESTree-AST.shot`),
+                path.join(snapshotPath, `${i.toString()}-TSESTree-AST.shot`),
+
               tokens: (i: number) =>
-                path.join(snapshotPath, `${i}-TSESTree-Tokens.shot`),
+                path.join(snapshotPath, `${i.toString()}-TSESTree-Tokens.shot`),
             },
           },
         },
+
         snapshotPath,
         TSESTreeParsed,
         vitestSnapshotHeader,
@@ -212,6 +211,7 @@ describe('AST Fixtures', async () => {
           contents,
           errorLabel,
           isError,
+          relative,
           snapshotFiles,
           TSESTreeParsed,
           vitestSnapshotHeader,
@@ -255,6 +255,7 @@ describe('AST Fixtures', async () => {
 
         it.skipIf(isError)('TSESTree - AST', async () => {
           assert.isSuccessResponse(TSESTreeParsed);
+
           await expect(TSESTreeParsed.ast).toMatchFileSnapshot(
             snapshotFiles.success.tsestree.ast(1),
           );
@@ -262,6 +263,7 @@ describe('AST Fixtures', async () => {
 
         it.skipIf(isError)('TSESTree - Tokens', async () => {
           assert.isSuccessResponse(TSESTreeParsed);
+
           await expect(TSESTreeParsed.tokens).toMatchFileSnapshot(
             snapshotFiles.success.tsestree.tokens(2),
           );
@@ -292,6 +294,7 @@ describe('AST Fixtures', async () => {
           'Babel - AST',
           async () => {
             assert.isSuccessResponse(babelParsed);
+
             await expect(babelParsed.ast).toMatchFileSnapshot(
               snapshotFiles.success.babel.ast(3),
             );
@@ -302,69 +305,61 @@ describe('AST Fixtures', async () => {
           'Babel - Tokens',
           async () => {
             assert.isSuccessResponse(babelParsed);
+
             await expect(babelParsed.tokens).toMatchFileSnapshot(
               snapshotFiles.success.babel.tokens(4),
             );
           },
         );
 
-        it.skipIf(isError || hasExpectBabelToNotSupport)(
-          'AST Alignment - AST',
-          async () => {
-            assert.isSuccessResponse(TSESTreeParsed);
-            assert.isSuccessResponse(babelParsed);
-            const diffResult = snapshotDiff(
-              'TSESTree',
-              TSESTreeParsed.ast,
-              'Babel',
-              babelParsed.ast,
-            );
-            await expect(
-              [
-                `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-                diffResult,
-                '',
-              ].join('\n'),
-            ).toMatchFileSnapshot(snapshotFiles.success.alignment.ast(5));
-          },
-        );
+        it.skipIf(
+          isError ||
+            hasExpectBabelToNotSupport ||
+            !fixturesWithASTDifferences.has(relative),
+        )('AST Alignment - AST', async () => {
+          const diffResult = fixturesWithASTDifferences.get(relative);
 
-        it.skipIf(isError || hasExpectBabelToNotSupport)(
-          'AST Alignment - Token',
-          async () => {
-            assert.isSuccessResponse(TSESTreeParsed);
-            assert.isSuccessResponse(babelParsed);
-            const diffResult = snapshotDiff(
-              'TSESTree',
-              TSESTreeParsed.tokens,
-              'Babel',
-              babelParsed.tokens,
-            );
-            await expect(
-              [
-                `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-                diffResult,
-                '',
-              ].join('\n'),
-            ).toMatchFileSnapshot(snapshotFiles.success.alignment.tokens(6));
-          },
-        );
+          assert.isDefined(diffResult);
+
+          await expect(
+            [
+              `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
+              diffResult,
+              '',
+            ].join('\n'),
+          ).toMatchFileSnapshot(snapshotFiles.success.alignment.ast(5));
+        });
+
+        it.skipIf(
+          isError ||
+            hasExpectBabelToNotSupport ||
+            !fixturesWithTokenDifferences.has(relative),
+        )('AST Alignment - Token', async () => {
+          const diffResult = fixturesWithTokenDifferences.get(relative);
+
+          assert.isDefined(diffResult);
+
+          await expect(
+            [
+              `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
+              diffResult,
+              '',
+            ].join('\n'),
+          ).toMatchFileSnapshot(snapshotFiles.success.alignment.tokens(6));
+        });
 
         it.skipIf(isError)('Should parse with no errors', () => {
-          // log the error for debug purposes in case there wasn't supposed to be an error
           switch (errorLabel) {
             case ErrorLabel.Babel:
               assert.isErrorResponse(babelParsed);
-              if (config.expectBabelToNotSupport == null) {
-                console.error('Babel:\n', babelParsed.error);
-              }
+
               break;
 
             case ErrorLabel.Both:
               assert.isErrorResponse(babelParsed);
+
               assert.isErrorResponse(TSESTreeParsed);
-              console.error('Babel:\n', babelParsed.error);
-              console.error('TSESTree:\n', TSESTreeParsed.error);
+
               break;
 
             case ErrorLabel.None:
@@ -372,11 +367,11 @@ describe('AST Fixtures', async () => {
 
             case ErrorLabel.TSESTree:
               assert.isErrorResponse(TSESTreeParsed);
-              console.error('TSESTree:\n', TSESTreeParsed.error);
+
               break;
           }
 
-          // NOTE - the comments below exist so that they show up in the stack trace jest shows
+          // NOTE - the comments below exist so that they show up in the stack trace vitest shows
           //        when the test fails. Yes, sadly, they're duplicated, but it's necessary to
           //        provide the best and most understandable DevX that we can here.
           //        Vitest will print a code frame with the fail line as well as 2 lines before and after
@@ -405,7 +400,7 @@ describe('AST Fixtures', async () => {
     await expect(
       [
         `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-        JSON.stringify([...fixturesWithASTDifferences].sort(), null, 2),
+        JSON.stringify([...fixturesWithASTDifferences.keys()].sort(), null, 2),
         '',
       ].join('\n'),
     ).toMatchFileSnapshot(
@@ -417,7 +412,11 @@ describe('AST Fixtures', async () => {
     await expect(
       [
         `${vitestSnapshotHeader}\n\nexports[\`${expect.getState().currentTestName}\`]`,
-        JSON.stringify([...fixturesWithTokenDifferences].sort(), null, 2),
+        JSON.stringify(
+          [...fixturesWithTokenDifferences.keys()].sort(),
+          null,
+          2,
+        ),
         '',
       ].join('\n'),
     ).toMatchFileSnapshot(
