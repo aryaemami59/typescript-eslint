@@ -1,13 +1,11 @@
-import { ImplicitLibVariable } from '../src';
-import { parseAndAnalyze } from './test-utils';
+import { ImplicitLibVariable } from '../src/index.js';
+import { parseAndAnalyze } from './test-utils/index.js';
 
 describe('implicit lib definitions', () => {
   it('should define no implicit variables if provided an empty array', () => {
-    const { scopeManager } = parseAndAnalyze('', {
-      lib: [],
-    });
+    const { scopeManager } = parseAndAnalyze('');
 
-    const variables = scopeManager.variables;
+    const { variables } = scopeManager;
     expect(variables).toHaveLength(1);
   });
 
@@ -16,7 +14,7 @@ describe('implicit lib definitions', () => {
       lib: ['es2015'],
     });
 
-    const variables = scopeManager.variables;
+    const { variables } = scopeManager;
     const arrayBufferVariables = variables.filter(
       v => v.name === 'ArrayBuffer',
     );
@@ -29,7 +27,7 @@ describe('implicit lib definitions', () => {
       lib: ['es2015'],
     });
 
-    const variables = scopeManager.variables;
+    const { variables } = scopeManager;
     const arrayBufferVariables = variables.filter(
       v => v.name === 'ArrayBuffer',
     );
@@ -45,7 +43,7 @@ describe('implicit lib definitions', () => {
       },
     );
 
-    const variables = scopeManager.variables;
+    const { variables } = scopeManager;
     const arrayBufferVariables = variables.filter(
       v => v.name === 'ArrayBuffer',
     );
@@ -61,7 +59,7 @@ describe('implicit lib definitions', () => {
       },
     );
 
-    const variables = scopeManager.variables;
+    const { variables } = scopeManager;
     const arrayBufferVariables = variables.filter(
       v => v.name === 'ArrayBuffer',
     );
@@ -74,7 +72,7 @@ describe('implicit lib definitions', () => {
       lib: ['es2015'],
     });
 
-    const variables = scopeManager.variables;
+    const { variables } = scopeManager;
     const symbolVariables = variables.filter(v => v.name === 'Symbol');
     expect(symbolVariables).toHaveLength(1);
     expect(symbolVariables[0]).toBeInstanceOf(ImplicitLibVariable);
@@ -85,7 +83,7 @@ describe('implicit lib definitions', () => {
       lib: ['es2015'],
     });
 
-    const variables = scopeManager.variables;
+    const { variables } = scopeManager;
     const symbolVariables = variables.filter(v => v.name === 'Symbol');
     expect(symbolVariables).toHaveLength(1);
     expect(symbolVariables[0]).toBeInstanceOf(ImplicitLibVariable);
@@ -96,15 +94,14 @@ describe('implicit lib definitions', () => {
       lib: ['es2015'],
     });
 
-    const variables = scopeManager.variables;
+    const { variables } = scopeManager;
     const symbolVariables = variables.filter(v => v.name === 'Symbol');
+
     expect(symbolVariables).toHaveLength(2);
-    expect(symbolVariables.some(v => v instanceof ImplicitLibVariable)).toBe(
-      true,
-    );
-    expect(symbolVariables.some(v => !(v instanceof ImplicitLibVariable))).toBe(
-      true,
-    );
+
+    expect(symbolVariables[0]).toBeInstanceOf(ImplicitLibVariable);
+
+    expect(symbolVariables[1]).not.toBeInstanceOf(ImplicitLibVariable);
   });
 
   it('should define an implicit variable if there is a nested type collision', () => {
@@ -112,7 +109,7 @@ describe('implicit lib definitions', () => {
       lib: ['es2015'],
     });
 
-    const variables = scopeManager.variables;
+    const { variables } = scopeManager;
     const symbolVariables = variables.filter(v => v.name === 'Symbol');
     expect(symbolVariables).toHaveLength(1);
     expect(symbolVariables[0]).toBeInstanceOf(ImplicitLibVariable);

@@ -1,7 +1,7 @@
 import type { TSESTree } from '@typescript-eslint/types';
 
-import { analyze } from '../../src/analyze';
-import { parse } from '../test-utils';
+import { analyze } from '../../src/index.js';
+import { parse } from '../test-utils/index.js';
 
 describe('childVisitorKeys option', () => {
   it('should not visit to properties which are not given.', () => {
