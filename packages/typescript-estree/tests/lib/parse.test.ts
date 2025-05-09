@@ -60,6 +60,7 @@ vi.mock('fast-glob', async importOriginal => {
 const createDefaultCompilerOptionsFromExtra = vi.mocked(
   sharedParserUtilsModule.createDefaultCompilerOptionsFromExtra,
 );
+
 const fastGlobSyncMock = vi.mocked(fastGlobModule.sync);
 
 /**
@@ -84,18 +85,20 @@ describe(parseAndGenerateServices, () => {
 
   describe('preserveNodeMaps', () => {
     const code = 'var a = true';
-    const baseConfig: TSESTreeOptions = {
+
+    const baseConfig = {
       comment: true,
       filePath: 'file.ts',
       loc: true,
       range: true,
       tokens: true,
-    };
-    const projectConfig: TSESTreeOptions = {
+    } as const satisfies TSESTreeOptions;
+
+    const projectConfig = {
       ...baseConfig,
       project: './tsconfig.json',
       tsconfigRootDir: FIXTURES_DIR,
-    };
+    } as const satisfies TSESTreeOptions;
 
     it('should not impact the use of parse()', () => {
       const resultWithNoOptionSet = parse(code, baseConfig);
@@ -144,65 +147,39 @@ describe(parseAndGenerateServices, () => {
       ).toBeInstanceOf(WeakMap);
     });
 
-    describe('should preserve node maps for parseAndGenerateServices() when option is `true`, regardless of `project` config', () => {
-      const setting = true;
+    describe.for([
+      ['', true],
+      [' not', false],
+    ] as const)(
+      'should%s preserve node maps for parseAndGenerateServices() when option is `%s`, regardless of `project` config',
+      ([, setting]) => {
+        it('without project', () => {
+          const parseResult = parseAndGenerateServices(code, {
+            ...baseConfig,
+            preserveNodeMaps: setting,
+          });
 
-      it('without project', () => {
-        const parseResult = parseAndGenerateServices(code, {
-          ...baseConfig,
-          preserveNodeMaps: setting,
+          expect(
+            parseResult.services.esTreeNodeToTSNodeMap.has(
+              parseResult.ast.body[0],
+            ),
+          ).toBe(setting);
         });
 
-        expect(
-          parseResult.services.esTreeNodeToTSNodeMap.has(
-            parseResult.ast.body[0],
-          ),
-        ).toBe(setting);
-      });
+        it('with project', () => {
+          const parseResult = parseAndGenerateServices(code, {
+            ...projectConfig,
+            preserveNodeMaps: setting,
+          });
 
-      it('with project', () => {
-        const parseResult = parseAndGenerateServices(code, {
-          ...projectConfig,
-          preserveNodeMaps: setting,
+          expect(
+            parseResult.services.esTreeNodeToTSNodeMap.has(
+              parseResult.ast.body[0],
+            ),
+          ).toBe(setting);
         });
-
-        expect(
-          parseResult.services.esTreeNodeToTSNodeMap.has(
-            parseResult.ast.body[0],
-          ),
-        ).toBe(setting);
-      });
-    });
-
-    describe('should not preserve node maps for parseAndGenerateServices() when option is `false`, regardless of `project` config', () => {
-      const setting = false;
-
-      it('without project', () => {
-        const parseResult = parseAndGenerateServices(code, {
-          ...baseConfig,
-          preserveNodeMaps: setting,
-        });
-
-        expect(
-          parseResult.services.esTreeNodeToTSNodeMap.has(
-            parseResult.ast.body[0],
-          ),
-        ).toBe(setting);
-      });
-
-      it('with project', () => {
-        const parseResult = parseAndGenerateServices(code, {
-          ...projectConfig,
-          preserveNodeMaps: setting,
-        });
-
-        expect(
-          parseResult.services.esTreeNodeToTSNodeMap.has(
-            parseResult.ast.body[0],
-          ),
-        ).toBe(setting);
-      });
-    });
+      },
+    );
   });
 
   describe('isolated parsing', () => {
@@ -213,13 +190,13 @@ describe(parseAndGenerateServices, () => {
       projectService: false,
       range: true,
       tokens: true,
-    } satisfies TSESTreeOptions;
+    } as const satisfies TSESTreeOptions;
 
     const jsxContent = 'const x = <div />;';
 
     const plainJScontent = 'const x = 1';
 
-    const testCases = [
+    const ALL_TEST_CASES = [
       ['.js', 'without', false, false, plainJScontent],
       ['.js', 'without', true, false, plainJScontent],
       ['.js', 'with', false, false, jsxContent],
@@ -283,11 +260,11 @@ describe(parseAndGenerateServices, () => {
         ]
     )[];
 
-    const testCasesThrows = testCases.filter(testCases => testCases[3]);
+    const ERROR_TEST_CASES = ALL_TEST_CASES.filter(testCases => testCases[3]);
 
-    const doesNotThrow = testCases.filter(testCases => !testCases[3]);
+    const VALID_TEST_CASES = ALL_TEST_CASES.filter(testCases => !testCases[3]);
 
-    it.for(testCasesThrows)(
+    it.for(ERROR_TEST_CASES)(
       'should not parse %s file - %s JSX content - parserOptions.jsx = %s',
       ([ext, , jsxSetting, , code], { expect }) => {
         expect(() => {
@@ -300,7 +277,7 @@ describe(parseAndGenerateServices, () => {
       },
     );
 
-    it.for(doesNotThrow)(
+    it.for(VALID_TEST_CASES)(
       'should parse %s file - %s JSX content - parserOptions.jsx = %s',
       ([ext, , jsxSetting, , code], { expect }) => {
         const result = parseAndGenerateServices(code, {
@@ -309,13 +286,14 @@ describe(parseAndGenerateServices, () => {
           jsx: jsxSetting,
         });
 
+        assert.isNull(result.services.program);
+
         expect({
           ...result,
           services: {
             ...result.services,
             // Reduce noise in snapshot by not printing the TS program
-            program:
-              result.services.program == null ? 'No Program' : 'With Program',
+            program: 'No Program',
           },
         }).toMatchSnapshot();
       },
@@ -330,11 +308,11 @@ describe(parseAndGenerateServices, () => {
         projectService: false,
         range: true,
         tokens: true,
-      } satisfies TSESTreeOptions;
+      } as const satisfies TSESTreeOptions;
 
       const code = 'await(1)';
 
-      const testCases = [
+      const ALL_TEST_CASES = [
         ['.js', 'not allow', false, undefined, AST_NODE_TYPES.CallExpression],
         ['.ts', 'not allow', false, undefined, AST_NODE_TYPES.CallExpression],
         ['.mjs', 'allow', true, undefined, AST_NODE_TYPES.AwaitExpression],
@@ -372,7 +350,7 @@ describe(parseAndGenerateServices, () => {
           ]
       )[];
 
-      it.for(testCases)(
+      it.for(ALL_TEST_CASES)(
         'parse(): should $1 TLA for $0 file with sourceType = $3',
         ([ext, , , sourceType, expectedExpressionType], { expect }) => {
           const ast = parse(code, {
@@ -389,7 +367,7 @@ describe(parseAndGenerateServices, () => {
         },
       );
 
-      it.for(testCases)(
+      it.for(ALL_TEST_CASES)(
         'parseAndGenerateServices(): should $1 TLA for $0 file with sourceType = $3',
         ([ext, , , sourceType, expectedExpressionType], { expect }) => {
           const result = parseAndGenerateServices(code, {
@@ -411,12 +389,14 @@ describe(parseAndGenerateServices, () => {
     });
   });
 
-  describe.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  describe.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'invalid file error messages',
     () => {
       const PROJECT_DIR = path.join(FIXTURES_DIR, '..', 'invalidFileErrors');
+
       const code = 'var a = true';
-      const config: TSESTreeOptions = {
+
+      const config = {
         comment: true,
         disallowAutomaticSingleRunInference: true,
         extraFileExtensions: ['.vue'],
@@ -425,7 +405,8 @@ describe(parseAndGenerateServices, () => {
         range: true,
         tokens: true,
         tsconfigRootDir: PROJECT_DIR,
-      };
+      } as const satisfies TSESTreeOptions;
+
       const testParse =
         (filePath: string, extraFileExtensions: string[] = ['.vue']) =>
         (): void => {
@@ -442,58 +423,29 @@ describe(parseAndGenerateServices, () => {
         };
 
       describe('project includes', () => {
-        it("doesn't error for matched files", () => {
-          expect(() => {
-            try {
+        it.for([
+          ['ts', 'included01.ts'],
+          ['ts', 'included02.tsx'],
+          ['js', 'included01.js'],
+          ['js', 'included02.jsx'],
+        ] as const)(
+          "doesn't error for matched files: %s/%s",
+          ([directoryName, fileName], { expect }) => {
+            expect(() => {
               parseAndGenerateServices(code, {
                 ...config,
-                filePath: path.join(PROJECT_DIR, 'ts/included01.ts'),
+                filePath: path.join(PROJECT_DIR, directoryName, fileName),
               });
-            } catch (error) {
-              alignErrorPath(error as Error);
-            }
-          }).not.toThrow();
-
-          expect(() => {
-            try {
-              parseAndGenerateServices(code, {
-                ...config,
-                filePath: path.join(PROJECT_DIR, 'ts/included02.tsx'),
-              });
-            } catch (error) {
-              alignErrorPath(error as Error);
-            }
-          }).not.toThrow();
-
-          expect(() => {
-            try {
-              parseAndGenerateServices(code, {
-                ...config,
-                filePath: path.join(PROJECT_DIR, 'js/included01.js'),
-              });
-            } catch (error) {
-              alignErrorPath(error as Error);
-            }
-          }).not.toThrow();
-
-          expect(() => {
-            try {
-              parseAndGenerateServices(code, {
-                ...config,
-                filePath: path.join(PROJECT_DIR, 'js/included02.jsx'),
-              });
-            } catch (error) {
-              alignErrorPath(error as Error);
-            }
-          }).not.toThrow();
-        });
+            }).not.toThrow();
+          },
+        );
 
         it('errors for not included files', () => {
           expect(() => {
             try {
               parseAndGenerateServices(code, {
                 ...config,
-                filePath: path.join(PROJECT_DIR, 'ts/notIncluded0j1.ts'),
+                filePath: path.join(PROJECT_DIR, 'ts', 'notIncluded0j1.ts'),
               });
             } catch (error) {
               alignErrorPath(error as Error);
@@ -511,7 +463,7 @@ describe(parseAndGenerateServices, () => {
             try {
               parseAndGenerateServices(code, {
                 ...config,
-                filePath: path.join(PROJECT_DIR, 'ts/notIncluded02.tsx'),
+                filePath: path.join(PROJECT_DIR, 'ts', 'notIncluded02.tsx'),
               });
             } catch (error) {
               alignErrorPath(error as Error);
@@ -547,7 +499,13 @@ describe(parseAndGenerateServices, () => {
 
       describe('"parserOptions.extraFileExtensions" is empty', () => {
         it('should not error', () => {
-          expect(testParse('ts/included01.ts', [])).not.toThrow();
+          expect(() => {
+            parseAndGenerateServices(code, {
+              ...config,
+              extraFileExtensions: [],
+              filePath: path.join(PROJECT_DIR, 'ts', 'included01.ts'),
+            });
+          }).not.toThrow();
         });
 
         it('the extension does not match', () => {
@@ -562,7 +520,12 @@ describe(parseAndGenerateServices, () => {
       describe('"parserOptions.extraFileExtensions" is non-empty', () => {
         describe('the extension matches', () => {
           it('the file is included', () => {
-            expect(testParse('other/included.vue')).not.toThrow();
+            expect(() => {
+              parseAndGenerateServices(code, {
+                ...config,
+                filePath: path.join(PROJECT_DIR, 'other', 'included.vue'),
+              });
+            }).not.toThrow();
           });
 
           it("the file isn't included", () => {
@@ -615,8 +578,7 @@ describe(parseAndGenerateServices, () => {
             expect(() => {
               parseAndGenerateServices(code, {
                 ...config,
-                extraFileExtensions: ['.vue'],
-                filePath: path.join(PROJECT_DIR, 'other/included.vue'),
+                filePath: path.join(PROJECT_DIR, 'other', 'included.vue'),
                 projectService: true,
               });
             }).not.toThrow();
@@ -626,8 +588,7 @@ describe(parseAndGenerateServices, () => {
             expect(() => {
               parseAndGenerateServices(code, {
                 ...config,
-                extraFileExtensions: ['.vue'],
-                filePath: path.join(PROJECT_DIR, 'other/notIncluded.vue'),
+                filePath: path.join(PROJECT_DIR, 'other', 'notIncluded.vue'),
                 projectService: true,
               });
             }).toThrow(/notIncluded\.vue was not found by the project service/);
@@ -638,7 +599,7 @@ describe(parseAndGenerateServices, () => {
               parseAndGenerateServices(code, {
                 ...config,
                 extraFileExtensions: ['.ts'],
-                filePath: path.join(PROJECT_DIR, 'ts/notIncluded.ts'),
+                filePath: path.join(PROJECT_DIR, 'ts', 'notIncluded.ts'),
                 projectService: true,
               });
             }).toThrow(/notIncluded\.ts was not found by the project service/);
@@ -650,7 +611,11 @@ describe(parseAndGenerateServices, () => {
             parseAndGenerateServices(code, {
               ...config,
               extraFileExtensions: ['.unknown'],
-              filePath: path.join(PROJECT_DIR, 'other/unknownFileType.unknown'),
+              filePath: path.join(
+                PROJECT_DIR,
+                'other',
+                'unknownFileType.unknown',
+              ),
               projectService: true,
             });
           }).toThrow(
@@ -663,7 +628,11 @@ describe(parseAndGenerateServices, () => {
             parseAndGenerateServices(code, {
               ...config,
               extraFileExtensions: ['.vue'],
-              filePath: path.join(PROJECT_DIR, 'other/unknownFileType.unknown'),
+              filePath: path.join(
+                PROJECT_DIR,
+                'other',
+                'unknownFileType.unknown',
+              ),
               projectService: true,
             });
           }).toThrow(
@@ -674,27 +643,29 @@ describe(parseAndGenerateServices, () => {
     },
   );
 
-  describe('invalid project error messages', () => {
-    it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
-      'throws when none of multiple projects include the file',
-      () => {
-        const PROJECT_DIR = path.join(FIXTURES_DIR, '..', 'invalidFileErrors');
-        const code = 'var a = true';
-        const config: TSESTreeOptions = {
-          comment: true,
-          disallowAutomaticSingleRunInference: true,
-          loc: true,
-          project: ['./**/tsconfig.json', './**/tsconfig.extra.json'],
-          range: true,
-          tokens: true,
-          tsconfigRootDir: PROJECT_DIR,
-        };
+  describe.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
+    'invalid project error messages',
+    () => {
+      const PROJECT_DIR = path.join(FIXTURES_DIR, '..', 'invalidFileErrors');
 
+      const code = 'var a = true';
+
+      const config = {
+        comment: true,
+        disallowAutomaticSingleRunInference: true,
+        loc: true,
+        project: ['./**/tsconfig.json', './**/tsconfig.extra.json'],
+        range: true,
+        tokens: true,
+        tsconfigRootDir: PROJECT_DIR,
+      } as const satisfies TSESTreeOptions;
+
+      it('throws when none of multiple projects include the file', () => {
         expect(() => {
           try {
             parseAndGenerateServices(code, {
               ...config,
-              filePath: path.join(PROJECT_DIR, 'ts/notIncluded0j1.ts'),
+              filePath: path.join(PROJECT_DIR, 'ts', 'notIncluded0j1.ts'),
             });
           } catch (error) {
             alignErrorPath(error as Error);
@@ -709,9 +680,9 @@ describe(parseAndGenerateServices, () => {
               - Create a new TSConfig that includes this file and include it in your parserOptions.project
               See the typescript-eslint docs for more info: https://typescript-eslint.io/troubleshooting/typed-linting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file]
             `);
-      },
-    );
-  });
+      });
+    },
+  );
 
   describe('debug options', () => {
     const debugEnable = vi.spyOn(debug, 'enable');
@@ -744,6 +715,7 @@ describe(parseAndGenerateServices, () => {
         debugLevel: ['typescript-eslint'],
         disallowAutomaticSingleRunInference: true,
       });
+
       expect(debugEnable).toHaveBeenCalledExactlyOnceWith(
         'typescript-eslint:*',
       );
@@ -754,12 +726,13 @@ describe(parseAndGenerateServices, () => {
         debugLevel: ['typescript-eslint', 'eslint'],
         disallowAutomaticSingleRunInference: true,
       });
+
       expect(debugEnable).toHaveBeenCalledExactlyOnceWith(
         'typescript-eslint:*,eslint:*,-eslint:code-path',
       );
     });
 
-    it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+    it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
       'should turn on typescript debugger',
       () => {
         expect(() => {
@@ -782,7 +755,7 @@ describe(parseAndGenerateServices, () => {
     );
   });
 
-  describe.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  describe.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'projectFolderIgnoreList',
     () => {
       beforeEach(() => {
@@ -794,8 +767,10 @@ describe(parseAndGenerateServices, () => {
         '..',
         'projectFolderIgnoreList',
       );
+
       const code = 'var a = true';
-      const config: TSESTreeOptions = {
+
+      const config = {
         comment: true,
         disallowAutomaticSingleRunInference: true,
         loc: true,
@@ -803,23 +778,19 @@ describe(parseAndGenerateServices, () => {
         range: true,
         tokens: true,
         tsconfigRootDir: PROJECT_DIR,
-      };
+      } as const satisfies TSESTreeOptions;
 
-      it('ignores nothing when given nothing', () => {
-        expect(() => {
-          parseAndGenerateServices(code, {
-            ...config,
-            filePath: path.join(PROJECT_DIR, 'ignoreme', 'file.ts'),
-          });
-        }).not.toThrow();
-
-        expect(() => {
-          parseAndGenerateServices(code, {
-            ...config,
-            filePath: path.join(PROJECT_DIR, 'includeme', 'file.ts'),
-          });
-        }).not.toThrow();
-      });
+      it.for([['ignoreme'], ['includeme']] as const)(
+        'ignores nothing when given nothing: %s',
+        ([directoryName], { expect }) => {
+          expect(() => {
+            parseAndGenerateServices(code, {
+              ...config,
+              filePath: path.join(PROJECT_DIR, directoryName, 'file.ts'),
+            });
+          }).not.toThrow();
+        },
+      );
 
       it('ignores a folder when given a string glob', () => {
         const ignore = ['**/ignoreme/**'];
@@ -845,7 +816,7 @@ describe(parseAndGenerateServices, () => {
     },
   );
 
-  describe.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  describe.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'cacheLifetime',
     () => {
       describe('glob', () => {
@@ -918,7 +889,7 @@ describe(parseAndGenerateServices, () => {
     },
   );
 
-  describe.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  describe.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'project references',
     () => {
       beforeEach(() => {
@@ -926,6 +897,7 @@ describe(parseAndGenerateServices, () => {
       });
 
       const PROJECT_DIR = path.join(FIXTURES_DIR, '..', 'projectReferences');
+
       const code = 'var a = true';
 
       it('throws a special-case error when project references are enabled in the only TSConfig and the file is not found', () => {

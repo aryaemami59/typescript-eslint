@@ -66,3 +66,12 @@ declare global {
     }
   }
 }
+
+interface CustomMatchers<ActualType = unknown> {
+  toBeValidFile(): Promise<ActualType>;
+}
+
+declare module 'vitest' {
+  interface Assertion<T = any> extends CustomMatchers<T> {}
+  interface AsymmetricMatchersContaining extends CustomMatchers {}
+}

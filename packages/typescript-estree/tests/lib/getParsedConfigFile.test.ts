@@ -72,9 +72,9 @@ describe(getParsedConfigFile, () => {
         },
       ] satisfies ts.Diagnostic[],
     });
-    expect(() => getParsedConfigFile(mockTsserver, './tsconfig.json')).toThrow(
-      /.+ error TS1234: Oh no!/,
-    );
+    expect(() => {
+      getParsedConfigFile(mockTsserver, './tsconfig.json');
+    }).toThrow(/.+ error TS1234: Oh no!/);
   });
 
   it('throws a diagnostic error when getParsedCommandLineOfConfigFile throws an error', () => {
@@ -96,9 +96,9 @@ describe(getParsedConfigFile, () => {
         } satisfies ts.Diagnostic);
       },
     );
-    expect(() => getParsedConfigFile(mockTsserver, './tsconfig.json')).toThrow(
-      /.+ error TS1234: Oh no!/,
-    );
+    expect(() => {
+      getParsedConfigFile(mockTsserver, './tsconfig.json');
+    }).toThrow(/.+ error TS1234: Oh no!/);
   });
 
   it('uses compiler options when parsing a config file succeeds', () => {

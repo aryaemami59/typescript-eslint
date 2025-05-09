@@ -1,3 +1,4 @@
+import * as fs from 'node:fs/promises';
 import * as ts from 'typescript';
 
 import type {
@@ -205,4 +206,28 @@ chai.use((chai, utils) => {
       true,
     ).not.to.be.nodeOfType(expectedNodeType);
   };
+});
+
+expect.extend({
+  async toBeValidFile(received: string) {
+    const { isNot } = this;
+
+    try {
+      const stats = await fs.lstat(received);
+
+      const pass = stats.isFile();
+
+      return {
+        message: () =>
+          `expected ${received} to${isNot ? ' not' : ''} be a file`,
+        pass,
+      };
+    } catch {
+      return {
+        message: () =>
+          `expected ${received} to${isNot ? ' not' : ''} be a file`,
+        pass: false,
+      };
+    }
+  },
 });

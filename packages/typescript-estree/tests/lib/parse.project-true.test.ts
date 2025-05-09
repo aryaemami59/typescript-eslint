@@ -9,12 +9,14 @@ const PROJECT_DIR = path.join(__dirname, '..', 'fixtures', 'projectTrue');
 const config = {
   project: true,
   tsconfigRootDir: PROJECT_DIR,
-} satisfies Partial<TSESTreeOptions>;
+} as const satisfies TSESTreeOptions;
 
 describe(parseAndGenerateServices, () => {
+  const code = 'const a = true';
+
   describe('when project is true', () => {
     it('finds a parent project when it exists in the project', () => {
-      const result = parseAndGenerateServices('const a = true', {
+      const result = parseAndGenerateServices(code, {
         ...config,
         filePath: path.join(PROJECT_DIR, 'nested', 'deep', 'included.ts'),
       });
@@ -26,7 +28,7 @@ describe(parseAndGenerateServices, () => {
     });
 
     it('finds a sibling project when it exists in the project', () => {
-      const result = parseAndGenerateServices('const a = true', {
+      const result = parseAndGenerateServices(code, {
         ...config,
         filePath: path.join(PROJECT_DIR, 'nested', 'included.ts'),
       });
@@ -38,12 +40,12 @@ describe(parseAndGenerateServices, () => {
     });
 
     it('throws an error when a parent project does not exist', () => {
-      expect(() =>
-        parseAndGenerateServices('const a = true', {
+      expect(() => {
+        parseAndGenerateServices(code, {
           ...config,
           filePath: path.join(PROJECT_DIR, 'notIncluded.ts'),
-        }),
-      ).toThrow(
+        });
+      }).toThrow(
         /project was set to `true` but couldn't find any tsconfig.json relative to '.+[/\\]tests[/\\]fixtures[/\\]projectTrue[/\\]notIncluded.ts' within '.+[/\\]tests[/\\]fixtures[/\\]projectTrue'./,
       );
     });

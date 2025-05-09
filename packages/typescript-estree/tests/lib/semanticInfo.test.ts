@@ -3,10 +3,14 @@ import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import * as ts from 'typescript';
 
-import type { TSESTree, TSESTreeOptions } from '../../src/index.js';
+import type { TSESTreeOptions } from '../../src/index.js';
 
 import { createProgramFromConfigFile as createProgram } from '../../src/create-program/useProvidedPrograms.js';
-import { clearCaches, parseAndGenerateServices } from '../../src/index.js';
+import {
+  AST_NODE_TYPES,
+  clearCaches,
+  parseAndGenerateServices,
+} from '../../src/index.js';
 import {
   deeplyCopy,
   parseCodeAndGenerateServices,
@@ -14,7 +18,7 @@ import {
 
 const FIXTURES_DIR = path.join(__dirname, '..', 'fixtures', 'semanticInfo');
 
-function createOptions(fileName: string): { cwd?: string } & TSESTreeOptions {
+function createOptions(fileName: string): TSESTreeOptions {
   return {
     comment: true,
     disallowAutomaticSingleRunInference: true,
@@ -31,7 +35,7 @@ function createOptions(fileName: string): { cwd?: string } & TSESTreeOptions {
 }
 
 describe('semanticInfo', async () => {
-  const testFiles = await glob('**/*.src.ts', {
+  const FIXTURE_FILE_PATHS = await glob('**/*.src.ts', {
     absolute: true,
     cwd: FIXTURES_DIR,
   });
@@ -44,8 +48,8 @@ describe('semanticInfo', async () => {
   });
 
   // test all AST snapshots
-  const testCases = await Promise.all(
-    testFiles.map(async absolute => {
+  const SNAPSHOT_TEST_CASES = await Promise.all(
+    FIXTURE_FILE_PATHS.map(async absolute => {
       const code = await fs.readFile(absolute, {
         encoding: 'utf-8',
       });
@@ -58,27 +62,25 @@ describe('semanticInfo', async () => {
 
       const result = deeplyCopy(ast);
 
-      return [snapshotName, result] as const;
+      return [snapshotName, result, absolute, code] as const;
     }),
   );
 
-  it.for(testCases)('%s', ([, result], { expect }) => {
+  it.for(SNAPSHOT_TEST_CASES)('%s', ([, result], { expect }) => {
     expect(result).toMatchSnapshot();
   });
 
-  it(`should cache the created ts.program`, async () => {
-    const filename = testFiles[0];
+  it('should cache the created ts.program', () => {
+    const filename = SNAPSHOT_TEST_CASES[0][2];
 
-    const code = await fs.readFile(filename, {
-      encoding: 'utf-8',
-    });
+    const code = SNAPSHOT_TEST_CASES[0][3];
 
     const options = createOptions(filename);
 
     const optionsProjectString = {
       ...options,
       project: './tsconfig.json',
-    };
+    } as const satisfies TSESTreeOptions;
 
     expect(
       parseAndGenerateServices(code, optionsProjectString).services.program,
@@ -87,53 +89,55 @@ describe('semanticInfo', async () => {
     );
   });
 
-  it(`should handle "project": "./tsconfig.json" and "project": ["./tsconfig.json"] the same`, async () => {
-    const filename = testFiles[0];
+  it(`should handle "project": "./tsconfig.json" and "project": ["./tsconfig.json"] the same`, () => {
+    const filename = SNAPSHOT_TEST_CASES[0][2];
 
-    const code = await fs.readFile(filename, {
-      encoding: 'utf-8',
-    });
+    const code = SNAPSHOT_TEST_CASES[0][3];
 
     const options = createOptions(filename);
+
     const optionsProjectString = {
       ...options,
       project: './tsconfig.json',
-    };
+    } as const satisfies TSESTreeOptions;
+
     const optionsProjectArray = {
       ...options,
       project: ['./tsconfig.json'],
-    };
+    } as const satisfies TSESTreeOptions;
+
     const fromString = parseAndGenerateServices(code, optionsProjectString);
     const fromArray = parseAndGenerateServices(code, optionsProjectArray);
 
     expect(fromString.services.program).toBe(fromArray.services.program);
 
     expect(fromString.ast).toStrictEqual(fromArray.ast);
+
     expect(fromString.services.esTreeNodeToTSNodeMap).toStrictEqual(
       fromArray.services.esTreeNodeToTSNodeMap,
     );
+
     expect(fromString.services.tsNodeToESTreeNodeMap).toStrictEqual(
       fromArray.services.tsNodeToESTreeNodeMap,
     );
   });
 
-  it(`should resolve absolute and relative tsconfig paths the same`, async () => {
-    const filename = testFiles[0];
+  it(`should resolve absolute and relative tsconfig paths the same`, () => {
+    const filename = SNAPSHOT_TEST_CASES[0][2];
 
-    const code = await fs.readFile(filename, {
-      encoding: 'utf-8',
-    });
+    const code = SNAPSHOT_TEST_CASES[0][3];
 
     const options = createOptions(filename);
+
     const optionsAbsolutePath = {
       ...options,
       project: `${__dirname}/../fixtures/semanticInfo/tsconfig.json`,
-    };
+    } as const satisfies TSESTreeOptions;
 
     const optionsRelativePath = {
       ...options,
       project: `./tsconfig.json`,
-    };
+    } as const satisfies TSESTreeOptions;
 
     const absolutePathResult = parseAndGenerateServices(
       code,
@@ -145,9 +149,9 @@ describe('semanticInfo', async () => {
       optionsRelativePath,
     );
 
-    assert.isNotNull(absolutePathResult.services.program);
+    assert.isParserServices(absolutePathResult.services);
 
-    assert.isNotNull(relativePathResult.services.program);
+    assert.isParserServices(relativePathResult.services);
 
     expect(
       absolutePathResult.services.program.getResolvedProjectReferences(),
@@ -170,15 +174,19 @@ describe('semanticInfo', async () => {
       // get type checker
       const checker = parseResult.services.program.getTypeChecker();
 
+      assert.isNodeOfType(
+        parseResult.ast.body[0],
+        AST_NODE_TYPES.VariableDeclaration,
+      );
+
       // get number node (ast shape validated by snapshot)
-      const declaration = (
-        parseResult.ast.body[0] as TSESTree.VariableDeclaration
-      ).declarations[0];
+      const declaration = parseResult.ast.body[0].declarations[0];
 
       assert.isNotNull(declaration.init);
 
-      const arrayMember = (declaration.init as TSESTree.ArrayExpression)
-        .elements[0];
+      assert.isNodeOfType(declaration.init, AST_NODE_TYPES.ArrayExpression);
+
+      const arrayMember = declaration.init.elements[0];
 
       assert.isNotNull(arrayMember);
 
@@ -203,8 +211,10 @@ describe('semanticInfo', async () => {
         parseResult.services.tsNodeToESTreeNodeMap.get(tsArrayMember),
       ).toBe(arrayMember);
 
+      assert.isNodeOfType(declaration.id, AST_NODE_TYPES.Identifier);
+
       // get bound name
-      const boundName = declaration.id as TSESTree.Identifier;
+      const boundName = declaration.id;
 
       expect(boundName.name).toBe('x');
 
@@ -237,15 +247,19 @@ describe('semanticInfo', async () => {
       // get type checker
       const checker = parseResult.services.program.getTypeChecker();
 
+      assert.isNodeOfType(
+        parseResult.ast.body[0],
+        AST_NODE_TYPES.VariableDeclaration,
+      );
+
       // get number node (ast shape validated by snapshot)
-      const declaration = (
-        parseResult.ast.body[0] as TSESTree.VariableDeclaration
-      ).declarations[0];
+      const declaration = parseResult.ast.body[0].declarations[0];
 
       assert.isNotNull(declaration.init);
 
-      const arrayMember = (declaration.init as TSESTree.ArrayExpression)
-        .elements[0];
+      assert.isNodeOfType(declaration.init, AST_NODE_TYPES.ArrayExpression);
+
+      const arrayMember = declaration.init.elements[0];
 
       assert.isNotNull(arrayMember);
 
@@ -270,8 +284,10 @@ describe('semanticInfo', async () => {
         parseResult.services.tsNodeToESTreeNodeMap.get(tsArrayMember),
       ).toBe(arrayMember);
 
+      assert.isNodeOfType(declaration.id, AST_NODE_TYPES.Identifier);
+
       // get bound name
-      const boundName = declaration.id as TSESTree.Identifier;
+      const boundName = declaration.id;
 
       expect(boundName.name).toBe('x');
 
@@ -299,23 +315,31 @@ describe('semanticInfo', async () => {
 
     assert.isParserServices(parseResult.services);
 
-    const binaryExpression = (
-      parseResult.ast.body[0] as TSESTree.VariableDeclaration
-    ).declarations[0].init;
+    assert.isNodeOfType(
+      parseResult.ast.body[0],
+      AST_NODE_TYPES.VariableDeclaration,
+    );
+
+    const binaryExpression = parseResult.ast.body[0].declarations[0].init;
 
     assert.isNotNull(binaryExpression);
 
     const tsBinaryExpression =
       parseResult.services.esTreeNodeToTSNodeMap.get(binaryExpression);
 
-    expect(tsBinaryExpression.kind).toStrictEqual(
-      ts.SyntaxKind.BinaryExpression,
+    expect(tsBinaryExpression.kind).toBe(ts.SyntaxKind.BinaryExpression);
+
+    assert.isNodeOfType(
+      parseResult.ast.body[1],
+      AST_NODE_TYPES.ClassDeclaration,
     );
 
-    const computedPropertyString = (
-      (parseResult.ast.body[1] as TSESTree.ClassDeclaration).body
-        .body[0] as TSESTree.PropertyDefinition
-    ).key;
+    assert.isNodeOfType(
+      parseResult.ast.body[1].body.body[0],
+      AST_NODE_TYPES.PropertyDefinition,
+    );
+
+    const computedPropertyString = parseResult.ast.body[1].body.body[0].key;
 
     const tsComputedPropertyString =
       parseResult.services.esTreeNodeToTSNodeMap.get(computedPropertyString);
@@ -338,14 +362,29 @@ describe('semanticInfo', async () => {
 
     const checker = parseResult.services.program.getTypeChecker();
 
+    assert.isNodeOfType(
+      parseResult.ast.body[1],
+      AST_NODE_TYPES.ExpressionStatement,
+    );
+
+    assert.isNodeOfType(
+      parseResult.ast.body[1].expression,
+      AST_NODE_TYPES.CallExpression,
+    );
+
+    assert.isNodeOfType(
+      parseResult.ast.body[1].expression.callee,
+      AST_NODE_TYPES.MemberExpression,
+    );
+
+    assert.isNodeOfType(
+      parseResult.ast.body[1].expression.callee.object,
+      AST_NODE_TYPES.Identifier,
+    );
+
     // get array node (ast shape validated by snapshot)
     // node is defined in other file than the parsed one
-    const arrayBoundName = (
-      (
-        (parseResult.ast.body[1] as TSESTree.ExpressionStatement)
-          .expression as TSESTree.CallExpression
-      ).callee as TSESTree.MemberExpression
-    ).object as TSESTree.Identifier;
+    const arrayBoundName = parseResult.ast.body[1].expression.callee.object;
 
     expect(arrayBoundName.name).toBe('arr');
 
@@ -369,9 +408,18 @@ describe('semanticInfo', async () => {
       },
     );
 
+    assert.isNodeOfType(
+      parseResult.ast.body[0],
+      AST_NODE_TYPES.VariableDeclaration,
+    );
+
+    assert.isNodeOfType(
+      parseResult.ast.body[0].declarations[0].id,
+      AST_NODE_TYPES.Identifier,
+    );
+
     // get bound name
-    const boundName = (parseResult.ast.body[0] as TSESTree.VariableDeclaration)
-      .declarations[0].id as TSESTree.Identifier;
+    const boundName = parseResult.ast.body[0].declarations[0].id;
 
     expect(boundName.name).toBe('x');
 
@@ -392,8 +440,8 @@ describe('semanticInfo', async () => {
     assert.isNotParserServices(parseResult.services);
   });
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
-    `non-existent file should throw error when project provided`,
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
+    'non-existent file should throw error when project provided',
     () => {
       expect(() => {
         parseCodeAndGenerateServices(
@@ -406,7 +454,7 @@ describe('semanticInfo', async () => {
     },
   );
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'non-existent project file',
     async () => {
       const fileName = path.join(FIXTURES_DIR, 'isolated-file.src.ts');
@@ -423,7 +471,7 @@ describe('semanticInfo', async () => {
     },
   );
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'fail to read project file',
     async () => {
       const fileName = path.join(FIXTURES_DIR, 'isolated-file.src.ts');
@@ -443,7 +491,7 @@ describe('semanticInfo', async () => {
     },
   );
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'malformed project file',
     async ({ expect }) => {
       const fileName = path.join(FIXTURES_DIR, 'isolated-file.src.ts');
@@ -476,29 +524,31 @@ describe('semanticInfo', async () => {
     );
   });
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'first matching provided program instance is returned in result',
-    async () => {
-      const filename = testFiles[0];
+    () => {
+      const filename = SNAPSHOT_TEST_CASES[0][2];
+
+      const code = SNAPSHOT_TEST_CASES[0][3];
+
       const program1 = createProgram(path.join(FIXTURES_DIR, 'tsconfig.json'));
       const program2 = createProgram(path.join(FIXTURES_DIR, 'tsconfig.json'));
 
-      const code = await fs.readFile(filename, {
-        encoding: 'utf-8',
-      });
-
       const options = createOptions(filename);
+
       const optionsProjectString = {
         ...options,
         programs: [program1, program2],
         project: './tsconfig.json',
-      };
+      } as const satisfies TSESTreeOptions;
+
       const parseResult = parseAndGenerateServices(code, optionsProjectString);
+
       expect(parseResult.services.program).toBe(program1);
     },
   );
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'file not in single provided project instance in single-run mode should throw',
     () => {
       vi.stubEnv('TSESTREE_SINGLE_RUN', 'true');
@@ -511,14 +561,12 @@ describe('semanticInfo', async () => {
         ...options,
         programs: undefined,
         project: true,
-      };
+      } as const satisfies TSESTreeOptions;
 
       expect(() => {
         parseAndGenerateServices('const foo = 5;', optionsWithProjectTrue);
       }).toThrow(
-        process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true'
-          ? `${filename} was not found by the project service. Consider either including it in the tsconfig.json or including it in allowDefaultProject.`
-          : `The file was not found in any of the provided project(s): ${filename}`,
+        `The file was not found in any of the provided project(s): ${filename}`,
       );
     },
   );
@@ -533,7 +581,7 @@ describe('semanticInfo', async () => {
     const optionsWithSingleProgram = {
       ...options,
       programs: [program],
-    };
+    } as const satisfies TSESTreeOptions;
 
     expect(() => {
       parseAndGenerateServices('const foo = 5;', optionsWithSingleProgram);
@@ -554,7 +602,7 @@ describe('semanticInfo', async () => {
     const optionsWithSingleProgram = {
       ...options,
       programs: [program1],
-    };
+    } as const satisfies TSESTreeOptions;
 
     expect(() => {
       parseAndGenerateServices('const foo = 5;', optionsWithSingleProgram);
@@ -565,10 +613,11 @@ describe('semanticInfo', async () => {
     );
 
     const program2 = createProgram(path.join(FIXTURES_DIR, 'tsconfig.json'));
+
     const optionsWithMultiplePrograms = {
       ...options,
       programs: [program1, program2],
-    };
+    } as const satisfies TSESTreeOptions;
 
     expect(() => {
       parseAndGenerateServices('const foo = 5;', optionsWithMultiplePrograms);

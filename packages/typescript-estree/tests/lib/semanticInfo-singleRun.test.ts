@@ -143,7 +143,7 @@ describe('semanticInfo - singleRun', async () => {
     expect(createProgramFromConfigFile).not.toHaveBeenCalled();
   });
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'should lazily create the required program out of the provided "parserOptions.project" one time when TSESTREE_SINGLE_RUN=true',
     () => {
       /**
@@ -174,7 +174,7 @@ describe('semanticInfo - singleRun', async () => {
     },
   );
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'should lazily create the required program out of the provided "parserOptions.project" one time when singleRun is inferred from CI=true',
     () => {
       /**
@@ -206,7 +206,7 @@ describe('semanticInfo - singleRun', async () => {
     },
   );
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'should lazily create the required program out of the provided "parserOptions.project" one time when singleRun is inferred from process.argv',
     () => {
       /**
@@ -240,7 +240,7 @@ describe('semanticInfo - singleRun', async () => {
     },
   );
 
-  it.runIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE !== 'true')(
+  it.skipIf(process.env.TYPESCRIPT_ESLINT_PROJECT_SERVICE === 'true')(
     'should stop iterating through and lazily creating programs for the given "parserOptions.project" once a matching one has been found',
     () => {
       /**
