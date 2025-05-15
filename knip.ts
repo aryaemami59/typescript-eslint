@@ -100,13 +100,24 @@ export default {
         ],
       },
     },
+
     'packages/eslint-plugin': {
       ignore: [
         'tests/fixtures/**',
         'typings/eslint-rules.d.ts',
         'typings/typescript.d.ts',
       ],
+
+      vitest: {
+        config: ['vitest.config.mts'],
+        entry: [
+          'tests/**/*.{bench,test,test-d}.?(c|m)ts?(x)',
+          'tests/test-utils/custom-matchers/custom-matchers.ts',
+          'tests/test-utils/custom-matchers/vitest-custom-matchers.d.ts',
+        ],
+      },
     },
+
     'packages/eslint-plugin-internal': {
       ignore: ['tests/fixtures/**'],
     },

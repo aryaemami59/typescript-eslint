@@ -6,15 +6,7 @@ import * as path from 'node:path';
 
 import type { AnalyzeOptions } from './test-utils/index.js';
 
-import { parseAndAnalyze } from './test-utils/index.js';
-
-// Assign a segment set to this variable to limit the test to only this segment
-// This is super helpful if you need to debug why a specific fixture isn't producing the correct output
-// eg. ['type-declaration', 'signatures', 'method-generic'] will only test /type-declaration/signatures/method-generic.ts
-// prettier-ignore
-const ONLY = [].join(path.sep);
-
-const FIXTURES_DIR = path.join(__dirname, 'fixtures');
+import { FIXTURES_DIR, parseAndAnalyze } from './test-utils/index.js';
 
 const FOUR_LEADING_SLASHES_REGEX = /^\/{4} +@(\w+) *= *(.+)$/;
 
@@ -157,34 +149,27 @@ describe('fixtures', async () => {
   );
 
   describe.for(FIXTURES_WITH_TEST_TITLES)('%s', ([, fixture]) => {
-    test(
-      fixture.name,
-      { only: [...fixture.segments, fixture.name].join(path.sep) === ONLY },
-      async () => {
-        const { contents, isJSX, options, snapshotFile } = fixture;
+    test(fixture.name, async () => {
+      const { contents, isJSX, options, snapshotFile } = fixture;
 
-        const { scopeManager } = parseAndAnalyze(contents, options, {
-          jsx: isJSX,
-        });
+      const { scopeManager } = parseAndAnalyze(contents, options, {
+        jsx: isJSX,
+      });
 
-        await expect(scopeManager).toMatchFileSnapshot(snapshotFile);
-      },
-    );
+      await expect(scopeManager).toMatchFileSnapshot(snapshotFile);
+    });
   });
 });
 
-describe.skipIf(ONLY !== '')(
-  'ast snapshots should have an associated test',
-  async () => {
-    const snapshots = (
-      await glob('**/*.shot', { absolute: true, cwd: FIXTURES_DIR })
-    ).map(absolute => {
-      const relative = path.relative(FIXTURES_DIR, absolute);
-      return [relative, absolute] as const;
-    });
+describe('ast snapshots should have an associated test', async () => {
+  const snapshots = (
+    await glob('**/*.shot', { absolute: true, cwd: FIXTURES_DIR })
+  ).map(absolute => {
+    const relative = path.relative(FIXTURES_DIR, absolute);
+    return [relative, absolute] as const;
+  });
 
-    it.for(snapshots)('%s', async ([, absoluteSnapshotPath], { expect }) => {
-      expect((await fs.lstat(absoluteSnapshotPath)).isFile()).toBe(true);
-    });
-  },
-);
+  it.for(snapshots)('%s', async ([, absoluteSnapshotPath], { expect }) => {
+    expect((await fs.lstat(absoluteSnapshotPath)).isFile()).toBe(true);
+  });
+});

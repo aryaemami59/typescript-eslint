@@ -1,14 +1,14 @@
 import { RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/no-unsafe-return';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/no-unsafe-return.js';
+import { FIXTURES_DIR } from '../test-utils/test-utils.js';
 
 const ruleTester = new RuleTester({
   languageOptions: {
     parserOptions: {
       project: './tsconfig.noImplicitThis.json',
       projectService: false,
-      tsconfigRootDir: getFixturesRootDir(),
+      tsconfigRootDir: FIXTURES_DIR,
     },
   },
 });

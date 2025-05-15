@@ -1,27 +1,29 @@
 import { noFormat, RuleTester } from '@typescript-eslint/rule-tester';
-import path from 'node:path';
 
-import rule from '../../src/rules/no-unnecessary-type-assertion';
+import rule from '../../src/rules/no-unnecessary-type-assertion.js';
+import {
+  DEFAULT_TESTER_CONFIG,
+  FIXTURES_DIR,
+} from '../test-utils/test-utils.js';
 
-const rootDir = path.join(__dirname, '..', 'fixtures');
 const ruleTester = new RuleTester({
   languageOptions: {
     parserOptions: {
-      project: './tsconfig.json',
+      ...DEFAULT_TESTER_CONFIG.languageOptions.parserOptions,
+
       projectService: false,
-      tsconfigRootDir: rootDir,
     },
   },
 });
 
 const optionsWithOnUncheckedIndexedAccess = {
   project: './tsconfig.noUncheckedIndexedAccess.json',
-  tsconfigRootDir: rootDir,
+  tsconfigRootDir: FIXTURES_DIR,
 };
 
 const optionsWithExactOptionalPropertyTypes = {
   project: './tsconfig.exactOptionalPropertyTypes.json',
-  tsconfigRootDir: rootDir,
+  tsconfigRootDir: FIXTURES_DIR,
 };
 
 ruleTester.run('no-unnecessary-type-assertion', rule, {
