@@ -1,16 +1,9 @@
 import { RuleTester } from '@typescript-eslint/rule-tester';
 
-import rule from '../../src/rules/plugin-test-formatting';
-import { getFixturesRootDir } from '../RuleTester';
+import rule from '../../src/rules/plugin-test-formatting.js';
+import { DEFAULT_TESTER_CONFIG } from '../test-utils/test-utils.js';
 
-const ruleTester = new RuleTester({
-  languageOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-      tsconfigRootDir: getFixturesRootDir(),
-    },
-  },
-});
+const ruleTester = new RuleTester(DEFAULT_TESTER_CONFIG);
 
 const CODE_INDENT = '        ';
 const PARENT_INDENT = '      ';
