@@ -1,135 +1,293 @@
+import type { ESLintPluginDocs } from '@typescript-eslint/eslint-plugin/use-at-your-own-risk/rules';
 import type {
   FlatConfig,
+  RuleModuleWithMetaDocs,
   RuleRecommendation,
 } from '@typescript-eslint/utils/ts-eslint';
 
-import rules from '@typescript-eslint/eslint-plugin/use-at-your-own-risk/rules';
 import { clearCandidateTSConfigRootDirs } from '@typescript-eslint/typescript-estree';
 
-import tseslint from '../src/index.js';
+import { configs } from '../src/index.js';
+import { RULE_NAME_PREFIX, rulesEntriesList } from './test-utils/test-utils.js';
 
-vi.mock('@typescript-eslint/typescript-estree', async () => ({
-  ...(await vi.importActual('@typescript-eslint/typescript-estree')),
-  get addCandidateTSConfigRootDir() {
-    return mockAddCandidateTSConfigRootDir;
+vi.mock(
+  import('@typescript-eslint/typescript-estree'),
+  async importOriginal => {
+    const actual = await importOriginal();
+
+    return {
+      ...actual,
+      get addCandidateTSConfigRootDir() {
+        return mockAddCandidateTSConfigRootDir;
+      },
+      default: actual.default,
+    };
   },
-}));
+);
+
+type Configs = Omit<typeof configs, 'base' | 'eslintRecommended'>;
+
+type ConfigName = keyof Configs;
+
+type ConfigRules = NonNullable<
+  {
+    [ConfigNameType in ConfigName]: Configs[ConfigNameType] extends FlatConfig.Config
+      ? Configs[ConfigNameType]['rules']
+      : Configs[ConfigNameType] extends FlatConfig.ConfigArray
+        ? Configs[ConfigNameType][2]['rules']
+        : never;
+  }[ConfigName]
+>;
+
+type ConfigRulesKeys = keyof ConfigRules;
+
+type ConfigRulesValues = ConfigRules[ConfigRulesKeys];
+
+type ConfigRulesEntries = [
+  ruleName: ConfigRulesKeys,
+  ruleEntry: ConfigRulesValues,
+][];
+
+type RuleEntryWithSeverityString =
+  | [ruleLevel: FlatConfig.SeverityString, ...ruleOptions: unknown[]]
+  | FlatConfig.SeverityString;
+
+type PrefixedRuleName = Extract<
+  `${typeof RULE_NAME_PREFIX}${string}`,
+  ConfigRulesKeys
+>;
 
 const mockGetTSConfigRootDirFromStack = vi.fn();
 
-vi.mock('../src/getTSConfigRootDirFromStack', () => ({
-  get getTSConfigRootDirFromStack() {
-    return mockGetTSConfigRootDirFromStack;
-  },
-}));
+vi.mock(
+  import('../src/getTSConfigRootDirFromStack.js'),
+  async importOriginal => {
+    const actual = await importOriginal();
 
-const RULE_NAME_PREFIX = '@typescript-eslint/';
-const EXTENSION_RULES = Object.entries(rules)
-  .filter(([, rule]) => rule.meta.docs.extendsBaseRule)
-  .map(
-    ([ruleName, rule]) =>
-      [
-        `${RULE_NAME_PREFIX}${ruleName}`,
-        typeof rule.meta.docs.extendsBaseRule === 'string'
-          ? rule.meta.docs.extendsBaseRule
-          : ruleName,
-      ] as const,
-  );
+    return {
+      ...actual,
+      get getTSConfigRootDirFromStack() {
+        return mockGetTSConfigRootDirFromStack;
+      },
+    };
+  },
+);
 
 function filterRules(
-  values: FlatConfig.Rules | undefined,
-): [string, FlatConfig.RuleEntry][] {
-  assert.isDefined(values);
-
-  return Object.entries(values)
-    .filter((pair): pair is [string, FlatConfig.RuleEntry] => pair[1] != null)
-    .filter(([name]) => name.startsWith(RULE_NAME_PREFIX));
+  ruleEntries: ConfigRulesEntries,
+): [
+  prefixedRuleName: PrefixedRuleName,
+  ruleEntry: RuleEntryWithSeverityString,
+][] {
+  return ruleEntries.filter(
+    (
+      rules,
+    ): rules is [
+      prefixedRuleName: PrefixedRuleName,
+      ruleEntry: RuleEntryWithSeverityString,
+    ] => rules[1] != null && rules[0].startsWith(RULE_NAME_PREFIX),
+  );
 }
 
 interface FilterAndMapRuleConfigsSettings {
+  /**
+   * @default false
+   */
   excludeDeprecated?: boolean;
-  recommendations?: (RuleRecommendation | undefined)[];
-  typeChecked?: 'exclude' | 'include-only';
+
+  /**
+   * @default false
+   */
+  recommendations?: false | RuleRecommendation[];
+
+  /**
+   * @default false
+   */
+  typeCheckMode?: boolean | 'exclude' | 'include-only';
 }
 
-function filterAndMapRuleConfigs({
-  excludeDeprecated,
-  recommendations,
-  typeChecked,
-}: FilterAndMapRuleConfigsSettings = {}): [string, unknown][] {
-  let result = Object.entries(rules);
+function filterAndMapRuleConfigs(
+  filterAndMapRuleConfigsSettings: FilterAndMapRuleConfigsSettings = {},
+): [
+  prefixedRuleName: PrefixedRuleName,
+  ruleEntry: RuleEntryWithSeverityString,
+][] {
+  const {
+    excludeDeprecated = false,
+    recommendations = false,
+    typeCheckMode = false,
+  } = filterAndMapRuleConfigsSettings;
+
+  let result = rulesEntriesList;
 
   if (excludeDeprecated) {
-    result = result.filter(([, rule]) => !rule.meta.deprecated);
-  }
-
-  if (typeChecked) {
-    result = result.filter(([, rule]) =>
-      typeChecked === 'exclude'
-        ? !rule.meta.docs.requiresTypeChecking
-        : rule.meta.docs.requiresTypeChecking,
+    result = result.filter(
+      ([, ruleModuleWithMetaDocs]) => !ruleModuleWithMetaDocs.meta.deprecated,
     );
   }
 
+  if (typeCheckMode) {
+    result = result.filter(([, ruleModuleWithMetaDocs]) =>
+      typeCheckMode === 'exclude'
+        ? !ruleModuleWithMetaDocs.meta.docs.requiresTypeChecking
+        : ruleModuleWithMetaDocs.meta.docs.requiresTypeChecking,
+    );
+
+    if (typeCheckMode === true) {
+      return result.map(
+        ([ruleName]) => [`${RULE_NAME_PREFIX}${ruleName}`, 'off'] as const,
+      );
+    }
+  }
+
   if (recommendations) {
-    result = result.filter(([, rule]) => {
-      switch (typeof rule.meta.docs.recommended) {
+    result = result.filter(([, ruleModuleWithMetaDocs]) => {
+      const { recommended } = ruleModuleWithMetaDocs.meta.docs;
+
+      switch (typeof recommended) {
         case 'object':
-          return Object.keys(rule.meta.docs.recommended).some(recommended =>
-            recommendations.includes(recommended as RuleRecommendation),
+          return Object.keys(recommended).some(ruleRecommendation =>
+            recommendations.includes(ruleRecommendation as RuleRecommendation),
           );
+
         case 'string':
-          return recommendations.includes(rule.meta.docs.recommended);
+          return recommendations.includes(recommended);
+
         default:
           return false;
       }
     });
   }
 
-  const highestRecommendation = recommendations?.filter(Boolean).at(-1);
+  const highestRecommendation = recommendations && recommendations.at(-1);
 
-  return result.map(([name, rule]) => {
+  assert.isDefined(highestRecommendation);
+
+  return result.map(([ruleName, ruleModuleWithMetaDocs]) => {
+    const { recommended } = ruleModuleWithMetaDocs.meta.docs;
+
     const customRecommendation =
       highestRecommendation &&
-      typeof rule.meta.docs.recommended === 'object' &&
-      rule.meta.docs.recommended[
-        highestRecommendation as 'recommended' | 'strict'
+      typeof recommended === 'object' &&
+      recommended[
+        highestRecommendation as Exclude<RuleRecommendation, 'stylistic'>
       ];
 
+    assert.isDefined(customRecommendation);
+
     return [
-      `${RULE_NAME_PREFIX}${name}`,
-      customRecommendation && typeof customRecommendation !== 'boolean'
-        ? ['error', customRecommendation[0]]
-        : 'error',
-    ];
+      `${RULE_NAME_PREFIX}${ruleName}`,
+      typeof customRecommendation === 'boolean'
+        ? 'error'
+        : ['error', customRecommendation[0]],
+    ] as const;
   });
 }
 
 const localTest = test.extend<{
-  unfilteredConfigRules: FlatConfig.Rules | undefined;
+  EXTENSION_RULES: (readonly [
+    prefixedRuleName: PrefixedRuleName,
+    baseRuleName: string,
+  ])[];
+
+  /**
+   * @default 'all'
+   */
+  configName: ConfigName;
+  unfilteredConfigRules: ConfigRules;
   expectedOverrides: Record<string, 'off'>;
-  configRulesObject: Record<string, FlatConfig.RuleEntry>;
+  actualConfigRulesObject: Record<
+    PrefixedRuleName,
+    RuleEntryWithSeverityString
+  >;
+  expectedConfigRulesObject: Record<
+    PrefixedRuleName,
+    RuleEntryWithSeverityString
+  >;
 }>({
-  configRulesObject: [
+  actualConfigRulesObject: [
+    async ({ configName }, use) => {
+      const isAll = configName === 'all';
+
+      const isRecommended = configName.startsWith('recommended');
+
+      const isStrict = configName.startsWith('strict');
+
+      const isStylistic = configName.startsWith('stylistic');
+
+      const isDisableTypeChecked = configName === 'disableTypeChecked';
+
+      const isTypeChecked =
+        isAll || (!isDisableTypeChecked && configName.endsWith('TypeChecked'));
+
+      const isTypeCheckedOnly = configName.endsWith('TypeCheckedOnly');
+
+      const recommendations = isRecommended
+        ? (['recommended'] as const satisfies RuleRecommendation[])
+        : isStylistic
+          ? (['stylistic'] as const satisfies RuleRecommendation[])
+          : isStrict
+            ? ([
+                'recommended',
+                'strict',
+              ] as const satisfies RuleRecommendation[])
+            : false;
+
+      const typeCheckMode = isTypeCheckedOnly
+        ? 'include-only'
+        : isDisableTypeChecked
+          ? true
+          : isTypeChecked
+            ? false
+            : 'exclude';
+
+      const excludeDeprecated = isAll || isStrict;
+
+      const actualConfigRulesEntries = filterAndMapRuleConfigs({
+        excludeDeprecated,
+        recommendations,
+        typeCheckMode,
+      });
+
+      const actualConfigRulesObject = Object.fromEntries(
+        actualConfigRulesEntries,
+      ) satisfies Record<
+        PrefixedRuleName,
+        RuleEntryWithSeverityString
+      > as Record<PrefixedRuleName, RuleEntryWithSeverityString>;
+
+      await use(actualConfigRulesObject);
+    },
+    { auto: false },
+  ],
+
+  configName: ['all', { auto: false }],
+
+  expectedConfigRulesObject: [
     async ({ unfilteredConfigRules }, use) => {
-      const configRules = filterRules(unfilteredConfigRules);
+      const expectedConfigRulesEntries = filterRules(
+        Object.entries(unfilteredConfigRules),
+      );
 
-      const configRulesObject = Object.fromEntries(configRules);
+      const expectedConfigRulesObject = Object.fromEntries(
+        expectedConfigRulesEntries,
+      ) satisfies Record<
+        PrefixedRuleName,
+        RuleEntryWithSeverityString
+      > as Record<PrefixedRuleName, RuleEntryWithSeverityString>;
 
-      await use(configRulesObject);
+      await use(expectedConfigRulesObject);
     },
     { auto: false },
   ],
 
   expectedOverrides: [
-    async ({ unfilteredConfigRules }, use) => {
-      assert.isDefined(unfilteredConfigRules);
-
+    async ({ EXTENSION_RULES, unfilteredConfigRules }, use) => {
       const ruleNames = new Set(Object.keys(unfilteredConfigRules));
 
       const expectedOverrides = Object.fromEntries(
         EXTENSION_RULES.filter(([ruleName]) => ruleNames.has(ruleName)).map(
-          ([, extRuleName]) => [extRuleName, 'off'] as const,
+          ([, baseRuleName]) => [baseRuleName, 'off'] as const,
         ),
       );
 
@@ -138,18 +296,59 @@ const localTest = test.extend<{
     { auto: false },
   ],
 
-  unfilteredConfigRules: [tseslint.configs.all[2]?.rules, { auto: true }],
+  EXTENSION_RULES: [
+    rulesEntriesList
+      .filter(
+        (
+          rules,
+        ): rules is [
+          ruleName: string,
+          ruleModuleWithMetaDocs: RuleModuleWithMetaDocs<
+            string,
+            unknown[],
+            Omit<ESLintPluginDocs, 'extendsBaseRule'> &
+              Required<Pick<ESLintPluginDocs, 'extendsBaseRule'>>
+          >,
+        ] => rules[1].meta.docs.extendsBaseRule != null,
+      )
+      .map(
+        ([ruleName, ruleModuleWithMetaDocs]) =>
+          [
+            `${RULE_NAME_PREFIX}${ruleName}`,
+            typeof ruleModuleWithMetaDocs.meta.docs.extendsBaseRule === 'string'
+              ? ruleModuleWithMetaDocs.meta.docs.extendsBaseRule
+              : ruleName,
+          ] as const,
+      ),
+    { auto: false },
+  ],
+
+  unfilteredConfigRules: [
+    async ({ configName }, use) => {
+      const config =
+        configName === 'disableTypeChecked'
+          ? configs[configName]
+          : configs[configName][2];
+
+      const { rules } = config;
+
+      assert.isDefined(rules);
+
+      await use(rules);
+    },
+    { auto: false },
+  ],
 });
 
 describe('all.ts', () => {
-  localTest('contains all of the rules', ({ configRulesObject }) => {
-    // note: exclude deprecated rules, this config is allowed to change between minor versions
-    const ruleConfigs = filterAndMapRuleConfigs({
-      excludeDeprecated: true,
-    });
+  localTest(
+    'contains all of the rules',
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
+      // note: exclude deprecated rules, this config is allowed to change between minor versions
 
-    expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
-  });
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
+    },
+  );
 
   localTest(
     'has the base rules overridden by the appropriate extension rules',
@@ -160,34 +359,25 @@ describe('all.ts', () => {
 });
 
 describe('disable-type-checked.ts', () => {
-  localTest.scoped({
-    unfilteredConfigRules: tseslint.configs.disableTypeChecked.rules,
-  });
+  localTest.scoped({ configName: 'disableTypeChecked' });
 
-  localTest('disables all type checked rules', ({ configRulesObject }) => {
-    const ruleConfigs = Object.entries(rules)
-      .filter(([, rule]) => rule.meta.docs.requiresTypeChecking)
-      .map(([name]) => [`${RULE_NAME_PREFIX}${name}`, 'off'] as const);
-
-    expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
-  });
+  localTest(
+    'disables all type checked rules',
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
+    },
+  );
 });
 
 describe('recommended.ts', () => {
-  localTest.scoped({
-    unfilteredConfigRules: tseslint.configs.recommended[2]?.rules,
-  });
+  localTest.scoped({ configName: 'recommended' });
 
   localTest(
     'contains all recommended rules, excluding type checked ones',
-    ({ configRulesObject }) => {
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
       // note: include deprecated rules so that the config doesn't change between major bumps
-      const ruleConfigs = filterAndMapRuleConfigs({
-        recommendations: ['recommended'],
-        typeChecked: 'exclude',
-      });
 
-      expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
     },
   );
 
@@ -200,18 +390,16 @@ describe('recommended.ts', () => {
 });
 
 describe('recommended-type-checked.ts', () => {
-  localTest.scoped({
-    unfilteredConfigRules: tseslint.configs.recommendedTypeChecked[2]?.rules,
-  });
+  localTest.scoped({ configName: 'recommendedTypeChecked' });
 
-  localTest('contains all recommended rules', ({ configRulesObject }) => {
-    // note: include deprecated rules so that the config doesn't change between major bumps
-    const ruleConfigs = filterAndMapRuleConfigs({
-      recommendations: ['recommended'],
-    });
+  localTest(
+    'contains all recommended rules',
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
+      // note: include deprecated rules so that the config doesn't change between major bumps
 
-    expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
-  });
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
+    },
+  );
 
   localTest(
     'has the base rules overridden by the appropriate extension rules',
@@ -222,21 +410,14 @@ describe('recommended-type-checked.ts', () => {
 });
 
 describe('recommended-type-checked-only.ts', () => {
-  localTest.scoped({
-    unfilteredConfigRules:
-      tseslint.configs.recommendedTypeCheckedOnly[2]?.rules,
-  });
+  localTest.scoped({ configName: 'recommendedTypeCheckedOnly' });
 
   localTest(
     'contains only type-checked recommended rules',
-    ({ configRulesObject }) => {
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
       // note: include deprecated rules so that the config doesn't change between major bumps
-      const ruleConfigs = filterAndMapRuleConfigs({
-        recommendations: ['recommended'],
-        typeChecked: 'include-only',
-      }).filter(([ruleName]) => ruleName);
 
-      expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
     },
   );
 
@@ -249,21 +430,14 @@ describe('recommended-type-checked-only.ts', () => {
 });
 
 describe('strict.ts', () => {
-  localTest.scoped({
-    unfilteredConfigRules: tseslint.configs.strict[2]?.rules,
-  });
+  localTest.scoped({ configName: 'strict' });
 
   localTest(
     'contains all strict rules, excluding type checked ones',
-    ({ configRulesObject }) => {
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
       // note: exclude deprecated rules, this config is allowed to change between minor versions
-      const ruleConfigs = filterAndMapRuleConfigs({
-        excludeDeprecated: true,
-        recommendations: ['recommended', 'strict'],
-        typeChecked: 'exclude',
-      });
 
-      expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
     },
   );
 
@@ -276,18 +450,16 @@ describe('strict.ts', () => {
 });
 
 describe('strict-type-checked.ts', () => {
-  localTest.scoped({
-    unfilteredConfigRules: tseslint.configs.strictTypeChecked[2]?.rules,
-  });
+  localTest.scoped({ configName: 'strictTypeChecked' });
 
-  localTest('contains all strict rules', ({ configRulesObject }) => {
-    // note: exclude deprecated rules, this config is allowed to change between minor versions
-    const ruleConfigs = filterAndMapRuleConfigs({
-      excludeDeprecated: true,
-      recommendations: ['recommended', 'strict'],
-    });
-    expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
-  });
+  localTest(
+    'contains all strict rules',
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
+      // note: exclude deprecated rules, this config is allowed to change between minor versions
+
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
+    },
+  );
 
   localTest(
     'has the base rules overridden by the appropriate extension rules',
@@ -298,21 +470,14 @@ describe('strict-type-checked.ts', () => {
 });
 
 describe('strict-type-checked-only.ts', () => {
-  localTest.scoped({
-    unfilteredConfigRules: tseslint.configs.strictTypeCheckedOnly[2]?.rules,
-  });
+  localTest.scoped({ configName: 'strictTypeCheckedOnly' });
 
   localTest(
     'contains only type-checked strict rules',
-    ({ configRulesObject }) => {
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
       // note: exclude deprecated rules, this config is allowed to change between minor versions
-      const ruleConfigs = filterAndMapRuleConfigs({
-        excludeDeprecated: true,
-        recommendations: ['recommended', 'strict'],
-        typeChecked: 'include-only',
-      }).filter(([ruleName]) => ruleName);
 
-      expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
     },
   );
 
@@ -325,20 +490,14 @@ describe('strict-type-checked-only.ts', () => {
 });
 
 describe('stylistic.ts', () => {
-  localTest.scoped({
-    unfilteredConfigRules: tseslint.configs.stylistic[2]?.rules,
-  });
+  localTest.scoped({ configName: 'stylistic' });
 
   localTest(
     'contains all stylistic rules, excluding deprecated or type checked ones',
-    ({ configRulesObject }) => {
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
       // note: include deprecated rules so that the config doesn't change between major bumps
-      const ruleConfigs = filterAndMapRuleConfigs({
-        recommendations: ['stylistic'],
-        typeChecked: 'exclude',
-      });
 
-      expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
     },
   );
 
@@ -351,19 +510,14 @@ describe('stylistic.ts', () => {
 });
 
 describe('stylistic-type-checked.ts', () => {
-  localTest.scoped({
-    unfilteredConfigRules: tseslint.configs.stylisticTypeChecked[2]?.rules,
-  });
+  localTest.scoped({ configName: 'stylisticTypeChecked' });
 
   localTest(
     'contains all stylistic rules, excluding deprecated ones',
-    ({ configRulesObject }) => {
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
       // note: include deprecated rules so that the config doesn't change between major bumps
-      const ruleConfigs = filterAndMapRuleConfigs({
-        recommendations: ['stylistic'],
-      });
 
-      expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
     },
   );
 
@@ -376,20 +530,14 @@ describe('stylistic-type-checked.ts', () => {
 });
 
 describe('stylistic-type-checked-only.ts', () => {
-  localTest.scoped({
-    unfilteredConfigRules: tseslint.configs.stylisticTypeCheckedOnly[2]?.rules,
-  });
+  localTest.scoped({ configName: 'stylisticTypeCheckedOnly' });
 
   localTest(
     'contains only type-checked stylistic rules',
-    ({ configRulesObject }) => {
+    ({ actualConfigRulesObject, expectedConfigRulesObject }) => {
       // note: include deprecated rules so that the config doesn't change between major bumps
-      const ruleConfigs = filterAndMapRuleConfigs({
-        recommendations: ['stylistic'],
-        typeChecked: 'include-only',
-      }).filter(([ruleName]) => ruleName);
 
-      expect(Object.fromEntries(ruleConfigs)).toStrictEqual(configRulesObject);
+      expect(actualConfigRulesObject).toStrictEqual(expectedConfigRulesObject);
     },
   );
 
@@ -409,12 +557,12 @@ describe('Candidate tsconfigRootDirs', () => {
     mockAddCandidateTSConfigRootDir.mockClear();
   });
 
-  describe.each(Object.keys(tseslint.configs))('%s', configKey => {
+  describe.for(Object.keys(configs))('%s', configKey => {
     it('does not populate a candidate tsconfigRootDir when accessed and one cannot be inferred from the stack', () => {
-      mockGetTSConfigRootDirFromStack.mockReturnValue(undefined);
+      mockGetTSConfigRootDirFromStack.mockReturnValueOnce(undefined);
 
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      tseslint.configs[configKey as keyof typeof tseslint.configs];
+      configs[configKey as keyof typeof configs];
 
       expect(mockAddCandidateTSConfigRootDir).not.toHaveBeenCalled();
     });
@@ -422,12 +570,12 @@ describe('Candidate tsconfigRootDirs', () => {
     it('populates a candidate tsconfigRootDir when accessed and one can be inferred from the stack', () => {
       const tsconfigRootDir = 'a/b/c/';
 
-      mockGetTSConfigRootDirFromStack.mockReturnValue(tsconfigRootDir);
+      mockGetTSConfigRootDirFromStack.mockReturnValueOnce(tsconfigRootDir);
 
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      tseslint.configs[configKey as keyof typeof tseslint.configs];
+      configs[configKey as keyof typeof configs];
 
-      expect(mockAddCandidateTSConfigRootDir).toHaveBeenCalledWith(
+      expect(mockAddCandidateTSConfigRootDir).toHaveBeenLastCalledWith(
         tsconfigRootDir,
       );
     });
