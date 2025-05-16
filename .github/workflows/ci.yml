@@ -1,13 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - '**'
-  merge_group:
+on: [push, pull_request, workflow_dispatch, merge_group]
 
 concurrency:
   group: '${{ github.workflow }} - ${{ github.head_ref || github.ref }}'
